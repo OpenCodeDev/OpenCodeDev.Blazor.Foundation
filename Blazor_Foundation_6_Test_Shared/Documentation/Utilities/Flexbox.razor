@@ -1,0 +1,173 @@
+﻿@page "/flexbox";
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Flexbox Utilities</h2>
+        <p style=" margin-top: 1em;">
+            Flexbox utility classes to make working with flexbox easier.
+        </p>
+
+        <p style=" margin-top: 1em;">
+            Flexbox makes horizontal and vertical alignment painless, through the CSS properties align-items, align-self, and justify-content.
+            Foundation includes a handful of classes for these properties, which work with any flexbox-enabled component.
+        </p>
+        <ResponsiveEmbedAspectRatio>
+            <iframe style="margin-top:1em;" width="847" height="476" src="https://www.youtube.com/embed/6KwsGcEHVTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </ResponsiveEmbedAspectRatio>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Horizontal Alignment</h2>
+        <p>
+            Horizontal alignment classes are applied to flex parents.
+            Left alignment is the default, but you can use one of these classes to change this:
+            <Code Content="YWxpZ24tcmlnaHQ="></Code>, <Code Content="YWxpZ24tY2VudGVy"></Code>, <Code Content="YWxpZ24tanVzdGlmeQ=="></Code>, <Code Content="YWxpZ24tc3BhY2Vk"></Code>
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYIENsYXNzPSJhbGlnbi1yaWdodCI+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4gUmlnaHQgPC9DZWxsPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNCI+IFJpZ2h0IDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWCBDbGFzcz0iYWxpZ24tY2VudGVyIj4KICAgIDxDZWxsIFNpemU9InNtYWxsLTQiPiBDZW50ZXJlZCA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4gQ2VudGVyZWQgPC9DZWxsPgo8L0dyaWRYPgoKPEdyaWRYIENsYXNzPSJhbGlnbi1qdXN0aWZ5Ij4KICAgIDxDZWxsIFNpemU9InNtYWxsLTQiPiBKdXN0aWZpZWQgPC9DZWxsPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNCI+IEp1c3RpZmllZCA8L0NlbGw+CjwvR3JpZFg+Cgo8R3JpZFggQ2xhc3M9ImFsaWduLXNwYWNlZCI+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4gU3BhY2VkIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9InNtYWxsLTQiPiBTcGFjZWQgPC9DZWxsPgo8L0dyaWRYPg==" />
+
+
+
+        <GridX Class="align-right" style="margin-top:1em;">
+            <Cell Size="small-4" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                Right
+            </Cell>
+            <Cell Size="small-4" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Right
+            </Cell>
+        </GridX>
+
+        <GridX Class="align-center" style="margin-top:1em;">
+            <Cell Size="small-4" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                Centered
+            </Cell>
+            <Cell Size="small-4" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Centered
+            </Cell>
+        </GridX>
+
+        <GridX Class="align-justify" style="margin-top:1em;">
+            <Cell Size="small-4" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                Justified
+            </Cell>
+            <Cell Size="small-4" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Justified
+            </Cell>
+        </GridX>
+
+        <GridX Class="align-spaced" style="margin-top:1em;">
+            <Cell Size="small-4" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                Spaced
+            </Cell>
+            <Cell Size="small-4" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Spaced
+            </Cell>
+        </GridX>
+        <p>
+            You might be wondering what the difference between <Code Content="YWxpZ24tanVzdGlmeQ=="></Code> and <Code Content="YWxpZ24tc3BhY2Vk"></Code>is.
+            A justified grid (<Code Content="anVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVu"></Code>) evenly distributes the space between each column.
+            The first and last columns pin to the edge of the grid.
+        </p>
+        <p>
+            A spaced grid (<Code Content="anVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ="></Code>) evenly distributes the space around each column.
+            This means there will always be space to the left of the first column, and to the right of the last column.
+        </p>
+        <p>
+            The horizontal alignment classes are shorthands for the <Code Content="anVzdGlmeS1jb250ZW50"></Code> CSS property.
+        </p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Vertical Alignment</h2>
+        <p>
+            Vertical alignment can be applied to a flex parent—which will align all the children automatically—or to a flex child, which will align only that element.
+            <Code Content="YWxpZ24tcmlnaHQ="></Code>, <Code Content="YWxpZ24tY2VudGVy"></Code>, <Code Content="YWxpZ24tanVzdGlmeQ=="></Code>, <Code Content="YWxpZ24tc3BhY2Vk"></Code>
+        </p>
+        <p>
+            Stretch alignment is the default. To set parent alignment, use these classes:
+            <Code Content="YWxpZ24tdG9w"></Code>, <Code Content="YWxpZ24tbWlkZGxl"></Code>, <Code Content="YWxpZ24tYm90dG9t"></Code>,
+            <Code Content="YWxpZ24tc3RyZXRjaA=="></Code>
+        </p>
+        <Callout TypeClass="secondary">
+            Note that with vertical alignment, we use the term "middle" for the midpoint, while with horizontal alignment, we use the term "center". As we can't have two CSS classes with the same name, thus we are using different terms.
+        </Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYIENsYXNzPSJhbGlnbi10b3AiPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNCI+CiAgICAgICAgSSdtIGF0IHRoZSB0b3AgKGRlZmF1bHQpCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4KICAgICAgICBMb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdC4gVm9sdXB0YXR1bSwgdGVtcG9yYS4gSW1wZWRpdCBlaXVzIG9mZmljaWEgcG9zc2ltdXMgbGF1ZGFudGl1bT8gTW9sZXN0aWFlIGVhcXVlLCBzYXBpZW50ZSBhdHF1ZSBkb2xvcmVtcXVlIHBsYWNlYXQhIEluIHNpbnQsIGZ1Z2lhdCBzYWVwZSBzdW50IGRvbG9yZSB0ZW1wb3JlIGFtZXQgY3VwaWRpdGF0ZS4KICAgIDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWCBDbGFzcz0iYWxpZ24tbWlkZGxlIj4KICAgIDxDZWxsIFNpemU9InNtYWxsLTQiPgogICAgICAgIEknbSBpbiB0aGUgbWlkZGxlCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4KICAgICAgICBMb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdC4gVm9sdXB0YXR1bSwgdGVtcG9yYS4gSW1wZWRpdCBlaXVzIG9mZmljaWEgcG9zc2ltdXMgbGF1ZGFudGl1bT8gTW9sZXN0aWFlIGVhcXVlLCBzYXBpZW50ZSBhdHF1ZSBkb2xvcmVtcXVlIHBsYWNlYXQhIEluIHNpbnQsIGZ1Z2lhdCBzYWVwZSBzdW50IGRvbG9yZSB0ZW1wb3JlIGFtZXQgY3VwaWRpdGF0ZS4KICAgIDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWCBDbGFzcz0iYWxpZ24tYm90dG9tIj4KICAgIDxDZWxsIFNpemU9InNtYWxsLTQiPgogICAgICAgIEknbSBhdCB0aGUgYm90dG9tCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4KICAgICAgICBMb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdC4gVm9sdXB0YXR1bSwgdGVtcG9yYS4gSW1wZWRpdCBlaXVzIG9mZmljaWEgcG9zc2ltdXMgbGF1ZGFudGl1bT8gTW9sZXN0aWFlIGVhcXVlLCBzYXBpZW50ZSBhdHF1ZSBkb2xvcmVtcXVlIHBsYWNlYXQhIEluIHNpbnQsIGZ1Z2lhdCBzYWVwZSBzdW50IGRvbG9yZSB0ZW1wb3JlIGFtZXQgY3VwaWRpdGF0ZS4KICAgIDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWCBDbGFzcz0iYWxpZ24tc3RyZXRjaCI+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4KICAgICAgICBUaGVzZSBjZWxscyBoYXZlIHRoZSBzYW1lIGhlaWdodAogICAgPC9DZWxsPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNCI+CiAgICAgICAgTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQuIFZvbHVwdGF0dW0sIHRlbXBvcmEuIEltcGVkaXQgZWl1cyBvZmZpY2lhIHBvc3NpbXVzIGxhdWRhbnRpdW0/IE1vbGVzdGlhZSBlYXF1ZSwgc2FwaWVudGUgYXRxdWUgZG9sb3JlbXF1ZSBwbGFjZWF0ISBJbiBzaW50LCBmdWdpYXQgc2FlcGUgc3VudCBkb2xvcmUgdGVtcG9yZSBhbWV0IGN1cGlkaXRhdGUuCiAgICA8L0NlbGw+CjwvR3JpZFg+" />
+
+
+
+        <GridX Class="align-top" style="margin-top:1em; background-color: #00a1ff4f;">
+            <Cell Size="small-4" style="background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                I'm at the top (default)
+            </Cell>
+            <Cell Size="small-4" style="background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, tempora. Impedit eius officia possimus laudantium? Molestiae eaque, sapiente atque doloremque placeat! In sint, fugiat saepe sunt dolore tempore amet cupiditate.
+            </Cell>
+        </GridX>
+
+        <GridX Class="align-middle" style="margin-top:1em; background-color: #00a1ff4f;">
+            <Cell Size="small-4" style="background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                I'm in the middle
+            </Cell>
+            <Cell Size="small-4" style="background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, tempora. Impedit eius officia possimus laudantium? Molestiae eaque, sapiente atque doloremque placeat! In sint, fugiat saepe sunt dolore tempore amet cupiditate.
+            </Cell>
+        </GridX>
+
+        <GridX Class="align-bottom" style="margin-top:1em; background-color: #00a1ff4f;">
+            <Cell Size="small-4" style="background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                I'm at the bottom
+            </Cell>
+            <Cell Size="small-4" style="background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, tempora. Impedit eius officia possimus laudantium? Molestiae eaque, sapiente atque doloremque placeat! In sint, fugiat saepe sunt dolore tempore amet cupiditate.
+            </Cell>
+        </GridX>
+
+        <GridX Class="align-stretch" style="margin-top:1em; background-color: #00a1ff4f;">
+            <Cell Size="small-4" style="background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                These cells have the same height
+            </Cell>
+            <Cell Size="small-4" style="background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, tempora. Impedit eius officia possimus laudantium? Molestiae eaque, sapiente atque doloremque placeat! In sint, fugiat saepe sunt dolore tempore amet cupiditate.
+            </Cell>
+        </GridX>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Central Alignment</h2>
+        <p>
+            Central alignment can be applied to a flex parent, which will centrally align all children horizontally and vertically automatically. 
+            To set this to your layout, simply use the class: <Code Content="YWxpZ24tY2VudGVyLW1pZGRsZQ=="></Code>
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYIENsYXNzPSJhbGlnbi1jZW50ZXItbWlkZGxlIiBzdHlsZT0iaGVpZ2h0OiAxMmVtOyI+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4gSSBhbSBpbiB0aGUgY2VudGVyLW1pZGRsZSA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4gSSBhbSBhbHNvIGNlbnRyYWxseSBsb2NhdGVkIDwvQ2VsbD4KPC9HcmlkWD4=" />
+
+<GridX Class="align-center-middle" style="margin-top:1em; background-color: #00a1ff4f; height: 12em;">
+    <Cell Size="small-4" style="background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+        I am in the center-middle
+    </Cell>
+    <Cell Size="small-4" style="background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+        I am also centrally located
+    </Cell>
+</GridX>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

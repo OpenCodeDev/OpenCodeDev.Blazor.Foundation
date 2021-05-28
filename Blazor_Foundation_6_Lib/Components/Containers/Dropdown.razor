@@ -1,0 +1,103 @@
+﻿@using Microsoft.JSInterop;
+@using Newtonsoft.Json.Linq;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+@inject IJSRuntime JSRuntime;
+@implements System.IDisposable;
+<div class="@($"dropdown-pane {Class}")" data-position="@Position" data-alignment="@DataAlignment" id="@Id" @attributes="AdditionalAttributes" data-dropdown data-auto-focus="true">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    /// <summary>
+    /// Unique HTML Identifier.
+    /// </summary>
+    [Parameter]
+    public string Id { get; set; }
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class.
+    /// </summary>
+    [Parameter]
+    public string Class { get; set; }
+
+
+    /// <summary>
+    /// left, right, top or bottom
+    /// </summary>
+    [Parameter]
+    public string Position { get; set; }
+
+    /// <summary>
+    /// top, middle, left, right or bottom
+    /// </summary>
+    [Parameter]
+    public string DataAlignment { get; set; }
+
+    /// <summary>
+    /// If false, you will have to create initializer for this Foundation 6 component yourself in javascript. (Default: True)
+    /// </summary>
+    [Parameter]
+    public bool AutoManaged { get; set; } = true;
+
+    /// <summary>
+    /// List of Options to pass when initilization is handled by Blazor. Leave blank if AutoManaged = false.
+    /// </summary>
+    [Parameter]
+    public JObject DataOptions { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+    protected override void OnInitialized()
+    {
+
+
+        if (Position == null) { Position = $"position-left"; }
+        if (DataAlignment == null) { DataAlignment = $"bottom"; }
+
+    }
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        await base.SetParametersAsync(parameters);
+
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (AutoManaged)
+            {
+                await JSRuntime.InvokeVoidAsync("DropdownRegister", Id, DataOptions != null ? DataOptions.ToString() : null);
+            }
+        }
+
+    }
+
+
+    public void Dispose()
+    {
+        if (AutoManaged)
+        {
+            JSRuntime.InvokeVoidAsync("FoundationDestroy", Id);
+        }
+    }
+
+    public async Task TriggerToggle()
+    {
+        await JSRuntime.InvokeVoidAsync("ElementToggle", Id);
+    }
+
+    public async Task TriggerOpen()
+    {
+        await JSRuntime.InvokeVoidAsync("ElementOpen", Id);
+    }
+
+    public async Task TriggerClose()
+    {
+        await JSRuntime.InvokeVoidAsync("ElementClose", Id);
+    }
+}

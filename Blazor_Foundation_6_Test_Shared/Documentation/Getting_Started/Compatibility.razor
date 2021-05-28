@@ -1,0 +1,147 @@
+﻿@page "/compatibility";
+
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+
+@* BLAZOR *@
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Blazor</h2>
+        <TableWrapper>
+            <TableHeader>
+                <TableHeaderItem>Versions</TableHeaderItem>
+                <TableHeaderItem>2.x</TableHeaderItem>
+                <TableHeaderItem>3+</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        Blazor Server
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                </TableBodyRow>
+
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        Blazor WASM
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                </TableBodyRow>
+
+
+            </TableBody>
+        </TableWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@* DOTNET *@
+<SectionWrapper>
+    <SectionLeft>
+        <h2>.NET</h2>
+        <TableWrapper>
+            <TableHeader>
+                <TableHeaderItem>Versions</TableHeaderItem>
+                <TableHeaderItem>2.x</TableHeaderItem>
+                <TableHeaderItem>3+</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        .NET 5
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgb(232 5 5 / 15%);">
+                        No
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                </TableBodyRow>
+
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        .NET CORE 3.1
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                </TableBodyRow>
+
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        .NET STANDARD 2.0
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                </TableBodyRow>
+
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        .NET STANDARD 2.1
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                    <TableBodyRowItem style="background-color:rgba(58, 219, 118, 0.15);">
+                        Yes
+                    </TableBodyRowItem>
+                </TableBodyRow>
+
+            </TableBody>
+        </TableWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@* BROWSER *@
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Browsers</h2>
+<TableWrapper>
+    <TableBody>
+        <TableBodyRow>
+            <TableBodyRowItem style="background-color: rgba(58, 219, 118, 0.15);">Chrome</TableBodyRowItem>
+            <TableBodyRowItem rowspan="7" style=" background-color: rgba(58, 219, 118, 0.15); color: #3adb76; font-size: 1.25rem; font-weight: bold; text-align: center; ">Last Two Versions</TableBodyRowItem>
+        </TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgba(58, 219, 118, 0.15);">Firefox</TableBodyRowItem></TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgba(58, 219, 118, 0.15);">Safari</TableBodyRowItem></TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgba(58, 219, 118, 0.15);">Safari (IOS)</TableBodyRowItem></TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgba(58, 219, 118, 0.15);">Opera</TableBodyRowItem></TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgba(58, 219, 118, 0.15);">Edge</TableBodyRowItem></TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgba(58, 219, 118, 0.15);">Brave</TableBodyRowItem></TableBodyRow>
+
+        <TableBodyRow>
+            <TableBodyRowItem style="background-color: rgb(232 5 5 / 15%);">IE Mobile</TableBodyRowItem>
+            <TableBodyRowItem rowspan="3" style="background-color: rgb(232 5 5 / 15%); font-size: 1.25rem; font-weight: bold; text-align: center;color: red;">
+            Unsupported
+            </TableBodyRowItem>
+        </TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgb(232 5 5 / 15%);">Android Browser</TableBodyRowItem></TableBodyRow>
+        <TableBodyRow><TableBodyRowItem style="background-color: rgb(232 5 5 / 15%);">Internet Explorer</TableBodyRowItem></TableBodyRow>
+
+    </TableBody>
+</TableWrapper>
+        <p>Note: Unsupported means it might work but we are not going to support any fixes or problem encountered with those browsers.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

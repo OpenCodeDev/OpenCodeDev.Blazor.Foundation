@@ -1,0 +1,339 @@
+﻿@page "/xy-grid";
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>XY Grid</h2>
+        <p>
+            The XY Grid is the only type of grid supported by Blazor Foundation 6's components. Legacy grid are not supported.
+        </p>
+        <p>The XY grid works very similarly to the standard float grid, but includes a number of useful features only possible with Flexbox, like horizontal and vertical alignment, automatic sizing and a full vertical grid.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+            The structure of XY grid uses <Code Content="PEdyaWRYPjwvR3JpZFg+"></Code> , <Code Content="PEdyaWRZPjwvR3JpZFk+"></Code>, and <Code Content="PENlbGw+PC9DZWxsPg=="></Code> as its base.
+            Without defining a gutter type the cells will simply split up the space without any gutters.
+        </p>
+        <p>
+            The XY grid works very similarly to the standard float grid, but includes a number of useful features only possible with Flexbox, like horizontal and vertical alignment, automatic sizing and a full vertical grid.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYPgogICAgPENlbGw+IEZ1bGwgV2lkdGggQ2VsbCA8L0NlbGw+CiAgICA8Q2VsbD4gRnVsbCBXaWR0aCBDZWxsIDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWD4KICAgIDxDZWxsIFNpemU9InNtYWxsLTYiPiA2IENlbGxzIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9InNtYWxsLTYiPiA2IENlbGxzIDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWD4KICAgIDxDZWxsIFNpemU9Im1lZGl1bS02IGxhcmdlLTQiPiAxMi82LzQgQ2VsbHM8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJtZWRpdW0tNiBsYXJnZS04Ij4gMTIvNi80IENlbGxzPC9DZWxsPgo8L0dyaWRYPg==" />
+
+
+        <GridX>
+            <Cell style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> Full Width Cell </Cell>
+            <Cell style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> Full Width Cell </Cell>
+        </GridX>
+
+        <GridX style="margin-top:1em;">
+            <Cell Size="small-6" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> 6 Cells </Cell>
+            <Cell Size="small-6" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> 6 Cells </Cell>
+        </GridX>
+
+        <GridX style="margin-top:1em;">
+            <Cell Size="medium-6 large-4" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> 12/6/4 Cells</Cell>
+            <Cell Size="medium-6 large-8" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> 12/6/4 Cells</Cell>
+        </GridX>
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Gutters</h2>
+        <p>
+            The defining feature of the XY grid is the ability to use margin AND padding grids in harmony.
+            To define a grid type, simply set <Code Content="VmVydGljYWxNYXJnaW4gLyBIb3Jpem9udGFsTWFyZ2lu"></Code> or
+            <Code Content="VmVydGljYWxQYWRkaW5nIC8gSG9yaXpvbnRhbFBhZGRpbmc="></Code> on the grid.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYIEhvcml6b250YWxNYXJnaW49InRydWUiPgogICAgPENlbGwgU2l6ZT0ibWVkaXVtLTYgbGFyZ2UtNCI+CiAgICAgICAgMTIvNi80IENlbGwKICAgIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9Im1lZGl1bS02IGxhcmdlLTgiPgogICAgICAgIDEyLzYvNCBDZWxsCiAgICA8L0NlbGw+CjwvR3JpZFg+Cgo8R3JpZFggSG9yaXpvbnRhbFBhZGRpbmc9InRydWUiPgogICAgPENlbGwgU2l6ZT0ibWVkaXVtLTYgbGFyZ2UtNCI+CiAgICAgICAgMTIvNi80IENlbGwgKyBIb3Jpem9udGFsIFBhZGRpbmcKICAgIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9Im1lZGl1bS02IGxhcmdlLTgiPgogICAgICAgIDEyLzYvNCBDZWxsICsgSG9yaXpvbnRhbCBQYWRkaW5nCiAgICA8L0NlbGw+CjwvR3JpZFg+Cgo8R3JpZFggVmVydGljYWxNYXJnaW49InRydWUiPgogICAgPENlbGwgU2l6ZT0ibWVkaXVtLTYgbGFyZ2UtNCI+CiAgICAgICAgMTIvNi80IENlbGwKICAgIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9Im1lZGl1bS02IGxhcmdlLTgiPgogICAgICAgIDEyLzYvNCBDZWxsCiAgICA8L0NlbGw+CjwvR3JpZFg+Cgo8R3JpZFggVmVydGljYWxQYWRkaW5nPSJ0cnVlIj4KICAgIDxDZWxsIFNpemU9Im1lZGl1bS02IGxhcmdlLTQiPgogICAgICAgIDEyLzYvNCBDZWxsICsgVmVydGljYWwgUGFkZGluZwogICAgPC9DZWxsPgogICAgPENlbGwgU2l6ZT0ibWVkaXVtLTYgbGFyZ2UtOCI+CiAgICAgICAgMTIvNi80IENlbGwgKyBWZXJ0aWNhbCBQYWRkaW5nCiAgICA8L0NlbGw+CjwvR3JpZFg+" />
+
+
+        <GridX HorizontalMargin="true" style="background-color: #ffe99b;">
+            <Cell Size="medium-6 large-4" style="background: #0099e4; height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell
+            </Cell>
+            <Cell Size="medium-6 large-8" style=" background: #0853da; height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell
+            </Cell>
+        </GridX>
+
+        <GridX HorizontalPadding="true" style="margin-top:1em;">
+            <Cell Size="medium-6 large-4" style="background: #0099e4; min-height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell + Horizontal Padding
+            </Cell>
+            <Cell Size="medium-6 large-8" style=" background: #0853da; min-height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell + Horizontal Padding
+            </Cell>
+        </GridX>
+
+        <GridX VerticalMargin="true" style="background-color: #ffe99b;margin-top:1em;">
+            <Cell Size="medium-6 large-4" style="background: #0099e4; height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell
+            </Cell>
+            <Cell Size="medium-6 large-8" style=" background: #0853da; height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell
+            </Cell>
+        </GridX>
+
+        <GridX VerticalPadding="true" style="margin-top:2em;">
+            <Cell Size="medium-6 large-4" style="background: #0099e4; min-height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell + Vertical Padding
+            </Cell>
+            <Cell Size="medium-6 large-8" style=" background: #0853da; min-height: 2em; text-align: center; color: white; ">
+                12/6/4 Cell + Vertical Padding
+            </Cell>
+        </GridX>
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Auto Sizing</h2>
+        <p>
+            If the Size <Code Content="U2l6ZT0iYXV0byI="></Code> or <Code Content="U2l6ZT0iW3NpemVdLWF1dG8i"></Code>
+            is added to the cell, it will take up the remaining space
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNCI+IAogICAgICAgIDQgQ2VsbHMgCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJhdXRvIj4gCiAgICAgICAgUmVzdCBvZiB0aGUgd2lkdGgKICAgIDwvQ2VsbD4KPC9HcmlkWD4K" />
+
+        <GridX>
+            <Cell Size="small-4" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                4 Cells
+            </Cell>
+            <Cell Size="auto" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Rest of the width
+            </Cell>
+        </GridX>
+
+        <br />
+
+        <hr />
+
+        <p> Multiple expanding cells will share the leftover space equally. </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNCI+IAogICAgICAgIDQgQ2VsbHMgCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJhdXRvIj4gCiAgICAgICAgUmVzdCBvZiB0aGUgd2lkdGgKICAgIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9ImF1dG8iPiAKICAgICAgICBSZXN0IG9mIHRoZSB3aWR0aAogICAgPC9DZWxsPgo8L0dyaWRYPgo=" />
+
+        <GridX>
+            <Cell Size="small-4" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                4 Cells
+            </Cell>
+            <Cell Size="auto" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Rest of the width
+            </Cell>
+            <Cell Size="auto" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Rest of the width
+            </Cell>
+        </GridX>
+
+        <br />
+
+        <hr />
+
+        <p>
+            A cell can also be made to shrink, by adding the <Code Content="U2l6ZT0ic2hyaW5rIg=="></Code> or <Code Content="U2l6ZT0iW3NpemVdLXNocmluayI="></Code>. 
+            This means it will only take up the space its contents need.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYPgogICAgPENlbGwgU2l6ZT0ic2hyaW5rIj4KICAgICAgICA0IENlbGxzCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJhdXRvIj4KICAgICAgICBSZXN0IG9mIHRoZSB3aWR0aAogICAgPC9DZWxsPgo8L0dyaWRYPg==" />
+
+        <GridX>
+            <Cell Size="shrink" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                4 Cells
+            </Cell>
+            <Cell Size="auto" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                Rest of the width
+            </Cell>
+        </GridX>
+
+        <br />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Responsive Adjustments</h2>
+        <p>
+            To switch back to the auto behavior from a percentage or shrink behavior, use the classes <Code Content="U2l6ZT0iW3NpemVdLWF1dG8i"></Code> or <Code Content="U2l6ZT0iW3NpemVdLXNocmluayI="></Code>.
+            In the below example, the cells stack on small screens, and become even-width on large screens.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYPgogICAgPENlbGwgU2l6ZT0ibGFyZ2UtYXV0byI+IE9uZSA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJsYXJnZS1hdXRvIj4gVHdvIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9ImxhcmdlLWF1dG8iPiBUaHJlZSA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJsYXJnZS1hdXRvIj4gRm91ciA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJsYXJnZS1hdXRvIj4gRml2ZSA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJsYXJnZS1hdXRvIj4gU2l4IDwvQ2VsbD4KPC9HcmlkWD4=" />
+
+        <GridX>
+            <Cell Size="large-auto" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> One </Cell>
+            <Cell Size="large-auto" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> Two </Cell>
+            <Cell Size="large-auto" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> Three </Cell>
+            <Cell Size="large-auto" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> Four </Cell>
+            <Cell Size="large-auto" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> Five </Cell>
+            <Cell Size="large-auto" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> Six </Cell>
+        </GridX>
+
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Collapse Cells <Label Color="secondary" style="vertical-align: middle;">GridX only</Label></h2>
+        <p>The <Code Content="U2l6ZT0iW3NpemVdLVtndXR0ZXItdHlwZV0tY29sbGFwc2Ui"></Code> class lets you remove cell gutters.</p>
+        <p>
+            There are times when you won't want each media query to be collapsed. In this case,
+            use the media query size you want and collapse and add that to your grid element.
+            Example shows gutters at small and no gutters on medium and up.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYIENsYXNzPSJtZWRpdW0tbWFyZ2luLWNvbGxhcHNlIj4KICAgIDxDZWxsIFNpemU9InNtYWxsLTYiPiBPbmUgPC9DZWxsPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNiI+IFR3byA8L0NlbGw+CjwvR3JpZFg+" />
+
+        <GridX Class="medium-margin-collapse">
+            <Cell Size="small-6" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> Gutters at small no gutters at medium. </Cell>
+            <Cell Size="small-6" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> Gutters at small no gutters at medium. </Cell>
+        </GridX>
+
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Offsets <Label Color="secondary" style="vertical-align: middle;">GridX only</Label></h2>
+        <p>
+            Offsets work by applying <Code Content="bWFyZ2luLWxlZnQ="></Code> to a grid.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYID4KICAgIDxDZWxsIFNpemU9InNtYWxsLTQgbGFyZ2Utb2Zmc2V0LTIiPiBPZmZzZXQgMiBvbiBsYXJnZSA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC00Ij4gNCBjZWxscyA8L0NlbGw+CjwvR3JpZFg+" />
+
+        <GridX >
+            <Cell Size="small-4 large-offset-2" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> Offset 2 on large </Cell>
+            <Cell Size="small-4" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> 4 cells </Cell>
+        </GridX>
+
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Block Grids <Label Color="secondary" style="vertical-align: middle;">GridX only</Label></h2>
+        <p>
+            To define cell widths within a direction-level, instead of the individual cell level,
+            add the class <Code Content="Q2xhc3M9IltzaXplXS11cC1bbl0i"></Code> to a <Code Content="PEdyaWRYPg=="></Code>,
+            where <Code Content="W25d"></Code> is the number of cells to display per direction, and <Code Content="W3NpemVd"></Code>
+            is the breakpoint at which to apply the effect.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYIENsYXNzPSJzbWFsbC11cC0yIG1lZGl1bS11cC00IGxhcmdlLXVwLTYiPgogICAgPENlbGw+IGNlbGwgPC9DZWxsPgogICAgPENlbGw+IGNlbGwgPC9DZWxsPgogICAgPENlbGw+IGNlbGwgPC9DZWxsPgogICAgPENlbGw+IGNlbGwgPC9DZWxsPgogICAgPENlbGw+IGNlbGwgPC9DZWxsPgogICAgPENlbGw+IGNlbGwgPC9DZWxsPgo8L0dyaWRYPg==" />
+
+        <GridX Class="small-up-2 medium-up-4 large-up-6">
+            <Cell style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> cell </Cell>
+            <Cell style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> cell </Cell>
+            <Cell style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> cell </Cell>
+            <Cell style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> cell </Cell>
+            <Cell style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> cell </Cell>
+            <Cell style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> cell </Cell>
+        </GridX>
+
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Source Ordering</h2>
+        <p>Flexbox supports source ordering, making it easy to rearrange columns on different screen sizes without weird relative positioning tricks.</p>
+        <p>The CSS property is easy enough to remember.</p>
+
+        <HighlightCS Language="css" Full="true" HeaderIcon="mdi-language-css3" HeaderBGcolor="#2965f1" HeaderTitle="CSS"
+                     Content="LmVsZW1lbnQgewogIG9yZGVyOiAxOwp9" />
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYIHN0eWxlPSJtYXJnaW4tdG9wOjFlbTsiPgogICAgPENlbGwgU2l6ZT0ic21hbGwtNiBzbWFsbC1vcmRlci0xIG1lZGl1bS1vcmRlci0yIj4KICAgICAgICBUaGlzIGNvbHVtbiB3aWxsIGNvbWUgc2Vjb25kIG9uIHNtYWxsLCBhbmQgZmlyc3Qgb24gbWVkaXVtIGFuZCBsYXJnZXIuCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC02IHNtYWxsLW9yZGVyLTEgbWVkaXVtLW9yZGVyLTIiPgogICAgICAgIFRoaXMgY29sdW1uIHdpbGwgY29tZSBmaXJzdCBvbiBzbWFsbCwgYW5kIHNlY29uZCBvbiBtZWRpdW0gYW5kIGxhcmdlci4KICAgIDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWCBzdHlsZT0ibWFyZ2luLXRvcDoxZW07Ij4KICAgIDxDZWxsIFNpemU9InNtYWxsLTYiIENsYXNzPSJzbWFsbC1vcmRlci0yIj4gQ2VsbCAxIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9InNtYWxsLTYiIENsYXNzPSJzbWFsbC1vcmRlci0xIj4gQ2VsbCAyIDwvQ2VsbD4KPC9HcmlkWD4KCjxHcmlkWCBzdHlsZT0ibWFyZ2luLXRvcDoxZW07Ij4KICAgIDxDZWxsIFNpemU9InNtYWxsLTYiIENsYXNzPSJzbWFsbC1vcmRlci0xIj4gQ2VsbCAxIDwvQ2VsbD4KICAgIDxDZWxsIFNpemU9InNtYWxsLTYiIENsYXNzPSJzbWFsbC1vcmRlci0yIj4gQ2VsbCAyIDwvQ2VsbD4KPC9HcmlkWD4=" />
+
+        <GridX style="margin-top:1em;">
+            <Cell Size="small-6 small-order-1 medium-order-2" Class="small-order-2" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                This column will come second on small, and first on medium and larger.
+            </Cell>
+            <Cell Size="small-6 small-order-1 medium-order-2" Class="small-order-1" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                This column will come first on small, and second on medium and larger.
+            </Cell>
+        </GridX>
+
+        <GridX style="margin-top:1em;">
+            <Cell Size="small-6" Class="small-order-2" style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; "> Cell 1 </Cell>
+            <Cell Size="small-6" Class="small-order-1" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> Cell 2 </Cell>
+        </GridX>
+
+        <GridX style="margin-top:1em;">
+            <Cell Size="small-6" Class="small-order-1"
+                  style=" height: 2em;background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                Cell 1
+            </Cell>
+            <Cell Size="small-6" Class="small-order-2" style=" height: 2em; background: #0853da; text-align: center; color: white; padding-top: 0.4em; "> Cell 2 </Cell>
+        </GridX>
+
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Vertical Grids</h2>
+        <p>
+            The XY grid also supports vertical grids. Simply apply <Code Content="PEdyaWRYPg=="></Code> instead of <Code Content="PEdyaWRZPg=="></Code>.
+            The internal cells will shift automatically to provide spacing vertically rather than horizontally.
+        </p>
+        <p>
+            You can also apply margin or padding with <Code Content="VmVydGljYWxNYXJnaW49InRydWUi"></Code> and 
+            <Code Content="VmVydGljYWxQYWRkaW5nPSJ0cnVlIg=="></Code> to apply spacing to the top and bottom of cells.
+        </p>
+
+        <Callout TypeClass="secondary">
+            Please note for vertical grids to work, the grid needs a height.
+        </Callout>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRZIHN0eWxlPSJoZWlnaHQ6IDUwMHB4OyI+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC02IG1lZGl1bS04IGxhcmdlLTIiPgogICAgICAgIDYvOC8yCiAgICA8L0NlbGw+CiAgICA8Q2VsbCBTaXplPSJzbWFsbC02IG1lZGl1bS00IGxhcmdlLTEwIj4KICAgICAgICA2LzQvMTAKICAgIDwvQ2VsbD4KPC9HcmlkWT4=" />
+
+        <GridY style="margin-top:1em; height: 500px;">
+            <Cell Size="small-6 medium-8 large-2" style="background: #0099e4;text-align: center;color: white;padding-top: 0.4em; ">
+                6/8/2
+            </Cell>
+            <Cell Size="small-6 medium-4 large-10" style="background: #0853da; text-align: center; color: white; padding-top: 0.4em; ">
+                6/4/10
+            </Cell>
+        </GridY>
+
+        <br />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

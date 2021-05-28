@@ -1,0 +1,59 @@
+﻿@page "/forms";
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Forms</h2>
+        <p style=" margin-top: 1em;">
+            The Zurb Foundation 6 framework provides design for the input but also pattern and constraints with plugin Form Abide.
+        </p>
+
+        <p style=" margin-top: 1em;">
+            Unfortunately/Fortunately ;), Form Abide is not compatible with Blazor Foundation 6 due to FormEdit and the way C# manages the forms.
+            
+        </p>
+
+        <p style=" margin-top: 1em;">
+            Fortunately tho, we will show you how to mix in and the best way to validate dynamically a form using Blazor Foundation 6 method.
+        </p>
+        <ResponsiveEmbedAspectRatio>
+            <iframe style="margin-top:1em;" width="847" height="476" src="https://www.youtube.com/embed/6KwsGcEHVTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </ResponsiveEmbedAspectRatio>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Context Object</h2>
+        <p>
+            The object below is created to give context to our form, in the case it will be a login Forms.
+            Left alignment is the default, but you can use one of these classes to change this:
+        </p>
+        <HighlightCS Language="cs" Full="true" HeaderIcon="mdi-language-csharp" HeaderTitle="Class File"
+                     Content="dXNpbmcgU3lzdGVtLkNvbXBvbmVudE1vZGVsLkRhdGFBbm5vdGF0aW9uczsKcHVibGljIGNsYXNzIExvZ2luSW5wdXQKewogICAgW1JlcXVpcmVkKEVycm9yTWVzc2FnZSA9ICJUaGlzIGZpZWxkIGlzIHJlcXVpcmVkLiIpXQogICAgW0VtYWlsQWRkcmVzcyhFcnJvck1lc3NhZ2UgPSAiVGhpcyBmaWVsZCBtdXN0IGJlIGEgdmFsaWQgZW1haWwgYWRkcmVzcy4iKV0KICAgIFtTdHJpbmdMZW5ndGgoMjU2LCBFcnJvck1lc3NhZ2UgPSAiV2Ugb25seSBhbGxvdyBlbWFpbCAyNTYgY2hhcmFjdGVycyBvciBsZXNzLiIpXQogICAgcHVibGljIHN0cmluZyBFbWFpbCB7IGdldDsgc2V0OyB9CgogICAgW1JlcXVpcmVkKEVycm9yTWVzc2FnZSA9ICJUaGlzIGZpZWxkIGlzIHJlcXVpcmVkIildCiAgICBbRGF0YVR5cGUoRGF0YVR5cGUuUGFzc3dvcmQpXQogICAgW1N0cmluZ0xlbmd0aCg2NCwgTWluaW11bUxlbmd0aCA9IDEwKV0KICAgIHB1YmxpYyBzdHJpbmcgUGFzc3dvcmQgeyBnZXQ7IHNldDsgfQp9" />
+        <h2>The Form</h2>
+        <p>This is just to show how to implement a form in Blazor Foundation 6. The pattern is the same for any kind of forms.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="QHVzaW5nIEJsYXpvcl9Gb3VuZGF0aW9uXzYuQ29tcG9uZW50cy5HZW5lcmFsOwpAdXNpbmcgQmxhem9yX0ZvdW5kYXRpb25fNi5Db21wb25lbnRzLkNvbnRyb2xzOwpAdXNpbmcgQmxhem9yX0ZvdW5kYXRpb25fNi5Db21wb25lbnRzLkNvbnRhaW5lcnM7CjxFZGl0Rm9ybSBFZGl0Q29udGV4dD0iQ29udGV4dCIgPgogICAgPERhdGFBbm5vdGF0aW9uc1ZhbGlkYXRvciAvPgogICAgPEdyaWRDb250YWluZXI+CiAgICAgICAgPEdyaWRZPgogICAgICAgICAgICA8Q2VsbD4KICAgICAgICAgICAgICAgIDxsYWJlbD4gCiAgICAgICAgICAgICAgICAgICAgTGFzdCBOYW1lCiAgICAgICAgICAgICAgICAgICAgPElucHV0VGV4dCBAYmluZC1WYWx1ZT0iQExvZ2luSW5wdXRzLkVtYWlsIiBwbGFjZWhvbGRlcj0iRW1haWwgQWRkcmVzcyIgdHlwZT0idGV4dCIgcGF0dGVybj0iYWxwaGFfbnVtZXJpYyIgcmVxdWlyZWQgLz4KICAgICAgICAgICAgICAgIDwvbGFiZWw+CiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZm9ybS1lcnJvciIgPgogICAgICAgICAgICAgICAgICAgIDxWYWxpZGF0aW9uTWVzc2FnZSBGb3I9IkAoKCkgPT4gTG9naW5JbnB1dHMuRW1haWwpIiAvPgogICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICA8L0NlbGw+CiAgICAgICAgICAgIDxDZWxsPgogICAgICAgICAgICAgICAgPGxhYmVsPgogICAgICAgICAgICAgICAgICAgIExhc3QgTmFtZQogICAgICAgICAgICAgICAgICAgIDxJbnB1dFRleHQgQGJpbmQtVmFsdWU9IkBMb2dpbklucHV0cy5QYXNzd29yZCIgcGxhY2Vob2xkZXI9IlBhc3N3b3JkIiB0eXBlPSJwYXNzd29yZCIgcmVxdWlyZWQgLz4KCiAgICAgICAgICAgICAgICA8L2xhYmVsPgogICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImZvcm0tZXJyb3IiPgogICAgICAgICAgICAgICAgICAgIDxWYWxpZGF0aW9uTWVzc2FnZSBGb3I9IkAoKCkgPT4gTG9naW5JbnB1dHMuUGFzc3dvcmQpIiAvPgogICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICA8L0NlbGw+CiAgICAgICAgICAgIDxDZWxsPgogICAgICAgICAgICAgICAgPEJ1dHRvbkdyb3VwPgogICAgICAgICAgICAgICAgICAgIDxCdXR0b24gQG9uY2xpY2s9IkAoKCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmICghQ29udGV4dC5WYWxpZGF0ZSgpKSB7IHJldHVybjsgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIERhdGEgQXJlIFZhbGlkdGUsIFNlbmQgRm9ybSBKU09OLCBHUlBDLi4uCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KSI+VmFsaWRhdGU8L0J1dHRvbj4KICAgICAgICAgICAgICAgIDwvQnV0dG9uR3JvdXA+CiAgICAgICAgICAgIDwvQ2VsbD4KICAgICAgICA8L0dyaWRZPgogICAgPC9HcmlkQ29udGFpbmVyPgo8L0VkaXRGb3JtPgoKQGNvZGUgewogICAgcHVibGljIExvZ2luSW5wdXQgTG9naW5JbnB1dHMgeyBnZXQ7IHNldDsgfSA9IG5ldyBMb2dpbklucHV0KCk7CiAgICBwdWJsaWMgRWRpdENvbnRleHQgQ29udGV4dCB7IGdldDsgc2V0OyB9CgogICAgLy8vIDxzdW1tYXJ5PgogICAgLy8vIFNlbGYgVW5pcXVlIEluc3RhbmNlLCBBbGxvdyBmb3IgQWNjZXNzIGZyb20gb3V0c2lkZSBjb250cm9sbGVycyBsaWtlIFJldmVhbENvbnRyb2xsZXIKICAgIC8vLyA8L3N1bW1hcnk+CiAgICBwdWJsaWMgc3RhdGljIEF1dGhMb2dpbkVkaXRvciBJbnN0YW5jZSB7IGdldDsgc2V0OyB9ID0gbnVsbDsKCiAgICBwcm90ZWN0ZWQgb3ZlcnJpZGUgdm9pZCBPbkluaXRpYWxpemVkKCkKICAgIHsKICAgICAgICBiYXNlLk9uSW5pdGlhbGl6ZWQoKTsKICAgICAgICBDb250ZXh0ID0gbmV3IEVkaXRDb250ZXh0KExvZ2luSW5wdXRzKTsKICAgIH0KCn0K" />
+        <p>As you can see, we don't submit the form using conventional way to do so and since we and probably yourself as well use JSON or GRPC apis submiting is kinda limiting your possibilities. With that method we lift limitation allowing you to use external buttons or other triggers such as <Code>RevealController's</Code> buttons to submit your data to the server</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Simple as That, Nothing Else to say...</h2>
+        <p>All C# Types of inputbox are available use them.</p>
+        
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+
+
+@code {
+
+}

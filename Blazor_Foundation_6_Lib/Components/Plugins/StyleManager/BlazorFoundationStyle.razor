@@ -1,0 +1,43 @@
+﻿@using Components.Plugins.StyleManager;
+@inject IStyleManagement StyleManagement;
+@implements IDisposable; 
+<style>
+    @(":root {")
+        @foreach (var themeVar in Style)
+        {
+            @($"{themeVar.Key}:{themeVar.Value};")
+        }
+    @("}")
+</style>
+
+
+
+@code{     
+
+    private Dictionary<string, string> Style { get; set; } = new Dictionary<string, string>();
+    private static string Guid { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        if(Guid != null) { throw new Exception("The Style Management can only be added once usually in the shared layout."); }
+        Guid = System.Guid.NewGuid().ToString();
+        await Populate();
+        StyleManagement.OnUpdate += Populate;
+    }
+
+    private async Task Populate()
+    {
+        Style.Clear();
+        foreach (var prop in StyleManagement.GetAll())
+        {
+            Style.Add(prop.Key, StyleManagement.Get(prop.Key));
+        }
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        StyleManagement.OnUpdate -= Populate;
+        Guid = null;
+    }
+}

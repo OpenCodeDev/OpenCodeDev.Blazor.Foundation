@@ -1,0 +1,167 @@
+﻿@page "/button";
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Button</h2>
+        <p>
+            A basic button can be created with minimal markup. Because buttons can be used for many purposes, it's important to use the right tag.
+        </p>
+        <ul>
+            <li>
+                Use the <Code Content="PE5hdkxpbms+"></Code> tag if the button is a link to another page, or a link to an anchor within a page.
+                Generally anchors don't require C# code to work.
+            </li>
+            <li>
+                Use the <Code Content="PEJ1dHRvbj4="></Code> tag if the button performs an action that changes something on the current page.
+                <Code Content="PEJ1dHRvbj4="></Code> elements always require C# to function
+            </li>
+        </ul>
+
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+            Buttons are convenient tools when you need more traditional actions.
+            To that end, Foundation has many easy to use button styles that you can customize or override to fit your needs.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbj5MZWFybiBNb3JlPC9CdXR0b24+CjxCdXR0b24+VmlldyBBbGwgRmVhdHVyZXM8L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0ic3VjY2VzcyI+U2F2ZTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJhbGVydCI+RGVsZXRlPC9CdXR0b24+" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>Learn More</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>View All Features</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="success">Save</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="alert">Delete</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Sizing</h2>
+        <p>
+            Additional classes can be added to your button to change its size and shape.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBDbGFzcz0idGlueSI+VGlueTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJzbWFsbCI+U21hbGw8L0J1dHRvbj4KPEJ1dHRvbj5EZWZhdWx0PC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImxhcmdlIj5MYXJnZTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJzbWFsbCBleHBhbmRlZCI+TGFyZ2U8L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0iZXhwYW5kZWQiPkxhcmdlPC9CdXR0b24+" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="tiny">Tiny</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="small">Small</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>Default</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="large">Large</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="small expanded">Large</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="expanded">Large</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Coloring</h2>
+        <p>
+            Add color classes to give buttons additional meaning.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBDbGFzcz0icHJpbWFyeSI+UHJpbWFyeTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJzZWNvbmRhcnkiPlNlY29uZGFyeTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJzdWNjZXNzIj5TdWNjZXNzPC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImFsZXJ0Ij5BbGVydDwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJ3YXJuaW5nIj5XYXJuaW5nPC9CdXR0b24+" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>Primary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="secondary">Secondary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="success">Success</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="alert">Alert</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="warning">Warning</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Hollow Style</h2>
+        <p>
+            Add the <Code>hollow</Code> class to a button to give it a hollow style.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBDbGFzcz0iaG9sbG93Ij5QcmltYXJ5PC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImhvbGxvdyBzZWNvbmRhcnkiPlNlY29uZGFyeTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJob2xsb3cgc3VjY2VzcyI+U3VjY2VzczwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJob2xsb3cgYWxlcnQiPkFsZXJ0PC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImhvbGxvdyB3YXJuaW5nIj5XYXJuaW5nPC9CdXR0b24+" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow">Primary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow secondary">Secondary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow success">Success</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow alert">Alert</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow warning">Warning</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Disabled Buttons</h2>
+        <p>
+            The <Code>disabled</Code> class will give buttons a faded appearance. The class is a purely visual style, and won't actually disable a control.
+            For <Code Content="PEJ1dHRvbj4="></Code> elements, you can add the <Code>disabled</Code> attribute to both disable and style it.
+            If you want to disable a link, you should add the aria-disabled attribute to mark it as disabled for assistive technology.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBkaXNhYmxlZD0idHJ1ZSI+UHJpbWFyeTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJzZWNvbmRhcnkiIGRpc2FibGVkPSJ0cnVlIj5TZWNvbmRhcnk8L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0ic3VjY2VzcyIgZGlzYWJsZWQ9InRydWUiPlN1Y2Nlc3M8L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0iYWxlcnQiIGRpc2FibGVkPSJ0cnVlIj5BbGVydDwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJ3YXJuaW5nIiBkaXNhYmxlZD0idHJ1ZSI+V2FybmluZzwvQnV0dG9uPgoKPEJ1dHRvbiBDbGFzcz0iaG9sbG93IiBkaXNhYmxlZD0idHJ1ZSI+UHJpbWFyeTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJob2xsb3cgc2Vjb25kYXJ5IiBkaXNhYmxlZD0idHJ1ZSI+U2Vjb25kYXJ5PC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImhvbGxvdyBzdWNjZXNzIiBkaXNhYmxlZD0idHJ1ZSI+U3VjY2VzczwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJob2xsb3cgYWxlcnQiIGRpc2FibGVkPSJ0cnVlIj5BbGVydDwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJob2xsb3cgd2FybmluZyIgZGlzYWJsZWQ9InRydWUiPldhcm5pbmc8L0J1dHRvbj4=" />
+
+        <NavLink class="button disabled" href="#" aria-disabled>Primary</NavLink>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="secondary" disabled="true">Secondary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="success" disabled="true">Success</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="alert" disabled="true">Alert</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="warning" disabled="true">Warning</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow" disabled="true">Primary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow secondary" disabled="true">Secondary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow success" disabled="true">Success</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow alert" disabled="true">Alert</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow warning" disabled="true">Warning</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Clear Style</h2>
+        <p>
+            Add the <Code>clear</Code> class to a button to give it a clear style.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBDbGFzcz0iY2xlYXIgIj5QcmltYXJ5PC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImNsZWFyIHNlY29uZGFyeSI+U2Vjb25kYXJ5PC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImNsZWFyIHN1Y2Nlc3MiPlN1Y2Nlc3M8L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0iY2xlYXIgYWxlcnQiPkFsZXJ0PC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImNsZWFyIHdhcm5pbmciPldhcm5pbmc8L0J1dHRvbj4=" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear ">Primary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear secondary">Secondary</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear success">Success</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear alert">Alert</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear warning">Warning</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Dropdown Arrows</h2>
+        <p>
+            Add a dropdown arrow to your button with the <Code>dropdown</Code> class.
+        </p>
+
+        <Callout TypeClass="primary">
+            This doesn't add dropdown functionality automatically. To do that, you can attach our <NavLink href="/dropdown">Dropdown plugin</NavLink>.
+        </Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBDbGFzcz0iZHJvcGRvd24gdGlueSI+RHJvcGRvd248L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0iZHJvcGRvd24gc21hbGwiPkRyb3Bkb3duPC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImRyb3Bkb3duIj5Ecm9wZG93bjwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJkcm9wZG93biBsYXJnZSI+RHJvcGRvd248L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0iZHJvcGRvd24gZXhwYW5kZWQiPkRyb3Bkb3duPC9CdXR0b24+" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="dropdown tiny">Dropdown</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="dropdown small">Dropdown</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="dropdown">Dropdown</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="dropdown large">Dropdown</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="dropdown expanded">Dropdown</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

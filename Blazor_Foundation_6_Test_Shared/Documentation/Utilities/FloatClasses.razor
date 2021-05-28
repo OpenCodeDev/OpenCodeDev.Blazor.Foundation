@@ -1,0 +1,52 @@
+﻿@page "/float-classes";
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Float Classes</h2>
+        <p>
+            Foundation includes a handful of helpful float classes to add common positioning behaviors to elements.
+
+        </p>
+
+        <h2>Float Left/Right</h2>
+        <p>
+            You can change the float behavior of an element by adding the <Code Content="ZmxvYXQtbGVmdA==" ></Code> or
+            <Code Content="ZmxvYXQtcmlnaHQ=" ></Code> classes to an element.
+            To clear floats, add the class <Code Content="Y2xlYXJmaXg=" ></Code> to the parent element.
+        </p>
+        <Callout TypeClass="secondary">
+            Visibility classes use <Code Content="IWltcG9ydGFudA==" ></Code> to ensure they aren't overridden by more specific selectors.
+            This framework conscientiously avoids using <Code Content="IWltcG9ydGFudA==" ></Code> declarations.
+            This is one of the few components that does.
+        </Callout>
+
+        <Callout TypeClass="warning">
+            Float classes don't flip direction in a right-to-left environment—left always means <Code Content="bGVmdA==" ></Code>, and 
+            <Code Content="cmlnaHQ=" ></Code> always means <Code Content="cmlnaHQ=" ></Code>.
+        </Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PENhbGxvdXQgQ2xhc3M9ImNsZWFyZml4Ij4KICAgIDxCdXR0b24gQ2xhc3M9ImZsb2F0LWxlZnQiPkxlZnQ8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImZsb2F0LXJpZ2h0Ij5SaWdodDwvQnV0dG9uPgo8L0NhbGxvdXQ+" />
+        <Callout Class="clearfix">
+            <Button Class="float-left">Left</Button>
+            <Button Class="float-right">Right</Button>
+        </Callout>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Float Center</h2>
+        <p>
+            Okay, it's not really a float, but you can add the <Code Content="ZmxvYXQtY2VudGVy" ></Code> class to an element to engage the automatic margin centering trick. 
+            Note that this will only work on elements with an absolute width, which means not a percentage or <Code Content="YXV0bw==" ></Code> width.
+        </p>
+
+        <Button Class="float-center">Centered</Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

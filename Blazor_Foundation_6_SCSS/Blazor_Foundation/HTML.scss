@@ -1,0 +1,234 @@
+﻿body {
+    background: var(--body-bg-color);
+    color: var(--body-ft-color);
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+
+:focus {
+    outline: none;
+}
+
+a {
+    color: var(--link-ft-color);
+}
+
+
+a:hover, a:focus {
+    color: var(--link-ft-color);
+    filter: grayscale(50%);
+}
+
+.button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
+    background: var(--button-bg-color);
+    color: var(--button-ft-color);
+    border-radius:var(--button-border-radius);
+}
+
+.button:hover, .button:focus {
+    background: var(--button-bg-color);
+    color: var(--button-ft-color);
+    filter: grayscale(50%);
+}
+
+.button.primary, .button.primary.disabled, .button.primary[disabled], .button.primary.disabled:hover, .button.primary[disabled]:hover, .button.primary.disabled:focus, .button.primary[disabled]:focus {
+    background: var(--button-primary-bg-color);
+    color: var(--button-primary-ft-color);
+}
+
+.button.primary:hover, .button.primary:focus {
+    background: var(--button-primary-bg-color);
+    color: var(--button-primary-ft-color);
+    filter: grayscale(50%);
+}
+
+.button.secondary, .button.secondary.disabled, .button.secondary[disabled], .button.secondary.disabled:hover, .button.secondary[disabled]:hover, .button.secondary.disabled:focus, .button.secondary[disabled]:focus {
+    background: var(--button-secondary-bg-color);
+    color: var(--button-secondary-ft-color);
+}
+
+.button.secondary:hover, .button.secondary:focus {
+    background: var(--button-secondary-bg-color);
+    color: var(--button-secondary-ft-color);
+    filter: grayscale(50%);
+}
+
+.button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus {
+    background: var(--button-success-bg-color);
+    color: var(--button-success-ft-color);
+}
+
+.button.success:hover, .button.success:focus {
+    background: var(--button-success-bg-color);
+    color: var(--button-success-ft-color);
+    filter: grayscale(50%);
+}
+
+.button.warning, .button.warning.disabled, .button.warning[disabled], .button.warning.disabled:hover, .button.warning[disabled]:hover, .button.warning.disabled:focus, .button.warning[disabled]:focus {
+    background: var(--button-warning-bg-color);
+    color: var(--button-warning-ft-color);
+}
+
+.button.warning:hover, .button.warning:focus {
+    background: var(--button-warning-bg-color);
+    color: var(--button-warning-ft-color);
+    filter: grayscale(50%);
+}
+
+.button.alert, .button.alert.disabled, .button.alert[disabled], .button.alert.disabled:hover, .button.alert[disabled]:hover, .button.alert.disabled:focus, .button.alert[disabled]:focus {
+    background: var(--button-alert-bg-color);
+    color: var(--button-alert-ft-color);
+}
+
+.button.alert:hover, .button.alert:focus {
+    background: var(--button-alert-bg-color);
+    color: var(--button-alert-ft-color);
+    filter: grayscale(50%);
+}
+
+
+.button.hollow, .button.hollow.disabled, .button.hollow[disabled], .button.hollow.disabled:hover, .button.hollow[disabled]:hover, .button.hollow.disabled:focus, .button.hollow[disabled]:focus {
+    border: 1px solid var(--button-primary-bg-color);
+    color: var(--button-primary-bg-color);
+    background-color: transparent;
+}
+
+.button.hollow:hover, .button.hollow:focus {
+    border: 1px solid var(--button-primary-bg-color);
+    color: var(--button-primary-bg-color);
+    filter: grayscale(50%);
+    background-color: transparent;
+}
+
+.button.hollow.primary, .button.hollow.primary.disabled, .button.hollow.primary[disabled], .button.hollow.primary.disabled:hover, .button.hollow.primary[disabled]:hover, .button.hollow.primary.disabled:focus, .button.hollow.primary[disabled]:focus {
+    border: 1px solid var(--button-primary-bg-color);
+    color: var(--button-primary-bg-color);
+}
+
+.button.hollow.primary:hover, .button.hollow.primary:focus {
+    border: 1px solid var(--button-primary-bg-color);
+    color: var(--button-primary-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.hollow.secondary, .button.hollow.secondary.disabled, .button.hollow.secondary[disabled], .button.hollow.secondary.disabled:hover, .button.hollow.secondary[disabled]:hover, .button.hollow.secondary.disabled:focus, .button.hollow.secondary[disabled]:focus {
+    border: 1px solid var(--button-secondary-bg-color);
+    color: var(--button-secondary-bg-color);
+}
+
+.button.hollow.secondary:hover, .button.hollow.secondary:focus {
+    border: 1px solid var(--button-secondary-bg-color);
+    color: var(--button-secondary-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.hollow.success, .button.hollow.success.disabled, .button.hollow.success[disabled], .button.hollow.success.disabled:hover, .button.hollow.success[disabled]:hover, .button.hollow.success.disabled:focus, .button.hollow.success[disabled]:focus {
+    border: 1px solid var(--button-success-bg-color);
+    color: var(--button-success-bg-color);
+}
+
+.button.hollow.success:hover, .button.hollow.success:focus {
+    border: 1px solid var(--button-success-bg-color);
+    color: var(--button-success-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.hollow.warning, .button.hollow.warning.disabled, .button.hollow.warning[disabled], .button.hollow.warning.disabled:hover, .button.hollow.warning[disabled]:hover, .button.hollow.warning.disabled:focus, .button.hollow.warning[disabled]:focus {
+    border: 1px solid var(--button-warning-bg-color);
+    color: var(--button-warning-bg-color);
+}
+
+.button.hollow.warning:hover, .button.hollow.warning:focus {
+    border: 1px solid var(--button-warning-bg-color);
+    color: var(--button-warning-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.hollow.alert, .button.hollow.alert.disabled, .button.hollow.alert[disabled], .button.hollow.alert.disabled:hover, .button.hollow.alert[disabled]:hover, .button.hollow.alert.disabled:focus, .button.hollow.alert[disabled]:focus {
+    border: 1px solid var(--button-alert-bg-color);
+    color: var(--button-alert-bg-color);
+}
+
+.button.hollow.alert:hover, .button.hollow.alert:focus {
+    border: 1px solid var(--button-alert-bg-color);
+    color: var(--button-alert-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.clear, .button.clear:hover, .button.clear:focus, .button.clear.disabled, .button.clear.disabled:hover, .button.clear.disabled:focus, .button.clear[disabled], .button.clear[disabled]:hover, .button.clear[disabled]:focus {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.button.clear, .button.clear.disabled, .button.clear[disabled], .button.clear.disabled:hover, .button.clear[disabled]:hover, .button.clear.disabled:focus, .button.clear[disabled]:focus {
+    color: var(--button-primary-bg-color);
+}
+
+.button.clear:hover, .button.clear:focus {
+    color: var(--button-primary-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.clear.primary, .button.clear.primary.disabled, .button.clear.primary[disabled], .button.clear.primary.disabled:hover, .button.clear.primary[disabled]:hover, .button.clear.primary.disabled:focus, .button.clear.primary[disabled]:focus {
+    color: var(--button-primary-bg-color);
+}
+
+.button.clear.primary:hover, .button.clear.primary:focus {
+    color: var(--button-primary-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.clear.secondary, .button.clear.secondary.disabled, .button.clear.secondary[disabled], .button.clear.secondary.disabled:hover, .button.clear.secondary[disabled]:hover, .button.clear.secondary.disabled:focus, .button.clear.secondary[disabled]:focus {
+    color: var(--button-secondary-bg-color);
+}
+
+.button.clear.secondary:hover, .button.clear.secondary:focus {
+    color: var(--button-secondary-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.clear.success, .button.clear.success.disabled, .button.clear.success[disabled], .button.clear.success.disabled:hover, .button.clear.success[disabled]:hover, .button.clear.success.disabled:focus, .button.clear.success[disabled]:focus {
+    color: var(--button-success-bg-color);
+}
+
+.button.clear.success:hover, .button.clear.success:focus {
+    color: var(--button-success-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.clear.warning, .button.clear.warning.disabled, .button.clear.warning[disabled], .button.clear.warning.disabled:hover, .button.clear.warning[disabled]:hover, .button.clear.warning.disabled:focus, .button.clear.warning[disabled]:focus {
+    color: var(--button-warning-bg-color);
+}
+
+.button.clear.warning:hover, .button.clear.warning:focus {
+    color: var(--button-warning-bg-color);
+    filter: grayscale(50%);
+}
+
+.button.clear.alert, .button.clear.alert.disabled, .button.clear.alert[disabled], .button.clear.alert.disabled:hover, .button.clear.alert[disabled]:hover, .button.clear.alert.disabled:focus, .button.clear.alert[disabled]:focus {
+    color: var(--button-alert-bg-color);
+}
+
+.button.clear.alert:hover, .button.clear.alert:focus {
+    color: var(--button-alert-bg-color);
+    filter: grayscale(50%);
+}
+
+input:checked ~ .switch-paddle {
+    background: var(--switch-bg-color);
+    
+}
+
+.switch.small .switch-paddle {
+    border-radius: var(--switch-border-radius);
+}
+
+.switch-paddle::after {
+    border-radius: var(--switch-paddle-border-radius);
+}
+

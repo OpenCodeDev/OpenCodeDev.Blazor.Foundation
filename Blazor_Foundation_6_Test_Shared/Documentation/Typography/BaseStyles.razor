@@ -1,0 +1,291 @@
+﻿@page "/base-styles";
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Base Typography</h2>
+        <p>
+            Typography in Foundation 6 is meant to make your life easier by providing clean, attractive,
+            simple default styles for all of the most basic typographical elements.
+        </p>
+
+        <h2>Paragraphs</h2>
+        <p>
+            This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm.
+            To show what a paragraph looks like this needs a little more content—so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool.
+            Use the <Code Content="PHN0cm9uZz4="></Code> and <Code Content="PGVtPg=="></Code>tags to denote text that should be displayed or read with emphasis.
+            Browsers will <strong>bold</strong> and <em>italicize</em> the words, while screen readers will read them with emphasis.
+        </p>
+        <Callout TypeClass="secondary">
+            If the emphasis of a phrase is important, don't make the emphasis purely visual—use the <Code Content="PHN0cm9uZz4="></Code> or <Code Content="PGVtPg=="></Code> tags to mark it as well.
+            Both of these tags have built-in styles, but there's no harm in adding additional styles in specific contexts.
+        </Callout>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHA+VGhpcyBpcyBhIHBhcmFncmFwaC4gUGFyYWdyYXBocyBhcmUgcHJlc2V0IHdpdGggYSBmb250IHNpemUsIGxpbmUgaGVpZ2h0IGFuZCBzcGFjaW5nIHRvIG1hdGNoIHRoZSBvdmVyYWxsIHZlcnRpY2FsIHJoeXRobS4gVG8gc2hvdyB3aGF0IGEgcGFyYWdyYXBoIGxvb2tzIGxpa2UgdGhpcyBuZWVkcyBhIGxpdHRsZSBtb3JlIGNvbnRlbnQgc28sIGRpZCB5b3Uga25vdyB0aGF0IHRoZXJlIGFyZSBzdG9ybXMgb2NjdXJyaW5nIG9uIEp1cGl0ZXIgdGhhdCBhcmUgbGFyZ2VyIHRoYW4gdGhlIEVhcnRoPyBQcmV0dHkgY29vbC4gV3JhcCBzdHJvbmcgYXJvdW5kIHR5cGUgdG8gPHN0cm9uZz5tYWtlIGl0IGJvbGQhPC9zdHJvbmc+LiBZb3UgY2FuIGFsc28gdXNlIGVtIHRvIDxlbT5pdGFsaWNpemUgeW91ciB3b3JkczwvZW0+LjwvcD4=" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Header</h2>
+        <p>
+            Foundation includes styles for all headings—they're balanced and sized along a modular scale.
+        </p>
+
+        <Callout TypeClass="secondary">
+            Avoid skipping heading levels when structuring your document, as it confuses screen readers.
+            For example, after using an <Code Content="PGgyPg=="></Code> in your code, the next heading used should be either <Code Content="PGgyPg=="></Code> or <Code Content="PGgzPg=="></Code>.
+            If you need a heading to look bigger or smaller to match a specific style, use CSS to override the default size.
+        </Callout>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGgxPmgxLiBUaGlzIGlzIGEgdmVyeSBsYXJnZSBoZWFkZXIuPC9oMT4KPGgyPmgyLiBUaGlzIGlzIGEgbGFyZ2UgaGVhZGVyLjwvaDI+CjxoMz5oMy4gVGhpcyBpcyBhIG1lZGl1bSBoZWFkZXIuPC9oMz4KPGg0Pmg0LiBUaGlzIGlzIGEgbW9kZXJhdGUgaGVhZGVyLjwvaDQ+CjxoNT5oNS4gVGhpcyBpcyBhIHNtYWxsIGhlYWRlci48L2g1Pgo8aDY+aDYuIFRoaXMgaXMgYSB0aW55IGhlYWRlci48L2g2Pg==" />
+        <h1>h1. This is a very large header.</h1>
+        <h2>h2. This is a large header.</h2>
+        <h3>h3. This is a medium header.</h3>
+        <h4>h4. This is a moderate header.</h4>
+        <h5>h5. This is a small header.</h5>
+        <h6>h6. This is a tiny header.</h6>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Header Styles</h2>
+        <p>
+            The framework includes two typographic scales—one uses a narrow range of sizes for small-sized screens, 
+            and the other uses a larger range of sizes for medium- and larger-sized screens.
+        </p>
+        <p>Go see <NavLink href="https://get.foundation/sites/docs/typography-base.html#header">Header</NavLink> from ZURB Foundation site</p>
+        <TableWrapper>
+            <TableHeader>
+                <TableHeaderItem>Header</TableHeaderItem>
+                <TableHeaderItem>Default</TableHeaderItem>
+                <TableHeaderItem>Medium and Up</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem><Code Content="PGgxPg=="></Code></TableBodyRowItem>
+                    <TableBodyRowItem>24px</TableBodyRowItem>
+                    <TableBodyRowItem>48px</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem><Code Content="PGgyPg=="></Code></TableBodyRowItem>
+                    <TableBodyRowItem>20px</TableBodyRowItem>
+                    <TableBodyRowItem>40px</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem><Code Content="PGgzPg=="></Code></TableBodyRowItem>
+                    <TableBodyRowItem>19px</TableBodyRowItem>
+                    <TableBodyRowItem>31px</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem><Code Content="PGg0Pg=="></Code></TableBodyRowItem>
+                    <TableBodyRowItem>18px</TableBodyRowItem>
+                    <TableBodyRowItem>25px</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem><Code Content="PGg1Pg=="></Code></TableBodyRowItem>
+                    <TableBodyRowItem>17px</TableBodyRowItem>
+                    <TableBodyRowItem>20px</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem><Code Content="PGg2Pg=="></Code></TableBodyRowItem>
+                    <TableBodyRowItem>16px</TableBodyRowItem>
+                    <TableBodyRowItem>16px</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Small Header Segments</h2>
+        <p>
+            By inserting a <Code Content="PHNtYWxsPg=="></Code> element into a header Foundation will scale the header font size down for an inline element,
+            allowing you to use this for subtitles or other secondary header text.
+        </p>
+        <p>Go see <NavLink href="https://get.foundation/sites/docs/typography-base.html#header">Header</NavLink> from ZURB Foundation site</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGgzPkJsYXpvciBGb3VuZGF0aW9uIGZvciBXQVBQL1BXQS9TUEEgPHNtYWxsPlZlcnNpb24gMy4wLjA8L3NtYWxsPjwvaDM+" />
+
+        <h3>Blazor Foundation for WAPP/PWA/SPA <small>Version 3.0.0</small></h3>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Links</h2>
+        <p>
+            Links are very standard, and the color is preset to the Foundation primary color.
+        </p>
+        <Callout TypeClass="warning">
+            We recommend using <Code Content="PE5hdkxpbms+"></Code> from Blazor!
+        </Callout>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PHA+TGlua3MgYXJlIHZlcnkgc3RhbmRhcmQsIGFuZCB0aGUgY29sb3IgaXMgcHJlc2V0IHRvIHRoZSBGb3VuZGF0aW9uIHByaW1hcnkgY29sb3IuIDxOYXZMaW5rIGhyZWY9Imdsb2JhbC5odG1sIj5MZWFybiBtb3JlIGFib3V0IEZvdW5kYXRpb24ncyBnbG9iYWwgY29sb3JzLjwvTmF2TGluaz48L3A+" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Dividers</h2>
+        <p>
+            Use dividers to define thematic breaks between paragraphs.
+            To denote the end of one section of a page and the start of another, it's better to use the <Code Content="PHNlY3Rpb24+"></Code> tag.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGhyIC8+" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Unordered Lists</h2>
+        <p> Use an unordered list to... list things, if the order of the items doesn't matter. </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHVsPgogIDxsaT5MaXN0IGl0ZW0gd2l0aCBhIG11Y2ggbG9uZ2VyIGRlc2NyaXB0aW9uIG9yIG1vcmUgY29udGVudC48L2xpPgogIDxsaT5MaXN0IGl0ZW08L2xpPgogIDxsaT5MaXN0IGl0ZW0KICAgIDx1bD4KICAgICAgPGxpPk5lc3RlZCBsaXN0IGl0ZW08L2xpPgogICAgICA8bGk+TmVzdGVkIGxpc3QgaXRlbTwvbGk+CiAgICAgIDxsaT5OZXN0ZWQgbGlzdCBpdGVtPC9saT4KICAgIDwvdWw+CiAgPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KPC91bD4=" />
+        <ul>
+            <li>List item with a much longer description or more content.</li>
+            <li>List item</li>
+            <li>
+                List item
+                <ul>
+                    <li>Nested list item</li>
+                    <li>Nested list item</li>
+                    <li>Nested list item</li>
+                </ul>
+            </li>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+        </ul>
+        <hr />
+        <h2>Ordered Lists</h2>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PG9sPgogIDxsaT5DaGVlc2UgKGVzc2VudGlhbCk8L2xpPgogIDxsaT5QZXBwZXJvbmk8L2xpPgogIDxsaT5CYWNvbgogICAgPG9sPgogICAgICA8bGk+Tm9ybWFsIGJhY29uPC9saT4KICAgICAgPGxpPkNhbmFkaWFuIGJhY29uPC9saT4KICAgIDwvb2w+CiAgPC9saT4KICA8bGk+U2F1c2FnZTwvbGk+CiAgPGxpPk9uaW9uczwvbGk+CiAgPGxpPk11c2hyb29tczwvbGk+Cjwvb2w+" />
+        <ol>
+            <li>Cheese (essential)</li>
+            <li>Pepperoni</li>
+            <li>
+                Bacon
+                <ol>
+                    <li>Normal bacon</li>
+                    <li>Canadian bacon</li>
+                </ol>
+            </li>
+            <li>Sausage</li>
+            <li>Onions</li>
+            <li>Mushrooms</li>
+        </ol>
+        <hr />
+
+        <h2>Definition Lists</h2>
+        <p>A definition list (<Code Content="PGRsPg=="></Code>) is used to display name-value pairs, like metadata or a dictionary definition. 
+            Each term (<Code Content="PGR0Pg=="></Code>) is paired with one or more definitions (<Code Content="PGRkPg==" ></Code>).</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGRsPgogIDxkdD5UaW1lPC9kdD4KICA8ZGQ+VGhlIGluZGVmaW5pdGUgY29udGludWVkIHByb2dyZXNzIG9mIGV4aXN0ZW5jZSBhbmQgZXZlbnRzIGluIHRoZSBwYXN0LCBwcmVzZW50LCBhbmQgZnV0dXJlIHJlZ2FyZGVkIGFzIGEgd2hvbGUuPC9kZD4KICA8ZHQ+U3BhY2U8L2R0PgogIDxkZD5BIGNvbnRpbnVvdXMgYXJlYSBvciBleHBhbnNlIHRoYXQgaXMgZnJlZSwgYXZhaWxhYmxlLCBvciB1bm9jY3VwaWVkLjwvZGQ+CiAgPGRkPlRoZSBkaW1lbnNpb25zIG9mIGhlaWdodCwgZGVwdGgsIGFuZCB3aWR0aCB3aXRoaW4gd2hpY2ggYWxsIHRoaW5ncyBleGlzdCBhbmQgbW92ZS48L2RkPgo8L2RsPg==" />
+        <dl>
+            <dt>Time</dt>
+            <dd>The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.</dd>
+            <dt>Space</dt>
+            <dd>A continuous area or expanse that is free, available, or unoccupied.</dd>
+            <dd>The dimensions of height, depth, and width within which all things exist and move.</dd>
+        </dl>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Blockquotes</h2>
+        <p>Sometimes other people say smart things, and you may want to mention those things with a quote. We've got you covered.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGJsb2NrcXVvdGU+CiAgUG9vciBwZW9wbGUgZmFpbCBiZWNhdXNlIG9uIG9uZSBjb21tb24gYmVoYXZpb3VyOiBUaGVpciBXaG9sZSBMaWZlIGlzIEFib3V0IFdhaXRpbmcuCiAgPGNpdGU+SmFjayBNYTwvY2l0ZT4KPC9ibG9ja3F1b3RlPg==" />
+        <blockquote>
+            Poor people fail because on one common behaviour: Their Whole Life is About Waiting.
+            <cite>Jack Ma</cite>
+        </blockquote>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Abbreviations</h2>
+        <p>Use the <Code Content="PGFiYnI+"></Code> tag to annotate a shortened term. Abbreviations must always have a <Code>title</Code> attribute which clarifies the full term.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHA+SW4gbXkgZHJlYW0gbGFzdCBuaWdodCwgSSBzYXcgPGFiYnIgdGl0bGU9IkpvaG4gUm9uYWxkIFJldWVsIj5KLiBSLiBSLjwvYWJicj4gVG9sa2llbiBhbmQgR2VvcmdlIDxhYmJyIHRpdGxlPSJSYXltb25kIFJpY2hhcmQiPlIuIFIuPC9hYmJyPiBNYXJ0aW4gaGFuZ2luZyBvdXQgb24gU3Vuc2V0IDxhYmJyIHRpdGxlPSJCb3VsZXZhcmQiPkJsdmQ8L2FiYnI+LjwvcD4=" />
+
+        <p>In my dream last night, I saw <abbr title="John Ronald Reuel">J. R. R.</abbr> Tolkien and George <abbr title="Raymond Richard">R. R.</abbr> Martin hanging out on Sunset <abbr title="Boulevard">Blvd</abbr>.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Code</h2>
+        <p>
+            Format references to code with the <Code Content="PGNvZGU+"></Code> or <Code Content="PENvZGU+"></Code> tag.
+            In order for angle brackets <Code Content="PD4="></Code> to render correctly,
+            you need to change them to <Code Content="Jmx0Ow=="></Code> and <Code Content="Jmd0Ow=="></Code>.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGNvZGU+VGhpcyBpcyB1c2luZyAmbHQ7Y29kZSZndDs8L2NvZGU+" />
+        <code>This is using &lt;code&gt;</code>
+        <Callout style="margin-top:1em;" TypeClass="warning">
+            You can use Base64 to pass code if you dont wanna deal with <Code Content="PD4="></Code> conversion.
+        </Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PENvZGUgQ29udGVudD0iVkdocGN5QnBjeUIxYzJsdVp5QThRMjlrWlNCRGIyNTBaVzUwUFNJaUlDOCsiPjwvQ29kZT4=" />
+
+        <Code Content="VGhpcyBpcyB1c2luZyA8Q29kZSBDb250ZW50PSIiPjwvQ29kZT4="></Code>
+        <Spacing VerticalSpacing="0.6em" />
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PENvZGU+VGhpcyBpcyB1c2luZyAmbHQ7Q29kZSZndDtDb250ZW50Jmx0O0NvZGUmZ3Q7PC9Db2RlPg==" />
+        <Code style="margin-top:1em;">This is using &lt;Code&gt;Content&lt;Code&gt;</Code>
+        <Spacing VerticalSpacing="0.6em" />
+        <Callout TypeClass="warning">
+            You can use our plugin <NavLink href="/code-highlighter">HighlightCS</NavLink> to code snippet.
+        </Callout>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Keystrokes</h2>
+        <p>Use the <Code Content="PGtiZD4="></Code> element to annotate a key stroke or combination.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHA+UHJlc3MgPGtiZD5DbWQrUTwva2JkPiAob3IgPGtiZD5DdHJsK1E8L2tiZD4gb24gV2luZG93cykgdG8gcGxheSBIYWxmLUxpZmUgMy48L3A+" />
+
+        <p>Press <kbd>Cmd+Q</kbd> (or <kbd>Ctrl+Q</kbd> on Windows) to play Half-Life 3.</p>
+        
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

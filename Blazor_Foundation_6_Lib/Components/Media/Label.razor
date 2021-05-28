@@ -1,0 +1,27 @@
+﻿<span class="@($"label {Color}")" @attributes="AdditionalAttributes">
+    @if (Icon != null) {
+        <span class="@($"mdi {Icon}")"></span>
+    }
+    @ChildContent
+</span>
+
+@code {
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    /// <summary>
+    /// primary, secondary, success, alert or warning
+    /// </summary>
+    [Parameter]
+    public string Color { get; set; }
+
+    /// <summary>
+    /// mdi-**** Material Design Icon.
+    /// </summary>
+    [Parameter]
+    public string Icon { get; set; }
+}

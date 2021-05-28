@@ -1,0 +1,85 @@
+﻿@using Microsoft.JSInterop;
+@using Newtonsoft.Json.Linq;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+@inject IJSRuntime JSRuntime;
+@implements System.IDisposable;
+
+<div id="@Id" ms-data-identity="MenuSystem" class="@($"bf-menu-system {Class}")" @attributes="AdditionalAttributes">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+    /// <summary>
+    /// Unique HTML Identifier.
+    /// </summary>
+    [Parameter]
+    public string Id { get; set; }
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class.
+    /// </summary>
+    [Parameter]
+    public string Class { get; set; }
+
+    /// <summary>
+    /// Menu System Options
+    /// <br/><br/><see href="https://flawlessloop.com/how-to-use-style-attribute/">How to Use Style</see>
+    /// </summary>
+    [Parameter]
+    public JObject DataOptions { get; set; } = new JObject();
+
+    /// <summary>
+    /// AppId for Menu System see documentation.
+    /// </summary>
+    [Parameter]
+    public string AppId { get; set; }
+
+    /// <summary>
+    /// True: Will Trigger Registration Automatically Without any Options.
+    /// </summary>
+    [Parameter]
+    public bool AutoManaged { get; set; } = true;
+
+
+    protected override void OnInitialized()
+    {
+
+    }
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        await base.SetParametersAsync(parameters);
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (AutoManaged)
+            {
+                DataOptions.Add("id", Id);
+                DataOptions.Add("appId", AppId);
+                await JSRuntime.InvokeVoidAsync("MenuSystemRegister", DataOptions != null ? DataOptions.ToString() : null);
+            }
+        }
+
+    }
+
+    public void Dispose()
+    {
+        if (AutoManaged)
+        {
+            JSRuntime.InvokeVoidAsync("MenuSystemUnRegister", Id);
+
+        }
+
+    }
+}
+

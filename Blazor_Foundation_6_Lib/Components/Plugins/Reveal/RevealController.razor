@@ -1,0 +1,273 @@
+﻿@implements IDisposable;
+@using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+@inject IJSRuntime JS;
+@foreach (var RevealFragment in CurrentItems)
+{
+    @RevealFragment.Key
+}
+
+@code {
+    public static RevealController Controller { get; set; }
+    /// <summary>
+    /// Currently Active Reveals
+    /// </summary>
+    public Dictionary<RenderFragment, Func<Task>> CurrentItems { get; set; } = new Dictionary<RenderFragment, Func<Task>>();
+    /// <summary>
+    /// List of Reveal (Non-Active and Currently-Active)
+    /// </summary>
+    public Dictionary<RenderFragment, Func<Task>> Registry = new Dictionary<RenderFragment, Func<Task>>();
+    /// <summary>
+    /// Track reveal fragment with id.
+    /// </summary>
+    public Dictionary<string, RenderFragment> RegistryTracker = new Dictionary<string, RenderFragment>();
+
+    /// <summary>
+    /// Reveal Reference Storage;
+    /// </summary>
+    public Dictionary<string, Reveal> RegistryReference { get; private set; } = new Dictionary<string, Reveal>();
+
+
+    /// <summary>
+    /// Register a Fragment to make it ready to use
+    /// </summary>
+    /// <param name="fragment">Original Fragment (Note: we are making a shallow copy to ensure uniqueness of the object)</param>
+    /// <param name="callback">Call when Unregister is called to dispose a fragment</param>
+    /// <returns>Shallow copy of the passed fragment important to keep and pass in params</returns>
+    private async Task<string> Register(string element, RenderFragment fragment, Func<Task> callback)
+    {
+        if (RegistryTracker.ContainsKey(element)) { throw new Exception("Error while generating new id"); }
+        // Define a new instance
+        RenderFragment clone = (RenderFragment)fragment.Clone();
+        if (!Registry.ContainsKey(clone))
+        {
+            Registry.Add(clone, callback);
+            RegistryTracker.Add(element, clone);
+            RegistryReference.Add(element, null); // Default Null until Reveal is called
+            Console.WriteLine("Register Successfull");
+            return element;
+        }
+        else { throw new Exception("Fragment Register must be unique probably a problem during cloning."); }
+    }
+
+    /// <summary>
+    /// Callback from JS when reveal has been closed by the user.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [JSInvokable("RSREVEALCLOSED")]
+    public static async Task OnCloseNotify(string id)
+    {
+        RevealController instance = RevealController.Controller;
+        if (instance.RegistryTracker.ContainsKey(id))
+        {
+            // Invoke Closed Callback
+            if(instance.Registry[instance.RegistryTracker[id]] != null)
+            {
+                Console.WriteLine($"Trying to invoke callback for {id}");
+                await instance.Registry[instance.RegistryTracker[id]]?.Invoke();
+            }
+            RenderFragment _obj = instance.RegistryTracker[id];
+            instance.CurrentItems.Remove(_obj);
+            instance.Registry.Remove(_obj);
+            instance.RegistryTracker.Remove(id);
+            instance.RegistryReference.Remove(id);
+            instance.StateHasChanged();
+            Console.WriteLine("Reveal is closed and purged from system");
+        }
+        else
+        {
+            Console.WriteLine($"{id} no longer exist.");
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        if(RevealController.Controller != null) {
+            throw new Exception("Only one RevealController can be created.");
+        }
+        RevealController.Controller = this;
+    }
+
+
+    public void Dispose()
+    {
+        // Remove Instance.
+        RevealController.Controller = null;
+
+    }
+
+    private async Task OnRevealOpenedCallback (string element)
+    {
+        await JS.InvokeVoidAsync("RevealOnClosedListener", element);
+    }
+
+    /// <summary>
+    /// Create and Spawn a Reveal with a Message for the user.
+    /// </summary>
+    /// <param name="title"></param>
+    /// <param name="message"></param>
+    /// <param name="OnCloseCallback">Optional if not null, eg: async ()=>{} function will be called after reveal is closed.</param>
+    /// <returns></returns>
+    public async Task SimpleMessage(string title, string message, Func<Task> OnCloseCallback = null)
+    {
+        string elementGen = System.Guid.NewGuid().ToString();
+
+        Reveal tReference = null; // Temporary Reference of Reveal
+        RenderFragment revealOrigin =
+            @<Reveal @ref="tReference" OnOpened="OnRevealOpenedCallback"  Id="@elementGen" OpenOnStart="true" Title="@title"> @message </Reveal>;
+        string element = await Register(elementGen,revealOrigin, OnCloseCallback);
+        RegistryReference[elementGen] = tReference; // Set reference to reveal as global access;
+
+        CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+        StateHasChanged();
+
+        Console.WriteLine("Simple Message Done");
+
+    }
+
+    /// <summary>
+    /// Show Complex Message with Custom Render Fragment.<br/>
+    /// The render fragment is shown in the body of the reveal, so DO NOT PASS ANOTHER REVEAL.
+    /// </summary>
+    /// <param name="id">Unique Id (Used to get Reference of Reveal to Access TriggerClose() <br/> We Recommend: System.Guid.NewGuid().ToString()</param>
+    /// <param name="title">Reveal's title</param>
+    /// <param name="message">Body (eg: Loading or Form)</param>
+    /// <param name="onCloseCallback">Whom to notify when window is closed</param>
+    /// <param name="canclose">Can the reveal be close by user or it is controlled by external factor?</param>
+    /// <returns></returns>
+    public async Task ComplexMessage(string id, string title, RenderFragment message, Func<Task> onCloseCallback = null, bool canclose = true)
+    {
+        string elementGen = id;
+        Reveal tReference = null; // Temporary Reference of Reveal
+        RenderFragment revealOrigin =
+            @<Reveal OnOpened="OnRevealOpenedCallback" @ref="tReference" Id="@elementGen" OpenOnStart="true" Title="@title"> 
+                @message 
+             </Reveal>;
+        string element = await Register(elementGen,revealOrigin, onCloseCallback);
+        RegistryReference[elementGen] = tReference; // Set reference to reveal as global access;
+
+        CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// Create and spawn a reveal for the user and await until its closed
+    /// </summary>
+    /// <param name="title">Title of message</param>
+    /// <param name="message">Message of the message ;)</param>
+    /// <returns></returns>
+    public async Task SimpleMessageAwaited(string title, string message)
+    {
+        string elementGen = System.Guid.NewGuid().ToString();
+
+        Reveal tReference = null; // Temporary Reference of Reveal
+        MarkupString messageHTML = (MarkupString)message;
+        
+       RenderFragment revealOrigin =
+            @<Reveal OnOpened="OnRevealOpenedCallback"  Id="@elementGen" @ref="tReference" OpenOnStart="true" Title="@title"> @messageHTML </Reveal>;
+        string element = await Register(elementGen,revealOrigin, null);
+        RegistryReference[elementGen] = tReference; // Set reference to reveal as global access;
+       
+        CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+        StateHasChanged();
+        // Await until message is closed
+        await Task.Run(async () => {
+            try
+            {
+                do
+                {
+                    await Task.Delay(100);
+                } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+            }
+            catch
+            {
+                // Ignore because error = reveal probably close
+            }
+        });
+    }
+
+    /// <summary>
+    /// Create and Spawn a Reveal (Modal) with 2 choice button for user and no way to close it without making a choice.<br/>
+    /// Very useful for (Confirmation, Yes or No Question, Accepting Term and Condition)
+    /// </summary>
+    /// <param name="title">Top Bar Title</param>
+    /// <param name="message">Message Paragraph</param>
+    /// <param name="option1Label">First Button Label</param>
+    /// <param name="option1Clbk">First Button Callback (True = successfull window can close)</param>
+    /// <param name="option2label">Second Button Label</param>
+    /// <param name="option2Clbk">Second Button Callback (True= succesfull window can close)</param>
+    /// <param name="option1style">First Button Extra Style</param>
+    /// <param name="option2style">Second Button Extra Style</param>
+    /// <param name="titleIcon">Top bar mdi-xxx icon</param>
+    /// <param name="optionwrapperstyle">Button wrapper style (mostly used to flex align)</param>
+    /// <returns>Return clicked value: 0 = option1, 1 = option2, 2 = overriden by user callback and never gonna be set</returns>
+    public async Task<int> SimpleTwoWayAnswerMessage(string id, string title, string message, string option1Label, string option2label,
+        Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
+        string titleIcon = null, string optionwrapperstyle = "justify-content:flex-end;")
+    {
+        RenderFragment msg = @<div>@message</div>;
+        return await ComplexTwoWayAnswerMessage(id,title, msg, option1Label, option2label, option1Clbk, option2Clbk, option1style, option2style);
+    }
+
+    /// <summary>
+    /// Create and Spawn a Reveal (Modal) with 2 choice button for user and no way to close it without making a choice.<br/>
+    /// Very useful for (Confirmation, Yes or No Question, Accepting Term and Condition)
+    /// </summary>
+    /// <param name="id">Unique Id (Used to get Reference of Reveal to Access TriggerClose() <br/> We Recommend: System.Guid.NewGuid().ToString()</param>
+    /// <param name="title">Top Bar Title</param>
+    /// <param name="message">Message Paragraph</param>
+    /// <param name="option1Label">First Button Label</param>
+    /// <param name="option1Clbk">First Button Callback (True = successfull window can close)</param>
+    /// <param name="option2label">Second Button Label</param>
+    /// <param name="option2Clbk">Second Button Callback (True= succesfull window can close)</param>
+    /// <param name="option1style">First Button Extra Style</param>
+    /// <param name="option2style">Second Button Extra Style</param>
+    /// <param name="titleIcon">Top bar mdi-xxx icon</param>
+    /// <param name="optionwrapperstyle">Button wrapper style (mostly used to flex align)</param>
+    /// <returns>Return clicked value: 0 = option1, 1 = option2, 2 = overriden by user callback and never gonna be set</returns>
+    public async Task<int> ComplexTwoWayAnswerMessage(string id, string title, RenderFragment message, string option1Label, string option2label,
+    Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
+    string titleIcon = null, string optionwrapperstyle = "justify-content:flex-end;")
+    {
+        string elementGen = id;
+
+        Reveal tReference = null; // Temporary Reference of Reveal
+        int selectedOption = 2;
+        RenderFragment revealOrigin =
+            @<Reveal Id="@elementGen" OpenOnStart="true" @ref="RegistryReference[elementGen]"  Title="@title" TitleIcon="@titleIcon"
+                     CloseOnClick="false" RevealCloseXButton="false" OnOpened="OnRevealOpenedCallback"
+                     PrimaryButtonTitle="@option1Label"  PrimaryButtonStyle="@option1style" ButtonGroupStyle="@optionwrapperstyle"
+                     SecondaryButtonTitle="@option2label"  SecondaryButtonStyle="@option2style"
+                     PrimaryButtonOnClickCT="@((option1Clbk != null? option1Clbk : async ()=> { selectedOption = 0; return true; }))"
+                     SecondaryButtonOnClickCT="@((option2Clbk != null? option2Clbk : async ()=> { selectedOption = 1; return true; }))"
+                     > 
+                @message
+            </Reveal>;
+        string element = await Register(elementGen,revealOrigin, null);
+        CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+        StateHasChanged();
+
+
+        
+        // Await until message is closed
+        await Task.Run(async () => {
+            try
+            {
+                do
+                {
+                    await Task.Delay(100);
+                } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+            }
+            catch
+            {
+                // Ignore because error = reveal probably close
+            }
+        });
+        return selectedOption;
+    }
+
+}

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Blazor_Foundation_6_Test_SRV</RootNamespace>
+    <AssemblyName>Blazor_Foundation_6_Test_SRV</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor_Foundation_6_Lib\Blazor_Foundation_6.csproj" />
+    <ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\Blazor_Foundation_6_Test_Shared.csproj" />
+  </ItemGroup>
+
+</Project>

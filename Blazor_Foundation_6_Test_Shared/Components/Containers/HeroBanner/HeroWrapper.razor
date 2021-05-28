@@ -1,0 +1,10 @@
+﻿<Cell Class="hero-wrapper" >
+    <GridX Class="hero-x-grid">
+        @ChildContent
+    </GridX>
+</Cell>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

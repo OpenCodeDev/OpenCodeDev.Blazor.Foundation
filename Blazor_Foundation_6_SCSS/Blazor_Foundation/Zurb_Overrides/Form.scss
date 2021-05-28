@@ -1,0 +1,13 @@
+﻿.form-error {
+    display:block;
+    text-align: left;
+    font-size: 0.70rem;
+    font-weight: normal;
+}
+
+
+input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
+
+    cursor: not-allowed;
+    opacity: 0.25;
+}

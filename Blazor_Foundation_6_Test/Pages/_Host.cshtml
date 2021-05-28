@@ -1,0 +1,31 @@
+﻿@page "/"
+@namespace Blazor_Foundation_6_Test.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blazor_Foundation_6_Test</title>
+    <base href="~/" />
+    <link href="/_content/fl.blazor.foundation/css/foundation.css" rel="stylesheet" />
+    <link href="/_content/fl.blazor.foundation/css/blazor.foundation.css" rel="stylesheet" />
+    <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet" />
+</head>
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script src="/_content/fl.blazor.foundation/js/jquery.js"></script>
+    <script src="/_content/fl.blazor.foundation/js/foundation.js"></script>
+    <script src="/_content/fl.blazor.foundation/js/bf-menu-system.js"></script>
+    <script src="/_content/fl.blazor.foundation/js/blazor-foundation.js"></script>
+
+</body>
+</html>

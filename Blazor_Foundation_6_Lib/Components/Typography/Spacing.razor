@@ -1,0 +1,12 @@
+﻿<div style="@(
+                (VerticalSpacing == null ? "" : $"margin-top:{VerticalSpacing}; margin-bottom:{VerticalSpacing};") +
+                (HorizantalSpacing == null ? "" : $"margin-right:{HorizantalSpacing}; margin-left:{HorizantalSpacing};")
+              )">
+</div>
+
+@code {
+    [Parameter]
+    public string VerticalSpacing { get; set; } = null;
+    [Parameter]
+    public string HorizantalSpacing { get; set; } = null;
+}

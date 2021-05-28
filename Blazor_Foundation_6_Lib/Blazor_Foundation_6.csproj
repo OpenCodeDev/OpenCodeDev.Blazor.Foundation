@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1;netstandard2.0</TargetFrameworks>
+    <RazorLangVersion Condition=" '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netstandard2.1' ">3.0</RazorLangVersion>
+    <Authors>Max Samson</Authors>
+    <Company>OpenCodeDev</Company>
+    <Product>Blazor Foundation 6</Product>
+    <Description>Foundation 6 components converted as blazor component mixing c# and javascript to control dynamic components</Description>
+    <Copyright>OpenCodeDev ® 2021</Copyright>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageProjectUrl>https://flawlessloop.com/get-started/</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IsPackable>true</IsPackable>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>See https://flawlessloop.com/blazor-foundation-version-2-1-7/</PackageReleaseNotes>
+    <PackageId>OpenCodeDev.Blazor.Foundation</PackageId>
+    <AssemblyVersion>3.0.0</AssemblyVersion>
+    <Version>3.0.0</Version>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/MaxFlawless/blazor_foundation_6</RepositoryUrl>
+    <RepositoryType>Open Source</RepositoryType>
+    <PackageTags>foundation, blazor, c#, zurb, jquery, HTML, Javascript, MVC, CSS, RESPONSIVE, mobile-first-framework, .net5</PackageTags>
+    <FileVersion>3.0.0</FileVersion>
+    <AssemblyName>OpenCodeDev.Blazor.Foundation</AssemblyName>
+    <RootNamespace>OpenCodeDev.Blazor.Foundation</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\Releases\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_SASS\**" />
+    <Content Remove="_SASS\**" />
+    <EmbeddedResource Remove="_SASS\**" />
+    <None Remove="_SASS\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="compilerconfig.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\bf6_complete.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' or '$(TargetFramework)' == 'netstandard2.1' or '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.4" />
+     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+</ItemGroup>
+
+ 
+
+</Project>

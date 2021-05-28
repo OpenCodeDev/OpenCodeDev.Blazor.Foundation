@@ -1,0 +1,83 @@
+﻿@using Newtonsoft.Json.Linq;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+<div class="@($"callout {Class} {TypeClass} {Size}")" id="@Id" @attributes="AdditionalAttributes" data-closable="@ClosableData">
+    @ChildContent
+
+    @if (CloseButton)
+    {
+        <button class="@($"close-button {CloseButtonClass}")" aria-label="Dismiss @TypeClass" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    }
+
+</div>
+
+
+@code {
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    /// <summary>
+    /// Unique HTML Identifier.
+    /// </summary>
+    [Parameter]
+    public string Id { get; set; }
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class.
+    /// </summary>
+    [Parameter]
+    public string Class { get; set; }
+
+
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class (eg. "close-button custom").
+    /// </summary>
+    [Parameter]
+    public string CloseButtonClass { get; set; }
+
+    /// <summary>
+    /// fade-out, slide-out-up, slide-out-left, slide-out-down, slide-out-right
+    /// hinge-out-from-top, hinge-out-from-right, hinge-out-from-up, hinge-out-from-down
+    /// hinge-out-from-middle-x, hinge-out-from-middle-y, scale-out-up, scale-out-down
+    /// spin-in, spin-in-ccw
+    /// </summary>
+    [Parameter]
+    public string ClosableData { get; set; }
+
+    /// <summary>
+    /// True when close button is visible.
+    /// </summary>
+    [Parameter]
+    public bool CloseButton { get; set; } = false;
+
+    /// <summary>
+    ///  secondary, primary, success, warning OR alert
+    /// </summary>
+    [Parameter]
+    public string TypeClass { get; set; }
+
+    /// <summary>
+    /// small OR large
+    /// </summary>
+    [Parameter]
+    public string Size { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+    protected override void OnInitialized()
+    {
+
+
+    }
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        await base.SetParametersAsync(parameters);
+
+    }
+
+}

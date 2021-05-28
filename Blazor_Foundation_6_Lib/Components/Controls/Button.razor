@@ -1,0 +1,52 @@
+﻿@using Newtonsoft.Json.Linq;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+<button type="button" class="@($"button {Class}")" data-toggle="@DataToggle"
+        id="@Id" @attributes="AdditionalAttributes">
+    @ChildContent
+</button>
+
+@code {
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+    /// <summary>
+    /// Unique HTML Identifier.
+    /// </summary>
+    [Parameter]
+    public string Id { get; set; }
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class.
+    /// </summary>
+    [Parameter]
+    public string Class { get; set; }
+
+    /// <summary>
+    /// id of Foundation element to toggle can be anything. Modal, Switch, Off-Canvas....
+    /// </summary>
+    [Parameter]
+    public string DataToggle { get; set; }
+
+
+
+
+    protected override void OnInitialized()
+    {
+        if(Id != null)
+        {
+            Id = System.Guid.NewGuid().ToString();
+        }
+    }
+
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        await base.SetParametersAsync(parameters);
+
+    }
+
+}

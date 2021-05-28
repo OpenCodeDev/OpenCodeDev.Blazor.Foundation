@@ -1,0 +1,156 @@
+﻿@page "/helper-classes"
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Text Alignment</h2>
+        <p>
+            You can change the text alignment of an element by adding
+            <Code>text-left</Code>, <Code>text-right</Code>, <Code>text-center</Code> or <Code>text-justify</Code> to an element.
+        </p>
+
+        <p>
+            Adding a breakpoint to the front of a text alignment class will cause it to only be applied on that size screen or larger.
+            For example, <Code>medium-text-center</Code> will keep text left-aligned on the smallest screens,
+            but switch to center-aligned on medium screens and larger.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHAgY2xhc3M9InRleHQtbGVmdCI+PCEtLSAuLi4gLS0+PC9wPgo8cCBjbGFzcz0idGV4dC1yaWdodCI+PCEtLSAuLi4gLS0+PC9wPgo8cCBjbGFzcz0idGV4dC1jZW50ZXIiPjwhLS0gLi4uIC0tPjwvcD4KPHAgY2xhc3M9InRleHQtanVzdGlmeSI+PCEtLSAuLi4gLS0+PC9wPg==" />
+        <p class="text-left"> <strong>This text is left-aligned</strong>. Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. </p>
+        <p class="text-right"> <strong>This text is right-aligned</strong>. Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. </p>
+        <p class="text-center"> <strong>This text is center-aligned</strong>. Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. </p>
+        <p class="text-justify"> <strong>This text is justified</strong>. Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. </p>
+
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Subheader</h2>
+        <p>
+            Lighten up your headers by adding a class of <Code>subheader</Code> to any header element.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGgxIGNsYXNzPSJzdWJoZWFkZXIiPmgxLnN1YmhlYWRlcjwvaDE+CjxoMiBjbGFzcz0ic3ViaGVhZGVyIj5oMi5zdWJoZWFkZXI8L2gyPgo8aDMgY2xhc3M9InN1YmhlYWRlciI+aDMuc3ViaGVhZGVyPC9oMz4KPGg0IGNsYXNzPSJzdWJoZWFkZXIiPmg0LnN1YmhlYWRlcjwvaDQ+CjxoNSBjbGFzcz0ic3ViaGVhZGVyIj5oNS5zdWJoZWFkZXI8L2g1Pgo8aDYgY2xhc3M9InN1YmhlYWRlciI+aDYuc3ViaGVhZGVyPC9oNj4=" />
+        <h1 class="subheader">h1.subheader</h1>
+        <h2 class="subheader">h2.subheader</h2>
+        <h3 class="subheader">h3.subheader</h3>
+        <h4 class="subheader">h4.subheader</h4>
+        <h5 class="subheader">h5.subheader</h5>
+        <h6 class="subheader">h6.subheader</h6>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Lead Paragraph</h2>
+        <p>
+            A slightly-larger-than-normal block of text, useful for decks, blurbs, or other descriptive text.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHAgY2xhc3M9ImxlYWQiPldoYXQgYXJlIHlvdXIgY2F0cyA8ZW0+cmVhbGx5PC9lbT4gZHJlYW1pbmcgYWJvdXQgd2hpbGUgdGhleSBzbGVlcD88L3A+" />
+        <p class="lead">What are your cats <em>really</em> dreaming about while they sleep?</p>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Un-bulleted List</h2>
+        <p>
+            In Foundation, the <Code Content="PHVsPg=="></Code> is a bulleted list and <Code Content="PG9sPg=="></Code> is a numbered list by default,
+            but you can add the class <Code Content="bm8tYnVsbGV0"></Code> to remove the bullets and numbers respectively.
+        </p>
+        <h3>Unordered List</h3>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHVsIGNsYXNzPSJuby1idWxsZXQiPgogIDxsaT5MaXN0IGl0ZW0gd2l0aCBhIG11Y2ggbG9uZ2VyIGRlc2NyaXB0aW9uIG9yIG1vcmUgY29udGVudC48L2xpPgogIDxsaT5MaXN0IGl0ZW08L2xpPgogIDxsaT5MaXN0IGl0ZW0KICAgIDx1bD4KICAgICAgPGxpPk5lc3RlZCBsaXN0IGl0ZW08L2xpPgogICAgICA8bGk+TmVzdGVkIGxpc3QgaXRlbTwvbGk+CiAgICAgIDxsaT5OZXN0ZWQgbGlzdCBpdGVtPC9saT4KICAgIDwvdWw+CiAgPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KPC91bD4=" />
+        <ul class="no-bullet">
+            <li>List item with a much longer description or more content.</li>
+            <li>List item</li>
+            <li>
+                List item
+                <ul>
+                    <li>Nested list item</li>
+                    <li>Nested list item</li>
+                    <li>Nested list item</li>
+                </ul>
+            </li>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+        </ul>
+
+        <h3>Ordered List</h3>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PG9sIGNsYXNzPSJuby1idWxsZXQiPgogIDxsaT5MaXN0IGl0ZW0gd2l0aCBhIG11Y2ggbG9uZ2VyIGRlc2NyaXB0aW9uIG9yIG1vcmUgY29udGVudC48L2xpPgogIDxsaT5MaXN0IGl0ZW08L2xpPgogIDxsaT5MaXN0IGl0ZW0KICAgIDxvbD4KICAgICAgPGxpPk5lc3RlZCBsaXN0IGl0ZW08L2xpPgogICAgICA8bGk+TmVzdGVkIGxpc3QgaXRlbTwvbGk+CiAgICAgIDxsaT5OZXN0ZWQgbGlzdCBpdGVtPC9saT4KICAgIDwvb2w+CiAgPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KICA8bGk+TGlzdCBpdGVtPC9saT4KPC9vbD4=" />
+        <ol class="no-bullet">
+            <li>List item with a much longer description or more content.</li>
+            <li>List item</li>
+            <li>
+                List item
+                <ol>
+                    <li>Nested list item</li>
+                    <li>Nested list item</li>
+                    <li>Nested list item</li>
+                </ol>
+            </li>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+        </ol>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Typescale</h2>
+        <p>
+            Adjust font-size by overriding an element’s default size. This can be useful to size a <Code Content="PHA+"></Code> or <Code Content="PGgxPg=="></Code>
+            through <Code Content="PGg2Pg=="></Code> using Foundation's existing header sizes.
+        </p>
+        <p class="h4">Headers:</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PGgyIGNsYXNzPSJoMSI+TG9yZW0gSXBzdW0gRG9sb3I8L2gyPgo8aDMgY2xhc3M9ImgyIj5Mb3JlbSBJcHN1bSBEb2xvcjwvaDM+CjxoNCBjbGFzcz0iaDMiPkxvcmVtIElwc3VtIERvbG9yPC9oND4KPGg1IGNsYXNzPSJoNCI+TG9yZW0gSXBzdW0gRG9sb3I8L2g1Pgo8aDYgY2xhc3M9Img1Ij5Mb3JlbSBJcHN1bSBEb2xvcjwvaDY+" />
+        <h2 class="h1">Lorem Ipsum Dolor</h2>
+        <h3 class="h2">Lorem Ipsum Dolor</h3>
+        <h4 class="h3">Lorem Ipsum Dolor</h4>
+        <h5 class="h4">Lorem Ipsum Dolor</h5>
+        <h6 class="h5">Lorem Ipsum Dolor</h6>
+
+        <p class="h4">Text:</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHAgY2xhc3M9ImgxIj5Mb3JlbSBJcHN1bSBEb2xvcjwvcD4KPHAgY2xhc3M9ImgyIj5Mb3JlbSBJcHN1bSBEb2xvcjwvcD4KPHAgY2xhc3M9ImgzIj5Mb3JlbSBJcHN1bSBEb2xvcjwvcD4KPHAgY2xhc3M9Img0Ij5Mb3JlbSBJcHN1bSBEb2xvcjwvcD4KPHAgY2xhc3M9Img1Ij5Mb3JlbSBJcHN1bSBEb2xvcjwvcD4KPHAgY2xhc3M9Img2Ij5Mb3JlbSBJcHN1bSBEb2xvcjwvcD4=" />
+        <p class="h1">Lorem Ipsum Dolor</p>
+        <p class="h2">Lorem Ipsum Dolor</p>
+        <p class="h3">Lorem Ipsum Dolor</p>
+        <p class="h4">Lorem Ipsum Dolor</p>
+        <p class="h5">Lorem Ipsum Dolor</p>
+        <p class="h6">Lorem Ipsum Dolor</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Statistics</h2>
+        <p>
+            If you're building a dashboard, you might need to display some important numbers real big. Just add the <Code>stat</Code> class to any element to amp up the font size.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#f06529" HeaderTitle="HTML"
+                     Content="PHA+RGF5cyB3aXRob3V0IG1lcmdlIGNvbmZsaWN0PC9wPgo8ZGl2IGNsYXNzPSJzdGF0Ij4xMjg8L2Rpdj4=" />
+        <p>Days without merge conflict</p>
+        <div class="stat">128</div>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+@code {
+
+}

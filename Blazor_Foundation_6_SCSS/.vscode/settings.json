@@ -1,0 +1,22 @@
+{
+    "liveSassCompile.settings.formats":[
+       {
+           "format": "expanded",
+           "extensionName": ".css",
+           "savePath": "/../Blazor_Foundation_6_Lib/wwwroot/css"
+       },
+       {
+           "extensionName": ".min.css",
+           "format": "compressed",
+           "savePath": "/../Blazor_Foundation_6_Lib/wwwroot/css"
+       }
+   ],
+   "liveSassCompile.settings.excludeList": [
+      "**/node_modules/**",
+      "Blazor_Foundation/**",
+      "MaterialDesignIcons/**",
+      ".vscode/**",
+      "init_bf.scss"
+   ],
+   "liveSassCompile.settings.generateMap": true
+}

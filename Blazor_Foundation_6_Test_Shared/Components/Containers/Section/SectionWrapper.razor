@@ -1,0 +1,13 @@
+﻿<section>
+    <Cell Class="section-wrapper">
+        <GridX Class="section-x-grid">
+            @ChildContent
+        </GridX>
+    </Cell>
+</section>
+
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

@@ -1,0 +1,155 @@
+﻿@page "/button-group";
+@using Blazor_Foundation_6_Test_Shared.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Button Group</h2>
+        <p>
+            Button groups are containers for related action items.
+            They're great when you need to display a group of actions in a bar.
+            These build off the button styles and work perfectly with the grid
+        </p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+            Add the <Code Content="PEJ1dHRvbkdyb3VwPg=="></Code> to a container, and inside it place any number of buttons. The buttons are separated by a small border.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbkdyb3VwPgogICAgPEJ1dHRvbj5PbmU8L0J1dHRvbj4KICAgIDxCdXR0b24+VHdvPC9CdXR0b24+CiAgICA8QnV0dG9uPlRocmVlPC9CdXR0b24+CjwvQnV0dG9uR3JvdXA+" />
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>One</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>Two</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>Three</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Sizing</h2>
+        <p>
+            Button groups can be sized with the same classes as standard buttons: <Code>tiny</Code>, <Code>small</Code>, <Code>large</Code>
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbkdyb3VwIFNpemU9InRpbnkiPgogICAgPEJ1dHRvbj5PbmU8L0J1dHRvbj4KICAgIDxCdXR0b24+VHdvPC9CdXR0b24+CiAgICA8QnV0dG9uPlRocmVlPC9CdXR0b24+CjwvQnV0dG9uR3JvdXA+" />
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup Size="tiny">
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>One</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>Two</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>Three</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Coloring</h2>
+        <p>
+            Buttons within a button group can be colored.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbkdyb3VwPgogICAgPEJ1dHRvbj5WaWV3PC9CdXR0b24+CiAgICA8QnV0dG9uIENsYXNzPSJzZWNvbmRhcnkiPkVkaXQ8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9InN1Y2Nlc3MiPkFjY2VwdDwvQnV0dG9uPgogICAgPEJ1dHRvbiBDbGFzcz0iYWxlcnQiPkRlbGV0ZTwvQnV0dG9uPgogICAgPEJ1dHRvbiBDbGFzcz0id2FybmluZyI+UmVwb3J0PC9CdXR0b24+CjwvQnV0dG9uR3JvdXA+" />
+        
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button>View</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="secondary">Edit</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="success">Accept</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="alert">Delete</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="warning">Report</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Hollow Style</h2>
+        <p>
+            Add the <Code>hollow</Code> class to a button to give it a hollow style.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbkdyb3VwPgogICAgPEJ1dHRvbiBDbGFzcz0iaG9sbG93Ij5QcmltYXJ5PC9CdXR0b24+CiAgICA8QnV0dG9uIENsYXNzPSJob2xsb3cgc2Vjb25kYXJ5Ij5TZWNvbmRhcnk8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImhvbGxvdyBzdWNjZXNzIj5TdWNjZXNzPC9CdXR0b24+CiAgICA8QnV0dG9uIENsYXNzPSJob2xsb3cgYWxlcnQiPkFsZXJ0PC9CdXR0b24+CiAgICA8QnV0dG9uIENsYXNzPSJob2xsb3cgd2FybmluZyI+V2FybmluZzwvQnV0dG9uPgo8L0J1dHRvbkdyb3VwPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow">View</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow secondary">Edit</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow success">Accept</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow alert">Delete</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="hollow warning">Report</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+
+            <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Clear Style</h2>
+        <p>
+            Add the <Code>clear</Code> class to a button to give it a clear style.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbkdyb3VwPgogICAgPEJ1dHRvbiBDbGFzcz0iY2xlYXIgIj5WaWV3PC9CdXR0b24+CiAgICA8QnV0dG9uIENsYXNzPSJjbGVhciBzZWNvbmRhcnkiPkVkaXQ8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImNsZWFyIHN1Y2Nlc3MiPkFjY2VwdDwvQnV0dG9uPgogICAgPEJ1dHRvbiBDbGFzcz0iY2xlYXIgYWxlcnQiPkRlbGV0ZTwvQnV0dG9uPgogICAgPEJ1dHRvbiBDbGFzcz0iY2xlYXIgd2FybmluZyI+UmVwb3J0PC9CdXR0b24+CjwvQnV0dG9uR3JvdXA+" />
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear ">View</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear secondary">Edit</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear success">Accept</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear alert">Delete</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear warning">Report</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>No Gaps</h2>
+        <p>
+            When using a single color for the button-group, you might want to remove the <Code>1px</Code> spacing between the buttons.
+            You can use <Code>no-gaps</Code> to just the same.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbkdyb3VwIE5vR2Fwcz0idHJ1ZSIgQ2xhc3M9InByaW1hcnkiPgogICAgPEJ1dHRvbiBDbGFzcz0iY2xlYXIgIj5IYXJkZXI8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImNsZWFyIj5CZXR0ZXI8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImNsZWFyIj5GYXN0ZXI8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImNsZWFyIj5TdHJvbmdlcjwvQnV0dG9uPgo8L0J1dHRvbkdyb3VwPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup NoGaps="true" Class="primary">
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear ">Harder</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear">Better</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear">Faster</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear">Stronger</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>No Gaps</h2>
+        <p>
+            Add the <Code>expanded</Code> class to the container to make a full-width button group.
+            Each item will automatically size itself based on how many buttons there are, up to a maximum of six.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbkdyb3VwIE5vR2Fwcz0idHJ1ZSIgQ2xhc3M9InByaW1hcnkiPgogICAgPEJ1dHRvbiBDbGFzcz0iY2xlYXIgIj5IYXJkZXI8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImNsZWFyIj5CZXR0ZXI8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImNsZWFyIj5GYXN0ZXI8L0J1dHRvbj4KICAgIDxCdXR0b24gQ2xhc3M9ImNsZWFyIj5TdHJvbmdlcjwvQnV0dG9uPgo8L0J1dHRvbkdyb3VwPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup NoGaps="true" Class="expanded primary">
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear ">Expanded</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear">Button</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+            <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear">Group</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.ButtonGroup>
+        <hr />
+
+        <h2>More Possibilities?</h2>
+        <p>You can visit <NavLink href="https://get.foundation/sites/docs/button-group.html">Button Group Zurb Foundation's</NavLink> to get more.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+
+
+@code {
+
+}

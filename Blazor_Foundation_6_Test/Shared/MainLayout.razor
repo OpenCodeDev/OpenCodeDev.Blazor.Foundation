@@ -1,0 +1,279 @@
+﻿@inherits LayoutComponentBase
+@using Blazor_Foundation_6.Components.Controls;
+@using Blazor_Foundation_6.Components.Containers;
+@using Blazor_Foundation_6.Components.General;
+@using Blazor_Foundation_6.Components.Navigation;
+@using Newtonsoft.Json.Linq;
+@using Blazor_Foundation_6.Plugins.CSS;
+<BlazorFoundationStyle />
+<MenuSystemWrapper @ref="MenuSystemWrapper" Id="MenuSystem" AppId="MyApp">
+    <MenuSystemTop Wrapper="@MenuSystemWrapper">
+        <p>This is a Test</p>
+    </MenuSystemTop>
+
+    <MenuSystemLeft @ref="MenuLeft" Wrapper="@MenuSystemWrapper">
+
+    </MenuSystemLeft>
+
+    <MenuSystemRight @ref="MenuRight" Wrapper="@MenuSystemWrapper">
+
+    </MenuSystemRight>
+</MenuSystemWrapper>
+
+
+<MenuSystemWrapper Id="MenuSystemWrapperAutoV2" AppId="MyApp">
+    <MenuSystemTop >
+        <p>This is a Test</p>
+    </MenuSystemTop>
+
+    <MenuSystemLeft >
+
+    </MenuSystemLeft>
+
+    <MenuSystemRight >
+
+    </MenuSystemRight>
+</MenuSystemWrapper>
+
+<MenuSystemWrapper @ref="MenuSystemWrapperNoTop" Id="MenuSystemNoTop" AppId="MyApp"
+                   DataOptions="@(new JObject() { {"hasTop",false }, { "transitionType", "over"} })">
+    <MenuSystemLeft @ref="MenuLeftNoTop" Wrapper="@MenuSystemWrapperNoTop">
+
+    </MenuSystemLeft>
+
+    <MenuSystemRight @ref="MenuRightNoTop" Wrapper="@MenuSystemWrapperNoTop">
+
+    </MenuSystemRight>
+</MenuSystemWrapper>
+<div id="MyApp">
+    <TopBarWrapper Sticky="true" Id="TopBarMenu">
+        <TopBarLeft StickyWrapper="true">
+            <Menu id="MenuDropDownTest" HasDropdown="true">
+                <li>
+                    <a>Menu One</a>
+                    <Menu>
+                        <li>
+                            <a>Dropdown A</a>
+                        </li>
+                    </Menu>
+                </li>
+                <li><a>Menu Two</a></li>
+                <li><a>Menu Three</a></li>
+                <li><a>Menu Four</a></li>
+            </Menu>
+        </TopBarLeft>
+    </TopBarWrapper>
+    <GridContainer Fluid="true">
+        <GridY Padding="true">
+            <Cell>
+                <OffCanvasWrapper>
+                    <OffCanvas @ref="OffCanvasBottom" Id="MainCanvasBottom" DataTransition="push" Position="position-bottom" CloseOnClick="true" ContentOverlay="true">
+                        <p>My Menu</p>
+                    </OffCanvas>
+                    <OffCanvas Id="MainCanvasLeft" DataTransition="overlap" Position="position-left" CloseOnClick="true" ContentOverlay="true">
+                        <p>My Menu</p>
+                    </OffCanvas>
+                    <OffCanvas Id="MainCanvasRight" DataTransition="overlap" Position="position-right" CloseOnClick="true" ContentOverlay="true">
+                        <p>My Menu</p>
+                    </OffCanvas>
+                    <OffCanvas Id="MainCanvasTop" DataTransition="push" Position="position-top" CloseOnClick="true" ContentOverlay="true">
+                        <p>My Menu</p>
+                    </OffCanvas>
+                    <OffCanvasContent>
+                        <h4>Menu</h4>
+
+                        <Menu>
+                            <li><a>Menu One</a></li>
+                            <li><a>Menu Two</a></li>
+                            <li><a>Menu Three</a></li>
+                            <li><a>Menu Four</a></li>
+                        </Menu>
+
+                        <h4>Dropdown Menu</h4>
+                        <Menu id="MenuDropDownNoTest" HasDropdown="true">
+                            <li>
+                                <a>Menu One</a>
+                                <Menu IsNestedMenu="true">
+                                    <li>
+                                        <a>Dropdown A</a>
+                                    </li>
+                                </Menu>
+                            </li>
+                            <li><a>Menu Two</a></li>
+                            <li><a>Menu Three</a></li>
+                            <li><a>Menu Four</a></li>
+                        </Menu>
+
+                        <h4>DrillMenu Vertcal Menu</h4>
+                        <Menu Vertical="true" HasDrilldown="true" id="DrillMenuTest">
+                            <li>
+                                <a>Menu One</a>
+                                <Menu IsNestedMenu="true" Vertical="true">
+                                    <li>
+                                        <a>DrillMenu A</a>
+                                    </li>
+                                    <li>
+                                        <a>DrillMenu B</a>
+                                    </li>
+                                    <li>
+                                        <a>DrillMenu C</a>
+                                    </li>
+                                    <li>
+                                        <a>DrillMenu D</a>
+                                    </li>
+                                </Menu>
+                            </li>
+                            <li><a>Menu Two</a></li>
+                            <li><a>Menu Three</a></li>
+                            <li><a>Menu Four</a></li>
+                        </Menu>
+
+                        <h4>Abide Forms</h4>
+                        <p>We have deprecated Abide form. You should rather use EditForm...</p>
+
+                        <h4>Sliders</h4>
+                        <SingleSlider Max="100" Min="1" Value="10" Id="SingleSliderTest" />
+                        <VerticalSingleSlider InputId="@("TEST")" Id="VerticalSliderTest" Min="10" Max="20" Value="15" Step="1" />
+
+                        <h4>Switches</h4>
+                        <SwitchCheckbox Id="TESTSWITCH" Checked="true" />
+                        <h4>Switches (Radio)</h4>
+                        <SwitchCheckbox Id="TESTRADIO1" IsRadio="true" Name="TESTRADIO" Checked="true" />
+                        <SwitchCheckbox Id="TESTRADIO2" IsRadio="true" Name="TESTRADIO" />
+
+                        <h4>Off-Canvas</h4>
+                        <ButtonGroup Size="small" Color="success">
+                            <Button DataToggle="MainCanvasBottom">Open Bottom</Button>
+                            <Button DataToggle="MainCanvasTop">Open Top</Button>
+                            <Button DataToggle="MainCanvasLeft">Open Left</Button>
+                            <Button DataToggle="MainCanvasRight">Open Right</Button>
+                        </ButtonGroup>
+
+
+
+                        <h4>Accordions</h4>
+                        <Accordion Id="MainAccordionsTest" StyleRep="@(new JObject() { { "margin", "1px"} })" DataOptions="@(new JObject() { { "data-allow-all-closed", true} })">
+                            <AccordionItem Active="true" Title="Test Title A">Test Content A</AccordionItem>
+                            <AccordionItem Title="Test Title B">Test Content B</AccordionItem>
+                            <AccordionItem Title="Test Title C">Test Content C</AccordionItem>
+                        </Accordion>
+
+                        <h4>Tabs</h4>
+                        <TabHeader Id="Test-Tab">
+                            <TabHeaderTitle Id="Test-Tab-Panel-1" Active="true">Test 1</TabHeaderTitle>
+                            <TabHeaderTitle Id="Test-Tab-Panel-2">Test 2</TabHeaderTitle>
+                        </TabHeader>
+                        <TabContentWrapper LinkId="Test-Tab">
+                            <TabContent Id="Test-Tab-Panel-1" Active="true">Test Panel 1</TabContent>
+                            <TabContent Id="Test-Tab-Panel-2">Test Panel 2</TabContent>
+                        </TabContentWrapper>
+
+                        <br />
+                        <h4>Dropdown</h4>
+                        <Button DataToggle="OpenDropdownExample">Open Dropdown</Button>
+                        <Dropdown Id="OpenDropdownExample" Position="top" DataAlignment="top">
+                            This is a Dropdown Example
+                        </Dropdown>
+
+                        <h4>Menu System (2021)</h4>
+                        <Button @onclick="@MenuLeft.Open">Open Left</Button>
+                        <Button @onclick="@MenuRight.Open">Open Right</Button>
+                        <Button @onclick="@MenuLeftNoTop.Open">Open Left (No Top)</Button>
+                        <Button @onclick="@MenuRightNoTop.Open">Open Right (No Top)</Button>
+
+                        <h4>Menu System V2 (2021)</h4>
+                        <Button ms-data-linkto="MenuSystemWrapperAutoV2" ms-data-open="left">Open Left</Button>
+                        <Button ms-data-linkto="MenuSystemWrapperAutoV2" ms-data-open="right">Open Right</Button>
+
+                        <h4>Callout</h4>
+                        <Callout ClosableData="slide-out-right" CloseButton="true" Size="small" TypeClass="alert">
+                            <h5>This is a small callout</h5>
+                            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                        </Callout>
+
+                        <Callout Size="small" TypeClass="success">
+                            <h5>This is a small callout</h5>
+                            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                        </Callout>
+
+                        <Callout Size="large" TypeClass="warning">
+                            <h5>This is a small callout</h5>
+                            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                        </Callout>
+
+                        <GridX Margin="true">
+                            <Cell Class="shrink">
+                                <Card>
+                                    <CardDivider>Test </CardDivider>
+                                    <CardSection>
+                                        My Card Content
+                                    </CardSection>
+                                </Card>
+                            </Cell>
+                            <Cell Class="shrink">
+                                <Card>
+                                    <CardDivider>Test </CardDivider>
+                                    <CardSection>
+                                        My Card Content
+                                    </CardSection>
+                                </Card>
+                            </Cell>
+                        </GridX>
+
+                        <MediaObjectWrapper>
+                            <MediaObjectSection Class="middle">
+                                <Thumbnail>
+                                    <img src="/_content/fl.blazor.foundation/img/avatar-2.jpg" />
+                                </Thumbnail>
+                            </MediaObjectSection>
+                            <MediaObjectSection>
+                                <h4>Why is it so important to dream?</h4>
+                                <p>So, once we've made the plant, how do we go out? Hope you have something more elegant in mind than shooting me in the head? A kick. What's a kick? This, Ariadne, would be a kick.</p>
+                                <p>What is the most resilient parasite? Bacteria? A virus? An intestinal worm? An idea. Resilient... highly contagious. Once an idea has taken hold of the brain it's almost impossible to eradicate. An idea that is fully formed - fully understood - that sticks; right in there somewhere.</p>
+                                <MediaObjectSection>
+                                    <MediaObjectSection Class="middle">
+                                        <Thumbnail>
+                                            <img src="/_content/fl.blazor.foundation/img/avatar-2.jpg" />
+                                        </Thumbnail>
+                                    </MediaObjectSection>
+                                    <MediaObjectSection>
+                                        <h4>Why is it so important to dream?</h4>
+                                        <p>So, once we've made the plant, how do we go out? Hope you have something more elegant in mind than shooting me in the head? A kick. What's a kick? This, Ariadne, would be a kick.</p>
+                                        <p>What is the most resilient parasite? Bacteria? A virus? An intestinal worm? An idea. Resilient... highly contagious. Once an idea has taken hold of the brain it's almost impossible to eradicate. An idea that is fully formed - fully understood - that sticks; right in there somewhere.</p>
+                                    </MediaObjectSection>
+                                </MediaObjectSection>
+                            </MediaObjectSection>
+
+                        </MediaObjectWrapper>
+
+                        <Button DataToggle="RevealTest">Test Modal</Button>
+                        <Reveal Id="RevealTest" AnimationIn="slide-in-left" AnimationOut="slide-out-right">
+                            <h2>Label for the Modal!</h2>
+                            <p>I am even more accessible than the other modals.</p>
+                        </Reveal>
+                    </OffCanvasContent>
+                </OffCanvasWrapper>
+            </Cell>
+        </GridY>
+
+
+    </GridContainer>
+</div>
+
+@code {
+    private MenuSystemLeft MenuLeft;
+    private MenuSystemRight MenuRight;
+    private MenuSystemWrapper MenuSystemWrapper;
+
+    private MenuSystemLeft MenuLeftNoTop;
+    private MenuSystemRight MenuRightNoTop;
+    private MenuSystemWrapper MenuSystemWrapperNoTop;
+
+    private OffCanvas OffCanvasBottom;
+    private async Task TriggerButton()
+    {
+        await OffCanvasBottom.TriggerToggle();
+    }
+
+}
+
