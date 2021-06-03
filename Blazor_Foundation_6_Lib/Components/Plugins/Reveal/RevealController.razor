@@ -144,7 +144,9 @@
         string elementGen = id;
         Reveal tReference = null; // Temporary Reference of Reveal
         RenderFragment revealOrigin =
-            @<Reveal OnOpened="OnRevealOpenedCallback" @ref="tReference" Id="@elementGen" OpenOnStart="true" Title="@title"> 
+            @<Reveal OnOpened="OnRevealOpenedCallback" @ref="tReference" Id="@elementGen" OpenOnStart="true"
+                     CloseOnClick="@canclose" CloseXButton="@canclose"
+                     Title="@title"> 
                 @message 
              </Reveal>;
         string element = await Register(elementGen,revealOrigin, onCloseCallback);
@@ -160,7 +162,7 @@
     /// <param name="title">Title of message</param>
     /// <param name="message">Message of the message ;)</param>
     /// <returns></returns>
-    public async Task SimpleMessageAwaited(string title, string message)
+    public async Task SimpleMessageAsync(string title, string message)
     {
         string elementGen = System.Guid.NewGuid().ToString();
 
@@ -191,6 +193,40 @@
     }
 
     /// <summary>
+    /// Complex Message with a Automatic closing condition (useful for loading reveal)
+    /// </summary>
+    /// <param name="id">Unique identifier (recommended: System.Guid.NewGuid().ToString() to ensure uniqueness) </param>
+    /// <param name="title">Reveal's Title</param>
+    /// <param name="message">Fragment Message</param>
+    /// <param name="hasConditionMet">Delegate with Bool return value. True = Ready to close reveal (Warning: use lightweight operation as it is called every 100ms)</param>
+    /// <returns></returns>
+    public async Task ComplexMessageCloseConditional(string id, string title, RenderFragment message, Func<Task<bool>> hasConditionMet)
+    {
+        string elementGen = id;
+        Reveal tReference = null; // Temporary Reference of Reveal
+        RenderFragment revealOrigin =
+            @<Reveal OnOpened="OnRevealOpenedCallback" @ref="tReference" Id="@elementGen" OpenOnStart="true" 
+                     CloseOnClick="false" CloseXButton="false"
+                     Title="@title"> 
+                @message 
+             </Reveal>;
+        string element = await Register(elementGen,revealOrigin, null);
+        RegistryReference[elementGen] = tReference; // Set reference to reveal as global access;
+        CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+        StateHasChanged();
+        await Task.Run(async () =>
+        {
+            bool close = false;
+            do
+            {
+                await Task.Delay(100);
+                close = await hasConditionMet.Invoke();
+            } while (!close);
+            await tReference.TriggerClose();
+        });
+
+    }
+    /// <summary>
     /// Create and Spawn a Reveal (Modal) with 2 choice button for user and no way to close it without making a choice.<br/>
     /// Very useful for (Confirmation, Yes or No Question, Accepting Term and Condition)
     /// </summary>
@@ -205,12 +241,12 @@
     /// <param name="titleIcon">Top bar mdi-xxx icon</param>
     /// <param name="optionwrapperstyle">Button wrapper style (mostly used to flex align)</param>
     /// <returns>Return clicked value: 0 = option1, 1 = option2, 2 = overriden by user callback and never gonna be set</returns>
-    public async Task<int> SimpleTwoWayAnswerMessage(string id, string title, string message, string option1Label, string option2label,
+    public async Task<int> SimpleTwoWayAnswerMessageAsync(string id, string title, string message, string option1Label, string option2label,
         Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
         string titleIcon = null, string optionwrapperstyle = "justify-content:flex-end;")
     {
         RenderFragment msg = @<div>@message</div>;
-        return await ComplexTwoWayAnswerMessage(id,title, msg, option1Label, option2label, option1Clbk, option2Clbk, option1style, option2style);
+        return await ComplexTwoWayAnswerMessageAsync(id,title, msg, option1Label, option2label, option1Clbk, option2Clbk, option1style, option2style);
     }
 
     /// <summary>
@@ -229,7 +265,7 @@
     /// <param name="titleIcon">Top bar mdi-xxx icon</param>
     /// <param name="optionwrapperstyle">Button wrapper style (mostly used to flex align)</param>
     /// <returns>Return clicked value: 0 = option1, 1 = option2, 2 = overriden by user callback and never gonna be set</returns>
-    public async Task<int> ComplexTwoWayAnswerMessage(string id, string title, RenderFragment message, string option1Label, string option2label,
+    public async Task<int> ComplexTwoWayAnswerMessageAsync(string id, string title, RenderFragment message, string option1Label, string option2label,
     Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
     string titleIcon = null, string optionwrapperstyle = "justify-content:flex-end;")
     {

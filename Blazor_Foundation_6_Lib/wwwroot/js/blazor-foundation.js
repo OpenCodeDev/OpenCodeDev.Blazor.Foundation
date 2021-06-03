@@ -84,7 +84,7 @@ var BlazorFoundationInifiteLoadHelperFunc =
         var scrollMaxY = window.scrollMaxY || (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight);
         let scroll = window.scrollY;
         if ((scrollMaxY - offset) <= scroll) {
-            DotNet.invokeMethodAsync("Blazor_Foundation_6","InfiniteLoadHelperReachedEnd");
+            DotNet.invokeMethodAsync("OpenCodeDev.Blazor.Foundation","InfiniteLoadHelperReachedEnd");
         }
     });
 }, 300);
@@ -229,7 +229,7 @@ function RevealOnClosedListener(element) {
    
     $(`#${element}`).on('closed.zf.reveal', function () {
         console.log(element);
-        DotNet.invokeMethodAsync('Blazor_Foundation_6', 'RSREVEALCLOSED', element);
+        DotNet.invokeMethodAsync('OpenCodeDev.Blazor.Foundation', 'RSREVEALCLOSED', element);
         
     });
 }

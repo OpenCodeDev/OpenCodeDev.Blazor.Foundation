@@ -17,7 +17,7 @@
     <div style=" padding: 1em;">
         @ChildContent
     </div>
-    @if (RevealCloseXButton)
+    @if (CloseXButton)
     {
         <button class="@CloseClass" data-close aria-label="Close reveal" type="button">
             <span aria-hidden="true">&times;</span>
@@ -100,7 +100,7 @@
     /// False to hive the close button inside the reveal (check also CloseOnClick if you tryin' to disable closing of the reveal)
     /// </summary>
     [Parameter]
-    public bool RevealCloseXButton { get; set; } = true;
+    public bool CloseXButton { get; set; } = true;
     /// <summary>
     /// Define Custom Class for Close Button
     /// </summary>
