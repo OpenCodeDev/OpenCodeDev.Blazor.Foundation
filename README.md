@@ -4,25 +4,33 @@
 ![](https://img.shields.io/nuget/dt/Fl.Blazor.Foundation?label=Downloads)
 
 # Introduction 
-This project is a public package published by the company under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C#.
+This project is a public package published by FlawlessLoop Studios, Inc. (Prior Version 3) and OpenCodeDev (Since Version 3) under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C# with Extra Added Side-Features (We do not Edit or Change Foundation 6 JS and CSS to ensure full compatibility with official repos).
 
 To help developers focus on C# and Blazor, we've assembled an easy to use package featuring Zurb Foundation 6 components' script and style. 
 
 Thus, the developer can expect to write less javascript to work with Zurb Foundation 6 and focus on writing C# and Blazor HTML.
 
-The package is set to be very flexible and extensively maintained by us. Therefore, expect to see many future updates, tutorial, documentation, videos and more!
+The package is set to be very flexible and extensively maintained by OpenCodeDev. Therefore, expect to see many future updates, tutorial, documentation, videos and more!
 
 That being said, let get started! Unleash the power of Zurb Foundation 6 in the comfort of C#!
 
 
 # Links
-* [Blazor Foundation Docs](https://dev.azure.com/FlawlessLoop/blazor_foundation_6/_git/blazor_foundation_6_wiki?path=%2FGetting-Started.md)
+* [Blazor Foundation Docs](https://foundation.opencodedev.com/doc)
 
 * [Zurb Foundation 6 Docs](https://get.foundation/sites/docs/)
 
-
 # Dependencies
+- Microsoft.AspNetCore.Components
+- Microsoft.AspNetCore.Components.Web
 - [Newtonsoft.Json (>= 12.0.3)](https://www.nuget.org/packages/Newtonsoft.Json/)
 
+# Compatibility
+- .NET 5 (Expect to Upgrade to .NET 6.0 LTS)
+- .NET Standard 2.1 (No Support after 2022)
+- .NET CORE 3.1 (Limited Support after 2022)
+- Blazor WASM
+- Blazor Server (should be carefully design due to signal IR)
+- 
 # Get Started
-Get Started by Visiting the Official [Documentation](https://dev.azure.com/FlawlessLoop/blazor_foundation_6/_git/blazor_foundation_6_wiki?path=%2FGetting-Started.md) of Blazor Foundation.
+Get Started by Visiting the Official [Documentation](https://foundation.opencodedev.com/) of Blazor Foundation.

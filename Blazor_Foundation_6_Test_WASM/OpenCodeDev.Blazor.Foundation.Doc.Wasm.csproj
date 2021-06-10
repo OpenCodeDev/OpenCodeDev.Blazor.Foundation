@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <AssemblyName>Blazor_Foundation_6_Test_WASM</AssemblyName>
-    <RootNamespace>Blazor_Foundation_6_Test_WASM</RootNamespace>
+    <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Wasm</AssemblyName>
+    <RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Wasm</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blazor_Foundation_6_Lib\Blazor_Foundation_6.csproj" />
-    <ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\Blazor_Foundation_6_Test_Shared.csproj" />
+    <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
+    <ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\OpenCodeDev.Blazor.Foundation.Doc.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,50 @@
 ﻿@page "/slider"
 
-<h3>Slider</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Slider</h2>
+        <p>
+            This handy lil slider is perfect for setting specific values within a range.
+        </p>
+        <ul>
+            <li>
+                Use the <Code Content="PE5hdkxpbms+"></Code> tag if the button is a link to another page, or a link to an anchor within a page.
+                Generally anchors don't require C# code to work.
+            </li>
+            <li>
+                Use the <Code Content="PEJ1dHRvbj4="></Code> tag if the button performs an action that changes something on the current page.
+                <Code Content="PEJ1dHRvbj4="></Code> elements always require C# to function
+            </li>
+        </ul>
+
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+            Create a slider by adding the component <Code>@("<SingleSlider />")</Code>. 
+            You should also define both a starting and maximum value for the slider.
+        </p>
+        <ul>
+            <li>The <Code>@("Disabled=true")</Code> is to disable the slider.</li>
+            <li>The <Code>@("Value=10")</Code> is where the current value is store and also used to set starting point.</li>
+            <li>The <Code>@("Step=1")</Code> is step between changes, 1, 10, 0.01 can be float and int.</li>
+            <li>The <Code>@("Min=1")</Code> is the minimum value for slider.</li>
+            <li>The <Code>@("Max=100")</Code> is the maximum value for the slider. </li>
+        </ul>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbj5MZWFybiBNb3JlPC9CdXR0b24+CjxCdXR0b24+VmlldyBBbGwgRmVhdHVyZXM8L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0ic3VjY2VzcyI+U2F2ZTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJhbGVydCI+RGVsZXRlPC9CdXR0b24+" />
+
+         <SingleSlider Step="1" Min="1" Max="100" Value="10"   />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
-
 }

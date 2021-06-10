@@ -1,12 +1,13 @@
 ﻿@using Microsoft.JSInterop;
 @using Newtonsoft.Json.Linq;
 @using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Forms;
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
 @implements System.IDisposable;
 @if (DataBindingId == null)
 {
-    <input id="@($"{@Id.ToString()}-input")" type="number" class="is-hidden">
+    <input  Value="@Value"  id="@($"{@Id.ToString()}-input")" type="number" class="is-hidden" />
 
 }
 <div id="@Id" class="@($"slider {Class}")" data-slider data-initial-start="@Value.ToString()" data-vertical="@IsVertical.ToString().ToLower()"
@@ -22,7 +23,7 @@
     /// Unique HTML Identifier.
     /// </summary>
     [Parameter]
-    public string Id { get; set; }
+    public string Id { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
     /// Custom Class to Append at the end of default Foundation Class.
@@ -30,12 +31,6 @@
     [Parameter]
     public string Class { get; set; }
 
-
-    /// <summary>
-    /// Input's Name (Only if DataBindingId is undefined)
-    /// </summary>
-    [Parameter]
-    public string Name { get; set; }
 
     /// <summary>
     /// Input's id (Only if DataBindingId is undefined)

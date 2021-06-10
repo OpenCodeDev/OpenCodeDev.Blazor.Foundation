@@ -3,7 +3,9 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netcoreapp3.1</TargetFrameworks>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <PackageId>Fl.Blazor.Foundation.Test.Shared</PackageId>
+    <PackageId>OpenCodeDev.Blazor.Foundation.Doc.Core</PackageId>
+    <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Core</AssemblyName>
+    <RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Core</RootNamespace>
   </PropertyGroup>
 
 
@@ -14,7 +16,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Blazor_Foundation_6_Lib\Blazor_Foundation_6.csproj" />
+    <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
   </ItemGroup>
 
 

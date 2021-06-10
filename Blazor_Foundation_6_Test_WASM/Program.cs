@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-namespace Blazor_Foundation_6_Test_WASM
+namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
 {
     public class Program
     {

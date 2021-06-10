@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Foundation_6", "Blazor_Foundation_6_Lib\Blazor_Foundation_6.csproj", "{03C9CF81-244C-4CB1-A178-EBDDF408358D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundation", "Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj", "{03C9CF81-244C-4CB1-A178-EBDDF408358D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Foundation_6_Test_Shared", "Blazor_Foundation_6_Test_Shared\Blazor_Foundation_6_Test_Shared.csproj", "{A27EE5BA-B03C-4A78-9590-7335DDCCACA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundation.Doc.Core", "Blazor_Foundation_6_Test_Shared\OpenCodeDev.Blazor.Foundation.Doc.Core.csproj", "{A27EE5BA-B03C-4A78-9590-7335DDCCACA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Foundation_6_Test_WASM", "Blazor_Foundation_6_Test_WASM\Blazor_Foundation_6_Test_WASM.csproj", "{2E676123-CCFF-4461-ACDB-95EBDDFDC803}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Foundation_6_Test_SRV", "Blazor_Foundation_6_Test_SRV\Blazor_Foundation_6_Test_SRV.csproj", "{BF38AD20-6FA1-42AA-8C06-2E37D437BDDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundation.Doc.Wasm", "Blazor_Foundation_6_Test_WASM\OpenCodeDev.Blazor.Foundation.Doc.Wasm.csproj", "{2E676123-CCFF-4461-ACDB-95EBDDFDC803}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{2E676123-CCFF-4461-ACDB-95EBDDFDC803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E676123-CCFF-4461-ACDB-95EBDDFDC803}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E676123-CCFF-4461-ACDB-95EBDDFDC803}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF38AD20-6FA1-42AA-8C06-2E37D437BDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF38AD20-6FA1-42AA-8C06-2E37D437BDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF38AD20-6FA1-42AA-8C06-2E37D437BDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF38AD20-6FA1-42AA-8C06-2E37D437BDDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
