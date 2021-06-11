@@ -1,0 +1,22 @@
+﻿<MenuSystemWrapper Id="MenuSystemWrapperAutoV2" AppId="MyApp">
+    <MenuSystemTop>
+        <h3 style="margin-top: 1.2em; font-family: Open Sans Condensed; font-size: 1.1em; font-weight: bold; text-align: center;">
+            BLAZOR FOUNDATION 6
+        </h3>
+    </MenuSystemTop>
+
+    <MenuSystemLeft>
+        <Cell Class="doc-menu side-menu">
+            @ChildContent
+        </Cell>
+
+    </MenuSystemLeft>
+
+    <MenuSystemRight>
+
+    </MenuSystemRight>
+</MenuSystemWrapper>
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

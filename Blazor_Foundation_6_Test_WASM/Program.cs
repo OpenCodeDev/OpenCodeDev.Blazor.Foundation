@@ -1,11 +1,13 @@
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.Clipboard;
-using Blazor_Foundation_6_Test_Shared.Plugins.CSS;
+using OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.CSS;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+
 namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
 {
     public class Program

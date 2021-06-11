@@ -6,6 +6,13 @@
     <PackageId>OpenCodeDev.Blazor.Foundation.Doc.Core</PackageId>
     <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Core</AssemblyName>
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Core</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>OpenCodeDev</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
+    <OutputPath>..\..\..\packages\Blazor_Foundation_6_Doc_Core</OutputPath>
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
 
 
@@ -21,6 +28,7 @@
 
 
   <ItemGroup>
+    <Folder Include="Documentation\OpenCodeDev\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

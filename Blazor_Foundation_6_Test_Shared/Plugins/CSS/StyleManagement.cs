@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
-namespace Blazor_Foundation_6_Test_Shared.Plugins.CSS
+namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.CSS
 {
     public class StyleManagement : BFStyleManagement
     {
