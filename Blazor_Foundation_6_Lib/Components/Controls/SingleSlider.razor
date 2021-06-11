@@ -5,38 +5,39 @@
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
 @implements System.IDisposable;
-@if (DataBindingId == null)
-{
-    <input  Value="@Value"  id="@($"{@Id.ToString()}-input")" type="number" class="is-hidden" />
+@*<InputNumber Value="@Value" ValueChanged="(float nVal)=> SliderValueChanged(nVal)" ValueExpresion="() => Value"  id="@($"{@Id.ToString()}-input")" class="is-hidden" />*@
 
-}
-<div id="@Id" class="@($"slider {Class}")" data-slider data-initial-start="@Value.ToString()" data-vertical="@IsVertical.ToString().ToLower()"
+<div id="@Id" class="@($"slider {(Disabled? "disabled" : "")} " +
+                       $"{(IsVertical && !Class.Contains("vertical") ? "vertical" : "")} " +
+                       $"{Class}")"
+     data-slider data-initial-start="@Value.ToString()" data-vertical="@IsVertical.ToString().ToLower()"
      data-start="@Min.ToString()" data-step="@Step.ToString()" data-end="@Max.ToString()">
 
-    <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="@(DataBindingId != null? DataBindingId : $"{@Id.ToString()}-input")"></span>
+    <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="@($"{Id}-input")"></span>
     <span class="slider-fill" data-slider-fill></span>
+    
 </div>
-
+@if (!HasExtInput) { <input type="hidden" id="@($"{Id}-input")"  @bind-value="@Value"/> }
 @code {
 
     /// <summary>
     /// Unique HTML Identifier.
     /// </summary>
     [Parameter]
-    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string Id { get; set; }
 
     /// <summary>
     /// Custom Class to Append at the end of default Foundation Class.
     /// </summary>
     [Parameter]
-    public string Class { get; set; }
-
+    public string Class { get; set; } = "";
 
     /// <summary>
-    /// Input's id (Only if DataBindingId is undefined)
+    /// Must define an Id for the slider and the external input's id must be the slider's id with -input like 'mysilder-input'<br/>
+    /// True = Will rely on external input (if input not found, bind-Value wont update on C#)
     /// </summary>
     [Parameter]
-    public string InputId { get; set; }
+    public bool HasExtInput { get; set; }
 
     /// <summary>
     /// Minimum Value
@@ -55,6 +56,9 @@
     /// </summary>
     [Parameter]
     public float Value { get; set; } = 1;
+
+    [Parameter]
+    public EventCallback<float> ValueChanged { get; set; }
 
     /// <summary>
     /// True when control is disabled (Default: false)
@@ -76,12 +80,6 @@
     public float Step { get; set; } = 1;
 
     /// <summary>
-    /// Define if input control is not hidden.
-    /// </summary>
-    [Parameter]
-    public string DataBindingId { get; set; }
-
-    /// <summary>
     /// True: Will Trigger Foundation Script Registration Automatically Without any Options.
     /// </summary>
     [Parameter]
@@ -94,8 +92,33 @@
     public JObject DataOptions { get; set; }
 
 
+    public static Dictionary<string, SingleSlider> GlobalSliderList = new Dictionary<string, SingleSlider>();
+
+
+
     protected override void OnInitialized()
     {
+        if (Id == null)
+        {
+            Id = Guid.NewGuid().ToString();
+            if (HasExtInput)
+            {
+                HasExtInput = false;
+                Console.WriteLine("Slider Error, 'HasExtInput=true' but no Id defined. We reset HasExtInput to false and generated an id to avoid bind issues.");
+            }
+        }
+        GlobalSliderList.Add(Id, this);
+    }
+
+    [JSInvokable("UpdateSingleSliderValue")]
+    public static async Task OnValueUpdateJS(string id, float value)
+    {
+
+        if (GlobalSliderList.ContainsKey(id))
+        {
+            await GlobalSliderList[id].SliderValueChanged(value);
+        }
+        // Else, Ignore Slider no longer exist.
     }
 
     public override async Task SetParametersAsync(ParameterView parameters)
@@ -118,7 +141,12 @@
         }
 
     }
-
+    public async Task SliderValueChanged(float value)
+    {
+        Value = value;
+        Console.WriteLine("tt");
+        await ValueChanged.InvokeAsync(value);
+    }
 
     public void Dispose()
     {
@@ -126,6 +154,7 @@
         {
             JSRuntime.InvokeVoidAsync("FoundationDestroy", Id);
         }
+        GlobalSliderList.Remove(Id);
     }
 }
 

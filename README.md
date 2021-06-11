@@ -31,6 +31,6 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 - .NET CORE 3.1 (Limited Support after 2022)
 - Blazor WASM
 - Blazor Server (should be carefully design due to signal IR)
-- 
+
 # Get Started
 Get Started by Visiting the Official [Documentation](https://foundation.opencodedev.com/) of Blazor Foundation.

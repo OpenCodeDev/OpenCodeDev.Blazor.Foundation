@@ -6,7 +6,7 @@
 
 <SingleSlider AutoManaged="@AutoManaged" Class="@($"vertical {Class}")" DataBindingId="@DataBindingId"
               DataOptions="@DataOptions" Disabled="@Disabled" Id="@Id" InputId="@InputId"
-              Max="@Max" Min="@Min" Name="@Name" Step="@Step" @attributes="@AdditionalAttributes" Value="@Value" IsVertical="true" />
+              Max="@Max" Min="@Min" Step="@Step" @attributes="@AdditionalAttributes" Value="@Value" IsVertical="true" />
 
 @code {
 
@@ -14,7 +14,7 @@
     /// Unique HTML Identifier.
     /// </summary>
     [Parameter]
-    public string Id { get; set; }
+    public string Id { get; set; } = Guid.NewGuid().ToString();
 
     /// <summary>
     /// Custom Class to Append at the end of default Foundation Class.
@@ -25,11 +25,6 @@
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object> AdditionalAttributes { get; set; }
 
-    /// <summary>
-    /// Input's Name (Only if DataBindingId is undefined)
-    /// </summary>
-    [Parameter]
-    public string Name { get; set; }
 
     /// <summary>
     /// Input's id (Only if DataBindingId is undefined)

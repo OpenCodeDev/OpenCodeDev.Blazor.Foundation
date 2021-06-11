@@ -8,6 +8,8 @@
  *      Max Samson (m.samson@opencodedev.com)
  *
  */
+
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -57,6 +59,7 @@ function MenuSystemIsOpen(id, position) {
     }
 
 }
+
 function MenuSystemRegister(options) {
     new MenuSystem(JSON.parse(options)); // Create Menu System
 
@@ -84,7 +87,12 @@ var BlazorFoundationInifiteLoadHelperFunc =
         var scrollMaxY = window.scrollMaxY || (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight);
         let scroll = window.scrollY;
         if ((scrollMaxY - offset) <= scroll) {
-            DotNet.invokeMethodAsync("OpenCodeDev.Blazor.Foundation","InfiniteLoadHelperReachedEnd");
+            try {
+                DotNet.invokeMethodAsync("OpenCodeDev.Blazor.Foundation", "InfiniteLoadHelperReachedEnd");
+            } catch (e) {
+                // Silent
+            }
+            
         }
     });
 }, 300);
@@ -271,14 +279,31 @@ function StickyRegister(element, options) {
     window.StickyList.push(new Foundation.Sticky($(`#${element}`), optionsCanvas));
 }
 
-
+function FoundationReflow(element) {
+    $('#' + element).foundation('_reflow');
+}
 function SliderRegister(element, options) {
     if (typeof window.SliderList == 'undefined') {
         window.SliderList = [];
     }
 
     let optionsCanvas = options == null ? {} : JSON.parse(options);
-    window.SliderList.push(new Foundation.Slider($(`#${element}`), optionsCanvas));
+    let foundationElement = $(`#${element}`);
+    let slider = new Foundation.Slider(foundationElement, optionsCanvas);
+    slider.BFResetOption = optionsCanvas;
+    foundationElement.on('changed.zf.slider', async () => {
+        let elInput = $(`#${element}-input`);
+
+        let value = elInput.val();
+        if (elInput != null && typeof elInput != 'undefined' && elInput != undefined && typeof value != 'undefined' && value != undefined) {
+            await DotNet.invokeMethodAsync('OpenCodeDev.Blazor.Foundation', 'UpdateSingleSliderValue', element, parseFloat(value));
+            //window.SliderList.forEach(async function (el) {
+            //    el.$element.foundation('_reflow'); // Caculate Slider to Synchronize multiple binding (This triggers onchange resulting in infinite reflow loop)
+            //})
+        }
+
+    });
+    window.SliderList.push(slider);
 }
 
 function AbideRegister(element, options) {

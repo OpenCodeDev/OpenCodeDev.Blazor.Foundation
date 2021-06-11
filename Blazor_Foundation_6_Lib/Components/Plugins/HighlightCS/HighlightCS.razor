@@ -25,7 +25,7 @@ if (CopyBusy) { Console.WriteLine("Copy Button is busy."); return; }
 CopyBusy = true;
 CopyIcon = "mdi-spin";
 StateHasChanged();
-await clip.SetText(JS, System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Content)));
+await clip.SetText(JS,DecodedContent );
 CopyIcon = "mdi-check";
 StateHasChanged();
 await Task.Delay(1000);
@@ -37,7 +37,7 @@ StateHasChanged();
 }
 </div>
 }
-<code id="@Id" class="@($"language-{Language}")" style="@($"{(Full ? $"width:100%;": "width: fit-content;")} white-space: break-spaces;")">@System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Content))</code></pre>
+<code id="@Id" class="@($"language-{Language}")" style="@($"{(Full ? $"width:100%;": "width: fit-content;")} white-space: break-spaces;")">@DecodedContent</code></pre>
 
 @code {
 
@@ -71,8 +71,7 @@ StateHasChanged();
     private bool HeaderIsReady = false;
 
     /// <summary>
-    /// Must be B64 Encoded.
-    /// Content must be used to enable copy button feature.
+    /// String or Base64 Encoded
     /// </summary>
     [Parameter]
     public string Content { get; set; } = null;
@@ -89,6 +88,39 @@ StateHasChanged();
 
     private string Id { get; set; } = System.Guid.NewGuid().ToString();
 
+
+    private string DecodedContent { get; set; }
+
+    private string ContentDecodeHandler()
+    {
+        if (Content != null)
+        {
+            try
+            {
+                return System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Content));
+            }
+            catch (Exception)
+            {
+                return Content; // Not B64 PRobably Plain Content Passed down.
+            }
+
+            //if (isB64)
+            //{
+            //    return System.Text.Encoding.UTF8.GetString(buffer.ToArray());
+            //}
+            //else
+            //{
+            //    return Content; // Not B64 PRobably Plain Content Passed down.
+            //}
+
+        }
+        return "No Content Provided";
+    }
+
+    protected override void OnInitialized()
+    {
+        DecodedContent = ContentDecodeHandler();
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
