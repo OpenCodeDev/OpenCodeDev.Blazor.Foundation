@@ -8744,7 +8744,7 @@ input:checked ~ .switch-paddle {
   background: var(--switch-bg-color);
 }
 
-.switch.small .switch-paddle {
+.switch .switch-paddle {
   border-radius: var(--switch-border-radius);
 }
 

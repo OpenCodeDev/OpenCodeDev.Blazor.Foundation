@@ -55,6 +55,7 @@
                 </GridY>
             </Cell>
             <Cell Size="shrink">
+
                 @if (MITLICENSE == null && !MitLicenseError)
                 {
                     <span class="mdi mdi-loading mdi-spin" style=" padding-right: 0.3em;font-size: 2em;">
@@ -152,7 +153,7 @@
             try
             {
 
-                byte[] licenseResult = await _client.GetByteArrayAsync("https://raw.githubusercontent.com/OpenCodeDev/blazor_foundation_6/Version-3/LICENSE.txt");
+                byte[] licenseResult = await _client.GetByteArrayAsync("https://raw.githubusercontent.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation/main/LICENSE.txt");
                 MITLICENSE = Encoding.UTF8.GetString(licenseResult);
             }
             catch

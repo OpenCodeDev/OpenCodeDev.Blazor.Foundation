@@ -28,7 +28,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Documentation\OpenCodeDev\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

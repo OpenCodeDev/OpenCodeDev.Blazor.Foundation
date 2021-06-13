@@ -43,8 +43,6 @@
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="@(@"<SingleSlider Step=""1"" Min=""1"" Max=""100"" Value=""10"" /> ")" />
 
-
-
         <SingleSlider Step="1" Min="1" Max="100" Value="10" />
         <hr />
     </SectionLeft>
@@ -55,7 +53,7 @@
         <h2>Vertical</h2>
         <p>Create a slider by adding <Code>@(@"IsVertical=""true""")</Code> to the component <Code>@("<SingleSlider />")</Code>.</p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="@(@"<SingleSlider  Step=""1"" Min=""1"" Max=""100"" Value=""10"" IsVertical=""true""  /> ")" />
+                     Content="@(@"<SingleSlider Step=""1"" Min=""1"" Max=""100"" Value=""10"" IsVertical=""true""  /> ")" />
         <SingleSlider Step="1" Min="1" Max="100" Value="10" IsVertical="true" />
         <hr />
     </SectionLeft>
@@ -66,7 +64,7 @@
         <h2>Disabled</h2>
         <p>Create a slider by adding <Code>@(@"Disabled=""true""")</Code> to the component <Code>@("<SingleSlider />")</Code>.</p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="@(@"<SingleSlider  Step=""1"" Min=""1"" Max=""100"" Value=""10"" Disabled=""true""  /> ")" />
+                     Content="@(@"<SingleSlider Step=""1"" Min=""1"" Max=""100"" Value=""10"" Disabled=""true""  /> ")" />
         <SingleSlider Step="1" Min="1" Max="100" Value="10" Disabled="true" />
         <hr />
     </SectionLeft>
@@ -115,10 +113,37 @@
 <SectionWrapper>
     <SectionLeft>
         <h2>Native Slider</h2>
-        <p>Create a slider by adding <Code>@(@"Disabled=""true""")</Code> to the component <Code>@("<SingleSlider />")</Code>.</p>
+        <p>Create a native slider by using <Code>@(@"<input type=""range""")</Code>.</p>
+        <p>It takes a little more work to make it work since as of the writing Blazor doesn't have a RangeInput component.</p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="@(@"<SingleSlider  Step=""1"" Min=""1"" Max=""100"" Value=""10"" Disabled=""true""  /> ")" />
-        <input type="range" min="1" max="100" step="1"/>
+                     Content="@(@"<input type=""range"" min=""1"" max=""100"" step=""1""/> ")" />
+        <input type="range" min="1" max="100" step="1" />
+        <h4>Simple Two-Ways Binding</h4>
+        <p>The two-ways binding for native slider is more straight forward, it doesn't require <Code>id</Code> and it supports multi-binding.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PGlucHV0IHR5cGU9InJhbmdlIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlIiAvPgo8aW5wdXQgdHlwZT0ibnVtYmVyIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlIiAvPgpAY29kZSB7CiAgICBwcml2YXRlIGZsb2F0IF9EYXRhQmluZGluZ05hdGl2ZSA9IDIwOwogICAgcHVibGljIGZsb2F0IERhdGFCaW5kaW5nTmF0aXZlIHsgZ2V0ID0+IF9EYXRhQmluZGluZ05hdGl2ZTsgc2V0IHsgX0RhdGFCaW5kaW5nTmF0aXZlID0gdmFsdWU7IFN0YXRlSGFzQ2hhbmdlZCgpOyB9IH0KfQ==" />
+        <GridX HorizontalPadding="true">
+            <Cell Size="auto">
+                <input type="range" min="1" max="100" step="1" @bind-value="@DataBindingNative" />
+            </Cell>
+            <Cell Size="shrink">
+                <input type="number" min="1" max="100" step="1" @bind-value="@DataBindingNative" />
+            </Cell>
+        </GridX>
+        <h4>Multiple Binding</h4>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PGlucHV0IHR5cGU9InJhbmdlIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlTXVsdGkiIC8+CjxpbnB1dCB0eXBlPSJudW1iZXIiIG1pbj0iMSIgbWF4PSIxMDAiIHN0ZXA9IjEiIEBiaW5kLXZhbHVlPSJARGF0YUJpbmRpbmdOYXRpdmVNdWx0aSIgLz4KPGlucHV0IHR5cGU9InJhbmdlIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlTXVsdGkiIC8+CkBjb2RlIHsKICAgIHByaXZhdGUgZmxvYXQgX0RhdGFCaW5kaW5nTmF0aXZlTXVsdGkgPSAyMDsKICAgIHB1YmxpYyBmbG9hdCBEYXRhQmluZGluZ05hdGl2ZU11bHRpIHsgZ2V0ID0+IF9EYXRhQmluZGluZ05hdGl2ZU11bHRpOyBzZXQgeyBfRGF0YUJpbmRpbmdOYXRpdmVNdWx0aSA9IHZhbHVlOyBTdGF0ZUhhc0NoYW5nZWQoKTsgfSB9Cn0=" />
+        <GridX HorizontalPadding="true">
+            <Cell Size="small-6">
+                <input type="range" min="1" max="100" step="1" @bind-value="@DataBindingNativeMulti" />
+            </Cell>
+            <Cell Size="small-2">
+                <input type="number" min="1" max="100" step="1" @bind-value="@DataBindingNativeMulti" />
+            </Cell>
+            <Cell Size="small-6">
+                <input type="range" min="1" max="100" step="1" @bind-value="@DataBindingNativeMulti" />
+            </Cell>
+        </GridX>
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -130,4 +155,11 @@
 
     private float _DataBinding2 = 20;
     public float DataBinding2 { get => _DataBinding2; set { _DataBinding2 = value; StateHasChanged(); } }
+
+    private float _DataBindingNative = 20;
+    public float DataBindingNative { get => _DataBindingNative; set { _DataBindingNative = value; StateHasChanged(); } }
+
+    private float _DataBindingNativeMulti = 20;
+    public float DataBindingNativeMulti { get => _DataBindingNativeMulti; set { _DataBindingNativeMulti = value; StateHasChanged(); } }
+
 }
