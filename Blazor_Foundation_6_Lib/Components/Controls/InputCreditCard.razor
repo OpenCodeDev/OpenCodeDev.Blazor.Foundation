@@ -41,6 +41,10 @@
     [Parameter]
     public EventCallback<ChangeEventArgs> OnChange { get; set; }
 
+    //TODO: Allow paste as a feature. Maybe capture CTRL+V and filter data ?
+    //[Parameter]
+    //public bool AllowPaste { get; set; } = false; 
+
     /// <summary>
     /// Current binding (with format)
     /// </summary>
@@ -76,9 +80,11 @@
             BackingNumber = FormattedCardNumber(BackingNumber.Replace(" ", String.Empty));
             StateHasChanged();
         }
-
-        Card = BackingNumber.Replace(" ", String.Empty); // Entry without spaces
-        await CardChanged.InvokeAsync(Card);
+        if (BackingNumber != default)
+        {
+            Card = BackingNumber.Replace(" ", String.Empty); // Entry without spaces
+            await CardChanged.InvokeAsync(Card);
+        }
         // Reset the state for the next key
         OnChangeRemovedSomething = false;
         OnChangeAcceptKey = true;
@@ -93,8 +99,7 @@
     {
         //LastBackingNumber = BackingNumber;
         //BackingNumber = "";
-
-        if (Numbers.Contains(args.Key) && Card.Length < 19)
+        if (Numbers.Contains(args.Key) && (Card == default || Card.Length < 19) )
         {
             OnChangeAcceptKey = true;
             OnChangeDelayUpdate = false;
@@ -126,8 +131,9 @@
             var curValList = currentValue.ToArray();
             for (int i = 0; i < curValList.Length; i++)
             {
-                int index = i;
-                if (BackingNumber[index] == ' ' && curValList[index] == BackingNumber[index]) { OnChangeDelayUpdate = true; }
+                int index = i; // 0000 0: 000000
+                if (BackingNumber[index] == ' ' && curValList[index] != ' ') { OnChangeDelayUpdate = true; }
+
             }
         }
 
