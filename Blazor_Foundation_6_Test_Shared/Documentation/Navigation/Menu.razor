@@ -209,12 +209,22 @@
         <h2>Icons</h2>
         <p>Menu items can have icons. Wrap the text of the item in a <Code>@("<span>")</Code>.</p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PE1lbnVUb3BMZXZlbD4KICAgIDxsaSBjbGFzcz0ibWVudS10ZXh0Ij5TZWxlY3Rpb246ICA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAyIDwvTmF2TGluaz48L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAzIDwvTmF2TGluaz4gPC9saT4KPC9NZW51VG9wTGV2ZWw+" />
+                     Content="PE1lbnVUb3BMZXZlbD4KICAgIDxsaSBjbGFzcz0ibWVudS10ZXh0Ij5TZWxlY3Rpb246ICA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gPHNwYW4gY2xhc3M9Im1kaSBtZGktcHJvZ3Jlc3MtcXVlc3Rpb24iPjwvc3Bhbj4gPHNwYW4+T25lPC9zcGFuPiA8L05hdkxpbms+PC9saT4KICAgIDxsaT4gPE5hdkxpbms+IDxzcGFuIGNsYXNzPSJtZGkgbWRpLWNhcnJvdCI+PC9zcGFuPiA8c3Bhbj5PbmU8L3NwYW4+IDwvTmF2TGluaz4gPC9saT4KPC9NZW51VG9wTGV2ZWw+" />
 
         <MenuTopLevel>
             <li class="menu-text">Selection:  </li>
-            <li> <NavLink> <i class="fi-list"></i> <span>One</span> </NavLink></li>
-            <li> <NavLink> Item 3 </NavLink> </li>
+            <li> <NavLink> <span class="mdi mdi-progress-question"></span> <span>One</span> </NavLink></li>
+            <li> <NavLink> <span class="mdi mdi-carrot"></span> <span>One</span> </NavLink> </li>
+        </MenuTopLevel>
+
+        <h2>Icon Top</h2>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbD4KICAgIDxsaSBjbGFzcz0ibWVudS10ZXh0Ij5TZWxlY3Rpb246ICA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gPHNwYW4gY2xhc3M9Im1kaSBtZGktcHJvZ3Jlc3MtcXVlc3Rpb24iPjwvc3Bhbj4gPHNwYW4+T25lPC9zcGFuPiA8L05hdkxpbms+PC9saT4KICAgIDxsaT4gPE5hdkxpbms+IDxzcGFuIGNsYXNzPSJtZGkgbWRpLWNhcnJvdCI+PC9zcGFuPiA8c3Bhbj5PbmU8L3NwYW4+IDwvTmF2TGluaz4gPC9saT4KPC9NZW51VG9wTGV2ZWw+" />
+
+        <MenuTopLevel Class="icons icon-top">
+            <li class="menu-text">Selection:  </li>
+            <li> <NavLink> <span class="mdi mdi-progress-question"></span> <span>One</span> </NavLink></li>
+            <li> <NavLink> <span class="mdi mdi-carrot"></span> <span>One</span> </NavLink> </li>
         </MenuTopLevel>
         <hr />
     </SectionLeft>
