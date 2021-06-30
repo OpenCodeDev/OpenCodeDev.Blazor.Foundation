@@ -1,0 +1,225 @@
+﻿@page "/menu";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using Microsoft.AspNetCore.Components.Forms;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Menu</h2>
+        <p> Our flexible menu component makes it easy to build many common navigation patterns, all with the same markup. </p>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>Blazor Foundation 6's menu system is slightly different than the Zurb Foundation 6's. </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbD4KICAgIDxsaT4gPE5hdkxpbms+IEhvbWUgPC9OYXZMaW5rPiA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gQWJvdXQgPC9OYXZMaW5rPiA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gUG9tcGFubyA7KSA8L05hdkxpbms+IDwvbGk+CjwvTWVudVRvcExldmVsPg==" />
+
+        <MenuTopLevel>
+            <li> <NavLink> Home </NavLink> </li>
+            <li> <NavLink> About </NavLink> </li>
+            <li> <NavLink> Pompano ;) </NavLink> </li>
+        </MenuTopLevel>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Item Alignment</h2>
+        <p>By default, each item in the menu aligns to the left. They can also be aligned to the right with the <Code>align-right</Code> class.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBDbGFzcz0iYWxpZ24tcmlnaHQiPgogICAgPGxpPiA8TmF2TGluaz4gSG9tZSA8L05hdkxpbms+IDwvbGk+CiAgICA8bGk+IDxOYXZMaW5rPiBBYm91dCA8L05hdkxpbms+IDwvbGk+CiAgICA8bGk+IDxOYXZMaW5rPiBQb21wYW5vIDspIDwvTmF2TGluaz4gPC9saT4KPC9NZW51VG9wTGV2ZWw+" />
+
+        <MenuTopLevel Class="align-right">
+            <li> <NavLink> Home </NavLink> </li>
+            <li> <NavLink> About </NavLink> </li>
+            <li> <NavLink> Pompano ;) </NavLink> </li>
+        </MenuTopLevel>
+
+        <h4>Align to Center</h4>
+        <p>Menu can be aligned to the center with the <Code>align-center</Code> class.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBDbGFzcz0iYWxpZ24tY2VudGVyIj4KICAgIDxsaT4gPE5hdkxpbms+IEhvbWUgPC9OYXZMaW5rPiA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gQWJvdXQgPC9OYXZMaW5rPiA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gUG9tcGFubyA7KSA8L05hdkxpbms+IDwvbGk+CjwvTWVudVRvcExldmVsPg==" />
+
+        <MenuTopLevel Class="align-center">
+            <li> <NavLink> Home </NavLink> </li>
+            <li> <NavLink> About </NavLink> </li>
+            <li> <NavLink> Pompano ;) </NavLink> </li>
+        </MenuTopLevel>
+
+        <h4>Expanded</h4>
+        <p>Items can also be set to expand out and take up an even amount of space, with the <Code>expanded</Code> class.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBDbGFzcz0iZXhwYW5kZWQiPgogICAgPGxpPiA8TmF2TGluaz4gT25lIDwvTmF2TGluaz4gPC9saT4KICAgIDxsaT4gPE5hdkxpbms+IFR3byA8L05hdkxpbms+IDwvbGk+CiAgICA8bGk+IDxOYXZMaW5rPiBUaHJlZSA8L05hdkxpbms+IDwvbGk+CjwvTWVudVRvcExldmVsPg==" />
+
+        <MenuTopLevel Class="expanded">
+            <li> <NavLink> One </NavLink> </li>
+            <li> <NavLink> Two </NavLink> </li>
+            <li> <NavLink> Three </NavLink> </li>
+        </MenuTopLevel>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Vertical Menu</h2>
+        <p>Add the <Code>@(@"Vertical=""true""")</Code> to a Menu to switch its orientation.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBWZXJ0aWNhbD0idHJ1ZSI+CiAgICA8bGk+IDxOYXZMaW5rPiBMYW1iIERpYmkgPC9OYXZMaW5rPiA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gQW5nb2xlc2UgQ2hpY2tlbiA8L05hdkxpbms+IDwvbGk+CiAgICA8bGk+IDxOYXZMaW5rPiBHcmlsbGVkIFBvbXBhbm8gPC9OYXZMaW5rPiA8L2xpPgo8L01lbnVUb3BMZXZlbD4=" />
+
+        <MenuTopLevel Vertical="true">
+            <li> <NavLink> Lamb Dibi </NavLink> </li>
+            <li> <NavLink> Angolese Chicken </NavLink> </li>
+            <li> <NavLink> Grilled Pompano </NavLink> </li>
+        </MenuTopLevel>
+
+        <p>By default, each item in the menu aligns to the left. They can also be aligned to the right with the <Code>align-right</Code> class.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBWZXJ0aWNhbD0idHJ1ZSIgQ2xhc3M9ImFsaWduLXJpZ2h0Ij4KICAgIDxsaT4gPE5hdkxpbms+IEFuZ29sZXNlIENoaWNrZW4gPC9OYXZMaW5rPiA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gTGFtYiBEaWJpIDwvTmF2TGluaz4gPC9saT4KICAgIDxsaT4gPE5hdkxpbms+IEdyaWxsZWQgUG9tcGFubyA8L05hdkxpbms+IDwvbGk+CjwvTWVudVRvcExldmVsPg==" />
+
+        <MenuTopLevel Vertical="true" Class="align-right">
+            <li> <NavLink> Angolese Chicken </NavLink> </li>
+            <li> <NavLink> Lamb Dibi </NavLink> </li>
+            <li> <NavLink> Grilled Pompano </NavLink> </li>
+        </MenuTopLevel>
+
+        <h4>Align to Center</h4>
+        <p>Menu can be aligned to the center with the <Code>align-center</Code> class.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBWZXJ0aWNhbD0idHJ1ZSIgQ2xhc3M9ImFsaWduLWNlbnRlciI+CiAgICA8bGk+IDxOYXZMaW5rPiBHcmlsbGVkIFBvbXBhbm8gPC9OYXZMaW5rPiA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gQW5nb2xlc2UgQ2hpY2tlbiA8L05hdkxpbms+IDwvbGk+CiAgICA8bGk+IDxOYXZMaW5rPiBMYW1iIERpYmkgPC9OYXZMaW5rPiA8L2xpPgo8L01lbnVUb3BMZXZlbD4=" />
+
+        <MenuTopLevel Vertical="true" Class="align-center">
+            <li> <NavLink> Grilled Pompano </NavLink> </li>
+            <li> <NavLink> Angolese Chicken </NavLink> </li>
+            <li> <NavLink> Lamb Dibi </NavLink> </li>
+        </MenuTopLevel>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Nested Style</h2>
+        <p>Add a new menu inside the <Code>@("<li>")</Code> of a Menu and add the component <Code>MenuNested</Code> to create a nested menu. The nested Menu has extra padding on the inside..</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBWZXJ0aWNhbD0idHJ1ZSI+CiAgICA8bGk+IAogICAgICAgIDxOYXZMaW5rPiBTZW5lZ2FsIDwvTmF2TGluaz4gCiAgICAgICAgPE1lbnVOZXN0ZWQgVmVydGljYWw9InRydWUiPgogICAgICAgICAgICA8bGk+CiAgICAgICAgICAgICAgICA8TmF2TGluaz4gTGFtYiBEaWJpIDwvTmF2TGluaz4KICAgICAgICAgICAgPC9saT4KICAgICAgICAgICAgPGxpPgogICAgICAgICAgICAgICAgPE5hdkxpbms+IEdvYXQgRGliaSA8L05hdkxpbms+CiAgICAgICAgICAgIDwvbGk+CiAgICAgICAgPC9NZW51TmVzdGVkPgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8TmF2TGluaz4gQW5nb2xhIDwvTmF2TGluaz4KICAgICAgICA8TWVudU5lc3RlZCBWZXJ0aWNhbD0idHJ1ZSI+CiAgICAgICAgICAgIDxsaT4KICAgICAgICAgICAgICAgIDxOYXZMaW5rPiBTcGljZWQgQ2hpY2tlbiA8L05hdkxpbms+CiAgICAgICAgICAgIDwvbGk+CiAgICAgICAgPC9NZW51TmVzdGVkPgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8TmF2TGluaz4gQ2FuYWRhIDwvTmF2TGluaz4KICAgIDwvbGk+CjwvTWVudVRvcExldmVsPg==" />
+
+        <MenuTopLevel Vertical="true">
+            <li>
+                <NavLink> Senegal </NavLink>
+                <MenuNested Vertical="true">
+                    <li>
+                        <NavLink> Lamb Dibi </NavLink>
+                    </li>
+                    <li>
+                        <NavLink> Goat Dibi </NavLink>
+                    </li>
+                </MenuNested>
+            </li>
+            <li>
+                <NavLink> Angola </NavLink>
+                <MenuNested Vertical="true">
+                    <li>
+                        <NavLink> Spiced Chicken </NavLink>
+                    </li>
+                </MenuNested>
+            </li>
+            <li>
+                <NavLink> Canada </NavLink>
+            </li>
+        </MenuTopLevel>
+
+
+        <h4>Half Way Vertical</h4>
+        <p>You can Mixin Vertical and Horizontal Menu, Note: it was not intended to be used that way but its a good glitch :)</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbCBWZXJ0aWNhbD0idHJ1ZSI+CiAgICA8bGk+CiAgICAgICAgPE5hdkxpbms+IFNlbmVnYWwgPC9OYXZMaW5rPgogICAgICAgIDxNZW51TmVzdGVkID4KICAgICAgICAgICAgPGxpPgogICAgICAgICAgICAgICAgPE5hdkxpbms+IExhbWIgRGliaSA8L05hdkxpbms+CiAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgIDxsaT4KICAgICAgICAgICAgICAgIDxOYXZMaW5rPiBHb2F0IERpYmkgPC9OYXZMaW5rPgogICAgICAgICAgICA8L2xpPgogICAgICAgIDwvTWVudU5lc3RlZD4KICAgIDwvbGk+CiAgICA8bGk+CiAgICAgICAgPE5hdkxpbms+IEFuZ29sYSA8L05hdkxpbms+CiAgICAgICAgPE1lbnVOZXN0ZWQ+CiAgICAgICAgICAgIDxsaT4KICAgICAgICAgICAgICAgIDxOYXZMaW5rPiBTcGljZWQgQ2hpY2tlbiA8L05hdkxpbms+CiAgICAgICAgICAgIDwvbGk+CiAgICAgICAgPC9NZW51TmVzdGVkPgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8TmF2TGluaz4gQ2FuYWRhIDwvTmF2TGluaz4KICAgIDwvbGk+CjwvTWVudVRvcExldmVsPg==" />
+
+        <MenuTopLevel Vertical="true">
+            <li>
+                <NavLink> Senegal </NavLink>
+                <MenuNested>
+                    <li>
+                        <NavLink> Lamb Dibi </NavLink>
+                    </li>
+                    <li>
+                        <NavLink> Goat Dibi </NavLink>
+                    </li>
+                </MenuNested>
+            </li>
+            <li>
+                <NavLink> Angola </NavLink>
+                <MenuNested>
+                    <li>
+                        <NavLink> Spiced Chicken </NavLink>
+                    </li>
+                </MenuNested>
+            </li>
+            <li>
+                <NavLink> Canada </NavLink>
+            </li>
+        </MenuTopLevel>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<style>
+    .active[mark="active"] {
+        font-weight: bold;
+    }
+</style>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Active State</h2>
+        <p>We are using Blazor component <Code>NavLink</Code> with the attribute <Code>ActiveClass</Code>. The class is custom made... you can create yours it is fairly easly.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbD4KICAgIDxsaT4gPE5hdkxpbmsgQWN0aXZlQ2xhc3M9ImFjdGl2ZSI+IEl0ZW0gMSA8L05hdkxpbms+IDwvbGk+CiAgICA8bGk+IDxOYXZMaW5rPiBJdGVtIDIgPC9OYXZMaW5rID48L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAzIDwvTmF2TGluaz4gPC9saT4KPC9NZW51VG9wTGV2ZWw+" />
+
+        <MenuTopLevel>
+            <li> <NavLink href="/menu" ActiveClass="active" mark="active"> Item 1 </NavLink> </li>
+            <li> <NavLink> Item 2 </NavLink></li>
+            <li> <NavLink> Item 3 </NavLink> </li>
+        </MenuTopLevel>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>BuiltIn Visual</h2>
+        <p>Because the padding of the menu item is applied to the <Code>NavLink</Code>, if you try to add an item that's text only, it will be misaligned. To get around this, add the class <Code>menu-text</Code> to any <Code>@("<li>")</Code> that doesn't have a link inside of it.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbD4KICAgIDxsaSBjbGFzcz0ibWVudS10ZXh0Ij5TZWxlY3Rpb246ICA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAyIDwvTmF2TGluaz48L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAzIDwvTmF2TGluaz4gPC9saT4KPC9NZW51VG9wTGV2ZWw+" />
+
+        <MenuTopLevel>
+            <li class="menu-text">Selection:  </li>
+            <li> <NavLink> Item 2 </NavLink></li>
+            <li> <NavLink> Item 3 </NavLink> </li>
+        </MenuTopLevel>
+
+        <h2>Icons</h2>
+        <p>Menu items can have icons. Wrap the text of the item in a <Code>@("<span>")</Code>.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVUb3BMZXZlbD4KICAgIDxsaSBjbGFzcz0ibWVudS10ZXh0Ij5TZWxlY3Rpb246ICA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAyIDwvTmF2TGluaz48L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAzIDwvTmF2TGluaz4gPC9saT4KPC9NZW51VG9wTGV2ZWw+" />
+
+        <MenuTopLevel>
+            <li class="menu-text">Selection:  </li>
+            <li> <NavLink> <i class="fi-list"></i> <span>One</span> </NavLink></li>
+            <li> <NavLink> Item 3 </NavLink> </li>
+        </MenuTopLevel>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}
