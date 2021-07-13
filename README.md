@@ -6,7 +6,7 @@
 # Introduction 
 This project is a public package published by FlawlessLoop Studios, Inc. (Prior Version 3) and OpenCodeDev (Since Version 3) under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C# with Extra Added Side-Features (We do not Edit or Change Foundation 6 JS and CSS to ensure full compatibility with official repos).
 
-To help developers focus on C# and Blazor, we've assembled an easy to use package featuring Zurb Foundation 6 components' script and style. 
+To help developers focus on C# and Blazor, we have assembled an easy to use package featuring Zurb Foundation 6 components' script and style. 
 
 Thus, the developer can expect to write less javascript to work with Zurb Foundation 6 and focus on writing C# and Blazor HTML.
 
