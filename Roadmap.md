@@ -64,13 +64,17 @@ Note 2: Blazor Foundation is focus on Blazor C# framework for SPA, PWA and Nativ
 ### Q1
 - Add Support for .NET 6 as LTS.
 - Separate Razor C# Code to Razor Partial C#.
-
+- Add Component for Dependencies Loading.
 ### Q2
-- Publish first template made with Blazor Foundation 6
+- Make Material Design Icons a Plugin (Network Performance, Can be Enabled)
+- Implement Default Icons SVGs (Load Performance, Can be Disabled)
 ### Q3
-- Publish series of free training videos.
+- Make external library enabled/disabled easily with footer.
 ### Q4
+- Publish series of free training videos.
+- Publish first template made with Blazor Foundation 6
 - Update documentation SPA to add videos linked to relevent parts.
+
 
 <br/>
 
@@ -80,20 +84,22 @@ Note 2: Blazor Foundation is focus on Blazor C# framework for SPA, PWA and Nativ
 - .NET Core 3.1 support will be no longer provided. 
 - Completely Fork Zurb's Foundation 6 (Depending on Budget)
 ### Q2
+- Integrate UmbrellaJS in Foundation 6.
+
 ### Q3
 - Improve Foundation 6 CSS for BF. (Performance)
 ### Q4
+- Trade JQuery for UmbrellaJS in Foundation 6 (Performance).
 
 <br/>
 
 ## 2024
 ### Q1
-- Purge Foundation 6 of JQuery to Vanilla (Performance).
+- Release of OpenCodeDev's Foundation 7 LTS (Standalone 3-Years)
 ### Q2
+- Implement Foundation 7 as new Blazor Foundation Version 4 underlying engine.
 ### Q3
 ### Q4
-- Release OpenDevCode Foundation 7 as JS/CSS Framework
-- Implement Foundation 7 as new Blazor Foundation 6 underlying engine.
 - Release of Blazor Foundation Version 4 LTS (3-Years)
 
 <br/>
