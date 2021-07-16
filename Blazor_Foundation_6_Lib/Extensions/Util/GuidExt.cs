@@ -13,6 +13,7 @@ namespace OpenCodeDev.Blazor.Foundation.Extensions.Util
         /// </summary>
         public static Guid HTMLCompliant (this Guid guid)
         {
+            // Thanks to p.s.w.g on stackoverflow
             var b = guid.ToByteArray();
             b[3] |= 0xF0;
             return new Guid(b);
