@@ -91,7 +91,9 @@
 <SectionWrapper>
     <SectionLeft>
         <h2>Making Closable</h2>
-        <p>Pair the callout with the close button component and <Code>ClosableData</Code> attribute to create a dismissable alert box.</p>
+        <p>Pair the callout with the <Code>CloseButton</Code> attribute and <Code>ClosableData</Code> attribute to create a dismissable alert box.</p>
+        <p>You can use the <Code>ClosableButtonCallBack</Code> attribute to add an event callback.</p>
+
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary">
             Any element can be used as a close trigger, not just close button. Adding the attribute <Code>CloseButton="true"</Code> to any element within the callout will turn it into a close trigger.
 
@@ -100,7 +102,7 @@
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PENhbGxvdXQgQ2xvc2VCdXR0b249InRydWUiIFR5cGVDbGFzcz0iYWxlcnQiIENsb3NhYmxlRGF0YT0iIj4KICAgIDxoNT5UaGlzIGlzIEltcG9ydGFudCE8L2g1PgogICAgPHA+QnV0IHdoZW4geW91J3JlIGRvbmUgcmVhZGluZyBpdCwgY2xpY2sgdGhlIGNsb3NlIGJ1dHRvbiBpbiB0aGUgY29ybmVyIHRvIGRpc21pc3MgdGhpcyBhbGVydC48L3A+CiAgICA8cD5JJ20gdXNpbmcgdGhlIGRlZmF1bHQgPENvZGU+Q2xvc2FibGVEYXRhPC9Db2RlPiBwYXJhbWV0ZXJzLCBhbmQgc2ltcGx5IGZhZGUgb3V0LjwvcD4KPC9DYWxsb3V0PgoKPENhbGxvdXQgQ2xvc2VCdXR0b249InRydWUiIFR5cGVDbGFzcz0ic3VjY2VzcyIgQ2xvc2FibGVEYXRhPSJzbGlkZS1vdXQtcmlnaHQiPgogICAgPGg1PlRoaXMgYSBmcmllbmRseSBtZXNzYWdlLjwvaDU+CiAgICA8cD5BbmQgd2hlbiB5b3UncmUgZG9uZSB3aXRoIG1lLCBJIGNhbiBiZSBjbG9zZWQgdXNpbmcgYSBNb3Rpb24gVUkgYW5pbWF0aW9uLjwvcD4KPC9DYWxsb3V0Pg==" />
 
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout CloseButton="true" TypeClass="alert" ClosableData="" >
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout CloseButton="true" TypeClass="alert" ClosableData="">
             <h5>This is Important!</h5>
             <p>But when you're done reading it, click the close button in the corner to dismiss this alert.</p>
             <p>I'm using the default <Code>ClosableData</Code> parameters, and simply fade out.</p>
@@ -110,6 +112,7 @@
             <h5>This a friendly message.</h5>
             <p>And when you're done with me, I can be closed using a Motion UI animation.</p>
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+
 
     </SectionLeft>
 </SectionWrapper>
