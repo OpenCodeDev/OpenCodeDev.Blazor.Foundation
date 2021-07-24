@@ -1,7 +1,61 @@
 ﻿@page "/label";
 
-<h3>Label</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h3>Label</h3>
+        <p>
+            Labels are useful inline styles that can be dropped into body copy to call out certain sections or to attach metadata. For example, you can attach a label that notes when something was updated.
+        </p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basic</h2>
+        <p>Add the <Code Content="PExhYmVsPg=="></Code> Component to create a label.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PExhYmVsPkRlZmF1bCBMYWJlbDwvTGFiZWw+" />
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label>Default Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Coloring</h2>
+        <p>Add <Code>Color</Code> attribute to give labels additional meaning.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PExhYmVsIENvbG9yPSJwcmltYXJ5Ij5QcmltYXJ5IExhYmVsPC9MYWJlbD4KPExhYmVsIENvbG9yPSJzZWNvbmRhcnkiPlNlY29uZGFyeSBMYWJlbDwvTGFiZWw+CjxMYWJlbCBDb2xvcj0ic3VjY2VzcyI+U3VjY2VzcyBMYWJlbDwvTGFiZWw+CjxMYWJlbCBDb2xvcj0iYWxlcnQiPkFsZXJ0IExhYmVsPC9MYWJlbD4KPExhYmVsIENvbG9yPSJ3YXJuaW5nIj5XYXJuaW5nIExhYmVsPC9MYWJlbD4=" />
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Color="primary">Primary Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Color="secondary">Secondary Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Color="success">Success Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Color="alert">Alert Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Color="warning">Warning Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Icons</h2>
+        <p>An icon can be dropped into a label just fine. We're using the <a href="@MaterialIconSiteLink" target="_blank">Material Design Icon</a> font here.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PExhYmVsIENvbG9yPSJhbGVydCIgSWNvbj0ibWRpLWNsb3NlLWNpcmNsZS1vdXRsaW5lIj5BbGVydCBMYWJlbDwvTGFiZWw+CjxMYWJlbCBDb2xvcj0id2FybmluZyIgSWNvbj0ibWRpLWNsb3NlIj5XYXJuaW5nIExhYmVsPC9MYWJlbD4KPExhYmVsIEljb249Im1kaS1jb2ciPkRlZmF1bHQgTGFiZWw8L0xhYmVsPg==" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Color="alert" Icon="mdi-close-circle-outline">Alert Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Color="warning" Icon="mdi-close">Warning Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Label Icon="mdi-cog">Default Label</OpenCodeDev.Blazor.Foundation.Components.Media.Label>
+
+
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
+
+    public string MaterialIconSiteLink { get; set; } = "https://pictogrammers.github.io/@mdi/font/5.4.55/";
 
 }
