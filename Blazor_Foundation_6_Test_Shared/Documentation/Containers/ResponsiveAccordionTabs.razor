@@ -11,20 +11,19 @@
     <SectionLeft>
         <h2>Responsive Accordion Tabs</h2>
         <p>
-            Added in 6.3.0, use the Markup of the Accordion or Tabs components to create Responsive Accordion Tabs.
+            You have the choice to use the Accordion component or Tabs component to create Responsive Accordion Tabs.
         </p>
-
         <h2>Basics</h2>
         <p>
-            Either the <NavLink href="/accordion">Accordion Markup</NavLink> or the <NavLink href="/tabs">Tabs Markup</NavLink>can be used to responsively switch between the two components at different breakpoints.
-            The Accordion should have an id specified, but the plugin will automatically generate one if the id is omitted.
-            Accordion content should also have an ID, or the # of the href should be specified, otherwise a random id will be generated
+            Either the <NavLink href="/accordion">Accordion Components</NavLink> or the <NavLink href="/tabs">Tabs Components</NavLink> can be used to responsively switch between the two components at different breakpoints.
+            The Accordion must have an id specified.
+            Accordion content must also have an ID, or the # of the href should be specified.
         </p>
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="secondary">
             The accordion/tabs values can be in any order.
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
 
-        <h2>Accordion HTML Markup</h2>
+        <h2>Accordion Components</h2>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEFjY29yZGlvbj4KICAgIDxBY2NvcmRpb25JdGVtIFRpdGxlPSJBY2NvcmRpb24gMSI+CiAgICAgICAgSSB3b3VsZCBzdGFydCBpbiB0aGUgb3BlbiBzdGF0ZSwgZHVlIHRvIHVzaW5nIHRoZSBgaXMtYWN0aXZlYCBzdGF0ZSBjbGFzcy4KICAgIDwvQWNjb3JkaW9uSXRlbT4KICAgIDwhLS0gLi4uIC0tPgo8L0FjY29yZGlvbj4=" />
 
@@ -34,7 +33,7 @@
             I am an <Code>Accordion on small and large</Code> but I am <Code>Tabs on medium</Code>
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
-            <AccordionItem Title="Accordion 1">
+            <AccordionItem Active="true" Title="Accordion 1">
                 <p>Panel 1. Lorem ipsum dolor</p>
                 <NavLink href="#">Nowhere to Go</NavLink>
             </AccordionItem>
@@ -54,9 +53,16 @@
             <!-- ... -->
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
 
-        <h2>Tabs HTML Markup</h2>
+        <h2>Tabs Components</h2>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PFRhYkhlYWRlciBJZD0iZXhhbXBsZS10YWJzIj4KICAgIDxUYWJIZWFkZXJUaXRsZSBBY3RpdmU9InRydWUiIElkPSJwYW5lbC0xIj5UYWIgMTwvVGFiSGVhZGVyVGl0bGU+CiAgICA8VGFiSGVhZGVyVGl0bGUgSWQ9InBhbmVsLTIiPlRhYiAyPC9UYWJIZWFkZXJUaXRsZT4KICAgIDxUYWJIZWFkZXJUaXRsZSBJZD0icGFuZWwtMyI+VGFiIDM8L1RhYkhlYWRlclRpdGxlPgogICAgPFRhYkhlYWRlclRpdGxlIElkPSJwYW5lbC00Ij5UYWIgNDwvVGFiSGVhZGVyVGl0bGU+CiAgICA8VGFiSGVhZGVyVGl0bGUgSWQ9InBhbmVsLTUiPlRhYiA1PC9UYWJIZWFkZXJUaXRsZT4KICAgIDxUYWJIZWFkZXJUaXRsZSBJZD0icGFuZWwtNiI+VGFiIDY8L1RhYkhlYWRlclRpdGxlPgo8L1RhYkhlYWRlcj4KPFRhYkNvbnRlbnRXcmFwcGVyIExpbmtJZD0iZXhhbXBsZS10YWJzIj4KICAgIDxUYWJDb250ZW50IEFjdGl2ZT0idHJ1ZSIgSWQ9InBhbmVsLTEiPgogICAgICAgIDxwPm9uZTwvcD4KICAgICAgICA8cD5DaGVjayBtZSBvdXQhIEknbSBhIHN1cGVyIGNvb2wgVGFiIHBhbmVsIHdpdGggdGV4dCBjb250ZW50ITwvcD4KICAgIDwvVGFiQ29udGVudD4KICAgIDxUYWJDb250ZW50IElkPSJwYW5lbC0yIj4KICAgICAgICA8cD50d288L3A+CiAgICAgICAgPGltZyBjbGFzcz0idGh1bWJuYWlsIiBzcmM9ImFzc2V0cy9pbWcvZ2VuZXJpYy9yZWN0YW5nbGUtNy5qcGciPgogICAgPC9UYWJDb250ZW50PgogICAgPFRhYkNvbnRlbnQgSWQ9InBhbmVsLTMiPgogICAgICAgIDxwPnRocmVlPC9wPgogICAgICAgIDxwPkNoZWNrIG1lIG91dCEgSSdtIGEgc3VwZXIgY29vbCBUYWIgcGFuZWwgd2l0aCB0ZXh0IGNvbnRlbnQhPC9wPgogICAgPC9UYWJDb250ZW50PgogICAgPFRhYkNvbnRlbnQgSWQ9InBhbmVsLTQiPgogICAgICAgIDxwPmZvdXI8L3A+CiAgICAgICAgPGltZyBjbGFzcz0idGh1bWJuYWlsIiBzcmM9ImFzc2V0cy9pbWcvZ2VuZXJpYy9yZWN0YW5nbGUtMi5qcGciPgogICAgPC9UYWJDb250ZW50PgogICAgPFRhYkNvbnRlbnQgSWQ9InBhbmVsLTUiPgogICAgICAgIDxwPmZpdmU8L3A+CiAgICAgICAgPHA+Q2hlY2sgbWUgb3V0ISBJJ20gYSBzdXBlciBjb29sIFRhYiBwYW5lbCB3aXRoIHRleHQgY29udGVudCE8L3A+CiAgICA8L1RhYkNvbnRlbnQ+CiAgICA8VGFiQ29udGVudCBJZD0icGFuZWwtNiI+CiAgICAgICAgPHA+c2l4PC9wPgogICAgICAgIDxpbWcgY2xhc3M9InRodW1ibmFpbCIgc3JjPSJhc3NldHMvaW1nL2dlbmVyaWMvcmVjdGFuZ2xlLTguanBnIj4KICAgIDwvVGFiQ29udGVudD4KPC9UYWJDb250ZW50V3JhcHBlcj4=" />
+        
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="secondary">
+            Once you put it all together, here's what you get!
+            Scale your browser down to see the toggle happen.
+            I am an <Code>Accordion on small and large</Code> but I am <Code>Tabs on medium</Code>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+
         <TabHeader Id="example-tabs">
             <TabHeaderTitle Active="true" Id="panel-1">Tab 1</TabHeaderTitle>
             <TabHeaderTitle Id="panel-2">Tab 2</TabHeaderTitle>
@@ -93,8 +99,8 @@
         </TabContentWrapper>
         <br />
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="success">
-            The responsive behavior can be set through the <Code>data-responsive-accordion-tabs</Code> option.
-            <Code>tabs|accordion</Code> , <Code>medium-tabs|accordion</Code> , <Code>large-tabs|accordion</Code> sets the behavior
+            The responsive behavior can be set through the <Code>ResponsiveBehavior=""</Code> option.
+            <Code>small-tabs</Code>, <Code>small-accordion</Code>, <Code>medium-tabs</Code> sets the behavior.
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
 
     </SectionLeft>
