@@ -6,7 +6,7 @@
 
     @if (CloseButton)
     {
-        <button class="@($"close-button {CloseButtonClass}")" aria-label="Dismiss @TypeClass" type="button" data-close>
+        <button class="@($"close-button {CloseButtonClass}")" aria-label="Dismiss @TypeClass" type="button" data-close @onclick="@(async () => await CloseButtonCallBack.InvokeAsync(null) )">
             <span aria-hidden="true">&times;</span>
         </button>
     }
@@ -38,6 +38,12 @@
     /// </summary>
     [Parameter]
     public string CloseButtonClass { get; set; }
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class (eg. "close-button custom").
+    /// </summary>
+    [Parameter]
+    public EventCallback CloseButtonCallBack { get; set; }
 
     /// <summary>
     /// fade-out, slide-out-up, slide-out-left, slide-out-down, slide-out-right
