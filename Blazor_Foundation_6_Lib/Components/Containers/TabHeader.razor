@@ -4,7 +4,7 @@
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
 @implements System.IDisposable;
-<ul class="@($"tabs {Class} {(Vertical ? "vertical" : "")}")" id="@Id" @attributes="AdditionalAttributes" data-responsive-accordion-tabs="tabs medium-accordion large-tabs">
+<ul class="@($"tabs {Class} {(Vertical ? "vertical" : "")}")" id="@Id" @attributes="AdditionalAttributes" data-responsive-accordion-tabs="@($"tabs {ResponsiveBehavior}")">
     @ChildContent
 </ul>
 
@@ -23,6 +23,12 @@
     /// </summary>
     [Parameter]
     public string Class { get; set; }
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class.
+    /// </summary>
+    [Parameter]
+    public string ResponsiveBehavior { get; set; } = "small-accordion medium-tabs";
 
     /// <summary>
     /// If false, you will have to create initializer for this Foundation 6 component yourself in javascript. (Default: True)
