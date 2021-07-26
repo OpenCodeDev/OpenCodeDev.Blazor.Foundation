@@ -1,5 +1,254 @@
 ﻿@page "/table";
-<h3>Table</h3>
+
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Tables</h2>
+        <p>
+            Okay, they're not the sexiest things ever, but tables get the job done (for tabular data, of course).
+            They have responsive modifiers to help solve some of your layout issues based on your tables needs.
+        </p>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        
+        <h2>Basics</h2>
+        <p>No bells or whistles here, just a straight up table for all of your basic table needs.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBjbGFzcz0iaG92ZXIiPgogICAgPFRhYmxlSGVhZGVyPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+VGFibGUgSGVhZGVyPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5UYWJsZSBIZWFkZXI8L1RhYmxlSGVhZGVySXRlbT4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIxNTAiPlRhYmxlIGhlYWRlcjwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjE1MCI+VGFibGUgaGVhZGVyPC9UYWJsZUhlYWRlckl0ZW0+CiAgICA8L1RhYmxlSGVhZGVyPgogICAgPFRhYmxlQm9keT4KICAgICAgICA8VGFibGVCb2R5Um93PgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgICAgICBUaGlzIGlzIGxvbmdlciBjb250ZW50IERvbmVjIGlkIGVsaXQgbm9uCiAgICAgICAgICAgICAgICBtaSBwb3J0YSBncmF2aWRhIGF0IGVnZXQgbWV0dXMKLiAgICAgICAgICAgPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICAgICAgIFRoaXMgaXMgbG9uZ2VyIGNvbnRlbnQgRG9uZWMgaWQgZWxpdCBub24gCiAgICAgICAgICAgICAgICAgIG1pIHBvcnRhIGdyYXZpZGEgYXQgZWdldCBtZXR1cy4KICAgICAgICAgICAgPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICAgICAgIFRoaXMgaXMgbG9uZ2VyIGNvbnRlbnQgRG9uZWMgaWQgZWxpdCBub24gCiAgICAgICAgICAgICAgICAgIG1pIHBvcnRhIGdyYXZpZGEgYXQgZWdldCBtZXR1cy4KICAgICAgICAgICAgPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICA8L1RhYmxlQm9keT4KPC9UYWJsZVdyYXBwZXI+" />
+        <TableWrapper>
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Hover State</h2>
+        <p>Need to spiff up the table just a tad? Just add the class <code>.hover</code> to lightly darken the table rows on hover.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBjbGFzcz0iaG92ZXIiPgoKPC9UYWJsZVdyYXBwZXI+" />
+
+        <TableWrapper class="hover">
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Strips</h2>
+        <p>
+            By default, table rows are striped. There's an <Code>.unstriped</Code> class to remove the stripes. If you change <Code>$table-is-striped</Code><br />
+            to <Code>false</Code> to remove stripes from all tables, use the <Code>.striped</Code> class to add stripes.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBjbGFzcz0idW5zdHJpcGVkIj4KCjwvVGFibGVXcmFwcGVyPg==" />
+        <TableWrapper class="unstriped">
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Stacked Table</h2>
+        <p>To stack a table on small screens, add the class <Code>.stack</Code>.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBjbGFzcz0ic3RhY2siPgoKPC9UYWJsZVdyYXBwZXI+" />
+        <TableWrapper class="stack">
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Scrolling Table</h2>
+
+        <p>Got a lot of tubular tabular data? Add a wrapper element with the class <Code>.table-scroll</Code> around your table to enable horizontal scrolling.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PGRpdiBjbGFzcz0idGFibGUtc2Nyb2xsIj4KICAgIDxUYWJsZVdyYXBwZXI+PC9UYWJsZVdyYXBwZXI+CjwvZGl2Pg==" />
+        <div class="table-scroll">
+            <TableWrapper>
+                <TableHeader>
+                    <TableHeaderItem width="200">This is the description!</TableHeaderItem>
+                    <TableHeaderItem width="200">One</TableHeaderItem>
+                    <TableHeaderItem width="200">Two</TableHeaderItem>
+                    <TableHeaderItem width="200">Three</TableHeaderItem>
+                    <TableHeaderItem width="200">Four</TableHeaderItem>
+                    <TableHeaderItem width="200">Five</TableHeaderItem>
+                    <TableHeaderItem width="200">Six</TableHeaderItem>
+                    <TableHeaderItem width="200">Seven</TableHeaderItem>
+                    <TableHeaderItem width="200">Eight</TableHeaderItem>
+                    <TableHeaderItem width="200">Nine</TableHeaderItem>
+                    <TableHeaderItem width="200">Teen</TableHeaderItem>
+                </TableHeader>
+                <TableBody>
+                    <TableBodyRow>
+                        <TableBodyRowItem>these are all the words that people use to discripe Blazor Fondation 6</TableBodyRowItem>
+                        <TableBodyRowItem>Cool</TableBodyRowItem>
+                        <TableBodyRowItem>Swag</TableBodyRowItem>
+                        <TableBodyRowItem>Chill</TableBodyRowItem>
+                        <TableBodyRowItem>Killer</TableBodyRowItem>
+                        <TableBodyRowItem>Rad</TableBodyRowItem>
+                        <TableBodyRowItem>Baller</TableBodyRowItem>
+                        <TableBodyRowItem>OMG</TableBodyRowItem>
+                        <TableBodyRowItem>Sweet</TableBodyRowItem>
+                        <TableBodyRowItem>Awesome</TableBodyRowItem>
+                        <TableBodyRowItem>Beast</TableBodyRowItem>
+                    </TableBodyRow>
+                    <TableBodyRow>
+                        <TableBodyRowItem>These are some words that people use to describe other web framework</TableBodyRowItem>
+                        <TableBodyRowItem>Whatevs</TableBodyRowItem>
+                        <TableBodyRowItem>Ugh.</TableBodyRowItem>
+                        <TableBodyRowItem>LOL</TableBodyRowItem>
+                        <TableBodyRowItem>K</TableBodyRowItem>
+                        <TableBodyRowItem>Aight</TableBodyRowItem>
+                        <TableBodyRowItem>Eh.</TableBodyRowItem>
+                        <TableBodyRowItem>Grrrr.</TableBodyRowItem>
+                        <TableBodyRowItem>Meh.</TableBodyRowItem>
+                        <TableBodyRowItem>TTYL</TableBodyRowItem>
+                        <TableBodyRowItem>Bleh</TableBodyRowItem>
+                    </TableBodyRow>
+                    <TableBodyRow>
+                        <TableBodyRowItem>Here are some great super heros</TableBodyRowItem>
+                        <TableBodyRowItem>Bataman</TableBodyRowItem>
+                        <TableBodyRowItem>Superman</TableBodyRowItem>
+                        <TableBodyRowItem>Spiderman</TableBodyRowItem>
+                        <TableBodyRowItem>
+                            Wonder<br />
+                            Woman
+                        </TableBodyRowItem>
+                        <TableBodyRowItem>
+                            Nicolas <br />
+                            case
+                        </TableBodyRowItem>
+                        <TableBodyRowItem>Antman</TableBodyRowItem>
+                        <TableBodyRowItem>
+                            Captain<br />
+                            America
+                        </TableBodyRowItem>
+                        <TableBodyRowItem>Thor</TableBodyRowItem>
+                        <TableBodyRowItem>Aquaman</TableBodyRowItem>
+                        <TableBodyRowItem>Iron Man</TableBodyRowItem>
+                    </TableBodyRow>
+                </TableBody>
+            </TableWrapper>
+        </div>
+    </SectionLeft>
+</SectionWrapper>
+
 
 @code {
 
