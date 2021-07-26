@@ -8405,7 +8405,7 @@ html.is-reveal-open body {
   position: fixed;
   top: 0;
   height: 4em;
-  z-index: 9;
+  z-index: 15;
   box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
   width: 100%;

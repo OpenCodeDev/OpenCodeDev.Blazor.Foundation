@@ -4,11 +4,27 @@
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
 @implements System.IDisposable;
-<div class="@($"dropdown-pane {Class}")" data-position="@Position" data-alignment="@DataAlignment" id="@Id" @attributes="AdditionalAttributes" data-dropdown data-auto-focus="true">
+
+<div class="@($"dropdown-pane {Class}")" 
+     data-position="@Position" 
+     data-alignment="@DataAlignment" 
+     id="@Id" 
+     @attributes="AdditionalAttributes" 
+     data-dropdown 
+     data-auto-focus="@(CurrentBehavior == Behavior.Dropdown ? "true" : "false")" 
+     data-hover="@(CurrentBehavior == Behavior.Dropdown ? "false" : "true")" 
+     data-hover-pane="@(CurrentBehavior == Behavior.Dropdown ? "false" : "true")" >
     @ChildContent
 </div>
 
 @code {
+
+    public enum Behavior
+    {
+        Hover,
+        Dropdown
+    }
+
     [Parameter]
     public RenderFragment ChildContent { get; set; }
 
@@ -42,6 +58,9 @@
     /// </summary>
     [Parameter]
     public bool AutoManaged { get; set; } = true;
+
+    [Parameter]
+    public Behavior CurrentBehavior { get; set; } = Behavior.Dropdown;
 
     /// <summary>
     /// List of Options to pass when initilization is handled by Blazor. Leave blank if AutoManaged = false.
