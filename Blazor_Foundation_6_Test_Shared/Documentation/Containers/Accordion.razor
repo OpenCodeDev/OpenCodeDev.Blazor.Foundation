@@ -1,6 +1,34 @@
 ﻿@page "/accordion";
 
-<h3>Accordion</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+@using Microsoft.AspNetCore.Components.Forms;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Accordion</h2>
+        <p>Accordions are elements that help you organize and navigate multiple documents in a single container. They can be used for switching between items in the container.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>The container for an accordion needs the tag <Code>Accordion</Code>.</p>
+        <p>Inside the <Code>Accordion</Code>, place a series of <Code>AccordionItem</Code> tag. To mark which pane should be open by default, add the attribute <Code>Active</Code> and set it to true</p>
+        <p>Each <Code>AccordionItem</Code> has an attribute <Code>Title</Code> for set a title. Inside the <Code>AccordionItem</Code> tag define the content area.</p>
+
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
+            <AccordionItem Active="true" Title="Accordion 1">
+                <p>Panel 1. Lorem ipsum dolor</p>
+                <NavLink href="#">Nowhere to Go</NavLink>
+            </AccordionItem>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
+
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
