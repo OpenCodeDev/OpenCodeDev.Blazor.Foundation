@@ -1,7 +1,64 @@
 ﻿@page "/badge";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
 
-<h3>Badge</h3>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Badge</h2>
+        <p>The badge is a basic component that displays a number. It's useful for calling out a number of unread items.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+            Add the .badge class to an element to create a badge. In the below example, we're using <Code Content="PHNwYW4+"></Code>, but any tag will work fine.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PHNwYW4gY2xhc3M9ImJhZGdlIj4xPC9zcGFuPg==" />
+        <span class="badge">1</span>
+        <p>
+            A badge will typically be describing another element on the page. To bind the two elements together, give the badge a unique ID, and reference that ID in an aria-describedby attribute on the main element.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PGgxIGFyaWEtZGVzY3JpYmVkYnk9Im1lc3NhZ2VDb3VudCI+VW5yZWFkIE1lc3NhZ2VzPC9oMT4KPHNwYW4gY2xhc3M9ImJhZGdlIiBpZD0ibWVzc2FnZUNvdW50Ij4xPC9zcGFuPg==" />
+        <p>
+            Finally, the content itself might need more context for users that use screen readers. You can add extra text inside the badge using the .show-for-sr class.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PHNwYW4gY2xhc3M9ImJhZGdlIiBpZD0ibWVzc2FnZUNvdW50Ij4xIAogICA8c3BhbiBjbGFzcz0ic2hvdy1mb3Itc3IiPgogICAgICB1bnJlYWQgbWVzc2FnZQogICA8L3NwYW4+Cjwvc3Bhbj4=" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Coloring</h2>
+        <p>Add color classes to give badges additional meaning.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PHNwYW4gY2xhc3M9ImJhZGdlIHByaW1hcnkiPjE8L3NwYW4+CjxzcGFuIGNsYXNzPSJiYWRnZSBzZWNvbmRhcnkiPjI8L3NwYW4+CjxzcGFuIGNsYXNzPSJiYWRnZSBzdWNjZXNzIj4zPC9zcGFuPgo8c3BhbiBjbGFzcz0iYmFkZ2UgYWxlcnQiPkE8L3NwYW4+CjxzcGFuIGNsYXNzPSJiYWRnZSB3YXJuaW5nIj5CPC9zcGFuPg==" />
+        <span class="badge primary">1</span>
+        <span class="badge secondary">2</span>
+        <span class="badge success">3</span>
+        <span class="badge alert">A</span>
+        <span class="badge warning">B</span>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Icons</h2>
+        <p>An icon can be used in place of text. We're using the <a href="@MaterialIconSiteLink" target="_blank">Material Design Icon</a> font here, but any icon fonts or image-based icons will work fine.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PHNwYW4gY2xhc3M9ImJhZGdlIHNlY29uZGFyeSBtZGkgbWRpLXNoYXJlLXZhcmlhbnQtb3V0bGluZSI+PC9zcGFuPgo8c3BhbiBjbGFzcz0iYmFkZ2Ugd2FybmluZyBtZGkgbWRpLWNoZWNrLWJvbGQiPjwvc3Bhbj4KPHNwYW4gY2xhc3M9ImJhZGdlIHN1Y2Nlc3MgbWRpIG1kaS13cmVuY2giPjwvc3Bhbj4=" />
+        <span class="badge secondary mdi mdi-share-variant-outline"></span>
+        <span class="badge warning mdi mdi-check-bold"></span>
+        <span class="badge success mdi mdi-wrench"></span>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
+
+    public string MaterialIconSiteLink { get; set; } = "https://pictogrammers.github.io/@mdi/font/5.4.55/";
 
 }
