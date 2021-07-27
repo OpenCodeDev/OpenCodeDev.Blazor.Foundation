@@ -1,6 +1,89 @@
 ﻿@page "/accordion";
 
-<h3>Accordion</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+@using Microsoft.AspNetCore.Components.Forms;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Accordion</h2>
+        <p>Accordions are elements that help you organize and navigate multiple documents in a single container. They can be used for switching between items in the container.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>The container for an accordion needs the tag <Code>Accordion</Code>.</p>
+        <p>Inside the <Code>Accordion</Code>, place a series of <Code>AccordionItem</Code> component. To mark which pane should be open by default, add the attribute <Code>Active</Code> and set it to true</p>
+        <p>Each <Code>AccordionItem</Code> has an attribute <Code>Title</Code> for set a title. Inside the <Code>AccordionItem</Code> component define the content area.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEFjY29yZGlvbj4KICAgIDxBY2NvcmRpb25JdGVtIEFjdGl2ZT0idHJ1ZSIgVGl0bGU9IkFjY29yZGlvbiAxIj4KICAgICAgICA8cD5QYW5lbCAxLiBMb3JlbSBpcHN1bSBkb2xvcjwvcD4KICAgICAgICA8TmF2TGluayBocmVmPSIjIj5Ob3doZXJlIHRvIEdvPC9OYXZMaW5rPgogICAgPC9BY2NvcmRpb25JdGVtPgogICAgPCEtLSAuLi4gLS0+CjwvQWNjb3JkaW9uPg==" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
+            <AccordionItem Title="Accordion 1">
+                <p>Panel 1. Lorem ipsum dolor</p>
+                <NavLink href="#">Nowhere to Go</NavLink>
+            </AccordionItem>
+            <AccordionItem Title="Accordion 2">
+                <textarea></textarea>
+                <Button>I do nothing!</Button>
+            </AccordionItem>
+            <AccordionItem Title="Accordion 3">
+                Type your name!
+                <input type="text" />
+            </AccordionItem>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Advanced Options</h2>
+        <h3>Multi-expand</h3>
+        <p>By default, only one pane of an accordion can be open at a time. This can be changed by setting the <Code>MultiOpen</Code> attribute to true.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEFjY29yZGlvbiBNdWx0aU9wZW49InRydWUiPgogICAgPCEtLSAuLi4gLS0+CjwvQWNjb3JkaW9uPg==" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion MultiOpen="true">
+            <AccordionItem Active="true" Title="Accordion 1">
+                <p>Panel 1. Lorem ipsum dolor</p>
+            </AccordionItem>
+            <AccordionItem Title="Accordion 2">
+                <p>Panel 2. Lorem ipsum dolor</p>
+            </AccordionItem>
+            <AccordionItem Title="Accordion 3">
+                <p>Panel 3. Lorem ipsum dolor</p>
+            </AccordionItem>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h3>All Closed</h3>
+        <p>By default, only one pane of an accordion can be open at a time. This can be changed by setting the <Code>MultiOpen</Code> attribute to true.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEFjY29yZGlvbiBNdWx0aU9wZW49InRydWUiPgogICAgPCEtLSAuLi4gLS0+CjwvQWNjb3JkaW9uPg==" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion MultiOpen="true">
+            <AccordionItem Active="true" Title="Accordion 1">
+                <p>Panel 1. Lorem ipsum dolor</p>
+            </AccordionItem>
+            <AccordionItem Title="Accordion 2">
+                <p>Panel 2. Lorem ipsum dolor</p>
+            </AccordionItem>
+            <AccordionItem Title="Accordion 3">
+                <p>Panel 3. Lorem ipsum dolor</p>
+            </AccordionItem>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Accordion>
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
