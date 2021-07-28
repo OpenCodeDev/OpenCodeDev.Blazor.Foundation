@@ -1,7 +1,45 @@
-﻿<table @attributes="AdditionalAttributes">
-@ChildContent
-</table>
+﻿
+@if (HorizontalScroll)
+{
+    <div class="table-scroll">
+        <table class="@($" {(Striped ? "" : "unstriped")} {(Hover ? "hover" : "")} {(Stacked ? "stack" : "")}")" @attributes="AdditionalAttributes">
+            @ChildContent
+        </table>
+    </div>
+}
+else
+{
+    <table class="@($" {(Striped ? "" : "unstriped")} {(Hover ? "hover" : "")} {(Stacked ? "stack" : "")}")" @attributes="AdditionalAttributes">
+        @ChildContent
+    </table>
+}
+
 @code {
+
+    /// <summary>
+    /// If True, active hover effect in table rows. (Default: False)
+    /// </summary>
+    [Parameter]
+    public bool Hover { get; set; } = false;
+
+    /// <summary>
+    /// If False, remove stripes from all tables. (Default: True)
+    /// </summary>
+    [Parameter]
+    public bool Striped { get; set; } = true;
+
+    /// <summary>
+    /// If True, stack the table on small screens. (Default: False)
+    /// </summary>
+    [Parameter]
+    public bool Stacked { get; set; } = false;
+
+    /// <summary>
+    /// If True, enable horizontal scrolling in your table. (Default: False)
+    /// </summary>
+    [Parameter]
+    public bool HorizontalScroll { get; set; } = false;
+
     [Parameter]
     public RenderFragment ChildContent { get; set; }
 
