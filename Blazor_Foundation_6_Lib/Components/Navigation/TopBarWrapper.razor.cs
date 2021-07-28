@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Newtonsoft.Json.Linq;
@@ -12,7 +12,7 @@ using OpenCodeDev.Blazor.Foundation.Extensions.Util;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 {
-    public partial class TopBarWrapper : IDisposable
+    public partial class TopBarWrapper :  IDisposable
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }
