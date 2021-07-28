@@ -1,6 +1,96 @@
 ﻿@page "/tabs";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Tabs</h2>
+        <p>
+            Tabs are components that help you organize and navigate multiple documents in a single container. They can be used for switching between items in the container.
+        </p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+            There are two pieces to a tabbed interface: the tabs themselves, and the content for each tab. The tabs are a component <Code Content="PFRhYkhlYWRlcj4="></Code>, and each item use the component <Code Content="PFRhYkhlYWRlclRpdGxlPg=="></Code>.
+        </p>
+        <p>
+            The tab content container use the component <Code Content="PFRhYkNvbnRlbnRXcmFwcGVyPg=="></Code>, while each section use the component <Code Content="PFRhYkNvbnRlbnQ+"></Code>. Each content pane also has a unique ID, which is targeted by the tabstrip.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFRhYkhlYWRlciBJZD0iZXhhbXBsZS10YWJzIj4KICAgPFRhYkhlYWRlclRpdGxlIEFjdGl2ZT0idHJ1ZSIgSWQ9InBhbmVsMSI+CiAgICAgIFRhYiAxCiAgIDwvVGFiSGVhZGVyVGl0bGU+CiAgIDxUYWJIZWFkZXJUaXRsZSBJZD0icGFuZWwyIj4KICAgICAgVGFiIDIKICAgPC9UYWJIZWFkZXJUaXRsZT4KPC9UYWJIZWFkZXI+CjxUYWJDb250ZW50V3JhcHBlciBMaW5rSWQ9ImV4YW1wbGUtdGFicyI+CiAgIDxUYWJDb250ZW50IEFjdGl2ZT0idHJ1ZSIgSWQ9InBhbmVsMSI+CiAgICAgIDxwPlZpdmFtdXMgaGVuZHJlcml0IGFyY3Ugc2VkIGVyYXQgbW9sZXN0aWUgdmVoaWN1bGEuIFNlZCBhdWN0b3IgbmVxdWUgZXUgdGVsbHVzIHJob25jdXMgdXQgZWxlaWZlbmQgbmliaCBwb3J0dGl0b3IuIFV0IGluIG51bGxhIGVuaW0uIFBoYXNlbGx1cyBtb2xlc3RpZSBtYWduYSBub24gZXN0IGJpYmVuZHVtIG5vbiB2ZW5lbmF0aXMgbmlzbCB0ZW1wb3IuIFN1c3BlbmRpc3NlIGRpY3R1bSBmZXVnaWF0IG5pc2wgdXQgZGFwaWJ1cy48L3A+CiAgIDwvVGFiQ29udGVudD4KICAgPFRhYkNvbnRlbnQgSWQ9InBhbmVsMiI+CiAgICAgIDxwPlN1c3BlbmRpc3NlIGRpY3R1bSBmZXVnaWF0IG5pc2wgdXQgZGFwaWJ1cy4gIFZpdmFtdXMgaGVuZHJlcml0IGFyY3Ugc2VkIGVyYXQgbW9sZXN0aWUgdmVoaWN1bGEuIFV0IGluIG51bGxhIGVuaW0uIFBoYXNlbGx1cyBtb2xlc3RpZSBtYWduYSBub24gZXN0IGJpYmVuZHVtIG5vbiB2ZW5lbmF0aXMgbmlzbCB0ZW1wb3IuICBTZWQgYXVjdG9yIG5lcXVlIGV1IHRlbGx1cyByaG9uY3VzIHV0IGVsZWlmZW5kIG5pYmggcG9ydHRpdG9yLjwvcD4KICAgPC9UYWJDb250ZW50Pgo8L1RhYkNvbnRlbnRXcmFwcGVyPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeader Id="example-tabs">
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Active="true" Id="panel1">
+                Tab 1
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Id="panel2">
+                Tab 2
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeader>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContentWrapper LinkId="example-tabs">
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Active="true" Id="panel1">
+                <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Id="panel2">
+                <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContentWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Vertical Tabs</h2>
+        <p>
+            Add the attribute <Code>Vertical=true</Code> to the component <Code Content="PFRhYkhlYWRlcj4="></Code> and <Code>Class="vertical"</Code> to the component <Code Content="PFRhYkNvbnRlbnRXcmFwcGVyPg=="></Code> to stack tabs vertically.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRYPgogICA8Q2VsbCBTaXplPSJtZWRpdW0tMyI+CiAgICAgIDxUYWJIZWFkZXIgSWQ9ImV4YW1wbGUtdGFicyIgVmVydGljYWw9InRydWUiPgogICAgICAgICA8VGFiSGVhZGVyVGl0bGUgQWN0aXZlPSJ0cnVlIiBJZD0icGFuZWwtMSI+VGFiIDE8L1RhYkhlYWRlclRpdGxlPgogICAgICAgICA8VGFiSGVhZGVyVGl0bGUgSWQ9InBhbmVsLTIiPlRhYiAyPC9UYWJIZWFkZXJUaXRsZT4KICAgICAgICAgPFRhYkhlYWRlclRpdGxlIElkPSJwYW5lbC0zIj5UYWIgMzwvVGFiSGVhZGVyVGl0bGU+CiAgICAgICAgIDxUYWJIZWFkZXJUaXRsZSBJZD0icGFuZWwtNCI+VGFiIDQ8L1RhYkhlYWRlclRpdGxlPgogICAgICAgICA8VGFiSGVhZGVyVGl0bGUgSWQ9InBhbmVsLTUiPlRhYiA1PC9UYWJIZWFkZXJUaXRsZT4KICAgICAgICAgPFRhYkhlYWRlclRpdGxlIElkPSJwYW5lbC02Ij5UYWIgNjwvVGFiSGVhZGVyVGl0bGU+CiAgICAgIDwvVGFiSGVhZGVyPgogICA8L0NlbGw+CiAgIDxDZWxsIFNpemU9Im1lZGl1bS05Ij4KICAgICAgPFRhYkNvbnRlbnRXcmFwcGVyIExpbmtJZD0iZXhhbXBsZS10YWJzIiAgQ2xhc3M9InZlcnRpY2FsIj4KICAgICAgICAgPFRhYkNvbnRlbnQgQWN0aXZlPSJ0cnVlIiBJZD0icGFuZWwtMSI+CiAgICAgICAgICAgIDxwPm9uZTwvcD4KICAgICAgICAgICAgPHA+Q2hlY2sgbWUgb3V0ISBJJ20gYSBzdXBlciBjb29sIFRhYiBwYW5lbCB3aXRoIHRleHQgY29udGVudCE8L3A+CiAgICAgICAgIDwvVGFiQ29udGVudD4KICAgICAgICAgPFRhYkNvbnRlbnQgSWQ9InBhbmVsLTIiPgogICAgICAgICAgICA8cD50d288L3A+CiAgICAgICAgICAgIDxpbWcgY2xhc3M9InRodW1ibmFpbCIgc3JjPSJhc3NldHMvaW1nL2dlbmVyaWMvcmVjdGFuZ2xlLTcuanBnIj4KICAgICAgICAgPC9UYWJDb250ZW50PgogICAgICAgICA8VGFiQ29udGVudCBJZD0icGFuZWwtMyI+CiAgICAgICAgICAgIDxwPnRocmVlPC9wPgogICAgICAgICAgICA8cD5DaGVjayBtZSBvdXQhIEknbSBhIHN1cGVyIGNvb2wgVGFiIHBhbmVsIHdpdGggdGV4dCBjb250ZW50ITwvcD4KICAgICAgICAgPC9UYWJDb250ZW50PgogICAgICAgICA8VGFiQ29udGVudCBJZD0icGFuZWwtNCI+CiAgICAgICAgICAgIDxwPmZvdXI8L3A+CiAgICAgICAgICAgIDxpbWcgY2xhc3M9InRodW1ibmFpbCIgc3JjPSJhc3NldHMvaW1nL2dlbmVyaWMvcmVjdGFuZ2xlLTIuanBnIj4KICAgICAgICAgPC9UYWJDb250ZW50PgogICAgICAgICA8VGFiQ29udGVudCBJZD0icGFuZWwtNSI+CiAgICAgICAgICAgIDxwPmZpdmU8L3A+CiAgICAgICAgICAgIDxwPkNoZWNrIG1lIG91dCEgSSdtIGEgc3VwZXIgY29vbCBUYWIgcGFuZWwgd2l0aCB0ZXh0IGNvbnRlbnQhPC9wPgogICAgICAgICA8L1RhYkNvbnRlbnQ+CiAgICAgICAgIDxUYWJDb250ZW50IElkPSJwYW5lbC02Ij4KICAgICAgICAgICAgPHA+c2l4PC9wPgogICAgICAgICAgICA8aW1nIGNsYXNzPSJ0aHVtYm5haWwiIHNyYz0iYXNzZXRzL2ltZy9nZW5lcmljL3JlY3RhbmdsZS04LmpwZyI+CiAgICAgICAgIDwvVGFiQ29udGVudD4KICAgICAgPC9UYWJDb250ZW50V3JhcHBlcj4KICAgPENlbGw+CjwvR3JpZFg+" />
 
-<h3>Tabs</h3>
+            <GridX>
+                <Cell Size="medium-3">
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeader Id="example-tabs2" Vertical="true">
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Active="true" Id="panel-1">Tab 1</OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Id="panel-2">Tab 2</OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Id="panel-3">Tab 3</OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Id="panel-4">Tab 4</OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Id="panel-5">Tab 5</OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle Id="panel-6">Tab 6</OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeaderTitle>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.TabHeader>
+                </Cell>
+                <Cell Size="medium-9">
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContentWrapper LinkId="example-tabs2" Class="vertical">
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Active="true" Id="panel-1">
+                            <p>one</p>
+                            <p>Check me out! I'm a super cool Tab panel with text content!</p>
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Id="panel-2">
+                            <p>two</p>
+                            <img class="thumbnail" src="https://get.foundation/sites/docs/assets/img/generic/rectangle-7.jpg">
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Id="panel-3">
+                            <p>three</p>
+                            <p>Check me out! I'm a super cool Tab panel with text content!</p>
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Id="panel-4">
+                            <p>four</p>
+                            <img class="thumbnail" src="https://get.foundation/sites/docs/assets/img/generic/rectangle-2.jpg">
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Id="panel-5">
+                            <p>five</p>
+                            <p>Check me out! I'm a super cool Tab panel with text content!</p>
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent Id="panel-6">
+                            <p>six</p>
+                            <img class="thumbnail" src="https://get.foundation/sites/docs/assets/img/generic/rectangle-8.jpg">
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContent>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.TabContentWrapper>
+                </Cell>
+            </GridX>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
