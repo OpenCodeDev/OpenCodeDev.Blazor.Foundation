@@ -1,10 +1,9 @@
 ﻿@using Microsoft.JSInterop;
 @using OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky;
-@using Microsoft.AspNetCore.Components;
-@using Microsoft.AspNetCore.Components.Web;
-@inject IJSRuntime JSRuntime;
 @using Newtonsoft.Json.Linq;
-@implements System.IDisposable;
+
+@inject IJSRuntime JSRuntime;
+
 
 @if (Sticky)
 {
@@ -22,86 +21,5 @@ else
 }
 
 @code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
 
-    /// <summary>
-    /// Custom Class to Append at the end of default Foundation Class (eg. "menu custom").
-    /// </summary>
-    [Parameter]
-    public string Class { get; set; }
-
-    /// <summary>
-    /// Unique HTML Identifier.
-    /// </summary>
-    [Parameter]
-    public string Id { get; set; }
-
-    /// <summary>
-    /// Inline CSS
-    /// </summary>
-    [Parameter]
-    public string WrapperStyle { get; set; }
-
-    /// <summary>
-    /// Inline CSS
-    /// </summary>
-    [Parameter]
-    public string TitleBarStyle { get; set; }
-
-    /// <summary>
-    /// True when stick top bar (uses Plugin Sticky). (Default: False)
-    /// </summary>
-    [Parameter]
-    public bool Sticky { get; set; }
-
-    /// <summary>
-    /// True: Will Trigger Foundation Script Registration Automatically Without any Options.
-    /// </summary>
-    [Parameter]
-    public bool AutoManaged { get; set; } = true;
-
-    /// <summary>
-    /// List of Options to pass when initilization is handled by Blazor. Leave blank if AutoManaged = false.
-    /// <br/><br/><see href="https://get.foundation/sites/docs/sticky.html">Sticky Options</see>
-    /// </summary>
-    [Parameter]
-    public JObject DataOptions { get; set; }
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public IDictionary<string, object> AdditionalAttributes { get; set; }
-
-    protected override void OnInitialized()
-    {
-
-    }
-
-    public override async Task SetParametersAsync(ParameterView parameters)
-    {
-        await base.SetParametersAsync(parameters);
-
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            if (AutoManaged && Sticky)
-            {
-                await JSRuntime.InvokeVoidAsync("StickyRegister", Id, DataOptions != null ? DataOptions.ToString() : null);
-            }
-        }
-
-
-
-    }
-
-
-    public void Dispose()
-    {
-        if (AutoManaged)
-        {
-            JSRuntime.InvokeVoidAsync("FoundationDestroy", Id);
-        }
-    }
 }
