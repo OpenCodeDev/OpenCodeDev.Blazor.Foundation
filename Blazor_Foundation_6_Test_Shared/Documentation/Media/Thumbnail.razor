@@ -1,6 +1,28 @@
 ﻿@page "/thumbnail";
 
-<h3>Thumbnail</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Thumbnail </h2>
+        <p>
+            If you're going to use an image as an anchor, we've got you covered.
+        </p>
+        <p>
+            Put your <Code Content="PGltZz4="></Code> or <Code Content="PGltZz4="></Code> items in the Componant <Code Content="PGE+"></Code> to surround it. Make sure the <Code Content="PFRodW1ibmFpbD4="></Code> has an alt attribute that describes the contents of the image.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFRodW1ibmFpbD4KICA8aW1nIHNyYz0iYXNzZXRzL2ltZy90aHVtYm5haWwvMDEuanBnIiBhbHQ9IlBob3RvIG9mIFVyYW51cy4iPgo8L1RodW1ibmFpbD4KPFRodW1ibmFpbD4KICA8YSBocmVmPSIjIj4KICAgIDxpbWcgc3JjPSJhc3NldHMvaW1nL3RodW1ibmFpbC8wMi5qcGciIGFsdD0iUGhvdG8gb2YgTmVwdHVuZS4iPgogIDwvYT4KPC9UaHVtYm5haWw+" />
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Thumbnail>
+            <img src="https://get.foundation/sites/docs/assets/img/thumbnail/01.jpg" alt="Photo of Uranus.">
+        </OpenCodeDev.Blazor.Foundation.Components.Media.Thumbnail>
+        <OpenCodeDev.Blazor.Foundation.Components.Media.Thumbnail style="margin-left: 100px;">
+            <a href="#"><img src="https://get.foundation/sites/docs/assets/img/thumbnail/02.jpg" alt="Photo of Neptune."></a>
+        </OpenCodeDev.Blazor.Foundation.Components.Media.Thumbnail>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
