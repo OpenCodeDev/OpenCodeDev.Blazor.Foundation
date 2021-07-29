@@ -1,6 +1,114 @@
 ﻿@page "/top-bar";
 
-<h3>TopBar</h3>
+
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Navigation;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Top Bar</h2>
+        <p>
+            The new top bar is a simpler wrapper around our flexible menu components.
+        </p>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+            A top bar <Code>@("<TopBarWrapper>")</Code> can have two sections: a left-hand section <Code>@("<TopBarLeft>")</Code> and a rigth-hand section
+            <Code>@("<TopBarRight>")</Code>.  On small screens, these sections stack on top of each other.
+        </p>
+        <p>
+            In the below example, our top bar includes a <NavLink href="/dropdown">dropdown menu</NavLink> , along with a text input field and action button.
+            The dropdown menu inherits the background color of the top bar.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRvcEJhcldyYXBwZXI+CiAgICA8VG9wQmFyTGVmdD4KICAgICAgICA8TWVudURyb3Bkb3duPgogICAgICAgICAgICA8bGkgY2xhc3M9Im1lbnUtdGV4dCI+U2l0ZSBUaXRsZTwvbGk+CiAgICAgICAgICAgIDxsaT4KICAgICAgICAgICAgICAgIDxOYXZMaW5rPk9uZTwvTmF2TGluaz4KICAgICAgICAgICAgICAgIDxNZW51VG9wTGV2ZWw+CiAgICAgICAgICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPk9uZTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5Ud288L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+VGhyZWU8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgIDwvTWVudVRvcExldmVsPgogICAgICAgICAgICA8L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+VHdvPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5UaHJlZTwvTmF2TGluaz48L2xpPgogICAgICAgIDwvTWVudURyb3Bkb3duPgogICAgPC9Ub3BCYXJMZWZ0PgogICAgPFRvcEJhclJpZ2h0PgogICAgICAgIDxNZW51RHJvcGRvd24+CiAgICAgICAgICAgIDxNZW51VG9wTGV2ZWw+CiAgICAgICAgICAgICAgICA8bGk+PGlucHV0IHR5cGU9InNlYXJjaCIgcGxhY2Vob2xkZXI9IlNlYXJjaCI+PC9saT4KICAgICAgICAgICAgICAgIDxsaT48QnV0dG9uPlNlYXJjaDwvQnV0dG9uPjwvbGk+CiAgICAgICAgICAgIDwvTWVudVRvcExldmVsPgogICAgICAgIDwvTWVudURyb3Bkb3duPgogICAgPC9Ub3BCYXJSaWdodD4KPC9Ub3BCYXJXcmFwcGVyPg==" />
+        <TopBarWrapper>
+            <TopBarLeft>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+                    <li class="menu-text">Site Title</li>
+                    <li>
+                        <NavLink>One</NavLink>
+                        <MenuTopLevel>
+                            <li><NavLink href="#">One</NavLink></li>
+                            <li><NavLink href="#">Two</NavLink></li>
+                            <li><NavLink href="#">Three</NavLink></li>
+                        </MenuTopLevel>
+                    </li>
+                    <li><NavLink href="#">Two</NavLink></li>
+                    <li><NavLink href="#">Three</NavLink></li>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+            </TopBarLeft>
+            <TopBarRight>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+                    <MenuTopLevel>
+                        <li><input type="search" placeholder="Search"></li>
+                        <li><Button>Search</Button></li>
+                    </MenuTopLevel>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+            </TopBarRight>
+        </TopBarWrapper>
+    </SectionLeft>
+    <hr />
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Stacking</h2>
+        <p>
+            By default, the two sections of a top bar will stack on top of each other on small screens.
+            This can be changed by adding the class <Code>stacked-for-medium</Code> or <Code>stacked-for-large</Code>.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRvcEJhcldyYXBwZXIgQ2xhc3M9InN0YWNrZWQtZm9yLW1lZGl1bSI+CiAgICA8VG9wQmFyTGVmdD4KICAgICAgICA8TWVudURyb3Bkb3duPgogICAgICAgICAgICA8bGkgY2xhc3M9Im1lbnUtdGV4dCI+U2l0ZSBUaXRsZTwvbGk+CiAgICAgICAgICAgIDxsaSBjbGFzcz0iaGFzLW1lbnUiPgogICAgICAgICAgICAgICAgPE5hdkxpbms+T25lPC9OYXZMaW5rPgogICAgICAgICAgICAgICAgPE1lbnVUb3BMZXZlbD4KICAgICAgICAgICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+T25lPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPlR3bzwvTmF2TGluaz48L2xpPgogICAgICAgICAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5UaHJlZTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICAgICAgPC9NZW51VG9wTGV2ZWw+CiAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5Ud288L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPlRocmVlPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgPC9NZW51RHJvcGRvd24+CiAgICA8L1RvcEJhckxlZnQ+CiAgICA8VG9wQmFyUmlnaHQ+CiAgICAgICAgPE1lbnVEcm9wZG93bj4KICAgICAgICAgICAgPE1lbnVUb3BMZXZlbD4KICAgICAgICAgICAgICAgIDxsaT48aW5wdXQgdHlwZT0ic2VhcmNoIiBwbGFjZWhvbGRlcj0iU2VhcmNoIj48L2xpPgogICAgICAgICAgICAgICAgPGxpPjxCdXR0b24+U2VhcmNoPC9CdXR0b24+PC9saT4KICAgICAgICAgICAgPC9NZW51VG9wTGV2ZWw+CiAgICAgICAgPC9NZW51RHJvcGRvd24+CiAgICA8L1RvcEJhclJpZ2h0Pgo8L1RvcEJhcldyYXBwZXI+" />
+
+        <TopBarWrapper Class="stacked-for-medium">
+            <TopBarLeft>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+                    <li class="menu-text">Site Title</li>
+                    <li class="has-menu">
+                        <NavLink>One</NavLink>
+                        <MenuTopLevel>
+                            <li><NavLink href="#">One</NavLink></li>
+                            <li><NavLink href="#">Two</NavLink></li>
+                            <li><NavLink href="#">Three</NavLink></li>
+                        </MenuTopLevel>
+                    </li>
+                    <li><NavLink href="#">Two</NavLink></li>
+                    <li><NavLink href="#">Three</NavLink></li>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+            </TopBarLeft>
+            <TopBarRight>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+                    <MenuTopLevel>
+                        <li><input type="search" placeholder="Search"></li>
+                        <li><Button>Search</Button></li>
+                    </MenuTopLevel>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+            </TopBarRight>
+        </TopBarWrapper>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+
+    <SectionLeft>
+        <h2>Sticky Navigation</h2>
+        <p>
+            See the documentation for the <NavLink href="/Sticky">Sticky</NavLink> plugin to see how to easily make a sticky nav bar.
+        </p>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
 
 @code {
 
