@@ -1,6 +1,51 @@
 ﻿@page "/breadcrumbs"
 
-<h3>Breadcrumb</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Breadcrumbs</h2>
+        <p>
+            Breadcrumbs come in handy to show a navigation trail for users clicking through your site.
+        </p>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <p>
+            To make a set of breadcrumb links, just add the class <Code>.breadcrumbs</Code> to a <Code>@("<ul>")</Code>,
+            and then add links inside of <Code>@("<li>")</Code> element.The current page doesn't require a link or a class, but you should add some explanatory text for AT
+            that indicates which item is the current page.
+        </p>
+        <p>
+            To mark a disabled item, add the class <Code>.disabled</Code> to the <Code>@("<li>")</Code>, and just use plain text instead of a link.
+        </p>
+
+        <Callout TypeClass="primary">
+            <p>
+                If your site is visited by search engines, then you should consider adding Schema.org structure data.
+                This will allow your site to appear more attractive in search results.
+            </p>
+            <p>
+                For more information, see <NavLink href="https://developers.google.com/search/docs/data-types/breadcrumbs">Breadcrumbs-Google Developers</NavLink>,<NavLink href="https://schema.org/BreadcrumbList">BreadcrumbList - schema.org.</NavLink>
+            </p>
+        </Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PG5hdiBhcmlhLWxhYmVsPSJZb3UgYXJlIGhlcmU6IiByb2xlPSJuYXZpZ2F0aW9uIj4KICAgIDx1bCBjbGFzcz0iYnJlYWRjcnVtYnMiPgogICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5Ib21lPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkZlYXR1cmVzPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgPGxpIGNsYXNzPSJkaXNhYmxlZCI+R2VuZSBTcGxpY2luZzwvbGk+CiAgICAgICAgPGxpPgogICAgICAgICAgICA8c3BhbiBjbGFzcz0ic2hvdy1mb3Itc3IiPkN1cnJlbnQ6IDwvc3Bhbj4gQ2xvbmluZwogICAgICAgIDwvbGk+CiAgICA8L3VsPgo8L25hdj4=" />
+        <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs">
+                <li><NavLink href="#">Home</NavLink></li>
+                <li><NavLink href="#">Features</NavLink></li>
+                <li class="disabled">Gene Splicing</li>
+                <li>
+                    <span class="show-for-sr">Current: </span> Cloning
+                </li>
+            </ul>
+        </nav>
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
