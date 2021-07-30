@@ -1,5 +1,4 @@
 ﻿@using Microsoft.JSInterop;
-@using Newtonsoft.Json.Linq;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
@@ -9,34 +8,6 @@
 </ul>
 
 @code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
-
-    /// <summary>
-    /// Custom Class to Append at the end of default Foundation Class.
-    /// </summary>
-    [Parameter]
-    public string Class { get; set; }
- 
-    /// <summary>
-    /// True when menu direction is vertical. (Default: False)
-    /// </summary>
-    [Parameter]
-    public bool Vertical { get; set; } = false;
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public IDictionary<string, object> AdditionalAttributes { get; set; }
-
-
-    public override async Task SetParametersAsync(ParameterView parameters)
-    {
-        await base.SetParametersAsync(parameters);
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-    }
-
-
+    
 }
 
