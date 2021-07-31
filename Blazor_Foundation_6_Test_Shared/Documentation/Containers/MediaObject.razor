@@ -1,6 +1,145 @@
 ﻿@page "/media-object";
 
-<h3>MediaObject</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Media Object</h2>
+        <p>
+            Media objects are super useful components for displaying an item, usually an image, alongside
+            some content, usually text. You could put lists, grids, or even other media objects inside.
+        </p>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics  </h2>
+        <p>
+            Blazor Foundation 6's Media Object will help you create this common repeatable pattern and can be used several different ways.
+            A media object is a container with <Code>@("<MediaObjectWrapper>")</Code>, and two or three sections with <Code>@("<MediaObjectSection>")</Code>
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lZGlhT2JqZWN0V3JhcHBlcj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24+CiAgICAgICAgPFRodW1ibmFpbD4KICAgICAgICAgICAgPGltZyBzcmM9ImFzc2V0cy9pbWcvbWVkaWEtb2JqZWN0L2F2YXRhci9hdmF0YXItMS5qcGciIC8+CiAgICAgICAgPC9UaHVtYm5haWw+CiAgICA8L01lZGlhT2JqZWN0U2VjdGlvbj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24+CiAgICAgICAgPGg0PkRyZWFtcyBmZWVsIHJlYWwgd2hpbGUgd2UncmUgaW4gdGhlbS48L2g0PgogICAgICAgIDxwPkknbSBnb2luZyB0byBpbXByb3Zpc2UuIExpc3RlbiwgdGhlcmUncyBzb21ldGhpbmcgeW91IHNob3VsZCBrbm93IGFib3V0IG1lLi4uIGFib3V0IGluY2VwdGlvbi4gQW4gaWRlYSBpcyBsaWtlIGEgdmlydXMsIHJlc2lsaWVudCwgaGlnaGx5IGNvbnRhZ2lvdXMuIFRoZSBzbWFsbGVzdCBzZWVkIG9mIGFuIGlkZWEgY2FuIGdyb3cuIEl0IGNhbiBncm93IHRvIGRlZmluZSBvciBkZXN0cm95IHlvdS48L3A+CiAgICA8L01lZGlhT2JqZWN0U2VjdGlvbj4KPC9NZWRpYU9iamVjdFdyYXBwZXI+" />
+        <MediaObjectWrapper>
+            <MediaObjectSection>
+                <OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+                    <img src="https://get.foundation/sites/docs/assets/img/media-object/avatar-1.jpg" />
+                </OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+            </MediaObjectSection>
+            <MediaObjectSection>
+                <h4>Dreams feel real while we're in them.</h4>
+                <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
+            </MediaObjectSection>
+        </MediaObjectWrapper>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+            In flexbox mode, the class <Code>.main-section</Code> must be added to your center section in order to properly size it.
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lZGlhT2JqZWN0V3JhcHBlcj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24+CiAgICAgICAgPFRodW1ibmFpbD4KICAgICAgICAgICAgPGltZyBzcmM9ImFzc2V0cy9pbWcvbWVkaWEtb2JqZWN0L2F2YXRhci9hdmF0YXItMS5qcGciIC8+CiAgICAgICAgPC9UaHVtYm5haWw+CiAgICA8L01lZGlhT2JqZWN0U2VjdGlvbj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24gQ2xhc3M9Im1haW4tc2VjdGlvbiI+CiAgICAgICAgPGg0PkRyZWFtcyBmZWVsIHJlYWwgd2hpbGUgd2UncmUgaW4gdGhlbS48L2g0PgogICAgICAgIDxwPkknbSBnb2luZyB0byBpbXByb3Zpc2UuIExpc3RlbiwgdGhlcmUncyBzb21ldGhpbmcgeW91IHNob3VsZCBrbm93IGFib3V0IG1lLi4uIGFib3V0IGluY2VwdGlvbi4gQW4gaWRlYSBpcyBsaWtlIGEgdmlydXMsIHJlc2lsaWVudCwgaGlnaGx5IGNvbnRhZ2lvdXMuIFRoZSBzbWFsbGVzdCBzZWVkIG9mIGFuIGlkZWEgY2FuIGdyb3cuIEl0IGNhbiBncm93IHRvIGRlZmluZSBvciBkZXN0cm95IHlvdS48L3A+CiAgICA8L01lZGlhT2JqZWN0U2VjdGlvbj4KPC9NZWRpYU9iamVjdFdyYXBwZXI+" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Section Alignement</h2>
+        <p>
+            Each section aligns to the top by default, but individual sections can also be middle- or bottom-aligned with the
+            <Code>.middle</Code> and <Code>.bottom</Code> classes.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lZGlhT2JqZWN0V3JhcHBlcj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24gQ2xhc3M9Im1pZGRsZSI+CiAgICAgICAgPFRodW1ibmFpbD4KICAgICAgICAgICAgPGltZyBzcmM9ImFzc2V0cy9pbWcvbWVkaWEtb2JqZWN0L2F2YXRhci0yLmpwZyIgLz4KICAgICAgICA8L1RodW1ibmFpbD4KICAgIDwvTWVkaWFPYmplY3RTZWN0aW9uPgogICAgPE1lZGlhT2JqZWN0U2VjdGlvbj4KICAgICAgICA8aDQ+V2h5IGlzIGl0IHNvIGltcG9ydGFudCB0byBkcmVhbT88L2g0PgogICAgICAgIDxwPlNvLCBvbmNlIHdlJ3ZlIG1hZGUgdGhlIHBsYW50LCBob3cgZG8gd2UgZ28gb3V0PyBIb3BlIHlvdSBoYXZlIHNvbWV0aGluZyBtb3JlIGVsZWdhbnQgaW4gbWluZCB0aGFuIHNob290aW5nIG1lIGluIHRoZSBoZWFkPyBBIGtpY2suIFdoYXQncyBhIGtpY2s/IFRoaXMsIEFyaWFkbmUsIHdvdWxkIGJlIGEga2ljay48L3A+CiAgICAgICAgPHA+V2hhdCBpcyB0aGUgbW9zdCByZXNpbGllbnQgcGFyYXNpdGU/IEJhY3RlcmlhPyBBIHZpcnVzPyBBbiBpbnRlc3RpbmFsIHdvcm0/IEFuIGlkZWEuIFJlc2lsaWVudC4uLiBoaWdobHkgY29udGFnaW91cy4gT25jZSBhbiBpZGVhIGhhcyB0YWtlbiBob2xkIG9mIHRoZSBicmFpbiBpdCdzIGFsbW9zdCBpbXBvc3NpYmxlIHRvIGVyYWRpY2F0ZS4gQW4gaWRlYSB0aGF0IGlzIGZ1bGx5IGZvcm1lZCAtIGZ1bGx5IHVuZGVyc3Rvb2QgLSB0aGF0IHN0aWNrczsgcmlnaHQgaW4gdGhlcmUgc29tZXdoZXJlLjwvcD4KICAgIDwvTWVkaWFPYmplY3RTZWN0aW9uPgogICAgPE1lZGlhT2JqZWN0U2VjdGlvbiBDbGFzcz0iYm90dG9tIj4KICAgICAgICA8VGh1bWJuYWlsPgogICAgICAgICAgICA8aW1nIHNyYz0iYXNzZXRzL2ltZy9tZWRpYS1vYmplY3QvYXZhdGFyLTMuanBnIiAvPgogICAgICAgIDwvVGh1bWJuYWlsPgogICAgPC9NZWRpYU9iamVjdFNlY3Rpb24+CjwvTWVkaWFPYmplY3RXcmFwcGVyPg==" />
+        <MediaObjectWrapper>
+            <MediaObjectSection Class="middle">
+                <OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+                    <img src="https://get.foundation/sites/docs/assets/img/media-object/avatar-2.jpg" />
+                </OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+            </MediaObjectSection>
+            <MediaObjectSection>
+                <h4>Why is it so important to dream?</h4>
+                <p>So, once we've made the plant, how do we go out? Hope you have something more elegant in mind than shooting me in the head? A kick. What's a kick? This, Ariadne, would be a kick.</p>
+                <p>What is the most resilient parasite? Bacteria? A virus? An intestinal worm? An idea. Resilient... highly contagious. Once an idea has taken hold of the brain it's almost impossible to eradicate. An idea that is fully formed - fully understood - that sticks; right in there somewhere.</p>
+            </MediaObjectSection>
+            <MediaObjectSection Class="bottom">
+                <OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+                    <img src="https://get.foundation/sites/docs/assets/img/media-object/avatar-3.jpg" />
+                </OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+            </MediaObjectSection>
+        </MediaObjectWrapper>
+        <p>
+            In flexbox mode, you can use the >flexbox helper classes instead to get the same result. The <code>.align-*</code> classes
+            can be used on the container to align every child section at once, or individual child sections can be aligned with
+            <code>.align-self-*</code> classes.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lZGlhT2JqZWN0V3JhcHBlcj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24gQ2xhc3M9ImFsaWduLXNlbGYtbWlkZGxlIj4KICAgICAgICA8VGh1bWJuYWlsPgogICAgICAgICAgICA8aW1nIHNyYz0iYXNzZXRzL2ltZy9tZWRpYS1vYmplY3QvYXZhdGFyLTIuanBnIiAvPgogICAgICAgIDwvVGh1bWJuYWlsPgogICAgPC9NZWRpYU9iamVjdFNlY3Rpb24+CiAgICA8TWVkaWFPYmplY3RTZWN0aW9uIENsYXNzPSJtYWluLXNlY3Rpb24iPgogICAgICAgIDxoND5XaHkgaXMgaXQgc28gaW1wb3J0YW50IHRvIGRyZWFtPzwvaDQ+CiAgICAgICAgPHA+U28sIG9uY2Ugd2UndmUgbWFkZSB0aGUgcGxhbnQsIGhvdyBkbyB3ZSBnbyBvdXQ/IEhvcGUgeW91IGhhdmUgc29tZXRoaW5nIG1vcmUgZWxlZ2FudCBpbiBtaW5kIHRoYW4gc2hvb3RpbmcgbWUgaW4gdGhlIGhlYWQ/IEEga2ljay4gV2hhdCdzIGEga2ljaz8gVGhpcywgQXJpYWRuZSwgd291bGQgYmUgYSBraWNrLjwvcD4KICAgICAgICA8cD5XaGF0IGlzIHRoZSBtb3N0IHJlc2lsaWVudCBwYXJhc2l0ZT8gQmFjdGVyaWE/IEEgdmlydXM/IEFuIGludGVzdGluYWwgd29ybT8gQW4gaWRlYS4gUmVzaWxpZW50Li4uIGhpZ2hseSBjb250YWdpb3VzLiBPbmNlIGFuIGlkZWEgaGFzIHRha2VuIGhvbGQgb2YgdGhlIGJyYWluIGl0J3MgYWxtb3N0IGltcG9zc2libGUgdG8gZXJhZGljYXRlLiBBbiBpZGVhIHRoYXQgaXMgZnVsbHkgZm9ybWVkIC0gZnVsbHkgdW5kZXJzdG9vZCAtIHRoYXQgc3RpY2tzOyByaWdodCBpbiB0aGVyZSBzb21ld2hlcmUuPC9wPgogICAgPC9NZWRpYU9iamVjdFNlY3Rpb24+CiAgICA8TWVkaWFPYmplY3RTZWN0aW9uIENsYXNzPSJhbGlnbi1zZWxmLWJvdHRvbSI+CiAgICAgICAgPFRodW1ibmFpbD4KICAgICAgICAgICAgPGltZyBzcmM9ImFzc2V0cy9pbWcvbWVkaWEtb2JqZWN0L2F2YXRhci0zLmpwZyIgLz4KICAgICAgICA8L1RodW1ibmFpbD4KICAgIDwvTWVkaWFPYmplY3RTZWN0aW9uPgo8L01lZGlhT2JqZWN0V3JhcHBlcj4=" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Stack on Small</h2>
+        <p>
+            By adding the <code>.stack-for-small</code> class, you can make your media object responsive. Images will get a width of 100%,
+            but this can be changed.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lZGlhT2JqZWN0V3JhcHBlciBDbGFzcz0ic3RhY2stZm9yLXNtYWxsIj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24+CiAgICAgICAgPFRodW1ibmFpbD4KICAgICAgICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZ2V0LmZvdW5kYXRpb24vc2l0ZXMvZG9jcy9hc3NldHMvaW1nL2dlbmVyaWMvcmVjdGFuZ2xlLTEuanBnIiAvPgogICAgICAgIDwvVGh1bWJuYWlsPgogICAgPC9NZWRpYU9iamVjdFNlY3Rpb24+CiAgICA8TWVkaWFPYmplY3RTZWN0aW9uPgogICAgICAgIDxoND5JIENhbiBTdGFjay48L2g0PgogICAgICAgIDxwPlNocmluayB0aGUgYnJvd3NlciB3aWR0aCB0byBzZWUgbWUgc3RhY2suIEkgZG8gdHJpY2tzIGZvciBkb2cgdHJlYXRzLCBidXQgSSdtIG5vdCBhIGRvZy48L3A+CiAgICA8L01lZGlhT2JqZWN0U2VjdGlvbj4KPC9NZWRpYU9iamVjdFdyYXBwZXI+" />
+        <MediaObjectWrapper Class="stack-for-small">
+            <MediaObjectSection>
+                <OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+                    <img src="https://get.foundation/sites/docs/assets/img/generic/rectangle-1.jpg" />
+                </OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+            </MediaObjectSection>
+            <MediaObjectSection>
+                <h4>I Can Stack.</h4>
+                <p>Shrink the browser width to see me stack. I do tricks for dog treats, but I'm not a dog.</p>
+            </MediaObjectSection>
+        </MediaObjectWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+
+        <h2>Nesting Media Objects</h2>
+        <p>
+            By nesting a media object into the media-object-section section, you can easily indent it. This is great for comment
+            strings.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lZGlhT2JqZWN0V3JhcHBlcj4KICAgIDxNZWRpYU9iamVjdFNlY3Rpb24+CiAgICAgICAgPE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkRvYy5Db3JlLkRvY3VtZW50YXRpb24uTWVkaWEuVGh1bWJuYWlsPgogICAgICAgICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9nZXQuZm91bmRhdGlvbi9zaXRlcy9kb2NzL2Fzc2V0cy9pbWcvbWVkaWEtb2JqZWN0L2F2YXRhci0xLmpwZyIgLz4KICAgICAgICA8L09wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkRvYy5Db3JlLkRvY3VtZW50YXRpb24uTWVkaWEuVGh1bWJuYWlsPgogICAgPC9NZWRpYU9iamVjdFNlY3Rpb24+CiAgICA8TWVkaWFPYmplY3RTZWN0aW9uPgogICAgICAgIDxoND5JJ20gRmlyc3QhPC9oND4KICAgICAgICA8cD5Mb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdC4gUG9ycm8gYXQsIHRlbmV0dXIgY3VtIGJlYXRhZSBleGNlcHR1cmkgaWQgaXBzYT8gRXNzZSBkb2xvciBsYWJvcmlvc2FtIGl0YXF1ZSBlYSBuZXNjaXVudCwgZWFydW0sIGlwc3VtIGNvbW1vZGkgYmVhdGFlIHZlbGl0IGlkIGVuaW0gcmVwZWxsYXQuPC9wPgogICAgICAgIDxNZWRpYU9iamVjdFdyYXBwZXI+CiAgICAgICAgICAgIDxNZWRpYU9iamVjdFNlY3Rpb24+CiAgICAgICAgICAgICAgICA8T3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uRG9jLkNvcmUuRG9jdW1lbnRhdGlvbi5NZWRpYS5UaHVtYm5haWw+CiAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZ2V0LmZvdW5kYXRpb24vc2l0ZXMvZG9jcy9hc3NldHMvaW1nL21lZGlhLW9iamVjdC9hdmF0YXItMi5qcGciIC8+CiAgICAgICAgICAgICAgICA8L09wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkRvYy5Db3JlLkRvY3VtZW50YXRpb24uTWVkaWEuVGh1bWJuYWlsPgogICAgICAgICAgICA8L01lZGlhT2JqZWN0U2VjdGlvbj4KICAgICAgICAgICAgPE1lZGlhT2JqZWN0U2VjdGlvbj4KICAgICAgICAgICAgICAgIDxoND5JJ20gU2Vjb25kITwvaDQ+CiAgICAgICAgICAgICAgICA8cD5Mb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdC4gVm9sdXB0YXMgbWFnbmksIHF1YW0gbW9sbGl0aWEgdm9sdXB0YXR1bSBpbiwgYW5pbWkgc3VzY2lwaXQgdGVtcG9yYSBlYSBjb25zZXF1dW50dXIgbm9uIG51bGxhIHZpdGFlIGRvbG9yZW1xdWUuIEVpdXMgcmVydW0sIGN1bSBlYXJ1bSBxdWFlIGV2ZW5pZXQgb2Rpby48L3A+CiAgICAgICAgICAgIDwvTWVkaWFPYmplY3RTZWN0aW9uPgogICAgICAgIDwvTWVkaWFPYmplY3RXcmFwcGVyPgogICAgPC9NZWRpYU9iamVjdFNlY3Rpb24+CjwvTWVkaWFPYmplY3RXcmFwcGVyPg==" />
+        <MediaObjectWrapper>
+            <MediaObjectSection>
+                <OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+                    <img src="https://get.foundation/sites/docs/assets/img/media-object/avatar-1.jpg" />
+                </OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+            </MediaObjectSection>
+            <MediaObjectSection>
+                <h4>I'm First!</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro at, tenetur cum beatae excepturi id ipsa? Esse dolor laboriosam itaque ea nesciunt, earum, ipsum commodi beatae velit id enim repellat.</p>
+                <MediaObjectWrapper>
+                    <MediaObjectSection>
+                        <OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+                            <img src="https://get.foundation/sites/docs/assets/img/media-object/avatar-2.jpg" />
+                        </OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Media.Thumbnail>
+                    </MediaObjectSection>
+                    <MediaObjectSection>
+                        <h4>I'm Second!</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas magni, quam mollitia voluptatum in, animi suscipit tempora ea consequuntur non nulla vitae doloremque. Eius rerum, cum earum quae eveniet odio.</p>
+                    </MediaObjectSection>
+                </MediaObjectWrapper>
+            </MediaObjectSection>
+        </MediaObjectWrapper>
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
