@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 {
-    class PaginationPrevious
+    public partial class PaginationPrevious
     {
     }
 }

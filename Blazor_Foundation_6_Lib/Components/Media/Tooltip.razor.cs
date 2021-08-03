@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Media
 {
-    class Tooltip
+    public partial class Tooltip
     {
     }
 }
