@@ -3,10 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 {
-    public partial class PaginationPrevious
+    public partial class PaginationPrevious : ComponentBase
     {
+        public RenderFragment ChildContent { get; set; }
+
+        /// <summary>
+        /// Custom Class to Append at the end of default Foundation Class.
+        /// </summary>
+        [Parameter]
+        public string Class { get; set; }
+
+        /// <summary>
+        /// If True, disable previous. (Default: False)
+        /// </summary>
+        [Parameter]
+        public bool Disable { get; set; } = false;
     }
 }

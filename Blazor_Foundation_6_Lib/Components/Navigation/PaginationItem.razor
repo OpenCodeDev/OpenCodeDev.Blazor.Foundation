@@ -1,4 +1,11 @@
-﻿<h3>PaginationItem</h3>
+﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+
+
+<li class="@($" {Class} " + $"{(Active ? "current" : "")} ")"> 
+    @ChildContent
+</li>
+
 
 @code {
 
