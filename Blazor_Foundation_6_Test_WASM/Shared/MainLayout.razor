@@ -4,6 +4,7 @@
 @using System.Net.Http;
 @inject HttpClient _client
 @using System.Text;
+@using System.Collections.Generic; 
 @using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 @inject IStyleManagement StyleManager;
 @implements IDisposable;
@@ -28,7 +29,7 @@
 </SideMenuLayout>
 
 <MenuSystemWrapper @ref="MenuSystemWrapperNoTop" Id="MenuSystemNoTop" AppId="MyApp"
-                   DataOptions="@(new JObject() { { "hasTop", false }, { "transitionType", "over" } })">
+                   DataOptions="@(new Dictionary<string, object>() { { "hasTop", false }, { "transitionType", "over" } })">
     <MenuSystemLeft @ref="MenuLeftNoTop" Wrapper="@MenuSystemWrapperNoTop">
 
     </MenuSystemLeft>
