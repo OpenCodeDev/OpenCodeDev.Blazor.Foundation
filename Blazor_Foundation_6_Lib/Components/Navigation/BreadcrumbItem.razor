@@ -1,4 +1,9 @@
-﻿<h3>BreadcrumbItem</h3>
+﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+
+<li class="@($"{Class} " + $"{(Disable ? "disabled" : "")} ")">
+    @ChildContent
+</li>
 
 @code {
 

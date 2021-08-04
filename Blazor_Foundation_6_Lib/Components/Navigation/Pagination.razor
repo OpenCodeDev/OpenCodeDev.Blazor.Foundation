@@ -1,12 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
 
-<nav>
-    <ul class="@($"pagination {Class} " + $"{(Center ? "text-center" : "")} ")
-        " @attributes="AdditionalAttributes">
-        @ChildContent
-    </ul>
-</nav>
+
+<ul class="@($"pagination {Class} " + $"{(Center ? "text-center" : "")} ")" @attributes="AdditionalAttributes">
+    @ChildContent
+</ul>
+
 
 
 @code {

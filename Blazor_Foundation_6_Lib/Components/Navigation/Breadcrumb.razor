@@ -1,4 +1,10 @@
-﻿<h3>Breadcrumb</h3>
+﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+
+<ul class="@($"breadcrumbs {Class}")" @attributes="AdditionalAttributes">
+    @ChildContent
+</ul>
+
 
 @code {
 
