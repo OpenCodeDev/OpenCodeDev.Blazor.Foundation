@@ -3,7 +3,7 @@
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
 
-<span data-tooltip id="@Id" class="@($"pagination {Class} {Position}")" @attributes="AdditionalAttributes" 
+<span data-tooltip id="@Id" class="@($"{Class} {Position}")" @attributes="AdditionalAttributes" 
       data-click-open="@DataClickOpen.ToString().ToLower()" title="@Title">
     @ChildContent
 </span>
