@@ -1,4 +1,11 @@
-﻿<h3>PaginationNext</h3>
+﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+
+
+<li class="@($"pagination-next {Class} " + $"{(Disable ? "disabled" : "")} ")">
+    @ChildContent
+</li>
+
 
 @code {
 
