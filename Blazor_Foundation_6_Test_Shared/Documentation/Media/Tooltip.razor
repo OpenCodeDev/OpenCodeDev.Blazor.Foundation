@@ -19,7 +19,7 @@
         <h2>Basic Tooltip</h2>
         <p>By default, a tooltip appears below the defined term on hover.</p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
-                     Content="VGhlIDxzcGFuIGRhdGEtdG9vbHRpcCB0YWJpbmRleD0iMSIgdGl0bGU9IkZhbmN5IHdvcmQgZm9yIGEgYmVldGxlLiI+c2NhcmFiYWV1czwvc3Bhbj4gaHVuZyBxdWl0ZQpjbGVhciBvZiBhbnkgYnJhbmNoZXMsIGFuZCwgaWYgYWxsb3dlZCB0byBmYWxsLCB3b3VsZCBoYXZlIGZhbGxlbiBhdCBvdXIgZmVldC4=" />
+                     Content="VGhlIDxUb29sdGlwIHRhYmluZGV4PSIxIiAgVGl0bGU9IkZhbmN5IHdvcmQgZm9yIGEgYmVldGxlLiI+c2NhcmFiYWV1czwvVG9vbHRpcD4gaHVuZyBxdWl0ZQpjbGVhciBvZiBhbnkgYnJhbmNoZXMsIGFuZCwgaWYgYWxsb3dlZCB0byBmYWxsLCB3b3VsZCBoYXZlIGZhbGxlbiBhdCBvdXIgZmVldC4=" />
         <p>
             The <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip tabindex="1"  Title="Fancy word for a beetle.">scarabaeus</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip> hung quite
             clear of any branches, and, if allowed to fall, would have fallen at our feet.
@@ -32,12 +32,12 @@
     <SectionLeft>
         <h2>Tooltip Top</h2>
         <p>
-            To get a tip-top top tooltip (lol), just add the class <Code>.top</Code> to the <Code>@("<span>")</Code> element.
+            To get a tip-top top tooltip (lol), just use <Code>@("<tooltip>")</Code> element. The default position value of this balise is <code>top</code>
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
-                     Content="VGhlIDxzcGFuIGRhdGEtdG9vbHRpcCBjbGFzcz0idG9wIiB0YWJpbmRleD0iMiIgdGl0bGU9IkZhbmN5IHdvcmQgZm9yIGEgYmVldGxlLiI+c2NhcmFiYWV1czwvc3Bhbj4KIGh1bmcgcXVpdGUgY2xlYXIgb2YgYW55IGJyYW5jaGVzLCBhbmQsIGlmIGFsbG93ZWQgdG8gZmFsbCwgd291bGQgaGF2ZSBmYWxsZW4gYXQgb3VyIGZlZXQu" />
+                     Content="VGhlIDxUb29sdGlwICB0YWJpbmRleD0iMiIgVGl0bGU9IkZhbmN5IHdvcmQgZm9yIGEgYmVldGxlLiI+c2NhcmFiYWV1czwvVG9vbHRpcD4KaHVuZyBxdWl0ZSBjbGVhciBvZiBhbnkgYnJhbmNoZXMsIGFuZCwgaWYgYWxsb3dlZCB0byBmYWxsLCB3b3VsZCBoYXZlIGZhbGxlbiBhdCBvdXIgZmVldC4=" />
         
-        The <span data-tooltip class="top" tabindex="2" title="Fancy word for a beetle.">scarabaeus</span>
+        The <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip  tabindex="2" Title="Fancy word for a beetle.">scarabaeus</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>
         hung quite clear of any branches, and, if allowed to fall, would have fallen at our feet.
         <hr />
     </SectionLeft>
@@ -48,108 +48,42 @@
         <h2>Tooltip clicking</h2>
         <p>
             By default, clicking on a tooltip will leave it open until you click somewhere else. However, you can disable that by
-            adding <Code>data-click-open="false"</Code>
+            adding <Code>DataClickOpen="false"</Code>
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
-                     Content="dGhpcwo8c3BhbiBkYXRhLXRvb2x0aXAgY2xhc3M9InRvcCIgdGFiaW5kZXg9IjIiIHRpdGxlPSJZb3Ugc2VlPyAgSSdtIG9wZW4hIj4KICAgIHRvb2x0aXAgd2lsbCBzdGF5IG9wZW4KPC9zcGFuPgp3aGlsZQo8c3BhbiBkYXRhLXRvb2x0aXAgY2xhc3M9InRvcCIgZGF0YS1jbGljay1vcGVuPSJmYWxzZSIgdGFiaW5kZXg9IjIiIHRpdGxlPSJJIGRvbid0IHN0YXkgb3BlbiI+CiAgICB0aGlzIG9uZSB3aWxsIG9ubHkgYmUgb3BlbiB3aGVuIGhvdmVyZWQKPC9zcGFuPg==" />
+                     Content="dGhpcwo8VG9vbHRpcCBEYXRhQ2xpY2tPcGVuPSJmYWxzZSIgdGFiaW5kZXg9IjIiIFRpdGxlPSJZb3Ugc2VlPyAgSSdtIG9wZW4hIj4KICAgIHRvb2x0aXAgd2lsbCBzdGF5IG9wZW4KPC9Ub29sdGlwPgp3aGlsZQo8VG9vbHRpcCBEYXRhQ2xpY2tPcGVuPSJmYWxzZSIgdGFiaW5kZXg9IjIiIFRpdGxlPSJJIGRvbid0IHN0YXkgb3BlbiI+CiAgICB0aGlzIG9uZSB3aWxsIG9ubHkgYmUgb3BlbiB3aGVuIGhvdmVyZWQKPC9Ub29sdGlwPg==" />
         <p>
             this
-            <span data-tooltip class="top" tabindex="2" title="You see?  I'm open!">
+            <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip DataClickOpen="false" tabindex="2" Title="You see?  I'm open!">
                 tooltip will stay open
-            </span>
+            </OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>
             while
-            <span data-tooltip class="top" data-click-open="false" tabindex="2" title="I don't stay open">
+            <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip DataClickOpen="false" tabindex="2" Title="I don't stay open">
                 this one will only be open when hovered
-            </span>
+            </OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>
         </p>
+        <hr />
     </SectionLeft>
 </SectionWrapper>
 
 <SectionWrapper>
     <SectionLeft>
         <h2>Tooltip Right and Left</h2>
-        <p>You can also position the tooltips to the right and left of the word by adding the classes <Code>.right</Code> or <Code>.left</Code> to the @("<span>") element.</p>
+        <p>You can also position the tooltips to the right and left of the word by seting the position <Code>right</Code> or <Code>left</Code> to the <Code>@("<Tooltip>")</Code> element.</p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
-                     Content="V2hlbiBoZSB3YXMgZHJlc3NlZCBoZSB3ZW50IGRvd24gdGhlIGhhbGwgaW50byB0aGUKPHNwYW4gZGF0YS10b29sdGlwIGNsYXNzPSJyaWdodCIgdGFiaW5kZXg9IjMiIHRpdGxlPSJBbGlnbmVkIG9uIHRoZSByaWdodCI+a2l0Y2hlbjwvc3Bhbj4uClRoZSB0YWJsZSB3YXMgYWxtb3N0IGhpZGRlbiBiZW5lYXRoIGFsbCBEdWRsZXkncyBiaXJ0aGRheSBwcmVzZW50cy4gSXQgbG9va2VkIGFzIHRob3VnaAo8c3BhbiBkYXRhLXRvb2x0aXAgY2xhc3M9ImxlZnQiIHRhYmluZGV4PSI0IiB0aXRsZT0iQWxpZ25lZCBvbiB0aGUgbGVmdCI+RHVkbGV5PC9zcGFuPgpoYWQgZ290dGVuIHRoZSBuZXcgY29tcHV0ZXIgaGUgd2FudGVkLCBub3QgdG8gbWVudGlvbiB0aGUgc2Vjb25kIHRlbGV2aXNpb24gYW5kIHRoZSByYWNpbmcgYmlrZS4=" />
+                     Content="V2hlbiBoZSB3YXMgZHJlc3NlZCBoZSB3ZW50IGRvd24gdGhlIGhhbGwgaW50byB0aGUKPFRvb2x0aXAgUG9zaXRpb249InJpZ2h0IiB0YWJpbmRleD0iMyIgVGl0bGU9IkFsaWduZWQgb24gdGhlIHJpZ2h0Ij5raXRjaGVuPC9Ub29sdGlwPi4KVGhlIHRhYmxlIHdhcyBhbG1vc3QgaGlkZGVuIGJlbmVhdGggYWxsIER1ZGxleSdzIGJpcnRoZGF5IHByZXNlbnRzLiBJdCBsb29rZWQgYXMgdGhvdWdoCjxUb29sdGlwIFBvc2l0aW9uPSJsZWZ0IiB0YWJpbmRleD0iNCIgVGl0bGU9IkFsaWduZWQgb24gdGhlIGxlZnQiPkR1ZGxleTwvVG9vbHRpcD4KaGFkIGdvdHRlbiB0aGUgbmV3IGNvbXB1dGVyIGhlIHdhbnRlZCwgbm90IHRvIG1lbnRpb24gdGhlIHNlY29uZCB0ZWxldmlzaW9uIGFuZCB0aGUgcmFjaW5nIGJpa2Uu" />
         <p>
             When he was dressed he went down the hall into the
-            <span data-tooltip class="right" tabindex="3" title="Aligned on the right">kitchen</span>.
+            <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip Position="right" tabindex="3" Title="Aligned on the right">kitchen</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>.
             The table was almost hidden beneath all Dudley's birthday presents. It looked as though
-            <span data-tooltip class="left" tabindex="4" title="Aligned on the left">Dudley</span>
+            <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip Position="left" tabindex="4" Title="Aligned on the left">Dudley</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>
             had gotten the new computer he wanted, not to mention the second television and the racing bike.
         </p>
+        <hr />
     </SectionLeft>
 </SectionWrapper>
 
-<SectionWrapper>
-    <SectionLeft>
-        <h2>Explicit Positioning</h2>
-        <p>
-            Now with tooltips you can define both positions for the tip. These tooltips have a fully explicit positioning model through
-            which you can use both <Code>data-position</Code> and <Code>data-alignment</Code> to define both positions of the box.
-        </p>
-        <p>
-            These dropdowns sets various positioning and alignments. Valid positions are left/right/top/bottom. Valid alignments are
-            left/right/top/bottom/center. Left align means left sides should line up. Right align means right sides should line up.
-            Center align means centers should line up.
-        </p>
-        <h3>Top and Bottom positioned</h3>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
-                     Content="PEJ1dHRvbiBkYXRhLXRvb2x0aXAgdGFiaW5kZXg9IjEiIHRpdGxlPSJGYW5jeSB3b3JkIGZvciBhIGJlZXRsZSIgZGF0YS1wb3NpdGlvbj0iYm90dG9tIiBkYXRhLWFsaWdubWVudD0ibGVmdCI+CiAgICBCb3R0b20gTGVmdAo8L0J1dHRvbj4KPEJ1dHRvbiBkYXRhLXRvb2x0aXAgdGFiaW5kZXg9IjEiIHRpdGxlPSJGYW5jeSB3b3JkIGZvciBhIGJlZXRsZS4iIGRhdGEtcG9zaXRpb249ImJvdHRvbSIgZGF0YS1hbGlnbm1lbnQ9ImNlbnRlciI+CiAgICBCb3R0b20gQ2VudGVyCjwvQnV0dG9uPgoKPEJ1dHRvbiBkYXRhLXRvb2x0aXAgdGFiaW5kZXg9IjEiIHRpdGxlPSJGYW5jeSB3b3JkIGZvciBhIGJlZXRsZS4iIGRhdGEtcG9zaXRpb249ImJvdHRvbSIgZGF0YS1hbGlnbm1lbnQ9InJpZ2h0Ij4KICAgIEJvdHRvbSBSaWdodAo8L0J1dHRvbj4KCjxCdXR0b24gZGF0YS10b29sdGlwIHRhYmluZGV4PSIxIiB0aXRsZT0iRmFuY3kgd29yZCBmb3IgYSBiZWV0bGUuIiBkYXRhLXBvc2l0aW9uPSJ0b3AiIGRhdGEtYWxpZ25tZW50PSJsZWZ0Ij4KICAgIFRvcCBMZWZ0CjwvQnV0dG9uPgoKPEJ1dHRvbiAgZGF0YS10b29sdGlwIHRhYmluZGV4PSIxIiB0aXRsZT0iRmFuY3kgd29yZCBmb3IgYSBiZWV0bGUuIiBkYXRhLXBvc2l0aW9uPSJ0b3AiIGRhdGEtYWxpZ25tZW50PSJjZW50ZXIiPgogICAgVG9wIENlbnRlcgo8L0J1dHRvbj4KCjxCdXR0b24gZGF0YS10b29sdGlwIHRhYmluZGV4PSIxIiB0aXRsZT0iRmFuY3kgd29yZCBmb3IgYSBiZWV0bGUuIiBkYXRhLXBvc2l0aW9uPSJ0b3AiIGRhdGEtYWxpZ25tZW50PSJyaWdodCI+CiAgICBUb3AgUmlnaHQKPC9CdXR0b24+" />
-       
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle" data-position="bottom" data-alignment="left">
-            Bottom Left
-        </Button>
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="bottom" data-alignment="center">
-            Bottom Center
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="bottom" data-alignment="right">
-            Bottom Right
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="top" data-alignment="left">
-            Top Left
-        </Button>
-
-        <Button  data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="top" data-alignment="center">
-            Top Center
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="top" data-alignment="right">
-            Top Right
-        </Button>
-       
-        <h3>Left and Right Positioned</h3>
-
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
-                     Content="PEJ1dHRvbiBkYXRhLXRvb2x0aXAgdGFiaW5kZXg9IjEiIHRpdGxlPSJGYW5jeSB3b3JkIGZvciBhIGJlZXRsZS4iIGRhdGEtcG9zaXRpb249InJpZ2h0IiBkYXRhLWFsaWdubWVudD0idG9wIj4KICAgIFJpZ2h0IFRvcAo8L0J1dHRvbj4KCjxCdXR0b24gZGF0YS10b29sdGlwIHRhYmluZGV4PSIxIiB0aXRsZT0iRmFuY3kgd29yZCBmb3IgYSBiZWV0bGUuIiBkYXRhLXBvc2l0aW9uPSJsZWZ0IiBkYXRhLWFsaWdubWVudD0idG9wIj4KICAgIExlZnQgVG9wCjwvQnV0dG9uPgoKPEJ1dHRvbiBkYXRhLXRvb2x0aXAgdGFiaW5kZXg9IjEiIHRpdGxlPSJGYW5jeSB3b3JkIGZvciBhIGJlZXRsZS4iIGRhdGEtcG9zaXRpb249InJpZ2h0IiBkYXRhLWFsaWdubWVudD0iY2VudGVyIj4KICAgIFJpZ2h0IENlbnRlcgo8L0J1dHRvbj4KCjxCdXR0b24gZGF0YS10b29sdGlwIHRhYmluZGV4PSIxIiB0aXRsZT0iRmFuY3kgd29yZCBmb3IgYSBiZWV0bGUuIiBkYXRhLXBvc2l0aW9uPSJsZWZ0IiBkYXRhLWFsaWdubWVudD0iY2VudGVyIj4KICAgIExlZnQgQ2VudGVyCjwvQnV0dG9uPgoKPEJ1dHRvbiBkYXRhLXRvb2x0aXAgdGFiaW5kZXg9IjEiIHRpdGxlPSJGYW5jeSB3b3JkIGZvciBhIGJlZXRsZS4iIGRhdGEtcG9zaXRpb249InJpZ2h0IiBkYXRhLWFsaWdubWVudD0iYm90dG9tIj4KICAgIFJpZ2h0IEJvdHRvbQo8L0J1dHRvbj4KCjxCdXR0b24gZGF0YS10b29sdGlwIHRhYmluZGV4PSIxIiB0aXRsZT0iRmFuY3kgd29yZCBmb3IgYSBiZWV0bGUuIiBkYXRhLXBvc2l0aW9uPSJsZWZ0IiBkYXRhLWFsaWdubWVudD0iYm90dG9tIj4KICAgIExlZnQgQm90dG9tCjwvQnV0dG9uPg==" />
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="right" data-alignment="top">
-            Right Top
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="left" data-alignment="top">
-            Left Top
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="right" data-alignment="center">
-            Right Center
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="left" data-alignment="center">
-            Left Center
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="right" data-alignment="bottom">
-            Right Bottom
-        </Button>
-
-        <Button data-tooltip tabindex="1" title="Fancy word for a beetle." data-position="left" data-alignment="bottom">
-            Left Bottom
-        </Button>
-    </SectionLeft>
-</SectionWrapper>
 
 @code {
 
