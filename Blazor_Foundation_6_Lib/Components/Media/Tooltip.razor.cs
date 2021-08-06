@@ -12,6 +12,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Media
 {
     public partial class Tooltip : ComponentBase
     {
+        [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         /// <summary>

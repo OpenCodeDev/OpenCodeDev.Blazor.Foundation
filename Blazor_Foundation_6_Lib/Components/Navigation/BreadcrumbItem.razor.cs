@@ -10,6 +10,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 {
     public partial class BreadcrumbItem
     {
+        [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         /// <summary>

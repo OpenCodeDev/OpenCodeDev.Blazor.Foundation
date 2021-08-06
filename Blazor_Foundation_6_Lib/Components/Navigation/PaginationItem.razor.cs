@@ -10,6 +10,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 {
     public partial class PaginationItem : ComponentBase
     {
+        
+        [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         /// <summary>
