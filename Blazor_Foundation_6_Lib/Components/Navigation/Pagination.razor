@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+
+
+<ul class="@($"pagination {Class} " + $"{(Center ? "text-center" : "")} ")" @attributes="AdditionalAttributes">
+    @ChildContent
+</ul>
+
+
+
+@code {
+
+}

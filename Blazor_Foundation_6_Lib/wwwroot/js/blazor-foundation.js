@@ -158,6 +158,14 @@ function ElementClose(element) {
     $(`#${element}`).foundation('close', null, null);
 }
 
+function ElementShow(element) {
+    $(`#${element}`).foundation('show');
+}
+
+function ElementHide(element) {
+    $(`#${element}`).foundation('hide');
+}
+
 function ElementShowAll(element) {
     $(`#${element}`).foundation('showAll');
 }
@@ -268,6 +276,15 @@ function DropdownMenuRegister(element, options) {
 
     let optionsCanvas = options == null ? {} : JSON.parse(options);
     window.DropdownMenuList.push(new Foundation.DropdownMenu($(`#${element}`), optionsCanvas));
+}
+
+function TooltipRegister(element, options) {
+    if (typeof window.TooltipList == 'undefined') {
+        window.TooltipList = [];
+    }
+
+    let optionsCanvas = options == null ? {} : JSON.parse(options);
+    window.TooltipList.push(new Foundation.Tooltip($(`#${element}`), optionsCanvas));
 }
 
 function StickyRegister(element, options) {

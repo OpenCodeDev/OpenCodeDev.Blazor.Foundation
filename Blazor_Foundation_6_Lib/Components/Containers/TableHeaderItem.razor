@@ -1,9 +1,5 @@
 ﻿<th @attributes="AdditionalAttributes">@ChildContent</th>
 
 @code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
-    [Parameter(CaptureUnmatchedValues = true)]
-    public IDictionary<string, object> AdditionalAttributes { get; set; }
 
 }
