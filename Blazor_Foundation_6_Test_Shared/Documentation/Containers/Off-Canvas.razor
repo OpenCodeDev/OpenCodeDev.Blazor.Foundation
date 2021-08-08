@@ -2,6 +2,8 @@
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
 
 <SectionWrapper>
+
+
     <SectionLeft>
         <h2>Off-Canvas</h2>
         <p>
@@ -66,24 +68,22 @@
             Foundation's Close component can be used inside the off-canvas to close it.
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBDbGFzcz0iY2xvc2UtYnV0dG9uIj4KICA8c3BhbiBhcmlhLWhpZGRlbj0idHJ1ZSI+JnRpbWVzOzwvc3Bhbj4KPC9CdXR0b24+" />
+                     Content="PEJ1dHRvbiBDbGFzcz0iY2xvc2UtYnV0dG9uIiBkYXRhLWNsb3NlPgogIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj4mdGltZXM7PC9zcGFuPgo8L0J1dHRvbj4=" />
 
         <h2>Complete Example</h2>
         <p>
             Here's a complete example that can be pasted into the <Code>body</Code> tag of your page. It includes a close button and basic menu styles.
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXMiPk9wZW4gTWVudTwvQnV0dG9uPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzIj4KCiAgPCEtLSBDbG9zZSBidXR0b24gLS0+CiAgPEJ1dHRvbiBDbGFzcz0iY2xvc2UtYnV0dG9uIj4KICAgIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj4mdGltZXM7PC9zcGFuPgogIDwvQnV0dG9uPgoKICA8IS0tIE1lbnUgLS0+CiAgPHVsIGNsYXNzPSJ2ZXJ0aWNhbCBtZW51Ij4KICAgIDxsaT48YSBocmVmPSIjIj5CbGF6b3I8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5Eb3Q8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5Gb3VuZGF0YTwvYT48L2xpPgogICAgPGxpPjxhIGhyZWY9IiMiPkNvbTwvYT48L2xpPgogICAgPGxpPjxhIGhyZWY9IiMiPlNsYXNoPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+U2l0ZXM8L2E+PC9saT4KICA8L3VsPgoKPC9PZmZDYW52YXM+Cgo8T2ZmQ2FudmFzQ29udGVudD4KICA8IS0tIFlvdXIgcGFnZSBjb250ZW50IGxpdmVzIGhlcmUgLS0+CjwvT2ZmQ2FudmFzQ29udGVudD4=" />
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXMiPk9wZW4gTWVudTwvQnV0dG9uPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzIj4KCiAgPCEtLSBDbG9zZSBidXR0b24gLS0+CiAgPEJ1dHRvbiBDbGFzcz0iY2xvc2UtYnV0dG9uIj4KICAgIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj4mdGltZXM7PC9zcGFuPgogIDwvQnV0dG9uPgoKICA8IS0tIE1lbnUgLS0+CiAgPHVsIGNsYXNzPSJ2ZXJ0aWNhbCBtZW51Ij4KICAgIDxsaT48YSBocmVmPSIjIj5CbGF6b3I8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5Eb3Q8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5Gb3VuZGF0aW9uPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+Q29tPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+U2xhc2g8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5TaXRlczwvYT48L2xpPgogIDwvdWw+Cgo8L09mZkNhbnZhcz4KCjxPZmZDYW52YXNDb250ZW50PgogIDxoNT5Zb3VyIHBhZ2UgY29udGVudCBsaXZlcyBoZXJlPC9oNT4KPC9PZmZDYW52YXNDb250ZW50Pg==" />
 
         <Button DataToggle="offCanvas">Open Menu</Button>
         <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvas">
 
-            <!-- Close button -->
-            <Button Class="close-button">
+            <Button Class="close-button" data-close>
                 <span aria-hidden="true">&times;</span>
             </Button>
 
-            <!-- Menu -->
             <ul class="vertical menu">
                 <li><a href="#">Blazor</a></li>
                 <li><a href="#">Dot</a></li>
@@ -96,7 +96,7 @@
         </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
 
         <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent>
-            <!-- Your page content lives here -->
+            <h5>Your page content lives here</h5>
         </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent>
         <hr />
     </SectionLeft>
@@ -108,7 +108,7 @@
             Off-canvas is set to <Code>position: fixed</Code> by default using the <Code Content="PE9mZkNhbnZhcz4="></Code>. This makes the off-canvas panel sit in relation to the viewport, and is the desired behavior for most users. However you can also set an off-canvas component to <Code>position: absolute</Code> by using the alternative attribute <code>Absolute</code>. Also be sure to use the <Code Content="PE9mZkNhbnZhc1dyYXBwZXI+"></Code> when using this method.
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0U3BsaXQxIj5PcGVuIExlZnQ8L0J1dHRvbj4KPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNSaWdodFNwbGl0MiI+T3BlbiBSaWdodDwvQnV0dG9uPgoKPEdyaWRYPgogIDxDZWxsIFNpemU9InNtYWxsLTYiPgogICAgPE9mZkNhbnZhc1dyYXBwZXI+CiAgICAgIDxPZmZDYW52YXMgQWJzb2x1dGU9InRydWUiIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzTGVmdFNwbGl0MSIgZGF0YS1vZmYtY2FudmFzPgogICAgICAgICAgICAgICAgICAgICAgICA8IS0tIFlvdXIgbWVudSBvciBPZmYtY2FudmFzIGNvbnRlbnQgZ29lcyBoZXJlIC0tPgogICAgICA8L09mZkNhbnZhcz4KICAgICAgPE9mZkNhbnZhc0NvbnRlbnQgc3R5bGU9Im1pbi1oZWlnaHQ6IDMwMHB4OyIgZGF0YS1vZmYtY2FudmFzLWNvbnRlbnQ+CiAgICAgICAgPHA+SSBoYXZlIG5vdGhpbmcgdG8gZG8gd2l0aCB0aGUgb2ZmLWNhbnZhcyBvbiB0aGUgcmlnaHQhPC9wPgogICAgICA8L09mZkNhbnZhc0NvbnRlbnQ+CiAgICA8L09mZkNhbnZhc1dyYXBwZXI+CiAgPC9DZWxsPgogIDxDZWxsIFNpemU9InNtYWxsLTYiPgogICAgPE9mZkNhbnZhc1dyYXBwZXI+CiAgICAgIDxPZmZDYW52YXMgQWJzb2x1dGU9InRydWUiIFBvc2l0aW9uPSJwb3NpdGlvbi1yaWdodCIgSWQ9Im9mZkNhbnZhc1JpZ2h0U3BsaXQyIiBkYXRhLW9mZi1jYW52YXM+CiAgICAgICAgPCEtLSBZb3VyIG1lbnUgb3IgT2ZmLWNhbnZhcyBjb250ZW50IGdvZXMgaGVyZSAtLT4KICAgICAgPC9PZmZDYW52YXM+CiAgICAgIDxPZmZDYW52YXNDb250ZW50IHN0eWxlPSJtaW4taGVpZ2h0OiAzMDBweDsiIGRhdGEtb2ZmLWNhbnZhcy1jb250ZW50PgogICAgICAgIDxwPkltIGEgdW5pcXVlIG9mZi1jYW52YXMgY29udGFpbmVyIGFsbCBvbiBteSBvd24hPC9wPgogICAgICA8L09mZkNhbnZhc0NvbnRlbnQ+CiAgICA8L09mZkNhbnZhc1dyYXBwZXI+CiAgPC9DZWxsPgo8L0dyaWRYPg==" />
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0U3BsaXQxIj5PcGVuIExlZnQ8L0J1dHRvbj4KPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNSaWdodFNwbGl0MiI+T3BlbiBSaWdodDwvQnV0dG9uPgoKPEdyaWRYPgogIDxDZWxsIFNpemU9InNtYWxsLTYiPgogICAgPE9mZkNhbnZhc1dyYXBwZXI+CiAgICAgIDxPZmZDYW52YXMgQWJzb2x1dGU9InRydWUiIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzTGVmdFNwbGl0MSIgZGF0YS1vZmYtY2FudmFzPgogICAgICAgIDx1bCBjbGFzcz0idmVydGljYWwgbWVudSI+CiAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+Qmxhem9yPC9hPjwvbGk+CiAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+RG90PC9hPjwvbGk+CiAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+Rm91bmRhdGlvbjwvYT48L2xpPgogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkNvbTwvYT48L2xpPgogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPlNsYXNoPC9hPjwvbGk+CiAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+U2l0ZXM8L2E+PC9saT4KICAgICAgICA8L3VsPgogICAgICA8L09mZkNhbnZhcz4KICAgICAgPE9mZkNhbnZhc0NvbnRlbnQgc3R5bGU9Im1pbi1oZWlnaHQ6IDMwMHB4OyIgZGF0YS1vZmYtY2FudmFzLWNvbnRlbnQ+CiAgICAgICAgPHA+SSBoYXZlIG5vdGhpbmcgdG8gZG8gd2l0aCB0aGUgb2ZmLWNhbnZhcyBvbiB0aGUgcmlnaHQhPC9wPgogICAgICA8L09mZkNhbnZhc0NvbnRlbnQ+CiAgICA8L09mZkNhbnZhc1dyYXBwZXI+CiAgPC9DZWxsPgogIDxDZWxsIFNpemU9InNtYWxsLTYiPgogICAgPE9mZkNhbnZhc1dyYXBwZXI+CiAgICAgIDxPZmZDYW52YXMgQWJzb2x1dGU9InRydWUiIFBvc2l0aW9uPSJwb3NpdGlvbi1yaWdodCIgSWQ9Im9mZkNhbnZhc1JpZ2h0U3BsaXQyIiBkYXRhLW9mZi1jYW52YXM+CiAgICAgICAgPHVsIGNsYXNzPSJ2ZXJ0aWNhbCBtZW51IiBzdHlsZT0iY29sb3I6ICNmZmZmZmYiPgogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkJsYXpvcjwvYT48L2xpPgogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkRvdDwvYT48L2xpPgogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkZvdW5kYXRpb248L2E+PC9saT4KICAgICAgICAgIDxsaT48YSBocmVmPSIjIj5Db208L2E+PC9saT4KICAgICAgICAgIDxsaT48YSBocmVmPSIjIj5TbGFzaDwvYT48L2xpPgogICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPlNpdGVzPC9hPjwvbGk+CiAgICAgICAgPC91bD4KICAgICAgPC9PZmZDYW52YXM+CiAgICAgIDxPZmZDYW52YXNDb250ZW50IHN0eWxlPSJtaW4taGVpZ2h0OiAzMDBweDsiIGRhdGEtb2ZmLWNhbnZhcy1jb250ZW50PgogICAgICAgIDxwPkltIGEgdW5pcXVlIG9mZi1jYW52YXMgY29udGFpbmVyIGFsbCBvbiBteSBvd24hPC9wPgogICAgICA8L09mZkNhbnZhc0NvbnRlbnQ+CiAgICA8L09mZkNhbnZhc1dyYXBwZXI+CiAgPC9DZWxsPgo8L0dyaWRYPg==" />
 
         <Button DataToggle="offCanvasLeftSplit1">Open Left</Button>
         <Button DataToggle="offCanvasRightSplit2">Open Right</Button>
@@ -117,8 +117,17 @@
             <Cell Size="small-6">
                 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasWrapper>
                     <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Absolute="true" Position="position-left" Id="offCanvasLeftSplit1">
-                        <!-- Your menu or Off-canvas content goes here -->
+                        <ul class="vertical menu">
+                            <li><a href="#">Blazor</a></li>
+                            <li><a href="#">Dot</a></li>
+                            <li><a href="#">Foundation</a></li>
+                            <li><a href="#">Com</a></li>
+                            <li><a href="#">Slash</a></li>
+                            <li><a href="#">Sites</a></li>
+                        </ul>
                     </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
+
+
                     <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent style="min-height: 300px;">
                         <p>I have nothing to do with the off-canvas on the right!</p>
                     </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent>
@@ -126,8 +135,15 @@
             </Cell>
             <Cell Size="small-6">
                 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasWrapper>
-                    <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Absolute="true" Position="position-right" Id="offCanvasRightSplit2">
-                        <!-- Your menu or Off-canvas content goes here -->
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Absolute="true" Position="position-right" Id="offCanvasRightSplit2" style="background-color: #000000">
+                        <ul class="vertical menu" style="color: #ffffff">
+                            <li><a href="#">Blazor</a></li>
+                            <li><a href="#">Dot</a></li>
+                            <li><a href="#">Foundation</a></li>
+                            <li><a href="#">Com</a></li>
+                            <li><a href="#">Slash</a></li>
+                            <li><a href="#">Sites</a></li>
+                        </ul>
                     </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
                     <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent style="min-height: 300px;">
                         <p>Im a unique off-canvas container all on my own!</p>
@@ -150,7 +166,7 @@
             </ul>
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0MSI+T3BlbiBMZWZ0PC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzUmlnaHQxIj5PcGVuIFJpZ2h0PC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzVG9wMSI+T3BlbiBUb3A8L0J1dHRvbj4KPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNCb3R0b20xIj5PcGVuIEJvdHRvbTwvQnV0dG9uPgoKPENlbGw+CiAgPE9mZkNhbnZhc1dyYXBwZXI+CiAgICA8T2ZmQ2FudmFzIEFic29sdXRlPSJ0cnVlIiBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgSWQ9Im9mZkNhbnZhc0xlZnQxIj4KICAgICAgPCEtLSBZb3VyIG1lbnUgb3IgT2ZmLWNhbnZhcyBjb250ZW50IGdvZXMgaGVyZSAtLT4KICAgIDwvT2ZmQ2FudmFzPgogICAgPE9mZkNhbnZhcyBBYnNvbHV0ZT0idHJ1ZSIgUG9zaXRpb249InBvc2l0aW9uLXJpZ2h0IiBJZD0ib2ZmQ2FudmFzUmlnaHQxIj4KICAgICAgPCEtLSBZb3VyIG1lbnUgb3IgT2ZmLWNhbnZhcyBjb250ZW50IGdvZXMgaGVyZSAtLT4KICAgIDwvT2ZmQ2FudmFzPgogICAgPE9mZkNhbnZhcyBBYnNvbHV0ZT0idHJ1ZSIgUG9zaXRpb249InBvc2l0aW9uLXRvcCIgSWQ9Im9mZkNhbnZhc1RvcDEiPgogICAgICA8IS0tIFlvdXIgbWVudSBvciBPZmYtY2FudmFzIGNvbnRlbnQgZ29lcyBoZXJlIC0tPgogICAgPC9PZmZDYW52YXM+CiAgICA8T2ZmQ2FudmFzIEFic29sdXRlPSJ0cnVlIiBQb3NpdGlvbj0icG9zaXRpb24tYm90dG9tIiBJZD0ib2ZmQ2FudmFzQm90dG9tMSI+CiAgICAgIDwhLS0gWW91ciBtZW51IG9yIE9mZi1jYW52YXMgY29udGVudCBnb2VzIGhlcmUgLS0+CiAgICA8L09mZkNhbnZhcz4KICAgIDxPZmZDYW52YXNDb250ZW50IHN0eWxlPSJtaW4taGVpZ2h0OiAzMDBweDsiPgogICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9wbGFjZWhvbGQuaXQvMzAweDMwMCIgYWx0PSIiPgogICAgPC9PZmZDYW52YXNDb250ZW50PgogIDwvT2ZmQ2FudmFzV3JhcHBlcj4KPC9DZWxsPg==" />
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0MSI+T3BlbiBMZWZ0PC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzUmlnaHQxIj5PcGVuIFJpZ2h0PC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzVG9wMSI+T3BlbiBUb3A8L0J1dHRvbj4KPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNCb3R0b20xIj5PcGVuIEJvdHRvbTwvQnV0dG9uPgoKPENlbGw+CiAgPE9mZkNhbnZhc1dyYXBwZXI+CiAgICA8T2ZmQ2FudmFzIEFic29sdXRlPSJ0cnVlIiBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgSWQ9Im9mZkNhbnZhc0xlZnQxIj4KICAgICAgPGg1Pk9mZmNhbnZhcyBsZWZ0PC9oNT4KICAgIDwvT2ZmQ2FudmFzPgogICAgPE9mZkNhbnZhcyBBYnNvbHV0ZT0idHJ1ZSIgUG9zaXRpb249InBvc2l0aW9uLXJpZ2h0IiBJZD0ib2ZmQ2FudmFzUmlnaHQxIj4KICAgICAgPGg1Pk9mZmNhbnZhcyByaWdodDwvaDU+CiAgICA8L09mZkNhbnZhcz4KICAgIDxPZmZDYW52YXMgQWJzb2x1dGU9InRydWUiIFBvc2l0aW9uPSJwb3NpdGlvbi10b3AiIElkPSJvZmZDYW52YXNUb3AxIj4KICAgICAgPGg1Pk9mZmNhbnZhcyB0b3A8L2g1PgogICAgPC9PZmZDYW52YXM+CiAgICA8T2ZmQ2FudmFzIEFic29sdXRlPSJ0cnVlIiBQb3NpdGlvbj0icG9zaXRpb24tYm90dG9tIiBJZD0ib2ZmQ2FudmFzQm90dG9tMSI+CiAgICAgIDxoNT5PZmZjYW52YXMgYm90dG9tPC9oNT4KICAgIDwvT2ZmQ2FudmFzPgogICAgPE9mZkNhbnZhc0NvbnRlbnQgc3R5bGU9Im1pbi1oZWlnaHQ6IDMwMHB4OyI+CiAgICAgIDxpbWcgc3JjPSJodHRwczovL3BsYWNlaG9sZC5pdC8zMDB4MzAwIiBhbHQ9IiI+CiAgICA8L09mZkNhbnZhc0NvbnRlbnQ+CiAgPC9PZmZDYW52YXNXcmFwcGVyPgo8L0NlbGw+" />
         <Button DataToggle="offCanvasLeft1">Open Left</Button>
         <Button DataToggle="offCanvasRight1">Open Right</Button>
         <Button DataToggle="offCanvasTop1">Open Top</Button>
@@ -159,16 +175,16 @@
         <Cell>
             <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasWrapper>
                 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Absolute="true" Position="position-left" Id="offCanvasLeft1">
-                    <!-- Your menu or Off-canvas content goes here -->
+                    <h5>Offcanvas left</h5>
                 </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
                 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Absolute="true" Position="position-right" Id="offCanvasRight1">
-                    <!-- Your menu or Off-canvas content goes here -->
+                    <h5>Offcanvas right</h5>
                 </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
                 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Absolute="true" Position="position-top" Id="offCanvasTop1">
-                    <!-- Your menu or Off-canvas content goes here -->
+                    <h5>Offcanvas top</h5>
                 </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
                 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Absolute="true" Position="position-bottom" Id="offCanvasBottom1">
-                    <!-- Your menu or Off-canvas content goes here -->
+                    <h5>Offcanvas bottom</h5>
                 </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
                 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent style="min-height: 300px;">
                     <img src="https://placehold.it/300x300" alt="">
@@ -186,12 +202,28 @@
             A design can have multiple panels. Be sure that all panels come before the .off-canvas-content wrapper—this is required for the CSS to apply correctly.
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0Ij5PcGVuIExlZnQgTWVudTwvQnV0dG9uPgo8QnV0dG9uIERhdGFUb2dnbGU9Im9mZkNhbnZhc1JpZ2h0Ij5PcGVuIFJpZ2h0IE1lbnU8L0J1dHRvbj4KCjxPZmZDYW52YXMgUG9zaXRpb249InBvc2l0aW9uLWxlZnQiIElkPSJvZmZDYW52YXNMZWZ0Ij48L09mZkNhbnZhcz4KPE9mZkNhbnZhcyBQb3NpdGlvbj0icG9zaXRpb24tcmlnaHQiIElkPSJvZmZDYW52YXNSaWdodCI+PC9PZmZDYW52YXM+CjxPZmZDYW52YXNDb250ZW50PjwvT2ZmQ2FudmFzQ29udGVudD4=" />
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0Ij5PcGVuIExlZnQgTWVudTwvQnV0dG9uPgo8QnV0dG9uIERhdGFUb2dnbGU9Im9mZkNhbnZhc1JpZ2h0Ij5PcGVuIFJpZ2h0IE1lbnU8L0J1dHRvbj4KCjxPZmZDYW52YXMgUG9zaXRpb249InBvc2l0aW9uLWxlZnQiIElkPSJvZmZDYW52YXNMZWZ0IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogIzExMTsiPgogIDx1bCBzdHlsZT0iY29sb3I6I2ZmZmZmZiI+CiAgICA8bGk+QWJvdXQ8L2xpPgogICAgPGxpPlNlcnZpY2VzPC9saT4KICAgIDxsaT5DbGllbnRzPC9saT4KICAgIDxsaT5Db250YWN0PC9saT4KICA8L3VsPgo8L09mZkNhbnZhcz4KPE9mZkNhbnZhcyBQb3NpdGlvbj0icG9zaXRpb24tcmlnaHQiIElkPSJvZmZDYW52YXNSaWdodCI+CiAgPHVsIHN0eWxlPSJjb2xvcjojZmZmZmZmIj4KICAgIDxsaT5BYm91dDwvbGk+CiAgICA8bGk+U2VydmljZXM8L2xpPgogICAgPGxpPkNsaWVudHM8L2xpPgogICAgPGxpPkNvbnRhY3Q8L2xpPgogIDwvdWw+CjwvT2ZmQ2FudmFzPgo8T2ZmQ2FudmFzQ29udGVudD4KICA8aDU+WW91ciBwYWdlIGNvbnRlbnQgbGl2ZXMgaGVyZTwvaDU+CjwvT2ZmQ2FudmFzQ29udGVudD4=" />
         <Button DataToggle="offCanvasLeft">Open Left Menu</Button>
         <Button DataToggle="offCanvasRight">Open Right Menu</Button>
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvasLeft"></OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-right" Id="offCanvasRight"></OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent></OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvasLeft" style="background-color: #111;">
+            <ul style="color:#ffffff">
+                <li>About</li>
+                <li>Services</li>
+                <li>Clients</li>
+                <li>Contact</li>
+            </ul>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-right" Id="offCanvasRight">
+            <ul>
+                <li>About</li>
+                <li>Services</li>
+                <li>Clients</li>
+                <li>Contact</li>
+            </ul>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent>
+            <h5>Your page content lives here</h5>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvasContent>
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -205,17 +237,17 @@
             When placing the off-canvas within the off-canvas-content component as <a ref="#nested">Nested Off-Canvas</a>, only overlap transition is possible. If you've explicitely defined push transition it will be replaced with overlap automatically.
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0T3ZlcmxhcCI+T3BlbiBSaWdodCB3aXRoIE92ZXJsYXA8L0J1dHRvbj4KPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNSaWdodFB1c2giPk9wZW4gUmlnaHQgd2l0aCBQdXNoPC9CdXR0b24+CjxPZmZDYW52YXMgUG9zaXRpb249InBvc2l0aW9uLWxlZnQiIElkPSJvZmZDYW52YXNMZWZ0T3ZlcmxhcCIgRGF0YVRyYW5zaXRpb249Im92ZXJsYXAiPgogIDwhLS0gWW91ciBtZW51IG9yIE9mZi1jYW52YXMgY29udGVudCBnb2VzIGhlcmUgLS0+CjwvT2ZmQ2FudmFzPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1yaWdodCIgSWQ9Im9mZkNhbnZhc1JpZ2h0UHVzaCIgRGF0YVRyYW5zaXRpb249InB1c2giPgogIDwhLS0gWW91ciBtZW51IG9yIE9mZi1jYW52YXMgY29udGVudCBnb2VzIGhlcmUgLS0+CjwvT2ZmQ2FudmFzPg==" />
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0T3ZlcmxhcCI+CiAgT3BlbiBSaWdodCB3aXRoIE92ZXJsYXAKPC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzUmlnaHRQdXNoIj4KICBPcGVuIFJpZ2h0IHdpdGggUHVzaAo8L0J1dHRvbj4KPE9mZkNhbnZhcyBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgSWQ9Im9mZkNhbnZhc0xlZnRPdmVybGFwIiBEYXRhVHJhbnNpdGlvbj0ib3ZlcmxhcCI+CiAgWW91ciBtZW51IG9yIE9mZi1jYW52YXMgY29udGVudCBnb2VzIGhlcmUKICA8cD4KICAgIFlvdXIgbWVudSBvciBPZmYtY2FudmFzIGNvbnRlbnQgZ29lcyBoZXJlCiAgPC9wPiAgCjwvT2ZmQ2FudmFzPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1yaWdodCIgSWQ9Im9mZkNhbnZhc1JpZ2h0UHVzaCIgRGF0YVRyYW5zaXRpb249InB1c2giPgogIFlvdXIgbWVudSBvciBPZmYtY2FudmFzIGNvbnRlbnQgZ29lcyBoZXJlCiAgPHA+CiAgICBZb3VyIG1lbnUgb3IgT2ZmLWNhbnZhcyBjb250ZW50IGdvZXMgaGVyZQogIDwvcD4gIAo8L09mZkNhbnZhcz4=" />
         <Button DataToggle="offCanvasLeftOverlap">Open Right with Overlap</Button>
         <Button DataToggle="offCanvasRightPush">Open Right with Push</Button>
         <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvasLeftOverlap" DataTransition="overlap">
-            <!-- Your menu or Off-canvas content goes here -->
+            Your menu or Off-canvas content goes here 
             <p>
                 Your menu or Off-canvas content goes here
             </p>
         </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
         <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-right" Id="offCanvasRightPush" DataTransition="push">
-            <!-- Your menu or Off-canvas content goes here -->
+            Your menu or Off-canvas content goes here
             <p>
                 Your menu or Off-canvas content goes here
             </p>
@@ -223,24 +255,6 @@
         <hr />
     </SectionLeft>
 </SectionWrapper>
-<!---
-<SectionWrapper>
-    <SectionLeft>
-        <h2>Reveal on Larger Screens</h2>
-        <p>
-            The left- and right-hand off-canvas panes can be set to be persistent on larger screens like a sidebar. Add the class .reveal-for-medium or .reveal-for-large to the off-canvas menu. These classes determine what breakpoint the off-canvas will default open.
-        </p>
-        <p>
-            The main content area (.off-canvas-content) will be padded to the left or right equal to the width of the container.
-        </p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="" />
-
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" class="reveal-for-large"></OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
-        <hr />
-    </SectionLeft>
-</SectionWrapper>
--->
 <SectionWrapper>
     <SectionLeft>
         <h2>Combining with Title Bar</h2>
@@ -248,36 +262,37 @@
             If you need a simple bar to contain your hamburger icon/s and toggle the off-canvas, <Code Content="PFN0aWNreVRpdGxlQmFyPg=="></Code> is here to help. It supports left- and right-aligned sections. You can add your off-canvas toggle triggers here:
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PFN0aWNreVRpdGxlQmFyPgogIDxTdGlja3lUaXRsZUJhckxlZnQ+CiAgICA8QnV0dG9uIENsYXNzPSJtZW51LWljb24iIGRhdGEtb3Blbj0ib2ZmQ2FudmFzTGVmdCI+PC9CdXR0b24+CiAgICBCYWx6b3IgRm91bmRhdGlvbgogIDwvU3RpY2t5VGl0bGVCYXJMZWZ0PgogIDxTdGlja3lUaXRsZUJhclJpZ2h0PgogICAgPEJ1dHRvbiBDbGFzcz0ibWVudS1pY29uIiBkYXRhLW9wZW49Im9mZkNhbnZhc1JpZ2h0Ij48L0J1dHRvbj4KICA8L1N0aWNreVRpdGxlQmFyUmlnaHQ+CjwvU3RpY2t5VGl0bGVCYXI+" />
+                     Content="PFN0aWNreVRpdGxlQmFyPgogIDxTdGlja3lUaXRsZUJhckxlZnQ+CiAgICA8QnV0dG9uIENsYXNzPSJtZW51LWljb24iIGRhdGEtb3Blbj0ib2ZmQ2FudmFzTGVmdCI+PC9CdXR0b24+CiAgICBCYWx6b3IgRm91bmRhdGlvbgogIDwvU3RpY2t5VGl0bGVCYXJMZWZ0PgogIDxTdGlja3lUaXRsZUJhclJpZ2h0PgogICAgPEJ1dHRvbiBDbGFzcz0ibWVudS1pY29uIiBkYXRhLW9wZW49Im9mZkNhbnZhc1JpZ2h0Ij48L0J1dHRvbj4KICA8L1N0aWNreVRpdGxlQmFyUmlnaHQ+CjwvU3RpY2t5VGl0bGVCYXI+CjxPZmZDYW52YXMgUG9zaXRpb249InBvc2l0aW9uLWxlZnQiIElkPSJvZmZDYW52YXNMZWZ0IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogIzExMTsiPgogICAgPHVsIHN0eWxlPSJjb2xvcjojZmZmZmZmIj4KICAgICAgICA8bGk+QWJvdXQ8L2xpPgogICAgICAgIDxsaT5TZXJ2aWNlczwvbGk+CiAgICAgICAgPGxpPkNsaWVudHM8L2xpPgogICAgICAgIDxsaT5Db250YWN0PC9saT4KICAgIDwvdWw+CjwvT2ZmQ2FudmFzPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzUmlnaHQiPgogICAgPHVsPgogICAgICAgIDxsaT5BYm91dDwvbGk+CiAgICAgICAgPGxpPlNlcnZpY2VzPC9saT4KICAgICAgICA8bGk+Q2xpZW50czwvbGk+CiAgICAgICAgPGxpPkNvbnRhY3Q8L2xpPgogICAgPC91bD4KPC9PZmZDYW52YXM+" />
 
         <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBar>
             <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarLeft>
-                <button class="menu-icon" data-open="offCanvasLeft"></button>
+                <Button Class="menu-icon" data-open="offCanvasLeft"></Button>
                 Balzor Foundation
             </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarLeft>
             <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarRight>
-                <button class="menu-icon" data-open="offCanvasRight"></button>
+                <Button Class="menu-icon" data-open="offCanvasRight"></Button>
             </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarRight>
         </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBar>
+<OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvasLeft" style="background-color: #111;">
+    <ul style="color:#ffffff">
+        <li>About</li>
+        <li>Services</li>
+        <li>Clients</li>
+        <li>Contact</li>
+    </ul>
+</OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
+<OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvasRight">
+    <ul>
+        <li>About</li>
+        <li>Services</li>
+        <li>Clients</li>
+        <li>Contact</li>
+    </ul>
+</OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
 
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary" style="margin-top: 50px;">
             When using the title-bar with a vertical off-canvas, the StickyTitleBar icons are still either StickyTitleBarLeft or StickyTitleBarRight.
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
-
-        <!--
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="" />
-
-        <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBar>
-            <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarLeft>
-                <button class="menu-icon" data-open="offCanvasTop"></button>
-                Balzor Foundation
-            </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarLeft>
-            <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarRight>
-                <button class="menu-icon" data-open="offCanvasTop"></button>
-            </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarRight>
-        </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBar>
-        -->
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -399,25 +414,6 @@
         <hr />
     </SectionLeft>
 </SectionWrapper>
-<!--
-<SectionWrapper>
-    <SectionLeft>
-        <h2>Sticky</h2>
-        <p>
-            By default an element with position: fixed disappears when opening an off-canvas with push transition. The reason for this is the transform property of the off-canvas content container what causes a position: absolute behavior for the fixed element.
-        </p>
-        <p>
-            The good news: we've added the possibility to preserve the fixed appearance! You only have to add the attribute data-off-canvas-sticky to every sticky / fixed element that is supposed to remain fixed after opening the off-canvas.
-        </p>
-        <div class="off-canvas-wrapper">
-            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-                <div class="off-canvas position-left" id="offCanvas" data-off-canvas></div>
-                <div class="off-canvas-content" data-off-canvas-content></div>
-            </div>
-        </div>
-    </SectionLeft>
-</SectionWrapper>
--->
 
 @code {
 
