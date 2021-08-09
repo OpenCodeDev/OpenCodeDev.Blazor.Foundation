@@ -1,6 +1,28 @@
 ﻿@page "/sticky";
 
-<h3>Sticky</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Sticky</h2>
+        <p>Stick nearly anything, anywhere you like!</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>Add the .sticky class and [data-sticky] to an element to create something that sticks. Sticky elements must be wrapped in a container, which will determine your sizing and grid layout, with [data-sticky-container].</p>
+        <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyContainer Class="cell small-6 right">
+            <div class="sticky" data-sticky data-top-anchor="example2:top" data-btm-anchor="foo:bottom">
+                <img class="thumbnail" src="https://get.foundation/sites/docs/assets/img/generic/rectangle-3.jpg">
+                <!-- This sticky element would stick to the window, with a marginTop of 0 -->
+            </div>
+        </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyContainer>
+    </SectionLeft>
+</SectionWrapper>
+
 
 @code {
 
