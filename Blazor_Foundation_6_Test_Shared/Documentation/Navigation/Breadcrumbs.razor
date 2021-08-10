@@ -1,6 +1,22 @@
 ﻿@page "/breadcrumbs"
 
-<h3>Breadcrumb</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Breadcrumbs</h2>
+        <p>Breadcrumbs come in handy to show a navigation trail for users clicking through your site.</p>
+        <p>To make a set of breadcrumb links, just add series of <Code>@("<BreadcrumbItem>")</Code> inside <Code>@("<Breadcrumb>")</Code> component, and then add links inside of the <Code>@("<BreadcrumbItem>")</Code> elements. The current page doesn't require a link or a class, but you should add some explanatory text for AT that indicates which item is the current page. To mark a disabled item, add the atribute <Code>Disable="true"</Code> to the <Code>@("<BreadcrumbItem>")</Code>, and just use plain text instead of a link.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJyZWFkY3J1bWI+CiAgICA8QnJlYWRjcnVtYkl0ZW0+PE5hdkxpbmsgaHJlZj0iIyI+SG9tZTwvTmF2TGluaz48L0JyZWFkY3J1bWJJdGVtPgogICAgPEJyZWFkY3J1bWJJdGVtPjxOYXZMaW5rIGhyZWY9IiMiPkZlYXR1cmVzPC9OYXZMaW5rPjwvQnJlYWRjcnVtYkl0ZW0+CiAgICA8QnJlYWRjcnVtYkl0ZW0gRGlzYWJsZT0idHJ1ZSI+R2VuZSBTcGxpY2luZzwvQnJlYWRjcnVtYkl0ZW0+CiAgICA8QnJlYWRjcnVtYkl0ZW0+Q2xvbmluZzwvQnJlYWRjcnVtYkl0ZW0+CjwvQnJlYWRjcnVtYj4=" />
+        <Breadcrumb>
+            <BreadcrumbItem><NavLink href="/breadcrumbs">Home</NavLink></BreadcrumbItem>
+            <BreadcrumbItem><NavLink href="/breadcrumbs">Features</NavLink></BreadcrumbItem>
+            <BreadcrumbItem Disable="true">Gene Splicing</BreadcrumbItem>
+            <BreadcrumbItem>Cloning</BreadcrumbItem>
+        </Breadcrumb>
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
