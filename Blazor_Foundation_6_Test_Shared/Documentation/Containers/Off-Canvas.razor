@@ -57,7 +57,7 @@
 
         <h2>Click Triggers</h2>
         <p>
-            To create a click trigger that opens the panel, add the attribute <Code>data-open</Code> or <Code>DataToggle</Code> to any element. That element will then open or toggle the panel when clicked on. The value of the data attribute should be the ID of the off-canvas.
+            To create a click trigger that opens the panel, add the attribute <Code>DataToggle</Code> to component <Code>Button</Code> or <Code>data-open</Code> or  to any element. That element will then open or toggle the panel when clicked on. The value of the data attribute should be the ID of the off-canvas.
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXMiPk9wZW4gTWVudTwvQnV0dG9uPg==" />
@@ -74,10 +74,8 @@
         <p>
             Here's a complete example that can be pasted into the <Code>body</Code> tag of your page. It includes a close button and basic menu styles.
         </p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXMiPk9wZW4gTWVudTwvQnV0dG9uPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzIj4KCiAgPCEtLSBDbG9zZSBidXR0b24gLS0+CiAgPEJ1dHRvbiBDbGFzcz0iY2xvc2UtYnV0dG9uIj4KICAgIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj4mdGltZXM7PC9zcGFuPgogIDwvQnV0dG9uPgoKICA8IS0tIE1lbnUgLS0+CiAgPHVsIGNsYXNzPSJ2ZXJ0aWNhbCBtZW51Ij4KICAgIDxsaT48YSBocmVmPSIjIj5CbGF6b3I8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5Eb3Q8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5Gb3VuZGF0aW9uPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+Q29tPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+U2xhc2g8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSIjIj5TaXRlczwvYT48L2xpPgogIDwvdWw+Cgo8L09mZkNhbnZhcz4KCjxPZmZDYW52YXNDb250ZW50PgogIDxoNT5Zb3VyIHBhZ2UgY29udGVudCBsaXZlcyBoZXJlPC9oNT4KPC9PZmZDYW52YXNDb250ZW50Pg==" />
 
-                <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXMiPk9wZW4gTWVudTwvQnV0dG9uPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzIj4KICA8IS0tIENsb3NlIGJ1dHRvbiAtLT4KICA8QnV0dG9uIENsYXNzPSJjbG9zZS1idXR0b24iPgogICAgPHNwYW4gYXJpYS1oaWRkZW49InRydWUiPiZ0aW1lczs8L3NwYW4+CiAgPC9CdXR0b24+CiAgPCEtLSBNZW51IC0tPgogIDx1bCBjbGFzcz0idmVydGljYWwgbWVudSI+CiAgICA8bGk+PGEgaHJlZj0iIyI+Qmxhem9yPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+RG90PC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+Rm91bmRhdGlvbjwvYT48L2xpPgogICAgPGxpPjxhIGhyZWY9IiMiPkNvbTwvYT48L2xpPgogICAgPGxpPjxhIGhyZWY9IiMiPlNsYXNoPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iIyI+U2l0ZXM8L2E+PC9saT4KICA8L3VsPgo8L09mZkNhbnZhcz4KPE9mZkNhbnZhc0NvbnRlbnQ+CiAgPGg1PllvdXIgcGFnZSBjb250ZW50IGxpdmVzIGhlcmU8L2g1Pgo8L09mZkNhbnZhc0NvbnRlbnQ+" />
 
         <Button DataToggle="offCanvas">Open Menu</Button>
@@ -202,7 +200,7 @@
     <SectionLeft>
         <h2>Multiple Panels</h2>
         <p>
-            A design can have multiple panels. Be sure that all panels come before the .off-canvas-content wrapper—this is required for the CSS to apply correctly.
+            A design can have multiple panels. Be sure that all panels come before the component <Code>OffCanvasContent</Code> wrapper—this is required for the CSS to apply correctly.
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0Ij5PcGVuIExlZnQgTWVudTwvQnV0dG9uPgo8QnV0dG9uIERhdGFUb2dnbGU9Im9mZkNhbnZhc1JpZ2h0Ij5PcGVuIFJpZ2h0IE1lbnU8L0J1dHRvbj4KCjxPZmZDYW52YXMgUG9zaXRpb249InBvc2l0aW9uLWxlZnQiIElkPSJvZmZDYW52YXNMZWZ0IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogIzExMTsiPgogIDx1bCBzdHlsZT0iY29sb3I6I2ZmZmZmZiI+CiAgICA8bGk+QWJvdXQ8L2xpPgogICAgPGxpPlNlcnZpY2VzPC9saT4KICAgIDxsaT5DbGllbnRzPC9saT4KICAgIDxsaT5Db250YWN0PC9saT4KICA8L3VsPgo8L09mZkNhbnZhcz4KPE9mZkNhbnZhcyBQb3NpdGlvbj0icG9zaXRpb24tcmlnaHQiIElkPSJvZmZDYW52YXNSaWdodCI+CiAgPHVsIHN0eWxlPSJjb2xvcjojZmZmZmZmIj4KICAgIDxsaT5BYm91dDwvbGk+CiAgICA8bGk+U2VydmljZXM8L2xpPgogICAgPGxpPkNsaWVudHM8L2xpPgogICAgPGxpPkNvbnRhY3Q8L2xpPgogIDwvdWw+CjwvT2ZmQ2FudmFzPgo8T2ZmQ2FudmFzQ29udGVudD4KICA8aDU+WW91ciBwYWdlIGNvbnRlbnQgbGl2ZXMgaGVyZTwvaDU+CjwvT2ZmQ2FudmFzQ29udGVudD4=" />
@@ -236,26 +234,15 @@
         <p>
             You can switch the default transition of the off-canvas from pushing the page over as it open to overlapping the page by adding the <Code>DataTransition="overlap"</Code> to the <Code Content="PE9mZkNhbnZhcz4="></Code>. There are 2 available transitions: push (<code>DataTransition="push"</code>) which is the default, and overlap (<code>DataTransition="overlap"</code>).
         </p>
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary">
-    You can switch the default transition of the off-canvas from pushing the page over as it open to overlapping the page by adding the <Code>DataTransition="overlap"</Code> to the <Code Content="PE9mZkNhbnZhcz4="></Code>. There are 2 available transitions: push (<code>DataTransition="push"</code>) which is the default, and overlap (<code>DataTransition="overlap"</code>).
-        </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0T3ZlcmxhcCI+CiAgT3BlbiBSaWdodCB3aXRoIE92ZXJsYXAKPC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzUmlnaHRQdXNoIj4KICBPcGVuIFJpZ2h0IHdpdGggUHVzaAo8L0J1dHRvbj4KPE9mZkNhbnZhcyBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgSWQ9Im9mZkNhbnZhc0xlZnRPdmVybGFwIiBEYXRhVHJhbnNpdGlvbj0ib3ZlcmxhcCI+CiAgWW91ciBtZW51IG9yIE9mZi1jYW52YXMgY29udGVudCBnb2VzIGhlcmUKICA8cD4KICAgIFlvdXIgbWVudSBvciBPZmYtY2FudmFzIGNvbnRlbnQgZ29lcyBoZXJlCiAgPC9wPiAgCjwvT2ZmQ2FudmFzPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1yaWdodCIgSWQ9Im9mZkNhbnZhc1JpZ2h0UHVzaCIgRGF0YVRyYW5zaXRpb249InB1c2giPgogIFlvdXIgbWVudSBvciBPZmYtY2FudmFzIGNvbnRlbnQgZ29lcyBoZXJlCiAgPHA+CiAgICBZb3VyIG1lbnUgb3IgT2ZmLWNhbnZhcyBjb250ZW50IGdvZXMgaGVyZQogIDwvcD4gIAo8L09mZkNhbnZhcz4=" />
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0T3ZlcmxhcCI+CiAgT3BlbiBSaWdodCB3aXRoIE92ZXJsYXAKPC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzUmlnaHRQdXNoIj4KICBPcGVuIFJpZ2h0IHdpdGggUHVzaAo8L0J1dHRvbj4KPE9mZkNhbnZhcyBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgSWQ9Im9mZkNhbnZhc0xlZnRPdmVybGFwIiBEYXRhVHJhbnNpdGlvbj0ib3ZlcmxhcCI+CiAgWW91ciBtZW51IG9yIE9mZi1jYW52YXMgY29udGVudCBnb2VzIGhlcmUKPC9PZmZDYW52YXM+CjxPZmZDYW52YXMgUG9zaXRpb249InBvc2l0aW9uLXJpZ2h0IiBJZD0ib2ZmQ2FudmFzUmlnaHRQdXNoIiBEYXRhVHJhbnNpdGlvbj0icHVzaCI+CiAgWW91ciBtZW51IG9yIE9mZi1jYW52YXMgY29udGVudCBnb2VzIGhlcmUKPC9PZmZDYW52YXM+" />
         <Button DataToggle="offCanvasLeftOverlap">Open Right with Overlap</Button>
         <Button DataToggle="offCanvasRightPush">Open Right with Push</Button>
         <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvasLeftOverlap" DataTransition="overlap">
             Your menu or Off-canvas content goes here 
-            <p>
-                Your menu or Off-canvas content goes here
-            </p>
         </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
         <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-right" Id="offCanvasRightPush" DataTransition="push">
             Your menu or Off-canvas content goes here
-            <p>
-                Your menu or Off-canvas content goes here
-            </p>
         </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
         <hr />
     </SectionLeft>
@@ -267,7 +254,7 @@
             If you need a simple bar to contain your hamburger icon/s and toggle the off-canvas, <Code Content="PFN0aWNreVRpdGxlQmFyPg=="></Code> is here to help. It supports left- and right-aligned sections. You can add your off-canvas toggle triggers here:
         </p>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PFN0aWNreVRpdGxlQmFyPgogIDxTdGlja3lUaXRsZUJhckxlZnQ+CiAgICA8QnV0dG9uIENsYXNzPSJtZW51LWljb24iIGRhdGEtb3Blbj0ib2ZmQ2FudmFzTGVmdCI+PC9CdXR0b24+CiAgICBCYWx6b3IgRm91bmRhdGlvbgogIDwvU3RpY2t5VGl0bGVCYXJMZWZ0PgogIDxTdGlja3lUaXRsZUJhclJpZ2h0PgogICAgPEJ1dHRvbiBDbGFzcz0ibWVudS1pY29uIiBkYXRhLW9wZW49Im9mZkNhbnZhc1JpZ2h0Ij48L0J1dHRvbj4KICA8L1N0aWNreVRpdGxlQmFyUmlnaHQ+CjwvU3RpY2t5VGl0bGVCYXI+CjxPZmZDYW52YXMgUG9zaXRpb249InBvc2l0aW9uLWxlZnQiIElkPSJvZmZDYW52YXNMZWZ0IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogIzExMTsiPgogICAgPHVsIHN0eWxlPSJjb2xvcjojZmZmZmZmIj4KICAgICAgICA8bGk+QWJvdXQ8L2xpPgogICAgICAgIDxsaT5TZXJ2aWNlczwvbGk+CiAgICAgICAgPGxpPkNsaWVudHM8L2xpPgogICAgICAgIDxsaT5Db250YWN0PC9saT4KICAgIDwvdWw+CjwvT2ZmQ2FudmFzPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzUmlnaHQiPgogICAgPHVsPgogICAgICAgIDxsaT5BYm91dDwvbGk+CiAgICAgICAgPGxpPlNlcnZpY2VzPC9saT4KICAgICAgICA8bGk+Q2xpZW50czwvbGk+CiAgICAgICAgPGxpPkNvbnRhY3Q8L2xpPgogICAgPC91bD4KPC9PZmZDYW52YXM+" />
+                     Content="PFN0aWNreVRpdGxlQmFyPgogIDxTdGlja3lUaXRsZUJhckxlZnQ+CiAgICA8c3BhbiBjbGFzcz0ibWRpIG1kaS1tZW51IiBkYXRhLW9wZW49Im9mZkNhbnZhc0xlZnQiPjwvc3Bhbj4KICAgIEJhbHpvciBGb3VuZGF0aW9uCiAgPC9TdGlja3lUaXRsZUJhckxlZnQ+CiAgPFN0aWNreVRpdGxlQmFyUmlnaHQ+CiAgICA8c3BhbiBjbGFzcz0ibWRpIG1kaS1tZW51IiBkYXRhLW9wZW49Im9mZkNhbnZhc1JpZ2h0Ij48L3NwYW4+CiAgPC9TdGlja3lUaXRsZUJhclJpZ2h0Pgo8L1N0aWNreVRpdGxlQmFyPgo8T2ZmQ2FudmFzIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBJZD0ib2ZmQ2FudmFzTGVmdCIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICMxMTE7Ij4KICAgIDx1bCBzdHlsZT0iY29sb3I6I2ZmZmZmZiI+CiAgICAgICAgPGxpPkFib3V0PC9saT4KICAgICAgICA8bGk+U2VydmljZXM8L2xpPgogICAgICAgIDxsaT5DbGllbnRzPC9saT4KICAgICAgICA8bGk+Q29udGFjdDwvbGk+CiAgICA8L3VsPgo8L09mZkNhbnZhcz4KPE9mZkNhbnZhcyBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgSWQ9Im9mZkNhbnZhc1JpZ2h0Ij4KICAgIDx1bD4KICAgICAgICA8bGk+QWJvdXQ8L2xpPgogICAgICAgIDxsaT5TZXJ2aWNlczwvbGk+CiAgICAgICAgPGxpPkNsaWVudHM8L2xpPgogICAgICAgIDxsaT5Db250YWN0PC9saT4KICAgIDwvdWw+CjwvT2ZmQ2FudmFzPg==" />
 
         <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBar>
             <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarLeft>
@@ -275,7 +262,7 @@
                 Balzor Foundation
             </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarLeft>
             <OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarRight>
-                <Button Class="menu-icon" data-open="offCanvasRight"></Button>
+                <span class="mdi mdi-menu" data-open="offCanvasRight"></span>
             </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBarRight>
         </OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky.StickyTitleBar>
 <OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas Position="position-left" Id="offCanvasLeft" style="background-color: #111;">
@@ -295,9 +282,9 @@
     </ul>
 </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
 
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary" style="margin-top: 50px;">
-            When using the title-bar with a vertical off-canvas, the StickyTitleBar icons are still either StickyTitleBarLeft or StickyTitleBarRight.
-        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+<OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary" style="margin-top: 50px;">
+    When using the component <Code>StickyTitleBar</Code> with a vertical off-canvas, the StickyTitleBar icons are still either <Code>StickyTitleBarLeft</Code> or <Code>StickyTitleBarRight</Code>.
+</OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -309,11 +296,8 @@
         </p>
         <p>
             Advanced off-canvas users may use the new contentId option to bind an element to a content. This lets you place the element much more flexibly as it may be a sibling of the content, a child or none of it.<br />
-           <p>
-            Advanced off-canvas users may use the new contentId option to bind an element to a content. This lets you place the element much more flexibly as it may be a sibling of the content, a child or none of it.<br />
         </p>
-        </p>
-        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="warning">
             Please note that it's not possible to use the push transition for a nested off-canvas element.
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
@@ -340,6 +324,7 @@
         </OpenCodeDev.Blazor.Foundation.Components.Containers.OffCanvas>
 
         <p>Enim, repudiandae officia dolores temporibus soluta, ipsa saepe tempora ipsum laudantium in mollitia quidem, nisi magni provident hic architecto rem culpa beatae.</p>
+        <hr />
     </SectionLeft>
 </SectionWrapper>
 <SectionWrapper>
