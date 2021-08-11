@@ -3,7 +3,7 @@
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
 
-<ul class="@($"{Class} menu dropdown" +
+<ul class="@($"{Class} menu dropdown " +
              $"{(Vertical ? "vertical" : "")} ")"
     id="@Id" @attributes="AdditionalAttributes" data-dropdown-menu="true" >
     @ChildContent
