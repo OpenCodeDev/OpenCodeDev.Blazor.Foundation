@@ -1,6 +1,152 @@
-﻿@page "/menu-drilldown";
+﻿@page "/drilldown-menu";
 
-<h3>MenuDrilldown</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Navigation;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Drilldown Menu</h2>
+        <p>
+            Drilldown is one of Blazor Foundation's three menu patterns, which converts a series of nested lists
+            into a vertical drilldown menu.
+        </p>
+    </SectionLeft>
+    <SectionWrapper>
+        <SectionLeft>
+            <h2>Basics</h2>
+            <p>
+                Drilldowns use the standard <NavLink href="menu">Menu</NavLink> syntax, using <Code>@("<MenuDrillDown>")</Code>, <Code>@("<li>")</Code>, and <Code>@("<NavLink>")</Code>. Add data-drilldown to the root menu to set up the drilldown.
+            </p>
+            <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                         Content="PE1lbnVEcmlsbGRvd24gVmVydGljYWw9InRydWUiPgogICAgPGxpPgogICAgICAgIDxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMTwvTmF2TGluaz4KICAgICAgICA8TWVudU5lc3RlZCBWZXJ0aWNhbD0idHJ1ZSI+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFBPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFCPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFDPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFEPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgPC9NZW51TmVzdGVkPgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8TmF2TGluayBocmVmPSIjIj5JdGVtIDI8L05hdkxpbms+CiAgICAgICAgPE1lbnVOZXN0ZWQgVmVydGljYWw9InRydWUiPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQjwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQzwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyRDwvTmF2TGluaz48L2xpPgogICAgICAgIDwvTWVudU5lc3RlZD4KICAgIDwvbGk+CiAgICA8bGk+CiAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzPC9OYXZMaW5rPgogICAgICAgIDxNZW51TmVzdGVkIFZlcnRpY2FsPSJ0cnVlIj4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gM0E8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gM0I8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gM0M8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gM0Q8L05hdkxpbms+PC9saT4KICAgICAgICA8L01lbnVOZXN0ZWQ+CiAgICA8L2xpPgogICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gNDwvTmF2TGluaz48L2xpPgo8L01lbnVEcmlsbGRvd24+" />
+
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary">
+                <p>
+                    The drilldown menu takes on the height of the tallest menu in the hierarchy, so the menu doesn't change height as
+                    the user navigates it.
+                </p>
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+
+            <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDrilldown Vertical="true">
+                <li>
+                    <NavLink href="#">Item 1</NavLink>
+                    <MenuNested Vertical="true">
+                        <li><NavLink href="#">Item 1A</NavLink></li>
+                        <li><NavLink href="#">Item 1B</NavLink></li>
+                        <li><NavLink href="#">Item 1C</NavLink></li>
+                        <li><NavLink href="#">Item 1D</NavLink></li>
+                    </MenuNested>
+                </li>
+                <li>
+                    <NavLink href="#">Item 2</NavLink>
+                    <MenuNested Vertical="true">
+                        <li><NavLink href="#">Item 2A</NavLink></li>
+                        <li><NavLink href="#">Item 2B</NavLink></li>
+                        <li><NavLink href="#">Item 2C</NavLink></li>
+                        <li><NavLink href="#">Item 2D</NavLink></li>
+                    </MenuNested>
+                </li>
+                <li>
+                    <NavLink href="#">Item 3</NavLink>
+                    <MenuNested Vertical="true">
+                        <li><NavLink href="#">Item 3A</NavLink></li>
+                        <li><NavLink href="#">Item 3B</NavLink></li>
+                        <li><NavLink href="#">Item 3C</NavLink></li>
+                        <li><NavLink href="#">Item 3D</NavLink></li>
+                    </MenuNested>
+                </li>
+                <li><NavLink href="#">Item 4</NavLink></li>
+            </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDrilldown>
+        </SectionLeft>
+        <hr />
+    </SectionWrapper>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>autoHeight</h2>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="secondary">
+            <p>
+                If you like to set the height to auto you can also set the autoHeight and
+                animateHeight params
+            </p>
+
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVEcmlsbGRvd24gVmVydGljYWw9InRydWUiIGRhdGEtYXV0by1oZWlnaHQ9InRydWUiIGRhdGEtYW5pbWF0ZS1oZWlnaHQ9InRydWUiPgogICAgPGxpPgogICAgICAgIDxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMTwvTmF2TGluaz4KICAgICAgICA8TWVudU5lc3RlZCBWZXJ0aWNhbD0idHJ1ZSI+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFBPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFCPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFDPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFEPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgPC9NZW51TmVzdGVkPgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8TmF2TGluayBocmVmPSIjIj5JdGVtIDI8L05hdkxpbms+CiAgICAgICAgPE1lbnVOZXN0ZWQgVmVydGljYWw9InRydWUiPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQjwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQzwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyRDwvTmF2TGluaz48L2xpPgogICAgICAgIDwvTWVudU5lc3RlZD4KICAgIDwvbGk+CiAgICA8bGk+CiAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzPC9OYXZMaW5rPgogICAgICAgIDxNZW51TmVzdGVkIFZlcnRpY2FsPSJ0cnVlIj4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gM0E8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gM0I8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gM0M8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPgogICAgICAgICAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzRDwvTmF2TGluaz4KICAgICAgICAgICAgICAgIDxNZW51TmVzdGVkIFZlcnRpY2FsPSJ0cnVlIj4KICAgICAgICAgICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzREE8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzREI8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzREM8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzREQ8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgIDwvTWVudU5lc3RlZD4KICAgICAgICAgICAgPC9saT4KICAgICAgICA8L01lbnVOZXN0ZWQ+CiAgICA8L2xpPgogICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gNDwvTmF2TGluaz48L2xpPgogICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gNTwvTmF2TGluaz48L2xpPgo8L01lbnVEcmlsbGRvd24+" />
+        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDrilldown Vertical="true" data-auto-height="true" data-animate-height="true">
+            <li>
+                <NavLink href="#">Item 1</NavLink>
+                <MenuNested Vertical="true">
+                    <li><NavLink href="#">Item 1A</NavLink></li>
+                    <li><NavLink href="#">Item 1B</NavLink></li>
+                    <li><NavLink href="#">Item 1C</NavLink></li>
+                    <li><NavLink href="#">Item 1D</NavLink></li>
+                </MenuNested>
+            </li>
+            <li>
+                <NavLink href="#">Item 2</NavLink>
+                <MenuNested Vertical="true">
+                    <li><NavLink href="#">Item 2A</NavLink></li>
+                    <li><NavLink href="#">Item 2B</NavLink></li>
+                    <li><NavLink href="#">Item 2C</NavLink></li>
+                    <li><NavLink href="#">Item 2D</NavLink></li>
+                </MenuNested>
+            </li>
+            <li>
+                <NavLink href="#">Item 3</NavLink>
+                <MenuNested Vertical="true">
+                    <li><NavLink href="#">Item 3A</NavLink></li>
+                    <li><NavLink href="#">Item 3B</NavLink></li>
+                    <li><NavLink href="#">Item 3C</NavLink></li>
+                    <li>
+                        <NavLink href="#">Item 3D</NavLink>
+                        <MenuNested Vertical="true">
+                            <li><NavLink href="#">Item 3DA</NavLink></li>
+                            <li><NavLink href="#">Item 3DB</NavLink></li>
+                            <li><NavLink href="#">Item 3DC</NavLink></li>
+                            <li><NavLink href="#">Item 3DD</NavLink></li>
+                        </MenuNested>
+                    </li>
+                </MenuNested>
+            </li>
+            <li><NavLink href="#">Item 4</NavLink></li>
+            <li><NavLink href="#">Item 5</NavLink></li>
+        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDrilldown>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>ScrollTop DrillDown</h2>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+            <p>
+                Scroll to the top of the menu when selecting a submenu/navigating back using the menu back button. Can be
+                useful with a longer menu to provide a better user experience.
+            </p>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVEcmlsbGRvd24gVmVydGljYWw9InRydWUiIGRhdGEtc2Nyb2xsLXRvcD0idHJ1ZSI+CiAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAxPC9OYXZMaW5rPjwvbGk+CiAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyIDwvTmF2TGluaz48L2xpPgogICAgPGxpPgogICAgICAgIDxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMzwvTmF2TGluaz4KICAgICAgICA8TWVudU5lc3RlZCBWZXJ0aWNhbD0idHJ1ZSI+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDNBPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDNCPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDNDPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDNEPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgPC9NZW51TmVzdGVkPgogICAgPC9saT4KICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDQ8L05hdkxpbms+PC9saT4KPC9NZW51RHJpbGxkb3duPg==" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDrilldown Vertical="true" data-scroll-top="true">
+            <li><NavLink href="#">Item 1</NavLink></li>
+            <li><NavLink href="#">Item 2 </NavLink></li>
+            <li>
+                <NavLink href="#">Item 3</NavLink>
+                <MenuNested Vertical="true">
+                    <li><NavLink href="#">Item 3A</NavLink></li>
+                    <li><NavLink href="#">Item 3B</NavLink></li>
+                    <li><NavLink href="#">Item 3C</NavLink></li>
+                    <li><NavLink href="#">Item 3D</NavLink></li>
+                </MenuNested>
+            </li>
+            <li><NavLink href="#">Item 4</NavLink></li>
+        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDrilldown>
+
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
