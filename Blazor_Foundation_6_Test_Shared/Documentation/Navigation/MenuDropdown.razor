@@ -1,6 +1,151 @@
-﻿@page "/menu-dropdown";
+﻿@page "/dropdown-menu";
 
-<h3>MenuDropdown</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Navigation ;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>DropDown Menu</h2>
+        <p>
+            Change a basic Menu into an expandable dropdown menu with the Dropdown Menu plugin.
+        </p>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Horizontal</h2>
+        <p>
+            Dropdown menus build on the <NavLink href="menu">Menu</NavLink> component's syntax.Use the tag of  <code>MenuDropdown</code>
+            to the menu container to set up the dropdown.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lbnVEcm9wZG93bj4KICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDE8L05hdkxpbms+PC9saT4KICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDI8L05hdkxpbms+PC9saT4KICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDM8L05hdkxpbms+PC9saT4KICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDQ8L05hdkxpbms+PC9saT4KPC9NZW51RHJvcGRvd24+" />
+        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+            <li><NavLink href="#">Item 1</NavLink></li>
+            <li><NavLink href="#">Item 2</NavLink></li>
+            <li><NavLink href="#">Item 3</NavLink></li>
+            <li><NavLink href="#">Item 4</NavLink></li>
+        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+        <p>
+            To create dropdown menus, nest a new <Code>@("<MenuTopLevel>")</Code>inside an <Code>@("<li>")</Code>.
+            You can nest further to create more levels of dropdowns.
+        </p>
+
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary">
+            Note that the <Code>@("<MenuTopLevel>")</Code> goes after the <Code>@("<NavLink>")</Code>, and not inside of it.
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lbnVEcm9wZG93bj4KICAgIDxsaT4KICAgICAgICA8TmF2TGluayBocmVmPSIjIj5JdGVtIDE8L05hdkxpbms+CiAgICAgICAgPE1lbnVUb3BMZXZlbD4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMUE8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPgogICAgICAgICAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAxQjwvTmF2TGluaz4KICAgICAgICAgICAgICAgIDxNZW51VG9wTGV2ZWw+CiAgICAgICAgICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMUIgaTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFCIGlpPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgICAgICAgICAgPGxpPgogICAgICAgICAgICAgICAgICAgICAgICA8TmF2TGluayBocmVmPSIjIj5JdGVtIDFCIGlpaTwvTmF2TGluaz4KICAgICAgICAgICAgICAgICAgICAgICAgPE1lbnVUb3BMZXZlbD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFCIGlpaSBhbHBoYTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMUIgaWlpIG9tZWdhPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvTWVudVRvcExldmVsPgogICAgICAgICAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgICAgICAgICAgPGxpPgogICAgICAgICAgICAgICAgICAgICAgICA8TmF2TGluayBocmVmPSIjIj5JdGVtIDFCIGl2PC9OYXZMaW5rPgogICAgICAgICAgICAgICAgICAgICAgICA8TWVudVRvcExldmVsPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMUIgaXYgYWxwaGE8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgICAgICAgICAgPC9NZW51VG9wTGV2ZWw+CiAgICAgICAgICAgICAgICAgICAgPC9saT4KICAgICAgICAgICAgICAgIDwvTWVudVRvcExldmVsPgogICAgICAgICAgICA8L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAxQzwvTmF2TGluaz48L2xpPgogICAgICAgIDwvTWVudVRvcExldmVsPgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8TmF2TGluaz5JdGVtIDI8L05hdkxpbms+CiAgICAgICAgPE1lbnVUb3BMZXZlbD4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMkE8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMkI8L05hdkxpbms+PC9saT4KICAgICAgICA8L01lbnVUb3BMZXZlbD4KICAgIDwvbGk+CiAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzPC9OYXZMaW5rPjwvbGk+CiAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSA0PC9OYXZMaW5rPjwvbGk+CjwvTWVudURyb3Bkb3duPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+            <li>
+                <NavLink href="#">Item 1</NavLink>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                    <li><NavLink href="#">Item 1A</NavLink></li>
+                    <li>
+                        <NavLink href="#">Item 1B</NavLink>
+                        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                            <li><NavLink href="#">Item 1B i</NavLink></li>
+                            <li><NavLink href="#">Item 1B ii</NavLink></li>
+                            <li>
+                                <NavLink href="#">Item 1B iii</NavLink>
+                                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                                    <li><NavLink href="#">Item 1B iii alpha</NavLink></li>
+                                    <li><NavLink href="#">Item 1B iii omega</NavLink></li>
+                                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                            </li>
+                            <li>
+                                <NavLink href="#">Item 1B iv</NavLink>
+                                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                                    <li><NavLink href="#">Item 1B iv alpha</NavLink></li>
+                                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                            </li>
+                        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                    </li>
+                    <li><NavLink href="#">Item 1C</NavLink></li>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+            </li>
+            <li>
+                <NavLink>Item 2</NavLink>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+                    <li><NavLink href="#">Item 2A</NavLink></li>
+                    <li><NavLink href="#">Item 2B</NavLink></li>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuTopLevel>
+            </li>
+            <li><NavLink href="#">Item 3</NavLink></li>
+            <li><NavLink href="#">Item 4</NavLink></li>
+        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Vertical</h2>
+        <p>
+            add the attribute <Code>Vertical</Code> set it in <Code>true</Code> to the top-level menu to make it vertical. Sub-menus are automatically vertical,
+            regardless of the orientation of the top-level menu.
+        </p>
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Callout TypeClass="primary">
+            <p>
+                Menus are block-level elements, which means they stretch to fill the width of their container. To make the below
+                example less goofy, we've hard-coded a <Code>max-width</Code> on the menu.
+            </p>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Callout>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PE1lbnVEcm9wZG93biBWZXJ0aWNhbD0idHJ1ZSIgc3R5bGU9Im1heC13aWR0aDoyNTBweDsiPgogICAgPGxpPgogICAgICAgIDxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMTwvTmF2TGluaz4KICAgICAgICA8TWVudU5lc3RlZCBWZXJ0aWNhbD0idHJ1ZSI+CgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAxQTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+CiAgICAgICAgICAgICAgICA8TmF2TGluayBocmVmPSIjIj5JdGVtIDFCPC9OYXZMaW5rPgogICAgICAgICAgICAgICAgPE1lbnVOZXN0ZWQgVmVydGljYWw9InRydWUiPgogICAgICAgICAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFCIGk8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAxQiBpaTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICAgICAgICAgIDxsaT4KICAgICAgICAgICAgICAgICAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAxQiBpaWk8L05hdkxpbms+CiAgICAgICAgICAgICAgICAgICAgICAgIDxNZW51TmVzdGVkIFZlcnRpY2FsPSJ0cnVlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFCIGlpaSBhbHBoYTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMUIgaWlpIG9tZWdhPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvTWVudU5lc3RlZD4KICAgICAgICAgICAgICAgICAgICA8L2xpPgogICAgICAgICAgICAgICAgICAgIDxsaT4KICAgICAgICAgICAgICAgICAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAxQiBpdjwvTmF2TGluaz4KICAgICAgICAgICAgICAgICAgICAgICAgPE1lbnVOZXN0ZWQgVmVydGljYWw9InRydWUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxOYXZMaW5rIGhyZWY9IiMiPkl0ZW0gMUIgaXYgYWxwaGE8L05hdkxpbms+PC9saT4KICAgICAgICAgICAgICAgICAgICAgICAgPC9NZW51TmVzdGVkPgogICAgICAgICAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgICAgICA8L01lbnVOZXN0ZWQ+CiAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgIDxsaT48TmF2TGluayBocmVmPSIjIj5JdGVtIDFDPC9OYXZMaW5rPjwvbGk+CiAgICAgICAgPC9NZW51TmVzdGVkPgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8TmF2TGluaz5JdGVtIDI8L05hdkxpbms+CiAgICAgICAgPE1lbnVOZXN0ZWQgVmVydGljYWw9InRydWUiPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQTwvTmF2TGluaz48L2xpPgogICAgICAgICAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAyQjwvTmF2TGluaz48L2xpPgogICAgICAgIDwvTWVudU5lc3RlZD4KICAgIDwvbGk+CiAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSAzPC9OYXZMaW5rPjwvbGk+CiAgICA8bGk+PE5hdkxpbmsgaHJlZj0iIyI+SXRlbSA0PC9OYXZMaW5rPjwvbGk+CjwvTWVudURyb3Bkb3duPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown Vertical="true" style="max-width:250px;">
+            <li>
+                <NavLink href="#">Item 1</NavLink>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested Vertical="true">
+
+                    <li><NavLink href="#">Item 1A</NavLink></li>
+                    <li>
+                        <NavLink href="#">Item 1B</NavLink>
+                        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested Vertical="true">
+                            <li><NavLink href="#">Item 1B i</NavLink></li>
+                            <li><NavLink href="#">Item 1B ii</NavLink></li>
+                            <li>
+                                <NavLink href="#">Item 1B iii</NavLink>
+                                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested Vertical="true">
+                                    <li><NavLink href="#">Item 1B iii alpha</NavLink></li>
+                                    <li><NavLink href="#">Item 1B iii omega</NavLink></li>
+                                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested>
+                            </li>
+                            <li>
+                                <NavLink href="#">Item 1B iv</NavLink>
+                                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested Vertical="true">
+                                    <li><NavLink href="#">Item 1B iv alpha</NavLink></li>
+                                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested>
+                            </li>
+                        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested>
+                    </li>
+                    <li><NavLink href="#">Item 1C</NavLink></li>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested>
+            </li>
+            <li>
+                <NavLink>Item 2</NavLink>
+                <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested Vertical="true">
+                    <li><NavLink href="#">Item 2A</NavLink></li>
+                    <li><NavLink href="#">Item 2B</NavLink></li>
+                </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuNested>
+            </li>
+            <li><NavLink href="#">Item 3</NavLink></li>
+            <li><NavLink href="#">Item 4</NavLink></li>
+        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuDropdown>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Sticky Navigation</h2>
+        <p>See the documentation for the <NavLink href="sticky">Sticky</NavLink> plugin to see how to easily make a sticky nav bar.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 
