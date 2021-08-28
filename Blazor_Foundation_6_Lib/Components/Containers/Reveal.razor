@@ -4,7 +4,7 @@
 @inject IJSRuntime JSRuntime;
 @using OpenCodeDev.Blazor.Foundation.Components.Controls;
 
-<div class="@($"reveal {Class}")" id="@Id" @attributes="AdditionalAttributes" data-reveal data-close-on-click="@CloseOnClick.ToString().ToLower()" data-animation-in="@AnimationIn" data-animation-out="@AnimationOut" data-overlay="@Overlay.ToString()">
+<div class="@($"reveal {Class}")" id="@Id" @attributes="AdditionalAttributes" data-reveal data-close-on-click="@CloseOnClick.ToString().ToLower()" data-animation-in="@AnimationIn" data-animation-out="@AnimationOut" data-overlay="@Overlay.ToString().ToLower()">
     <div class="topbar">
         @if (TitleIcon != null)
         {
