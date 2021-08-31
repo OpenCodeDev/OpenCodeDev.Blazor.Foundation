@@ -1,7 +1,74 @@
 ﻿@page "/code-highlighter";
 
-<h3>CodeHighlighter</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Code Hightlighter</h2>
+        <p>For show your code in your page with highlighter, Blazor Foundation create an easy way for do it. Based on the plugin HighlightJS</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>Use just the <Code>HighlightCS</Code> Component for show your code with beautifull appearance. Set the attribute <Code>Language</Code> for define the language of your code. By default it's set to "cs" (C#). Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python.</p>
+        <p>The attribute <Code>Content</Code> used for the code content and the attribute <Code>Full</Code>, for make it full width by default it set to <Code>false</Code> </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJodG1sIiBGdWxsPSJ0cnVlIiBDb250ZW50PSJAKEAiPHA+IEkgYW0gYSBzaW1wbGUgY29kZSBIVE1MIHdpdGggaGlnaGxpZ2h0ZXI8L3A+IikiIC8+Cgo8SGlnaGxpZ2h0Q1MgTGFuZ3VhZ2U9InB5dGhvbiIgRnVsbD0idHJ1ZSIgQ29udGVudD0iQChAInByaW50KCdQeXRob24gY29kZSB3aXRoIGhpZ2hsaWdodGVyLicpIikiIC8+" />
+
+
+        <HighlightCS Language="html" Full="true"
+                     Content="@(@"<p> I am a simple code HTML with highlighter</p>")" />
+
+        <HighlightCS Language="python"
+                     Content="@(@"print('Python code with highlighter and without full width.')")" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Content with Base64 encoding</h2>
+        <p>You have two way to add you content in the <Code>Content</Code> attribute. In the previous example you use the first way.</p>
+        <p>For second way, you need to encode your piece of code in base64 you can use the <a href="@Base64encodeSiteLink" target="_blank">Base64encode website</a>. Encode your piece of code is very interesting if your code has many lines.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PCEtLXRoaXMgY29kZSBiZWxvdyBoYXMgYmVlbiBjb252ZXJ0ZWQgdG8gYmFzZSA2NCB0aGVuIGFkZGVkIHRvIENvbnRlbnQgYXR0cmlidXRlIC0tPgo8IS0tICAgICAgICAgCnN0cmluZyBmaXJzdG5hbWUgPSAiSm9obiI7CnN0cmluZyBsYXN0bmFtZSA9ICJEb2UiOwpDb25zb2xlLldyaXRlTGluZSgkIkhpIG15IG5hbWUgaXMge2ZpcnN0bmFtZX0ge2xhc3RuYW1lfSAhIik7Ci0tPgo8SGlnaGxpZ2h0Q1MgTGFuZ3VhZ2U9ImNzIiBGdWxsPSJ0cnVlIiBDb250ZW50PSJjM1J5YVc1bklHWnBjbk4wYm1GdFpTQTlJQ0pLYjJodUlqc0tjM1J5YVc1bklHeGhjM1J1WVcxbElEMGdJa1J2WlNJN0NrTnZibk52YkdVdVYzSnBkR1ZNYVc1bEtDUWlTR2tnYlhrZ2JtRnRaU0JwY3lCN1ptbHljM1J1WVcxbGZTQjdiR0Z6ZEc1aGJXVjlJQ0VpS1RzPSIgLz4K" />
+
+        <HighlightCS Language="cs" Full="true"
+                     Content="c3RyaW5nIGZpcnN0bmFtZSA9ICJKb2huIjsKc3RyaW5nIGxhc3RuYW1lID0gIkRvZSI7CkNvbnNvbGUuV3JpdGVMaW5lKCQiSGkgbXkgbmFtZSBpcyB7Zmlyc3RuYW1lfSB7bGFzdG5hbWV9ICEiKTs=" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Header</h2>
+        <p><Code>HighlightCS</Code> component allow you to personalize the header. For do it you have three attributes.</p>
+        <ul>
+            <li><Code>HeaderTitle</Code> : Title of the header.</li>
+            <li><Code>HeaderIcon</Code> : Add icon in your header. We use the <a href="@MaterialIconSiteLink" target="_blank">Material Design Icon</a>.</li>
+            <li><Code>HeaderBGcolor</Code> : set the background color of the header.</li>
+        </ul>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJodG1sIiBGdWxsPSJ0cnVlIiBIZWFkZXJJY29uPSJtZGktbGFuZ3VhZ2UtaHRtbDUiIEhlYWRlckJHY29sb3I9IiNFNTRDMjEiIEhlYWRlclRpdGxlPSJIVE1MNSIgQ29udGVudD0iQChAIjxwPiBJIGFtIGEgc2ltcGxlIGhpZ2hsaWdodGVyPC9wPiIpIiAvPgoKPEhpZ2hsaWdodENTIExhbmd1YWdlPSJweXRob24iIEZ1bGw9InRydWUiIEhlYWRlckljb249Im1kaS1sYW5ndWFnZS1weXRob24iIEhlYWRlckJHY29sb3I9IiMzNTcyQTQiIEhlYWRlclRpdGxlPSJQeXRob24iIENvbnRlbnQ9IllXTjBiM0lnUFNCYkowdGxZVzUxSUZKbFpYWmxjeWNzSUNkRWQyRjVibVVnU205b2JuTnZiaWNzSUNkQmJtZGxiR2x1WVNCS2IyeHBaU2NzSUNkRGFHRnliR2w2WlNCVWFHVnliMjRuWFFwd2NtbHVkQ2h6YjNKMFpXUW9ZV04wYjNJcEtRPT0iIC8+Cg==" />
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#E54C21" HeaderTitle="HTML5" Content="@(@"<p> I am a simple highlighter</p>")" />
+
+        <HighlightCS Language="python" Full="true" HeaderIcon="mdi-language-python" HeaderBGcolor="#3572A4" HeaderTitle="Python" Content="YWN0b3IgPSBbJ0tlYW51IFJlZXZlcycsICdEd2F5bmUgSm9obnNvbicsICdBbmdlbGluYSBKb2xpZScsICdDaGFybGl6ZSBUaGVyb24nXQpwcmludChzb3J0ZWQoYWN0b3IpKQ==" />
+
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
+
+    public string MaterialIconSiteLink { get; set; } = "https://pictogrammers.github.io/@mdi/font/5.4.55/";
+    public string Base64encodeSiteLink { get; set; } = "https://www.base64encode.org/";
+
 
 }
