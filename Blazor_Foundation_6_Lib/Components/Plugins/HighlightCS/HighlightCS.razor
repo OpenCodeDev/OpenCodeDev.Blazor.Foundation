@@ -5,20 +5,17 @@
 @inject IJSRuntime JS;
 @inject IClipboard clip;
 
-<pre style="@($"position: relative;white-space: nowrap;padding-top: 1.6em;margin-bottom:1em;") ">
+<pre style="@($"{(Full ? $"width:100%;": "width: fit-content;")} position: relative;white-space: nowrap;padding-top: 1.6em;margin-bottom:1em;") ">
 @if (HeaderIsReady)
 {
-<div class="hljs-header" style="@($"{(HeaderBGcolor != null ? $"background-color:{HeaderBGcolor};":"")} ")">
+<div class="hljs-header" style="@($"background-color:{(HeaderBGcolor == null ? Supported.ContainsKey(Language.ToLower()) ? Supported[Language.ToLower()][1] : Supported["txt"][1] : HeaderBGcolor)};")">
 @if (clip != null)
 {
-@if (HeaderIcon != null)
-{
-<span class="@($" mdi {HeaderIcon} hljs-header-title")" style="@($"{(HeaderIconColor != null ? $"color:{HeaderIconColor};":"")}")"></span>
-}
-@if (HeaderTitle != null)
-{
-<span class="hljs-header-title" style="@($"{(HeaderTitleColor != null ? $"color:{HeaderTitleColor};":"")}")">@HeaderTitle</span>
-}
+    <span class="@($" mdi {(HeaderIcon == null ? Supported.ContainsKey(Language.ToLower()) ? Supported[Language.ToLower()][0] : Supported["txt"][0] : HeaderIcon)} hljs-header-title")" 
+          style="@($"{(HeaderIconColor != null ? $"color:{HeaderIconColor};":"")}")">
+    </span>
+    <span class="hljs-header-title" style="@($"{(HeaderTitleColor != null ? $"color:{HeaderTitleColor};":"")}")">@(HeaderTitle == null ? Language : HeaderTitle)</span>
+
 <span class="mdi @CopyIcon hljs-header-copy" style="@($"{(CopyIconColor != null ? $"color:{CopyIconColor};":"")}")"
 @onclick="@(async ()=> {
 if (CopyBusy) { Console.WriteLine("Copy Button is busy."); return; }
@@ -37,7 +34,7 @@ StateHasChanged();
 }
 </div>
 }
-<code id="@Id" class="@($"language-{Language}")" style="@($"{(Full ? $"width:100%;": "width: fit-content;")} white-space: break-spaces;")">@DecodedContent</code></pre>
+<code id="@Id" class="@($"language-{Language}")" style="@($"width:100%; white-space: break-spaces;")">@DecodedContent</code></pre>
 
 @code {
 
