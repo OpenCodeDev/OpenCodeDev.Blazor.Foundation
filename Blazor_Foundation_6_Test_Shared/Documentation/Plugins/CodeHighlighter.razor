@@ -16,7 +16,7 @@
         <p>Use just the <Code>HighlightCS</Code> Component for show your code with beautifull appearance. Set the attribute <Code>Language</Code> for define the language of your code. By default it's set to "cs" (C#). Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python.</p>
         <p>The attribute <Code>Content</Code> used for the code content and the attribute <Code>Full</Code>, for make it full width by default it set to <Code>false</Code> </p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
                      Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJodG1sIiBGdWxsPSJ0cnVlIiBDb250ZW50PSJAKEAiPHA+IEkgYW0gYSBzaW1wbGUgY29kZSBIVE1MIHdpdGggaGlnaGxpZ2h0ZXI8L3A+IikiIC8+Cgo8SGlnaGxpZ2h0Q1MgTGFuZ3VhZ2U9InB5dGhvbiIgRnVsbD0idHJ1ZSIgQ29udGVudD0iQChAInByaW50KCdQeXRob24gY29kZSB3aXRoIGhpZ2hsaWdodGVyLicpIikiIC8+" />
 
 
@@ -24,7 +24,7 @@
                      Content="@(@"<p> I am a simple code HTML with highlighter</p>")" />
 
         <HighlightCS Language="python"
-                     Content="@(@"print('Python code with highlighter and without full width.')")" />
+                     Content="@("print('Python code with highlighter and without full width.')\nLine 2")" />
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -55,7 +55,7 @@
             <li><Code>HeaderBGcolor</Code> : set the background color of the header.</li>
         </ul>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCS @ref="reference" Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJodG1sIiBGdWxsPSJ0cnVlIiBIZWFkZXJJY29uPSJtZGktbGFuZ3VhZ2UtaHRtbDUiIEhlYWRlckJHY29sb3I9IiNFNTRDMjEiIEhlYWRlclRpdGxlPSJIVE1MNSIgQ29udGVudD0iQChAIjxwPiBJIGFtIGEgc2ltcGxlIGhpZ2hsaWdodGVyPC9wPiIpIiAvPgoKPEhpZ2hsaWdodENTIExhbmd1YWdlPSJweXRob24iIEZ1bGw9InRydWUiIEhlYWRlckljb249Im1kaS1sYW5ndWFnZS1weXRob24iIEhlYWRlckJHY29sb3I9IiMzNTcyQTQiIEhlYWRlclRpdGxlPSJQeXRob24iIENvbnRlbnQ9IllXTjBiM0lnUFNCYkowdGxZVzUxSUZKbFpYWmxjeWNzSUNkRWQyRjVibVVnU205b2JuTnZiaWNzSUNkQmJtZGxiR2x1WVNCS2IyeHBaU2NzSUNkRGFHRnliR2w2WlNCVWFHVnliMjRuWFFwd2NtbHVkQ2h6YjNKMFpXUW9ZV04wYjNJcEtRPT0iIC8+Cg==" />
 
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#E54C21" HeaderTitle="HTML5" Content="@(@"<p> I am a simple highlighter</p>")" />
@@ -65,10 +65,24 @@
     </SectionLeft>
 </SectionWrapper>
 
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Supported Languages</h2>
+        @foreach (var lang in reference.Supported)
+        {
+            <h3>Code @lang.Key</h3>
+            <p>Set the <Code>@($@"Code=""{lang.Key}""")</Code> to activate.</p>
+            <HighlightCS Language="@lang.Key" Full="true" Content="@lang.Value[2]" />
+
+        }
+
+    </SectionLeft>
+</SectionWrapper>
+
 @code {
 
     public string MaterialIconSiteLink { get; set; } = "https://pictogrammers.github.io/@mdi/font/5.4.55/";
     public string Base64encodeSiteLink { get; set; } = "https://www.base64encode.org/";
-
+    public HighlightCS reference { get; set; }
 
 }
