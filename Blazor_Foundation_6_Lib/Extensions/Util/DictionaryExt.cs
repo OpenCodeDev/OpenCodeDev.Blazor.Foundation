@@ -10,9 +10,9 @@ namespace OpenCodeDev.Blazor.Foundation.Extensions.Util
     {
         public static string ToJSObjectString(this Dictionary<string, object> PluginOptions)
         {
-            var listKeypairs = PluginOptions.Select(p => $"{p.Key}: {(p.Value.GetType() == typeof(string) ? $"{(string)p.Value}" : p.Value.ToString().ToLower())}");
+            var listKeypairs = PluginOptions.Select(p => $@"""{p.Key}"": {(p.Value.GetType() == typeof(string) ? $@"""{p.Value}""" : p.Value.ToString().ToLower())}");
 
-            return $"{{ {String.Join($", ", listKeypairs)} }}";
+            return $@"{{ {String.Join($", ", listKeypairs)} }}";
 
         }
     }

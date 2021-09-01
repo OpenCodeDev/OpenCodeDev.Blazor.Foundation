@@ -61,6 +61,7 @@ function MenuSystemIsOpen(id, position) {
 }
 
 function MenuSystemRegister(options) {
+    
     new MenuSystem(JSON.parse(options)); // Create Menu System
 
 
@@ -435,11 +436,13 @@ function CreditCardType(element, cardnumber) {
 class MenuSystem {
     static SystemList = []; // All MenuSystem Available. (List of {})
     constructor(options) {
+        console.log(options.id);
+        console.log(options);
         this.uuid = MenuSystem.uuidv4(); // Create Unique ID (might be useful for later purpose)
         if (typeof options == 'undefined' || options === undefined) {
             throw "Null exception! You must defined options as JS Object in BFMenuSystem. See Doc on OCD's website :)";
         }
-
+        
         // Check if id was defined
         if (options.id === undefined) {
             throw `You cannot create a MenuSystem without id for obvious reasons.`;
