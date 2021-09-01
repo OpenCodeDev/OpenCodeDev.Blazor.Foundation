@@ -64,7 +64,6 @@ function MenuSystemRegister(options) {
     
     new MenuSystem(JSON.parse(options)); // Create Menu System
 
-
 }
 
 function MenuSystemUnRegister(id) {
