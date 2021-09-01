@@ -31,8 +31,16 @@
 
 <SectionWrapper>
     <SectionLeft>
-        <h2>Content</h2>
-        <p></p>
+        <h2>Content with inline code</h2>
+        <p>If you want to show your code in the <Code>HighlightCS</Code> use the attribute <Code>Content</Code> and paste your code inside like this <Code Content="QChAInBhc3RlIHlvdXIgY29kZSBoZXJlLiIp"></Code>.</p>
+        <p>But with this method you will need to use <Code>Escape sequences</Code> like <Code>\n</Code> for go to new line or <Code>\t</Code> for tabulation then you can use content like this <Code Content="QCgiZmlyc3QgbGluZSBjb2RlIGhlcmUuXG5TZWNvbmQgbGluZSBvZiBjb2RlIik="></Code> . This method is good for short piece of code but for many lines of code the <Code>Content with Base64 encoding</Code> is the best way.</p>
+        
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJweXRob24iIEZ1bGw9InRydWUiIENvbnRlbnQ9IkAoIm1lc3NhZ2UgPSAnUHl0aG9uIGNvZGUgd2l0aCBpbmxpbmUgY29udGVudCBtZXRob2QgYW5kIEVzY2FwZSBzZXF1ZW5jZXMuJyBcbnByaW50KG1lc3NhZ2UpIikiIC8+" />
+
+        <HighlightCS Language="python" Full="true"
+                     Content="@("message = 'Python code with inline content method and Escape sequences.' \nprint(message)")" />
+        <hr />
     </SectionLeft>
 </SectionWrapper>
 
@@ -40,7 +48,7 @@
     <SectionLeft>
         <h2>Content with Base64 encoding</h2>
         <p>You have two way to add you content in the <Code>Content</Code> attribute. In the previous example you use the first way.</p>
-        <p>For second way, you need to encode your piece of code in base64 you can use the <a href="@Base64encodeSiteLink" target="_blank">Base64encode website</a>. Encode your piece of code is very interesting if your code has many lines.</p>
+        <p>For second way, you need to encode your piece of code in base64 you can use the <a href="@Base64encodeSiteLink" target="_blank">Base64encode website</a>. In fact, your encoded code will be decoded by the <Code>HighlightCS</Code> component. Encode your piece of code is very interesting if your code has many lines.</p>
 
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PCEtLXRoaXMgY29kZSBiZWxvdyBoYXMgYmVlbiBjb252ZXJ0ZWQgdG8gYmFzZSA2NCB0aGVuIGFkZGVkIHRvIENvbnRlbnQgYXR0cmlidXRlIC0tPgo8IS0tICAgICAgICAgCnN0cmluZyBmaXJzdG5hbWUgPSAiSm9obiI7CnN0cmluZyBsYXN0bmFtZSA9ICJEb2UiOwpDb25zb2xlLldyaXRlTGluZSgkIkhpIG15IG5hbWUgaXMge2ZpcnN0bmFtZX0ge2xhc3RuYW1lfSAhIik7Ci0tPgo8SGlnaGxpZ2h0Q1MgTGFuZ3VhZ2U9ImNzIiBGdWxsPSJ0cnVlIiBDb250ZW50PSJjM1J5YVc1bklHWnBjbk4wYm1GdFpTQTlJQ0pLYjJodUlqc0tjM1J5YVc1bklHeGhjM1J1WVcxbElEMGdJa1J2WlNJN0NrTnZibk52YkdVdVYzSnBkR1ZNYVc1bEtDUWlTR2tnYlhrZ2JtRnRaU0JwY3lCN1ptbHljM1J1WVcxbGZTQjdiR0Z6ZEc1aGJXVjlJQ0VpS1RzPSIgLz4K" />
