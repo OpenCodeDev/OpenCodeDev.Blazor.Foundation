@@ -126,16 +126,16 @@
         <h2>Nested Modal</h2>
         <p>It's possible for modals to open other modals. Create a second modal with a unique ID, and then add a click trigger with <Code>data-open</Code> inside the first modal.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbDIiPkNsaWNrIG1lIGZvciBhIG1vZGFsPC9CdXR0b24+Cgo8IS0tIFRoaXMgaXMgdGhlIGZpcnN0IG1vZGFsIC0tPgo8UmV2ZWFsIElkPSJleGFtcGxlTW9kYWwyIj4KCTxoMT5Bd2Vzb21lITwvaDE+Cgk8cCBjbGFzcz0ibGVhZCI+SSBoYXZlIGFub3RoZXIgbW9kYWwgaW5zaWRlIG9mIG1lITwvcD4KCTxCdXR0b24gZGF0YS1vcGVuPSJleGFtcGxlTW9kYWwzIj5DbGljayBtZSBmb3IgYW5vdGhlciBtb2RhbCE8L0J1dHRvbj4KPC9SZXZlYWw+Cgo8IS0tIFRoaXMgaXMgdGhlIG5lc3RlZCBtb2RhbCAtLT4KPFJldmVhbCBJZD0iZXhhbXBsZU1vZGFsMyI+Cgk8aDI+QU5PVEhFUiBNT0RBTCEhITwvaDI+CjwvUmV2ZWFsPg==" />
-
-        <Button data-open="exampleModal2">Click me for a modal</Button>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor" 
+                     Content="PEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbDIiPkNsaWNrIG1lIGZvciBhIG1vZGFsPC9CdXR0b24+CjwhLS0gVGhpcyBpcyB0aGUgZmlyc3QgbW9kYWwgLS0+CjxSZXZlYWwgSWQ9ImV4YW1wbGVNb2RhbDIiPgoJPGgxPkF3ZXNvbWUhPC9oMT4KCTxwIGNsYXNzPSJsZWFkIj5JIGhhdmUgYW5vdGhlciBtb2RhbCBpbnNpZGUgb2YgbWUhPC9wPgoJPEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbDMiIGRhdGEtY2xvc2U+Q2xpY2sgbWUgZm9yIGFub3RoZXIgbW9kYWwhPC9CdXR0b24+CjwvUmV2ZWFsPgoKPCEtLSBUaGlzIGlzIHRoZSBuZXN0ZWQgbW9kYWwgLS0+CjxSZXZlYWwgSWQ9ImV4YW1wbGVNb2RhbDMiPgoJPGgyPkFOT1RIRVIgTU9EQUwhISE8L2gyPgo8L1JldmVhbD4K" />
+ 
+        <Button data-open="exampleModal2" >Click me for a modal</Button>
 
         <!-- This is the first modal -->
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Reveal Id="exampleModal2">
             <h1>Awesome!</h1>
             <p class="lead">I have another modal inside of me!</p>
-            <Button data-open="exampleModal3">Click me for another modal!</Button>
+            <Button data-open="exampleModal3" data-close>Click me for another modal!</Button>
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Reveal>
 
         <!-- This is the nested modal -->
