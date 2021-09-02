@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1;netstandard2.0</TargetFrameworks>
+    <Authors>OpenCodeDev</Authors>
+    <Product>Blazor Foundation 6 - Extensions</Product>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
+    <RepositoryType>Open Source</RepositoryType>
+    <PackageTags>extensions, foundation, blazor, c#, zurb, jquery, HTML, Javascript, MVC, CSS, RESPONSIVE, mobile-first-framework, .net5</PackageTags>
+    <Description>Extensions methods and some extra services for Blazor Foundation.</Description>
+    <Copyright>OpenCodeDev © 2021</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <PackageIcon>icon-extension.png</PackageIcon>
+    <PackageIconUrl />
+  </PropertyGroup>
+
+  
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' or '$(TargetFramework)' == 'netstandard2.1' or '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.13" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon-extension.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
+</Project>

@@ -1,7 +1,7 @@
 ﻿@using Microsoft.JSInterop;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
-@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Clipboard;
+@using OpenCodeDev.Blazor.Foundation.Extensions.Clipboard;
 @inject IJSRuntime JS;
 @inject IClipboard clip;
 
@@ -11,14 +11,13 @@
 <div class="hljs-header" style="@($"background-color:{(HeaderBGcolor == null ? Supported.ContainsKey(Language.ToLower()) ? Supported[Language.ToLower()][1] : Supported["txt"][1] : HeaderBGcolor)};")">
 @if (clip != null)
 {
-    <span class="@($" mdi {(HeaderIcon == null ? Supported.ContainsKey(Language.ToLower()) ? Supported[Language.ToLower()][0] : Supported["txt"][0] : HeaderIcon)} hljs-header-title")" 
-          style="@($"{(HeaderIconColor != null ? $"color:{HeaderIconColor};":"")}")">
-    </span>
-    <span class="hljs-header-title" style="@($"{(HeaderTitleColor != null ? $"color:{HeaderTitleColor};":"")}")">@(HeaderTitle == null ? Language : HeaderTitle)</span>
-
+<span class="@($" mdi {(HeaderIcon == null ? Supported.ContainsKey(Language.ToLower()) ? Supported[Language.ToLower()][0] : Supported["txt"][0] : HeaderIcon)} hljs-header-title")" 
+style="@($"{(HeaderIconColor != null ? $"color:{HeaderIconColor};":"")}")">
+</span>
+<span class="hljs-header-title" style="@($"{(HeaderTitleColor != null ? $"color:{HeaderTitleColor};":"")}")">@(HeaderTitle == null ? Language : HeaderTitle)</span>
 <span class="mdi @CopyIcon hljs-header-copy" style="@($"{(CopyIconColor != null ? $"color:{CopyIconColor};":"")}")"
 @onclick="@(async ()=> {
-if (CopyBusy) { Console.WriteLine("Copy Button is busy."); return; }
+if (CopyBusy) { return; }
 CopyBusy = true;
 CopyIcon = "mdi-spin";
 StateHasChanged();
