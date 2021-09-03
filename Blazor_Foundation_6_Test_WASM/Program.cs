@@ -1,4 +1,4 @@
-using OpenCodeDev.Blazor.Foundation.Components.Plugins.Clipboard;
+using OpenCodeDev.Blazor.Foundation.Extensions;
 using OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.CSS;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -20,8 +20,8 @@ public static async Task Main(string[] args)
     builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
     // Required to Manage the Theme Color Style Dynamically
     builder.Services.AddSingleton<IStyleManagement, StyleManagement>();
-    // Optional, Can be use on its own to copy text to clipboard and it is required if you use Code Highlighter (HighlightCS)
-    builder.Services.AddSingleton<IClipboard, Clipboard>();
+            // Optional, Can be use on its own to copy text to clipboard and it is required if you use Code Highlighter (HighlightCS)
+            builder.Services.AddBFClipboard();
     await builder.Build().RunAsync();
 }
     }
