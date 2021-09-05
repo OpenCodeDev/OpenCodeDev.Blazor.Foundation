@@ -8,11 +8,13 @@ using OpenCodeDev.Blazor.Foundation.Components.Plugins.MotionUI;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace OpenCodeDev.Blazor.Foundation.Components.Plugins
+namespace OpenCodeDev.Blazor.Foundation
 {
     public static class ServiceCollectionExtensions
     {
-        
+        /// <summary>
+        /// InifiteLoadHelper, MotionUI and StyleManagement.
+        /// </summary>
         public static void AddAllBFPlugins(this IServiceCollection service)
         {
             service.AddBFInfiniteLoadHelper();
