@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using OpenCodeDev.Blazor.Foundation.Extensions.Util;
+using OpenCodeDev.Blazor.Foundation.Extensions;
 
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls

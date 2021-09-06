@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Clipboard
+namespace OpenCodeDev.Blazor.Foundation.Extensions.Clipboard
 {
     public class Clipboard : IClipboard
     {

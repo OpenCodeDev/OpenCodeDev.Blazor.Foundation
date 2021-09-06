@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenCodeDev.Blazor.Foundation.Components.Plugins.Clipboard;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.InfiniteScrollHelper;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.MotionUI;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace OpenCodeDev.Blazor.Foundation.Components.Plugins
+namespace OpenCodeDev.Blazor.Foundation
 {
     public static class ServiceCollectionExtensions
     {
-        
+        /// <summary>
+        /// InifiteLoadHelper, MotionUI and StyleManagement.
+        /// </summary>
         public static void AddAllBFPlugins(this IServiceCollection service)
         {
             service.AddBFInfiniteLoadHelper();
             service.AddBFMotionUI();
-            service.AddBFClipboard();
             service.AddBFStyleManagement();
 
         }
@@ -35,11 +35,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins
             service.Remove(serviceDescriptor);
         }
 
-
-        public static void AddBFClipboard(this IServiceCollection service)
-        {
-            service.AddSingleton<IClipboard, Clipboard.Clipboard>();
-        }
 
         public static void AddBFInfiniteLoadHelper(this IServiceCollection service)
         {

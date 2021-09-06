@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
-using OpenCodeDev.Blazor.Foundation.Extensions.Util;
+using OpenCodeDev.Blazor.Foundation.Extensions;
 
 
-namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.HighlightCS
+namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
 {
     public partial class HighlightCS : ComponentBase
     {

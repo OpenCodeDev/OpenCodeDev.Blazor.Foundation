@@ -43,7 +43,7 @@
             Since, Blazor Foundation 6 is an open source it is available on github.
         </p>
         <Button style=" margin-top: 1em;" Class="large small-only-expanded" 
-                @onclick="@(()=>NavManager.NavigateTo("https://github.com/OpenCodeDev/blazor_foundation_6") )">
+                @onclick="@(()=>NavManager.NavigateTo("https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation") )">
             Github Repository
         </Button>
         <hr />
@@ -57,14 +57,13 @@
         <p style=" margin-top: 1em;">
             Below you will see how to import the necessary files to get started with coding your blazor app using Blazor Foundation 6.
         </p>
-        <br/>
+
         <p>Open up the file <b>wwwroot/index.html</b></p>
-        <HighlightCS Full="true" Language="html" Content="PCEtLSBDb21waWxlZCBDU1Mgb2YgWnVyYiBGb3VuZGF0aW9uIDYgYWxzbyBhdmFpbGFibGUgZm91bmRhdGlvbi5taW4uY3NzIC0tPgo8bGluayBocmVmPSIvX2NvbnRlbnQvZmwuYmxhem9yLmZvdW5kYXRpb24vY3NzL2ZvdW5kYXRpb24uY3NzIiByZWw9InN0eWxlc2hlZXQiIC8+CjwhLS0gQ29udGFpbiBPdmVycmlkZXMgYW5kIEFkZG9ucyB0byBGb3VuZGF0aW9uIEVsZW1lbnRzIGFuZCBBbHNvIEV4dHJhcyBmcm9tIEJsYXpvciBGb3VuZGF0aW9uIDYuLS0+CjxsaW5rIGhyZWY9Ii9fY29udGVudC9mbC5ibGF6b3IuZm91bmRhdGlvbi9jc3MvYmxhem9yLmZvdW5kYXRpb24uY3NzIiByZWw9InN0eWxlc2hlZXQiIC8+Cgo8IS0tIFJlcXVpcmVkIGZvciBNREkgSWNvbnMgLS0+CjxsaW5rIGhyZWY9Imh0dHBzOi8vY2RuLm1hdGVyaWFsZGVzaWduaWNvbnMuY29tLzUuNC41NS9jc3MvbWF0ZXJpYWxkZXNpZ25pY29ucy5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiIC8+Cgo8IS0tIE9wdGlvbmFsIHRvIEVuYWJsZSBDb2RlIEhpZ2hsaWdodGVyIC0tPgo8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL2hpZ2hsaWdodC5qcy8xMC43LjEvc3R5bGVzL3ZzLm1pbi5jc3MiPgo8c2NyaXB0IHNyYz0iLy9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvaGlnaGxpZ2h0LmpzLzEwLjcuMS9oaWdobGlnaHQubWluLmpzIj48L3NjcmlwdD4="
+        <HighlightCS Full="true" Language="html" Content="PCEtLSBIRUFERVIgLS0+Cgo8IS0tIENvbXBpbGVkIENTUyBvZiBadXJiIEZvdW5kYXRpb24gNiBhbHNvIGF2YWlsYWJsZSBmb3VuZGF0aW9uLm1pbi5jc3MgLS0+CjxsaW5rIGhyZWY9Ii9fY29udGVudC9PcGVuQ29kZURldi5CbGF6b3IuRm91bmRhdGlvbi9jc3MvZm91bmRhdGlvbi5jc3MiIHJlbD0ic3R5bGVzaGVldCIgLz4KPCEtLSBDb250YWluIE92ZXJyaWRlcyBhbmQgQWRkb25zIHRvIEZvdW5kYXRpb24gRWxlbWVudHMgYW5kIEFsc28gRXh0cmFzIGZyb20gQmxhem9yIEZvdW5kYXRpb24gNi4tLT4KPGxpbmsgaHJlZj0iL19jb250ZW50L09wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uL2Nzcy9ibGF6b3IuZm91bmRhdGlvbi5jc3MiIHJlbD0ic3R5bGVzaGVldCIgLz4KCjwhLS0gUmVxdWlyZWQgZm9yIE1ESSBJY29ucyAtLT4KPGxpbmsgaHJlZj0iaHR0cHM6Ly9jZG4ubWF0ZXJpYWxkZXNpZ25pY29ucy5jb20vNS40LjU1L2Nzcy9tYXRlcmlhbGRlc2lnbmljb25zLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCIgLz4KCjwhLS0gLi4uIEJPRFkgLi4uIC0tPgoKPCEtLSBGb290ZXIgQWZ0ZXIgYmxhem9yLndlYmFzc2VtYmx5LmpzIC0tPgo8c2NyaXB0IHNyYz0iL19jb250ZW50L09wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uL2pzL2pxdWVyeS5qcyI+PC9zY3JpcHQ+CjxzY3JpcHQgc3JjPSIvX2NvbnRlbnQvT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24vanMvZm91bmRhdGlvbi5qcyI+PC9zY3JpcHQ+CjxzY3JpcHQgc3JjPSIvX2NvbnRlbnQvT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24vanMvYmxhem9yLWZvdW5kYXRpb24uanMiPjwvc2NyaXB0Pg=="
                      HeaderIcon="mdi-language-html5" HeaderTitle="index.html" HeaderBGcolor="#c51b00" />
 
         <p>Open up the file <b>Program.cs</b></p>
-        <HighlightCS Full="true" Language="cs" Content="cHVibGljIHN0YXRpYyBhc3luYyBUYXNrIE1haW4oc3RyaW5nW10gYXJncykKewogICAgLy8gLi4uCiAgICAvLyBSZXF1aXJlZCB0byBNYW5hZ2UgdGhlIFRoZW1lIENvbG9yIFN0eWxlIER5bmFtaWNhbGx5CiAgICBidWlsZGVyLlNlcnZpY2VzLkFkZFNpbmdsZXRvbjxJU3R5bGVNYW5hZ2VtZW50LCBCRlN0eWxlTWFuYWdlbWVudD4oKTsKICAgIC8vIE9wdGlvbmFsLCBDYW4gYmUgdXNlIG9uIGl0cyBvd24gdG8gY29weSB0ZXh0IHRvIGNsaXBib2FyZCBhbmQgaXQgaXMgcmVxdWlyZWQgaWYgeW91IHVzZSBDb2RlIEhpZ2hsaWdodGVyIChIaWdobGlnaHRDUykKICAgIGJ1aWxkZXIuU2VydmljZXMuQWRkU2luZ2xldG9uPElDbGlwYm9hcmQsIENsaXBib2FyZD4oKTsKICAgIGF3YWl0IGJ1aWxkZXIuQnVpbGQoKS5SdW5Bc3luYygpOwp9"
-                     HeaderIcon="mdi-language-csharp" HeaderTitle="Program.cs" HeaderBGcolor="green" />
+        <HighlightCS Full="true" Language="cs" Content="dXNpbmcgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb247CgpwdWJsaWMgc3RhdGljIGFzeW5jIFRhc2sgTWFpbihzdHJpbmdbXSBhcmdzKQp7CiAgICB2YXIgYnVpbGRlciA9IFdlYkFzc2VtYmx5SG9zdEJ1aWxkZXIuQ3JlYXRlRGVmYXVsdChhcmdzKTsKICAgIGJ1aWxkZXIuUm9vdENvbXBvbmVudHMuQWRkPEFwcD4oImFwcCIpOwoKICAgIGJ1aWxkZXIuU2VydmljZXMuQWRkU2NvcGVkKHNwID0+IG5ldyBIdHRwQ2xpZW50IHsgQmFzZUFkZHJlc3MgPSBuZXcgVXJpKGJ1aWxkZXIuSG9zdEVudmlyb25tZW50LkJhc2VBZGRyZXNzKSB9KTsKCiAgICAvLyBSZXF1aXJlZCB0byBNYW5hZ2UgdGhlIFRoZW1lIENvbG9yIFN0eWxlIER5bmFtaWNhbGx5CiAgICBidWlsZGVyLlNlcnZpY2VzLkFkZEFsbEJGUGx1Z2lucygpOwoKICAgIGF3YWl0IGJ1aWxkZXIuQnVpbGQoKS5SdW5Bc3luYygpOwp9" HeaderTitle="Program.cs" />
 
         <hr />
     </SectionLeft>
