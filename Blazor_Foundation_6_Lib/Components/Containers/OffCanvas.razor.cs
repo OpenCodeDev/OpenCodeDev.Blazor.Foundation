@@ -34,10 +34,16 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
         public string Position { get; set; }
 
         /// <summary>
-        /// overlap or push
+        /// overlap or push (default)
         /// </summary>
         [Parameter]
-        public string DataTransition { get; set; }
+        public string DataTransition { get; set; } = "overlap";
+
+        /// <summary>
+        /// Time to Open/Close: .75s, 100ms ... 500ms (default)
+        /// </summary>
+        [Parameter]
+        public string DataTransitionTime { get; set; } = "500ms";
 
         /// <summary>
         /// True: Off-Canvas is Absolute Position

@@ -6,14 +6,14 @@
 
 <div class="@($"{(Absolute ? "off-canvas-absolute" : "off-canvas")} " +
               $"{Class} " +
-              $"{(DataTransition == "overlap" ? "is-transition-overlap" : "is-transition-push" )} " +
+              //$"{(DataTransition == "overlap" ? "is-transition-overlap" : "is-transition-push" )} " +
               $"{(Position != null ? Position.ToLower() : "")}" +
               $"")"
      id="@Id" @attributes="AdditionalAttributes"
      data-transition="@DataTransition"
-     data-transition-time="500"
+     data-transition-time="@DataTransitionTime"
      data-close-on-click="@CloseOnClick.ToString().ToLower()"
-     data-content-overlay="@ContentOverlay.ToString().ToLower()">
+     data-content-overlay="@ContentOverlay.ToString().ToLower()" data-off-canvas>
     @ChildContent
 </div>
 

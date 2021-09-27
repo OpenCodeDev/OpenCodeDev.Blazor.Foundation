@@ -22,10 +22,10 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky
         public string Class { get; set; }
 
         /// <summary>
-        /// Define Unique ID for the Tag
+        /// Define Unique ID for the Tag, will bew generated if not specified.
         /// </summary>
         [Parameter]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().HTMLCompliant().ToString();
 
 
 

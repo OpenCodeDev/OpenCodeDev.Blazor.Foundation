@@ -100,7 +100,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
         /// </summary>
         /// <param name="key">ref of the variable</param>
         /// <param name="value"> string value (color html)</param>
-        /// <param name="update"> True: Call OnUpdate event usually to notify blazor of a change you dont want to call it every time if you update a list.</param>
+        /// <param name="update">Call update event, usually to trigger rerendering.</param>
         public virtual void Set(string key, string value, bool update = false)
         {
             string desc = "hide"; // Default Description
@@ -108,11 +108,24 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set(key, new JObject() { { "value", value }, { "desc", desc } }, update);
         }
 
+        /// <summary>
+        /// Set a single css variable with a description.
+        /// </summary>
+        /// <param name="key">ref of the variable</param>
+        /// <param name="value"> string value (color html)</param>
+        /// <param name="desc">What's the vaiable for ? (short description for documentation)</param>
+        /// <param name="update">Call update event, usually to trigger rerendering.</param>
         public virtual void Set(string key, string value, string desc, bool update = false)
         {
             Set(key, new JObject() { { "value", value }, { "desc", desc } }, update);
         }
 
+        /// <summary>
+        /// Set a single entry with JSON value {"value":"", "desc":""}.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value">JSON value reppresenting style object.</param>
+        /// <param name="update">Call update event, usually to trigger rerendering.</param>
         public virtual void Set(string key, JObject value, bool update = false)
         {
             if (!Style.ContainsKey(key))
@@ -158,6 +171,13 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             }
             return "";
         }
+       
+        /// <summary>
+        /// Get Value Type, Key and desc or value.
+        /// </summary>
+        /// <param name="key">Variable name eg: --test-var</param>
+        /// <param name="type">Type (desc or value)</param>
+        /// <returns></returns>
         public virtual string Get(string key, string type)
         {
             if (Style.ContainsKey(key))
@@ -167,6 +187,10 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             return "";
         }
 
+        /// <summary>
+        /// Get JSON Object
+        /// </summary>
+        /// <returns></returns>
         public JObject GetAll()
         {
             return Style;
