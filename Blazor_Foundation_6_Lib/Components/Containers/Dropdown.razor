@@ -2,11 +2,72 @@
 @using Microsoft.AspNetCore.Components.Web;
 @using Microsoft.JSInterop;
 @inject IJSRuntime JSRuntime;
+@implements System.IDisposable;
 
-<div class="@($"dropdown-pane {Class}")" data-position="@Position" data-alignment="@DataAlignment" id="@Id" @attributes="AdditionalAttributes" data-dropdown data-auto-focus="true">
+<div class="@($"dropdown-pane {Class}")" 
+     data-position="@Position" 
+     data-alignment="@DataAlignment" 
+     id="@Id" 
+     @attributes="AdditionalAttributes" 
+     data-dropdown 
+     data-auto-focus="@(CurrentBehavior == Behavior.Dropdown ? "true" : "false")" 
+     data-hover="@(CurrentBehavior == Behavior.Dropdown ? "false" : "true")" 
+     data-hover-pane="@(CurrentBehavior == Behavior.Dropdown ? "false" : "true")" >
     @ChildContent
 </div>
 
 @code {
+
+    public enum Behavior
+    {
+        Hover,
+        Dropdown
+    }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    /// <summary>
+    /// Unique HTML Identifier.
+    /// </summary>
+    [Parameter]
+    public string Id { get; set; }
+
+    /// <summary>
+    /// Custom Class to Append at the end of default Foundation Class.
+    /// </summary>
+    [Parameter]
+    public string Class { get; set; }
+
+
+    /// <summary>
+    /// left, right, top or bottom
+    /// </summary>
+    [Parameter]
+    public string Position { get; set; }
+
+    /// <summary>
+    /// top, middle, left, right or bottom
+    /// </summary>
+    [Parameter]
+    public string DataAlignment { get; set; }
+
+    /// <summary>
+    /// If false, you will have to create initializer for this Foundation 6 component yourself in javascript. (Default: True)
+    /// </summary>
+    [Parameter]
+    public bool AutoManaged { get; set; } = true;
+
+    [Parameter]
+    public Behavior CurrentBehavior { get; set; } = Behavior.Dropdown;
+
+    /// <summary>
+    /// List of Options to pass when initilization is handled by Blazor. Leave blank if AutoManaged = false.
+    /// </summary>
+    [Parameter]
+    public JObject DataOptions { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object> AdditionalAttributes { get; set; }
 
 }
