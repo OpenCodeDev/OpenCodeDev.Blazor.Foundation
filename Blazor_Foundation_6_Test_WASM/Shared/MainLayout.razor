@@ -12,7 +12,7 @@
 <BlazorFoundationStyle />
 
 <OffCanvasWrapper>
-    <OffCanvas Id="SideMenu" Class="doc-menu" DataTransition="push" data-content-scroll="false">
+    <OffCanvas Id="SideMenu" Class="doc-menu" DataTransition="overlap" data-content-scroll="true" style="z-index: 16;">
         <div style="width: 15.6em; height: 100vh;">
             <button class="close-button" aria-label="Close menu" type="button" data-close>
                 <span aria-hidden="true">&times;</span>
@@ -32,7 +32,7 @@
 
                             <TopBarLeft>
                                 <span class="mdi mdi-menu" data-toggle="SideMenu" style=" float: left; padding-right: 0.3em; font-size: 2em;"></span>
-                                <h3>Blazor Foundation 6</h3>
+                                <h4 style=" margin-top: 0.3em; ">Blazor Foundation 6</h4>
                             </TopBarLeft>
                             <TopBarRight>
 
