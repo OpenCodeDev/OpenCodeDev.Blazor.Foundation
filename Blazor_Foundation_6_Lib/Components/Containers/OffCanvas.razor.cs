@@ -31,7 +31,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
         /// position-left, position-right, position-top or position-bottom
         /// </summary>
         [Parameter]
-        public string Position { get; set; }
+        public string Position { get; set; } = "position-left";
 
         /// <summary>
         /// overlap or push (default)
@@ -49,7 +49,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
         /// True: Off-Canvas is Absolute Position
         /// </summary>
         [Parameter]
-        public bool Absolute { get; set; }
+        public bool Absolute { get; set; } = false;
 
         /// <summary>
         /// True: when click on canvas content then off canvas  (Default: True)
