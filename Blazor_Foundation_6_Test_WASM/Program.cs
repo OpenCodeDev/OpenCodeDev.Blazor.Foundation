@@ -13,6 +13,7 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
 {
     public class Program
     {
+
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);

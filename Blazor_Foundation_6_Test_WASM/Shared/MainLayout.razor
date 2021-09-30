@@ -97,18 +97,23 @@
     {
         await OffCanvasBottom.TriggerToggle();
     }
+
     protected override void OnInitialized()
     {
         base.OnInitialized();
         StyleManager.OnUpdate += OnStyleChanged;
-
-        StyleManager.Set("--top-bar-bg-color", "#1c2463");
+        // If --top-bar-bg-color already exist, it will be updated.
+        // Note: If description is available it will be preserve
+        // true/false trigger update
+        StyleManager.Set("--top-bar-bg-color", "#1c2463", "Top bar background color.", true);
+        
     }
+
     public async Task OnStyleChanged()
     {
-        Console.WriteLine("Style is Updating...");
         await InvokeAsync(()=>StateHasChanged());
     }
+
     public void Dispose()
     {
         StyleManager.OnUpdate -= OnStyleChanged;

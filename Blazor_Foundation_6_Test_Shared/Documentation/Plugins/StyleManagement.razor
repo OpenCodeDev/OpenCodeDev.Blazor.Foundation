@@ -1,7 +1,163 @@
 ﻿@page "/style_management";
 
-<h3>StyleManagement</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
+@inject NavigationManager NavManager;
+@inject IStyleManagement StyleManager;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Style Management System</h2>
+        <p>Style Management System is our system to allow you to change color palette and other css variable!</p>
 
+        <h2>Setup</h2>
+        <p>First, add the service:</p>
+        <HighlightCS Language="cs" Full="true"
+                        Content="dXNpbmcgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5QbHVnaW5zLlN0eWxlTWFuYWdlcjsKCmJ1aWxkZXIuU2VydmljZXMuQWRkQWxsQkZQbHVnaW5zKCk7" />
+        <p>Then, add Style Component in Shared Layout:</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                        Content="QHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuUGx1Z2lucy5TdHlsZU1hbmFnZXI7CkBpbmplY3QgSVN0eWxlTWFuYWdlbWVudCBTdHlsZU1hbmFnZXI7Cgo8Qmxhem9yRm91bmRhdGlvblN0eWxlIC8+" />
+        <p>C# in the Shared Layout:</p>
+        <HighlightCS Language="cs" Full="true"
+                        Content="cHJvdGVjdGVkIG92ZXJyaWRlIHZvaWQgT25Jbml0aWFsaXplZCgpCnsKICAgIGJhc2UuT25Jbml0aWFsaXplZCgpOwogICAgU3R5bGVNYW5hZ2VyLk9uVXBkYXRlICs9IE9uU3R5bGVDaGFuZ2VkOwp9CgpwdWJsaWMgYXN5bmMgVGFzayBPblN0eWxlQ2hhbmdlZCgpCnsKICAgIGF3YWl0IEludm9rZUFzeW5jKCgpID0+IFN0YXRlSGFzQ2hhbmdlZCgpKTsKfQoKcHVibGljIHZvaWQgRGlzcG9zZSgpCnsKICAgIFN0eWxlTWFuYWdlci5PblVwZGF0ZSAtPSBPblN0eWxlQ2hhbmdlZDsKfQ==" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>List Current Variables</h2>
+        <p>You can pull your theme's variables in a list!</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFRhYmxlV3JhcHBlciBjbGFzcz0iaG92ZXIiPgogICAgPFRhYmxlSGVhZGVyPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0+PC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbT5WYWx1ZTwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0+UHJvcGVydHk8L1RhYmxlSGVhZGVySXRlbT4KCiAgICA8L1RhYmxlSGVhZGVyPgogICAgPFRhYmxlQm9keT4KCiAgICAgICAgQGZvcmVhY2ggKHZhciBzdHlsZSBpbiBTdHlsZU1hbmFnZXIuR2V0QWxsKCkpCiAgICAgICAgewogICAgICAgICAgICBAaWYgKFN0eWxlTWFuYWdlci5HZXQoc3R5bGUuS2V5LCAiZGVzYyIpICE9ICJoaWRlIikKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT0iIEAoJCJoZWlnaHQ6IDIuNWVtO3dpZHRoOiAxZW07IHsoJCJiYWNrZ3JvdW5kLWNvbG9yOiB7U3R5bGVNYW5hZ2VyLkdldChzdHlsZS5LZXkpfTsiKX0iKSAiPgoKICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkBTdHlsZU1hbmFnZXIuR2V0KHN0eWxlLktleSk8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgICAgICAgICAgICAgIEBzdHlsZS5LZXkuVG9TdHJpbmcoKQogICAgICAgICAgICAgICAgICAgICAgICA8cCBzdHlsZT0icGFkZGluZy1sZWZ0OiAxLjJlbTsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNtYWxsPkBTdHlsZU1hbmFnZXIuR2V0KHN0eWxlLktleSwgImRlc2MiKTwvc21hbGw+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD4KCgogICAgICAgICAgICAgICAgICAgIDwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgICAgIDwvVGFibGVCb2R5Um93PgogICAgICAgICAgICB9CgogICAgICAgIH0KICAgIDwvVGFibGVCb2R5Pgo8L1RhYmxlV3JhcHBlcj4=" />
+
+        <TableWrapper class="hover">
+            <TableHeader>
+                <TableHeaderItem></TableHeaderItem>
+                <TableHeaderItem>Property</TableHeaderItem>
+                <TableHeaderItem>Value</TableHeaderItem>
+
+            </TableHeader>
+            <TableBody>
+
+                @foreach (var style in StyleManager.GetAll())
+                {
+                    @if (StyleManager.Get(style.Key, "desc") != "hide")
+                    {
+                        <TableBodyRow>
+                            <TableBodyRowItem>
+                                @if (StyleManager.Get(style.Key).StartsWith("#") || StyleManager.Get(style.Key).StartsWith("var(--"))
+                                {
+                                    <div style=" @($"height: 2.5em;border: solid 1PX;width: 1em; {($"background-color: {StyleManager.Get(style.Key)};")}") ">
+
+                                    </div>
+                                }
+                            </TableBodyRowItem>
+                            <TableBodyRowItem>@style.Key.ToString()</TableBodyRowItem>
+                            <TableBodyRowItem>
+
+                                @StyleManager.Get(style.Key)
+                                <p style="padding-left: 1.2em;">
+                                    <small>@StyleManager.Get(style.Key, "desc")</small>
+                                </p>
+
+
+                            </TableBodyRowItem>
+                        </TableBodyRow>
+                    }
+
+                }
+            </TableBody>
+        </TableWrapper>
+
+        <h2>Change Color Dynamically</h2>
+        <p>In the following example, you can choose a color and it will automatically update the theme!</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFRhYmxlV3JhcHBlciBjbGFzcz0iaG92ZXIiPgogICAgPFRhYmxlSGVhZGVyPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0+PC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbT5WYWx1ZTwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0+UHJvcGVydHk8L1RhYmxlSGVhZGVySXRlbT4KCiAgICA8L1RhYmxlSGVhZGVyPgogICAgPFRhYmxlQm9keT4KCiAgICAgICAgQGZvcmVhY2ggKHZhciBzdHlsZSBpbiBTdHlsZU1hbmFnZXIuR2V0QWxsKCkpCiAgICAgICAgewogICAgICAgICAgICBAaWYgKFN0eWxlTWFuYWdlci5HZXQoc3R5bGUuS2V5LCAiZGVzYyIpICE9ICJoaWRlIikKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT0iIEAoJCJoZWlnaHQ6IDIuNWVtO3dpZHRoOiAxZW07IHsoJCJiYWNrZ3JvdW5kLWNvbG9yOiB7U3R5bGVNYW5hZ2VyLkdldChzdHlsZS5LZXkpfTsiKX0iKSAiPgoKICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkBTdHlsZU1hbmFnZXIuR2V0KHN0eWxlLktleSk8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJjb2xvciIgQG9uY2hhbmdlPSJAKChDaGFuZ2VFdmVudEFyZ3MgX19lKSA9PiB7IFN0eWxlTWFuYWdlci5TZXQoc3R5bGUuS2V5LCBfX2UuVmFsdWUuVG9TdHJpbmcoKSwgdHJ1ZSk7IH0pIiB2YWx1ZT0iQFN0eWxlTWFuYWdlci5HZXQoc3R5bGUuS2V5KSIgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3R5bGU9IiB3aWR0aDogNWVtOyBwYWRkaW5nOiAwLjJlbTsgIj4KICAgICAgICAgICAgICAgICAgICAgICAgQHN0eWxlLktleS5Ub1N0cmluZygpCiAgICAgICAgICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJwYWRkaW5nLWxlZnQ6IDEuMmVtOyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c21hbGw+QFN0eWxlTWFuYWdlci5HZXQoc3R5bGUuS2V5LCAiZGVzYyIpPC9zbWFsbD4KICAgICAgICAgICAgICAgICAgICAgICAgPC9wPgoKCiAgICAgICAgICAgICAgICAgICAgPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICAgICAgICAgIH0KCiAgICAgICAgfQogICAgPC9UYWJsZUJvZHk+CjwvVGFibGVXcmFwcGVyPg==" />
+
+        <TableWrapper class="hover">
+            <TableHeader>
+                <TableHeaderItem></TableHeaderItem>
+                <TableHeaderItem>Value</TableHeaderItem>
+                <TableHeaderItem>Property</TableHeaderItem>
+
+            </TableHeader>
+            <TableBody>
+
+                @foreach (var style in StyleManager.GetAll())
+                {
+                    @if (StyleManager.Get(style.Key, "desc") != "hide")
+                    {
+                        <TableBodyRow>
+                            <TableBodyRowItem>
+                                @if (StyleManager.Get(style.Key).StartsWith("#"))
+                                {
+                                    <input type="color" @onchange="@((ChangeEventArgs __e) => { StyleManager.Set(style.Key, __e.Value.ToString(), true); })" value="@StyleManager.Get(style.Key)"
+                                           style=" width: 2em; padding: 0em; border: 0; box-shadow: none; height: 3.5em; ">
+                                }
+                                else
+                                {
+                                    <input type="text" @onchange="@((ChangeEventArgs __e) => { StyleManager.Set(style.Key, __e.Value.ToString(), true); })" value="@StyleManager.Get(style.Key)"
+                                           style=" width: 3.5em; padding: 0em; border: 0; box-shadow: none; height: 2em; ">
+                                }
+
+                            </TableBodyRowItem>
+                            <TableBodyRowItem>@StyleManager.Get(style.Key)</TableBodyRowItem>
+                            <TableBodyRowItem>
+
+                                @style.Key.ToString()
+                                <p style="padding-left: 1.2em;">
+                                    <small>@StyleManager.Get(style.Key, "desc")</small>
+                                </p>
+
+
+                            </TableBodyRowItem>
+                        </TableBodyRow>
+                    }
+
+                }
+            </TableBody>
+        </TableWrapper>
+
+        <h2>Extract JSON</h2>
+        <p>You can extract the current template into a Json string.</p>
+        <HighlightCS Language="cs" Full="true"
+                     Content="@("StyleManager.GetAll().ToString();")" />
+
+        <HighlightCS Language="json" Full="true"
+                     Content="@StyleManager.GetAll().ToString()" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Add/Update CSS Variable</h2>
+        <p>You can add a CSS variable in style manager!</p>
+
+        <h2>Simple Add/Update</h2>
+        <p>You can quickly add or update a css variable by using the following statement:</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="Ly8gSWYgLS10b3AtYmFyLWJnLWNvbG9yIGFscmVhZHkgZXhpc3QsIGl0IHdpbGwgYmUgdXBkYXRlZC4KLy8gTm90ZTogSWYgZGVzY3JpcHRpb24gaXMgYXZhaWxhYmxlIGl0IHdpbGwgYmUgcHJlc2VydmUKLy8gdHJ1ZS9mYWxzZSB0cmlnZ2VyIHVwZGF0ZQpTdHlsZU1hbmFnZXIuU2V0KCItLXRvcC1iYXItYmctY29sb3IiLCAiIzFjMjQ2MyIsIHRydWUpOw==" />
+
+        <h2>Add/Update with Description </h2>
+        <p>Description is a good thing to setup, because it allow you to print it later.</p>
+        <HighlightCS Language="cs" Full="true"
+                     Content="U3R5bGVNYW5hZ2VyLlNldCgiLS10b3AtYmFyLWJnLWNvbG9yIiwgIiMxYzI0NjMiLCAiVG9wIGJhciBiYWNrZ3JvdW5kIGNvbG9yLiIsIHRydWUpOw==" />
+
+        <h2>Load JSON Template</h2>
+        <p>You can load the template with a JSON string.</p>
+        <HighlightCS Language="cs" Full="true"
+                     Content="U3R5bGVNYW5hZ2VyLlNldEZyb21Kc29uKEAieyAiIi0tdG9wLWJhci1iZy1jb2xvciIiOnsiInZhbHVlIiI6IiIjMWMyNDYzIiIsICIiZGVzYyIiOiIiVG9wIGJhciBiYWNrZ3JvdW5kIGNvbG9yLiIifX0iKTs=" />
+
+
+
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 @code {
 
 }

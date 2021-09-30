@@ -45,6 +45,15 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
         /// </summary>
         [Parameter]
         public bool AutoManaged { get; set; } = true;
+       
+        public enum Behavior
+        {
+            Hover,
+            Dropdown
+        }
+
+        [Parameter]
+        public Behavior CurrentBehavior { get; set; } = Behavior.Dropdown;
 
         /// <summary>
         /// List of Options to pass when initilization is handled by Blazor. Leave blank if AutoManaged = false.

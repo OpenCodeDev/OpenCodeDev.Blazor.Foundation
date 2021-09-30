@@ -8,9 +8,14 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
     {
         void Set(string key, string value, bool update = false);
         void Set(string key, string value, string desc, bool update = false);
+        void Set(string key, JObject value, bool update = false);
+
         void SetFromJson(JObject json);
+        void SetFromJson(string json);
+
         string Get(string key);
         string Get(string key, string type);
+
         Func<Task> OnUpdate { get; set; }
         JObject GetAll();
     }
@@ -140,9 +145,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
         }
 
         /// <summary>
-        /// Load color template from a json each key has to match variable's name
+        /// Load template from json object.
         /// </summary>
-        /// <param name="json">Json array of Key = --c-variable and value = black</param>
         public virtual void SetFromJson(JObject json)
         {
             foreach (var item in json)
@@ -157,6 +161,15 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
                 }
             }
             OnUpdate?.Invoke();
+        }
+
+        /// <summary>
+        /// Load template from json string.
+        /// </summary>
+        /// <param name="json"></param>
+        public virtual void SetFromJson(string json)
+        {
+            SetFromJson(JObject.Parse(json));
         }
 
         /// <summary>
