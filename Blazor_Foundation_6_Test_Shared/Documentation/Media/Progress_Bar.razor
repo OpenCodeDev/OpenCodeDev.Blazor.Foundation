@@ -1,0 +1,42 @@
+﻿@page "/progress-bar";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+<SectionWrapper>
+    <SectionLeft>
+        <h3>Progress Bar</h3>
+        <p>Progress Bar use a single component <Code>@("<ProgressBar>")</Code>.</p>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h3>Colors</h3>
+        <p>
+            You can change the color via a class. We have default classes
+            <Code>@(@"ColorClass=""primary""")</Code>, <Code>@(@"ColorClass=""secondary""")</Code>, <Code>@(@"ColorClass=""success""")</Code>,
+            <Code>@(@"ColorClass=""warning""")</Code>, <Code>@(@"ColorClass=""alert""")</Code>.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFByb2dyZXNzQmFyIENvbG9yQ2xhc3M9InByaW1hcnkiIFByb2dyZXNzPSIyMi41M2YiIC8+CjxQcm9ncmVzc0JhciBDb2xvckNsYXNzPSJzZWNvbmRhcnkiIFByb2dyZXNzPSIzMi41MmYiIC8+CjxQcm9ncmVzc0JhciBDb2xvckNsYXNzPSJzdWNjZXNzIiBQcm9ncmVzcz0iNTYuMmYiIC8+CjxQcm9ncmVzc0JhciBDb2xvckNsYXNzPSJ3YXJuaW5nIiBQcm9ncmVzcz0iODVmIiAvPgo8UHJvZ3Jlc3NCYXIgQ29sb3JDbGFzcz0iYWxlcnQiIFByb2dyZXNzPSI5OGYiIC8+" />
+<ProgressBar ColorClass="primary" Progress="22.53f" />
+<ProgressBar ColorClass="secondary" Progress="32.52f" />
+<ProgressBar ColorClass="success" Progress="56.2f" />
+<ProgressBar ColorClass="warning" Progress="85f" />
+<ProgressBar ColorClass="alert" Progress="98f" />
+
+        <h3>Text</h3>
+        <p>You can choose to show % text by using the attribute <Code>@(@"ShowText=""true""")</Code></p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFByb2dyZXNzQmFyIENvbG9yQ2xhc3M9InNlY29uZGFyeSIgUHJvZ3Jlc3M9IjI1ZiIgU2hvd1RleHQ9InRydWUiIC8+CjxQcm9ncmVzc0JhciBDb2xvckNsYXNzPSJzZWNvbmRhcnkiIFByb2dyZXNzPSI1MGYiIFNob3dUZXh0PSJ0cnVlIiAvPgo8UHJvZ3Jlc3NCYXIgQ29sb3JDbGFzcz0ic2Vjb25kYXJ5IiBQcm9ncmVzcz0iNzVmIiBTaG93VGV4dD0idHJ1ZSIgLz4KPFByb2dyZXNzQmFyIENvbG9yQ2xhc3M9InNlY29uZGFyeSIgUHJvZ3Jlc3M9IjEwMGYiIFNob3dUZXh0PSJ0cnVlIiAvPg==" />
+<ProgressBar ColorClass="secondary" Progress="25f" ShowText="true" />
+<ProgressBar ColorClass="secondary" Progress="50f" ShowText="true" />
+<ProgressBar ColorClass="secondary" Progress="75f" ShowText="true" />
+<ProgressBar ColorClass="secondary" Progress="100f" ShowText="true" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+@code {
+
+}

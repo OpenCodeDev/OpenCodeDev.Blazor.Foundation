@@ -1,7 +1,15 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
 
-<h3>ProgressBar</h3>
+<div class="@($"{ColorClass} progress {Class}")" id="@Id" @attributes="AdditionalAttributes">
+    <div class="progress-meter" style="@($"width: {Progress.ToString()}%;")">
+        @if (ShowText)
+        {
+            <span class="progress-meter-text">@($"{Progress.ToString()}%")</span>
+        }
+
+    </div>
+</div>
 
 @code {
 
