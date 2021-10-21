@@ -1,0 +1,12 @@
+﻿@using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+@inject IJSRuntime JSRuntime;
+<div class="orbit @(Class)" id="@Id" role="region" data-orbit @attributes="AdditionalAttributes">
+    <div class="orbit-wrapper">
+        @ChildContent
+    </div>
+</div>
+@code {
+
+}

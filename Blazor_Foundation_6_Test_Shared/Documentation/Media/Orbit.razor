@@ -1,6 +1,159 @@
 ﻿@page "/orbit";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
 
-<h3>Orbit</h3>
+<SectionWrapper>
+    <SectionLeft>
+        <h3>Orbit Slider</h3>
+        <p>An image and content carousel with animation support and many customizable options.</p>
+        <p>Note: Motion UI seems not to work to the exception of slide animation.</p>
+        <h3>Basics</h3>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9yYml0V3JhcHBlcj4KICAgIDxPcmJpdENvbnRyb2xzIC8+CiAgICA8T3JiaXRTbGlkZXM+CiAgICAgICAgPE9yYml0U2xpZGUgSXNEZWZhdWx0PSJ0cnVlIj4KICAgICAgICAgICAgPGZpZ3VyZSBjbGFzcz0ib3JiaXQtZmlndXJlIj4KICAgICAgICAgICAgICAgIDxpbWcgY2xhc3M9Im9yYml0LWltYWdlIiBzcmM9Imh0dHBzOi8vZ2V0LmZvdW5kYXRpb24vc2l0ZXMvZG9jcy9hc3NldHMvaW1nL29yYml0LzAxLmpwZyIgYWx0PSJTcGFjZSI+CiAgICAgICAgICAgICAgICA8ZmlnY2FwdGlvbiBjbGFzcz0ib3JiaXQtY2FwdGlvbiI+U3BhY2UsIHRoZSBmaW5hbCBmcm9udGllci48L2ZpZ2NhcHRpb24+CiAgICAgICAgICAgIDwvZmlndXJlPgogICAgICAgIDwvT3JiaXRTbGlkZT4KICAgICAgICA8T3JiaXRTbGlkZT4KICAgICAgICAgICAgPGZpZ3VyZSBjbGFzcz0ib3JiaXQtZmlndXJlIj4KICAgICAgICAgICAgICAgIDxpbWcgY2xhc3M9Im9yYml0LWltYWdlIiBzcmM9Imh0dHBzOi8vZ2V0LmZvdW5kYXRpb24vc2l0ZXMvZG9jcy9hc3NldHMvaW1nL29yYml0LzAyLmpwZyIgYWx0PSJTcGFjZSI+CiAgICAgICAgICAgICAgICA8ZmlnY2FwdGlvbiBjbGFzcz0ib3JiaXQtY2FwdGlvbiI+U3BhY2UsIHRoZSBmaW5hbCBmcm9udGllci48L2ZpZ2NhcHRpb24+CiAgICAgICAgICAgIDwvZmlndXJlPgogICAgICAgIDwvT3JiaXRTbGlkZT4KICAgIDwvT3JiaXRTbGlkZXM+CiAgICA8T3JiaXRCdWxsZXRzPgogICAgICAgIDxPcmJpdEJ1bGxldCBJbmRleD0iMCIgSXNBY3RpdmU9InRydWUiIC8+CiAgICAgICAgPE9yYml0QnVsbGV0IEluZGV4PSIxIiAvPgogICAgPC9PcmJpdEJ1bGxldHM+CjwvT3JiaXRXcmFwcGVyPg==" />
+
+        <OrbitWrapper>
+            <OrbitControls />
+            <OrbitSlides>
+                <OrbitSlide IsDefault="true">
+                    <figure class="orbit-figure">
+                        <img class="orbit-image" src="https://get.foundation/sites/docs/assets/img/orbit/01.jpg" alt="Space">
+                        <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+                    </figure>
+                </OrbitSlide>
+                <OrbitSlide>
+                    <figure class="orbit-figure">
+                        <img class="orbit-image" src="https://get.foundation/sites/docs/assets/img/orbit/02.jpg" alt="Space">
+                        <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+                    </figure>
+                </OrbitSlide>
+            </OrbitSlides>
+            <OrbitBullets>
+                <OrbitBullet Index="0" IsActive="true" />
+                <OrbitBullet Index="1" />
+            </OrbitBullets>
+        </OrbitWrapper>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h3>Wrapper</h3>
+        <p>The wrapper houses the entire carousel. We use the <Code>aria-label</Code> attribute to label what the carousel is, for assistive technology.</p>
+        <h3>Orbit Slides</h3>
+        <p>The <Code>OrbitSlides</Code> houses each individual slide (<Code>OrbitSlide</Code>)..</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9yYml0U2xpZGVzPgogICAgPE9yYml0U2xpZGUgSXNEZWZhdWx0PSJ0cnVlIj4KICAgICAgICA8ZmlndXJlIGNsYXNzPSJvcmJpdC1maWd1cmUiPgogICAgICAgICAgICA8aW1nIGNsYXNzPSJvcmJpdC1pbWFnZSIgc3JjPSJodHRwczovL2dldC5mb3VuZGF0aW9uL3NpdGVzL2RvY3MvYXNzZXRzL2ltZy9vcmJpdC8wMS5qcGciIGFsdD0iU3BhY2UiPgogICAgICAgICAgICA8ZmlnY2FwdGlvbiBjbGFzcz0ib3JiaXQtY2FwdGlvbiI+U3BhY2UsIHRoZSBmaW5hbCBmcm9udGllci48L2ZpZ2NhcHRpb24+CiAgICAgICAgPC9maWd1cmU+CiAgICA8L09yYml0U2xpZGU+CiAgICA8IS0tIE1vcmUgc2xpZGVzLi4uIC0tPgo8L09yYml0U2xpZGVzPg==" />
+
+        <h3>Next/Previous Arrows</h3>
+        <p><Code>OrbitControls</Code> component is used to add the left and right arrow.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9yYml0V3JhcHBlcj4KICAgIDxPcmJpdENvbnRyb2xzIC8+CjwvT3JiaXRXcmFwcGVyPg==" />
+        <h3>Bullets</h3>
+        <p>The bullets serve two purposes: they mark the current slide, and can be clicked on to navigate to another slide.</p>
+        <p> <Code>@("Index")</Code> is to defined the slide position.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9yYml0V3JhcHBlcj4KICAgIDxPcmJpdEJ1bGxldHM+CiAgICAgICAgPE9yYml0QnVsbGV0IEluZGV4PSIwIiBJc0FjdGl2ZT0idHJ1ZSIgLz4KICAgICAgICA8T3JiaXRCdWxsZXQgSW5kZXg9IjEiIC8+CiAgICAgICAgPE9yYml0QnVsbGV0IEluZGV4PSIyIiAvPgogICAgICAgIDxPcmJpdEJ1bGxldCBJbmRleD0iMyIgLz4KICAgIDwvT3JiaXRCdWxsZXRzPgo8L09yYml0V3JhcHBlcj4=" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h3>Slide Contents</h3>
+        <p>A carousel slide can contain images or HTML—you can even mix between slides in one carousel!</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9yYml0V3JhcHBlciBkYXRhLWF1dG8tcGxheT0iZmFsc2UiPgogICAgPE9yYml0Q29udHJvbHMgLz4KICAgIDxPcmJpdFNsaWRlcyBzdHlsZT0iIHRleHQtYWxpZ246IGp1c3RpZnk7ICI+CiAgICAgICAgPE9yYml0U2xpZGUgSXNEZWZhdWx0PSJ0cnVlIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDExMiAxODEgMjIzKTsgbWluLWhlaWdodDogMjA1cHggIWltcG9ydGFudDsgcGFkZGluZzogM2VtIDNlbSAzZW0gM2VtOyAiPgogICAgICAgICAgICA8YmxvY2txdW90ZSBzdHlsZT0iY29sb3I6ICNmZmZmZmY7Ij4KICAgICAgICAgICAgICAgIExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uCiAgICAgICAgICAgICAgICA8Y2l0ZSBzdHlsZT0iY29sb3I6ICNmZmZmZmY7Ij5Jc2FhYyBBc2ltb3Y8L2NpdGU+CiAgICAgICAgICAgIDwvYmxvY2txdW90ZT4KICAgICAgICA8L09yYml0U2xpZGU+CiAgICAgICAgPE9yYml0U2xpZGUgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6IHJnYigxMzkgMTEyIDIyMyk7IG1pbi1oZWlnaHQ6IDIwNXB4ICFpbXBvcnRhbnQ7IHBhZGRpbmc6IDNlbSAzZW0gM2VtIDNlbTsgIj4KICAgICAgICAgICAgPGJsb2NrcXVvdGUgc3R5bGU9ImNvbG9yOiAjZmZmZmZmOyI+CiAgICAgICAgICAgICAgICBMb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdCwgc2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQgdXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWEuIFV0IGVuaW0gYWQgbWluaW0gdmVuaWFtLCBxdWlzIG5vc3RydWQgZXhlcmNpdGF0aW9uIHVsbGFtY28gbGFib3JpcyBuaXNpIHV0IGFsaXF1aXAgZXggZWEgY29tbW9kbyBjb25zZXF1YXQuIER1aXMgYXV0ZSBpcnVyZSBkb2xvciBpbiByZXByZWhlbmRlcml0IGluIHZvbHVwdGF0ZSB2ZWxpdCBlc3NlIGNpbGx1bSBkb2xvcmUgZXUgZnVnaWF0IG51bGxhIHBhcmlhdHVyLiBFeGNlcHRldXIgc2ludCBvY2NhZWNhdCBjdXBpZGF0YXQgbm9uIHByb2lkZW50LCBzdW50IGluIGN1bHBhIHF1aSBvZmZpY2lhIGRlc2VydW50IG1vbGxpdCBhbmltIGlkIGVzdCBsYWJvcnVtLgogICAgICAgICAgICAgICAgPGNpdGUgc3R5bGU9ImNvbG9yOiAjZmZmZmZmOyI+SXNhYWMgQXNpbW92PC9jaXRlPgogICAgICAgICAgICA8L2Jsb2NrcXVvdGU+CiAgICAgICAgPC9PcmJpdFNsaWRlPgogICAgICAgIDxPcmJpdFNsaWRlIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjIzIDExMiAxMTIpOyBtaW4taGVpZ2h0OiAyMDVweCAhaW1wb3J0YW50OyBwYWRkaW5nOiAzZW0gM2VtIDNlbSAzZW07ICI+CiAgICAgICAgICAgIDxibG9ja3F1b3RlIHN0eWxlPSJjb2xvcjogI2ZmZmZmZjsiPgogICAgICAgICAgICAgICAgTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQsIHNlZCBkbyBlaXVzbW9kIHRlbXBvciBpbmNpZGlkdW50IHV0IGxhYm9yZSBldCBkb2xvcmUgbWFnbmEgYWxpcXVhLiBVdCBlbmltIGFkIG1pbmltIHZlbmlhbSwgcXVpcyBub3N0cnVkIGV4ZXJjaXRhdGlvbiB1bGxhbWNvIGxhYm9yaXMgbmlzaSB1dCBhbGlxdWlwIGV4IGVhIGNvbW1vZG8gY29uc2VxdWF0LiBEdWlzIGF1dGUgaXJ1cmUgZG9sb3IgaW4gcmVwcmVoZW5kZXJpdCBpbiB2b2x1cHRhdGUgdmVsaXQgZXNzZSBjaWxsdW0gZG9sb3JlIGV1IGZ1Z2lhdCBudWxsYSBwYXJpYXR1ci4gRXhjZXB0ZXVyIHNpbnQgb2NjYWVjYXQgY3VwaWRhdGF0IG5vbiBwcm9pZGVudCwgc3VudCBpbiBjdWxwYSBxdWkgb2ZmaWNpYSBkZXNlcnVudCBtb2xsaXQgYW5pbSBpZCBlc3QgbGFib3J1bS4KICAgICAgICAgICAgICAgIDxjaXRlIHN0eWxlPSJjb2xvcjogI2ZmZmZmZjsiPklzYWFjIEFzaW1vdjwvY2l0ZT4KICAgICAgICAgICAgPC9ibG9ja3F1b3RlPgogICAgICAgIDwvT3JiaXRTbGlkZT4KICAgICAgICA8T3JiaXRTbGlkZSBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmdiKDExMiAyMjMgMTgyKTsgbWluLWhlaWdodDogMjA1cHggIWltcG9ydGFudDsgcGFkZGluZzogM2VtIDNlbSAzZW0gM2VtOyAiPgogICAgICAgICAgICA8YmxvY2txdW90ZSBzdHlsZT0iY29sb3I6ICNmZmZmZmY7Ij4KICAgICAgICAgICAgICAgIExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uCiAgICAgICAgICAgICAgICA8Y2l0ZSBzdHlsZT0iY29sb3I6ICNmZmZmZmY7Ij5Jc2FhYyBBc2ltb3Y8L2NpdGU+CiAgICAgICAgICAgIDwvYmxvY2txdW90ZT4KICAgICAgICA8L09yYml0U2xpZGU+CiAgICA8L09yYml0U2xpZGVzPgogICAgPE9yYml0QnVsbGV0cz4KICAgICAgICA8T3JiaXRCdWxsZXQgSW5kZXg9IjAiIElzQWN0aXZlPSJ0cnVlIiAvPgogICAgICAgIDxPcmJpdEJ1bGxldCBJbmRleD0iMSIgLz4KICAgICAgICA8T3JiaXRCdWxsZXQgSW5kZXg9IjIiIC8+CiAgICAgICAgPE9yYml0QnVsbGV0IEluZGV4PSIzIiAvPgoKICAgIDwvT3JiaXRCdWxsZXRzPgo8L09yYml0V3JhcHBlcj4=" />
+        
+        <OrbitWrapper data-auto-play="false">
+            <OrbitControls />
+            <OrbitSlides style=" text-align: justify; ">
+                <OrbitSlide IsDefault="true" style="background-color: rgb(112 181 223); min-height: 205px !important; padding: 3em 3em 3em 3em; ">
+                    <blockquote style="color: #ffffff;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <cite style="color: #ffffff;">Isaac Asimov</cite>
+                    </blockquote>
+                </OrbitSlide>
+                <OrbitSlide style="background-color: rgb(139 112 223); min-height: 205px !important; padding: 3em 3em 3em 3em; ">
+                    <blockquote style="color: #ffffff;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <cite style="color: #ffffff;">Isaac Asimov</cite>
+                    </blockquote>
+                </OrbitSlide>
+                <OrbitSlide style="background-color: rgb(223 112 112); min-height: 205px !important; padding: 3em 3em 3em 3em; ">
+                    <blockquote style="color: #ffffff;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <cite style="color: #ffffff;">Isaac Asimov</cite>
+                    </blockquote>
+                </OrbitSlide>
+                <OrbitSlide style="background-color: rgb(112 223 182); min-height: 205px !important; padding: 3em 3em 3em 3em; ">
+                    <blockquote style="color: #ffffff;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <cite style="color: #ffffff;">Isaac Asimov</cite>
+                    </blockquote>
+                </OrbitSlide>
+            </OrbitSlides>
+            <OrbitBullets>
+                <OrbitBullet Index="0" IsActive="true" />
+                <OrbitBullet Index="1" />
+                <OrbitBullet Index="2" />
+                <OrbitBullet Index="3" />
+
+            </OrbitBullets>
+        </OrbitWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h3>Using Animation</h3>
+        <p>Orbit uses Motion UI CSS classes to animate slides around.</p>
+        <Callout TypeClass="alert">
+            Without the inclusion of the motion-ui Motion UI CSS file in your template, Orbit slider fails to work properly.
+        </Callout>
+        <Callout TypeClass="warning">
+            Altho, the animation slide works... any other Motion UI doesn't work and you can let us know on github if you fix it.
+        </Callout>
+        <p>There are four plugin options you can set to change the default effects:</p>
+        <ul>
+            <li><Code>data-anim-in-from-left</Code>: transition to play when a slide comes in from the left.</li>
+            <li><Code>data-anim-in-from-right</Code>: transition to play when a slide comes in from the right.</li>
+            <li><Code>data-anim-out-to-left</Code>: transition to play when a slide comes out to the left.</li>
+            <li><Code>data-anim-out-to-right</Code>: transition to play when a slide comes out to the right.</li>
+        </ul>
+
+        <h3>Disable Animations</h3>
+        <p>Add <Code>data-use-m-u-i="false"</Code> to <Code>OrbitWrapper</Code>.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9yYml0V3JhcHBlciBkYXRhLXVzZS1tLXUtaT0iZmFsc2UiPgogICAgPE9yYml0Q29udHJvbHMgLz4KICAgIDxPcmJpdFNsaWRlcz4KICAgICAgICA8T3JiaXRTbGlkZSBJc0RlZmF1bHQ9InRydWUiPgogICAgICAgICAgICA8ZmlndXJlIGNsYXNzPSJvcmJpdC1maWd1cmUiPgogICAgICAgICAgICAgICAgPGltZyBjbGFzcz0ib3JiaXQtaW1hZ2UiIHNyYz0iaHR0cHM6Ly9nZXQuZm91bmRhdGlvbi9zaXRlcy9kb2NzL2Fzc2V0cy9pbWcvb3JiaXQvMDEuanBnIiBhbHQ9IlNwYWNlIj4KICAgICAgICAgICAgICAgIDxmaWdjYXB0aW9uIGNsYXNzPSJvcmJpdC1jYXB0aW9uIj5TcGFjZSwgdGhlIGZpbmFsIGZyb250aWVyLjwvZmlnY2FwdGlvbj4KICAgICAgICAgICAgPC9maWd1cmU+CiAgICAgICAgPC9PcmJpdFNsaWRlPgogICAgICAgIDxPcmJpdFNsaWRlPgogICAgICAgICAgICA8ZmlndXJlIGNsYXNzPSJvcmJpdC1maWd1cmUiPgogICAgICAgICAgICAgICAgPGltZyBjbGFzcz0ib3JiaXQtaW1hZ2UiIHNyYz0iaHR0cHM6Ly9nZXQuZm91bmRhdGlvbi9zaXRlcy9kb2NzL2Fzc2V0cy9pbWcvb3JiaXQvMDIuanBnIiBhbHQ9IlNwYWNlIj4KICAgICAgICAgICAgICAgIDxmaWdjYXB0aW9uIGNsYXNzPSJvcmJpdC1jYXB0aW9uIj5TcGFjZSwgdGhlIGZpbmFsIGZyb250aWVyLjwvZmlnY2FwdGlvbj4KICAgICAgICAgICAgPC9maWd1cmU+CiAgICAgICAgPC9PcmJpdFNsaWRlPgogICAgPC9PcmJpdFNsaWRlcz4KICAgIDxPcmJpdEJ1bGxldHM+CiAgICAgICAgPE9yYml0QnVsbGV0IEluZGV4PSIwIiBJc0FjdGl2ZT0idHJ1ZSIgLz4KICAgICAgICA8T3JiaXRCdWxsZXQgSW5kZXg9IjEiIC8+CiAgICA8L09yYml0QnVsbGV0cz4KPC9PcmJpdFdyYXBwZXI+" />
+
+        <OrbitWrapper data-use-m-u-i="false">
+            <OrbitControls />
+            <OrbitSlides>
+                <OrbitSlide IsDefault="true">
+                    <figure class="orbit-figure">
+                        <img class="orbit-image" src="https://get.foundation/sites/docs/assets/img/orbit/01.jpg" alt="Space">
+                        <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+                    </figure>
+                </OrbitSlide>
+                <OrbitSlide>
+                    <figure class="orbit-figure">
+                        <img class="orbit-image" src="https://get.foundation/sites/docs/assets/img/orbit/02.jpg" alt="Space">
+                        <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+                    </figure>
+                </OrbitSlide>
+            </OrbitSlides>
+            <OrbitBullets>
+                <OrbitBullet Index="0" IsActive="true" />
+                <OrbitBullet Index="1" />
+            </OrbitBullets>
+        </OrbitWrapper>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 

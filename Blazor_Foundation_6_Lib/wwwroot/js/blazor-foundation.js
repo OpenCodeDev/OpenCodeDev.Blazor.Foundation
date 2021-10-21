@@ -230,6 +230,15 @@ function DrilldownRegister(element, options) {
     window.DrilldownList.push(new Foundation.Drilldown($(`#${element}`), optionsCanvas));
 }
 
+function OrbitRegister(element, options) {
+    if (typeof window.OrbitList == 'undefined') {
+        window.OrbitList = [];
+    }
+
+    let optionsCanvas = options == null ? {} : JSON.parse(options);
+    window.OrbitList.push(new Foundation.Orbit($(`#${element}`), optionsCanvas));
+}
+
 function AccordionMenuRegister(element, options) {
     if (typeof window.AccordionMenuList == 'undefined') {
         window.AccordionMenuList = [];
