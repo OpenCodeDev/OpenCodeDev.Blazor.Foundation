@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
     <RepositoryType>Open Source</RepositoryType>
     <PackageTags>.net6, extension methods and services for Blazor Foundation.</PackageTags>
-    <Description>Extensions methods and some extra services for Blazor Foundation.</Description>
+    <Description>blazor-foundation, blazor, extra-services, extension-methods, .net6</Description>
     <Copyright>OpenCodeDev © 2021</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en</NeutralLanguage>

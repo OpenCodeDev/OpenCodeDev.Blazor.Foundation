@@ -12,3 +12,12 @@ input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
     opacity: 0.25;
 }
 
+
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea{
+    border-radius: var(--form-input-border-radius);
+    font-size: var(--form-input-font-size);
+    border: var(--form-input-border);
+    background-color: var(--form-input-background-color);
+    color: var(--form-input-color);
+}

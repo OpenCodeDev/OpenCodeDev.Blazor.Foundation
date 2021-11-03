@@ -6,16 +6,15 @@
            "savePath": "/../Blazor_Foundation_6_Lib/wwwroot/css"
        },
        {
-           "extensionName": ".min.css",
            "format": "compressed",
+           "extensionName": ".min.css",
            "savePath": "/../Blazor_Foundation_6_Lib/wwwroot/css"
        }
    ],
    "liveSassCompile.settings.excludeList": [
       "**/node_modules/**",
       "Blazor_Foundation/**",
-      ".vscode/**",
-      "init_bf.scss"
+      ".vscode/**"
    ],
    "liveSassCompile.settings.generateMap": true
 }

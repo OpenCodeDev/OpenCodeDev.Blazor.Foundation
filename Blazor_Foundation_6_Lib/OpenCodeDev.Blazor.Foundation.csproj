@@ -21,12 +21,12 @@
     <PackageReleaseNotes>See https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</PackageReleaseNotes>
     <PackageId>OpenCodeDev.Blazor.Foundation</PackageId>
     <AssemblyVersion>3.0.0</AssemblyVersion>
-    <Version>3.0.1</Version>
+    <Version>3.0.0</Version>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
     <RepositoryType>Open Source</RepositoryType>
-    <PackageTags>foundation, blazor, c#, zurb, jquery, HTML, Javascript, MVC, CSS, RESPONSIVE, mobile-first-framework, .net5</PackageTags>
+    <PackageTags>zurb-foundation, blazor, c#, RESPONSIVE, mobile-first, blazor-foundation, .net6</PackageTags>
     <FileVersion>3.0.0</FileVersion>
     <AssemblyName>OpenCodeDev.Blazor.Foundation</AssemblyName>
     <RootNamespace>OpenCodeDev.Blazor.Foundation</RootNamespace>
