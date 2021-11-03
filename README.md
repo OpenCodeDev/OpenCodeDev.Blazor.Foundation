@@ -21,16 +21,18 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 * [Zurb Foundation 6 Docs](https://get.foundation/sites/docs/)
 
 # Dependencies
-- Microsoft.AspNetCore.Components
-- Microsoft.AspNetCore.Components.Web
-- [Newtonsoft.Json (>= 12.0.3)](https://www.nuget.org/packages/Newtonsoft.Json/)
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) (We try to limit dependencies.)
 
-# Compatibility
-- .NET 5 (Expect to Upgrade to .NET 6.0 LTS)
+# .NET Compatibility
+- .NET 6 LTS
+- .NET 5 (Expected to  be  removed in 3.1)
 - .NET Standard 2.1 (No Support after 2022)
 - .NET CORE 3.1 (Limited Support after 2022)
+
+# Blazor Compatibility
 - Blazor WASM
-- Blazor Server (should be carefully design due to signal IR)
+- Blazor Server
+- Blazor (Native, Working on It...)
 
 # Get Started
 Get Started by Visiting the Official [Documentation](https://foundation.opencodedev.com/) of Blazor Foundation.
