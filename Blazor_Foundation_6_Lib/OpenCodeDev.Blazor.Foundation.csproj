@@ -21,7 +21,7 @@
     <PackageReleaseNotes>See https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</PackageReleaseNotes>
     <PackageId>OpenCodeDev.Blazor.Foundation</PackageId>
     <AssemblyVersion>3.0.0</AssemblyVersion>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
@@ -32,9 +32,6 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\..\packages\Blazor_Foundation_6</OutputPath>
-  </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="_SASS\**" />

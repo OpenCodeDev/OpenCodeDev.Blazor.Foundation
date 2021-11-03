@@ -8,7 +8,7 @@
     <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
     <RepositoryType>Open Source</RepositoryType>
-    <PackageTags>extensions, foundation, blazor, c#, zurb, jquery, HTML, Javascript, MVC, CSS, RESPONSIVE, mobile-first-framework, .net6</PackageTags>
+    <PackageTags>.net6, extension methods and services for Blazor Foundation.</PackageTags>
     <Description>Extensions methods and some extra services for Blazor Foundation.</Description>
     <Copyright>OpenCodeDev © 2021</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
