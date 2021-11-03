@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1;netstandard2.0;net6.0</TargetFrameworks>
     <RazorLangVersion Condition=" '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netstandard2.1' ">3.0</RazorLangVersion>
     <Authors>OpenCodeDev</Authors>
     <Company>OpenCodeDev</Company>
@@ -73,14 +73,21 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.13" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
-  
 
-<ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
-  <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="1.0.3" />
-  <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.9" />
-  <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.9" />
-  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-</ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="1.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.2.21480.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.2.21480.10" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
   
 
  
