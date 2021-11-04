@@ -21,7 +21,7 @@
     <PackageReleaseNotes>See https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</PackageReleaseNotes>
     <PackageId>OpenCodeDev.Blazor.Foundation</PackageId>
     <AssemblyVersion>3.0.0</AssemblyVersion>
-    <Version>3.0.0-rc.1.2.2</Version>
+    <Version>3.0.0-rc.1.2.3</Version>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
