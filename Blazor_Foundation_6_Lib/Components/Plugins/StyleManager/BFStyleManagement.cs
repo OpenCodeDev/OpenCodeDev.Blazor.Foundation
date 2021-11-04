@@ -80,20 +80,14 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--body-bg-color", "var(--white-color)", "Default body background color.");
 
 
-            Set("--ms-panel-bg", "var(--white-smoke-color)", "Menu System panel background.");
-            Set("--ms-panel-ft-color", "var(--white-color)", "Menu System panel font color.");
-
-            Set("--ms-top-bar-ft-color", "var(--black-color)", "Menu System top bar font color.");
-            Set("--ms-panel-close-color", "var(--blackish-color)", "Menu System panel close button color.");
-            Set("--ms-panel-link-ft-color", "var(--black-color)", "Menu System link color.");
-            Set("--ms-panel-link-ft-color-active", "var(--primary-color)", "Menu System link color active.");
-
             // Navigation Top Bar
             Set("--top-bar-ft-color", "var(--white-color)", "Top bar font color.");
             Set("--top-bar-bg-color", "var(--black-color)", "Top bar background color.");
             Set("--top-bar-link--active-ft-color", "var(--white-color)", "Top Bar Active Link Font Color.");
             Set("--top-bar-link-hover-ft-color", "var(--white-color)", "Top Bar Hover Font Color.");
             Set("--top-bar-link-ft-color", "var(--white-color)", "Top Bar Link Font Color.");
+
+            Set("--off-canvas-bg-color", "var(--white-smoke-color)", "Off-Canvas backgound color.");
 
             Set("--form-input-border-radius", "0.2em", "Input border radius (text, textarea, email)...");
             Set("--form-input-font-size", "1rem", "Input font size.");
