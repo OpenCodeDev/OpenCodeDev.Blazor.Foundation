@@ -8509,6 +8509,7 @@ textarea {
 
 .title-bar {
   background: var(--top-bar-bg-color);
+  color: var(--body-ft-color);
 }
 
 body {

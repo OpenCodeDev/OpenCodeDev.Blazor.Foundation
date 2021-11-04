@@ -88,14 +88,19 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--ms-panel-link-ft-color", "var(--black-color)", "Menu System link color.");
             Set("--ms-panel-link-ft-color-active", "var(--primary-color)", "Menu System link color active.");
 
-            // Standard Form Inputs
+            // Navigation Top Bar
+            Set("--top-bar-ft-color", "var(--white-color)", "Top bar font color.");
+            Set("--top-bar-bg-color", "var(--black-color)", "Top bar background color.");
+            Set("--top-bar-link--active-ft-color", "var(--white-color)", "Top Bar Active Link Font Color.");
+            Set("--top-bar-link-hover-ft-color", "var(--white-color)", "Top Bar Hover Font Color.");
+            Set("--top-bar-link-ft-color", "var(--white-color)", "Top Bar Link Font Color.");
+
             Set("--form-input-border-radius", "0.2em", "Input border radius (text, textarea, email)...");
             Set("--form-input-font-size", "1rem", "Input font size.");
             Set("--form-input-border", "1px solid #cacaca", "Input border style.");
             Set("--form-input-background-color", "var(--white-color)", "Input background color.");
             Set("--form-input-color", "var(--blackish-color)", "Input font color.");
 
-            // Highlight CS
             Set("--hljs-header-title-ft-color", "var(--white-color)", "Code Highlighter (HighlightCS) font color of header's title.");
             Set("--hljs-header-copy-ft-color", "var(--white-color)", "Code Highlighter (HighlightCS) font color of header's copy button.");
             Set("--hljs-header-bg-color", "var(--dark-gray-color)", "Code Highlighter (HighlightCS) background color of header.");
