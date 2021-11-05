@@ -269,6 +269,14 @@ function TooltipRegister(element, options) {
 function StickyRegister(element, options) {
     if (typeof window.StickyList == 'undefined') {
         window.StickyList = [];
+        // ReCalculate on Window Resize
+        function reportWindowSize() {
+            // Recalculate Sticky Sizes.
+            if (typeof window.StickyList != 'undefined') {
+                window.StickyList.forEach(element => $(element.$element).foundation('_calc', true));
+            }
+        }
+        window.onresize = reportWindowSize;
     }
 
     let optionsCanvas = options == null ? {} : JSON.parse(options);
