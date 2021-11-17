@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/License-MIT-blueviolet)
 ![](https://img.shields.io/badge/Foundation-6.6.3-blue)
-![](https://img.shields.io/nuget/v/Fl.Blazor.Foundation?label=Latest)
-![](https://img.shields.io/nuget/dt/Fl.Blazor.Foundation?label=Downloads)
+![](https://img.shields.io/nuget/v/OpenCodeDev.Blazor.Foundation?label=Latest)
+![](https://img.shields.io/nuget/dt/OpenCodeDev.Blazor.Foundation?label=Downloads)
 
 # Introduction 
 This project is a public package published by FlawlessLoop Studios, Inc. (Prior Version 3) and OpenCodeDev (Since Version 3) under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C# with Extra Added Side-Features (We do not Edit or Change Foundation 6 JS and CSS to ensure full compatibility with official repos).
