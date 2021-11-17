@@ -21,3 +21,15 @@ input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
     background-color: var(--form-input-background-color);
     color: var(--form-input-color);
 }
+
+.slider-fill{
+ background-color: var(--slider-filling-bg-color);
+}
+
+.slider{
+ background-color: var(--slider-bg-color);
+}
+
+.slider-handle{
+ background-color: var(--slider-handle-bg-color);
+}
