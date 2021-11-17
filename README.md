@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/License-MIT-blueviolet)
-![](https://img.shields.io/badge/Foundation-6.6.3-blue)
+![](https://img.shields.io/badge/Foundation-6.7.4-blue)
 ![](https://img.shields.io/nuget/v/OpenCodeDev.Blazor.Foundation?label=Latest)
 ![](https://img.shields.io/nuget/dt/OpenCodeDev.Blazor.Foundation?label=Downloads)
 
