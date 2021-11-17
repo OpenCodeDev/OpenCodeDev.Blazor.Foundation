@@ -155,6 +155,18 @@ input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
   color: var(--form-input-color);
 }
 
+.slider-fill {
+  background-color: var(--slider-filling-bg-color);
+}
+
+.slider {
+  background-color: var(--slider-bg-color);
+}
+
+.slider-handle {
+  background-color: var(--slider-handle-bg-color);
+}
+
 .menu.icon-top li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
