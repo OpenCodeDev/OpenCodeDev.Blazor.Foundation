@@ -88,7 +88,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 
         public static Dictionary<string, SingleSlider> GlobalSliderList = new Dictionary<string, SingleSlider>();
 
-
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IDictionary<string, object> AdditionalAttributes { get; set; }
 
         protected override void OnInitialized()
         {

@@ -9125,6 +9125,7 @@ textarea {
 }
 
 .slider-handle {
+  border-radius: var(--slider-handle-border-radius);
   background-color: var(--slider-handle-bg-color);
 }
 

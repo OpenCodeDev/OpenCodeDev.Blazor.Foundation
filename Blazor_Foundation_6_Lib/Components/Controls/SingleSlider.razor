@@ -11,18 +11,12 @@
                        $"{(IsVertical && !Class.Contains("vertical") ? "vertical" : "")} " +
                        $"{Class}")"
      data-slider data-initial-start="@Value.ToString()" data-vertical="@IsVertical.ToString().ToLower()"
-     data-start="@Min.ToString()" data-step="@Step.ToString()" data-end="@Max.ToString()">
+     data-start="@Min.ToString()" data-step="@Step.ToString()" data-end="@Max.ToString()" @attributes="AdditionalAttributes">
 
     <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="@($"{Id}-input")"></span>
     <span class="slider-fill" data-slider-fill></span>
-
 </div>
-@if (!HasExtInput)
-{
-
-    <input type="hidden" id="@($"{Id}-input")" @bind-value="@Value" />
-
-}
+@if (!HasExtInput) { <input type="hidden" id="@($"{Id}-input")" @bind="@Value" @bind:event="oninput" /> }
 @code {
 
 }

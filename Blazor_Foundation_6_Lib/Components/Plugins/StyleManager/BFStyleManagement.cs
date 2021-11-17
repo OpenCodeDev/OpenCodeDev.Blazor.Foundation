@@ -74,6 +74,11 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--switch-paddle-border-radius", "var(--global-border-radius)", "Switch Paddle Border Radius");
             Set("--switch-bg-color", "var(--primary-color)", "Switch Background Color");
 
+            Set("--slider-filling-bg-color", "var(--medium-gray-color)", "Slider Filling Background Color");
+            Set("--slider-bg-color", "var(--light-gray-color)", "Slider Background Color");
+            Set("--slider-handle-bg-color", "var(--primary-color)", "Slider Handler Background Color");
+            Set("--slider-handle-border-radius", "var(--global-border-radius)", "Slider Handler Border Radius");
+
             Set("--link-ft-color", "var(--primary-color)", "Color of <a> font link.");
 
             Set("--body-ft-color", "var(--black-color)", "Default body text color.");
