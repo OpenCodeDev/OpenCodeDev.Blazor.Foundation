@@ -54,42 +54,45 @@ Note 2: Blazor Foundation is focus on Blazor C# framework for SPA, PWA and Nativ
 
 ### Q4
 - Make Blazor Foundation 6 Version 3 Production-Ready.
-- This Q will be focus on bug fixing and bug hunting.
-- Release the Documentation SPA utilizing 100% Blazor Foundation 6.
+- Polish, Hunt and Fix Bugs.
+- Release the Documentation Built on Blazor Foundation 6.
+- Add Support for .NET 6 as LTS.
+- Separate Razor C# Code to Razor Partial C#.
 - Release Blazor Foundation Version 3.
-
-<br/>
 
 ## 2022
 ### Q1
-- Add Support for .NET 6 as LTS.
-- Separate Razor C# Code to Razor Partial C#.
-- Add Component for Dependencies Loading.
+- We'll See
 ### Q2
-- Make Material Design Icons a Plugin (Network Performance, Can be Enabled)
-- Implement Default Icons SVGs (Load Performance, Can be Disabled)
-### Q3
 - Make external library enabled/disabled easily with footer.
-### Q4
+- Integrate Chart Components.
+### Q3
 - Publish series of free training videos.
 - Publish first template made with Blazor Foundation 6
 - Update documentation SPA to add videos linked to relevent parts.
+### Q4
+- Webpack BF6 JS with Foundation 6 JS. (Performance)
 
-
-<br/>
 
 ## 2023
 ### Q1
 - .NET Standard 2.1 is no longer supported.
 - .NET Core 3.1 support will be no longer provided. 
-- Completely Fork Zurb's Foundation 6 (Depending on Budget)
+- Fork Zurb's Foundation 6 to Make Foundation 7.
 ### Q2
-- Integrate UmbrellaJS in Foundation 6.
+- Integrate UmbrellaJS in Foundation 7.
+- Dropdown: Follow Anchor Width.
+- Dropdown: Allow Manual Trigger. (Ignoring data-open/toggle)
+- Dropdown: Resize on Window Resize.
+- Sticky: Resize on Window Resize (Natively)
+- Sticky: Remove Resize on Window Resize (Hotfix/Workaround).
+- 
+- 
 
 ### Q3
 - Improve Foundation 6 CSS for BF. (Performance)
 ### Q4
-- Trade JQuery for UmbrellaJS in Foundation 6 (Performance).
+- Replace JQuery with UmbrellaJS in Foundation 7 (Performance).
 
 <br/>
 
