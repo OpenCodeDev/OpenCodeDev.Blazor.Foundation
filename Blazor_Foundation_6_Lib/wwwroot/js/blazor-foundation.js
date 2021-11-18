@@ -320,3 +320,18 @@ function AbideRegister(element, options) {
 }
 
 
+function LocalStorageSet(key, value) {
+    localStorage.setItem(key, value);
+}
+
+function LocalStorageGet(key) {
+    return localStorage.getItem(key);
+}
+
+function LocalStorageRemove(key) {
+    localStorage.removeItem(key);
+}
+
+function LocalStorageClear() {
+    localStorage.clear();
+}

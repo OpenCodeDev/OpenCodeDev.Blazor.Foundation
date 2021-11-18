@@ -21,7 +21,7 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 * [Zurb Foundation 6 Docs](https://get.foundation/sites/docs/)
 
 # Dependencies
-- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) (We try to limit dependencies.)
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
 
 # .NET Compatibility
 - .NET 6 LTS

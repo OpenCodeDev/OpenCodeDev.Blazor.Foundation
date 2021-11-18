@@ -13,7 +13,7 @@
     <Copyright>OpenCodeDev © 2021</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>1.1.0-rc.1.5</Version>
+    <Version>1.1.0-rc.1.7</Version>
     <AssemblyVersion>1.0.4</AssemblyVersion>
     <FileVersion>1.0.4.0</FileVersion>
     <PackageIcon>icon-extension.png</PackageIcon>
