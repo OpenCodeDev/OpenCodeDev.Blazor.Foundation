@@ -248,6 +248,15 @@ function AccordionMenuRegister(element, options) {
     window.AccordionMenuList.push(new Foundation.AccordionMenu($(`#${element}`), optionsCanvas));
 }
 
+function TogglerRegister(element, options) {
+    if (typeof window.TogglerList == 'undefined') {
+        window.TogglerList = [];
+    }
+
+    let optionsCanvas = options == null ? {} : JSON.parse(options);
+    window.TogglerList.push(new Foundation.Toggler($(`#${element}`), optionsCanvas));
+}
+
 function DropdownMenuRegister(element, options) {
     if (typeof window.DropdownMenuList == 'undefined') {
         window.DropdownMenuList = [];

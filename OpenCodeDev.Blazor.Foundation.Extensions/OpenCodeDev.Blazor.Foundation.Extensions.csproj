@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1;netstandard2.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
     <Authors>OpenCodeDev</Authors>
     <Product>Blazor Foundation 6 - Extensions</Product>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -13,28 +13,17 @@
     <Copyright>OpenCodeDev © 2021</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>1.1.0-rc.1.7</Version>
-    <AssemblyVersion>1.0.4</AssemblyVersion>
-    <FileVersion>1.0.4.0</FileVersion>
+    <Version>3.0.0</Version>
+    <AssemblyVersion>3.0.0</AssemblyVersion>
+    <FileVersion>3.0.0</FileVersion>
     <PackageIcon>icon-extension.png</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>
-
-  
-  
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' or '$(TargetFramework)' == 'netstandard2.1' or '$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.13" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.13" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.9" />
-  </ItemGroup>
   
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.*" />
   </ItemGroup>
   
   <ItemGroup>
@@ -47,5 +36,5 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-  
+
 </Project>

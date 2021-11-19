@@ -5,6 +5,41 @@ It can be used on its own if you are not using services requiring BF.
 
 # What's inside?
 ## Services
+### Localizasion Helper
+Helps to use localization to easily switch language.
+```
+using OpenCodeDev.Blazor.Foundation.Extensions;
+WebAssemblyHost host = builder.Build();
+await host.LoadCulture(); // Load Default 'en' or saved in localStorage as 'culture'
+await host.RunAsync();
+```
+
+Change language like so...
+```
+	@inject NavigationManager Navigate;
+	await LocalStorage.Set("culture", 'en'); // Set new language in localstorage.
+	Navigate.NavigateTo(Navigate.Uri, forceLoad: true);
+```
+### LocalStorage
+Quick helper tool to access and set localstorage objects.
+
+```
+builder.Services.AddBFLocalStorage(); // Add LocalStorage Service
+```
+_Imports.razor
+```
+@using OpenCodeDev.Blazor.Foundation.Extensions.LocalStorage;
+@inject ILocalStorage LocalStorage;
+```
+CRUD functions
+```
+await LocalStorage.Set("culture", code); // Set a value
+await LocalStorage.Get("culture"); // Get value for given key
+await LocalStorage.Remove("culture"); // Remove Specific Item
+await LocalStorage.Clear(); // Clear All Storage
+```
+
+
 ### Clipboard Service (Requires Blazor Foundation's JS)
 Copy and Paste text easily across your app
 

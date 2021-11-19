@@ -22,12 +22,10 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 
 # Dependencies
 - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
+- [OpenCodeDev.Blazor.Foundation.Extensions](https://www.nuget.org/packages/OpenCodeDev.Blazor.Foundation.Extensions/)
 
 # .NET Compatibility
 - .NET 6 LTS
-- .NET 5
-- .NET Standard 2.1
-- .NET Core 3.1
 
 # Blazor Compatibility
 - Blazor WASM

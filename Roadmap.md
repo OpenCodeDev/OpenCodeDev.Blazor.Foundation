@@ -58,6 +58,8 @@ Note 2: Blazor Foundation is focus on Blazor C# framework for SPA, PWA and Nativ
 - Release the Documentation Built on Blazor Foundation 6.
 - Add Support for .NET 6 as LTS.
 - Separate Razor C# Code to Razor Partial C#.
+- .NET Standard 2.1 support removed.
+- .NET Core 3.1 support removed. 
 - Release Blazor Foundation Version 3.
 
 ## 2022
@@ -76,25 +78,19 @@ Note 2: Blazor Foundation is focus on Blazor C# framework for SPA, PWA and Nativ
 
 ## 2023
 ### Q1
-- .NET Standard 2.1 is no longer supported.
-- .NET Core 3.1 support will be no longer provided. 
 - Fork Zurb's Foundation 6 to Make Foundation 7.
 ### Q2
 - Integrate UmbrellaJS in Foundation 7.
 - Dropdown: Follow Anchor Width.
-- Dropdown: Allow Manual Trigger. (Ignoring data-open/toggle)
+- Dropdown: Allow Manual Trigger. (Ignoring data-open/toggle).
 - Dropdown: Resize on Window Resize.
-- Sticky: Resize on Window Resize (Natively)
+- Sticky: Resize on Window Resize (Natively).
 - Sticky: Remove Resize on Window Resize (Hotfix/Workaround).
-- 
-- 
 
 ### Q3
-- Improve Foundation 6 CSS for BF. (Performance)
+- Improve Foundation 6 CSS for BF. (Performance).
 ### Q4
 - Replace JQuery with UmbrellaJS in Foundation 7 (Performance).
-
-<br/>
 
 ## 2024
 ### Q1
@@ -104,12 +100,9 @@ Note 2: Blazor Foundation is focus on Blazor C# framework for SPA, PWA and Nativ
 ### Q3
 ### Q4
 - Release of Blazor Foundation Version 4 LTS (3-Years)
-
-<br/>
-
 ## 2025
 ### Q1
-- End of support for Blazor Foundation 6 LTS
+- End of support for Blazor Foundation 6 Version 3 LTS
 - Release of a guide to migrate to BF4
 ### Q2
 ### Q3
