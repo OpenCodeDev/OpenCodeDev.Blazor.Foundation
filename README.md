@@ -16,7 +16,7 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 
 
 # Links
-* [Blazor Foundation Docs](https://foundation.opencodedev.com/doc)
+* [Blazor Foundation Docs](https://bf.opencodedev.com/)
 
 * [Zurb Foundation 6 Docs](https://get.foundation/sites/docs/)
 
