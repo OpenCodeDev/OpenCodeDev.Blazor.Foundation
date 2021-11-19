@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;.net5.0;.net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
     <RazorLangVersion>3.0</RazorLangVersion>
     <PackageId>OpenCodeDev.Blazor.Foundation.Doc.Core</PackageId>
     <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Core</AssemblyName>
@@ -17,26 +17,15 @@
 
 
   <ItemGroup>
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="1.*" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="1.*" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.*" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.*" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.0" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation" Version="3.0.0" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
-  </ItemGroup>
 
 
   <ItemGroup>
