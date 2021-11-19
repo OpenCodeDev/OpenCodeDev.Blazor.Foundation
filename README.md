@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/License-MIT-blueviolet)
-![](https://img.shields.io/badge/Foundation-6.6.3-blue)
-![](https://img.shields.io/nuget/v/Fl.Blazor.Foundation?label=Latest)
-![](https://img.shields.io/nuget/dt/Fl.Blazor.Foundation?label=Downloads)
+![](https://img.shields.io/badge/Foundation-6.7.4-blue)
+![](https://img.shields.io/nuget/v/OpenCodeDev.Blazor.Foundation?label=Latest)
+![](https://img.shields.io/nuget/dt/OpenCodeDev.Blazor.Foundation?label=Downloads)
 
 # Introduction 
 This project is a public package published by FlawlessLoop Studios, Inc. (Prior Version 3) and OpenCodeDev (Since Version 3) under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C# with Extra Added Side-Features (We do not Edit or Change Foundation 6 JS and CSS to ensure full compatibility with official repos).
@@ -21,16 +21,16 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 * [Zurb Foundation 6 Docs](https://get.foundation/sites/docs/)
 
 # Dependencies
-- Microsoft.AspNetCore.Components
-- Microsoft.AspNetCore.Components.Web
-- [Newtonsoft.Json (>= 12.0.3)](https://www.nuget.org/packages/Newtonsoft.Json/)
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
+- [OpenCodeDev.Blazor.Foundation.Extensions](https://www.nuget.org/packages/OpenCodeDev.Blazor.Foundation.Extensions/)
 
-# Compatibility
-- .NET 5 (Expect to Upgrade to .NET 6.0 LTS)
-- .NET Standard 2.1 (No Support after 2022)
-- .NET CORE 3.1 (Limited Support after 2022)
+# .NET Compatibility
+- .NET 6 LTS
+
+# Blazor Compatibility
 - Blazor WASM
-- Blazor Server (should be carefully design due to signal IR)
-- 
+- Blazor Server
+- Blazor (Native, Working on It...)
+
 # Get Started
-Get Started by Visiting the Official [Documentation](https://foundation.opencodedev.com/) of Blazor Foundation.
+Get Started by Visiting the Official [Documentation](https://bf-doc.opencodedev.com/) of Blazor Foundation.

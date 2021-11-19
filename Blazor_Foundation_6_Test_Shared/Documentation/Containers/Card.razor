@@ -1,6 +1,167 @@
 ﻿@page "/card";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Card</h2>
+        <p>Cards are a popular and flexible UI component.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>
+           You can put any kind of content inside. Make sure you wrap your content in a <Code Content="PENhcmRTZWN0aW9uPg=="></Code> Component in order to achieve the traditional card look.
+        </p>
+        <p>
+            A card container has no padding, allowing you to place full-bleed images inside. Use the <Code Content="PENhcmREaXZpZGVyPg=="></Code> and <Code Content="PENhcmRTZWN0aW9uPg=="></Code> components to sub-divide a card.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PENhcmQgc3R5bGU9IndpZHRoOiAzMDBweDsiPgogIDxDYXJkRGl2aWRlcj4KICAgIFRoaXMgaXMgYSBoZWFkZXIKICA8L0NhcmREaXZpZGVyPgogIDxpbWcgc3JjPSJhc3NldHMvaW1nL2dlbmVyaWMvcmVjdGFuZ2xlLTEuanBnIj4KICA8Q2FyZFNlY3Rpb24+CiAgICA8aDQ+VGhpcyBpcyBhIGNhcmQuPC9oND4KICAgIDxwPkl0IGhhcyBhbiBlYXN5IHRvIG92ZXJyaWRlIHZpc3VhbCBzdHlsZSwgYW5kIGlzIGFwcHJvcHJpYXRlbHkgc3ViZHVlZC48L3A+CiAgPC9DYXJkU2VjdGlvbj4KPC9DYXJkPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Card style="width: 300px;">
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.CardDivider>
+                This is a header
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.CardDivider>
+            <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                <h4>This is a card.</h4>
+                <p>It has an easy to override visual style, and is appropriately subdued.</p>
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PENhcmRJbWFnZT4KICA8aW1nIHNyYz0iYXNzZXRzL2ltZy9nZW5lcmljL3JlY3RhbmdsZS0xLmpwZyI+CjwvQ2FyZEltYWdlPg==" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Card Divider</h2>
+        <p>You can also include a <Code Content="PENhcmREaXZpZGVyPg=="></Code> tag as a title, footer or to break up content.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PENhcmQgc3R5bGU9IndpZHRoOiAzMDBweDsiPgogIDxDYXJkRGl2aWRlcj4KICAgIDxoND5JJ20gZmVhdHVyZWQ8L2g0PgogIDwvQ2FyZERpdmlkZXI+CiAgPGltZyBzcmM9ImFzc2V0cy9pbWcvZ2VuZXJpYy9yZWN0YW5nbGUtMS5qcGciPgogIDxDYXJkU2VjdGlvbj4KICAgIDxwPlRoaXMgY2FyZCBtYWtlcyB1c2Ugb2YgdGhlIDxDb2RlPkNhcmREaXZpZGVyPC9Db2RlPi48L3A+CiAgPC9DYXJkU2VjdGlvbj4KPC9DYXJkPg==" />
+        <OpenCodeDev.Blazor.Foundation.Components.Containers.Card style="width: 300px;">
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.CardDivider>
+                <h4>I'm featured</h4>
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.CardDivider>
+            <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+            <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                <p>This card makes use of the <Code>CardDivider</Code> element.</p>
+            </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+        </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Images</h2>
+        <p>Images play nicely with cards. Simply include one outside of the <Code Content="PENhcmRTZWN0aW9uPg=="></Code> element to span nicely to the edges. Or move the image inside the <Code Content="PENhcmRTZWN0aW9uPg=="></Code> to have padding around the image.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PCEtLSBpbWFnZSBoYXMgbm8gcGFkZGluZyAtLT4KPENhcmQ+CiAgPGltZyBzcmM9ImFzc2V0cy9pbWcvZ2VuZXJpYy9yZWN0YW5nbGUtMS5qcGciPgogIDxDYXJkU2VjdGlvbj4KICAgIDxwPlRoaXMgaXMgYSBzaW1wbGUgY2FyZCB3aXRoIGFuIGltYWdlLjwvcD4KICA8L0NhcmRTZWN0aW9uPgo8L0NhcmQ+Cgo8IS0tIGltYWdlIGhhcyBwYWRkaW5nIC0tPgo8Q2FyZD4KICA8Q2FyZFNlY3Rpb24+CiAgICA8aW1nIHNyYz0iYXNzZXRzL2ltZy9nZW5lcmljL3JlY3RhbmdsZS0xLmpwZyI+CiAgPC9DYXJkU2VjdGlvbj4KICA8Q2FyZFNlY3Rpb24+CiAgICA8cD5UaGlzIGlzIGEgc2ltcGxlIGNhcmQgd2l0aCBhbiBpbWFnZSBpbnNpZGUgYSA8Q29kZT5DYXJkU2VjdGlvbjwvQ29kZT4uPC9wPgogIDwvQ2FyZFNlY3Rpb24+CjwvQ2FyZD4=" />
+        <GridX>
+            <Cell Size="small-6" style="padding: 0px 10px 0px 10px">
+                <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                    <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                        <p>This is a simple card with an image.</p>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+            </Cell>
+            <Cell Size="small-6" style="padding: 0px 10px 0px 0px">
+                <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                        <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                        <p>This is a simple card with an image inside a <Code>CardSection</Code>.</p>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+            </Cell>
+        </GridX>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PENhcmQ+CiAgPENhcmRTZWN0aW9uPgogICAgPHA+SW1hZ2VzIHdvcmsganVzdCBmaW5lIGJlbG93IHRoZSBjb250ZW50IHRvbyE8L3A+CiAgPC9DYXJkU2VjdGlvbj4KICA8aW1nIHNyYz0iYXNzZXRzL2ltZy9nZW5lcmljL3JlY3RhbmdsZS0xLmpwZyI+CjwvQ2FyZD4=" />
+        <GridX>
+            <Cell Size="small-6">
+                <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                        <p>Images work just fine below the content too!.</p>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                    <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+            </Cell>
+        </GridX>
 
-<h3>Card</h3>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Sizing</h2>
+        <p>You can either set the width of cards with custom css or add them into the Blazor Foundation grid</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEdyaWRDb250YWluZXI+CiAgPEdyaWRYIENsYXNzPSJzbWFsbC11cC0yIG1lZGl1bS11cC0zIiBIb3Jpem9udGFsUGFkZGluZz0idHJ1ZSI+CiAgICA8Q2VsbD4KICAgICAgPENhcmQ+CiAgICAgICAgPGltZyBzcmM9ImFzc2V0cy9pbWcvZ2VuZXJpYy9yZWN0YW5nbGUtMS5qcGciPgogICAgICAgIDxDYXJkU2VjdGlvbj4KICAgICAgICA8aDQ+VGhpcyBpcyBhIHJvdyBvZiBjYXJkcy48L2g0PgogICAgICAgICAgPHA+VGhpcyByb3cgb2YgY2FyZHMgaXMgZW1iZWRkZWQgaW4gYW4gWC1ZIEJsb2NrIEdyaWQuPC9wPgogICAgICAgIDwvQ2FyZFNlY3Rpb24+CiAgICAgIDwvQ2FyZD4KICAgIDwvQ2VsbD4KICAgIDxDZWxsPgogICAgICA8Q2FyZD4KICAgICAgICA8aW1nIHNyYz0iYXNzZXRzL2ltZy9nZW5lcmljL3JlY3RhbmdsZS0xLmpwZyI+CiAgICAgICAgPENhcmRTZWN0aW9uPgogICAgICAgICAgPGg0PlRoaXMgaXMgYSBjYXJkLjwvaDQ+CiAgICAgICAgICA8cD5JdCBoYXMgYW4gZWFzeSB0byBvdmVycmlkZSB2aXN1YWwgc3R5bGUsIGFuZCBpcyBhcHByb3ByaWF0ZWx5IHN1YmR1ZWQuPC9wPgogICAgICAgIDwvQ2FyZFNlY3Rpb24+CiAgICAgIDwvQ2FyZD4KICAgIDwvQ2VsbD4KICAgIDxDZWxsPgogICAgICA8Q2FyZD4KICAgICAgICA8aW1nIHNyYz0iYXNzZXRzL2ltZy9nZW5lcmljL3JlY3RhbmdsZS0xLmpwZyI+CiAgICAgICAgPENhcmRTZWN0aW9uPgogICAgICAgICAgPGg0PlRoaXMgaXMgYSBjYXJkLjwvaDQ+CiAgICAgICAgICA8cD5JdCBoYXMgYW4gZWFzeSB0byBvdmVycmlkZSB2aXN1YWwgc3R5bGUsIGFuZCBpcyBhcHByb3ByaWF0ZWx5IHN1YmR1ZWQuPC9wPgogICAgICAgIDwvQ2FyZFNlY3Rpb24+CiAgICAgIDwvQ2FyZD4KICAgIDwvQ2VsbD4KICA8L0dyaWRYPgo8L0dyaWRDb250YWluZXI+CjxHcmlkWCBDbGFzcz0ic21hbGwtdXAtMiBtZWRpdW0tdXAtMyIgSG9yaXpvbnRhbFBhZGRpbmc9InRydWUiPgogIDxDZWxsPgogICAgPENhcmQ+CiAgICAgIDxpbWcgc3JjPSJhc3NldHMvaW1nL2dlbmVyaWMvcmVjdGFuZ2xlLTEuanBnIj4KICAgICAgPENhcmRTZWN0aW9uPgogICAgICAgIDxoND5UaGlzIGlzIGEgcm93IG9mIGNhcmRzLjwvaDQ+CiAgICAgICAgPHA+VGhpcyByb3cgb2YgY2FyZHMgaXMgZW1iZWRkZWQgaW4gYW4gRmxleCBCbG9jayBHcmlkLjwvcD4KICAgICAgPC9DYXJkU2VjdGlvbj4KICAgIDwvQ2FyZD4KICA8L0NlbGw+CiAgPENlbGw+CiAgICA8Q2FyZD4KICAgICAgPGltZyBzcmM9ImFzc2V0cy9pbWcvZ2VuZXJpYy9yZWN0YW5nbGUtMS5qcGciPgogICAgICA8Q2FyZFNlY3Rpb24+CiAgICAgICAgPGg0PlRoaXMgaXMgYSBjYXJkLjwvaDQ+CiAgICAgICAgPHA+SXQgaGFzIGFuIGVhc3kgdG8gb3ZlcnJpZGUgdmlzdWFsIHN0eWxlLCBhbmQgaXMgYXBwcm9wcmlhdGVseSBzdWJkdWVkLjwvcD4KICAgICAgPC9DYXJkU2VjdGlvbj4KICAgIDwvQ2FyZD4KICA8L0NlbGw+CiAgPENlbGw+CiAgICA8Q2FyZD4KICAgICAgPGltZyBzcmM9ImFzc2V0cy9pbWcvZ2VuZXJpYy9yZWN0YW5nbGUtMS5qcGciPgogICAgICA8Q2FyZFNlY3Rpb24+CiAgICAgICAgPGg0PlRoaXMgaXMgYSBjYXJkLjwvaDQ+CiAgICAgICAgPHA+SXQgaGFzIGFuIGVhc3kgdG8gb3ZlcnJpZGUgdmlzdWFsIHN0eWxlLCBhbmQgaXMgYXBwcm9wcmlhdGVseSBzdWJkdWVkLjwvcD4KICAgICAgPC9DYXJkU2VjdGlvbj4KICAgIDwvQ2FyZD4KICA8L0NlbGw+CjwvR3JpZFg+" />
+        <GridContainer>
+            <GridX Class="small-up-2 medium-up-3" HorizontalMargin="true">
+                <Cell>
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                        <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                            <h4>This is a row of cards.</h4>
+                            <p>This row of cards is embedded in an X-Y Block Grid.</p>
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                </Cell>
+                <Cell>
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                        <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                        <OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                            <h4>This is a card.</h4>
+                            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                        </OpenCodeDev.Blazor.Foundation.Components.Containers.CardSection>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                </Cell>
+                <Cell>
+                    <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                        <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                        <CardSection>
+                            <h4>This is a card.</h4>
+                            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                        </CardSection>
+                    </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                </Cell>
+            </GridX>
+        </GridContainer>
+        <GridX Class="small-up-2 medium-up-3" HorizontalPadding="true">
+            <Cell>
+                <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                    <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                    <CardSection>
+                        <h4>This is a row of cards.</h4>
+                        <p>This row of cards is embedded in an Flex Block Grid.</p>
+                    </CardSection>
+                </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+            </Cell>
+            <Cell>
+                <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                    <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                    <CardSection>
+                        <h4>This is a card.</h4>
+                        <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                    </CardSection>
+                </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+            </Cell>
+            <Cell>
+                <OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+                    <img src="https://images.hdqwalls.com/download/saturn-planet-8k-3i-1336x768.jpg">
+                    <CardSection>
+                        <h4>This is a card.</h4>
+                        <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                    </CardSection>
+                </OpenCodeDev.Blazor.Foundation.Components.Containers.Card>
+            </Cell>
+        </GridX>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 

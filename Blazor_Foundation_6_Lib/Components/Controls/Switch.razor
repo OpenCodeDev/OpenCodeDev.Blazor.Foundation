@@ -1,0 +1,23 @@
+﻿@using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+@inject IJSRuntime JSRuntime;
+
+
+<div class="@($"switch {Size} {Class}")" @attributes="AdditionalAttributes" @onclick="@(async () => await OnClickHandler())">
+    <input class="switch-input"
+           id="@Id"
+           type="@(IsRadio ? "radio" : "checkbox")"
+           checked ="@Checked"
+           name="@RadioGroup"
+           disabled="@Disabled">
+
+    <label class="switch-paddle" for="@Id">
+        <span class="switch-active" aria-hidden="true">@(LabelOn != null ? LabelOn.ToString() : "") </span>
+        <span class="switch-inactive" aria-hidden="true">@(LabelOff != null ? LabelOff.ToString() : "")</span>
+    </label>
+</div>
+
+@code {
+
+}

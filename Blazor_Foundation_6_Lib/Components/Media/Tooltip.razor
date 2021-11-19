@@ -1,0 +1,13 @@
+﻿@using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+@inject IJSRuntime JSRuntime;
+
+<span data-tooltip id="@Id" class="@($"{Class} {Position}")" @attributes="AdditionalAttributes" 
+      data-click-open="@DataClickOpen.ToString().ToLower()" title="@Title">
+    @ChildContent
+</span>
+
+@code {
+
+}

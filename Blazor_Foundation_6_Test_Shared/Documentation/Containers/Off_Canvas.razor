@@ -1,0 +1,147 @@
+﻿@page "/off-canvas";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Off-Canvas</h2>
+        <p>
+            Off-canvas panels are positioned outside of the viewport and slide in when activated.
+            Setting up an off-canvas layout in Foundation is super easy.
+        </p>
+        <Button DataToggle="SideMenu">Toggle Off-Canvas</Button>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Setup</h2>
+        <p>To setup the Off-canvas create an <Code>@(@"<OffCanvas Id=""UniqueID""> </OffCanvas>")</Code> component and <Code>@(@"<OffCanvasContent> </OffCanvasContent>")</Code>.</p>
+        <p>Place the Off-Canvas content (hidden content) in <Code>@(@"<OffCanvas>")</Code> component and the visible content, like body, in <Code>@(@"<OffCanvasContent> </OffCanvasContent>")</Code> component.</p>
+
+        <h2>Triggers</h2>
+        <p>You can set a trigger by adding <Code>@(@"<Button DataToggle=""Off Canvas ID"">")</Code> to button or <Code>@(@"data-toggle=""Off Canvas ID""")</Code> </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXMiPk9wZW4gTWVudTwvQnV0dG9uPg==" />
+
+        <h2>Wrapper</h2>
+        <p>You can set a wrapper using <Code>@(@"<OffCanvasWrapper></OffCanvasWrapper>")</Code> and this will fix/prevent scrollbar to appear when off-canvas is open. </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9mZkNhbnZhc1dyYXBwZXI+CiAgICA8T2ZmQ2FudmFzIElkPSJvZmZDYW52YXMiPgogICAgICAgIEAqIEhpZGRlbiBDb250ZW50ICpACiAgICAgICAgPHA+T2ZmIENhbnZhcyBDb250ZW50PC9wPgogICAgPC9PZmZDYW52YXM+CiAgICA8T2ZmQ2FudmFzQ29udGVudD4KICAgICAgICBAKiBMaXZlIENvbnRlbnQgKkAKICAgICAgICA8cD5MaXZlIENvbnRlbnQ8L3A+CiAgICAgICAgPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXMiPk9wZW4gTWVudTwvQnV0dG9uPgoKICAgIDwvT2ZmQ2FudmFzQ29udGVudD4KPC9PZmZDYW52YXNXcmFwcGVyPg==" />
+
+        <h2>Close Button</h2>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PGJ1dHRvbiBjbGFzcz0iY2xvc2UtYnV0dG9uIiBhcmlhLWxhYmVsPSJDbG9zZSBtZW51IiB0eXBlPSJidXR0b24iIGRhdGEtY2xvc2U+CiAgPHNwYW4gYXJpYS1oaWRkZW49InRydWUiPiZ0aW1lczs8L3NwYW4+CjwvYnV0dG9uPg==" />
+
+        <h2>Complete Example</h2>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PGJvZHk+CiAgICA8T2ZmQ2FudmFzIElkPSJPZmZDYW52YXMiPgogICAgICAgIEAqIENsb3NlIEJ1dHRvbiAqQAogICAgICAgIDxidXR0b24gY2xhc3M9ImNsb3NlLWJ1dHRvbiIgYXJpYS1sYWJlbD0iQ2xvc2UgbWVudSIgdHlwZT0iYnV0dG9uIiBkYXRhLWNsb3NlPgogICAgICAgICAgICA8c3BhbiBhcmlhLWhpZGRlbj0idHJ1ZSI+JnRpbWVzOzwvc3Bhbj4KICAgICAgICA8L2J1dHRvbj4KICAgICAgICBAKiBNZW51ICpACiAgICAgICAgPHVsIGNsYXNzPSJ2ZXJ0aWNhbCBtZW51Ij4KICAgICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkZvdW5kYXRpb248L2E+PC9saT4KICAgICAgICAgICAgPGxpPjxhIGhyZWY9IiMiPkRvdDwvYT48L2xpPgogICAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+WlVSQjwvYT48L2xpPgogICAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+Q29tPC9hPjwvbGk+CiAgICAgICAgICAgIDxsaT48YSBocmVmPSIjIj5TbGFzaDwvYT48L2xpPgogICAgICAgICAgICA8bGk+PGEgaHJlZj0iIyI+U2l0ZXM8L2E+PC9saT4KICAgICAgICA8L3VsPgogICAgPC9PZmZDYW52YXM+CiAgICA8T2ZmQ2FudmFzQ29udGVudD4KICAgICAgICBAKiBMaXZlIENvbnRlbnQgKkAKICAgIDwvT2ZmQ2FudmFzQ29udGVudD4KPC9ib2R5Pg==" />
+
+    </SectionLeft>
+</SectionWrapper>
+
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Positions</h2>
+        <p>Set the position of the off canvas by setting the attribute of <Code>@(@"<OffCanvas Position=""position-left"">")</Code></p>
+        <p>position-left, position-right, position-top, position-bottom</p>
+
+        <h2>Example</h2>
+        <p><Code>@(@"<OffCanvas Position=""position-left"" Absolute=""true"">")</Code> will make sure the offcanvas is in the page content.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0U3BsaXQxIj5PcGVuIExlZnQ8L0J1dHRvbj4KPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNSaWdodFNwbGl0MiI+T3BlbiBSaWdodDwvQnV0dG9uPgoKPEdyaWRDb250YWluZXI+CiAgICA8R3JpZFg+CiAgICAgICAgPENlbGwgU2l6ZT0ic21hbGwtNiI+CiAgICAgICAgICAgIDxPZmZDYW52YXNXcmFwcGVyPgogICAgICAgICAgICAgICAgPE9mZkNhbnZhcyBJZD0ib2ZmQ2FudmFzTGVmdFNwbGl0MSIgUG9zaXRpb249InBvc2l0aW9uLWxlZnQiIEFic29sdXRlPSJ0cnVlIj4KICAgICAgICAgICAgICAgICAgICA8cD5PZmYgQ2FudmFzIENvbnRlbnQ8L3A+CiAgICAgICAgICAgICAgICA8L09mZkNhbnZhcz4KICAgICAgICAgICAgICAgIDxPZmZDYW52YXNDb250ZW50IHN0eWxlPSJtaW4taGVpZ2h0OiAzMDBweDsiPgogICAgICAgICAgICAgICAgICAgIDxwPkkgaGF2ZSBub3RoaW5nIHRvIGRvIHdpdGggdGhlIG9mZi1jYW52YXMgb24gdGhlIHJpZ2h0ITwvcD4KICAgICAgICAgICAgICAgIDwvT2ZmQ2FudmFzQ29udGVudD4KICAgICAgICAgICAgPC9PZmZDYW52YXNXcmFwcGVyPgogICAgICAgIDwvQ2VsbD4KICAgICAgICA8Q2VsbCBTaXplPSJzbWFsbC02Ij4KICAgICAgICAgICAgPE9mZkNhbnZhc1dyYXBwZXI+CiAgICAgICAgICAgICAgICA8T2ZmQ2FudmFzIElkPSJvZmZDYW52YXNSaWdodFNwbGl0MiIgUG9zaXRpb249InBvc2l0aW9uLXJpZ2h0IiBBYnNvbHV0ZT0idHJ1ZSI+CiAgICAgICAgICAgICAgICAgICAgPHA+T2ZmIENhbnZhcyBDb250ZW50PC9wPgogICAgICAgICAgICAgICAgPC9PZmZDYW52YXM+CiAgICAgICAgICAgICAgICA8T2ZmQ2FudmFzQ29udGVudCBzdHlsZT0ibWluLWhlaWdodDogMzAwcHg7Ij4KICAgICAgICAgICAgICAgICAgICA8cD5JbSBhIHVuaXF1ZSBvZmYtY2FudmFzIGNvbnRhaW5lciBhbGwgb24gbXkgb3duITwvcD4KICAgICAgICAgICAgICAgIDwvT2ZmQ2FudmFzQ29udGVudD4KICAgICAgICAgICAgPC9PZmZDYW52YXNXcmFwcGVyPgogICAgICAgIDwvQ2VsbD4KICAgIDwvR3JpZFg+CjwvR3JpZENvbnRhaW5lcj4=" />
+
+        <Button DataToggle="offCanvasLeftSplit1">Open Left</Button>
+        <Button DataToggle="offCanvasRightSplit2">Open Right</Button>
+
+        <GridContainer>
+            <GridX>
+                <Cell Size="small-6">
+                    <OffCanvasWrapper>
+                        <OffCanvas Id="offCanvasLeftSplit1" Position="position-left" Absolute="true">
+                            <p>Off Canvas Content</p>
+                        </OffCanvas>
+                        <OffCanvasContent style="min-height: 300px;">
+                            <p>I have nothing to do with the off-canvas on the right!</p>
+                        </OffCanvasContent>
+                    </OffCanvasWrapper>
+                </Cell>
+                <Cell Size="small-6">
+                    <OffCanvasWrapper>
+                        <OffCanvas Id="offCanvasRightSplit2" Position="position-right" Absolute="true">
+                            <p>Off Canvas Content</p>
+                        </OffCanvas>
+                        <OffCanvasContent style="min-height: 300px;">
+                            <p>Im a unique off-canvas container all on my own!</p>
+                        </OffCanvasContent>
+                    </OffCanvasWrapper>
+                </Cell>
+            </GridX>
+        </GridContainer>
+
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Directions</h2>
+        <p>Off-canvas can open from any direction, left, right, top, and bottom.</p>
+        <p>Note: if you have some sticky stuff or other floating things, make sure to add z-index in style of the <Code>@(@"<OffCanvas></OffCanvas>")</Code> component is higher than the floating things' index.</p>
+        
+        <h2>Example</h2>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNMZWZ0MSI+T3BlbiBMZWZ0PC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzUmlnaHQxIj5PcGVuIFJpZ2h0PC9CdXR0b24+CjxCdXR0b24gRGF0YVRvZ2dsZT0ib2ZmQ2FudmFzVG9wMSI+T3BlbiBUb3A8L0J1dHRvbj4KPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNCb3R0b20xIj5PcGVuIEJvdHRvbTwvQnV0dG9uPgo8T2ZmQ2FudmFzV3JhcHBlcj4KICAgIDxPZmZDYW52YXMgSWQ9Im9mZkNhbnZhc0xlZnQxIiBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgc3R5bGU9InotaW5kZXg6MTU7Ij4KCiAgICA8L09mZkNhbnZhcz4KICAgIDxPZmZDYW52YXMgSWQ9Im9mZkNhbnZhc1JpZ2h0MSIgUG9zaXRpb249InBvc2l0aW9uLXJpZ2h0IiBzdHlsZT0iei1pbmRleDoxNTsiPgoKICAgIDwvT2ZmQ2FudmFzPgogICAgPE9mZkNhbnZhcyBJZD0ib2ZmQ2FudmFzVG9wMSIgUG9zaXRpb249InBvc2l0aW9uLXRvcCIgc3R5bGU9InotaW5kZXg6MTU7Ij4KCiAgICA8L09mZkNhbnZhcz4KICAgIDxPZmZDYW52YXMgSWQ9Im9mZkNhbnZhc0JvdHRvbTEiIFBvc2l0aW9uPSJwb3NpdGlvbi1ib3R0b20iIHN0eWxlPSJ6LWluZGV4OjE1OyI+CgogICAgPC9PZmZDYW52YXM+CjwvT2ZmQ2FudmFzV3JhcHBlcj4=" />
+
+        <Button DataToggle="offCanvasLeft1">Open Left</Button>
+        <Button DataToggle="offCanvasRight1">Open Right</Button>
+        <Button DataToggle="offCanvasTop1">Open Top</Button>
+        <Button DataToggle="offCanvasBottom1">Open Bottom</Button>
+        <OffCanvasWrapper>
+            <OffCanvas Id="offCanvasLeft1" Position="position-left" style="z-index:15;">
+
+            </OffCanvas>
+            <OffCanvas Id="offCanvasRight1" Position="position-right" style="z-index:15;">
+
+            </OffCanvas>
+            <OffCanvas Id="offCanvasTop1" Position="position-top" style="z-index:15;">
+
+            </OffCanvas>
+            <OffCanvas Id="offCanvasBottom1" Position="position-bottom" style="z-index:15;">
+
+            </OffCanvas>
+        </OffCanvasWrapper>
+
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Transitions</h2>
+        <p>There are really 2 transitions <Code>push</Code> and <Code>overlap</Code>.</p>
+
+        <h2>Example</h2>
+        <p><Code>@(@"<OffCanvas Position=""position-left"" Absolute=""true"">")</Code> will make sure the offcanvas is in the page content.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE9mZkNhbnZhc1dyYXBwZXI+CiAgICA8T2ZmQ2FudmFzIElkPSJvZmZDYW52YXNPdmVybGFwIiBQb3NpdGlvbj0icG9zaXRpb24tbGVmdCIgRGF0YVRyYW5zaXRpb249Im92ZXJsYXAiIEFic29sdXRlPSJ0cnVlIj4KCiAgICA8L09mZkNhbnZhcz4KICAgIDxPZmZDYW52YXMgSWQ9Im9mZkNhbnZhc1B1c2giIFBvc2l0aW9uPSJwb3NpdGlvbi1sZWZ0IiBEYXRhVHJhbnNpdGlvbj0icHVzaCIgQWJzb2x1dGU9InRydWUiPgoKICAgIDwvT2ZmQ2FudmFzPgogICAgPE9mZkNhbnZhc0NvbnRlbnQgc3R5bGU9Im1pbi1oZWlnaHQ6IDI1MHB4OyI+CiAgICAgICAgPEJ1dHRvbiBEYXRhVG9nZ2xlPSJvZmZDYW52YXNPdmVybGFwIj5PcGVuIE92ZXJsYXA8L0J1dHRvbj4KICAgICAgICA8QnV0dG9uIERhdGFUb2dnbGU9Im9mZkNhbnZhc1B1c2giPk9wZW4gUHVzaDwvQnV0dG9uPgogICAgPC9PZmZDYW52YXNDb250ZW50Pgo8L09mZkNhbnZhc1dyYXBwZXI+" />
+
+
+        <OffCanvasWrapper>
+            <OffCanvas Id="offCanvasOverlap" Position="position-left" DataTransition="overlap" Absolute="true">
+
+            </OffCanvas>
+            <OffCanvas Id="offCanvasPush" Position="position-left" DataTransition="push" Absolute="true">
+
+            </OffCanvas>
+            <OffCanvasContent style="min-height: 250px;">
+                <Button DataToggle="offCanvasOverlap">Open Overlap</Button>
+                <Button DataToggle="offCanvasPush">Open Push</Button>
+            </OffCanvasContent>
+        </OffCanvasWrapper>
+
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

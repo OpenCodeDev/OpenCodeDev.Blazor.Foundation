@@ -4,128 +4,20 @@
 @using Microsoft.AspNetCore.Components.Forms;
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
-@implements System.IDisposable;
-@if (DataBindingId == null)
-{
-    <input  Value="@Value"  id="@($"{@Id.ToString()}-input")" type="number" class="is-hidden" />
 
-}
-<div id="@Id" class="@($"slider {Class}")" data-slider data-initial-start="@Value.ToString()" data-vertical="@IsVertical.ToString().ToLower()"
-     data-start="@Min.ToString()" data-step="@Step.ToString()" data-end="@Max.ToString()">
+@*<InputNumber Value="@Value" ValueChanged="(float nVal)=> SliderValueChanged(nVal)" ValueExpresion="() => Value"  id="@($"{@Id.ToString()}-input")" class="is-hidden" />*@
 
-    <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="@(DataBindingId != null? DataBindingId : $"{@Id.ToString()}-input")"></span>
+<div id="@Id" class="@($"slider {(Disabled? "disabled" : "")} " +
+                       $"{(IsVertical && !Class.Contains("vertical") ? "vertical" : "")} " +
+                       $"{Class}")"
+     data-slider data-initial-start="@Value.ToString()" data-vertical="@IsVertical.ToString().ToLower()"
+     data-start="@Min.ToString()" data-step="@Step.ToString()" data-end="@Max.ToString()" @attributes="AdditionalAttributes">
+
+    <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="@($"{Id}-input")"></span>
     <span class="slider-fill" data-slider-fill></span>
 </div>
-
+@if (!HasExtInput) { <input type="hidden" id="@($"{Id}-input")" @bind="@Value" @bind:event="oninput" /> }
 @code {
 
-    /// <summary>
-    /// Unique HTML Identifier.
-    /// </summary>
-    [Parameter]
-    public string Id { get; set; } = Guid.NewGuid().ToString();
-
-    /// <summary>
-    /// Custom Class to Append at the end of default Foundation Class.
-    /// </summary>
-    [Parameter]
-    public string Class { get; set; }
-
-
-    /// <summary>
-    /// Input's id (Only if DataBindingId is undefined)
-    /// </summary>
-    [Parameter]
-    public string InputId { get; set; }
-
-    /// <summary>
-    /// Minimum Value
-    /// </summary>
-    [Parameter]
-    public float Min { get; set; } = 1;
-
-    /// <summary>
-    /// Max Value
-    /// </summary>
-    [Parameter]
-    public float Max { get; set; } = 100;
-
-    /// <summary>
-    /// Current Value (Default: 1)
-    /// </summary>
-    [Parameter]
-    public float Value { get; set; } = 1;
-
-    /// <summary>
-    /// True when control is disabled (Default: false)
-    /// </summary>
-    [Parameter]
-    public bool Disabled { get; set; } = false;
-
-    /// <summary>
-    /// Is Vertical?
-    /// </summary>
-    [Parameter]
-    public bool IsVertical { get; set; } = false;
-
-
-    /// <summary>
-    /// Unit Steps (Default: 1)
-    /// </summary>
-    [Parameter]
-    public float Step { get; set; } = 1;
-
-    /// <summary>
-    /// Define if input control is not hidden.
-    /// </summary>
-    [Parameter]
-    public string DataBindingId { get; set; }
-
-    /// <summary>
-    /// True: Will Trigger Foundation Script Registration Automatically Without any Options.
-    /// </summary>
-    [Parameter]
-    public bool AutoManaged { get; set; } = true;
-
-    /// <summary>
-    /// List of Options to pass when initilization is handled by Blazor. Leave blank if AutoManaged = false.
-    /// </summary>
-    [Parameter]
-    public JObject DataOptions { get; set; }
-
-
-    protected override void OnInitialized()
-    {
-    }
-
-    public override async Task SetParametersAsync(ParameterView parameters)
-    {
-        await base.SetParametersAsync(parameters);
-
-
-
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            if (AutoManaged)
-            {
-                await JSRuntime.InvokeVoidAsync("SliderRegister", Id, DataOptions != null ? DataOptions.ToString() : null);
-            }
-
-        }
-
-    }
-
-
-    public void Dispose()
-    {
-        if (AutoManaged)
-        {
-            JSRuntime.InvokeVoidAsync("FoundationDestroy", Id);
-        }
-    }
 }
 

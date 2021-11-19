@@ -1,5 +1,4 @@
 ﻿@using Microsoft.JSInterop;
-@using Newtonsoft.Json.Linq;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
@@ -9,33 +8,5 @@
 </div>
 
 @code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
-
-    /// <summary>
-    /// Add Custom Class
-    /// </summary>
-    [Parameter]
-    public string Class { get; set; }
-
-    /// <summary>
-    /// Define Unique ID for the Tag
-    /// </summary>
-    [Parameter]
-    public string Id { get; set; }
-
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public IDictionary<string, object> AdditionalAttributes { get; set; }
-
-    protected override void OnInitialized()
-    {
-
-    }
-
-    public override async Task SetParametersAsync(ParameterView parameters)
-    {
-        await base.SetParametersAsync(parameters);
-
-    }
+    
 }

@@ -2,6 +2,7 @@
 
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
 @using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using Microsoft.AspNetCore.Components.Forms;
 <SectionWrapper>
     <SectionLeft>
         <h2>Slider</h2>
@@ -28,7 +29,7 @@
     <SectionLeft>
         <h2>Basics</h2>
         <p>
-            Create a slider by adding the component <Code>@("<SingleSlider />")</Code>. 
+            Create a slider by adding the component <Code>@("<SingleSlider />")</Code>.
             You should also define both a starting and maximum value for the slider.
         </p>
         <ul>
@@ -37,14 +38,128 @@
             <li>The <Code>@("Step=1")</Code> is step between changes, 1, 10, 0.01 can be float and int.</li>
             <li>The <Code>@("Min=1")</Code> is the minimum value for slider.</li>
             <li>The <Code>@("Max=100")</Code> is the maximum value for the slider. </li>
+            <li>Note: The values underlying the component is type <Code>float</Code>.</li>
         </ul>
         <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                     Content="PEJ1dHRvbj5MZWFybiBNb3JlPC9CdXR0b24+CjxCdXR0b24+VmlldyBBbGwgRmVhdHVyZXM8L0J1dHRvbj4KPEJ1dHRvbiBDbGFzcz0ic3VjY2VzcyI+U2F2ZTwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJhbGVydCI+RGVsZXRlPC9CdXR0b24+" />
+                     Content="@(@"<SingleSlider Step=""1"" Min=""1"" Max=""100"" Value=""10"" /> ")" />
 
-         <SingleSlider Step="1" Min="1" Max="100" Value="10"   />
+        <SingleSlider Step="1" Min="1" Max="100" Value="10" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Vertical</h2>
+        <p>Create a slider by adding <Code>@(@"IsVertical=""true""")</Code> to the component <Code>@("<SingleSlider />")</Code>.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="@(@"<SingleSlider Step=""1"" Min=""1"" Max=""100"" Value=""10"" IsVertical=""true""  /> ")" />
+        <SingleSlider Step="1" Min="1" Max="100" Value="10" IsVertical="true" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Disabled</h2>
+        <p>Create a slider by adding <Code>@(@"Disabled=""true""")</Code> to the component <Code>@("<SingleSlider />")</Code>.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="@(@"<SingleSlider Step=""1"" Min=""1"" Max=""100"" Value=""10"" Disabled=""true""  /> ")" />
+        <SingleSlider Step="1" Min="1" Max="100" Value="10" Disabled="true" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Data Binding</h2>
+        <p>Create data binding by adding <Code>@(@"@bind-Value=""FLOAT_VAR""")</Code> to the component <Code>@("<SingleSlider />")</Code>.</p>
+        <p>
+            Data binding allows you to connect the slider to an external <Code>@("input")</Code> and/or variable. With data binding set up, dragging the handle will change the value inside the text field, and editing the number in the text field will move the slider in real-time.
+        </p>
+        <p>
+            Note: The binding data must be of type <Code>float</Code>, if you must you can convert it to int afterward.
+            Anyways, you control int/float via <Code>Step</Code>, <Code>Min</Code> and <Code>Max</Code> but always convert to ensure data integrity.
+        </p>
+        <h4>Simple Two-Ways Binding</h4>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFNpbmdsZVNsaWRlciBTdGVwPSIxIiBNaW49IjEiIE1heD0iMTAwIiBAYmluZC1WYWx1ZT0iQERhdGFCaW5kaW5nIiAvPgoKQGNvZGUgewogICAgcHJpdmF0ZSBmbG9hdCBfRGF0YUJpbmRpbmcgPSAyMDsKICAgIHB1YmxpYyBmbG9hdCBEYXRhQmluZGluZyB7IGdldCA9PiBfRGF0YUJpbmRpbmc7IHNldCB7IF9EYXRhQmluZGluZyA9IHZhbHVlOyBTdGF0ZUhhc0NoYW5nZWQoKTsgfSB9Cn0=" />
+
+        <GridX HorizontalPadding="true">
+            <Cell Size="auto"><SingleSlider Step="1" Min="1" Max="100" @bind-Value="@DataBinding" /></Cell>
+        </GridX>
+        <h4>External Input Source</h4>
+        <p>Note: for the example, we are using an html input (not Blazor component InputNumber) but it will work just fine with <Code>EditForm</Code>.</p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PFNpbmdsZVNsaWRlciBJZD0iYmluZGVkX3RvX2V4dGVybmFsIiBIYXNFeHRJbnB1dD0idHJ1ZSIgU3RlcD0iMSIgTWluPSIxIiBNYXg9IjEwMCIgQGJpbmQtVmFsdWU9IkBEYXRhQmluZGluZyIgLz4KPGlucHV0IGlkPSJiaW5kZWRfdG9fZXh0ZXJuYWwtaW5wdXQiIHR5cGU9Im51bWJlciIgbWluPSIxIiBtYXg9IjEwMCIgc3RlcD0iMSIgQGJpbmQtdmFsdWU9IkBEYXRhQmluZGluZyIgLz4KCkBjb2RlIHsKICAgIHByaXZhdGUgZmxvYXQgX0RhdGFCaW5kaW5nID0gMjA7CiAgICBwdWJsaWMgZmxvYXQgRGF0YUJpbmRpbmcgeyBnZXQgPT4gX0RhdGFCaW5kaW5nOyBzZXQgeyBfRGF0YUJpbmRpbmcgPSB2YWx1ZTsgU3RhdGVIYXNDaGFuZ2VkKCk7IH0gfQp9" />
+
+        <GridX HorizontalPadding="true">
+            <Cell Size="auto">
+                <SingleSlider Id="binded_to_external" HasExtInput="true" Step="1" Min="1" Max="100" @bind-Value="@DataBinding2" />
+            </Cell>
+            <Cell Size="shrink">
+                <input id="binded_to_external-input" type="number" min="1" max="100" step="1" @bind-value="@DataBinding2" />
+            </Cell>
+        </GridX>
+        <h4>Limitations</h4>
+        <p>A slider can only be bind to a single variable. Unexpected behavior occurs otherwise such as slider desync (see native slider to avoid this).</p>
+        <p>we are aware of the limitation but, due to our decision not the modify Zurb Foundation 6's core files to preserve integrity with the official repos, we will not be handle to fix this.</p>
+        <p>Note: depending on the support given to this project and if a large developer pool wish for a fix in several areas we might reconsider forking the official Zurb Foundation 6's repos.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Native Slider</h2>
+        <p>Create a native slider by using <Code>@(@"<input type=""range""")</Code>.</p>
+        <p>It takes a little more work to make it work since as of the writing Blazor doesn't have a RangeInput component.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="@(@"<input type=""range"" min=""1"" max=""100"" step=""1""/> ")" />
+        <input type="range" min="1" max="100" step="1" />
+        <h4>Simple Two-Ways Binding</h4>
+        <p>The two-ways binding for native slider is more straight forward, it doesn't require <Code>id</Code> and it supports multi-binding.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PGlucHV0IHR5cGU9InJhbmdlIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlIiAvPgo8aW5wdXQgdHlwZT0ibnVtYmVyIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlIiAvPgpAY29kZSB7CiAgICBwcml2YXRlIGZsb2F0IF9EYXRhQmluZGluZ05hdGl2ZSA9IDIwOwogICAgcHVibGljIGZsb2F0IERhdGFCaW5kaW5nTmF0aXZlIHsgZ2V0ID0+IF9EYXRhQmluZGluZ05hdGl2ZTsgc2V0IHsgX0RhdGFCaW5kaW5nTmF0aXZlID0gdmFsdWU7IFN0YXRlSGFzQ2hhbmdlZCgpOyB9IH0KfQ==" />
+        <GridX HorizontalPadding="true">
+            <Cell Size="auto">
+                <input type="range" min="1" max="100" step="1" @bind-value="@DataBindingNative" />
+            </Cell>
+            <Cell Size="shrink">
+                <input type="number" min="1" max="100" step="1" @bind-value="@DataBindingNative" />
+            </Cell>
+        </GridX>
+        <h4>Multiple Binding</h4>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PGlucHV0IHR5cGU9InJhbmdlIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlTXVsdGkiIC8+CjxpbnB1dCB0eXBlPSJudW1iZXIiIG1pbj0iMSIgbWF4PSIxMDAiIHN0ZXA9IjEiIEBiaW5kLXZhbHVlPSJARGF0YUJpbmRpbmdOYXRpdmVNdWx0aSIgLz4KPGlucHV0IHR5cGU9InJhbmdlIiBtaW49IjEiIG1heD0iMTAwIiBzdGVwPSIxIiBAYmluZC12YWx1ZT0iQERhdGFCaW5kaW5nTmF0aXZlTXVsdGkiIC8+CkBjb2RlIHsKICAgIHByaXZhdGUgZmxvYXQgX0RhdGFCaW5kaW5nTmF0aXZlTXVsdGkgPSAyMDsKICAgIHB1YmxpYyBmbG9hdCBEYXRhQmluZGluZ05hdGl2ZU11bHRpIHsgZ2V0ID0+IF9EYXRhQmluZGluZ05hdGl2ZU11bHRpOyBzZXQgeyBfRGF0YUJpbmRpbmdOYXRpdmVNdWx0aSA9IHZhbHVlOyBTdGF0ZUhhc0NoYW5nZWQoKTsgfSB9Cn0=" />
+        <GridX HorizontalPadding="true">
+            <Cell Size="small-6">
+                <input type="range" min="1" max="100" step="1" @bind-value="@DataBindingNativeMulti" />
+            </Cell>
+            <Cell Size="small-2">
+                <input type="number" min="1" max="100" step="1" @bind-value="@DataBindingNativeMulti" />
+            </Cell>
+            <Cell Size="small-6">
+                <input type="range" min="1" max="100" step="1" @bind-value="@DataBindingNativeMulti" />
+            </Cell>
+        </GridX>
         <hr />
     </SectionLeft>
 </SectionWrapper>
 
 @code {
+
+    private float _DataBinding = 20;
+    public float DataBinding { get => _DataBinding; set { _DataBinding = value; StateHasChanged(); } }
+
+    private float _DataBinding2 = 20;
+    public float DataBinding2 { get => _DataBinding2; set { _DataBinding2 = value; StateHasChanged(); } }
+
+    private float _DataBindingNative = 20;
+    public float DataBindingNative { get => _DataBindingNative; set { _DataBindingNative = value; StateHasChanged(); } }
+
+    private float _DataBindingNativeMulti = 20;
+    public float DataBindingNativeMulti { get => _DataBindingNativeMulti; set { _DataBindingNativeMulti = value; StateHasChanged(); } }
+
 }

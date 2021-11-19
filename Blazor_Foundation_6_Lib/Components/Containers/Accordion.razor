@@ -1,84 +1,15 @@
 ﻿@using Microsoft.JSInterop;
-@using Newtonsoft.Json.Linq;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
 @inject IJSRuntime JSRuntime;
-@implements System.IDisposable;
+
 <ul class="@($"accordion {Class}")" id="@Id" @attributes="AdditionalAttributes" data-responsive-accordion-tabs="accordion medium-tabs large-accordion"
     data-allow-all-closed="true" data-multi-expand="@MultiOpen.ToString().ToLower()" data-accordion="true">
     @ChildContent
 </ul>
 
 @code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
 
-    /// <summary>
-    /// When true, you can open multiple accordion at the same time
-    /// </summary>
-    [Parameter]
-    public bool MultiOpen { get; set; } = false;
-
-    /// <summary>
-    /// Unique HTML Identifier.
-    /// </summary>
-    [Parameter]
-    public string Id { get; set; }
-
-    /// <summary>
-    /// Custom Class to Append at the end of default Foundation Class.
-    /// </summary>
-    [Parameter]
-    public string Class { get; set; }
-
-
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public IDictionary<string, object> AdditionalAttributes { get; set; }
-
-    /// <summary>
-    /// If false, you will have to create initializer for this Foundation 6 component yourself in javascript. (Default: True)
-    /// </summary>
-    [Parameter]
-    public bool AutoManaged { get; set; } = true;
-
-    /// <summary>
-    /// List of Options to pass when initilization is handled by Blazor. Leave blank if AutoManaged = false.
-    /// </summary>
-    [Parameter]
-    public JObject DataOptions { get; set; }
-
-
-
-    protected override void OnInitialized()
-    {
-        if (Id == null) { Id = System.Guid.NewGuid().ToString(); }
-    }
-
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            if (AutoManaged)
-            {
-                //Console.WriteLine("Accordion Registering");
-                await JSRuntime.InvokeVoidAsync("AccordionRegister", Id, DataOptions != null ? DataOptions.ToString() : null);
-            }
-        }
-
-    }
-    public override async Task SetParametersAsync(ParameterView parameters)
-    {
-        await base.SetParametersAsync(parameters);
-
-    }
-    public void Dispose()
-    {
-        if (AutoManaged)
-        {
-            JSRuntime.InvokeVoidAsync("FoundationDestroy", Id);
-        }
-    }
+    
 }
 

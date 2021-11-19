@@ -1,5 +1,11 @@
-﻿<h3>MenuTopLevel</h3>
+﻿@using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Components;
+
+<ul class="@($"{(Vertical ? "vertical" : "")} menu {Class}")" @attributes="AdditionalAttributes">
+    @ChildContent
+</ul>
 
 @code {
 
 }
+

@@ -1,6 +1,80 @@
 ﻿@page "/tooltip";
 
-<h3>Tooltip</h3>
+
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Tooltip</h2>
+        <p>
+            Tooltips? More like Cooltips. But really though, tooltips are nifty for displaying extended information for a term or action on a page.
+        </p>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basic Tooltip</h2>
+        <p>By default, a tooltip appears below the defined term on hover.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="VGhlIDxUb29sdGlwIHRhYmluZGV4PSIxIiAgVGl0bGU9IkZhbmN5IHdvcmQgZm9yIGEgYmVldGxlLiI+c2NhcmFiYWV1czwvVG9vbHRpcD4gaHVuZyBxdWl0ZSBjbGVhciBvZiBhbnkgYnJhbmNoZXMsIGFuZCwgaWYgYWxsb3dlZCB0byBmYWxsLCB3b3VsZCBoYXZlIGZhbGxlbiBhdCBvdXIgZmVldC4=" />
+        <p>
+            The <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip tabindex="1"  Title="Fancy word for a beetle.">scarabaeus</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip> hung quite
+            clear of any branches, and, if allowed to fall, would have fallen at our feet.
+        </p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Tooltip Top</h2>
+        <p>
+            To get a tip-top top tooltip (lol), just use <Code>@("<Tooltip>")</Code> element. The default position value of this balise is <code>top</code>
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90" 
+                     Content="VGhlIDxUb29sdGlwICB0YWJpbmRleD0iMiIgVGl0bGU9IkZhbmN5IHdvcmQgZm9yIGEgYmVldGxlLiI+c2NhcmFiYWV1czwvVG9vbHRpcD4gaHVuZyBxdWl0ZSBjbGVhciBvZiBhbnkgYnJhbmNoZXMsIGFuZCwgaWYgYWxsb3dlZCB0byBmYWxsLCB3b3VsZCBoYXZlIGZhbGxlbiBhdCBvdXIgZmVldC4=" />
+        
+        The <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip  tabindex="2" Title="Fancy word for a beetle.">scarabaeus</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>
+        hung quite clear of any branches, and, if allowed to fall, would have fallen at our feet.
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Tooltip clicking</h2>
+        <p>
+            By default, clicking on a tooltip will leave it open until you click somewhere else. However, you can disable that by
+            adding <Code>DataClickOpen="false"</Code>
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="dGhpcyA8VG9vbHRpcCAgdGFiaW5kZXg9IjIiIFRpdGxlPSJZb3Ugc2VlPyAgSSdtIG9wZW4hIj50b29sdGlwIHdpbGwgc3RheSBvcGVuPC9Ub29sdGlwPiB3aGlsZSA8VG9vbHRpcCBEYXRhQ2xpY2tPcGVuPSJmYWxzZSIgdGFiaW5kZXg9IjIiIFRpdGxlPSJJIGRvbid0IHN0YXkgb3BlbiI+IHRoaXMgb25lIHdpbGwgb25seSBiZSBvcGVuIHdoZW4gaG92ZXJlZDwvVG9vbHRpcD4=" />
+        <p>
+            this <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip  tabindex="2" Title="You see?  I'm open!">tooltip will stay open</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip> while <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip DataClickOpen="false" tabindex="2" Title="I don't stay open"> this one will only be open when hovered</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>
+        </p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Tooltip Right and Left</h2>
+        <p>You can also position the tooltips to the right and left of the word by seting the attribute position set it to <Code>right</Code> or <Code>left</Code> to the <Code>@("<Tooltip>")</Code> element.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="d2hlbiBoZSB3YXMgZHJlc3NlZCBoZSB3ZW50IGRvd24gdGhlIGhhbGwgaW50byB0aGUgPFRvb2x0aXAgUG9zaXRpb249InJpZ2h0IiB0YWJpbmRleD0iMyIgVGl0bGU9IkFsaWduZWQgb24gdGhlIHJpZ2h0Ij5raXRjaGVuPC9Ub29sdGlwPi4KVGhlIHRhYmxlIHdhcyBhbG1vc3QgaGlkZGVuIGJlbmVhdGggYWxsIER1ZGxleSdzIGJpcnRoZGF5IHByZXNlbnRzLiBJdCBsb29rZWQgYXMgdGhvdWdoIDxUb29sdGlwIFBvc2l0aW9uPSJsZWZ0IiB0YWJpbmRleD0iNCIgVGl0bGU9IkFsaWduZWQgb24gdGhlIGxlZnQiPkR1ZGxleTwvVG9vbHRpcD4gaGFkIGdvdHRlbiB0aGUgbmV3IGNvbXB1dGVyIGhlIHdhbnRlZCwgbm90IHRvIG1lbnRpb24gdGhlIHNlY29uZCB0ZWxldmlzaW9uIGFuZCB0aGUgcmFjaW5nIGJpa2Uu" />
+        <p>
+            When he was dressed he went down the hall into the <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip Position="right" tabindex="3" Title="Aligned on the right">kitchen</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>.
+            The table was almost hidden beneath all Dudley's birthday presents. It looked as though <OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip Position="left" tabindex="4" Title="Aligned on the left">Dudley</OpenCodeDev.Blazor.Foundation.Components.Media.Tooltip>
+            had gotten the new computer he wanted, not to mention the second television and the racing bike.
+        </p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
 
 @code {
 

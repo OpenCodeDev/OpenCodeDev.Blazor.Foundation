@@ -21,6 +21,7 @@
 @include foundation-label;
 @include foundation-progress-bar;
 @include foundation-slider;
+@include foundation-range-input;
 @include foundation-switch;
 @include foundation-table;
 // Basic components
@@ -59,4 +60,4 @@
 @include foundation-visibility-classes;
 
 @import '../../motion-ui-master/motion-ui.scss';
-@import 'init_bf.scss';
+@import 'bf6_only.scss';

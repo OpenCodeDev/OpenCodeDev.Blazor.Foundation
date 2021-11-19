@@ -1,6 +1,80 @@
 ﻿@page "/pagination";
 
-<h3>Pagination</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Pagination</h2>
+        <p>Pagination is a type of navigation that lets users click through pages of search results, products, or other related items.</p>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>A pagination is just a <Code>@("<Pagination>")</Code> component, with a series of <Code>@("<PaginationItem>")</Code> component, <Code>@("<PaginationPrevious>")</Code> and <Code>@("<PaginationNext>")</Code> for next and previous. Add the attribute <Code>Active="true"</Code> to an <Code>@("<PaginationItem>")</Code> to mark the current page and <Code>Disable="true"</Code> to add disabled styles to a link.</p>
+        <p>Note that the <Code>@("<Pagination>")</Code> is nested inside a <Code>@("<nav>")</Code> with the attributes <Code>aria-label="Pagination"</Code> . This explains the purpose of the component to assistive technologies.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PG5hdiBhcmlhLWxhYmVsPSJQYWdpbmF0aW9uIj4KICAgIDxQYWdpbmF0aW9uPgogICAgICAgIDxQYWdpbmF0aW9uUHJldmlvdXMgRGlzYWJsZT0idHJ1ZSI+UHJldmlvdXM8L1BhZ2luYXRpb25QcmV2aW91cz4KICAgICAgICA8UGFnaW5hdGlvbkl0ZW0gQWN0aXZlPSJ0cnVlIj4KICAgICAgICAgICAgMQogICAgICAgIDwvUGFnaW5hdGlvbkl0ZW0+CiAgICAgICAgPFBhZ2luYXRpb25JdGVtPgogICAgICAgICAgICA8TmF2TGluayBocmVmPSIjIiBhcmlhLWxhYmVsPSJQYWdlIDIiPjI8L05hdkxpbms+CiAgICAgICAgPC9QYWdpbmF0aW9uSXRlbT4KICAgICAgICA8UGFnaW5hdGlvbkl0ZW0+CiAgICAgICAgICAgIDxOYXZMaW5rIGhyZWY9IiMiIGFyaWEtbGFiZWw9IlBhZ2UgMyI+MzwvTmF2TGluaz4KICAgICAgICA8L1BhZ2luYXRpb25JdGVtPgogICAgICAgIDxsaSBjbGFzcz0iZWxsaXBzaXMiIGFyaWEtaGlkZGVuPSJ0cnVlIj48L2xpPgogICAgICAgIDxQYWdpbmF0aW9uSXRlbT4KICAgICAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyIgYXJpYS1sYWJlbD0iUGFnZSAxMyI+MTM8L05hdkxpbms+CiAgICAgICAgPC9QYWdpbmF0aW9uSXRlbT4KICAgICAgICA8UGFnaW5hdGlvbkl0ZW0+CiAgICAgICAgICAgIDxOYXZMaW5rIGhyZWY9IiMiIGFyaWEtbGFiZWw9IlBhZ2UgMTQiPjE0PC9OYXZMaW5rPgogICAgICAgIDwvUGFnaW5hdGlvbkl0ZW0+CiAgICAgICAgPFBhZ2luYXRpb25OZXh0PjxOYXZMaW5rIGhyZWY9IiMiPk5leHQ8L05hdkxpbms+PC9QYWdpbmF0aW9uTmV4dD4KICAgIDwvUGFnaW5hdGlvbj4KPC9uYXY+" />
+        <nav aria-label="Pagination">
+            <OpenCodeDev.Blazor.Foundation.Components.Navigation.Pagination>
+                <PaginationPrevious Disable="true">Previous</PaginationPrevious>
+                <PaginationItem Active="true">
+                    1
+                </PaginationItem>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 2">2</NavLink>
+                </PaginationItem>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 3">3</NavLink>
+                </PaginationItem>
+                <li class="ellipsis" aria-hidden="true"></li>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 13">13</NavLink>
+                </PaginationItem>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 14">14</NavLink>
+                </PaginationItem>
+                <PaginationNext><NavLink href="/pagination">Next</NavLink></PaginationNext>
+            </OpenCodeDev.Blazor.Foundation.Components.Navigation.Pagination>
+        </nav>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Centered</h2>
+        <p>The items in a pagination list are display: inline-block, which makes centering them easy. Add the attribute <Code>Center="true"</Code> in the <Code>@("<Pagination>")</Code> component .</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PG5hdiBhcmlhLWxhYmVsPSJQYWdpbmF0aW9uIj4KICAgIDxQYWdpbmF0aW9uIENlbnRlcj0idHJ1ZSI+CiAgICAgICAgPFBhZ2luYXRpb25QcmV2aW91cyBEaXNhYmxlPSJ0cnVlIj5QcmV2aW91czwvUGFnaW5hdGlvblByZXZpb3VzPgogICAgICAgIDxQYWdpbmF0aW9uSXRlbSBBY3RpdmU9InRydWUiPgogICAgICAgICAgICAxCiAgICAgICAgPC9QYWdpbmF0aW9uSXRlbT4KICAgICAgICA8UGFnaW5hdGlvbkl0ZW0+CiAgICAgICAgICAgIDxOYXZMaW5rIGhyZWY9IiMiIGFyaWEtbGFiZWw9IlBhZ2UgMiI+MjwvTmF2TGluaz4KICAgICAgICA8L1BhZ2luYXRpb25JdGVtPgogICAgICAgIDxQYWdpbmF0aW9uSXRlbT4KICAgICAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyIgYXJpYS1sYWJlbD0iUGFnZSAzIj4zPC9OYXZMaW5rPgogICAgICAgIDwvUGFnaW5hdGlvbkl0ZW0+CiAgICAgICAgPGxpIGNsYXNzPSJlbGxpcHNpcyIgYXJpYS1oaWRkZW49InRydWUiPjwvbGk+CiAgICAgICAgPFBhZ2luYXRpb25JdGVtPgogICAgICAgICAgICA8TmF2TGluayBocmVmPSIjIiBhcmlhLWxhYmVsPSJQYWdlIDEzIj4xMzwvTmF2TGluaz4KICAgICAgICA8L1BhZ2luYXRpb25JdGVtPgogICAgICAgIDxQYWdpbmF0aW9uSXRlbT4KICAgICAgICAgICAgPE5hdkxpbmsgaHJlZj0iIyIgYXJpYS1sYWJlbD0iUGFnZSAxNCI+MTQ8L05hdkxpbms+CiAgICAgICAgPC9QYWdpbmF0aW9uSXRlbT4KICAgICAgICA8UGFnaW5hdGlvbk5leHQ+PE5hdkxpbmsgaHJlZj0iIyI+TmV4dDwvTmF2TGluaz48L1BhZ2luYXRpb25OZXh0PgogICAgPC9QYWdpbmF0aW9uPgo8L25hdj4=" />
+        <nav aria-label="Pagination">
+            <OpenCodeDev.Blazor.Foundation.Components.Navigation.Pagination Center="true">
+                <PaginationPrevious Disable="true">Previous</PaginationPrevious>
+                <PaginationItem Active="true">
+                    1
+                </PaginationItem>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 2">2</NavLink>
+                </PaginationItem>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 3">3</NavLink>
+                </PaginationItem>
+                <li class="ellipsis" aria-hidden="true"></li>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 13">13</NavLink>
+                </PaginationItem>
+                <PaginationItem>
+                    <NavLink href="/pagination" aria-label="Page 14">14</NavLink>
+                </PaginationItem>
+                <PaginationNext><NavLink href="/pagination">Next</NavLink></PaginationNext>
+            </OpenCodeDev.Blazor.Foundation.Components.Navigation.Pagination>
+        </nav>
+
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
 

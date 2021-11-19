@@ -1,10 +1,19 @@
-﻿<table @attributes="AdditionalAttributes">
-@ChildContent
-</table>
-@code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
+﻿
+@if (HorizontalScroll)
+{
+    <div class="table-scroll">
+        <table class="@($" {(Striped ? "" : "unstriped")} {(Hover ? "hover" : "")} {(Stacked ? "stack" : "")}")" @attributes="AdditionalAttributes">
+            @ChildContent
+        </table>
+    </div>
+}
+else
+{
+    <table class="@($" {(Striped ? "" : "unstriped")} {(Hover ? "hover" : "")} {(Stacked ? "stack" : "")}")" @attributes="AdditionalAttributes">
+        @ChildContent
+    </table>
+}
 
-    [Parameter(CaptureUnmatchedValues = true)]
-    public IDictionary<string, object> AdditionalAttributes { get; set; }
+@code {
+
 }

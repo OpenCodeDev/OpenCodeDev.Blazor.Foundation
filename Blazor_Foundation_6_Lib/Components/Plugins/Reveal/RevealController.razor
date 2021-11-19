@@ -19,6 +19,7 @@
     /// List of Reveal (Non-Active and Currently-Active)
     /// </summary>
     public Dictionary<RenderFragment, Func<Task>> Registry = new Dictionary<RenderFragment, Func<Task>>();
+
     /// <summary>
     /// Track reveal fragment with id.
     /// </summary>
@@ -275,7 +276,7 @@
         int selectedOption = 2;
         RenderFragment revealOrigin =
             @<Reveal Id="@elementGen" OpenOnStart="true" @ref="RegistryReference[elementGen]"  Title="@title" TitleIcon="@titleIcon"
-                     CloseOnClick="false" RevealCloseXButton="false" OnOpened="OnRevealOpenedCallback"
+                     CloseOnClick="false" CloseXButton="false" OnOpened="OnRevealOpenedCallback"
                      PrimaryButtonTitle="@option1Label"  PrimaryButtonStyle="@option1style" ButtonGroupStyle="@optionwrapperstyle"
                      SecondaryButtonTitle="@option2label"  SecondaryButtonStyle="@option2style"
                      PrimaryButtonOnClickCT="@((option1Clbk != null? option1Clbk : async ()=> { selectedOption = 0; return true; }))"

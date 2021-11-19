@@ -1,0 +1,9 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+<li class="orbit-slide @(IsDefault ? "is-active" : "")" @attributes="AdditionalAttributes">
+    @ChildContent
+</li>
+
+@code {
+
+}

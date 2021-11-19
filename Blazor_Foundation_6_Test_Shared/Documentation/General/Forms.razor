@@ -1,6 +1,6 @@
 ﻿@page "/forms";
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
-
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
 <SectionWrapper>
     <SectionLeft>
         <h2>Forms</h2>
@@ -45,6 +45,20 @@
 
 <SectionWrapper>
     <SectionLeft>
+        <h2>Input for Credit Card Number</h2>
+        <p>
+            The object below is a Blazor Foundation 6 component <Code>@("<InputCreditCard />")</Code>.
+        </p>
+        <p>Unfortunately, the component is a one-way binding. When the user type-in his credit card number, the bound value will be updated always and not the other way around.</p>
+            <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PElucHV0Q3JlZGl0Q2FyZCBAYmluZC1DYXJkPSJATnVtYmVyIiAvPgpAY29kZSB7CiAgICBwdWJsaWMgc3RyaW5nIE51bWJlciB7IGdldDsgc2V0O30KfQo=" />
+            <InputCreditCard @bind-Card="@Number" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
         <h2>Simple as That, Nothing Else to say...</h2>
         <p>All C# Types of inputbox are available use them.</p>
         
@@ -56,5 +70,6 @@
 
 
 @code {
-
+    private string _Number = "";
+    public string Number { get => _Number; set { Console.WriteLine(value); _Number = value; } }
 }

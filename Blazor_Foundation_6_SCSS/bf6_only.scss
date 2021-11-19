@@ -1,0 +1,33 @@
+﻿
+/**
+ * Blazor Foundation 6 for SPA, WAPP and PWA
+ * Version 3.0.0
+ * https://bf.opendevcode.com/
+ * Licensed under MIT Open Source
+ */
+
+
+@import 'Blazor_Foundation/Utilities.scss';
+
+
+
+// Extra Feature for Blazor Foundation
+@import 'Blazor_Foundation/Plugins/HighlightCS.scss';
+
+//  multiple icon lib
+@import 'Blazor_Foundation/Plugins/Icons.scss';
+
+// Overrides for Foundation 6
+@import 'Blazor_Foundation/Zurb_Overrides/Sticky.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/SubMenu.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Reveal.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Form.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Menu.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/TopBar.scss';
+
+// HTML Elements or Normalize
+@import 'Blazor_Foundation/HTML.scss';
+
+
+// Import Animations
+@import 'Blazor_Foundation/Animations/Cycle';

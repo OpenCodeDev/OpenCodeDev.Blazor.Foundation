@@ -1,6 +1,254 @@
 ﻿@page "/table";
 
-<h3>Table</h3>
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Tables</h2>
+        <p>
+            Okay, they're not the sexiest things ever, but tables get the job done (for tabular data, of course).
+            They have responsive modifiers to help solve some of your layout issues based on your tables needs.
+        </p>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+
+        <h2>Basics</h2>
+        <p>No bells or whistles here, just a straight up table for all of your basic table needs.</p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlcj4KICAgIDxUYWJsZUhlYWRlcj4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRhYmxlIEhlYWRlcjwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+VGFibGUgSGVhZGVyPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5UYWJsZSBoZWFkZXI8L1RhYmxlSGVhZGVySXRlbT4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRhYmxlIGhlYWRlcjwvVGFibGVIZWFkZXJJdGVtPgogICAgPC9UYWJsZUhlYWRlcj4KICAgIDxUYWJsZUJvZHk+CiAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPlRoaXMgaXMgbG9uZ2VyIGNvbnRlbnQgRG9uZWMgaWQgZWxpdCBub24gbWkgcG9ydGEgZ3JhdmlkYSBhdCBlZ2V0IG1ldHVzLjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgIDwvVGFibGVCb2R5Um93PgogICAgICAgIDxUYWJsZUJvZHlSb3c+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5UaGlzIGlzIGxvbmdlciBjb250ZW50IERvbmVjIGlkIGVsaXQgbm9uIG1pIHBvcnRhIGdyYXZpZGEgYXQgZWdldCBtZXR1cy48L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICA8L1RhYmxlQm9keVJvdz4KICAgICAgICA8VGFibGVCb2R5Um93PgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+VGhpcyBpcyBsb25nZXIgY29udGVudCBEb25lYyBpZCBlbGl0IG5vbiBtaSBwb3J0YSBncmF2aWRhIGF0IGVnZXQgbWV0dXMuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICA8L1RhYmxlQm9keT4KPC9UYWJsZVdyYXBwZXI+" />
+        <TableWrapper>
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem> 
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Hover State</h2>
+        <p>
+            Need to spiff up the table just a tad? Just add the attribute <code>Hover</code> and set it on  <Code>true</Code>  to lightly darken the table rows on hover.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBIb3Zlcj0idHJ1ZSI+CiAgICA8VGFibGVIZWFkZXI+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5UYWJsZSBIZWFkZXI8L1RhYmxlSGVhZGVySXRlbT4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRhYmxlIEhlYWRlcjwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+VGFibGUgaGVhZGVyPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5UYWJsZSBoZWFkZXI8L1RhYmxlSGVhZGVySXRlbT4KICAgIDwvVGFibGVIZWFkZXI+CiAgICA8VGFibGVCb2R5PgogICAgICAgIDxUYWJsZUJvZHlSb3c+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5UaGlzIGlzIGxvbmdlciBjb250ZW50IERvbmVjIGlkIGVsaXQgbm9uIG1pIHBvcnRhIGdyYXZpZGEgYXQgZWdldCBtZXR1cy48L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICA8L1RhYmxlQm9keVJvdz4KICAgICAgICA8VGFibGVCb2R5Um93PgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+VGhpcyBpcyBsb25nZXIgY29udGVudCBEb25lYyBpZCBlbGl0IG5vbiBtaSBwb3J0YSBncmF2aWRhIGF0IGVnZXQgbWV0dXMuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPlRoaXMgaXMgbG9uZ2VyIGNvbnRlbnQgRG9uZWMgaWQgZWxpdCBub24gbWkgcG9ydGEgZ3JhdmlkYSBhdCBlZ2V0IG1ldHVzLjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgIDwvVGFibGVCb2R5Um93PgogICAgPC9UYWJsZUJvZHk+CjwvVGFibGVXcmFwcGVyPg==" />
+
+        <TableWrapper Hover="true">
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Stripes</h2>
+        <p>
+            By default, table rows are striped.You can change <Code>Striped</Code> attribute to <Code>false</Code> to remove the stripes.
+        </p>
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBTdHJpcGVkPSJmYWxzZSI+CiAgICA8VGFibGVIZWFkZXI+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5UYWJsZSBIZWFkZXI8L1RhYmxlSGVhZGVySXRlbT4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRhYmxlIEhlYWRlcjwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+VGFibGUgaGVhZGVyPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5UYWJsZSBoZWFkZXI8L1RhYmxlSGVhZGVySXRlbT4KICAgIDwvVGFibGVIZWFkZXI+CiAgICA8VGFibGVCb2R5PgogICAgICAgIDxUYWJsZUJvZHlSb3c+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5UaGlzIGlzIGxvbmdlciBjb250ZW50IERvbmVjIGlkIGVsaXQgbm9uIG1pIHBvcnRhIGdyYXZpZGEgYXQgZWdldCBtZXR1cy48L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICA8L1RhYmxlQm9keVJvdz4KICAgICAgICA8VGFibGVCb2R5Um93PgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+VGhpcyBpcyBsb25nZXIgY29udGVudCBEb25lYyBpZCBlbGl0IG5vbiBtaSBwb3J0YSBncmF2aWRhIGF0IGVnZXQgbWV0dXMuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPlRoaXMgaXMgbG9uZ2VyIGNvbnRlbnQgRG9uZWMgaWQgZWxpdCBub24gbWkgcG9ydGEgZ3JhdmlkYSBhdCBlZ2V0IG1ldHVzLjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgIDwvVGFibGVCb2R5Um93PgogICAgPC9UYWJsZUJvZHk+CjwvVGFibGVXcmFwcGVyPg==" />
+        <TableWrapper Striped="false">
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Stacked Table</h2>
+        <p>
+            To stack a table on small screens, add the attribute <Code>Stacked</Code> set it <Code>true</Code>.
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBTdGFja2VkPSJ0cnVlIj4KICAgIDxUYWJsZUhlYWRlcj4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRhYmxlIEhlYWRlcjwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+VGFibGUgSGVhZGVyPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5UYWJsZSBoZWFkZXI8L1RhYmxlSGVhZGVySXRlbT4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRhYmxlIGhlYWRlcjwvVGFibGVIZWFkZXJJdGVtPgogICAgPC9UYWJsZUhlYWRlcj4KICAgIDxUYWJsZUJvZHk+CiAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPlRoaXMgaXMgbG9uZ2VyIGNvbnRlbnQgRG9uZWMgaWQgZWxpdCBub24gbWkgcG9ydGEgZ3JhdmlkYSBhdCBlZ2V0IG1ldHVzLjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgIDwvVGFibGVCb2R5Um93PgogICAgICAgIDxUYWJsZUJvZHlSb3c+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5UaGlzIGlzIGxvbmdlciBjb250ZW50IERvbmVjIGlkIGVsaXQgbm9uIG1pIHBvcnRhIGdyYXZpZGEgYXQgZWdldCBtZXR1cy48L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkNvbnRlbnQgR29lcyBIZXJlPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICA8L1RhYmxlQm9keVJvdz4KICAgICAgICA8VGFibGVCb2R5Um93PgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+VGhpcyBpcyBsb25nZXIgY29udGVudCBEb25lYyBpZCBlbGl0IG5vbiBtaSBwb3J0YSBncmF2aWRhIGF0IGVnZXQgbWV0dXMuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5Db250ZW50IEdvZXMgSGVyZTwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29udGVudCBHb2VzIEhlcmU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgPC9UYWJsZUJvZHlSb3c+CiAgICA8L1RhYmxlQm9keT4KPC9UYWJsZVdyYXBwZXI+" />
+        <TableWrapper Stacked="true">
+            <TableHeader>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table Header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+                <TableHeaderItem width="200">Table header</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>This is longer content Donec id elit non mi porta gravida at eget metus.</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                    <TableBodyRowItem>Content Goes Here</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Scrolling Table</h2>
+
+        <p>
+            To enable the horizontal scrolling add the attribute <Code>HorizontalScroll</Code> on the <Code>@("<TableWrapper>")</Code> and set it to <Code>true</Code>
+        </p>
+
+        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderTitle="Razor" HeaderBGcolor="#5d2b90"
+                     Content="PFRhYmxlV3JhcHBlciBIb3Jpem9udGFsU2Nyb2xsPSJ0cnVlIj4KICAgIDxUYWJsZUhlYWRlcj4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRoaXMgaXMgdGhlIGRlc2NyaXB0aW9uITwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+T25lPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5Ud288L1RhYmxlSGVhZGVySXRlbT4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlRocmVlPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5Gb3VyPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5GaXZlPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5TaXg8L1RhYmxlSGVhZGVySXRlbT4KICAgICAgICA8VGFibGVIZWFkZXJJdGVtIHdpZHRoPSIyMDAiPlNldmVuPC9UYWJsZUhlYWRlckl0ZW0+CiAgICAgICAgPFRhYmxlSGVhZGVySXRlbSB3aWR0aD0iMjAwIj5FaWdodDwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+TmluZTwvVGFibGVIZWFkZXJJdGVtPgogICAgICAgIDxUYWJsZUhlYWRlckl0ZW0gd2lkdGg9IjIwMCI+VGVlbjwvVGFibGVIZWFkZXJJdGVtPgogICAgPC9UYWJsZUhlYWRlcj4KICAgIDxUYWJsZUJvZHk+CiAgICAgICAgPFRhYmxlQm9keVJvdz4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+dGhlc2UgYXJlIGFsbCB0aGUgd29yZHMgdGhhdCBwZW9wbGUgdXNlIHRvIGRpc2NyaXBlIEJsYXpvciBGb25kYXRpb24gNjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q29vbDwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+U3dhZzwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+Q2hpbGw8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPktpbGxlcjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+UmFkPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5CYWxsZXI8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPk9NRzwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+U3dlZXQ8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkF3ZXNvbWU8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkJlYXN0PC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgIDwvVGFibGVCb2R5Um93PgogICAgICAgIDxUYWJsZUJvZHlSb3c+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPlRoZXNlIGFyZSBzb21lIHdvcmRzIHRoYXQgcGVvcGxlIHVzZSB0byBkZXNjcmliZSBvdGhlciB3ZWIgZnJhbWV3b3JrPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5XaGF0ZXZzPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5VZ2guPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5MT0w8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPks8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkFpZ2h0PC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5FaC48L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkdycnJyLjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+TWVoLjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+VFRZTDwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+QmxlaDwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICA8L1RhYmxlQm9keVJvdz4KICAgICAgICA8VGFibGVCb2R5Um93PgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5IZXJlIGFyZSBzb21lIGdyZWF0IHN1cGVyIGhlcm9zPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5CYXRhbWFuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT5TdXBlcm1hbjwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+U3BpZGVybWFuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgICAgIFdvbmRlciBXb21hbgogICAgICAgICAgICA8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICAgICAgTmljb2xhcyBjYXNlCiAgICAgICAgICAgIDwvVGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgPFRhYmxlQm9keVJvd0l0ZW0+QW50bWFuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgICAgICA8VGFibGVCb2R5Um93SXRlbT4KICAgICAgICAgICAgICAgIENhcHRhaW4gQW1lcmljYQogICAgICAgICAgICA8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPlRob3I8L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPkFxdWFtYW48L1RhYmxlQm9keVJvd0l0ZW0+CiAgICAgICAgICAgIDxUYWJsZUJvZHlSb3dJdGVtPklyb24gTWFuPC9UYWJsZUJvZHlSb3dJdGVtPgogICAgICAgIDwvVGFibGVCb2R5Um93PgogICAgPC9UYWJsZUJvZHk+CjwvVGFibGVXcmFwcGVyPg==" />
+       
+        <TableWrapper HorizontalScroll="true">
+            <TableHeader>
+                <TableHeaderItem width="200">This is the description!</TableHeaderItem>
+                <TableHeaderItem width="200">One</TableHeaderItem>
+                <TableHeaderItem width="200">Two</TableHeaderItem>
+                <TableHeaderItem width="200">Three</TableHeaderItem>
+                <TableHeaderItem width="200">Four</TableHeaderItem>
+                <TableHeaderItem width="200">Five</TableHeaderItem>
+                <TableHeaderItem width="200">Six</TableHeaderItem>
+                <TableHeaderItem width="200">Seven</TableHeaderItem>
+                <TableHeaderItem width="200">Eight</TableHeaderItem>
+                <TableHeaderItem width="200">Nine</TableHeaderItem>
+                <TableHeaderItem width="200">Teen</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>these are all the words that people use to discripe Blazor Fondation 6</TableBodyRowItem>
+                    <TableBodyRowItem>Cool</TableBodyRowItem>
+                    <TableBodyRowItem>Swag</TableBodyRowItem>
+                    <TableBodyRowItem>Chill</TableBodyRowItem>
+                    <TableBodyRowItem>Killer</TableBodyRowItem>
+                    <TableBodyRowItem>Rad</TableBodyRowItem>
+                    <TableBodyRowItem>Baller</TableBodyRowItem>
+                    <TableBodyRowItem>OMG</TableBodyRowItem>
+                    <TableBodyRowItem>Sweet</TableBodyRowItem>
+                    <TableBodyRowItem>Awesome</TableBodyRowItem>
+                    <TableBodyRowItem>Beast</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>These are some words that people use to describe other web framework</TableBodyRowItem>
+                    <TableBodyRowItem>Whatevs</TableBodyRowItem>
+                    <TableBodyRowItem>Ugh.</TableBodyRowItem>
+                    <TableBodyRowItem>LOL</TableBodyRowItem>
+                    <TableBodyRowItem>K</TableBodyRowItem>
+                    <TableBodyRowItem>Aight</TableBodyRowItem>
+                    <TableBodyRowItem>Eh.</TableBodyRowItem>
+                    <TableBodyRowItem>Grrrr.</TableBodyRowItem>
+                    <TableBodyRowItem>Meh.</TableBodyRowItem>
+                    <TableBodyRowItem>TTYL</TableBodyRowItem>
+                    <TableBodyRowItem>Bleh</TableBodyRowItem>
+                </TableBodyRow>
+                <TableBodyRow>
+                    <TableBodyRowItem>Here are some great super heros</TableBodyRowItem>
+                    <TableBodyRowItem>Bataman</TableBodyRowItem>
+                    <TableBodyRowItem>Superman</TableBodyRowItem>
+                    <TableBodyRowItem>Spiderman</TableBodyRowItem>
+                    <TableBodyRowItem>
+                        Wonder Woman
+                    </TableBodyRowItem>
+                    <TableBodyRowItem>
+                        Nicolas case
+                    </TableBodyRowItem>
+                    <TableBodyRowItem>Antman</TableBodyRowItem>
+                    <TableBodyRowItem>
+                        Captain America
+                    </TableBodyRowItem>
+                    <TableBodyRowItem>Thor</TableBodyRowItem>
+                    <TableBodyRowItem>Aquaman</TableBodyRowItem>
+                    <TableBodyRowItem>Iron Man</TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+    </SectionLeft>
+</SectionWrapper> 
 
 @code {
 
