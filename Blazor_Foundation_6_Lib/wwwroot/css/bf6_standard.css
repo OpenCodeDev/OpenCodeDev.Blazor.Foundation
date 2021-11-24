@@ -914,7 +914,7 @@ cite, .cite-block {
 }
 
 cite:before, .cite-block:before {
-  content: "— ";
+  content: "ï¿½ ";
 }
 
 code, .code-inline {
@@ -4758,14 +4758,14 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .pagination-previous.disabled::before {
   display: inline-block;
   margin-right: 0.5rem;
-  content: "«";
+  content: "ï¿½";
 }
 
 .pagination-next a::after,
 .pagination-next.disabled::after {
   display: inline-block;
   margin-left: 0.5rem;
-  content: "»";
+  content: "ï¿½";
 }
 
 .has-tip {
@@ -4935,7 +4935,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .is-active > .accordion-title::before {
-  content: "–";
+  content: "ï¿½";
 }
 
 .accordion-content {
