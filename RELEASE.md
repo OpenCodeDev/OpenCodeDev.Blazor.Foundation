@@ -1,3 +1,22 @@
+# Version 3.0.3
+
+## Deprecated
+- File: blazor-foundation.js
+- File: jquery.js
+- File: what-input.js
+
+Will be removed in the by v3.1.0
+
+## Changes
+- Added bf6_only.js (jquery.js, what-input.js and blazor-foundation.js combined).
+- Added bf6_standard.js (jquery.js, what-input.js, foundation.js and blazor-foundation.js combined).
+
+## Fixes
+- Fix Top Bar CSS Variable
+- Removed .DS_store preventing publishing of WASM app.
+- Removed .map files preventing publishing of WASM app.
+
+
 # Version 3.0
 ## Breaking Change Warning
 Well Blazor Foundation 2 was a very early test run and no actual project implements it that wont be an issue be know that Version 3 LTS fully break Version 2.x.
