@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Blazor Foundation 6 for SPA, WAPP and PWA
  * Version 3.0.0
@@ -133,6 +134,8 @@
   height: -moz-fit-content;
   height: fit-content;
   min-height: unset;
+  border-radius: var(--reveal-border-radius);
+  border-radius: var(--reveal-bg-color);
 }
 
 .form-error {
@@ -183,6 +186,14 @@ input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
 .title-bar {
   background: var(--top-bar-bg-color);
   color: var(--top-bar-ft-color);
+}
+
+cite:before, .cite-block:before {
+  content: "— ";
+}
+
+.slider {
+  margin-bottom: 1.25rem;
 }
 
 body {

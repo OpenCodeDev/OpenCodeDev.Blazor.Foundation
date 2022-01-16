@@ -103,6 +103,10 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--hljs-header-title-ft-color", "var(--white-color)", "Code Highlighter (HighlightCS) font color of header's title.");
             Set("--hljs-header-copy-ft-color", "var(--white-color)", "Code Highlighter (HighlightCS) font color of header's copy button.");
             Set("--hljs-header-bg-color", "var(--dark-gray-color)", "Code Highlighter (HighlightCS) background color of header.");
+
+            Set("--reveal-border-radius", "var(--global-border-radius)", "Border radius for reveal panel.");
+            Set("--reveal-bg-color", "var(--white-color)", "background color for reveal panel.");
+
         }
 
         /// <summary>

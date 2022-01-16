@@ -8592,6 +8592,14 @@ textarea {
   color: var(--top-bar-ft-color);
 }
 
+cite:before, .cite-block:before {
+  content: "— ";
+}
+
+.slider {
+  margin-bottom: 1.25rem;
+}
+
 body {
   background: var(--body-bg-color);
   color: var(--body-ft-color);

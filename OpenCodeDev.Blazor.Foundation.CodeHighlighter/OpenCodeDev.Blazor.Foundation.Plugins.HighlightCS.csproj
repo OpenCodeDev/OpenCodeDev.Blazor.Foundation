@@ -16,9 +16,9 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</RootNamespace>
     <PackageIcon>icon-highlightcs.png</PackageIcon>
     <PackageIconUrl />
-    <AssemblyVersion>3.0.0</AssemblyVersion>
-    <FileVersion>3.0.0</FileVersion>
-    <Version>3.0.0</Version>
+    <AssemblyVersion>3.0.1</AssemblyVersion>
+    <FileVersion>3.0.1</FileVersion>
+    <Version>3.0.1</Version>
   </PropertyGroup>
 
   
@@ -27,12 +27,12 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.*" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

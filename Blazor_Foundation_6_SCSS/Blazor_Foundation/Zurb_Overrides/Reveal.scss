@@ -11,4 +11,6 @@
 .reveal {
     height: fit-content;
     min-height: unset;
+    border-radius:var(--reveal-border-radius);
+    border-radius:var(--reveal-bg-color)
 }

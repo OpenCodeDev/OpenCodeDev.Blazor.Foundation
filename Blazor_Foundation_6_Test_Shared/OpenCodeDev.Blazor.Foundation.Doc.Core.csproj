@@ -9,6 +9,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>OpenCodeDev</Company>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
@@ -19,7 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.0" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation" Version="3.0.5" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation" Version="3.0.3" />
     <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
