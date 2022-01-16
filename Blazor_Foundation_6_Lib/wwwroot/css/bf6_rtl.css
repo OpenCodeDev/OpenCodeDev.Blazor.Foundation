@@ -8537,6 +8537,8 @@ html.is-reveal-open body {
   height: -moz-fit-content;
   height: fit-content;
   min-height: unset;
+  border-radius: var(--reveal-border-radius);
+  border-radius: var(--reveal-bg-color);
 }
 
 .form-error {
