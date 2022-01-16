@@ -88,7 +88,8 @@
 
 @code {
 
-    private RenderFragment MessageBoxTemplate { get; set; } =@<Reveal OpenOnStart="true">This is a Dangerous Message</Reveal>;
+    private RenderFragment MessageBoxTemplate { get; set; } =@<Reveal OpenOnStart="true">This is a Dangerous Message</Reveal>
+    ;
 
 
 
@@ -106,7 +107,7 @@
         // Note: If description is available it will be preserve
         // true/false trigger update
         StyleManager.Set("--top-bar-bg-color", "#1c2463", "Top bar background color.", true);
-        
+
     }
 
     public async Task OnStyleChanged()
@@ -122,22 +123,26 @@
     {
         if (firstRender)
         {
-            try
-            {
-
-                byte[] licenseResult = await _client.GetByteArrayAsync("https://raw.githubusercontent.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation/main/LICENSE.txt");
-                MITLICENSE = Encoding.UTF8.GetString(licenseResult);
-            }
-            catch
-            {
-                MitLicenseError = true;
-
-            }
-            await InvokeAsync(() => StateHasChanged());
+            LoadLicense();
         }
 
     }
 
+    private async Task LoadLicense()
+    {
+        try
+        {
+
+        byte[] licenseResult = await _client.GetByteArrayAsync("https://raw.githubusercontent.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation/main/LICENSE.txt");
+        MITLICENSE = Encoding.UTF8.GetString(licenseResult);
+        }
+        catch
+        {
+        MitLicenseError = true;
+
+        }
+        await InvokeAsync(() => StateHasChanged());
+    }
     private bool MitLicenseError { get; set; } = false;
     private string MITLICENSE { get; set; } = null;
 }
