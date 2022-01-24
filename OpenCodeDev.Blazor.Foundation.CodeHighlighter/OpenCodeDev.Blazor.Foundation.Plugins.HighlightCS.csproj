@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>OpenCodeDev</Authors>
     <Product>Blazor Foundation 6 - CodeHighlighter Extension</Product>
-    <Copyright>OpenCodeDev © 2021</Copyright>
+    <Copyright>OpenCodeDev © 2022</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
@@ -16,9 +16,9 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</RootNamespace>
     <PackageIcon>icon-highlightcs.png</PackageIcon>
     <PackageIconUrl />
-    <AssemblyVersion>3.0.2.1</AssemblyVersion>
-    <FileVersion>3.0.2.1</FileVersion>
-    <Version>3.0.2.1</Version>
+    <AssemblyVersion>3.0.5</AssemblyVersion>
+    <FileVersion>3.0.5</FileVersion>
+    <Version>3.0.5</Version>
   </PropertyGroup>
 
   
