@@ -27,16 +27,7 @@
     {
         <div style="min-height: 3.6em; padding: 0.5em 1.3em 0.5em 1.3em; border-top: 1px solid #dee2e6; border-top-left-radius: calc(.3rem - 1px); border-top-right-radius: calc(.3rem - 1px);">
             <ButtonGroup style="@ButtonGroupStyle">
-                @if (PrimaryButtonTitle != null)
-                {
-                    <Button DataToggle="@PrimaryButtonDataToggle"
-                            Class="@PrimaryButtonClass"
-                            Id="@PrimaryButtonId"
-                            style="@PrimaryButtonStyle"
-                            @onclick="async ()=> await OnPrimaryClick()">
-                        @PrimaryButtonTitle.ToString()
-                    </Button>
-                }
+
                 @if (SecondaryButtonTitle != null)
                 {
                     <Button DataToggle="@SecondaryButtonDataToggle"
@@ -45,6 +36,16 @@
                             style="@SecondaryButtonStyle"
                             @onclick="async ()=> await OnSecondaryClick()">
                         @SecondaryButtonTitle.ToString()
+                    </Button>
+                }
+                @if (PrimaryButtonTitle != null)
+                {
+                    <Button DataToggle="@PrimaryButtonDataToggle"
+                            Class="@PrimaryButtonClass"
+                            Id="@PrimaryButtonId"
+                            style="@PrimaryButtonStyle"
+                            @onclick="async ()=> await OnPrimaryClick()">
+                        @PrimaryButtonTitle.ToString()
                     </Button>
                 }
             </ButtonGroup>
