@@ -27,7 +27,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.0" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.3" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
