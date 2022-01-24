@@ -118,7 +118,6 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
 
         protected override void OnInitialized()
         {
-            Console.WriteLine($"{Language} -> {Supported[Language][1]}");
             Language = !Supported.ContainsKey(Language) ? "txt" : Language;
             DecodedContent = ContentDecodeHandler();
         }
@@ -132,6 +131,20 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
                 HeaderIsReady = true;
                 StateHasChanged();
             }
+        }
+
+        /// <summary>
+        /// Convert Non Supported Language into Underlaying Supported Language (Like Razor -> HTML)
+        /// </summary>
+        /// <param name="language"></param>
+        /// <returns></returns>
+        private string ExceptionLanguage(string language)
+        {
+            if (language == "razor")
+            {
+                return "html";
+            }
+            return language;
         }
     }
 }
