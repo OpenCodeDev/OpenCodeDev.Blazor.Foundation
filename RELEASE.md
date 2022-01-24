@@ -1,3 +1,12 @@
+# Version 3.0.4
+## Fixes
+- Code Highlither Support: razor.
+- Switch Reveal Primary and Secondary Buttons.
+- Add BG Color and Radius of Reveal in Style Manager.
+- Fixed Slow Documentation due to Github.
+- Fixed Foundation 6 Quoteblock Icon or Author -- not showing.
+- Reset Slider Bottom Margin to be same and top.
+
 # Version 3.0.3
 
 ## Deprecated
