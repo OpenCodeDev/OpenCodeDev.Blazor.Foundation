@@ -6,7 +6,7 @@
     <Company>OpenCodeDev</Company>
     <Product>Blazor Foundation 6</Product>
     <Description>Foundation 6 components converted as blazor component mixing c# and javascript to control dynamic components</Description>
-    <Copyright>OpenCodeDev © 2021</Copyright>
+    <Copyright>OpenCodeDev © 2022</Copyright>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
