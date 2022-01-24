@@ -1,3 +1,7 @@
+# Version 3.0.5
+Update NuGet Asp.net 6.0.1
+Update NuGet Extension 3.0.3
+
 # Version 3.0.4
 ## Fixes
 - Code Highlither Support: razor.
