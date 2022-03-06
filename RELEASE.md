@@ -1,4 +1,19 @@
-# Version 3.0.4
+# Version 3.0.7 (2022 Q1 Update 3)
+## Features
+- Add Countries' Flag Icons
+
+## Documentation
+- Add Documentation Support for Extra Icons
+- Add Motion UI Documentation
+
+## Fixes
+- Fix Off Canvas Z-Icon (CSS)
+
+# Version 3.0.6
+- Hot Fixes
+# Version 3.0.5
+- Hot Fixes
+# Version 3.0.4 (2022 Q1 Update 2)
 ## Fixes
 - Code Highlither Support: razor.
 - Switch Reveal Primary and Secondary Buttons.
@@ -7,7 +22,7 @@
 - Fixed Foundation 6 Quoteblock Icon or Author -- not showing.
 - Reset Slider Bottom Margin to be same and top.
 
-# Version 3.0.3
+# Version 3.0.3 (2022 Q1 Update 1)
 
 ## Deprecated
 - File: blazor-foundation.js
