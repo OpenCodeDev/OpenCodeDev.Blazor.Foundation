@@ -19,19 +19,24 @@
 
 
   <ItemGroup>
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.6" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation" Version="3.0.7" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.0.6" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.*" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.*" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
   </ItemGroup>
 
 
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
   </ItemGroup>
 
 </Project>
