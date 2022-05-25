@@ -1,13 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
-using OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿### My Mark Down Test Oh!
 
+
+[--HighlightCode--]
 namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins
 {
     public static class MDILoader{
@@ -35,3 +29,4 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins
 
 
 }
+[--/HighlightCode--]

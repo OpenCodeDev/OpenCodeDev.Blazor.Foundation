@@ -26,6 +26,18 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <Content Remove="wwwroot\TestDoc.md" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\TestDoc.md">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
