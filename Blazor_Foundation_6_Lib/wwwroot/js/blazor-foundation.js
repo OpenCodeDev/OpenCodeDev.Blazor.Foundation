@@ -1,8 +1,7 @@
 ﻿/*
- * Copyright (c) FlawlessLoop Studios, Inc.
+ * Copyright (c) OpenCodeDev.
  * Created in 2021
- * Last Update in 2021
- * Version: 0.1-alpha
+ * Last Update in 2022
  * JS Version: ES6+
  * Contributors:
  *      Max Samson (m.samson@opencodedev.com)

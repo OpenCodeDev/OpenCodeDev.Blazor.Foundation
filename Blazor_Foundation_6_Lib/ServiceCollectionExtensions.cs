@@ -25,7 +25,7 @@ namespace OpenCodeDev.Blazor.Foundation
 
         public static void AddBFStyleManagement(this IServiceCollection service)
         {
-            service.AddSingleton<IStyleManagement, BFStyleManagement>();
+            service.AddScoped<IStyleManagement, BFStyleManagement>();
         }
 
         public static void RemoveBFStyleManagement(this IServiceCollection service)
@@ -38,11 +38,11 @@ namespace OpenCodeDev.Blazor.Foundation
 
         public static void AddBFInfiniteLoadHelper(this IServiceCollection service)
         {
-            service.AddSingleton<IInfiniteLoadHelper, InfiniteLoadHelper>();
+            service.AddScoped<IInfiniteLoadHelper, InfiniteLoadHelper>();
         }
         public static void AddBFMotionUI(this IServiceCollection service)
         {
-            service.AddTransient<IMotionUIController, MotionUIController>();
+            service.AddScoped<IMotionUIController, MotionUIController>();
         }
     }
 }
