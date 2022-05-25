@@ -8,8 +8,8 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Core</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>OpenCodeDev</Company>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>3.0.8</AssemblyVersion>
+    <Version>3.0.8</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
@@ -21,6 +21,8 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
+	<PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.*" />
+	<PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.0.7.18" />
   </ItemGroup>
 
 
@@ -31,10 +33,10 @@
 
 
 
+
   <ItemGroup>
-    <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
-    <ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
-    <ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.Extensions\OpenCodeDev.Blazor.Foundation.Extensions.csproj" />
+	  <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
+
   </ItemGroup>
 
 </Project>

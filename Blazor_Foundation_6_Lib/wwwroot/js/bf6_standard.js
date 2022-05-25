@@ -11197,6 +11197,7 @@ async function ClipboardReadText() {
 }
 
 function HighlightJSInit(element) {
+	console.log(element);
     hljs.highlightElement($(`#${element}`).get(0));
 }
 

@@ -8,14 +8,14 @@
     <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
     <RepositoryType>Open Source</RepositoryType>
-    <PackageTags>.net6, extension methods and services for Blazor Foundation.</PackageTags>
-    <Description>blazor-foundation, blazor, extra-services, extension-methods, .net6</Description>
+    <PackageTags>blazor-foundation, blazor, extra-services, extension-methods, .net6</PackageTags>
+    <Description>.net6, extension methods and services for Blazor Foundation.</Description>
     <Copyright>OpenCodeDev © 2021</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>3.0.3</Version>
-    <AssemblyVersion>3.0.3</AssemblyVersion>
-    <FileVersion>3.0.3</FileVersion>
+    <Version>3.0.7.1</Version>
+    <AssemblyVersion>3.0.7.1</AssemblyVersion>
+    <FileVersion>3.0.7.1</FileVersion>
     <PackageIcon>icon-extension.png</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>
