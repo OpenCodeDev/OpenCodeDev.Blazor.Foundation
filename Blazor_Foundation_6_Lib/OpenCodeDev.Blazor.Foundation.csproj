@@ -70,8 +70,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.*" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json" Version="13.*" />
   </ItemGroup>
-  
 
- 
+
+	<!-- Compile SCSS files into CSS -->
+	<Target Name="CompileGlobalSass" BeforeTargets="Compile">
+		<Message Text="Compiling CSSsss" Importance="high" />
+		<Exec Command="node-sass $(ProjectDir)_SCSS\bf6_only.scss $(ProjectDir)wwwroot\css\bf6_only.css" />
+		<Exec Command="node-sass $(ProjectDir)_SCSS\bf6_prototype.scss $(ProjectDir)wwwroot\css\bf6_prototype.css" />
+		<Exec Command="node-sass $(ProjectDir)_SCSS\bf6_rtl.scss $(ProjectDir)wwwroot\css\bf6_rtl.css" />
+		<Exec Command="node-sass $(ProjectDir)_SCSS\bf6_standard.scss $(ProjectDir)wwwroot\css\bf6_standard.css" />
+	</Target>
+
 
 </Project>

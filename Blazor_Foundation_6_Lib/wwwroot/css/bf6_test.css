@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /**
  * Blazor Foundation 6 for SPA, WAPP and PWA
+ * Version 3.0.7
  * https://bf.opendevcode.com/
  * Licensed under MIT Open Source
  */
@@ -862,18 +863,6 @@ cite:before, .cite-block:before {
 
 .slider {
   margin-bottom: 1.25rem; }
-
-.accordion {
-  background: var(--accordion-bg-color); }
-
-.accordion-content {
-  border-color: var(--accordion-content-border-color);
-  background-color: var(--accordion-content-bg-color);
-  color: var(--accordion-content-ft-color); }
-
-.accordion-title {
-  border-color: var(--accordion-title-border-color);
-  color: var(--accordion-title-ft-color); }
 
 body {
   background: var(--body-bg-color);
