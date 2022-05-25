@@ -20,7 +20,6 @@ namespace OpenCodeDev.Blazor.Foundation
             service.AddBFInfiniteLoadHelper();
             service.AddBFMotionUI();
             service.AddBFStyleManagement();
-
         }
 
         public static void AddBFStyleManagement(this IServiceCollection service)
