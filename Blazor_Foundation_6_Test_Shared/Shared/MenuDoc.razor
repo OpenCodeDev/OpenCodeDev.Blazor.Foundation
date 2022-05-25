@@ -3,6 +3,11 @@
 <Accordion Class="menu-accordion-doc-wrapper" MultiOpen="true">
 
     @ChildContent
+    <AccordionItem Title="Debugging Tool" Active="true">
+        <MenuNested Vertical="true">
+            <li><NavLink href="/wasm/modules" data-close="SideMenu">Loaded Modules</NavLink></li>
+        </MenuNested>
+    </AccordionItem>
     <AccordionItem Title="Getting Started" Active="true">
         <MenuNested Vertical="true">
             <li><NavLink href="/welcome" data-close="SideMenu">Welcome</NavLink></li>

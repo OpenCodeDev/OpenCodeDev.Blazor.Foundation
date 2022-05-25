@@ -1,0 +1,137 @@
+﻿@page "/builtin-loco";
+
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.MotionUI;
+@inject I MotionUIObj;
+
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>What is that?</h2>
+        <p>Well just a quick tool to help you automatically load to user's language base on localstorage and set a default language! </p>
+        <p>You will need nuget <Code>@("OpenCodeDev.Blazor.Foundation.Extensions")</Code>.</p>
+
+        <h2>How to use?</h2>
+        <p>Got to <Code>Program.cs</Code> and add the following lines</p>
+        <HighlightCS Language="cs" Full="true" HeaderTitle="Program.cs"
+                     Content="Ly8gd2hlcmUgeW91IGFkZCBhbnkgc2VydmljZXMgYjQgYnVpbGQoKQpidWlsZGVyLlNlcnZpY2VzLkFkZExvY2FsaXphdGlvbigpOwovLyBUb29sIHVzZXMgbG9jYWxzdG9yYWdlIHNvIG5lZWQgc2VydmljZSB0byBhY2Nlc3MKYnVpbGRlci5TZXJ2aWNlcy5BZGRCRkxvY2FsU3RvcmFnZSgpOwoKLy9hZnRlciBidWlsZGVyLkJ1aWxkKCk7Ci8vIHRoaXMgbG9hZHMgdGhlIGRlZmF1bHQgbGFuZ3VhZ2Ugc2F2ZWQgaW4gdGhlIHVzZXJzJyBicm93c2VyIGlmIG5vbmUgZm91bmQgc2V0IGl0IHVuZGVyIHRoZSBuYW1lICJjdWx0dXJlIgphd2FpdCBhcHAuTG9hZEN1bHR1cmUoKTs=" />
+
+        <p>The default language is english but can be changed using <Code>@(@".LoadCulture(""en / fr / es..."")")</Code></p>
+        <p>You can set a default language be that would be bad experience for the user just to do that! if you can detect location and switch language do it.</p>
+       
+        <h2>Installing Plugin</h2>
+        <p>Add NuGet Package <code>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</code> and Reference in _Imports.razor</p>
+
+        <p> We have created a C# controller for the Motion UI Library.</p>
+
+        <HighlightCS Language="razor" Full="true" HeaderTitle="_Import.razor or Any Razor Pages"
+                     Content="QHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuUGx1Z2lucy5Nb3Rpb25VSTsKQGluamVjdCBJTW90aW9uVUlDb250cm9sbGVyIE1vdGlvblVJT2JqOw==" />
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Animate Once</h2>
+        <p>We have created a function to animate an element once <Code Content="TW90aW9uVUlPYmouQW5pbWF0ZU9uY2U="> </Code></p>
+        <h3>Shake Once</h3>
+        <Button @onclick="@(async ()=> { MotionUIObj.AnimateOnce("ANIMATEONE", Animation.Shake, AnimationSpeed.Slow); })">
+            Animate Once
+        </Button>
+        <br /><i id="ANIMATEONE" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
+        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVPTkUiLCBBbmltYXRpb24uU2hha2UsIEFuaW1hdGlvblNwZWVkLlNsb3cpOyB9KSI+CiAgICBBbmltYXRlIE9uY2UKPC9CdXR0b24+CjxiciAvPjxpIGlkPSJBTklNQVRFT05FIiBzdHlsZT0iZm9udC1zaXplOiAzZW07IG1hcmdpbi1ib3R0b206IDFlbTsiIGNsYXNzPSJiZmkgYmZpLWNvdW50cnktY2EiPjwvaT48YnIgLz4=" />
+        <h3>Wiggle Once</h3>
+        <Button @onclick="@(async ()=> { MotionUIObj.AnimateOnce("ANIMATETWO", Animation.Wiggle, AnimationSpeed.Slow); })">
+            Animate Once
+        </Button>
+        <br /><i id="ANIMATETWO" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
+        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+                             Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVUV08iLCBBbmltYXRpb24uV2lnZ2xlLCBBbmltYXRpb25TcGVlZC5TbG93KTsgfSkiPgogICAgQW5pbWF0ZSBPbmNlCjwvQnV0dG9uPgo8YnIgLz48aSBpZD0iQU5JTUFURVRXTyIgc3R5bGU9ImZvbnQtc2l6ZTogM2VtOyBtYXJnaW4tYm90dG9tOiAxZW07IiBjbGFzcz0iYmZpIGJmaS1jb3VudHJ5LWNhIj48L2k+PGJyIC8+" />
+        
+        <h3>Spin CW Once</h3>
+        <Button @onclick="@(async ()=> { MotionUIObj.AnimateOnce("ANIMATETHREE", Animation.SpinCW, AnimationSpeed.Slow); })">
+            Animate Once
+        </Button>
+        <br /><i id="ANIMATETHREE" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
+        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+                             Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVUSFJFRSIsIEFuaW1hdGlvbi5TcGluQ1csIEFuaW1hdGlvblNwZWVkLlNsb3cpOyB9KSI+CiAgICBBbmltYXRlIE9uY2UKPC9CdXR0b24+CjxiciAvPjxpIGlkPSJBTklNQVRFVEhSRUUiIHN0eWxlPSJmb250LXNpemU6IDNlbTsgbWFyZ2luLWJvdHRvbTogMWVtOyIgY2xhc3M9ImJmaSBiZmktY291bnRyeS1jYSI+PC9pPjxiciAvPg==" />
+        
+        <h3>Spin CCW Once</h3>
+        <Button @onclick="@(async ()=> { MotionUIObj.AnimateOnce("ANIMATEFOUR", Animation.SpinCCW, AnimationSpeed.Slow); })">
+            Animate Once
+        </Button>
+        <br /><i id="ANIMATEFOUR" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
+        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+                             Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVGT1VSIiwgQW5pbWF0aW9uLlNwaW5DQ1csIEFuaW1hdGlvblNwZWVkLlNsb3cpOyB9KSI+CiAgICBBbmltYXRlIE9uY2UKPC9CdXR0b24+CjxiciAvPjxpIGlkPSJBTklNQVRFRk9VUiIgc3R5bGU9ImZvbnQtc2l6ZTogM2VtOyBtYXJnaW4tYm90dG9tOiAxZW07IiBjbGFzcz0iYmZpIGJmaS1jb3VudHJ5LWNhIj48L2k+PGJyIC8+" />
+        
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Animate </h2>
+        <p>We have created functions to animate an element</p>
+        <HighlightCS Language="cs" Full="true" HeaderTitle="C#"
+                Content="TW90aW9uVUlPYmouQW5pbWF0ZUFuZFNob3coRUxFTUVOVCBJRCwgQU5JTSBOQU1FLCBQUkVWRU5UIFNQQU0sIE1BWCBEVVJBVElPTik7Ck1vdGlvblVJT2JqLkFuaW1hdGVBbmRIaWRlKEVMRU1FTlQgSUQsIEFOSU0gTkFNRSwgUFJFVkVOVCBTUEFNLCBNQVggRFVSQVRJT04pOw==" />
+        
+        <h3>Select an In Animation</h3>
+        <select @bind="AnimationSelection">
+            <option value="slide-in-down">slide-in-down</option>
+            <option value="slide-in-left">slide-in-left</option>
+            <option value="slide-in-up">slide-in-up</option>
+            <option value="slide-in-right">slide-in-right</option>
+            <option value="fade-in">fade-in</option>
+            <option value="hinge-in-from-top">hinge-in-from-top</option>
+            <option value="hinge-in-from-right">hinge-in-from-right</option>
+            <option value="hinge-in-from-bottom">hinge-in-from-bottom</option>
+            <option value="hinge-in-from-left">hinge-in-from-left</option>
+            <option value="hinge-in-from-middle-x">hinge-in-from-middle-x</option>
+            <option value="hinge-in-from-middle-y">hinge-in-from-middle-y</option>
+            <option value="scale-in-up">scale-in-up</option>
+            <option value="scale-in-down">scale-in-down</option>
+            <option value="spin-in">spin-in</option>
+            <option value="spin-in-ccw">spin-in-ccw</option>
+      </select>
+        <h3>Select an Out Animation</h3>
+        <select @bind="AnimationOutSelection">
+            <option value="slide-out-down">slide-out-down</option>
+            <option value="slide-out-left">slide-out-left</option>
+            <option value="slide-out-up">slide-out-up</option>
+            <option value="slide-out-right">slide-out-right</option>
+            <option value="fade-out">fade-out</option>
+            <option value="hinge-out-from-top">hinge-out-from-top</option>
+            <option value="hinge-out-from-right">hinge-out-from-right</option>
+            <option value="hinge-out-from-bottom">hinge-out-from-bottom</option>
+            <option value="hinge-out-from-left">hinge-out-from-left</option>
+            <option value="hinge-out-from-middle-x">hinge-out-from-middle-x</option>
+            <option value="hinge-out-from-middle-y">hinge-out-from-middle-y</option>
+            <option value="scale-out-up">scale-out-up</option>
+            <option value="scale-out-down">scale-out-down</option>
+            <option value="spin-out">spin-out</option>
+            <option value="spin-out-ccw">spin-out-ccw</option>
+            <option value="scale-out-down">scale-out-down</option>
+      </select>
+        <h3>Animate and Show/Hide</h3>
+        <Button style="" @onclick="@(async ()=> { MotionUIObj.AnimateAndShow("ANIMATE5", AnimationSelection, true, 500); })">Animate & Show </Button>
+        <Button style="" @onclick="@(async ()=> { MotionUIObj.AnimateAndHide("ANIMATE6", AnimationOutSelection, true, 500); })">Animate & Hide </Button>
+        <br /><i id="ANIMATE6" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
+        <i id="ANIMATE5" style="font-size: 3em; margin-bottom: 1em; display:none;" class="bfi bfi-country-ca"></i><br />
+
+        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+                     Content="PEJ1dHRvbiBzdHlsZT0iIiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZUFuZFNob3coIkFOSU1BVEU1IiwgQW5pbWF0aW9uU2VsZWN0aW9uLCB0cnVlLCA1MDApOyB9KSI+IEFuaW1hdGUgJiBTaG93IDwvQnV0dG9uPgo8QnV0dG9uIHN0eWxlPSIiIEBvbmNsaWNrPSJAKGFzeW5jICgpPT4geyBNb3Rpb25VSU9iai5BbmltYXRlQW5kSGlkZSgiQU5JTUFURTYiLCBBbmltYXRpb25TZWxlY3Rpb24sIHRydWUsIDUwMCk7IH0pIj5BbmltYXRlICYgSGlkZSA8L0J1dHRvbj4KPGJyIC8+PGkgaWQ9IkFOSU1BVEU2IiBzdHlsZT0iZm9udC1zaXplOiAzZW07IG1hcmdpbi1ib3R0b206IDFlbTsiIGNsYXNzPSJiZmkgYmZpLWNvdW50cnktY2EiPjwvaT48YnIgLz4KPGJyIC8+PGkgaWQ9IkFOSU1BVEU1IiBzdHlsZT0iZm9udC1zaXplOiAzZW07IG1hcmdpbi1ib3R0b206IDFlbTsgZGlzcGxheTpub25lOyIgY2xhc3M9ImJmaSBiZmktY291bnRyeS1jYSI+PC9pPjxiciAvPg==" />
+       
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+    public string AnimationSelection { get; set; } = "slide-in-left";
+    public string AnimationOutSelection { get; set; } = "slide-out-left";
+    public string MaterialIconSiteLink { get; set; } = "https://pictogrammers.github.io/@mdi/font/5.4.55/";
+    public string Base64encodeSiteLink { get; set; } = "https://www.base64encode.org/";
+    public HighlightCS reference { get; set; }
+
+}
