@@ -5856,6 +5856,28 @@ ol.list-upper-roman {
   height: 1.5em;
   color: var(--hljs-header-title-ft-color); }
 
+.headline-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto; }
+
+.headline-wrapper > .headline-divider {
+  border-top-color: var(--headline-divider-color);
+  border-top-style: solid;
+  border-top-width: 1px;
+  font-size: 0;
+  line-height: 0;
+  flex-grow: 1; }
+
+.headline-wrapper > h1, .headline-wrapper > h2, .headline-wrapper > h3, .headline-wrapper > h4, .headline-wrapper > h5, .headline-wrapper > h6 {
+  padding-bottom: 0;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 0 10px; }
+
 .bfi {
   height: 1em;
   vertical-align: middle;

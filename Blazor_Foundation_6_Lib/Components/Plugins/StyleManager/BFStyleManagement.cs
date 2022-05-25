@@ -96,7 +96,11 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--accordion-content-border-color", "var(--accordion-border-color)", "Accordion content border color.");
             Set("--accordion-content-bg-color", "var(--accordion-bg-color)", "Accordion content background color.");
 
+            //Headline
+            Set("--headline-divider-color", "var(--primary-color)", "Headline divider color.");
 
+
+            
             // Navigation Top Bar
             Set("--top-bar-ft-color", "var(--white-color)", "Top bar font color.");
             Set("--top-bar-bg-color", "var(--black-color)", "Top bar background color.");
