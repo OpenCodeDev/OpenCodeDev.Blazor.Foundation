@@ -26,7 +26,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
         public Func<Task> OnUpdate { get; set; }
         public BFStyleManagement()
         {
-            Console.WriteLine("Setup the base style.");
+            //Console.WriteLine("Setup the base style.");
             // Foundation 6
             Set("--primary-color", "#2a76bb", "Global theme primary color.");
             Set("--secondary-color", "#656565", "Global theme secondary color.");

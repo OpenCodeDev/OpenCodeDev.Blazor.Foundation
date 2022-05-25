@@ -99,7 +99,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
                 if (HasExtInput)
                 {
                     HasExtInput = false;
-                    Console.WriteLine("Slider Error, 'HasExtInput=true' but no Id defined. We reset HasExtInput to false and generated an id to avoid bind issues.");
+                    //Console.WriteLine("Slider Error, 'HasExtInput=true' but no Id defined. We reset HasExtInput to false and generated an id to avoid bind issues.");
                 }
             }
             GlobalSliderList.Add(Id, this);
