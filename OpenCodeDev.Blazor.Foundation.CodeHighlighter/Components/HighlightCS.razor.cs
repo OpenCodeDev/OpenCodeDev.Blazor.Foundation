@@ -118,20 +118,16 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
 
         protected override void OnInitialized()
         {
-            Console.WriteLine($"{Language} -> {Supported[Language][1]}");
+            //Console.WriteLine($"{Language} -> {Supported[Language][1]}");
             Language = !Supported.ContainsKey(Language) ? "txt" : Language;
             DecodedContent = ContentDecodeHandler();
         }
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
+        protected override async Task OnParametersSetAsync()
         {
-            await base.OnAfterRenderAsync(firstRender);
-            if (firstRender)
-            {
-                await JS.InvokeVoidAsync("HighlightJSInit", Id);
-                HeaderIsReady = true;
-                StateHasChanged();
-            }
+            await JS.InvokeVoidAsync("HighlightJSInit", Id);
+            HeaderIsReady = true;
+            StateHasChanged();
         }
+
     }
 }

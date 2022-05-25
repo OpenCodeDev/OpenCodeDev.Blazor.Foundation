@@ -8,6 +8,7 @@
 @using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 @using OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky; 
 @inject IStyleManagement StyleManager;
+@inject NavigationManager Navigator;
 @implements IDisposable;
 <BlazorFoundationStyle />
 
@@ -124,6 +125,7 @@
         if (firstRender)
         {
             LoadLicense();
+            
         }
 
     }

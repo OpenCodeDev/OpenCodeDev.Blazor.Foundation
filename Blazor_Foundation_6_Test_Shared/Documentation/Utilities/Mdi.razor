@@ -1,0 +1,66 @@
+﻿@page "/material-design-icons";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@inject NavigationManager Navigator;
+@using System.Net.Http;
+@using System.Text
+@using System.Text.RegularExpressions
+@inject HttpClient _client
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Icon Classes</h2>
+        <p>We are using MDI Icons (@("https://pictogrammers.github.io/@mdi/font/5.4.55/")). </p>
+        @if(MdiDatabase == null || MdiDatabase.Count <= 0)
+        {
+            <span class="mdi mdi-loading mdi-spin" style="font-size: 1em;"> Loading Database :) :( :) </span>
+        }else{
+            <input type="text" placeholder="type to search specifics eg: load" @bind=@Keywords @bind:event="oninput"  />
+            <Callout Class="warning small">
+                We show only <strong>200</strong> results to avoid slowing down browser
+            </Callout>
+            @if (ShowCode != null && ShowCode != string.Empty)
+            {
+                <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                Content=@(@$"<span class=""mdi {ShowCode}"" ></span>") />
+            }
+            else
+            {
+                <Callout Class="primary small">
+                   Click any icon to show the code block :)
+                </Callout>         
+            }        
+            @foreach (var item in FilterMdiDB()) { 
+                <span class=@($"mdi {item}") style="font-size: 1.5em; cursor:pointer;" @onclick=@(()=>{ ShowCode = item; StateHasChanged();})>
+
+                </span> 
+            }
+        }
+        
+       
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+@code {
+    public static List<string> MdiDatabase { get; set; } = new List<string>();
+
+    public string Keywords { get; set; }
+    public string ShowCode { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Core.Plugins.MDILoader.LoadMdi(_client, Navigator);
+            StateHasChanged();
+        }
+    }
+
+        private List<string> FilterMdiDB()
+    {
+        if (Keywords == null || Keywords == string.Empty) return MdiDatabase.Take(200).ToList();
+        return MdiDatabase.Where(p => p.Contains(Keywords) || Keywords.Contains(p)).Take(200).ToList();
+    }
+    //https://localhost:61615/_content/OpenCodeDev.Blazor.Foundation.Doc.Core/mdi_database.txt
+}

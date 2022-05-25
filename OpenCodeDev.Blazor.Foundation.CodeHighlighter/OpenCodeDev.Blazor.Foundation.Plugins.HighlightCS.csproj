@@ -27,12 +27,12 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.0" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.*" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
   </ItemGroup>
 
   <ItemGroup>

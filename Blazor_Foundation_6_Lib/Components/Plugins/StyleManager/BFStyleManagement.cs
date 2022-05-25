@@ -80,10 +80,21 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--slider-handle-border-radius", "var(--global-border-radius)", "Slider Handler Border Radius");
 
             Set("--link-ft-color", "var(--primary-color)", "Color of <a> font link.");
-            Set("--link-active-ft-color", "var(--black)", "Color of <a> font active link.");
+            Set("--link-active-ft-color", "var(--black-color)", "Color of <a> font active link.");
 
             Set("--body-ft-color", "var(--black-color)", "Default body text color.");
             Set("--body-bg-color", "var(--white-color)", "Default body background color.");
+
+            // Accordion
+            Set("--accordion-border-color", "var(--light-gray-color)", "Accordion border color.");
+            Set("--accordion-bg-color", "var(--white-color)", "Accordion background color.");
+
+            Set("--accordion-title-ft-color", "var(--primary-color)", "Accordion font color.");
+            Set("--accordion-title-border-color", "var(--accordion-border-color)", "Accordion title border color.");
+
+            Set("--accordion-content-ft-color", "var(--black-color)", "Accordion content font color.");
+            Set("--accordion-content-border-color", "var(--accordion-border-color)", "Accordion content border color.");
+            Set("--accordion-content-bg-color", "var(--accordion-bg-color)", "Accordion content background color.");
 
 
             // Navigation Top Bar
