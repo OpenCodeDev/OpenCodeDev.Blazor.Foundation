@@ -80,6 +80,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--slider-handle-border-radius", "var(--global-border-radius)", "Slider Handler Border Radius");
 
             Set("--link-ft-color", "var(--primary-color)", "Color of <a> font link.");
+            Set("--link-active-ft-color", "var(--black)", "Color of <a> font active link.");
 
             Set("--body-ft-color", "var(--black-color)", "Default body text color.");
             Set("--body-bg-color", "var(--white-color)", "Default body background color.");
