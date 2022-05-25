@@ -10597,6 +10597,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+// Next File
 
 /**
  * what-input - A global utility for tracking the current input method (mouse, keyboard or touch).
@@ -11093,7 +11094,9 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 ;
 
-﻿/*
+// Next File
+
+/*
  * Copyright (c) FlawlessLoop Studios, Inc.
  * Created in 2021
  * Last Update in 2021
@@ -11204,7 +11207,7 @@ function OffCanvasRegister(element, options) {
     if (typeof window.OffCanvasList == 'undefined') {
         window.OffCanvasList = [];
     }
-    console.log(`Register ${element}`);
+    // console.log(`Register ${element}`);
     let optionsCanvas = options == null ? null : JSON.parse(options);
     window.OffCanvasList.push(new Foundation.OffCanvas($(`#${element}`), optionsCanvas));
 }
@@ -11214,12 +11217,12 @@ function ElementToggle(element) {
 }
 
 function ElementOpen(element) {
-    console.log("Open " + element);
+    // console.log("Open " + element);
     $(`#${element}`).foundation('open', null, null);
 }
 
 function ElementClose(element) {
-    console.log("Close " + element);
+    // console.log("Close " + element);
     $(`#${element}`).foundation('close', null, null);
 }
 
@@ -11273,7 +11276,7 @@ function AccordionRegister(element, options) {
     if (typeof window.AccordionList == 'undefined') {
         window.AccordionList = [];
     }
-    console.log(`Register ${element}`);
+    // console.log(`Register ${element}`);
     let optionsCanvas = options == null ? {} : JSON.parse(options);
     window.AccordionList.push(new Foundation.ResponsiveAccordionTabs($(`#${element}`), optionsCanvas));
 }
@@ -11282,7 +11285,7 @@ function TabRegister(element, options) {
     if (typeof window.TabList == 'undefined') {
         window.TabList = [];
     }
-    console.log(`Register ${element}`);
+    // console.log(`Register ${element}`);
     let optionsCanvas = options == null ? {} : JSON.parse(options);
     window.TabList.push(new Foundation.ResponsiveAccordionTabs($(`#${element}`), optionsCanvas));
 }
@@ -11309,7 +11312,7 @@ function RevealRegister(element, options) {
 function RevealOnClosedListener(element) {
    
     $(`#${element}`).on('closed.zf.reveal', function () {
-        console.log(element);
+        // console.log(element);
         DotNet.invokeMethodAsync('OpenCodeDev.Blazor.Foundation', 'RSREVEALCLOSED', element);
         
     });
@@ -11439,4 +11442,3 @@ function LocalStorageRemove(key) {
 function LocalStorageClear() {
     localStorage.clear();
 }
-

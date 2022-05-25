@@ -1,0 +1,14 @@
+{
+  "name": "blazor_foundation_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "combine.js",
+  "scripts": {
+    "start": "node combine.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "combine-files": "^1.1.8"
+  }
+}

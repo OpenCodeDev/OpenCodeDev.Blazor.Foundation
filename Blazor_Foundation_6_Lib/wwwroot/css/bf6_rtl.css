@@ -6193,6 +6193,15 @@ html.is-reveal-open {
   border-radius: var(--reveal-border-radius);
   border-radius: var(--reveal-bg-color); }
 
+.off-canvas {
+  background-color: var(--off-canvas-bg-color); }
+
+.off-canvas-absolute.is-transition-overlap {
+  z-index: 16; }
+
+.off-canvas-absolute {
+  z-index: 16; }
+
 .form-error {
   display: block;
   text-align: left;
