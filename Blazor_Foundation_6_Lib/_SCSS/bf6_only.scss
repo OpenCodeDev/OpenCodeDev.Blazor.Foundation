@@ -1,0 +1,36 @@
+﻿/**
+ * Blazor Foundation 6 for SPA, WAPP and PWA
+ * https://bf.opendevcode.com/
+ * Licensed under MIT Open Source
+ */
+
+@import 'Blazor_Foundation/Utilities.scss';
+
+
+
+// Extra Feature for Blazor Foundation
+@import 'Blazor_Foundation/Plugins/HighlightCS.scss';
+@import 'Blazor_Foundation/Components/Media/Headline.scss';
+@import 'Blazor_Foundation/Components/Forms/InputSelectionList.scss';
+
+//  multiple icon lib
+@import 'Blazor_Foundation/Plugins/Icons.scss';
+
+// Overrides for Foundation 6
+@import 'Blazor_Foundation/Zurb_Overrides/Sticky.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/SubMenu.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Reveal.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/OffCanvas.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Form.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Menu.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/TopBar.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/BaseStyle.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Slider.scss';
+@import 'Blazor_Foundation/Zurb_Overrides/Accordion.scss';
+
+// HTML Elements or Normalize
+@import 'Blazor_Foundation/HTML.scss';
+
+
+// Import Animations
+@import 'Blazor_Foundation/Animations/Cycle';

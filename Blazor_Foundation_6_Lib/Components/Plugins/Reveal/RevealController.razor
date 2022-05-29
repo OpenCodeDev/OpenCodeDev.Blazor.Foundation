@@ -47,7 +47,7 @@
             Registry.Add(clone, callback);
             RegistryTracker.Add(element, clone);
             RegistryReference.Add(element, null); // Default Null until Reveal is called
-            Console.WriteLine("Register Successfull");
+            //Console.WriteLine("Register Successfull");
             return element;
         }
         else { throw new Exception("Fragment Register must be unique probably a problem during cloning."); }
@@ -67,7 +67,7 @@
             // Invoke Closed Callback
             if(instance.Registry[instance.RegistryTracker[id]] != null)
             {
-                Console.WriteLine($"Trying to invoke callback for {id}");
+                //Console.WriteLine($"Trying to invoke callback for {id}");
                 await instance.Registry[instance.RegistryTracker[id]]?.Invoke();
             }
             RenderFragment _obj = instance.RegistryTracker[id];
@@ -76,11 +76,11 @@
             instance.RegistryTracker.Remove(id);
             instance.RegistryReference.Remove(id);
             instance.StateHasChanged();
-            Console.WriteLine("Reveal is closed and purged from system");
+            //Console.WriteLine("Reveal is closed and purged from system");
         }
         else
         {
-            Console.WriteLine($"{id} no longer exist.");
+            //Console.WriteLine($"{id} no longer exist.");
         }
     }
 
@@ -126,7 +126,7 @@
         CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
         StateHasChanged();
 
-        Console.WriteLine("Simple Message Done");
+        //Console.WriteLine("Simple Message Done");
 
     }
 

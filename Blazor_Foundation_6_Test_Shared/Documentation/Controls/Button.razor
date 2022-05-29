@@ -61,6 +61,57 @@
 
 <SectionWrapper>
     <SectionLeft>
+        <h2>Spacing</h2>
+        <p>
+            You can now quick define button spacing margin/padding by using <Code>@("MarginLeft=true")</Code>, <Code>@("MarginRight=true")</Code>, <Code>@("MarginTop=true")</Code>, <Code>@("MarginBottom=true ")</Code>.
+        </p>
+        <HighlightCS Language="razor" Full="true"
+                     Content="PEJ1dHRvbiBDbGFzcz0iY2xlYXIgIj4gT3JpZ2luYWwgPC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImNsZWFyICIgTWFyZ2luTGVmdD10cnVlIE1hcmdpblJpZ2h0PXRydWUgTWFyZ2luVG9wPWZhbHNlIE1hcmdpbkJvdHRvbT1mYWxzZSA+IEhvcml6b250YWwgPC9CdXR0b24+CjxCdXR0b24gQ2xhc3M9ImNsZWFyICIgTWFyZ2luTGVmdD10cnVlIE1hcmdpblJpZ2h0PXRydWUgTWFyZ2luVG9wPXRydWUgTWFyZ2luQm90dG9tPXRydWUgPiBCb3RoIDwvQnV0dG9uPgo8QnV0dG9uIENsYXNzPSJjbGVhciAiIE1hcmdpbkxlZnQ9ZmFsc2UgTWFyZ2luUmlnaHQ9ZmFsc2UgTWFyZ2luVG9wPWZhbHNlIE1hcmdpbkJvdHRvbT1mYWxzZSA+IE5vbmUgPC9CdXR0b24+" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear ">
+            Original
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear " MarginLeft=true MarginRight=true MarginTop=false MarginBottom=false >
+            Horizontal
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear " MarginLeft=true MarginRight=true MarginTop=true MarginBottom=true >
+            Both
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear " MarginLeft=false MarginRight=false MarginTop=false MarginBottom=false >
+            None 
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <p>
+            Those props can be quickly ignored and overriden using <Code>@("HorizontalMargin=true")</Code> or/and <Code>@("VerticalMargin=true")</Code>...
+            Once one of these props have been set, all individual props Left,Right... are ignored and will be auto set by the component base on the direction value true/false.
+        </p>
+        <HighlightCS Language="razor" Full="true"
+                     Content="PEJ1dHRvbiBDbGFzcz0iY2xlYXIgIiBNYXJnaW5MZWZ0PXRydWUgTWFyZ2luUmlnaHQ9dHJ1ZSBNYXJnaW5Ub3A9dHJ1ZSBNYXJnaW5Cb3R0b209dHJ1ZSBIb3Jpem9udGFsTWFyZ2luPWZhbHNlID4gCiAgICAgICAgRGlzYWJsZSBIb3Jpem9udGFsIE92ZXJyaWRlIAo8L0J1dHRvbj4KCjxCdXR0b24gQ2xhc3M9ImNsZWFyICIgVmVydGljYWxNYXJnaW49ZmFsc2UgSG9yaXpvbnRhbE1hcmdpbj1mYWxzZSA+RGlzYWJsZSBCb3RoIE92ZXJyaWRlIDwvQnV0dG9uPgo=" />
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear " MarginLeft=true MarginRight=true MarginTop=true MarginBottom=true HorizontalMargin=false >
+            Disable Horizontal Override
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+
+        <OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear " VerticalMargin=false HorizontalMargin=false >
+            Disable Both Override
+        </OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+
+        <p>All of this also work for the padding <Code>@("PaddingLeft=true")</Code>, <Code>@("PaddingRight=true")</Code>, <Code>@("PaddingTop=true")</Code>, <Code>@("PaddingBottom=true ")</Code>, <Code>@("HorizontalPadding=true")</Code> or/and <Code>@("VerticalPadding=true")</Code></p>
+        <HighlightCS Language="razor" Full="true"
+                     Content="PEJ1dHRvbiBDbGFzcz0iY2xlYXIgIiBWZXJ0aWNhbE1hcmdpbj1mYWxzZSBIb3Jpem9udGFsTWFyZ2luPWZhbHNlIEhvcml6b250YWxQYWRkaW5nPWZhbHNlIFZlcnRpY2FsUGFkZGluZz1mYWxzZSA+CiAgICBGb3JtIENsZWFyIEJ1dHRvbgo8L0J1dHRvbj4=" />
+
+<OpenCodeDev.Blazor.Foundation.Components.Controls.Button Class="clear " VerticalMargin=false HorizontalMargin=false HorizontalPadding=false VerticalPadding=false >
+    Form Clear Button
+</OpenCodeDev.Blazor.Foundation.Components.Controls.Button>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+<SectionWrapper>
+    <SectionLeft>
         <h2>Coloring</h2>
         <p>
             Add color classes to give buttons additional meaning.

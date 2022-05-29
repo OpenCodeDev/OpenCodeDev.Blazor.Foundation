@@ -1,0 +1,162 @@
+﻿@using OpenCodeDev.Blazor.Foundation.Components.Controls
+@using OpenCodeDev.Blazor.Foundation.Extensions
+@typeparam TKey
+<div class="bf bf-selection-list-box" @attributes="AdditionalAttributes">
+    <ul style="list-style-type: none;margin: 0 0 0 0.3em;">
+        @foreach (var item in Elements)
+        {
+            <li>
+                <Switch Size="tiny" RadioGroup=@Id.ToString() IsRadio=@(!MultiSelect)
+                    Checked=@IsSwitchChecked(item.Key) Disabled=@(DisabledElements.Contains(item.Key) || Disabled)
+                    OnChangeValue="@(async (bool val)=> { await SwitchChanged(item.Key, val); })" OnStateChange="()=>StateHasChanged()"
+                />                            
+                @(IsCapitalized ? item.Value.ToCapitalized() : item.Value)
+            </li>  
+        }
+
+    </ul>
+</div>
+@code {
+
+    [Parameter]
+    public string Id { get; set; } = Guid.NewGuid().HTMLCompliant().ToString();
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+    /// <summary>
+    /// False: item name will keep the passed format. Eg: my super title -> my super title and when true... my super title -> My Super Title
+    /// </summary>
+    [Parameter]
+    public bool IsCapitalized { get; set; } = false;
+
+
+    /// <summary>
+    /// List of Generic Elements to select string(unique key)/string (displayed text).
+    /// </summary>
+    [Parameter]
+    public Dictionary<TKey, string> Elements { get; set; } = new Dictionary<TKey, string>();
+
+    /// <summary>
+    /// Currently Selected Element
+    /// </summary>
+    [Parameter]
+    public List<TKey> SelectedElements { get; set; } = new List<TKey>();
+
+
+    /// <summary>
+    /// Called when Element is switch on to off or off to on, so you can update single entry instead of the whole list.
+    /// </summary>
+    [Parameter]
+    public EventCallback<List<TKey>> OnSelectedElementChanged { get; set; }
+
+    /// <summary>
+    /// Used to disable elements instead of removing is from the list (beware: if element was active in multiselection it will remain active)
+    /// </summary>
+    [Parameter]
+    public List<TKey> DisabledElements { get; set; } = new List<TKey>();
+
+    /// <summary>
+    /// Can select multiple entries or only one? (Switch becomes radio)
+    /// </summary>
+    [Parameter]
+    public bool MultiSelect { get; set; } = true;
+
+    /// <summary>
+    /// True = Control is disabled cannot turn on or off any switches (Default: False)
+    /// </summary>
+    [Parameter]
+    public bool Disabled { get; set; } = false;
+
+    /// <summary>
+    /// Current Selection for Radio
+    /// </summary>
+    [Parameter]
+    public TKey? RadioSelection { get; set; }
+
+    [Parameter]
+    public EventCallback<TKey> OnRadioSelectedChanged { get; set; }
+
+    protected override Task OnParametersSetAsync()
+    {
+
+        // Load Selected Elements
+        LoadSelectedElements();
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+    private bool IsSwitchChecked(TKey item)
+    {
+        if (!MultiSelect)
+        {
+            return item.Equals(RadioSelection);
+        }
+        else
+        {
+            return SelectedElements.Contains(item);
+        }
+    }
+
+
+    private async Task SwitchChanged(TKey item, bool isSelected)
+    {
+        // check if radio instead of multiple selection
+        if(!MultiSelect){ 
+            // clear possible old artifact from multiselect
+            SelectedElements.Clear();
+            // set clicked item
+            RadioSelection = item;
+            await OnRadioSelectedChanged.InvokeAsync(RadioSelection);
+            // leave ignoring switch true/false
+            return;
+        }
+        //not radio? add or remove from selection then
+        if(!isSelected){ 
+            SelectedElements.Remove(item);            
+        }
+        else { SelectedElements.Add(item); }
+        await OnSelectedElementChanged.InvokeAsync(SelectedElements);
+    }
+
+    /// <summary>
+    /// Ensure selected item still exist otherwise remove from selection list.
+    /// </summary>
+    private void LoadSelectedElements()
+    {
+        // radio? return
+        if(!MultiSelect){ return; }
+        // Ensure selected entries still exist
+        foreach (var item in SelectedElements.ToList())
+        {
+            //Check selected entry still exist
+            if(EnsureElementExist(item) == null)
+            {
+                // Remove inexisting entries
+                SelectedElements.Remove(item);
+            }
+        }
+    }
+   
+    /// <summary>
+    /// Will ensure element exist in list or will return null to be removed
+    /// </summary>
+    private TKey? EnsureElementExist(TKey? item)
+    {
+        // check if item is not null
+        if(item != null){
+            // check if element in the list
+            var existing = Elements.Where(p=>p.Key.Equals(item)).SingleOrDefault().Key; 
+            // check if element found in list a still exist
+            if(existing.Equals(default(TKey)))
+            {
+                // return null because element no longer available and should be removed
+                return default(TKey);
+            }
+            // Return GUID coz it exist and found in list.
+            return existing;
+        }
+        // Null should return null;
+        return default(TKey);
+    }
+}

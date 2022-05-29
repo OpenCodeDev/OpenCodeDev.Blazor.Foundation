@@ -4,7 +4,8 @@
 @using OpenCodeDev.Blazor.Foundation.Extensions.Clipboard;
 @inject IJSRuntime JS;
 @inject IClipboard clip;
-
+@if (!ShouldReCreate)
+{
 <pre style="@($"{(Full ? $"width:100%;": "width: fit-content;")} position: relative;white-space: nowrap;padding-top: 1.6em;margin-bottom:1em;") ">
 @if (HeaderIsReady)
 {
@@ -21,7 +22,7 @@ if (CopyBusy) { return; }
 CopyBusy = true;
 CopyIcon = "mdi-spin";
 StateHasChanged();
-await clip.SetText(JS,DecodedContent );
+await clip.SetText(JS,DecodedContent);
 CopyIcon = "mdi-check";
 StateHasChanged();
 await Task.Delay(1000);
@@ -33,7 +34,9 @@ StateHasChanged();
 }
 </div>
 }
-<code id="@Id" class="@($"language-{Language}")" style="@($"width:100%; white-space: break-spaces;")">@DecodedContent</code></pre>
+<code id="@Id" class=@($"language-{(LangExceptions.ContainsKey(Language.ToLower()) ? LangExceptions[Language.ToLower()] : Language)}") style="@($"width:100%; white-space: break-spaces;")">@DecodedContent</code></pre>
+  
+}
 
 @code {
 

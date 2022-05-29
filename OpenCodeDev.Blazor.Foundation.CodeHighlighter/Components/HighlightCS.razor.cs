@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using OpenCodeDev.Blazor.Foundation.Extensions;
@@ -20,7 +21,38 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
 
         [Parameter]
         public string HeaderBGcolor { get; set; } = null;
-       
+        [Parameter]
+        public string HeaderIcon { get; set; } = null;
+
+
+
+        [Parameter]
+        public string HeaderIconColor { get; set; } = null;
+
+
+        [Parameter]
+        public string HeaderTitle { get; set; } = null;
+
+        [Parameter]
+        public string HeaderTitleColor { get; set; } = null;
+
+        [Parameter]
+        public bool Full { get; set; } = false;
+        /// <summary>
+        /// String or Base64 Encoded
+        /// </summary>
+        [Parameter]
+        public string Content { get; set; } = null;
+
+        /// <summary>
+        /// Default: cs <br/>
+        /// Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python <br/>
+        /// Using CDN provided in DOC highlightjs support 39 language by default<br/>
+        /// See 37 Common Support Language: <a href="https://highlightjs.org/static/demo/" >Demo</a> <br/>
+        /// See Also their possible code: <a href="https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md">Classes</a>
+        /// </summary>
+        [Parameter]
+        public string Language { get; set; } = "cs";
         public Dictionary<string, string[]> Supported { get; set; } = new Dictionary<string, string[]> {
             { "c", new string[] { "mdi-language-c", "#044F88", "I2luY2x1ZGUgPHN0ZGlvLmg+CmludCBtYWluKCkgewogICAvLyBwcmludGYoKSBkaXNwbGF5cyB0aGUgc3RyaW5nIGluc2lkZSBxdW90YXRpb24KICAgcHJpbnRmKCJIZWxsbywgV29ybGQhIik7CiAgIHJldHVybiAwOwp9" } },
             { "cpp", new string[] { "mdi-language-cpp", "#044F88", "I2luY2x1ZGUgPGlvc3RyZWFtPgppbnQgbWFpbigpIHsKICAgIHN0ZDo6Y291dCA8PCAiSGVsbG8gV29ybGQhIjsKICAgIHJldHVybiAwOwp9" } },
@@ -47,48 +79,20 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
             { "txt", new string[] { "mdi-code-braces", "#555555", "VGV4dCBBbnkgVGV4dApJbiBIZXJlIGlzIEluIEhlcmU=" } },
             { "json", new string[] { "mdi-language-c", "#555555", "ewogICJzdHVkZW50aWQiIDogMTAxLAogICJmaXJzdG5hbWUiIDogIkpvaG4iLAogICJsYXN0bmFtZSIgOiAiRG9lIiwKICAiaXNTdHVkZW50IiA6IHRydWUsCiAgImNsYXNzZXMiIDogWwogICAgIkJ1c2luZXNzIFJlc2VhcmNoIiwKICAgICJFY29ub21pY3MiLAogICAgIkZpbmFuY2UiCiAgXQp9" } }
         };
+        public Dictionary<string, string> LangExceptions { get; set; } = new Dictionary<string, string>
+        {
+            { "razor", "html" }
+        };
 
-        [Parameter]
-        public string HeaderIcon { get; set; } = null;
-
-      
-
-        [Parameter]
-        public string HeaderIconColor { get; set; } = null;
-     
-
-        [Parameter]
-        public string HeaderTitle { get; set; } = null;
-
-        [Parameter]
-        public string HeaderTitleColor { get; set; } = null;
-
-        [Parameter]
-        public bool Full { get; set; } = false;
 
         public bool CopyBusy = false;
         private bool HeaderIsReady = false;
 
-        /// <summary>
-        /// String or Base64 Encoded
-        /// </summary>
-        [Parameter]
-        public string Content { get; set; } = null;
 
-        /// <summary>
-        /// Default: cs <br/>
-        /// Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python <br/>
-        /// Using CDN provided in DOC highlightjs support 39 language by default<br/>
-        /// See 37 Common Support Language: <a href="https://highlightjs.org/static/demo/" >Demo</a> <br/>
-        /// See Also their possible code: <a href="https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md">Classes</a>
-        /// </summary>
-        [Parameter]
-        public string Language { get; set; } = "cs";
-
+        private string DecodedContent { get; set; }
         private string Id { get; set; } = Guid.NewGuid().HTMLCompliant().ToString();
 
 
-        private string DecodedContent { get; set; }
 
         private string ContentDecodeHandler()
         {
@@ -103,35 +107,37 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
                     return Content; // Not B64 PRobably Plain Content Passed down.
                 }
 
-                //if (isB64)
-                //{
-                //    return System.Text.Encoding.UTF8.GetString(buffer.ToArray());
-                //}
-                //else
-                //{
-                //    return Content; // Not B64 PRobably Plain Content Passed down.
-                //}
-
             }
             return "No Content Provided";
         }
 
+        /// <summary>
+        /// true when component should discard content and recreate ??
+        /// </summary>
+        public bool ShouldReCreate { get; set; }
+        public bool FirstRenderDone { get; set; }
+
         protected override void OnInitialized()
         {
-            Console.WriteLine($"{Language} -> {Supported[Language][1]}");
-            Language = !Supported.ContainsKey(Language) ? "txt" : Language;
+            //Console.WriteLine($"{Language} -> {Supported[Language][1]}");
+            Language = !Supported.ContainsKey(Language.ToLower()) ? "txt" : Language;
             DecodedContent = ContentDecodeHandler();
         }
 
+
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            await base.OnAfterRenderAsync(firstRender);
             if (firstRender)
             {
-                await JS.InvokeVoidAsync("HighlightJSInit", Id);
-                HeaderIsReady = true;
-                StateHasChanged();
+                await RenderProperly();
+                FirstRenderDone = true;
             }
+        }
+        public async Task RenderProperly()
+        {
+            await JS.InvokeVoidAsync("HighlightJSInit", Id);
+            HeaderIsReady = true;
+            base.StateHasChanged();
         }
     }
 }

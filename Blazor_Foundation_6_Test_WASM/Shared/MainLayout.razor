@@ -8,6 +8,7 @@
 @using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 @using OpenCodeDev.Blazor.Foundation.Components.Plugins.Sticky; 
 @inject IStyleManagement StyleManager;
+@inject NavigationManager Navigator;
 @implements IDisposable;
 <BlazorFoundationStyle />
 
@@ -18,7 +19,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
 
-            <MenuDoc></MenuDoc>
+            <MenuDoc><MenuExtension /></MenuDoc>
         </div>
 
 
@@ -32,10 +33,14 @@
 
                             <TopBarLeft>
                                 <span class="mdi mdi-menu" data-toggle="SideMenu" style=" float: left; padding-right: 0.3em; font-size: 2em;"></span>
-                                <h4 style=" margin-top: 0.3em; ">Blazor Foundation 6</h4>
+                                <h4 style=" margin-top: 0.3em; float: left;">Blazor Foundation 6</h4>
+                                <h3 style=" margin-top: 1.5em; float: left; font-size: x-small; margin-left: 1em;">v@(typeof(StickyContainer).Assembly.GetName().Version)</h3>
                             </TopBarLeft>
                             <TopBarRight>
+                                <span class="mdi mdi-offer" style=" padding-right: 0.3em;font-size: 2em;"
+                                      @onclick="@(async () => await Donate())">
 
+                                </span>
 
                                 @if (MITLICENSE == null && !MitLicenseError)
                                 {
@@ -47,7 +52,6 @@
                                 {
                                     <span class="mdi mdi-license" style=" padding-right: 0.3em;font-size: 2em;"
                                           @onclick="@(async () => {
-                                          Console.WriteLine(MITLICENSE);
                                           await RevealController.Controller.SimpleMessageAsync("MIT LICENSE", MITLICENSE);
                                       })">
 
@@ -67,7 +71,9 @@
             <GridX>
                 <Cell Size="large-2 show-for-large">
                     <StickyContainer Class="doc-menu" data-margin-top="4.2" data-anchor="body-container" data-stick-to="top" data-check-every="0" style="min-height: 93.1vh; max-height: 93.1vh; height: 100%; overflow-y: scroll; max-width: 317.156px; margin-top: 4.2em; bottom: auto; top: 0px; ">
-                        <MenuDoc></MenuDoc>
+                        <MenuDoc>
+
+                        </MenuDoc>
                     </StickyContainer>
                 </Cell>
                 <Cell id="body-container" Size="small auto">
@@ -91,7 +97,12 @@
     private RenderFragment MessageBoxTemplate { get; set; } =@<Reveal OpenOnStart="true">This is a Dangerous Message</Reveal>
     ;
 
-
+        RenderFragment QuickDonation { get; set; } = @<DonationSection />
+    ;
+    private async Task Donate()
+    {
+        await RevealController.Controller.ComplexMessage("QuickDonation", "Support This Project", QuickDonation);
+    }
 
     private OffCanvas OffCanvasBottom;
     private async Task TriggerButton()
@@ -124,6 +135,7 @@
         if (firstRender)
         {
             LoadLicense();
+            
         }
 
     }

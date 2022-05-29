@@ -5,20 +5,21 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>OpenCodeDev</Authors>
     <Product>Blazor Foundation 6 - CodeHighlighter Extension</Product>
-    <Copyright>OpenCodeDev © 2021</Copyright>
+    <Copyright>OpenCodeDev © 2022</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
     <RepositoryType>Open Source</RepositoryType>
     <PackageTags>blazor, blazor-foundation, responsive, mobile-first, code-highlighter, c#, .net6</PackageTags>
-    <PackageId>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</PackageId>
+	  <Description>Add Blazor Foundation Component to highlight most comment coding languages (c#, java, html, php, c++, c, golang, rust...)</Description>
+	  <PackageId>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</PackageId>
     <AssemblyName>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</AssemblyName>
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</RootNamespace>
     <PackageIcon>icon-highlightcs.png</PackageIcon>
     <PackageIconUrl />
-    <AssemblyVersion>3.0.2</AssemblyVersion>
-    <FileVersion>3.0.2</FileVersion>
-    <Version>3.0.2</Version>
+    <AssemblyVersion>3.0.8</AssemblyVersion>
+    <FileVersion>3.0.8</FileVersion>
+    <Version>3.0.8</Version>
   </PropertyGroup>
 
   
@@ -26,13 +27,11 @@
     <SupportedPlatform Include="browser" />
   </ItemGroup>
   
-  <ItemGroup>
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.0" />
-  </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" allowedVersions="[6,7)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" allowedVersions="[6,7)" />
+	  <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="[3.0.8,3.1)" />
   </ItemGroup>
 
   <ItemGroup>

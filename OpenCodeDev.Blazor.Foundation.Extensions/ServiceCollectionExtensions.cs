@@ -14,12 +14,12 @@ namespace OpenCodeDev.Blazor.Foundation.Extensions
     {
         public static void AddBFClipboard(this IServiceCollection service)
         {
-            service.AddSingleton<IClipboard, Clipboard.Clipboard>();
+            service.AddScoped<IClipboard, Clipboard.Clipboard>();
         }
 
         public static void AddBFLocalStorage(this IServiceCollection service)
         {
-            service.AddSingleton<ILocalStorage, LocalStorage.LocalStorage>();
+            service.AddScoped<ILocalStorage, LocalStorage.LocalStorage>();
         }
     }
 }

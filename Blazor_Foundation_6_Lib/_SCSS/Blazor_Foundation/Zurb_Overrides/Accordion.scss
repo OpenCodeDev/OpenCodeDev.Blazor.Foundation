@@ -1,0 +1,15 @@
+﻿
+.accordion {
+    background: var(--accordion-bg-color);
+}
+
+.accordion-content {
+    border-color: var(--accordion-content-border-color);
+    background-color: var(--accordion-content-bg-color);
+    color: var(--accordion-content-ft-color);
+}
+
+.accordion-title {
+    border-color: var(--accordion-title-border-color);
+    color: var(--accordion-title-ft-color);
+}

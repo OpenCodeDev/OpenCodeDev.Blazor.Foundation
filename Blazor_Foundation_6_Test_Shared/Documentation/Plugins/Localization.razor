@@ -1,0 +1,33 @@
+﻿@page "/builtin-loco";
+
+
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>What is that?</h2>
+        <p>Well just a quick tool to help you automatically load to user's language base on localstorage and set a default language! </p>
+        <p>You will need nuget <Code>@("OpenCodeDev.Blazor.Foundation.Extensions")</Code>.</p>
+
+        <h2>How to use?</h2>
+        <p>Got to <Code>Program.cs</Code> and add the following lines</p>
+        <HighlightCS Language="cs" Full="true" HeaderTitle="Program.cs"
+                     Content="Ly8gd2hlcmUgeW91IGFkZCBhbnkgc2VydmljZXMgYjQgYnVpbGQoKQpidWlsZGVyLlNlcnZpY2VzLkFkZExvY2FsaXphdGlvbigpOwovLyBUb29sIHVzZXMgbG9jYWxzdG9yYWdlIHNvIG5lZWQgc2VydmljZSB0byBhY2Nlc3MKYnVpbGRlci5TZXJ2aWNlcy5BZGRCRkxvY2FsU3RvcmFnZSgpOwoKLy9hZnRlciBidWlsZGVyLkJ1aWxkKCk7Ci8vIHRoaXMgbG9hZHMgdGhlIGRlZmF1bHQgbGFuZ3VhZ2Ugc2F2ZWQgaW4gdGhlIHVzZXJzJyBicm93c2VyIGlmIG5vbmUgZm91bmQgc2V0IGl0IHVuZGVyIHRoZSBuYW1lICJjdWx0dXJlIgphd2FpdCBhcHAuTG9hZEN1bHR1cmUoKTs=" />
+
+        <p>The default language is english but can be changed using <Code>@(@".LoadCulture(""en / fr / es..."")")</Code></p>
+        <p>You can set a default language be that would be bad experience for the user just to do that! if you can detect location and switch language do it.</p>
+      
+
+        <h2>Change Language?</h2>
+        <p>If the user is not logged or if you don't have a language bound to account... then you can change it like this: </p>
+        <HighlightCS Language="razor" Full="true" HeaderTitle="Any Razor Pages"
+                     Content="QGluamVjdCBJTG9jYWxTdG9yYWdlIExvY2FsU3RvcmFnZTsKQGluamVjdCBOYXZpZ2F0aW9uTWFuYWdlciBOYXZpZ2F0ZTsKQHVzaW5nIFN5c3RlbS5HbG9iYWxpemF0aW9uCgpAY29kZSB7CiAgICBwdWJsaWMgYXN5bmMgVGFzayBTd2l0Y2goc3RyaW5nIGNvZGUpewogICAgICAgIGF3YWl0IExvY2FsU3RvcmFnZS5TZXQoImN1bHR1cmUiLCBjb2RlKTsKICAgICAgICAvLyBZb3UgbGF6eT8gcmVsb2FkIHRoZSBhcHAKICAgICAgICBOYXZpZ2F0ZS5OYXZpZ2F0ZVRvKE5hdmlnYXRlLlVyaSwgZm9yY2VMb2FkOiB0cnVlKTsKICAgICAgICAvLyBZb3UgYXJlbid0ID8KICAgICAgICB2YXIgY3VycmVudExhbmcgPSBuZXcgQ3VsdHVyZUluZm8oY29kZSk7CiAgICAgICAgQ3VsdHVyZUluZm8uRGVmYXVsdFRocmVhZEN1cnJlbnRDdWx0dXJlID0gY3VycmVudExhbmc7CiAgICAgICAgQ3VsdHVyZUluZm8uRGVmYXVsdFRocmVhZEN1cnJlbnRVSUN1bHR1cmUgPSBjdXJyZW50TGFuZzsKICAgIH0KfQ==" />
+
+        <p>Then, get your <Code>IStringLocalizer</Code> and business as usual!</p>
+        <Callout TypeClass="warning">
+            <p>Untested for Blazor-Server might not work properly, check for session leaks.</p>
+        </Callout>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+

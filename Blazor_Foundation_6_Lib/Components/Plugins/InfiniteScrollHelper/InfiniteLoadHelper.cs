@@ -38,7 +38,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.InfiniteScrollHelper
             _jsRuntime = JS;
             _jsInProcessRuntime = _jsRuntime as IJSInProcessRuntime;
 
-            Console.WriteLine($"Initialized InifiteLoadHelper in Assembly: {_assemblyName}");
+            //Console.WriteLine($"Initialized InifiteLoadHelper in Assembly: {_assemblyName}");
         }        
         
         /// <summary>
@@ -50,7 +50,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.InfiniteScrollHelper
             if (_instance != null)
             { throw new Exception("You cannot initialise 2 InfiniteLoadHelper;"); }
             _instance = this;
-            _jsInProcessRuntime.InvokeVoid("BlazorFoundationInitInfiniteLoadHelper", offset);
+            //_jsInProcessRuntime.InvokeVoid("BlazorFoundationInitInfiniteLoadHelper", offset);
         }
 
         [JSInvokable("InfiniteLoadHelperReachedEnd")]

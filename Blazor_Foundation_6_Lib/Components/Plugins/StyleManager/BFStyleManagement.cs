@@ -26,7 +26,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
         public Func<Task> OnUpdate { get; set; }
         public BFStyleManagement()
         {
-            Console.WriteLine("Setup the base style.");
+            //Console.WriteLine("Setup the base style.");
             // Foundation 6
             Set("--primary-color", "#2a76bb", "Global theme primary color.");
             Set("--secondary-color", "#656565", "Global theme secondary color.");
@@ -80,11 +80,27 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--slider-handle-border-radius", "var(--global-border-radius)", "Slider Handler Border Radius");
 
             Set("--link-ft-color", "var(--primary-color)", "Color of <a> font link.");
+            Set("--link-active-ft-color", "var(--black-color)", "Color of <a> font active link.");
 
             Set("--body-ft-color", "var(--black-color)", "Default body text color.");
             Set("--body-bg-color", "var(--white-color)", "Default body background color.");
 
+            // Accordion
+            Set("--accordion-border-color", "var(--light-gray-color)", "Accordion border color.");
+            Set("--accordion-bg-color", "var(--white-color)", "Accordion background color.");
 
+            Set("--accordion-title-ft-color", "var(--primary-color)", "Accordion font color.");
+            Set("--accordion-title-border-color", "var(--accordion-border-color)", "Accordion title border color.");
+
+            Set("--accordion-content-ft-color", "var(--black-color)", "Accordion content font color.");
+            Set("--accordion-content-border-color", "var(--accordion-border-color)", "Accordion content border color.");
+            Set("--accordion-content-bg-color", "var(--accordion-bg-color)", "Accordion content background color.");
+
+            //Headline
+            Set("--headline-divider-color", "var(--primary-color)", "Headline divider color.");
+
+
+            
             // Navigation Top Bar
             Set("--top-bar-ft-color", "var(--white-color)", "Top bar font color.");
             Set("--top-bar-bg-color", "var(--black-color)", "Top bar background color.");

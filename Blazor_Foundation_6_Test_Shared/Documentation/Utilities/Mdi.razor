@@ -1,0 +1,94 @@
+﻿@page "/material-design-icons";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@inject NavigationManager Navigator;
+@using System.Net.Http;
+@using System.Text
+@using System.Text.RegularExpressions
+@inject HttpClient _client
+<style>
+    .lil-mdi-style{
+        font-size: 2.5em; 
+        
+    }
+
+</style>
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Icon Classes</h2>
+        <p>We are using MDI Icons (@("https://pictogrammers.github.io/@mdi/font/5.4.55/")). </p>
+        @if(MdiDatabase == null || MdiDatabase.Count <= 0)
+        {
+            <span class="mdi mdi-loading mdi-spin" style="font-size: 1em;"> Loading Database :) :( :) </span>
+        }else{
+            <input type="text" placeholder="type to search specifics eg: load" @bind=@Keywords @bind:event="oninput"  />
+            @if (Take <= 200)
+            {
+                <Callout Class=@($"warning small") CloseButton=true  CloseButtonCallBack=@(()=>{Take = Take <= 200 ? 201 : Take;}) >
+               
+                        <p>We show only <strong>@Take results</strong> to avoid slowing down browser.</p>
+                    <strong style="cursor:pointer;" @onclick=@(()=>Take += 500)>Click to show up to @(Take + 500).</strong>
+                </Callout>  
+            }
+
+
+            <Callout Class="primary small">
+                Click any icon to show the code block :)
+            </Callout> 
+             <GridX HorizontalPadding=true>
+            @foreach (var item in FilterMdiDB()) { 
+               
+                    <Cell Size="small-6 medium-4 large-2" style="text-align: center;min-height: 130px;cursor:pointer;" @onclick=@(async ()=>await UpdateSelection(item))>
+                        <span class=@($"mdi {item} lil-mdi-style")  ></span> 
+                        <p style="font-size: 12px;">@item.Replace("mdi-","")</p>
+                    </Cell>
+            }
+              </GridX>
+        }
+        
+       
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+@code {
+    public static List<string> MdiDatabase { get; set; } = new List<string>();
+
+    public string Keywords { get; set; }
+    public string ShowCode { get; set; }
+    public int Take { get; set; } = 200;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Core.Plugins.MDILoader.LoadMdi(_client, Navigator);
+            StateHasChanged();
+        }
+    }
+
+    private List<string> FilterMdiDB()
+    {
+        if (Keywords == null || Keywords == string.Empty) return MdiDatabase.Take(Take).ToList();
+        return MdiDatabase.Where(p => p.Contains(Keywords.ToLower()) || Keywords.ToLower().Contains(p)).Take(Take).ToList();
+    }
+
+    private RenderFragment GetMdiCode()
+    {
+        return builder =>
+        {
+            builder.OpenComponent<HighlightCode>(0);
+            builder.AddAttribute(0, "Language", "Razor");
+            builder.AddAttribute(0, "Full", true);
+            builder.AddAttribute(0, "Content", ShowCode);
+            builder.CloseComponent();
+        };
+    }
+    private async Task UpdateSelection(string item)
+    {
+        ShowCode = @$"<span class=""mdi {item}"" ></span>"; 
+        await RevealController.Controller.ComplexMessage("mdi-code", item, GetMdiCode());
+        StateHasChanged();
+    }
+    //https://localhost:61615/_content/OpenCodeDev.Blazor.Foundation.Doc.Core/mdi_database.txt
+}
