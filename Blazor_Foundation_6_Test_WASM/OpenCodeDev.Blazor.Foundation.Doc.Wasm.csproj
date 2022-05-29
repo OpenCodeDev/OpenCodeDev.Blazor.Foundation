@@ -30,4 +30,24 @@
     <Folder Include="Pages\" />
   </ItemGroup>
 
+
+
+<!-- Copy Documentation to Docs Folder -->
+<Target Name="MergeJS" BeforeTargets="Compile">
+	<Message Text="Merging Javascripts Files" Importance="high" />
+	<!-- Copy Individual Files -->
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Get-Content &quot;$(ProjectDir)_JS\src\foundation.min.js&quot; | Set-Content &quot;$(ProjectDir)wwwroot\js\foundation.js&quot;} &quot;" />
+
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Get-Content &quot;$(ProjectDir)_JS\src\jquery.js&quot; | Set-Content &quot;$(ProjectDir)wwwroot\js\jquery.js&quot;} &quot;" />
+
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Get-Content &quot;$(ProjectDir)_JS\src\what-input.js&quot; | Set-Content &quot;$(ProjectDir)wwwroot\js\what-input.js&quot;} &quot;" />
+	<!-- blazor-foundation.js legacy support -->
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Get-Content &quot;$(ProjectDir)_JS\src\jquery.js&quot;, &quot;$(ProjectDir)_JS\src\newline.js&quot;, &quot;$(ProjectDir)_JS\src\what-input.js&quot;, &quot;$(ProjectDir)_JS\src\newline.js&quot;, &quot;$(ProjectDir)_JS\src\blazor-foundation.js&quot; | Set-Content &quot;$(ProjectDir)wwwroot\js\bf6_only.js&quot;} &quot;" />
+
+	<!-- bf6_standard.js -->
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Get-Content &quot;$(ProjectDir)_JS\src\jquery.js&quot;, &quot;$(ProjectDir)_JS\src\newline.js&quot;, &quot;$(ProjectDir)_JS\src\what-input.js&quot;, &quot;$(ProjectDir)_JS\src\newline.js&quot;, &quot;$(ProjectDir)_JS\src\foundation.min.js&quot;, &quot;$(ProjectDir)_JS\src\newline.js&quot;, &quot;$(ProjectDir)_JS\src\blazor-foundation.js&quot; | Set-Content &quot;$(ProjectDir)wwwroot\js\bf6_standard.js&quot;} &quot;" />
+	<!-- bf6_only.js -->
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Get-Content &quot;$(ProjectDir)_JS\src\jquery.js&quot;, &quot;$(ProjectDir)_JS\src\newline.js&quot;, &quot;$(ProjectDir)_JS\src\what-input.js&quot;, &quot;$(ProjectDir)_JS\src\newline.js&quot;, &quot;$(ProjectDir)_JS\src\blazor-foundation.js&quot; | Set-Content &quot;$(ProjectDir)wwwroot\js\bf6_only.js&quot;} &quot;" />
+
+</Target>
 </Project>

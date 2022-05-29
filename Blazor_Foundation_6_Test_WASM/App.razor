@@ -1,13 +1,13 @@
 @inject NavigationManager NavManager;
 @using OpenCodeDev.Blazor.Foundation.Doc.Core;
-<Router AppAssembly="@typeof(Program).Assembly" 
+<Router AppAssembly="@typeof(Program).Assembly"  
         AdditionalAssemblies="new[] { typeof(OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Getting_Started.Welcome).Assembly }"
         >
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"  />
     </Found>
     <NotFound>
-        <LayoutView Layout="@typeof(MainLayout)">
+        <LayoutView Layout="@typeof(MainLayout)" >
             <Reveal CloseOnClick="false" CloseXButton="false" OpenOnStart="true" RevealCloseXButton="false"
                                                               PrimaryButtonTitle="Close" PrimaryButtonOnClick="@(async ()=> { NavManager.NavigateTo("/", true); })">
                404 - Cannot find what you are looking for!
