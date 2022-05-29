@@ -7,6 +7,7 @@ using OpenCodeDev.Blazor.Foundation.Components.Plugins.InfiniteScrollHelper;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.MotionUI;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 using Microsoft.Extensions.DependencyInjection;
+using OpenCodeDev.Blazor.Foundation.Extensions;
 
 namespace OpenCodeDev.Blazor.Foundation
 {

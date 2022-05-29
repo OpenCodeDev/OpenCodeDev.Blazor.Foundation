@@ -1,0 +1,20 @@
+﻿.bf.bf-selection-list-box {
+    border: var(--form-input-border);
+    height: 10em;
+    padding: 0.5em 0 0 0;
+    overflow-y: scroll;
+    margin-bottom: 0.5em;
+}
+.bf.bf-selection-list-box > ul {
+    list-style-type: none;
+    margin: 0 0 0 0.3em;
+}
+
+.bf.bf-selection-list-box > ul > li {
+    margin: 0.3em 0 0.3em 0;
+}
+
+.bf.bf-selection-list-box > ul > li > .switch {
+    float: left;
+    margin: 0 0.5em 0 0;
+}

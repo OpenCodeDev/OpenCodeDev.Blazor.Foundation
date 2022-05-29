@@ -1,6 +1,7 @@
 ﻿@page "/forms";
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
 @using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using OpenCodeDev.Blazor.Foundation.Components.Forms;
 <SectionWrapper>
     <SectionLeft>
         <h2>Forms</h2>
@@ -8,13 +9,10 @@
             The Zurb Foundation 6 framework provides design for the input but also pattern and constraints with plugin Form Abide.
         </p>
 
-        <p style=" margin-top: 1em;">
-            Unfortunately/Fortunately ;), Form Abide is not compatible with Blazor Foundation 6 due to FormEdit and the way C# manages the forms.
-            
-        </p>
+        <p style=" margin-top: 1em;">Unfortunately/Fortunately ;), Form Abide is not compatible with Blazor Foundation 6 due to FormEdit and the way C# manages the forms.</p>
 
         <p style=" margin-top: 1em;">
-            Fortunately tho, we will show you how to mix in and the best way to validate dynamically a form using Blazor Foundation 6 method.
+            Fortunately tho, c# still performs input validation through Attribute Validator on properties/fields for a given c# model class.
         </p>
         @*<ResponsiveEmbedAspectRatio>
             <iframe style="margin-top:1em;" width="847" height="476" src="https://www.youtube.com/embed/6KwsGcEHVTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -59,9 +57,36 @@
 
 <SectionWrapper>
     <SectionLeft>
-        <h2>Simple as That, Nothing Else to say...</h2>
-        <p>All C# Types of inputbox are available use them.</p>
+        <h2>InputSelectionList</h2>
+        <p>
+            The input selection list is a built in, not part of original Zurb Foundation  6, input component allowing you
+            to pass list keyvaluepair of X as a key (can be guid, string int or other primitive types but <strong>Not Objects</strong> and string as a value (visual or display identifier of the key).
+            </p>
+        <p>The input box is visually mobile friendly and easier to use with Blazor Model oriented forms.</p>
+        <h3>MultiSelect</h3>
+        <p>MultiSelect allows multiple item to be selected via switch and it is activable by turning <Code>MultiSelect=true</Code>.</p>
+        <p><Code>SelectedElements=XXX</Code> and <Code>OnSelectedElementChanged=XXX</Code> are for <Code>MultiSelect=true</Code> only.</p>
+        <HighlightCS Language="razor" Full="true" Content="PElucHV0U2VsZWN0aW9uTGlzdCBUS2V5PUBzdHJpbmcgIE11bHRpU2VsZWN0PXRydWUgRWxlbWVudHM9QFNob3BwaW5nQ2FydCBTZWxlY3RlZEVsZW1lbnRzPUBTZWxlY3RlZFNob3BwaW5nQ2FydCAKICAgIE9uU2VsZWN0ZWRFbGVtZW50Q2hhbmdlZD1AKChzZWwpPT57U2VsZWN0ZWRTaG9wcGluZ0NhcnQgPSBzZWw7IFN0YXRlSGFzQ2hhbmdlZCgpO30pIC8+CjxwPkBDb21waWxlZFNob3BwaW5nQ2FydDwvcD4KCkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgQ29tcGlsZWRTaG9wcGluZ0NhcnQgPT4gU3RyaW5nLkpvaW4oIiwiLCBTZWxlY3RlZFNob3BwaW5nQ2FydC5XaGVyZShwID0+IFNob3BwaW5nQ2FydC5BbnkoeCA9PiB4LktleSA9PSBwKSkuU2VsZWN0KHAgPT4gICQie1Nob3BwaW5nQ2FydFtwXX0gKHtwfSkiKSk7CiAgICBwdWJsaWMgTGlzdDxzdHJpbmc+IFNlbGVjdGVkU2hvcHBpbmdDYXJ0IHsgZ2V0OyBzZXQ7IH0gPSBuZXcgTGlzdDxzdHJpbmc+KCk7CiAgICBwdWJsaWMgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4gU2hvcHBpbmdDYXJ0IHsgZ2V0OyBzZXQ7IH0gPSBuZXcgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4oKQogICAgewogICAgICAgIHsgIjcyNTI3MjczMDcwIiwgIktpZG5leSBCZWFucyAxa2ciIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzEiLCAiTGFtYiBDaG9wcyAxa2ciIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzIiLCAiQ29jb251dCBXYXRlciAxMDAwbUwiIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzMiLCAiQmFuYW5hIEJ1bmNoIDFrZyIgfSwKICAgICAgICB7ICI3MjUyNzI3MzA3NCIsICJCaWcgRmF0IFdoaXRlIE9uaW9uIDEgVW5pdCIgfSwKICAgICAgICB7ICI3MjUyNzI3MzA3NSIsICJCaXRjb2luIGZvciBPQ0QgMC4wMDA0IGJ0YyA6RCIgfSwKICAgIH07Cgp9" />
         
+        <InputSelectionList TKey=@string  MultiSelect=true Elements=@ShoppingCart SelectedElements=@SelectedShoppingCart 
+        OnSelectedElementChanged=@((sel)=>{SelectedShoppingCart = sel; StateHasChanged();}) />
+        <p>@CompiledShoppingCart</p>
+
+        <h3>Single Selection</h3>
+        <p>It's good to be able to offer a single choice whitin a range of possibility and to do so turn off <Code>MultiSelect=false</Code>.</p>
+        <p><Code>RadioSelection=XXX</Code> and <Code>OnRadioSelectedChanged=XXX</Code> are for <Code>MultiSelect=false</Code> only.</p>
+        <Callout TypeClass="warning" Size="small">
+            Note: when <strong>MultiSelect</strong> remain true the default behavior is to allow multiple selection and <strong>RadioSelection</strong> and 
+            <strong>OnRadioSelectedChanged</strong> will be ignored.
+        </Callout>
+        <HighlightCS Language="razor" Full="true" Content="PElucHV0U2VsZWN0aW9uTGlzdCBUS2V5PUBzdHJpbmcgIE11bHRpU2VsZWN0PWZhbHNlIEVsZW1lbnRzPUAoQ2FyQ29sb3IpIFJhZGlvU2VsZWN0aW9uPUBTZWxlY3RlZENhckNvbG9yIAogICAgT25SYWRpb1NlbGVjdGVkQ2hhbmdlZD1AKChzZWwpPT57U2VsZWN0ZWRDYXJDb2xvciA9IHNlbDsgU3RhdGVIYXNDaGFuZ2VkKCk7fSkgRGlzYWJsZWQ9QElzQnVzeS8+CjxwPk15IGNhciBjb2xvciB3aWxsIGJlLi4uIEBDb21wbGllZENhclNlbGVjdGlvbjwvcD4KCkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgQ29tcGxpZWRDYXJTZWxlY3Rpb24gPT4gU2VsZWN0ZWRDYXJDb2xvciA9PSBudWxsID8gIk5vdCBkZWNpZGVkIHlldCEiIDogQ2FyQ29sb3IuV2hlcmUocCA9PiBwLktleSA9PSBTZWxlY3RlZENhckNvbG9yKS5TZWxlY3QocCA9PiBwLlZhbHVlKS5TaW5nbGVPckRlZmF1bHQoKTsKICAgIHB1YmxpYyBzdHJpbmcgU2VsZWN0ZWRDYXJDb2xvciB7IGdldDsgc2V0OyB9CiAgICBwdWJsaWMgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4gQ2FyQ29sb3IgeyBnZXQ7IHNldDsgfSA9IG5ldyBEaWN0aW9uYXJ5PHN0cmluZywgc3RyaW5nPigpCiAgICB7CiAgICAgICAgeyAicmVkbWV0IiwgIlJlZCBNZXRhbGxpYyIgfSwKICAgICAgICB7ICJyZWRtYXQiLCAiUmVkIE1hdHRlIiB9LAogICAgICAgIHsgInJlZGdsb3NzIiwgIlJlZCBHbG9zc3kiIH0sCiAgICAgICAgeyAiYmxhY2ttZXQiLCAiQmxhY2sgTWV0YWxsaWMiIH0sCiAgICAgICAgeyAiYmxhY2ttYXR0ZSIsICJCbGFjayBNYXR0ZSIgfSwKICAgICAgICB7ICJibGFja2dsb3NzIiwgIkJsYWNrIEdsb3NzeSIgfSwKICAgIH07CgogICAgcHVibGljIGJvb2wgSXNCdXN5IHsgZ2V0OyBzZXQ7IH0KCn0=" />
+        
+<InputSelectionList TKey=@string  MultiSelect=false Elements=@(CarColor) RadioSelection=@SelectedCarColor 
+    OnRadioSelectedChanged=@((sel)=>{SelectedCarColor = sel; StateHasChanged();}) Disabled=@IsBusy/>
+<p>My car color will be... @CompliedCarSelection</p>
+
+        <h3>Server Busy</h3>
+        <p>You can disable the input by using <Code>Disabled=true</Code> so while awaitng for the server the control can be made inaccessible.</p>
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -72,4 +97,31 @@
 @code {
     private string _Number = "";
     public string Number { get => _Number; set { Console.WriteLine(value); _Number = value; } }
+
+    public string CompliedCarSelection => SelectedCarColor == null ? "Not decided yet!" : CarColor.Where(p => p.Key == SelectedCarColor).Select(p => p.Value).SingleOrDefault();
+    public string SelectedCarColor { get; set; }
+    public Dictionary<string, string> CarColor { get; set; } = new Dictionary<string, string>()
+    {
+        { "redmet", "Red Metallic" },
+        { "redmat", "Red Matte" },
+        { "redgloss", "Red Glossy" },
+        { "blackmet", "Black Metallic" },
+        { "blackmatte", "Black Matte" },
+        { "blackgloss", "Black Glossy" },
+    };
+
+    public bool IsBusy { get; set; }
+
+    public string CompiledShoppingCart => String.Join(",", SelectedShoppingCart.Where(p => ShoppingCart.Any(x => x.Key == p)).Select(p =>  $"{ShoppingCart[p]} ({p})"));
+    public List<string> SelectedShoppingCart { get; set; } = new List<string>();
+    public Dictionary<string, string> ShoppingCart { get; set; } = new Dictionary<string, string>()
+    {
+        { "72527273070", "Kidney Beans 1kg" },
+        { "72527273071", "Lamb Chops 1kg" },
+        { "72527273072", "Coconut Water 1000mL" },
+        { "72527273073", "Banana Bunch 1kg" },
+        { "72527273074", "Big Fat White Onion 1 Unit" },
+        { "72527273075", "Bitcoin for OCD 0.0004 btc :D" },
+    };
+
 }

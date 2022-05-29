@@ -19,7 +19,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
 
-            <MenuDoc></MenuDoc>
+            <MenuDoc><MenuExtension /></MenuDoc>
         </div>
 
 
@@ -37,7 +37,10 @@
                                 <h3 style=" margin-top: 1.5em; float: left; font-size: x-small; margin-left: 1em;">v@(typeof(StickyContainer).Assembly.GetName().Version)</h3>
                             </TopBarLeft>
                             <TopBarRight>
+                                <span class="mdi mdi-offer" style=" padding-right: 0.3em;font-size: 2em;"
+                                      @onclick="@(async () => await Donate())">
 
+                                </span>
 
                                 @if (MITLICENSE == null && !MitLicenseError)
                                 {
@@ -94,7 +97,12 @@
     private RenderFragment MessageBoxTemplate { get; set; } =@<Reveal OpenOnStart="true">This is a Dangerous Message</Reveal>
     ;
 
-
+        RenderFragment QuickDonation { get; set; } = @<DonationSection />
+    ;
+    private async Task Donate()
+    {
+        await RevealController.Controller.ComplexMessage("QuickDonation", "Support This Project", QuickDonation);
+    }
 
     private OffCanvas OffCanvasBottom;
     private async Task TriggerButton()
