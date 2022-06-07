@@ -2,6 +2,8 @@
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
 @using OpenCodeDev.Blazor.Foundation.Components.Controls;
 @using OpenCodeDev.Blazor.Foundation.Components.Forms;
+@using OpenCodeDev.Blazor.Foundation.Extensions;
+@using System.Text.RegularExpressions
 <SectionWrapper>
     <SectionLeft>
         <h2>Forms</h2>
@@ -92,7 +94,76 @@
 </SectionWrapper>
 
 
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Password Attributes</h2>
+        <p>Blazor Foundation includes c# attributes for Password Validation with EditContext.</p>
+        <h3>Requirement</h3>
+        <p>Password attributes required <Code>OpenCodeDev.Blazor.Foundation.Extensions</Code> package and use <Code>using OpenCodeDev.Blazor.Foundation.Extensions.ValidatorAttributes;</Code>.</p>
+        <h3>Quick and Sloppy (Not Specific Error Messages)</h3>
+        <p>If you don't want or if you have a front end method to handle password validation you can use <Code>[PasswordStrength]</Code>.</p>
+        <p>This attribute checks for predefined specifics about the minimum strength you've choosen. Check out Intellisense for more details.</p>
+        <ul>
+            <li>[Not Recommended] Weak (5 Characters Minimum, 1 Lowercase and 1 Uppercase)</li>
+            <li>[Low Security] Decent (10 Characters Minimum, 1 Lowercase, 1 Uppercase and 1 Digit)</li>
+            <li>[Recommended] Strong (12 Characters Minimum, 1 Lowercase, 1 Uppercase, 1 Digit and 1 Special)</li>
+        </ul>
+        <HighlightCode Language="cs" Full="true" Content="cHVibGljIGNsYXNzIFRlc3RQYXNzd29yZAp7CiAgICBbUGFzc3dvcmRTdHJlbmd0aChQYXNzd29yZFN0cmVuZ3RoLkFsbG93U3Ryb25nUGFzc3dvcmQpXQogICAgcHVibGljIHN0cmluZyBQYXNzd29yZCB7IGdldDsgc2V0OyB9Cn0=" />
+        
+        <h3>Allowed Characters Only</h3>
+        <p>Use <Code>[PasswordAllowedCharacters]</Code> to allow only our default characters which is common <Code>@PasswordExt.Characters_All</Code></p>
 
+        <h3>Minimum Lowercase Required</h3>
+        <p>Use <Code>[PasswordLowercase(1)]</Code> to allow a minimum lowercase character in the password.</p>
+
+        <h3>Minimum Uppercase Required</h3>
+        <p>Use <Code>[PasswordUppercase(1)]</Code> to allow a minimum uppercase character in the password.</p>
+
+        <h3>Minimum Digits Required</h3>
+        <p>Use <Code>[PasswordDigits(1)]</Code> to allow a minimum number of digits in the password.</p>
+
+        <h3>Minimum Specials Required</h3>
+        <p>Use <Code>[PasswordSpecials(1)]</Code> to allow a minimum of special characters in the password.</p>
+
+        <h3>What it should look like?</h3>
+        <HighlightCode Language="cs" Full="true" Content="cHVibGljIGNsYXNzIEF1dGhMb2dpbgp7CiAgICBbRW1haWxBZGRyZXNzKEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfRklFTERfRU1BSUxfRk9STUFUIiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VUeXBlID0gdHlwZW9mKERhdGFBbm5vdGF0aW9uKSldCiAgICBbUmVxdWlyZWQoRXJyb3JNZXNzYWdlUmVzb3VyY2VOYW1lID0gIkVSUl9GSUVMRF9SRVFVSVJFRCIsIEVycm9yTWVzc2FnZVJlc291cmNlVHlwZSA9IHR5cGVvZihEYXRhQW5ub3RhdGlvbikpXQogICAgcHVibGljIHN0cmluZyBFbWFpbCB7IGdldDsgc2V0OyB9CgogICAgW1JlcXVpcmVkKEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfRklFTERfUkVRVUlSRUQiLCBFcnJvck1lc3NhZ2VSZXNvdXJjZVR5cGUgPSB0eXBlb2YoRGF0YUFubm90YXRpb24pKV0KICAgIFtQYXNzd29yZFNwZWNpYWwoQXRMZWFzdCA9IDEsIEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfUEFTU1dPUkRfTk9UX01FRVRfTUlOSU1VTSIsIEVycm9yTWVzc2FnZVJlc291cmNlVHlwZSA9IHR5cGVvZihEYXRhQW5ub3RhdGlvbikpXQogICAgW1Bhc3N3b3JkRGlnaXQoQXRMZWFzdCA9IDEsIEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfUEFTU1dPUkRfTk9UX01FRVRfTUlOSU1VTSIsIEVycm9yTWVzc2FnZVJlc291cmNlVHlwZSA9IHR5cGVvZihEYXRhQW5ub3RhdGlvbikpXQogICAgW1Bhc3N3b3JkTG93ZXJDYXNlKEF0TGVhc3QgPSAxLCBFcnJvck1lc3NhZ2VSZXNvdXJjZU5hbWUgPSAiRVJSX1BBU1NXT1JEX05PVF9NRUVUX01JTklNVU0iLCBFcnJvck1lc3NhZ2VSZXNvdXJjZVR5cGUgPSB0eXBlb2YoRGF0YUFubm90YXRpb24pKV0KICAgIFtQYXNzd29yZFVwcGVyQ2FzZShBdExlYXN0ID0gMSwgRXJyb3JNZXNzYWdlUmVzb3VyY2VOYW1lID0gIkVSUl9QQVNTV09SRF9OT1RfTUVFVF9NSU5JTVVNIiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VUeXBlID0gdHlwZW9mKERhdGFBbm5vdGF0aW9uKSldCiAgICBbUGFzc3dvcmRBbGxvd2VkQ2hhcmF0ZXJzT25seShFcnJvck1lc3NhZ2VSZXNvdXJjZU5hbWUgPSAiRVJSX1BBU1NXT1JEX05PVF9NRUVUX01JTklNVU0iLCBFcnJvck1lc3NhZ2VSZXNvdXJjZVR5cGUgPSB0eXBlb2YoRGF0YUFubm90YXRpb24pKV0KICAgIFtTdHJpbmdMZW5ndGgoMzIsIE1pbmltdW1MZW5ndGggPSAxMiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VOYW1lID0gIkVSUl9QQVNTV09SRF9OT1RfTUVFVF9NSU5JTVVNIiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VUeXBlID0gdHlwZW9mKERhdGFBbm5vdGF0aW9uKSldCiAgICBwdWJsaWMgc3RyaW5nIFBhc3N3b3JkIHsgZ2V0OyBzZXQ7IH0KfQ==" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Abide Attribues</h2>
+        <p>Zurb's Foundation 6 provide regex patterns also available in <Code>OpenCodeDev.Blazor.Foundation.Extensions</Code> in the <Code>Abide</Code> class.</p>
+        <p>We also have created a list of Abide attributes for EditContext validation.</p>
+        <p>Here's cs class used for the following examples.</p>
+
+        <TableWrapper>
+            <TableHeader>
+                <TableHeaderItem>C# Attribute</TableHeaderItem>
+                <TableHeaderItem>Test It</TableHeaderItem>
+                <TableHeaderItem>Code</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        @("[AbideAlpha]")
+                    </TableBodyRowItem>
+                    <TableBodyRowItem>
+                        <p>@Tester()</p>
+                        <input type="text" placeholder="type alpha" @bind=AbideTest.Alpha @bind:event="oninput" />
+                        
+                        @if(AbideTest.GetContext().GetPropErrors(nameof(AbideTest.Alpha)) != null) { 
+                            <p>@AbideTest.GetContext().GetPropErrors(nameof(AbideTest.Alpha))</p>
+                            
+                        }else{<p>This Input is Valid</p>}
+                    </TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
     private string _Number = "";
@@ -124,4 +195,13 @@
         { "72527273075", "Bitcoin for OCD 0.0004 btc :D" },
     };
 
+
+    public Forms_Abide_Test AbideTest { get; set; } = new Forms_Abide_Test();
+
+    public string Tester()
+    {
+        if (AbideTest.Alpha == null) return "Null";
+        var regex = new Regex(Abide.DOMAIN);
+        return regex.IsMatch(AbideTest.Alpha) ? "Match" : "No Match";
+    }
 }

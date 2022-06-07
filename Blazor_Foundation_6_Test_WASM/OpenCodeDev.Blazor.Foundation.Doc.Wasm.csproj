@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="[3.0.8,3.1)" allowedVersions="[3.0.8,3.1)" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.8.12" allowedVersions="[3.0.8,3.1)" />
     <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="[3.0.8,3.1)" allowedVersions="[3.0.8,3.1)" />
     <PackageReference Include="System.Net.Http.Json" Version="6.*" allowedVersions="[6,7)" />
     <PackageReference Include="Newtonsoft.Json" Version="13.*" allowedVersions="[13,14)" />
