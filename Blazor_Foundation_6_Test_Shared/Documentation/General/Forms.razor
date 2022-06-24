@@ -201,7 +201,7 @@
     public string Tester()
     {
         if (AbideTest.Alpha == null) return "Null";
-        var regex = new Regex(Abide.DOMAIN);
+        var regex = new Regex(Abide.ALPHA);
         return regex.IsMatch(AbideTest.Alpha) ? "Match" : "No Match";
     }
 }
