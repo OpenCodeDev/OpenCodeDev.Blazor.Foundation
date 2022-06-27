@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>.net6.0</TargetFramework>
-    <RazorLangVersion>3.0</RazorLangVersion>
+    <TargetFramework>net6.0</TargetFramework>
+	  <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Wasm</AssemblyName>
@@ -10,12 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="[3.0.8,3.1)" allowedVersions="[3.0.8,3.1)" />
     <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="[3.0.8,3.1)" allowedVersions="[3.0.8,3.1)" />
-    <PackageReference Include="System.Net.Http.Json" Version="6.*" allowedVersions="[6,7)" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.*" allowedVersions="[13,14)" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.*" allowedVersions="[6,7)" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.*" allowedVersions="[6,7)" />
+    <PackageReference Include="System.Net.Http.Json" Version="6.0.0" allowedVersions="[6,7)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.6" allowedVersions="[6,7)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.6" allowedVersions="[6,7)" />
   </ItemGroup>
 
   
