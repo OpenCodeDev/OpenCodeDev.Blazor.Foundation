@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-	  <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
-	  <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+	<TargetFrameworks>net6.0</TargetFrameworks>
+	<BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Wasm</AssemblyName>

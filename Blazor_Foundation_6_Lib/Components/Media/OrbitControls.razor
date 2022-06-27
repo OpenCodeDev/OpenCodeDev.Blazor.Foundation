@@ -1,15 +1,14 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
-@using OpenCodeDev.Blazor.Foundation.Components.Controls;
 <div class="orbit-controls" @attributes="AdditionalAttributes">
-    <Button Class=@($"orbit-previous {PreviousButtonClass}") style="@(PreviousButtonStyle)">
+    <button class=@($"orbit-previous {PreviousButtonClass}") style="@(PreviousButtonStyle)">
         <span class="show-for-sr">Previous Slide</span>
         <span class="mdi @(PreviousContent) @(PreviousIconClass)"></span>
-    </Button>
-    <Button  Class=@($"orbit-next {NextButtonClass}") style="@(NextButtonStyle)">
+    </button>
+    <button  class=@($"orbit-next {NextButtonClass}") style="@(NextButtonStyle)">
         <span class="show-for-sr">Next Slide</span>
         <span class="mdi @(NextContent) @(NextIconClass)" style="@(NextIconStyle)"></span>
-    </Button>
+    </button>
 </div>
 @code {
 
