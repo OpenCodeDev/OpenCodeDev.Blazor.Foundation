@@ -1,4 +1,4 @@
-# Version 3.0.8.2 (June 2022)
+# Version 3.0.8.3 (June 2022)
 ## Changes
 - Change Button Padding Style into Class (Performance, Size)
 Allows the developer to use style attribute and override the margin/padding which was not the case prior this patch.
