@@ -28,7 +28,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         /// Custom Class to Append at the end of default Foundation Class.
         /// </summary>
         [Parameter]
-        public string Class { get; set; }
+        public string Class { get; set; } = String.Empty;
 
         /// <summary>
         /// id of Foundation element to toggle can be anything. Modal, Switch, Off-Canvas....
@@ -38,16 +38,16 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 
 
         [Parameter]
-        public bool MarginTop { get; set; } = false;
+        public bool? MarginTop { get; set; } = null;
 
         [Parameter]
-        public bool MarginBottom { get; set; } = true;
+        public bool? MarginBottom { get; set; } = null;
 
         [Parameter]
-        public bool MarginLeft { get; set; } = false;
+        public bool? MarginLeft { get; set; } = null;
 
         [Parameter]
-        public bool MarginRight { get; set; } = false;
+        public bool? MarginRight { get; set; } = null;
 
         [Parameter]
         public bool? HorizontalMargin { get; set; } = null;
@@ -57,16 +57,16 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 
 
         [Parameter]
-        public bool PaddingTop { get; set; } = true;
+        public bool? PaddingTop { get; set; } = null;
 
         [Parameter]
-        public bool PaddingBottom { get; set; } = true;
+        public bool? PaddingBottom { get; set; } = null;
 
         [Parameter]
-        public bool PaddingLeft { get; set; } = true;
+        public bool? PaddingLeft { get; set; } = null;
 
         [Parameter]
-        public bool PaddingRight { get; set; } = true;
+        public bool? PaddingRight { get; set; } = null;
 
         [Parameter]
         public bool? HorizontalPadding { get; set; } = null;
@@ -86,36 +86,46 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
             if (AdditionalAttributes == null) { AdditionalAttributes = new Dictionary<string, object>(); }
             if (!AdditionalAttributes.ContainsKey("style")) { AdditionalAttributes.Add("style", ""); }
 
-            string nStyle = (string)AdditionalAttributes["style"];
-            nStyle = GetMargin(VerticalMargin != null ? (bool)VerticalMargin : MarginTop, nStyle, "top");
-            nStyle = GetMargin(VerticalMargin != null ? (bool)VerticalMargin : MarginBottom, nStyle, "bottom");
-            nStyle = GetMargin(HorizontalMargin != null ? (bool)HorizontalMargin : MarginLeft, nStyle, "left");
-            nStyle = GetMargin(HorizontalMargin != null ? (bool)HorizontalMargin : MarginLeft, nStyle, "right");
+            string nClass = Class + " ";
+            nClass += GetMarginClass(MarginTop, "top");
+            nClass += GetMarginClass(MarginBottom, "bottom");
+            nClass += GetMarginClass(MarginLeft, "left");
+            nClass += GetMarginClass(MarginLeft,  "right");
+            nClass += GetMarginClass(HorizontalMargin, "horizontal");
+            nClass += GetMarginClass(VerticalMargin, "vertical");
 
-            nStyle = GetPadding(VerticalPadding != null ? (bool)VerticalPadding : PaddingTop, nStyle, "top");
-            nStyle = GetPadding(VerticalPadding != null ? (bool)VerticalPadding : PaddingBottom, nStyle, "bottom");
-            nStyle = GetPadding(HorizontalPadding != null ? (bool)HorizontalPadding : PaddingLeft, nStyle, "left");
-            nStyle = GetPadding(HorizontalPadding != null ? (bool)HorizontalPadding : PaddingRight, nStyle, "right");
-            AdditionalAttributes["style"] = nStyle;
+            nClass += GetPaddingClass(PaddingTop, "top");
+            nClass += GetPaddingClass(PaddingBottom, "bottom");
+            nClass += GetPaddingClass(PaddingLeft, "left");
+            nClass += GetPaddingClass(PaddingRight, "right");
+            nClass += GetPaddingClass(HorizontalPadding, "horizontal");
+            nClass += GetPaddingClass(VerticalPadding, "vertical");
+            Class = nClass;
         }
 
 
-        private string GetMargin(bool ifTrue, string appendto, string margin)
+        private string GetMarginClass(bool? ifTrue, string direction)
         {
-            if (ifTrue)
+            //Ignore to default
+            if(ifTrue == null) { return String.Empty; }
+            bool final = (bool)ifTrue;
+            if (final)
             {
-                return $"margin-{margin}:1rem;{appendto}";
+                return $"bf-margin-{direction} ";
             }
-            return $"margin-{margin}:0;{appendto}";
+            return $"bf-no-margin-{direction} ";
         }
 
-        private string GetPadding(bool ifTrue, string appendto, string margin)
+        private string GetPaddingClass(bool? ifTrue, string direction)
         {
-            if (ifTrue)
+            //Ignore to default
+            if (ifTrue == null) { return String.Empty; }
+            bool final = (bool)ifTrue;
+            if (final)
             {
-                return $"padding-{margin}:1rem;{appendto}";
+                return $"bf-padding-{direction} ";
             }
-            return $"padding-{margin}:0;{appendto}";
+            return $"bf-no-padding-{direction} ";
         }
 
 
