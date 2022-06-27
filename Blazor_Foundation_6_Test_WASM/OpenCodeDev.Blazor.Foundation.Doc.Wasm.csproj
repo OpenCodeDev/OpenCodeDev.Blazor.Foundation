@@ -2,17 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	  <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
 	  <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Wasm</AssemblyName>
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Wasm</RootNamespace>
+	  <PublishTrimmed>false</PublishTrimmed>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="[3.0.8,3.1)" allowedVersions="[3.0.8,3.1)" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="[3.0.8,3.1)" allowedVersions="[3.0.8,3.1)" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.8" allowedVersions="[3.0.8,3.1)" />
+    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.0.8" allowedVersions="[3.0.8,3.1)" />
     <PackageReference Include="System.Net.Http.Json" Version="6.0.0" allowedVersions="[6,7)" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.6" allowedVersions="[6,7)" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.6" allowedVersions="[6,7)" />
@@ -37,6 +39,6 @@
 	<Message Text="Copy Documentation Files" Importance="high" />
 	<!-- Copy Individual Files -->
 	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Remove-Item '$(SolutionDir)docs' -Recurse } &quot;&amp;" />
-	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Copy-Item -Path '$(ProjectDir)bin\Release\.net6.0\browser-wasm\publish\wwwroot' -Destination '$(SolutionDir)docs' -recurse -Force -ErrorAction Continue} &quot;" />
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Copy-Item -Path '$(ProjectDir)bin\Release\net6.0\browser-wasm\publish\wwwroot' -Destination '$(SolutionDir)docs' -recurse -Force -ErrorAction Continue} &quot;" />
 </Target>
 </Project>
