@@ -37,6 +37,6 @@
 	<Message Text="Copy Documentation Files" Importance="high" />
 	<!-- Copy Individual Files -->
 	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Remove-Item '$(SolutionDir)docs' -Recurse } &quot;&amp;" />
-	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Copy-Item -Path '$(ProjectDir)bin\Release\.net6.0\browser-wasm\publish\wwwroot' -Destination '$(SolutionDir)docs' -recurse -Force} &quot;" />
+	<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Copy-Item -Path '$(ProjectDir)bin\Release\.net6.0\browser-wasm\publish\wwwroot' -Destination '$(SolutionDir)docs' -recurse -Force -ErrorAction Continue} &quot;" />
 </Target>
 </Project>
