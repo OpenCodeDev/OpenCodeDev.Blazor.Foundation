@@ -5880,6 +5880,9 @@ ol.list-upper-roman {
 .button.bf-margin-bottom, .button.bf-margin-vertical {
   margin-bottom: 1em; }
 
+tbody tr:nth-child(even) {
+  background-color: var(--table-stripe-bg); }
+
 /*Highlight JS*/
 .hljs-header {
   overflow: hidden;

@@ -17,9 +17,9 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</RootNamespace>
     <PackageIcon>icon-highlightcs.png</PackageIcon>
     <PackageIconUrl />
-    <AssemblyVersion>3.0.8.1</AssemblyVersion>
-    <FileVersion>3.0.8.1</FileVersion>
-    <Version>3.0.8.1</Version>
+    <AssemblyVersion>3.0.8.2</AssemblyVersion>
+    <FileVersion>3.0.8.2</FileVersion>
+    <Version>3.0.8.2</Version>
   </PropertyGroup>
 
   
@@ -43,6 +43,21 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Localization\Lang.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lang.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Localization\Lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

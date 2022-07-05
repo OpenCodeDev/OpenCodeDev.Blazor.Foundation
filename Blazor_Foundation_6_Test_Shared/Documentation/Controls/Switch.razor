@@ -30,7 +30,7 @@
             <li>The <Code>@(@"RadioGroup=""ANY_NAME""")</Code> Must be set when <Code>@(@"IsRadio=""true""")</Code>. Will act as a identifier for the radio group. </li>
             <li>The <Code>@(@"Disabled=""false""")</Code> When true, switch will be disabled. </li>
         </ul>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="@(@"<Switch />")" />
 
         <OpenCodeDev.Blazor.Foundation.Components.Controls.Switch />
@@ -42,7 +42,7 @@
     <SectionLeft>
         <h2>Disabled</h2>
         <p>There may be times when you want to fix a switch into a position. This can be accomplished by setting <Code>@(@"Disabled=""true""")</Code> on the switch component.</p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="@(@"<Switch Disabled=""true"" />")" />
         <OpenCodeDev.Blazor.Foundation.Components.Controls.Switch Disabled="true" />
 
@@ -54,7 +54,7 @@
     <SectionLeft>
         <h2>Data Binding</h2>
         <p>You can bind data to external bool by using <Code>Checked</Code>, <Code>OnChangeValue</Code> and <Code>OnStateChange</Code> (<i>Recommended</i>) for the switch..</p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PFN3aXRjaCBDaGVja2VkPSJAQ2hlY2tPbk9mZiIgT25DaGFuZ2VWYWx1ZT0iQChhc3luYyhib29sIHZhbCk9PiBDaGVja09uT2ZmID0gdmFsKSIgT25TdGF0ZUNoYW5nZT0iKCk9PlN0YXRlSGFzQ2hhbmdlZCgpIiAvPgoKQGNvZGUgewogICAgcHVibGljIGJvb2wgQ2hlY2tPbk9mZiB7IGdldDsgc2V0OyB9ID0gZmFsc2U7Cn0=" />
         <OpenCodeDev.Blazor.Foundation.Components.Controls.Switch Checked="@CheckOnOff" OnChangeValue="@(async(bool val)=> CheckOnOff = val)" 
                                                                   OnStateChange="()=>StateHasChanged()" />
@@ -66,7 +66,7 @@
     <SectionLeft>
         <h2>Radio Switches</h2>
         <p> You can also tell the switch to behave like a radio button instead of checkbox to create a series of options.</p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuQ29udHJvbHMuU3dpdGNoIENoZWNrZWQ9IkAoKFJhZGlvR3JvdXBLZXkgPT0gIkVsZXBoYW50IikpIiBJc1JhZGlvPSJ0cnVlIiBSYWRpb0dyb3VwPSJNWUdST1VQIiBPbkNoYW5nZVZhbHVlPSJAKGFzeW5jKGJvb2wgdmFsKT0+IFJhZGlvR3JvdXBLZXkgPSAiRWxlcGhhbnQiKSIgT25TdGF0ZUNoYW5nZT0iKCk9PlN0YXRlSGFzQ2hhbmdlZCgpIiAvPgo8T3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5Td2l0Y2ggQ2hlY2tlZD0iQCgoUmFkaW9Hcm91cEtleSA9PSAiVGlnZXIiKSkiIElzUmFkaW89InRydWUiIFJhZGlvR3JvdXA9Ik1ZR1JPVVAiIE9uQ2hhbmdlVmFsdWU9IkAoYXN5bmMgKGJvb2wgdmFsKSA9PiBSYWRpb0dyb3VwS2V5ID0gIlRpZ2VyIikiIE9uU3RhdGVDaGFuZ2U9IigpPT5TdGF0ZUhhc0NoYW5nZWQoKSIgLz4KCkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgX1JhZGlvR3JvdXBLZXkge2dldDsgc2V0O30gPSAiRWxlcGhhbnQiOwp9Cg==" />
         <OpenCodeDev.Blazor.Foundation.Components.Controls.Switch Checked="@((RadioGroupKey == "Elephant"))" IsRadio="true" RadioGroup="MYGROUP"
                                                                   OnChangeValue="@(async(bool val)=> RadioGroupKey = "Elephant")"
@@ -83,7 +83,7 @@
     <SectionLeft>
         <h2>Sizing Classes</h2>
         <p>Use the attribute <Code>Size</Code>: <Code>tiny</Code>, <Code>small</Code>, <Code>large</Code> to change the switch size.</p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PFN3aXRjaCBTaXplPSJ0aW55IiAvPgo8U3dpdGNoIFNpemU9InNtYWxsIiAvPgo8U3dpdGNoIFNpemU9ImxhcmdlIiAvPg==" />
         <OpenCodeDev.Blazor.Foundation.Components.Controls.Switch Size="tiny" />
         <OpenCodeDev.Blazor.Foundation.Components.Controls.Switch Size="small" />
@@ -98,7 +98,7 @@
         <h2>Inner Labels</h2>
         <p>You can place active and inactive text inside of a switch. The active text <Code>LabelOn</Code> only displays when the switch is on, and the inactive text <Code>LabelOff</Code> only displays when the switch is off.</p>
         <p>Recommended: Keep the text very short, you will possibly have the tune <Code>left</Code> and <Code>right</Code> CSS properties to adjust text placement.</p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="@(@"<Switch LabelOn=""On"" LabelOff=""Off""  />")" />
         <OpenCodeDev.Blazor.Foundation.Components.Controls.Switch LabelOn="On"  LabelOff="Off"  />
 
