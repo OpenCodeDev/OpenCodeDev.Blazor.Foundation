@@ -5362,6 +5362,54 @@ html.is-reveal-open {
 .rounded {
   border-radius: 0.5em; }
 
+.button.bf-no-padding-left, .button.bf-no-padding-horizontal {
+  padding-left: 0; }
+
+.button.bf-no-padding-right, .button.bf-no-padding-horizontal {
+  padding-right: 0; }
+
+.button.bf-no-padding-top, .button.bf-no-padding-vertical {
+  padding-top: 0; }
+
+.button.bf-no-padding-bottom, .button.bf-no-padding-vertical {
+  padding-bottom: 0; }
+
+.button.bf-no-margin-left, .button.bf-no-margin-horizontal {
+  margin-left: 0; }
+
+.button.bf-no-margin-right, .button.bf-no-margin-horizontal {
+  margin-right: 0; }
+
+.button.bf-no-padding-top, .button.bf-no-margin-vertical {
+  margin-top: 0; }
+
+.button.bf-no-margin-bottom, .button.bf-no-margin-vertical {
+  margin-bottom: 0; }
+
+.button.bf-padding-left, .button.bf-padding-horizontal {
+  padding-left: 1em; }
+
+.button.bf-padding-right, .button.bf-padding-horizontal {
+  padding-right: 1em; }
+
+.button.bf-padding-top, .button.bf-padding-vertical {
+  padding-top: 0.85em; }
+
+.button.bf-padding-bottom, .button.bf-padding-vertical {
+  padding-bottom: 0.85em; }
+
+.button.bf-margin-left, .button.bf-margin-horizontal {
+  margin-left: 1em; }
+
+.button.bf-margin-right, .button.bf-margin-horizontal {
+  margin-right: 1em; }
+
+.button.bf-padding-top, .button.bf-margin-vertical {
+  margin-top: 1em; }
+
+.button.bf-margin-bottom, .button.bf-margin-vertical {
+  margin-bottom: 1em; }
+
 /*Highlight JS*/
 .hljs-header {
   overflow: hidden;

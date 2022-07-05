@@ -1,3 +1,13 @@
+# Version 3.0.8.3 (June 2022)
+## Changes
+- Change Button Padding Style into Class (Performance, Size)
+Allows the developer to use style attribute and override the margin/padding which was not the case prior this patch.
+
+## Fixes
+- Fix Orbital Button component, button was not constructed correctly.
+Found while debugging failure to publish the Documentation 3.0.8.1
+- Fix Tiny Button Problems from new Feature PAdding/Margin option in buttons.
+
 # Version 3.0.8 (June 2022)
 ## Features
 - **Beta** New InputSelectionList Component (Mobile Firendly List Input)
