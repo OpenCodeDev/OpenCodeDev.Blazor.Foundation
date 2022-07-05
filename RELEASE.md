@@ -8,6 +8,7 @@
 ## Fixes
 - Maximize Compatibility by Supporting to WebAssembly 6.0.0+.
 - Fix Border Radius on Button Group.
+- Fix Table Striped Background (CSS Variable)
 
 ## Changes
 - 

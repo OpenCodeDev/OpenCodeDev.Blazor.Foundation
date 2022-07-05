@@ -58,6 +58,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--button-group-first-border-radius", "0.5em 0em 0em 0.5em");
             Set("--button-group-last-border-radius", "0em 0.5em 0.5em 0em");
 
+            Set("--table-stripe-bg", "#f1f1f1");
+
             Set("--button-primary-bg-color", "var(--primary-color)");
             Set("--button-primary-ft-color", "var(--white-color)");
 
