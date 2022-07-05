@@ -13,17 +13,17 @@
     <Copyright>OpenCodeDev © 2022</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>3.0.8.12</Version>
-    <AssemblyVersion>3.0.8.12</AssemblyVersion>
-    <FileVersion>3.0.8.12</FileVersion>
+    <Version>3.0.8.13</Version>
+    <AssemblyVersion>3.0.8.13</AssemblyVersion>
+    <FileVersion>3.0.8.13</FileVersion>
     <PackageIcon>icon-extension.png</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>
   
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" allowedVersions="[6,7)" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" allowedVersions="[6,7)" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.*" allowedVersions="[6,7)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0" allowedVersions="[6,7)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" allowedVersions="[6,7)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" allowedVersions="[6,7)" />
   </ItemGroup>
   
   <ItemGroup>
