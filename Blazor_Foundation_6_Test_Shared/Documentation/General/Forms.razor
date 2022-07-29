@@ -85,10 +85,20 @@
         
 <InputSelectionList TKey=@string  MultiSelect=false Elements=@(CarColor) RadioSelection=@SelectedCarColor 
     OnRadioSelectedChanged=@((sel)=>{SelectedCarColor = sel; StateHasChanged();}) Disabled=@IsBusy/>
+
+
 <p>My car color will be... @CompliedCarSelection</p>
 
         <h3>Server Busy</h3>
         <p>You can disable the input by using <Code>Disabled=true</Code> so while awaitng for the server the control can be made inaccessible.</p>
+        
+<h3>Object is the Key</h3>
+<p>You can setup an object as a key</p>
+<InputSelectionList TKey=@ListKeyTest  MultiSelect=false Elements=@(ListOfObjKey) RadioSelection=@SelectedObjKey 
+    OnRadioSelectedChanged=@((sel)=>{SelectedObjKey = sel; StateHasChanged();}) Disabled=@IsBusy />
+        <HighlightCode Language="razor" Full="true" Content="PGgzPk9iamVjdCBpcyB0aGUgS2V5PC9oMz4KPHA+WW91IGNhbiBzZXR1cCBhbiBvYmplY3QgYXMgYSBrZXk8L3A+CjxJbnB1dFNlbGVjdGlvbkxpc3QgVEtleT1ATGlzdEtleVRlc3QgIE11bHRpU2VsZWN0PWZhbHNlIEVsZW1lbnRzPUAoTGlzdE9mT2JqS2V5KSBSYWRpb1NlbGVjdGlvbj1AU2VsZWN0ZWRPYmpLZXkgCiAgICBPblJhZGlvU2VsZWN0ZWRDaGFuZ2VkPUAoKHNlbCk9PntTZWxlY3RlZE9iaktleSA9IHNlbDsgU3RhdGVIYXNDaGFuZ2VkKCk7fSkgRGlzYWJsZWQ9QElzQnVzeSAvPgoKQGNvZGV7CiAgICBwdWJsaWMgYm9vbCBJc0J1c3kgeyBnZXQ7IHNldDsgfQogICAgcHVibGljIExpc3RLZXlUZXN0IFNlbGVjdGVkT2JqS2V5IHsgZ2V0OyBzZXQ7IH0KCiAgICBwdWJsaWMgRGljdGlvbmFyeTxMaXN0S2V5VGVzdCwgc3RyaW5nPiBMaXN0T2ZPYmpLZXkgeyBnZXQ7IHNldDsgfSA9IG5ldyBEaWN0aW9uYXJ5PExpc3RLZXlUZXN0LCBzdHJpbmc+KCkKICAgIHsKICAgICAgICB7IG5ldyBMaXN0S2V5VGVzdCgpICwgIk9iamVjdCBBIiB9LAogICAgICAgIHsgbmV3IExpc3RLZXlUZXN0KCkgLCAiT2JqZWN0IEIiIH0sCiAgICAgICAgeyBuZXcgTGlzdEtleVRlc3QoKSAsICJPYmplY3QgQyIgfSwKICAgICAgICB7IG5ldyBMaXN0S2V5VGVzdCgpICwgIk9iamVjdCBEIiB9LAogICAgICAgIHsgbmV3IExpc3RLZXlUZXN0KCkgLCAiT2JqZWN0IEUiIH0sCiAgICB9OwoKfQ==" />
+        <HighlightCode Language="cs" Full="true" Content="cHVibGljIGNsYXNzIExpc3RLZXlUZXN0CnsKICAgIHB1YmxpYyBzdHJpbmcgTmFtZSB7IGdldDsgc2V0OyB9Cn0=" />
+        
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -179,6 +189,17 @@
         { "blackmet", "Black Metallic" },
         { "blackmatte", "Black Matte" },
         { "blackgloss", "Black Glossy" },
+    };
+
+    public ListKeyTest SelectedObjKey { get; set; }
+
+    public Dictionary<ListKeyTest, string> ListOfObjKey { get; set; } = new Dictionary<ListKeyTest, string>()
+    {
+        { new ListKeyTest() , "Object A" },
+        { new ListKeyTest() , "Object B" },
+        { new ListKeyTest() , "Object C" },
+        { new ListKeyTest() , "Object D" },
+        { new ListKeyTest() , "Object E" },
     };
 
     public bool IsBusy { get; set; }
