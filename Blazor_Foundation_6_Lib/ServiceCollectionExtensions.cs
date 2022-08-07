@@ -8,6 +8,8 @@ using OpenCodeDev.Blazor.Foundation.Components.Plugins.MotionUI;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 using Microsoft.Extensions.DependencyInjection;
 using OpenCodeDev.Blazor.Foundation.Extensions;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Foundation;
+using Microsoft.JSInterop;
 
 namespace OpenCodeDev.Blazor.Foundation
 {
@@ -18,11 +20,27 @@ namespace OpenCodeDev.Blazor.Foundation
         /// </summary>
         public static void AddAllBFPlugins(this IServiceCollection service)
         {
+            service.AddFoundationController();
             service.AddBFInfiniteLoadHelper();
             service.AddBFMotionUI();
             service.AddBFStyleManagement();
         }
 
+        public static void AddBlazorFoundationServices(this IServiceCollection service)
+        {
+            service.AddFoundationController();
+            service.AddBFInfiniteLoadHelper();
+            service.AddBFMotionUI();
+            service.AddBFStyleManagement();
+        }
+
+        public static void AddFoundationController(this IServiceCollection service)
+        {
+            service.AddScoped<IFoundationElementController, FoundationElementController>(p =>
+            {
+                return new FoundationElementController(p.GetRequiredService<IJSRuntime>());
+            });
+        }
         public static void AddBFStyleManagement(this IServiceCollection service)
         {
             service.AddScoped<IStyleManagement, BFStyleManagement>();
