@@ -10,5 +10,6 @@
 - Fix Border Radius on Button Group.
 - Fix Table Striped Background (CSS Variable)
 
-## Changes
-- 
+## Low-Impact Breaking Changes
+- Removed Vertical Param from MenuAccordion.
+- Removed data-submenu-toggle from MenuAccordion.
