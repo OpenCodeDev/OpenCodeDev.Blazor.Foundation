@@ -4,6 +4,7 @@
 @using OpenCodeDev.Blazor.Foundation.Components.Controls;
 @using OpenCodeDev.Blazor.Foundation.Components.Containers;
 
+@inject INovelRevealController NovelRevealCtrl
 <SectionWrapper>
     <SectionLeft>
         <h2>Reveal</h2>
@@ -11,6 +12,8 @@
         <hr />
     </SectionLeft>
 </SectionWrapper>
+
+
 
 <SectionWrapper>
     <SectionLeft>
@@ -196,6 +199,86 @@
         </OpenCodeDev.Blazor.Foundation.Components.Containers.Reveal>
         <hr />
     </SectionLeft>
+</SectionWrapper>
+
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Novel Reveal Controller</h2>
+        <p>Reveal Controller is a tool to spawn popups on demand and in 2-3 line of c#. </p>
+
+        <h3>Install Reveal Controller</h3>
+        <p>Add the following code in <Code>_Imports.razor</Code></p>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                Content="QHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuUGx1Z2lucy5SZXZlYWw7" />
+        <p>Add controller component at the end, in <Code>MainLayout.razor</Code> or your custom shared layout. </p>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                Content="PFJldmVhbENvbnRyb2xsZXIgLz4=" />
+
+        <h3>Simple Message</h3>
+        
+        <p>Sometime you want to spawn a simple message for the user... you may not want to create a full design page just for the message.</p>
+        <Button @onclick=@(async()=> await NovelRevealCtrl.SimpleMessage("Simple Message","This is a Simple Message 1 Code Line."))>Simple Message</Button>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuU2ltcGxlTWVzc2FnZUFzeW5jKCJTaW1wbGUgTWVzc2FlIiwiVGhpcyBpcyBhIFNpbXBsZSBNZXNzYWdlIDEgQ29kZSBMaW5lLiIpKT5TaW1wbGUgTWVzc2FnZTwvQnV0dG9uPg==" />
+        <h3>Simple Two-Way Answer Message</h3>
+        <p>Simple two-way message... useful for quick question.</p>
+<Button @onclick=@(async()=> {
+    await NovelRevealCtrl.TwoAnswerMessage("A Simple message/question","Are you sure you want to receive that much love?", 
+    "No", "Yes", 
+    async () => {
+            await NovelRevealCtrl.SimpleMessage("Response", "You are breaking my heart, that is not acceptable.");
+            return false; // Down quit, stay open... wrong answer.
+        },
+    async () => {
+            await NovelRevealCtrl.SimpleMessage("Response","Great !");
+            return true; // Down quit, stay open... wrong answer.
+        });    
+})>Simple Two-Way Anwser</Button>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                        Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuU2ltcGxlVHdvV2F5QW5zd2VyTWVzc2FnZUFzeW5jKCJDb21wbGV4U2ltcGxlTWVzc2FnZSIsIkEgU2ltcGxlIG1lc3NhZ2UvcXVlc3Rpb24iLCJBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gcmVjZWl2ZSB0aGF0IG11Y2ggbG92ZT8iLCAKICAgICJObyIsICJZZXMiLCAKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgYXdhaXQgUmV2ZWFsQ29udHJvbGxlci5Db250cm9sbGVyLlNpbXBsZU1lc3NhZ2UoIlJlc3BvbnNlIiwiWW91IGFyZSBicmVha2luZyBteSBoZWFydCwgdGhhdCBpcyBub3QgYWNjZXB0YWJsZS4iKTsKICAgICAgICAgICAgcmV0dXJuIGZhbHNlOyAvLyBEb3duIHF1aXQsIHN0YXkgb3Blbi4uLiB3cm9uZyBhbnN3ZXIuCiAgICAgICAgfSwKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgYXdhaXQgUmV2ZWFsQ29udHJvbGxlci5Db250cm9sbGVyLlNpbXBsZU1lc3NhZ2UoIlJlc3BvbnNlIiwiR3JlYXQgISIpOwogICAgICAgICAgICByZXR1cm4gdHJ1ZTsgLy8gRG93biBxdWl0LCBzdGF5IG9wZW4uLi4gd3JvbmcgYW5zd2VyLgogICAgICAgIH0pOyAgICAKfSk+U2ltcGxlIFR3by1XYXkgQW53c2VyPC9CdXR0b24+" />
+        
+
+        <h3>Complex Message Conditional Close</h3>
+        <p>What's great about conditional closing is that, the popup will be visible until the conditions are met! Great for loading... </p>
+<Button @onclick=@(async()=> {
+    await NovelRevealCtrl.ComplexMessageCloseConditional("Loading", CountdownUI, 
+    async () => {
+            await Task.Delay(1000);                                         
+            return true; 
+        });    
+})>Reveal Loading</Button>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleE1lc3NhZ2VDbG9zZUNvbmRpdGlvbmFsKCJDb21wbGV4Q29uZGl0aW9uYWxDbG9zZUlEIiwiTG9hZGluZyIsIENvdW50ZG93blVJLCAKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgYXdhaXQgVGFzay5EZWxheSgxMDAwKTsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICByZXR1cm4gdHJ1ZTsgCiAgICAgICAgfSk7ICAgIAp9KT5SZXZlYWwgTG9hZGluZzwvQnV0dG9uPg==" />
+       
+        <h3>Complex Message</h3>
+        <p>Complex Message is rather simple message using a component in body.</p>
+        <Button @onclick=@(async()=> {
+            await NovelRevealCtrl.ComplexMessage("Complex Message", ComplexSimpleMessage , 
+            async () => {
+                    Console.WriteLine("Callback Closed!");
+                });    
+        })>Complex Message</Button>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                        Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleE1lc3NhZ2UoIkNvbXBsZXhTaW1wbGVNZXNzYWdlIiwiQ29tcGxleCBNZXNzYWdlIiwgQ29tcGxleFNpbXBsZU1lc3NhZ2UgLCAKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgQ29uc29sZS5Xcml0ZUxpbmUoIkNhbGxiYWNrIENsb3NlZCEiKTsKICAgICAgICB9KTsgICAgCn0pPkNvbXBsZXggTWVzc2FnZTwvQnV0dG9uPgpAY29kZSB7CiAgICBwdWJsaWMgUmVuZGVyRnJhZ21lbnQgQ29tcGxleFNpbXBsZU1lc3NhZ2UgPSBAPGRpdj48aDE+VGVzdCBGcmFnbWVudDwvaDE+PC9kaXY+Owp9" />
+       
+        <h3>Complex Two-Way Message</h3>
+       
+        <p>Complex Two-Way Message is our most advanced feature it can be used for edit form and more.</p>
+        <Button @onclick=@(async()=> {
+            await NovelRevealCtrl.ComplexTwoAnswerMessage("Complex Two-Way", ComplexTwoWayAnswer, "No", "Yes", 
+            async () => {
+                    await RevealController.Controller.SimpleMessage("Response","Well... change until you like yourself and click yes.");
+                    return false; // Down quit, stay open... wrong answer.
+                },
+            async () => {
+                    await RevealController.Controller.SimpleMessage("Response","Great, mission accomplish.");
+                    return true; // Down quit, stay open... wrong answer.
+                });    
+        })>Complex Message</Button>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                        Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleFR3b1dheUFuc3dlck1lc3NhZ2VBc3luYygiQ29tcGxleFNpbXBsZU1lc3NhZ2UiLCJDb21wbGV4IFR3by1XYXkiLCBDb21wbGV4VHdvV2F5QW5zd2VyLCAiTm8iLCAiWWVzIiwgCiAgICBhc3luYyAoKSA9PiB7CiAgICAgICAgICAgIGF3YWl0IFJldmVhbENvbnRyb2xsZXIuQ29udHJvbGxlci5TaW1wbGVNZXNzYWdlKCJSZXNwb25zZSIsIldlbGwuLi4gY2hhbmdlIHVudGlsIHlvdSBsaWtlIHlvdXJzZWxmIGFuZCBjbGljayB5ZXMuIik7CiAgICAgICAgICAgIHJldHVybiBmYWxzZTsgLy8gRG93biBxdWl0LCBzdGF5IG9wZW4uLi4gd3JvbmcgYW5zd2VyLgogICAgICAgIH0sCiAgICBhc3luYyAoKSA9PiB7CiAgICAgICAgICAgIGF3YWl0IFJldmVhbENvbnRyb2xsZXIuQ29udHJvbGxlci5TaW1wbGVNZXNzYWdlKCJSZXNwb25zZSIsIkdyZWF0LCBtaXNzaW9uIGFjY29tcGxpc2guIik7CiAgICAgICAgICAgIHJldHVybiB0cnVlOyAvLyBEb3duIHF1aXQsIHN0YXkgb3Blbi4uLiB3cm9uZyBhbnN3ZXIuCiAgICAgICAgfSk7ICAgIAp9KT5Db21wbGV4IE1lc3NhZ2U8L0J1dHRvbj4KQGNvZGUgewogICAgcHVibGljIFJlbmRlckZyYWdtZW50IENvbXBsZXhUd29XYXlBbnN3ZXIgPSBAPGRpdj48cD5EbyB5b3UgbGlrZSB5b3Vyc2VsZj88L3A+PC9kaXY+Owp9Cg==" />      
+  </SectionLeft>
 </SectionWrapper>
 
 <SectionWrapper>

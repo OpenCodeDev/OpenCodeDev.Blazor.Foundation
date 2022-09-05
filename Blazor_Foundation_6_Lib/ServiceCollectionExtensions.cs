@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using OpenCodeDev.Blazor.Foundation.Extensions;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.Foundation;
 using Microsoft.JSInterop;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal;
 
 namespace OpenCodeDev.Blazor.Foundation
 {
@@ -18,20 +19,39 @@ namespace OpenCodeDev.Blazor.Foundation
         /// <summary>
         /// InifiteLoadHelper, MotionUI and StyleManagement.
         /// </summary>
-        public static void AddAllBFPlugins(this IServiceCollection service)
-        {
+        [Obsolete("This function is deprecated as of v3.1, any new feature added 3.1+ may not be available if using this. You can use individual method or AddBlazorFoundationServices()")]
+        public static void AddAllBFPlugins(this IServiceCollection service) {
             service.AddFoundationController();
             service.AddBFInfiniteLoadHelper();
             service.AddBFMotionUI();
             service.AddBFStyleManagement();
         }
 
-        public static void AddBlazorFoundationServices(this IServiceCollection service)
+        public static void AddBlazorFoundationServices(this IServiceCollection service, bool isWasm = true) => AllPlugins(service, isWasm);
+
+        private static void AllPlugins(IServiceCollection service, bool isWasm = true)
         {
             service.AddFoundationController();
             service.AddBFInfiniteLoadHelper();
             service.AddBFMotionUI();
             service.AddBFStyleManagement();
+            service.AddNovelRevealController(isWasm);
+        }
+        public static void AddNovelRevealController(this IServiceCollection service, bool isWasm = true)
+        {
+            if (!isWasm)
+            {
+                service.AddScoped<INovelRevealController, NovelRevealController>(p =>
+                    { return new NovelRevealController(p.GetRequiredService<IJSRuntime>()); 
+                });
+            }
+            else
+            {
+                service.AddSingleton<INovelRevealController, NovelRevealController>(p =>
+                {
+                    return new NovelRevealController(p.GetRequiredService<IJSRuntime>());
+                });
+            }
         }
 
         public static void AddFoundationController(this IServiceCollection service)

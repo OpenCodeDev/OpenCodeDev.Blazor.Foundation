@@ -11315,11 +11315,20 @@ function RevealRegister(element, options) {
 
 
 function RevealOnClosedListener(element) {
-   
+
     $(`#${element}`).on('closed.zf.reveal', function () {
         // console.log(element);
         DotNet.invokeMethodAsync('OpenCodeDev.Blazor.Foundation', 'RSREVEALCLOSED', element);
-        
+
+    });
+}
+
+function NovelRevealOnClosedListener(instance, element) {
+
+    $(`#${element}`).on('closed.zf.reveal', function () {
+        console.log("Novel Register ");
+        instance.invokeMethodAsync('OnCloseNotify', element);
+
     });
 }
 

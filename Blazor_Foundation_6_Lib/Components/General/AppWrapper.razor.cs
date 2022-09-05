@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.JSInterop;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager;
 using System;
 using System.Collections.Generic;
@@ -11,18 +13,39 @@ namespace OpenCodeDev.Blazor.Foundation.Components.General
 {
     public partial class AppWrapper : ComponentBase, IDisposable
     {
+        public NovelReveal NovelRevealInstance { get; set; }
+
         [Inject]
         public IServiceProvider ServiceProvider { get; set; }
 
         public IStyleManagement? StyleManager { get; set; }
+        public INovelRevealController? NovelRevealController { get; set; }
 
+        [Parameter]
         public RenderFragment ChildContent { get; set; }
+
+        [Inject]
+        public IJSRuntime JSRuntime { get; set; }
+
+        [Parameter]
+        public bool LegacyRevealController { get; set; } = true;
 
         protected override void OnInitialized()
         {
             StyleManager = ServiceProvider.GetService<IStyleManagement>();
+            NovelRevealController = ServiceProvider.GetService<INovelRevealController>();
         }
 
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender) {
+                if (NovelRevealController != null)
+                {
+                    NovelRevealController.NovelRevealCtrlDotNet = DotNetObjectReference.Create(NovelRevealInstance);
+                    NovelRevealController.OnStateChanged = () => NovelRevealInstance.StateChanged();
+                }
+            }
+        }
         public void Dispose()
         {
             

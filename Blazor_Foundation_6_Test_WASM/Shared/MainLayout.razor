@@ -11,8 +11,7 @@
 @inject NavigationManager Navigator;
 @implements IDisposable;
 
-<BlazorFoundationStyle />
-
+<AppWrapper>
 <OffCanvasWrapper>
     <OffCanvas Id="SideMenu" Class="doc-menu" DataTransition="overlap" data-content-scroll="true" style="z-index: 16;">
         <div style="width: 15.6em; height: 100vh;">
@@ -86,11 +85,11 @@
 
 
 </OffCanvasWrapper>
+</AppWrapper>
+
 
     
 
-
-<RevealController />
 
 @code {
 
