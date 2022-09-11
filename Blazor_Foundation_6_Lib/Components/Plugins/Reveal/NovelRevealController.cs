@@ -68,6 +68,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             }
             else { throw new Exception("Fragment Register must be unique probably a problem during cloning."); }
         }
+
+
         public async Task ComplexMessage(string title, RenderFragment message, Func<Task> onCloseCallback = null, bool canclose = true, Action<string> setId = null)
         {
             string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
@@ -179,7 +181,309 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             });
         }
 
+        public async Task<string> InputText(string title, string currentValue, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
+            if (setId != null) setId.Invoke(elementGen);
 
+            Containers.Reveal tReference = null; // Temporary Reference of Reveal
+
+            string value = currentValue;
+            RenderFragment fragment = new RenderFragment(tree =>
+            {
+                // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
+                tree.OpenComponent<Containers.Reveal>(0);
+                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(2, "Id", elementGen);
+                tree.AddAttribute(4, "OpenOnStart", true);
+                tree.AddAttribute(6, "CloseOnClick", false);
+                tree.AddAttribute(7, "CloseXButton", false);
+                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(15, "Title", title);
+                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                {
+                    subtree.OpenElement(0, "input");
+                    subtree.AddAttribute(1, "type", "text");
+                    subtree.AddAttribute(2, "placeholder", "");
+                    subtree.AddAttribute(3, "value", BindConverter.FormatValue(value));
+                    subtree.AddAttribute(4, "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.CloseElement();
+                }));
+                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.CloseComponent();
+            });
+
+            string element = await Register(elementGen, fragment, null);
+            CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+            if (OnStateChanged != null) OnStateChanged.Invoke();
+
+            // Await until message is closed
+            await Task.Run(async () => {
+                try
+                {
+                    do
+                    {
+                        await Task.Delay(100);
+                    } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+                }
+                catch
+                {
+                    // Ignore because error = reveal probably close
+                }
+            });
+            return value;
+        }
+        public async Task<int> InputIntNumber(string title, int currentValue, int minValue, int maxValue, int step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            return (int)await InputFloatNumber(title, (float)currentValue, (float)minValue, (float)maxValue, (float)step, option1Label, option2label, setId);
+        }
+        public async Task<float> InputFloatNumber(string title, float currentValue, float minValue, float maxValue, float step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
+            if (setId != null) setId.Invoke(elementGen);
+
+            Containers.Reveal tReference = null; // Temporary Reference of Reveal
+
+            float value = currentValue;
+            RenderFragment fragment = new RenderFragment(tree =>
+            {
+                // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
+                tree.OpenComponent<Containers.Reveal>(0);
+                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(2, "Id", elementGen);
+                tree.AddAttribute(4, "OpenOnStart", true);
+                tree.AddAttribute(6, "CloseOnClick", false);
+                tree.AddAttribute(7, "CloseXButton", false);
+                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(15, "Title", title);
+                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                {
+                    subtree.OpenElement(0, "input");
+                    subtree.AddAttribute(1, "type", "number");
+                    subtree.AddAttribute(2, "placeholder", "");
+                    subtree.AddAttribute(2, "min", minValue);
+                    subtree.AddAttribute(2, "max", maxValue);
+                    subtree.AddAttribute(2, "step", step);
+                    subtree.AddAttribute(3, "value", BindConverter.FormatValue(value));
+                    subtree.AddAttribute(4, "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.CloseElement();
+                }));
+                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.CloseComponent();
+            });
+
+            string element = await Register(elementGen, fragment, null);
+            CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+            if (OnStateChanged != null) OnStateChanged.Invoke();
+
+            // Await until message is closed
+            await Task.Run(async () => {
+                try
+                {
+                    do
+                    {
+                        await Task.Delay(100);
+                    } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+                }
+                catch
+                {
+                    // Ignore because error = reveal probably close
+                }
+            });
+            return value;
+        }
+        public async Task<string> InputTextArea(string title, string currentValue, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
+            if (setId != null) setId.Invoke(elementGen);
+
+            Containers.Reveal tReference = null; // Temporary Reference of Reveal
+
+            string value = currentValue;
+            RenderFragment fragment = new RenderFragment(tree =>
+            {
+                // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
+                tree.OpenComponent<Containers.Reveal>(0);
+                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(2, "Id", elementGen);
+                tree.AddAttribute(4, "OpenOnStart", true);
+                tree.AddAttribute(6, "CloseOnClick", false);
+                tree.AddAttribute(7, "CloseXButton", false);
+                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(15, "Title", title);
+                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                {
+                    subtree.OpenElement(0, "textarea");
+                    subtree.AddAttribute(3, "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.AddContent(4, value);
+                    subtree.CloseElement();
+                }));
+                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.CloseComponent();
+            });
+
+            string element = await Register(elementGen, fragment, null);
+            CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+            if (OnStateChanged != null) OnStateChanged.Invoke();
+
+            // Await until message is closed
+            await Task.Run(async () => {
+                try
+                {
+                    do
+                    {
+                        await Task.Delay(100);
+                    } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+                }
+                catch
+                {
+                    // Ignore because error = reveal probably close
+                }
+            });
+            return value;
+        }
+        public async Task<float> InputSliderFloat(string title, float currentValue, float minValue, float maxValue, float step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            return await InputSlider(title, currentValue, minValue, maxValue, step, option1Label, option2label, setId);
+        }
+        public async Task<int> InputSliderInt(string title,  int currentValue, int minValue, int maxValue, int step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            return (int) await InputSlider(title, (float)currentValue, (float)minValue, (float)maxValue, (float)step, option1Label, option2label, setId);
+        }
+        public async Task<float> InputSlider(string title, float currentValue, float minValue, float maxValue, float step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null) 
+        {
+            string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
+            if (setId != null) setId.Invoke(elementGen);
+
+            Containers.Reveal tReference = null; // Temporary Reference of Reveal
+
+            float value = currentValue;
+            RenderFragment fragment = new RenderFragment(tree =>
+            {
+                // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
+                tree.OpenComponent<Containers.Reveal>(0);
+                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(2, "Id", elementGen);
+                tree.AddAttribute(4, "OpenOnStart", true);
+                tree.AddAttribute(6, "CloseOnClick", false);
+                tree.AddAttribute(7, "CloseXButton", false);
+                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(15, "Title", title);
+                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                {
+                    subtree.OpenComponent(0, typeof(Controls.SingleSlider));
+                    subtree.AddAttribute(1, "Min", minValue);
+                    subtree.AddAttribute(2, "Max", maxValue);
+                    subtree.AddAttribute(3, "Step", step);
+                    subtree.AddAttribute(4, "Value", value);
+                    subtree.AddAttribute(5, "ValueChanged", EventCallback.Factory.Create(this, (float __value) => value = __value));
+                    subtree.CloseComponent();
+                }));
+                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.CloseComponent();
+            });
+
+            string element = await Register(elementGen, fragment, null);
+            CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+            if (OnStateChanged != null) OnStateChanged.Invoke();
+
+            // Await until message is closed
+            await Task.Run(async () => {
+                try
+                {
+                    do
+                    {
+                        await Task.Delay(100);
+                    } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+                }
+                catch
+                {
+                    // Ignore because error = reveal probably close
+                }
+            });
+            return value;
+        }
+        public async Task<T> InputSelect<T>(string title, T currentValue, Dictionary<T, string> selectable, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
+            if (setId != null) setId.Invoke(elementGen);
+
+            Containers.Reveal tReference = null; // Temporary Reference of Reveal
+
+            T value = currentValue;
+            RenderFragment fragment = new RenderFragment(tree =>
+            {
+                // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
+                tree.OpenComponent<Containers.Reveal>(0);
+               
+                tree.AddAttribute(2, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(3, "Id", elementGen);
+                tree.AddAttribute(4, "OpenOnStart", true);
+                tree.AddAttribute(5, "CloseOnClick", false);
+                tree.AddAttribute(6, "CloseXButton", false);
+                tree.AddAttribute(7, "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(8, "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(9, "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(10, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(11, "Title", title);
+                tree.AddAttribute(12, "ChildContent", (RenderFragment)((subtree) =>
+                {
+                    subtree.OpenElement(0, "select");
+                    subtree.AddAttribute(2, "onchange", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.AddContent(3, (RenderFragment)((suboptions) =>
+                    {
+                        foreach (var item in selectable)
+                        {
+                            suboptions.OpenElement(0, "option");
+                            suboptions.AddAttribute(1, "value", item.Key);
+                            if (currentValue.Equals(item.Key))
+                            {
+                                suboptions.AddAttribute(2, "selected");
+
+                            }
+                            suboptions.AddContent(3, item.Value);
+                            suboptions.CloseElement();
+                        }
+                    }));
+
+                    subtree.CloseElement();
+                }));
+                tree.AddComponentReferenceCapture(13, (value) => { tReference = value as Containers.Reveal; });
+                tree.CloseComponent();
+            });
+
+            string element = await Register(elementGen, fragment, null);
+            CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+            if (OnStateChanged != null) OnStateChanged.Invoke();
+
+            // Await until message is closed
+            await Task.Run(async () => {
+                try
+                {
+                    do
+                    {
+                        await Task.Delay(100);
+                    } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+                }
+                catch
+                {
+                    // Ignore because error = reveal probably close
+                }
+            });
+            return value;
+        }
         public async Task<int> TwoAnswerMessage(string title, string message, string option1Label, string option2label,
     Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
     string titleIcon = null, Action<string> setId = null, string optionwrapperstyle = "justify-content:flex-end;")
@@ -197,8 +501,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
                     if (setId != null) setId.Invoke(id);
                 }, optionwrapperstyle);
         }
-
-
         public async Task<int> ComplexTwoAnswerMessage(string title, RenderFragment message, string option1Label, string option2label,
  Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
  string titleIcon = null, Action<string> setId = null, string optionwrapperstyle = "justify-content:flex-end;")
@@ -252,7 +554,5 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             });
             return selectedOption;
         }
-
-
     }
 }
