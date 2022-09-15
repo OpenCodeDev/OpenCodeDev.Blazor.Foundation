@@ -15,8 +15,11 @@
 - Fix IStyleManagement for Blazor Server.
 
 
-## No Breaking Changes
+## Changes
 - Services must by added as Scoped for Blazor Server using AddBlazorFoundationServices(false) or else they will be singleton.
+
+## Breaking Changes
+- We have ditched the Blazor.Foundation.Extensions package and embedded everything into this package... the namespace doesn't change but if you use the package Blazor.Foundation.Extensions you may encounter ambiguity! just remove the Blazor.Foundation.Extensions from nuget and nothing else change.
 
 ## Low-Impact Breaking Changes
 - Removed Vertical Param from MenuAccordion.
