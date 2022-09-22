@@ -36,6 +36,7 @@ namespace OpenCodeDev.Blazor.Foundation.Extensions.LocalStorage
         public async Task<T> Get<T>(string key)
         {
             var obj = await _runtime.InvokeAsync<string>("LocalStorageGet", key);
+            if (obj == null) return default(T);
             return JsonSerializer.Deserialize<T>(obj);
         }
 

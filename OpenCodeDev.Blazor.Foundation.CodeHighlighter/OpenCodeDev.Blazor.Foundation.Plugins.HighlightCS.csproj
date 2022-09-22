@@ -31,7 +31,6 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0" allowedVersions="[6,7)" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" allowedVersions="[6,7)" />
-	  <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.8.13" allowedVersions="[3.0.8,3.1)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +42,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
   </ItemGroup>
 
   <ItemGroup>

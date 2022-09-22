@@ -31,8 +31,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
 
         Task<float> InputSliderFloat(string title, float currentValue, float minValue, float maxValue, float step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null);
         Task<int> InputSliderInt(string title, int currentValue, int minValue, int maxValue, int step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null);
-        Task<T> InputSelect<T>(string title, T currentValue, Dictionary<T, string> selectable, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null);
-
+        Task<string> InputSelect(string title, string currentValue, Dictionary<string, string> selectable, string noSelection = "No Selection", string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null);
         Task<int> InputIntNumber(string title, int currentValue, int minValue, int maxValue, int step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null);
         Task<float> InputFloatNumber(string title, float currentValue, float minValue, float maxValue, float step, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null);
     }

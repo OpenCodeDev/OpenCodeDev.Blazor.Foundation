@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundation.Doc.Wasm", "Blazor_Foundation_6_Test_WASM\OpenCodeDev.Blazor.Foundation.Doc.Wasm.csproj", "{2E676123-CCFF-4461-ACDB-95EBDDFDC803}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundation.Extensions", "OpenCodeDev.Blazor.Foundation.Extensions\OpenCodeDev.Blazor.Foundation.Extensions.csproj", "{2910A625-AAAE-4180-9E78-A57A43169017}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS", "OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj", "{14DCD38B-0504-44F9-8113-084C608554B6}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{2E676123-CCFF-4461-ACDB-95EBDDFDC803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E676123-CCFF-4461-ACDB-95EBDDFDC803}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E676123-CCFF-4461-ACDB-95EBDDFDC803}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2910A625-AAAE-4180-9E78-A57A43169017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2910A625-AAAE-4180-9E78-A57A43169017}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2910A625-AAAE-4180-9E78-A57A43169017}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2910A625-AAAE-4180-9E78-A57A43169017}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14DCD38B-0504-44F9-8113-084C608554B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14DCD38B-0504-44F9-8113-084C608554B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14DCD38B-0504-44F9-8113-084C608554B6}.Release|Any CPU.ActiveCfg = Release|Any CPU

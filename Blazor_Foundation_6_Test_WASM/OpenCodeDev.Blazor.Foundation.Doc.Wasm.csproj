@@ -12,8 +12,6 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.8.13" allowedVersions="[3.0.8,3.1)" />
-    <PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.0.8.2" allowedVersions="[3.0.8,3.1)" />
     <PackageReference Include="System.Net.Http.Json" Version="6.0.0" allowedVersions="[6,7)" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.6" allowedVersions="[6,7)" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.6" allowedVersions="[6,7)" />
@@ -23,6 +21,8 @@
   <ItemGroup>
     
     <ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\OpenCodeDev.Blazor.Foundation.Doc.Core.csproj" />
+    
+    <ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
     
   </ItemGroup>
 

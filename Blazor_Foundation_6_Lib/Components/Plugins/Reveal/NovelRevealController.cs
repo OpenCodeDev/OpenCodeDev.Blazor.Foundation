@@ -415,14 +415,14 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             });
             return value;
         }
-        public async Task<T> InputSelect<T>(string title, T currentValue, Dictionary<T, string> selectable, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        public async Task<string> InputSelect(string title, string currentValue, Dictionary<string, string> selectable,string noSelection = "No Selection", string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
         {
             string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
             if (setId != null) setId.Invoke(elementGen);
 
             Containers.Reveal tReference = null; // Temporary Reference of Reveal
 
-            T value = currentValue;
+            string value = currentValue;
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
@@ -441,14 +441,22 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
                 tree.AddAttribute(12, "ChildContent", (RenderFragment)((subtree) =>
                 {
                     subtree.OpenElement(0, "select");
-                    subtree.AddAttribute(2, "onchange", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.AddAttribute(2, "onchange", 
+                        EventCallback.Factory.CreateBinder(this, (string __value) => value = __value, value));
                     subtree.AddContent(3, (RenderFragment)((suboptions) =>
                     {
+                        if (currentValue == null)
+                        {
+                            suboptions.OpenElement(0, "option");
+                            suboptions.AddContent(3, noSelection);
+                            suboptions.CloseElement();
+                        }
+
                         foreach (var item in selectable)
                         {
                             suboptions.OpenElement(0, "option");
                             suboptions.AddAttribute(1, "value", item.Key);
-                            if (currentValue.Equals(item.Key))
+                            if (currentValue != null && currentValue.Equals(item.Key))
                             {
                                 suboptions.AddAttribute(2, "selected");
 
