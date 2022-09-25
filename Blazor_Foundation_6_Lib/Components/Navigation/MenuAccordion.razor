@@ -4,9 +4,8 @@
 @inject IJSRuntime JSRuntime;
 
 
-<ul class="@($"{Class} menu accordion-menu " +
-             $"{(Vertical ? "vertical" : "")} ")"
-    id="@Id" @attributes="AdditionalAttributes" data-accordion-menu="true" data-submenu-toggle="true">
+<ul class="@($"{Class} vertical menu accordion-menu ")"
+    id="@Id" @attributes="AdditionalAttributes"  data-accordion-menu>
     @ChildContent
 </ul>
 

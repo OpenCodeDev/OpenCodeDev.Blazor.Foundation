@@ -1,0 +1,48 @@
+﻿@using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Containers;
+
+@inject INovelRevealController NovelRevealCtrl;
+
+    @foreach (var RevealFragment in NovelRevealCtrl.CurrentItems)
+    {
+        @RevealFragment.Key
+    }
+
+
+@code {
+
+    public void StateChanged()
+    {
+        StateHasChanged();
+    }
+
+
+    /// <summary>
+    /// Callback from JS when reveal has been closed by the user.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [JSInvokable]
+    public async Task OnCloseNotify(string id)
+    {
+        if (NovelRevealCtrl.RegistryTracker.ContainsKey(id))
+        {
+            // Invoke Closed Callback
+            if(NovelRevealCtrl.Registry[NovelRevealCtrl.RegistryTracker[id]] != null)
+            {
+                //Console.WriteLine($"Trying to invoke callback for {id}");
+                await NovelRevealCtrl.Registry[NovelRevealCtrl.RegistryTracker[id]]?.Invoke();
+            }
+            RenderFragment _obj = NovelRevealCtrl.RegistryTracker[id];
+            NovelRevealCtrl.CurrentItems.Remove(_obj);
+            NovelRevealCtrl.Registry.Remove(_obj);
+            NovelRevealCtrl.RegistryTracker.Remove(id);
+            NovelRevealCtrl.RegistryReference.Remove(id);
+            if(NovelRevealCtrl.OnStateChanged != null) NovelRevealCtrl.OnStateChanged.Invoke();
+        }
+    }
+
+
+}

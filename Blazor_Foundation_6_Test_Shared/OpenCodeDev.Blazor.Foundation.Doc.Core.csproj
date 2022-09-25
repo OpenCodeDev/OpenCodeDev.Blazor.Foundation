@@ -8,8 +8,8 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Core</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>OpenCodeDev</Company>
-    <AssemblyVersion>3.0.8.1</AssemblyVersion>
-    <Version>3.0.8.1</Version>
+    <AssemblyVersion>3.0.8</AssemblyVersion>
+    <Version>3.0.8</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
@@ -19,8 +19,8 @@
 
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-	<PackageReference Include="OpenCodeDev.Blazor.Foundation.Extensions" Version="3.0.8" allowedVersions="[3.0.8,3.1)" />
-	<PackageReference Include="OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS" Version="3.0.8" allowedVersions="[3.0.8,3.1)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0" allowedVersions="[6,7)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" allowedVersions="[6,7)" />
   </ItemGroup>
 
 
@@ -43,17 +43,20 @@
 
 
 
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.6" />
+	  <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
+	  <ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
+
   </ItemGroup>
 
 
 
 
   <ItemGroup>
-	  <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
-
+    <Content Update="Documentation\Navigation\MenuAccordion.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
   </ItemGroup>
 
 </Project>

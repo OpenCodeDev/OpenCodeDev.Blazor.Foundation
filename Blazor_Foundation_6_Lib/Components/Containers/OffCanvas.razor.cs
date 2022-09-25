@@ -19,7 +19,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
         /// Unique HTML Identifier.
         /// </summary>
         [Parameter]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().HTMLCompliant().ToString();
 
         /// <summary>
         /// Custom Class to Append at the end of default Foundation Class.

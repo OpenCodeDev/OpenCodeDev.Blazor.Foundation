@@ -11,12 +11,12 @@
         <p>Motion UI Library is available in Blazor Foundation 6 :) </p>
         <h2>Installing Plugin</h2>
         <p>Add NuGet Package <code>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</code> and Reference in _Imports.razor</p>
-        <HighlightCS Language="cs" Full="true" HeaderTitle="Program.cs"
+        <HighlightCode Language="cs" Full="true" HeaderTitle="Program.cs"
                      Content="dXNpbmcgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb247CmJ1aWxkZXIuU2VydmljZXMuQWRkQWxsQkZQbHVnaW5zKCk7" />
 
         <p> We have created a C# controller for the Motion UI Library.</p>
 
-        <HighlightCS Language="razor" Full="true" HeaderTitle="_Import.razor or Any Razor Pages"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="_Import.razor or Any Razor Pages"
                      Content="QHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuUGx1Z2lucy5Nb3Rpb25VSTsKQGluamVjdCBJTW90aW9uVUlDb250cm9sbGVyIE1vdGlvblVJT2JqOw==" />
 
         <hr />
@@ -32,14 +32,14 @@
             Animate Once
         </Button>
         <br /><i id="ANIMATEONE" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
-        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVPTkUiLCBBbmltYXRpb24uU2hha2UsIEFuaW1hdGlvblNwZWVkLlNsb3cpOyB9KSI+CiAgICBBbmltYXRlIE9uY2UKPC9CdXR0b24+CjxiciAvPjxpIGlkPSJBTklNQVRFT05FIiBzdHlsZT0iZm9udC1zaXplOiAzZW07IG1hcmdpbi1ib3R0b206IDFlbTsiIGNsYXNzPSJiZmkgYmZpLWNvdW50cnktY2EiPjwvaT48YnIgLz4=" />
         <h3>Wiggle Once</h3>
         <Button @onclick="@(async ()=> { MotionUIObj.AnimateOnce("ANIMATETWO", Animation.Wiggle, AnimationSpeed.Slow); })">
             Animate Once
         </Button>
         <br /><i id="ANIMATETWO" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
-        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="Razor"
                              Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVUV08iLCBBbmltYXRpb24uV2lnZ2xlLCBBbmltYXRpb25TcGVlZC5TbG93KTsgfSkiPgogICAgQW5pbWF0ZSBPbmNlCjwvQnV0dG9uPgo8YnIgLz48aSBpZD0iQU5JTUFURVRXTyIgc3R5bGU9ImZvbnQtc2l6ZTogM2VtOyBtYXJnaW4tYm90dG9tOiAxZW07IiBjbGFzcz0iYmZpIGJmaS1jb3VudHJ5LWNhIj48L2k+PGJyIC8+" />
         
         <h3>Spin CW Once</h3>
@@ -47,7 +47,7 @@
             Animate Once
         </Button>
         <br /><i id="ANIMATETHREE" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
-        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="Razor"
                              Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVUSFJFRSIsIEFuaW1hdGlvbi5TcGluQ1csIEFuaW1hdGlvblNwZWVkLlNsb3cpOyB9KSI+CiAgICBBbmltYXRlIE9uY2UKPC9CdXR0b24+CjxiciAvPjxpIGlkPSJBTklNQVRFVEhSRUUiIHN0eWxlPSJmb250LXNpemU6IDNlbTsgbWFyZ2luLWJvdHRvbTogMWVtOyIgY2xhc3M9ImJmaSBiZmktY291bnRyeS1jYSI+PC9pPjxiciAvPg==" />
         
         <h3>Spin CCW Once</h3>
@@ -55,7 +55,7 @@
             Animate Once
         </Button>
         <br /><i id="ANIMATEFOUR" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
-        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="Razor"
                              Content="PEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZU9uY2UoIkFOSU1BVEVGT1VSIiwgQW5pbWF0aW9uLlNwaW5DQ1csIEFuaW1hdGlvblNwZWVkLlNsb3cpOyB9KSI+CiAgICBBbmltYXRlIE9uY2UKPC9CdXR0b24+CjxiciAvPjxpIGlkPSJBTklNQVRFRk9VUiIgc3R5bGU9ImZvbnQtc2l6ZTogM2VtOyBtYXJnaW4tYm90dG9tOiAxZW07IiBjbGFzcz0iYmZpIGJmaS1jb3VudHJ5LWNhIj48L2k+PGJyIC8+" />
         
         <hr />
@@ -66,7 +66,7 @@
     <SectionLeft>
         <h2>Animate </h2>
         <p>We have created functions to animate an element</p>
-        <HighlightCS Language="cs" Full="true" HeaderTitle="C#"
+        <HighlightCode Language="cs" Full="true" HeaderTitle="C#"
                 Content="TW90aW9uVUlPYmouQW5pbWF0ZUFuZFNob3coRUxFTUVOVCBJRCwgQU5JTSBOQU1FLCBQUkVWRU5UIFNQQU0sIE1BWCBEVVJBVElPTik7Ck1vdGlvblVJT2JqLkFuaW1hdGVBbmRIaWRlKEVMRU1FTlQgSUQsIEFOSU0gTkFNRSwgUFJFVkVOVCBTUEFNLCBNQVggRFVSQVRJT04pOw==" />
         
         <h3>Select an In Animation</h3>
@@ -112,7 +112,7 @@
         <br /><i id="ANIMATE6" style="font-size: 3em; margin-bottom: 1em;" class="bfi bfi-country-ca"></i><br />
         <i id="ANIMATE5" style="font-size: 3em; margin-bottom: 1em; display:none;" class="bfi bfi-country-ca"></i><br />
 
-        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBzdHlsZT0iIiBAb25jbGljaz0iQChhc3luYyAoKT0+IHsgTW90aW9uVUlPYmouQW5pbWF0ZUFuZFNob3coIkFOSU1BVEU1IiwgQW5pbWF0aW9uU2VsZWN0aW9uLCB0cnVlLCA1MDApOyB9KSI+IEFuaW1hdGUgJiBTaG93IDwvQnV0dG9uPgo8QnV0dG9uIHN0eWxlPSIiIEBvbmNsaWNrPSJAKGFzeW5jICgpPT4geyBNb3Rpb25VSU9iai5BbmltYXRlQW5kSGlkZSgiQU5JTUFURTYiLCBBbmltYXRpb25TZWxlY3Rpb24sIHRydWUsIDUwMCk7IH0pIj5BbmltYXRlICYgSGlkZSA8L0J1dHRvbj4KPGJyIC8+PGkgaWQ9IkFOSU1BVEU2IiBzdHlsZT0iZm9udC1zaXplOiAzZW07IG1hcmdpbi1ib3R0b206IDFlbTsiIGNsYXNzPSJiZmkgYmZpLWNvdW50cnktY2EiPjwvaT48YnIgLz4KPGJyIC8+PGkgaWQ9IkFOSU1BVEU1IiBzdHlsZT0iZm9udC1zaXplOiAzZW07IG1hcmdpbi1ib3R0b206IDFlbTsgZGlzcGxheTpub25lOyIgY2xhc3M9ImJmaSBiZmktY291bnRyeS1jYSI+PC9pPjxiciAvPg==" />
        
         <hr />

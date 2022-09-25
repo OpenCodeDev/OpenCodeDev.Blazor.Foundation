@@ -6,6 +6,12 @@ namespace OpenCodeDev.Blazor.Foundation.Extensions.Clipboard
 {
     public class Clipboard : IClipboard
     {
+        IJSRuntime JSRuntime { get; set; }
+        public Clipboard(IJSRuntime jSRuntime)
+        {
+            JSRuntime = jSRuntime;
+        }
+
         public async Task<string> ReadText(IJSRuntime js)
         {
             return await js.InvokeAsync<string>("ClipboardReadText");
@@ -16,6 +22,13 @@ namespace OpenCodeDev.Blazor.Foundation.Extensions.Clipboard
             if (copy == null) { throw new Exception("copy cannot be null;"); }
             var b64 = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(copy));
             await js.InvokeVoidAsync("ClipboardCopyText", b64);
+        }
+
+        public async Task SetText(string copy)
+        {
+            if (copy == null) { throw new Exception("copy cannot be null;"); }
+            var b64 = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(copy));
+            await JSRuntime.InvokeVoidAsync("ClipboardCopyText", b64);
         }
     }
 }

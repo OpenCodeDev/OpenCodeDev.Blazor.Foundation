@@ -5880,6 +5880,9 @@ ol.list-upper-roman {
 .button.bf-margin-bottom, .button.bf-margin-vertical {
   margin-bottom: 1em; }
 
+tbody tr:nth-child(even) {
+  background-color: var(--table-stripe-bg); }
+
 /*Highlight JS*/
 .hljs-header {
   overflow: hidden;
@@ -6818,6 +6821,15 @@ a:hover, a:focus {
   background: var(--button-bg-color);
   color: var(--button-ft-color);
   border-radius: var(--button-border-radius); }
+
+.button-group > .button {
+  border-radius: var(--button-group-first-border-radius); }
+
+.button-group > .button ~ .button {
+  border-radius: var(--button-group-middle-border-radius); }
+
+.button-group > .button:last-of-type {
+  border-radius: var(--button-group-last-border-radius); }
 
 .button:hover, .button:focus {
   background: var(--button-bg-color);

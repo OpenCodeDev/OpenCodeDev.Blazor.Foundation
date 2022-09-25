@@ -20,25 +20,13 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
         /// Unique HTML Identifier.
         /// </summary>
         [Parameter]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().HTMLCompliant().ToString();
 
         /// <summary>
         /// Custom Class to Append at the end of default Foundation Class.
         /// </summary>
         [Parameter]
         public string Class { get; set; }
-
-        /// <summary>
-        /// True when menu direction is vertical. (Default: False)
-        /// </summary>
-        [Parameter]
-        public bool Vertical { get; set; } = false;
-
-        /// <summary>
-        /// When true, all the menu will be toggle on! (AutoManaged must be true)
-        /// </summary>
-        [Parameter]
-        public bool AutoOpen { get; set; } = false;
 
 
         /// <summary>
@@ -60,10 +48,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 
         protected override void OnInitialized()
         {
-            if (Id == null)
-            {
-                Id = Guid.NewGuid().HTMLCompliant().ToString();
-            }
         }
 
         public override async Task SetParametersAsync(ParameterView parameters)
@@ -79,10 +63,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
                 if (AutoManaged)
                 {
                     await JSRuntime.InvokeVoidAsync("AccordionMenuRegister", Id, DataOptions != null ? DataOptions.ToJSObjectString() : null);
-                    if (AutoOpen)
-                    {
-                        await JSRuntime.InvokeVoidAsync("ElementShowAll", Id);
-                    }
                 }
             }
 

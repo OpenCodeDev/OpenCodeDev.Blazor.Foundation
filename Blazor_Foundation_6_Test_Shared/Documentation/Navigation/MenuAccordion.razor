@@ -1,0 +1,39 @@
+﻿@page "/accordion-menu";
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using OpenCodeDev.Blazor.Foundation.Components.Controls;
+@using Microsoft.AspNetCore.Components.Forms;
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Menu</h2>
+        <p> This is the Accordion Menu!</p>
+
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Basics</h2>
+        <p>Creating an accordion menu is as easy as using the following... </p>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                     Content="PE1lbnVBY2NvcmRpb24+CiAgICA8bGk+IAogICAgICAgIDxOYXZMaW5rPiBJdGVtIDEgPC9OYXZMaW5rPiAKICAgICAgICA8TWVudU5lc3RlZD4KICAgICAgICAgICAgPGxpPiA8TmF2TGluaz4gU3ViLUl0ZW0gMSA8L05hdkxpbms+IDwvbGk+CiAgICAgICAgICAgIDxsaT4gPE5hdkxpbms+IFN1Yi1JdGVtIDIgPC9OYXZMaW5rPiA8L2xpPgogICAgICAgICAgICA8bGk+IDxOYXZMaW5rPiBTdWItSXRlbSAzIDwvTmF2TGluaz4gPC9saT4KICAgICAgICA8L01lbnVOZXN0ZWQ+CiAgICA8L2xpPgogICAgPGxpPiA8TmF2TGluaz4gSXRlbSAyIDwvTmF2TGluaz4gPC9saT4KICAgIDxsaT4gPE5hdkxpbms+IEl0ZW0gMyA8L05hdkxpbms+IDwvbGk+CjwvTWVudUFjY29yZGlvbj4=" />
+        <OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuAccordion>
+            <li> 
+                <NavLink> Item 1 </NavLink> 
+                <MenuNested>
+                    <li> <NavLink> Sub-Item 1 </NavLink> </li>
+                    <li> <NavLink> Sub-Item 2 </NavLink> </li>
+                    <li> <NavLink> Sub-Item 3 </NavLink> </li>
+                </MenuNested>
+            </li>
+            <li> <NavLink> Item 2 </NavLink> </li>
+            <li> <NavLink> Item 3 </NavLink> </li>
+        </OpenCodeDev.Blazor.Foundation.Components.Navigation.MenuAccordion>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+@code {
+
+}

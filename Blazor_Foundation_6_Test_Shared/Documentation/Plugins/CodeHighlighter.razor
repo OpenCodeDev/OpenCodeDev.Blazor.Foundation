@@ -1,6 +1,7 @@
 ﻿@page "/code-highlighter";
 
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@using System.Text
 
 <SectionWrapper>
     <SectionLeft>
@@ -8,15 +9,15 @@
         <p>To show your code in your page with highlighter, Blazor Foundation create an easy way for do it. Based on the plugin HighlightJS</p>
         <h2>Installing Plugin</h2>
         <p>Add NuGet Package <code>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</code> and Reference in _Imports.razor</p>
-        <HighlightCS Language="razor" Full="true" HeaderTitle="_Imports.razor"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="_Imports.razor"
                      Content="QHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLlBsdWdpbnMuSGlnaGxpZ2h0Q1MuQ29tcG9uZW50czs=" />
 
         <p>Add this to your <code>index.html</code>.</p>
-        <HighlightCS Language="html" Full="true" HeaderTitle="index.html"
+        <HighlightCode Language="html" Full="true" HeaderTitle="index.html"
                      Content="PGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSIvL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9oaWdobGlnaHQuanMvMTAuNy4xL3N0eWxlcy92cy5taW4uY3NzIj4KPHNjcmlwdCBzcmM9Ii8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL2hpZ2hsaWdodC5qcy8xMC43LjEvaGlnaGxpZ2h0Lm1pbi5qcyI+PC9zY3JpcHQ+" />
        
         <p>Add in <Code>Program.cs</Code> </p>
-        <HighlightCS Language="cs" Full="true" HeaderTitle="Program.cs"
+        <HighlightCode Language="cs" Full="true" HeaderTitle="Program.cs"
                      Content="dXNpbmcgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uRXh0ZW5zaW9uczsKYnVpbGRlci5TZXJ2aWNlcy5BZGRCRkNsaXBib2FyZCgpOw==" />
         
 
@@ -27,17 +28,17 @@
 <SectionWrapper>
     <SectionLeft>
         <h2>Basics</h2>
-        <p>Use just the <Code>HighlightCS</Code> Component for show your code with beautifull appearance. Set the attribute <Code>Language</Code> for define the language of your code. By default it's set to "cs" (C#). Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python.</p>
+        <p>Use just the <Code>HighlightCode</Code> Component for show your code with beautifull appearance. Set the attribute <Code>Language</Code> for define the language of your code. By default it's set to "cs" (C#). Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python.</p>
         <p>The attribute <Code>Content</Code> used for the code content and the attribute <Code>Full</Code>, for make it full width by default it set to <Code>false</Code> </p>
 
-        <HighlightCS Language="razor" Full="true" HeaderTitle="Razor"
+        <HighlightCode Language="razor" Full="true" HeaderTitle="Razor"
                      Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJodG1sIiBGdWxsPSJ0cnVlIiBDb250ZW50PSJAKEAiPHA+IEkgYW0gYSBzaW1wbGUgY29kZSBIVE1MIHdpdGggaGlnaGxpZ2h0ZXI8L3A+IikiIC8+Cgo8SGlnaGxpZ2h0Q1MgTGFuZ3VhZ2U9InB5dGhvbiIgRnVsbD0idHJ1ZSIgQ29udGVudD0iQChAInByaW50KCdQeXRob24gY29kZSB3aXRoIGhpZ2hsaWdodGVyLicpIikiIC8+" />
 
 
-        <HighlightCS Language="html" Full="true"
+        <HighlightCode Language="html" Full="true"
                      Content="@(@"<p> I am a simple code HTML with highlighter</p>")" />
 
-        <HighlightCS Language="python"
+        <HighlightCode Language="python"
                      Content="@("print('Python code with highlighter and without full width.')\nLine 2")" />
         <hr />
     </SectionLeft>
@@ -46,13 +47,13 @@
 <SectionWrapper>
     <SectionLeft>
         <h2>Content with inline code</h2>
-        <p>If you want to show your code in the <Code>HighlightCS</Code> use the attribute <Code>Content</Code> and paste your code inside like this <Code Content="QChAInBhc3RlIHlvdXIgY29kZSBoZXJlLiIp"></Code>.</p>
+        <p>If you want to show your code in the <Code>HighlightCode</Code> use the attribute <Code>Content</Code> and paste your code inside like this <Code Content="QChAInBhc3RlIHlvdXIgY29kZSBoZXJlLiIp"></Code>.</p>
         <p>But with this method you will need to use <Code>Escape sequences</Code> like <Code>\n</Code> for go to new line or <Code>\t</Code> for tabulation then you can use content like this <Code Content="QCgiZmlyc3QgbGluZSBjb2RlIGhlcmUuXG5TZWNvbmQgbGluZSBvZiBjb2RlIik="></Code> . This method is good for short piece of code but for many lines of code the <Code>Content with Base64 encoding</Code> is the best way.</p>
         
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJweXRob24iIEZ1bGw9InRydWUiIENvbnRlbnQ9IkAoIm1lc3NhZ2UgPSAnUHl0aG9uIGNvZGUgd2l0aCBpbmxpbmUgY29udGVudCBtZXRob2QgYW5kIEVzY2FwZSBzZXF1ZW5jZXMuJyBcbnByaW50KG1lc3NhZ2UpIikiIC8+" />
 
-        <HighlightCS Language="python" Full="true"
+        <HighlightCode Language="python" Full="true"
                      Content="@("message = 'Python code with inline content method and Escape sequences.' \nprint(message)")" />
         <hr />
     </SectionLeft>
@@ -61,13 +62,15 @@
 <SectionWrapper>
     <SectionLeft>
         <h2>Content with Base64 encoding</h2>
-        <p>You have two way to add you content in the <Code>Content</Code> attribute. In the previous example you use the first way.</p>
-        <p>For second way, you need to encode your piece of code in base64 you can use the <a href="@Base64encodeSiteLink" target="_blank">Base64encode website</a>. In fact, your encoded code will be decoded by the <Code>HighlightCS</Code> component. Encode your piece of code is very interesting if your code has many lines.</p>
+        <p>You have two way to add your content in the <Code>Content</Code> attribute. In the previous example you used the first way.</p>
+        <p>For second way, you need to encode your piece of code as base64 you can use the <a href="@Base64encodeSiteLink" target="_blank">@Base64encodeSiteLink</a>. 
+            In fact, your encoded code will be decoded by the <Code>HighlightCode</Code> component. 
+            Encode your piece of code is interesting if your code has many lines, but it is not recommended to use b64 in database because b64 make text large than the original... use byte array instead.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PCEtLXRoaXMgY29kZSBiZWxvdyBoYXMgYmVlbiBjb252ZXJ0ZWQgdG8gYmFzZSA2NCB0aGVuIGFkZGVkIHRvIENvbnRlbnQgYXR0cmlidXRlIC0tPgo8IS0tICAgICAgICAgCnN0cmluZyBmaXJzdG5hbWUgPSAiSm9obiI7CnN0cmluZyBsYXN0bmFtZSA9ICJEb2UiOwpDb25zb2xlLldyaXRlTGluZSgkIkhpIG15IG5hbWUgaXMge2ZpcnN0bmFtZX0ge2xhc3RuYW1lfSAhIik7Ci0tPgo8SGlnaGxpZ2h0Q1MgTGFuZ3VhZ2U9ImNzIiBGdWxsPSJ0cnVlIiBDb250ZW50PSJjM1J5YVc1bklHWnBjbk4wYm1GdFpTQTlJQ0pLYjJodUlqc0tjM1J5YVc1bklHeGhjM1J1WVcxbElEMGdJa1J2WlNJN0NrTnZibk52YkdVdVYzSnBkR1ZNYVc1bEtDUWlTR2tnYlhrZ2JtRnRaU0JwY3lCN1ptbHljM1J1WVcxbGZTQjdiR0Z6ZEc1aGJXVjlJQ0VpS1RzPSIgLz4K" />
 
-        <HighlightCS Language="cs" Full="true"
+        <HighlightCode Language="cs" Full="true"
                      Content="c3RyaW5nIGZpcnN0bmFtZSA9ICJKb2huIjsKc3RyaW5nIGxhc3RuYW1lID0gIkRvZSI7CkNvbnNvbGUuV3JpdGVMaW5lKCQiSGkgbXkgbmFtZSBpcyB7Zmlyc3RuYW1lfSB7bGFzdG5hbWV9ICEiKTs=" />
 
         <hr />
@@ -76,8 +79,23 @@
 
 <SectionWrapper>
     <SectionLeft>
+        <h2>Content with Byte Array</h2>
+        <p>This method is the best for database, store your code as byte array.</p>
+
+
+        <HighlightCode Language="razor" Full="true"
+                     Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJodG1sIiBGdWxsPSJ0cnVlIiBIZWFkZXJJY29uPSJtZGktbGFuZ3VhZ2UtaHRtbDUiIEhlYWRlckJHY29sb3I9IiM1ZDJiOTAiIEhlYWRlclRpdGxlPSJSYXpvciIKICAgICAgICAgICAgICAgICAgICBDb250ZW50Qnl0ZXM9QChFbmNvZGluZy5EZWZhdWx0LkdldEJ5dGVzKCJUaGlzIGlzIGEgY29kZSBpbiBCeXRlIikpICAvPg==" />
+        <p>This produce the following:</p>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                    ContentBytes=@(Encoding.Default.GetBytes("This is a code in Byte"))  />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
         <h2>Header</h2>
-        <p><Code>HighlightCS</Code> component allow you to personalize the header. For do it you have three attributes.</p>
+        <p><Code>HighlightCode</Code> component allow you to personalize the header. For do it you have three attributes.</p>
         <ul>
             <li><Code>HeaderTitle</Code> : Title of the header.</li>
             <li><Code>HeaderIcon</Code> : Add icon in your header. We use the <a href="@MaterialIconSiteLink" target="_blank">Material Design Icon</a>.</li>
@@ -87,9 +105,9 @@
         <HighlightCS @ref="reference" Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEhpZ2hsaWdodENTIExhbmd1YWdlPSJodG1sIiBGdWxsPSJ0cnVlIiBIZWFkZXJJY29uPSJtZGktbGFuZ3VhZ2UtaHRtbDUiIEhlYWRlckJHY29sb3I9IiNFNTRDMjEiIEhlYWRlclRpdGxlPSJIVE1MNSIgQ29udGVudD0iQChAIjxwPiBJIGFtIGEgc2ltcGxlIGhpZ2hsaWdodGVyPC9wPiIpIiAvPgoKPEhpZ2hsaWdodENTIExhbmd1YWdlPSJweXRob24iIEZ1bGw9InRydWUiIEhlYWRlckljb249Im1kaS1sYW5ndWFnZS1weXRob24iIEhlYWRlckJHY29sb3I9IiMzNTcyQTQiIEhlYWRlclRpdGxlPSJQeXRob24iIENvbnRlbnQ9IllXTjBiM0lnUFNCYkowdGxZVzUxSUZKbFpYWmxjeWNzSUNkRWQyRjVibVVnU205b2JuTnZiaWNzSUNkQmJtZGxiR2x1WVNCS2IyeHBaU2NzSUNkRGFHRnliR2w2WlNCVWFHVnliMjRuWFFwd2NtbHVkQ2h6YjNKMFpXUW9ZV04wYjNJcEtRPT0iIC8+Cg==" />
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#E54C21" HeaderTitle="HTML5" Content="@(@"<p> I am a simple highlighter</p>")" />
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#E54C21" HeaderTitle="HTML5" Content="@(@"<p> I am a simple highlighter</p>")" />
 
-        <HighlightCS Language="python" Full="true" HeaderIcon="mdi-language-python" HeaderBGcolor="#3572A4" HeaderTitle="Python" Content="YWN0b3IgPSBbJ0tlYW51IFJlZXZlcycsICdEd2F5bmUgSm9obnNvbicsICdBbmdlbGluYSBKb2xpZScsICdDaGFybGl6ZSBUaGVyb24nXQpwcmludChzb3J0ZWQoYWN0b3IpKQ==" />
+        <HighlightCode Language="python" Full="true" HeaderIcon="mdi-language-python" HeaderBGcolor="#3572A4" HeaderTitle="Python" Content="YWN0b3IgPSBbJ0tlYW51IFJlZXZlcycsICdEd2F5bmUgSm9obnNvbicsICdBbmdlbGluYSBKb2xpZScsICdDaGFybGl6ZSBUaGVyb24nXQpwcmludChzb3J0ZWQoYWN0b3IpKQ==" />
 
     </SectionLeft>
 </SectionWrapper>
@@ -101,7 +119,7 @@
         {
             <h3>Code @lang.Key</h3>
             <p>Set the <Code>@($@"Code=""{lang.Key}""")</Code> to activate.</p>
-            <HighlightCS Language="@lang.Key" Full="true" Content="@lang.Value[2]" />
+            <HighlightCode Language="@lang.Key" Full="true" Content="@lang.Value[2]" />
 
         }
 

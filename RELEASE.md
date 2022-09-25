@@ -1,37 +1,27 @@
-# Version 3.0.8.3 (June 2022)
-## Changes
-- Change Button Padding Style into Class (Performance, Size)
-Allows the developer to use style attribute and override the margin/padding which was not the case prior this patch.
-
-## Fixes
-- Fix Orbital Button component, button was not constructed correctly.
-Found while debugging failure to publish the Documentation 3.0.8.1
-- Fix Tiny Button Problems from new Feature PAdding/Margin option in buttons.
-
-# Version 3.0.8 (June 2022)
+# Version 3.1 (September 2022)
 ## Features
-- **Beta** New InputSelectionList Component (Mobile Firendly List Input)
-- **Beta** New Headline Component (-------- Headline ---------)
-- New Padding and Margin to Button Component (See Doc, No Changes Affecting Existing)
-- New HighlightCode Component (Replacement for HighlightCS | See OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS).
-- New CSS Variables (See Doc)
+- New AppWrapper Component to Wrap the Shared Layout... It will automatically add required service components when service is available.
+- HighlightCS now support string byte array (Performance).
 
 ## Documentation
-- Added Documentation for Headline
-- Added Documentation for Input Selection List.
-- Added Documentation for Padding and Margin Parameters on Button
-- Added Documentation for LocalStorage Extension
-- Added Searchable Documentation for Material Design Icons.
-- Add Motion UI Documentation
+- Removed References to HighlightCS in favor of HighlightCode (HighlightCS Still exist tho).
+- Removed References to RevealController in favor of NovelRevealController (RevealController still exist but no longer supported and should not be used on Blazor Server).
 
+ 
 ## Fixes
-- Fix Blazor Server removed Singleton to Scoped -- **Important**.
-- Fix Bunch of Mission CSS Variable for Style Management System.
-- Clean Debug Artifacts.
-- Clean Old Menu System Artifacts from Code.
+- Maximize Compatibility by Supporting to WebAssembly 6.0.0+.
+- Fix Border Radius on Button Group.
+- Fix Table Striped Background (CSS Variable)
+- Fix IStyleManagement for Blazor Server.
+
 
 ## Changes
-- Move SCSS from Blazor_Foundation_6_SCSS to Blazor_Foundation_6_Lib/_SCSS
-- Move JS from Blazor_Foundation_JS to Blazor_Foundation_6_Lib/_JS
-- Visual Studio will launch node-scss at build to compile SCSS.
-- Visual Studio will launch powershell to combine JS files.
+- Services must by added as Scoped for Blazor Server using AddBlazorFoundationServices(false) or else they will be singleton.
+- Removed Extension Package from HighlightCS Package (Note: HighlightCS is planned to be discontinued by 4.0 and replace by another package, we'll ensure smooth transition with minor breaks)
+
+## Breaking Changes
+- We have ditched the Blazor.Foundation.Extensions package and embedded everything into this package... the namespace doesn't change but if you use the package Blazor.Foundation.Extensions you may encounter ambiguity! just remove the Blazor.Foundation.Extensions from nuget and nothing else change.
+
+## Low-Impact Breaking Changes
+- Removed Vertical Param from MenuAccordion.
+- Removed data-submenu-toggle from MenuAccordion.
