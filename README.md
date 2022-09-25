@@ -4,7 +4,7 @@
 ![](https://img.shields.io/nuget/dt/OpenCodeDev.Blazor.Foundation?label=Downloads)
 
 # Introduction 
-This project is a public package published by OpenCodeDev under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C# with Extra Added Side-Features (We do not Edit or Change Foundation 6 JS and CSS to ensure full compatibility with official repos).
+This project is a public package published and maintained by OpenCodeDev under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C# with Extra Added Side-Features (We do not Edit or Change Foundation 6 JS and CSS to ensure full compatibility with official repos).
 
 To help developers focus on C# and Blazor, we've assembled an easy to use package featuring Zurb Foundation 6 components' script and style. 
 

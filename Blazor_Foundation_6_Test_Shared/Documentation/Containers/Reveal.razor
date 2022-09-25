@@ -4,6 +4,7 @@
 @using OpenCodeDev.Blazor.Foundation.Components.Controls;
 @using OpenCodeDev.Blazor.Foundation.Components.Containers;
 
+@inject INovelRevealController NovelRevealCtrl
 <SectionWrapper>
     <SectionLeft>
         <h2>Reveal</h2>
@@ -12,13 +13,15 @@
     </SectionLeft>
 </SectionWrapper>
 
+
+
 <SectionWrapper>
     <SectionLeft>
         <h2>Basics</h2>
         <p>A modal is just an empty container, so you can put any kind of content inside it, from text to forms to video to an entire grid.</p>
         <p>To create a modal, use the <Code>Reavel</Code> component and a unique ID.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PFJldmVhbCBJZD0iZXhhbXBsZU1vZGFsMSI+Cgk8aDE+QXdlc29tZS4gSSBIYXZlIEl0LjwvaDE+Cgk8cCBjbGFzcz0ibGVhZCI+WW91ciBjb3VjaC4gSXQgaXMgbWluZS48L3A+Cgk8cD5JJ20gYSBjb29sIHBhcmFncmFwaCB0aGF0IGxpdmVzIGluc2lkZSBvZiBhbiBldmVuIGNvb2xlciBtb2RhbC4gV2lucyE8L3A+CjwvUmV2ZWFsPg==" />
 
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Reveal Id="exampleModal1">
@@ -29,7 +32,7 @@
 
         <p>You'll also need a way to open the modal. Add the attribute <Code>data-open</Code> to any element or you can use <Code>DataToggle</Code> for <Code>Button</Code>. The value of data-open should be the <Code>Id</Code> of the modal.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbDEiPkNsaWNrIG1lIGZvciBhIG1vZGFsPC9CdXR0b24+" />
 
         <Button data-open="exampleModal1">Click me for a modal</Button>
@@ -51,7 +54,7 @@
             <li><Code>full</Code> : 100% width and height.</li>
         </ul>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PFJldmVhbCBDbGFzcz0idGlueSIgSWQ9ImV4YW1wbGVNb2RhbFRpbnkiPgogICAgPHA+T0ggSSdNIFNPIFRJSUlOWTwvcD4KPC9SZXZlYWw+CjxSZXZlYWwgQ2xhc3M9InNtYWxsIiBJZD0iZXhhbXBsZU1vZGFsU21hbGwiPgoJPHA+SSBtYXkgYmUgc21hbGwsIGJ1dCBJJ3ZlIGdvdCBhIGJpZyBoZWFydCE8L3A+CjwvUmV2ZWFsPgo8UmV2ZWFsIENsYXNzPSJsYXJnZSIgSWQ9ImV4YW1wbGVNb2RhbExhcmdlIj4KCTxwPkknbSBiaWcsIGxpa2UgYmVhciE8L3A+CjwvUmV2ZWFsPgo8UmV2ZWFsIENsYXNzPSJmdWxsIiBJZD0iZXhhbXBsZU1vZGFsRnVsbCI+Cgk8cD5JJ20gYmlnLCBtb3JlIHRoYW4gYSBiZWFyLCBpJ20gbGlrZSB0aGUgc2t5ITwvcD4KPC9SZXZlYWw+Cgo8QnV0dG9uIGRhdGEtb3Blbj0iZXhhbXBsZU1vZGFsVGlueSI+Q2xpY2sgbWUgZm9yIGEgdGlueSBtb2RhbDwvQnV0dG9uPgo8QnV0dG9uIGRhdGEtb3Blbj0iZXhhbXBsZU1vZGFsU21hbGwiPkNsaWNrIG1lIGZvciBhIHNtYWxsIG1vZGFsPC9CdXR0b24+CjxCdXR0b24gZGF0YS1vcGVuPSJleGFtcGxlTW9kYWxMYXJnZSI+Q2xpY2sgbWUgZm9yIGEgbGFyZ2UgbW9kYWw8L0J1dHRvbj4KPEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbEZ1bGwiPkNsaWNrIG1lIGZvciBhIGZ1bGwgbW9kYWw8L0J1dHRvbj4=" />
 
         <OpenCodeDev.Blazor.Foundation.Components.Containers.Reveal Class="tiny" Id="exampleModalTiny">
@@ -80,7 +83,7 @@
         <h2>Title</h2>
         <p>For add a title to the modal use the attribute <Code>Title</Code>. An icon can be dropped into a title. For do this use the attribute <Code>TitleIcon</Code>. The <Code>TitleIcon</Code> attribute use the <a href="@MaterialIconSiteLink" target="_blank">Material Design Icon</a>.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJleGFtcGxlTW9kYWxUaXRsZSI+Q2xpY2sgbWUgZm9yIGEgbW9kYWwgd2l0aCB0aXRsZTwvQnV0dG9uPgoKPFJldmVhbCBUaXRsZT0iTWVzc2FnZSBUaXRsZSIgVGl0bGVJY29uPSJtZGktZW1haWwiICBJZD0iZXhhbXBsZU1vZGFsVGl0bGUiPgoJPHA+TWVzc2FnZSBDb250ZW50IDogSSdtIGEgc2ltcGxlIG1vZGFsIHdpdGggYSB0aXRsZTwvcD4KPC9SZXZlYWw+" />
 
         <Button DataToggle="exampleModalTitle">Click me for a modal with title</Button>
@@ -106,7 +109,7 @@
             <li><Code>PrimaryButtonOnClickCT</Code> and <Code>SecondaryButtonOnClickCT</Code> : Button Onclick with Close Trigger. if true = "Page is ready to automatically close" and if false = "do not close just yet"</li>
         </ul>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJleGFtcGxlTW9kYWxCdXR0b24iPkNsaWNrIG1lIGZvciBhIG1vZGFsIHdpdGggQnV0dG9uPC9CdXR0b24+Cgo8UmV2ZWFsIFRpdGxlPSJNZXNzYWdlIGZyb20gRGFyayBWYWRvciIgVGl0bGVJY29uPSJtZGktZW1haWwiIFByaW1hcnlCdXR0b25UaXRsZT0iWWVzIiBTZWNvbmRhcnlCdXR0b25UaXRsZT0iTm8iIFByaW1hcnlCdXR0b25DbGFzcz0ic3VjY2VzcyByaWdodCIgU2Vjb25kYXJ5QnV0dG9uQ2xhc3M9ImFsZXJ0IHJpZ2h0IiBJZD0iZXhhbXBsZU1vZGFsQnV0dG9uIj4KCTxwPkpvaW4gdGhlIGRhcmsgc2lkZSBvZiB0aGUgZm9yY2UgYW5kIGkgd2lsbCBnaXZlIHlvdSBjb29raWVzLiA6KTwvcD4KPC9SZXZlYWw+" />
 
         <Button DataToggle="exampleModalButton">Click me for a modal with Button</Button>
@@ -126,7 +129,7 @@
         <h2>Nested Modal</h2>
         <p>It's possible for modals to open other modals. Create a second modal with a unique ID, and then add a click trigger with <Code>data-open</Code> inside the first modal.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor" 
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor" 
                      Content="PEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbDIiPkNsaWNrIG1lIGZvciBhIG1vZGFsPC9CdXR0b24+CjwhLS0gVGhpcyBpcyB0aGUgZmlyc3QgbW9kYWwgLS0+CjxSZXZlYWwgSWQ9ImV4YW1wbGVNb2RhbDIiPgoJPGgxPkF3ZXNvbWUhPC9oMT4KCTxwIGNsYXNzPSJsZWFkIj5JIGhhdmUgYW5vdGhlciBtb2RhbCBpbnNpZGUgb2YgbWUhPC9wPgoJPEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbDMiIGRhdGEtY2xvc2U+Q2xpY2sgbWUgZm9yIGFub3RoZXIgbW9kYWwhPC9CdXR0b24+CjwvUmV2ZWFsPgoKPCEtLSBUaGlzIGlzIHRoZSBuZXN0ZWQgbW9kYWwgLS0+CjxSZXZlYWwgSWQ9ImV4YW1wbGVNb2RhbDMiPgoJPGgyPkFOT1RIRVIgTU9EQUwhISE8L2gyPgo8L1JldmVhbD4K" />
  
         <Button data-open="exampleModal2" >Click me for a modal</Button>
@@ -150,7 +153,7 @@
     <SectionLeft>
         <h2>Full-screen</h2>
         <p>A full-screen modal is 100% of the width and height of the window. Add the <Code>Class="full"</Code> to make it go.</p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBkYXRhLW9wZW49ImV4YW1wbGVNb2RhbDgiPkNsaWNrIG1lIGZvciBhIGZ1bGwgbW9kYWw8L0J1dHRvbj4KCjxSZXZlYWwgQ2xhc3M9ImZ1bGwiIElkPSJleGFtcGxlTW9kYWw4Ij4KCTxwPk9IIEknTSBTTyBGVVVVVUxMPC9wPgoJPGltZyBzcmM9Imh0dHBzOi8vcGxhY2VraXR0ZW4uY29tLzE5MjAvMTI4MCIgYWx0PSJJbnRyb3NwZWN0aXZlIENhZ2UiPgo8L1JldmVhbD4=" />
 
         <Button data-open="exampleModal8">Click me for a full modal</Button>
@@ -168,7 +171,7 @@
         <h3>No Overlay</h3>
         <p>To remove the overlay, add the attribute <Code>Overlay="false"</Code> to the modal.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJleGFtcGxlTW9kYWw5Ij5DbGljayBtZSBmb3IgYW4gb3ZlcmxheS1sYWNraW5nIG1vZGFsPC9CdXR0b24+Cgo8UmV2ZWFsIElkPSJleGFtcGxlTW9kYWw5IiBPdmVybGF5PSJmYWxzZSI+Cgk8cD5JIGZlZWwgc28gZnJlZSE8L3A+CjwvUmV2ZWFsPg==" />
 
         <Button DataToggle="exampleModal9">Click me for an overlay-lacking modal</Button>
@@ -185,7 +188,7 @@
         <h2>Animations</h2>
         <p>To use animations from the Motion UI library, include the <Code>AnimationIn="someAnimationIn"</Code> and <Code>AnimationOut="someAnimationOut"</Code> attributes. If you want to adjust the speed or timing, include it the attributes like <Code>AnimationIn="someAnimationIn fast"</Code>.</p>
 
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PEJ1dHRvbiBEYXRhVG9nZ2xlPSJhbmltYXRlZE1vZGFsMTAiPkNsaWNrIG1lIGZvciBhIG1vZGFsPC9CdXR0b24+Cgo8UmV2ZWFsIElkPSJhbmltYXRlZE1vZGFsMTAiIEFuaW1hdGlvbkluPSJzcGluLWluIiBBbmltYXRpb25PdXQ9InNwaW4tb3V0Ij4KCTxoMT5XaG9hLCBJJ20gZGl6enkhPC9oMT4KCTxwIGNsYXNzPSJsZWFkIj5UaGVyZSBhcmUgbWFueSBvcHRpb25zIGZvciBhbmltYXRpbmcgbW9kYWxzLCBjaGVjayBvdXQgdGhlIE1vdGlvbiBVSSBsaWJyYXJ5IHRvIHNlZSB0aGVtIGFsbDwvcD4KPC9SZXZlYWw+" />
 
         <Button DataToggle="animatedModal10">Click me for a modal</Button>
@@ -198,98 +201,153 @@
     </SectionLeft>
 </SectionWrapper>
 
+
 <SectionWrapper>
     <SectionLeft>
-        <h2>Reveal Controller</h2>
+        <h2>Novel Reveal Controller</h2>
         <p>Reveal Controller is a tool to spawn popups on demand and in 2-3 line of c#. </p>
 
         <h3>Install Reveal Controller</h3>
         <p>Add the following code in <Code>_Imports.razor</Code></p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                 Content="QHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuUGx1Z2lucy5SZXZlYWw7" />
         <p>Add controller component at the end, in <Code>MainLayout.razor</Code> or your custom shared layout. </p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                 Content="PFJldmVhbENvbnRyb2xsZXIgLz4=" />
 
         <h3>Simple Message</h3>
         
         <p>Sometime you want to spawn a simple message for the user... you may not want to create a full design page just for the message.</p>
-        <Button @onclick=@(async()=> await RevealController.Controller.SimpleMessageAsync("Simple Message","This is a Simple Message 1 Code Line."))>Simple Message</Button>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <Button @onclick=@(async()=> await NovelRevealCtrl.SimpleMessage("Simple Message","This is a Simple Message 1 Code Line."))>Simple Message</Button>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                 Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuU2ltcGxlTWVzc2FnZUFzeW5jKCJTaW1wbGUgTWVzc2FlIiwiVGhpcyBpcyBhIFNpbXBsZSBNZXNzYWdlIDEgQ29kZSBMaW5lLiIpKT5TaW1wbGUgTWVzc2FnZTwvQnV0dG9uPg==" />
         <h3>Simple Two-Way Answer Message</h3>
         <p>Simple two-way message... useful for quick question.</p>
 <Button @onclick=@(async()=> {
-    await RevealController.Controller.SimpleTwoWayAnswerMessageAsync("ComplexSimpleMessage","A Simple message/question","Are you sure you want to receive that much love?", 
+    await NovelRevealCtrl.TwoAnswerMessage("A Simple message/question","Are you sure you want to receive that much love?", 
     "No", "Yes", 
     async () => {
-            await RevealController.Controller.SimpleMessage("Response","You are breaking my heart, that is not acceptable.");
+            await NovelRevealCtrl.SimpleMessage("Response", "You are breaking my heart, that is not acceptable.");
             return false; // Down quit, stay open... wrong answer.
         },
     async () => {
-            await RevealController.Controller.SimpleMessage("Response","Great !");
+            await NovelRevealCtrl.SimpleMessage("Response","Great !");
             return true; // Down quit, stay open... wrong answer.
         });    
 })>Simple Two-Way Anwser</Button>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                         Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuU2ltcGxlVHdvV2F5QW5zd2VyTWVzc2FnZUFzeW5jKCJDb21wbGV4U2ltcGxlTWVzc2FnZSIsIkEgU2ltcGxlIG1lc3NhZ2UvcXVlc3Rpb24iLCJBcmUgeW91IHN1cmUgeW91IHdhbnQgdG8gcmVjZWl2ZSB0aGF0IG11Y2ggbG92ZT8iLCAKICAgICJObyIsICJZZXMiLCAKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgYXdhaXQgUmV2ZWFsQ29udHJvbGxlci5Db250cm9sbGVyLlNpbXBsZU1lc3NhZ2UoIlJlc3BvbnNlIiwiWW91IGFyZSBicmVha2luZyBteSBoZWFydCwgdGhhdCBpcyBub3QgYWNjZXB0YWJsZS4iKTsKICAgICAgICAgICAgcmV0dXJuIGZhbHNlOyAvLyBEb3duIHF1aXQsIHN0YXkgb3Blbi4uLiB3cm9uZyBhbnN3ZXIuCiAgICAgICAgfSwKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgYXdhaXQgUmV2ZWFsQ29udHJvbGxlci5Db250cm9sbGVyLlNpbXBsZU1lc3NhZ2UoIlJlc3BvbnNlIiwiR3JlYXQgISIpOwogICAgICAgICAgICByZXR1cm4gdHJ1ZTsgLy8gRG93biBxdWl0LCBzdGF5IG9wZW4uLi4gd3JvbmcgYW5zd2VyLgogICAgICAgIH0pOyAgICAKfSk+U2ltcGxlIFR3by1XYXkgQW53c2VyPC9CdXR0b24+" />
         
 
         <h3>Complex Message Conditional Close</h3>
         <p>What's great about conditional closing is that, the popup will be visible until the conditions are met! Great for loading... </p>
 <Button @onclick=@(async()=> {
-    await RevealController.Controller.ComplexMessageCloseConditional("ComplexConditionalCloseID","Loading", CountdownUI, 
+    await NovelRevealCtrl.ComplexMessageCloseConditional("Loading", CountdownUI, 
     async () => {
             await Task.Delay(1000);                                         
             return true; 
         });    
 })>Reveal Loading</Button>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                 Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleE1lc3NhZ2VDbG9zZUNvbmRpdGlvbmFsKCJDb21wbGV4Q29uZGl0aW9uYWxDbG9zZUlEIiwiTG9hZGluZyIsIENvdW50ZG93blVJLCAKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgYXdhaXQgVGFzay5EZWxheSgxMDAwKTsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICByZXR1cm4gdHJ1ZTsgCiAgICAgICAgfSk7ICAgIAp9KT5SZXZlYWwgTG9hZGluZzwvQnV0dG9uPg==" />
        
         <h3>Complex Message</h3>
         <p>Complex Message is rather simple message using a component in body.</p>
         <Button @onclick=@(async()=> {
-            await RevealController.Controller.ComplexMessage("ComplexSimpleMessage","Complex Message", ComplexSimpleMessage , 
+            await NovelRevealCtrl.ComplexMessage("Complex Message", ComplexSimpleMessage , 
             async () => {
                     Console.WriteLine("Callback Closed!");
                 });    
         })>Complex Message</Button>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                         Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleE1lc3NhZ2UoIkNvbXBsZXhTaW1wbGVNZXNzYWdlIiwiQ29tcGxleCBNZXNzYWdlIiwgQ29tcGxleFNpbXBsZU1lc3NhZ2UgLCAKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgQ29uc29sZS5Xcml0ZUxpbmUoIkNhbGxiYWNrIENsb3NlZCEiKTsKICAgICAgICB9KTsgICAgCn0pPkNvbXBsZXggTWVzc2FnZTwvQnV0dG9uPgpAY29kZSB7CiAgICBwdWJsaWMgUmVuZGVyRnJhZ21lbnQgQ29tcGxleFNpbXBsZU1lc3NhZ2UgPSBAPGRpdj48aDE+VGVzdCBGcmFnbWVudDwvaDE+PC9kaXY+Owp9" />
        
         <h3>Complex Two-Way Message</h3>
        
         <p>Complex Two-Way Message is our most advanced feature it can be used for edit form and more.</p>
-<Button @onclick=@(async()=> {
-    await RevealController.Controller.ComplexTwoWayAnswerMessageAsync("ComplexSimpleMessage","Complex Two-Way", ComplexTwoWayAnswer, "No", "Yes", 
-    async () => {
-            await RevealController.Controller.SimpleMessage("Response","Well... change until you like yourself and click yes.");
-            return false; // Down quit, stay open... wrong answer.
-        },
-    async () => {
-            await RevealController.Controller.SimpleMessage("Response","Great, mission accomplish.");
-            return true; // Down quit, stay open... wrong answer.
-        });    
-})>Complex Message</Button>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                        Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleFR3b1dheUFuc3dlck1lc3NhZ2VBc3luYygiQ29tcGxleFNpbXBsZU1lc3NhZ2UiLCJDb21wbGV4IFR3by1XYXkiLCBDb21wbGV4VHdvV2F5QW5zd2VyLCAiTm8iLCAiWWVzIiwgCiAgICBhc3luYyAoKSA9PiB7CiAgICAgICAgICAgIGF3YWl0IFJldmVhbENvbnRyb2xsZXIuQ29udHJvbGxlci5TaW1wbGVNZXNzYWdlKCJSZXNwb25zZSIsIldlbGwuLi4gY2hhbmdlIHVudGlsIHlvdSBsaWtlIHlvdXJzZWxmIGFuZCBjbGljayB5ZXMuIik7CiAgICAgICAgICAgIHJldHVybiBmYWxzZTsgLy8gRG93biBxdWl0LCBzdGF5IG9wZW4uLi4gd3JvbmcgYW5zd2VyLgogICAgICAgIH0sCiAgICBhc3luYyAoKSA9PiB7CiAgICAgICAgICAgIGF3YWl0IFJldmVhbENvbnRyb2xsZXIuQ29udHJvbGxlci5TaW1wbGVNZXNzYWdlKCJSZXNwb25zZSIsIkdyZWF0LCBtaXNzaW9uIGFjY29tcGxpc2guIik7CiAgICAgICAgICAgIHJldHVybiB0cnVlOyAvLyBEb3duIHF1aXQsIHN0YXkgb3Blbi4uLiB3cm9uZyBhbnN3ZXIuCiAgICAgICAgfSk7ICAgIAp9KT5Db21wbGV4IE1lc3NhZ2U8L0J1dHRvbj4KQGNvZGUgewogICAgcHVibGljIFJlbmRlckZyYWdtZW50IENvbXBsZXhUd29XYXlBbnN3ZXIgPSBAPGRpdj48cD5EbyB5b3UgbGlrZSB5b3Vyc2VsZj88L3A+PC9kaXY+Owp9Cg==" />
+        <Button @onclick=@(async()=> {
+            await NovelRevealCtrl.ComplexTwoAnswerMessage("Complex Two-Way", ComplexTwoWayAnswer, "No", "Yes", 
+            async () => {
+                    await RevealController.Controller.SimpleMessage("Response","Well... change until you like yourself and click yes.");
+                    return false; // Down quit, stay open... wrong answer.
+                },
+            async () => {
+                    await RevealController.Controller.SimpleMessage("Response","Great, mission accomplish.");
+                    return true; // Down quit, stay open... wrong answer.
+                });    
+        })>Complex Message</Button>
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+                        Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleFR3b1dheUFuc3dlck1lc3NhZ2VBc3luYygiQ29tcGxleFNpbXBsZU1lc3NhZ2UiLCJDb21wbGV4IFR3by1XYXkiLCBDb21wbGV4VHdvV2F5QW5zd2VyLCAiTm8iLCAiWWVzIiwgCiAgICBhc3luYyAoKSA9PiB7CiAgICAgICAgICAgIGF3YWl0IFJldmVhbENvbnRyb2xsZXIuQ29udHJvbGxlci5TaW1wbGVNZXNzYWdlKCJSZXNwb25zZSIsIldlbGwuLi4gY2hhbmdlIHVudGlsIHlvdSBsaWtlIHlvdXJzZWxmIGFuZCBjbGljayB5ZXMuIik7CiAgICAgICAgICAgIHJldHVybiBmYWxzZTsgLy8gRG93biBxdWl0LCBzdGF5IG9wZW4uLi4gd3JvbmcgYW5zd2VyLgogICAgICAgIH0sCiAgICBhc3luYyAoKSA9PiB7CiAgICAgICAgICAgIGF3YWl0IFJldmVhbENvbnRyb2xsZXIuQ29udHJvbGxlci5TaW1wbGVNZXNzYWdlKCJSZXNwb25zZSIsIkdyZWF0LCBtaXNzaW9uIGFjY29tcGxpc2guIik7CiAgICAgICAgICAgIHJldHVybiB0cnVlOyAvLyBEb3duIHF1aXQsIHN0YXkgb3Blbi4uLiB3cm9uZyBhbnN3ZXIuCiAgICAgICAgfSk7ICAgIAp9KT5Db21wbGV4IE1lc3NhZ2U8L0J1dHRvbj4KQGNvZGUgewogICAgcHVibGljIFJlbmRlckZyYWdtZW50IENvbXBsZXhUd29XYXlBbnN3ZXIgPSBAPGRpdj48cD5EbyB5b3UgbGlrZSB5b3Vyc2VsZj88L3A+PC9kaXY+Owp9Cg==" />      
+  
+
+     <h3>Field Built-in Editor</h3>
+     <h4>Text Editor</h4>
+     <HighlightCode Language="razor" Full="true" Content="PHA+QEZpZWxkVGV4dEVkaXRvciA8c3BhbiBjbGFzcz0ibWRpIG1kaS1zcXVhcmUtZWRpdC1vdXRsaW5lIiBAb25jbGljaz1AKGFzeW5jICgpPT57CiAgICAgICAgRmllbGRUZXh0RWRpdG9yID0gYXdhaXQgTm92ZWxSZXZlYWxDdHJsLklucHV0VGV4dCgiRWRpdCBhIFRleHQiLCBGaWVsZFRleHRFZGl0b3IpOwogICAgfSkgPjwvc3Bhbj48L3A+CgpAY29kZSB7CiAgICBwdWJsaWMgc3RyaW5nIEZpZWxkVGV4dEVkaXRvciB7IGdldDsgc2V0OyB9ID0gIk15IEZpcnN0IFZhbHVlIjsKfQ==" /> 
+    <p>@FieldTextEditor <span class="mdi mdi-square-edit-outline" @onclick=@(async ()=>{
+        FieldTextEditor = await NovelRevealCtrl.InputText("Edit a Text", FieldTextEditor);
+    }) ></span></p>
+
+     <h4>Selection Editor</h4>
+        <HighlightCode Language="razor" Full="true" Content="PHA+QEZpZWxkU2VsZWN0RWRpdG9yIDxzcGFuIGNsYXNzPSJtZGkgbWRpLXNxdWFyZS1lZGl0LW91dGxpbmUiIEBvbmNsaWNrPUAoYXN5bmMgKCk9PnsKICAgIEZpZWxkU2VsZWN0RWRpdG9yID0gYXdhaXQgTm92ZWxSZXZlYWxDdHJsLklucHV0U2VsZWN0PHN0cmluZz4oIkVkaXQgYSBTZWxlY3Rpb24iLCBGaWVsZFNlbGVjdEVkaXRvciwgbmV3IERpY3Rpb25hcnk8c3RyaW5nLCBzdHJpbmc+KCl7CiAgICB7Ik15IFNlbGVjdGlvbiIgLCJNeSBTZWxlY3Rpb24ifSwgICAgCiAgICB7IllvdXIgU2VsZWN0aW9uIiAsIllvdXIgU2VsZWN0aW9uIn0sICAgIAogICAgeyJBIFNlbGVjdGlvbiIgLCJBIFNlbGVjdGlvbiJ9LCAgICAKICAgIHsiQW5kIEFub3RoZXIgU2VsZWN0aW9uIiAsIkFuZCBBbm90aGVyIFNlbGVjdGlvbiJ9LCAgIAogICAgfSk7Cn0pID48L3NwYW4+PC9wPgpAY29kZSB7CiAgICBwdWJsaWMgc3RyaW5nIEZpZWxkU2VsZWN0RWRpdG9yIHsgZ2V0OyBzZXQ7IH0gPSAiTXkgU2VsZWN0aW9uIjsKfQ==" />    
+
+    <p>@FieldSelectEditor <span class="mdi mdi-square-edit-outline" @onclick=@(async ()=>{
+        FieldSelectEditor = await NovelRevealCtrl
+        .InputSelect("Edit a Selection", FieldSelectEditor, new Dictionary<string, string>(){
+        {"My Selection" ,"My Selection"},    
+        {"Your Selection" ,"Your Selection"},    
+        {"A Selection" ,"A Selection"},    
+        {"And Another Selection" ,"And Another Selection"},   
+        });
+    }) ></span></p>
+
+     <h4>TextArea Editor</h4>
+        <HighlightCode Language="razor" Full="true" Content="PHA+PHNwYW4gY2xhc3M9Im1kaSBtZGktc3F1YXJlLWVkaXQtb3V0bGluZSIgQG9uY2xpY2s9QChhc3luYyAoKT0+ewogICAgICAgIEZpZWxkQXJlYUVkaXRvciA9IGF3YWl0IE5vdmVsUmV2ZWFsQ3RybC5JbnB1dFRleHRBcmVhKCJFZGl0IGEgVGV4dEFyZWEiLCBGaWVsZEFyZWFFZGl0b3IpOwogICAgfSkgPjwvc3Bhbj4gCiAgICBARmllbGRBcmVhRWRpdG9yIAo8L3A+CkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgRmllbGRBcmVhRWRpdG9yIHsgZ2V0OyBzZXQ7IH0gPSAiTXkgUGFyYWdyYXBoLCBcbiBGcmVzaCBhbmQgTmV3IjsKfQ==" />    
+<p><span class="mdi mdi-square-edit-outline" @onclick=@(async ()=>{
+        FieldAreaEditor = await NovelRevealCtrl.InputTextArea("Edit a TextArea", FieldAreaEditor);
+    }) ></span> 
+    @FieldAreaEditor 
+</p>
+
+    <h4>Int Slider Editor</h4>
+    <HighlightCode Language="razor" Full="true" Content="PHA+QCgkIlNsaWRlciAoSW50ZWdlcik6IHtGaWVsZEludFNsaWRlckVkaXRvcn0iKSA8c3BhbiBjbGFzcz0ibWRpIG1kaS1zcXVhcmUtZWRpdC1vdXRsaW5lIiBAb25jbGljaz1AKGFzeW5jICgpPT57CiAgICBGaWVsZEludFNsaWRlckVkaXRvciA9IGF3YWl0IE5vdmVsUmV2ZWFsQ3RybC5JbnB1dFNsaWRlckludCgiRWRpdCBhIEludCBTbGlkZXIiLCBGaWVsZEludFNsaWRlckVkaXRvciwgMCwgaW50Lk1heFZhbHVlLCAxKTsKfSkgPjwvc3Bhbj48L3A+CkBjb2RlIHsKICAgIHB1YmxpYyBpbnQgRmllbGRJbnRTbGlkZXJFZGl0b3IgeyBnZXQ7IHNldDsgfSA9IDEwOwp9" /> 
+<p>@($"Slider (Integer): {FieldIntSliderEditor}") <span class="mdi mdi-square-edit-outline" @onclick=@(async ()=>{
+    FieldIntSliderEditor = await NovelRevealCtrl.InputSliderInt("Edit a Int Slider", FieldIntSliderEditor, 0, int.MaxValue, 1);
+}) ></span></p>
+
+    <h4>Int Editor</h4>
+    <HighlightCode Language="razor" Full="true" Content="PHA+QCgkIkludGVnZXI6IHtGaWVsZEludFNsaWRlckVkaXRvcn0iKSA8c3BhbiBjbGFzcz0ibWRpIG1kaS1zcXVhcmUtZWRpdC1vdXRsaW5lIiBAb25jbGljaz1AKGFzeW5jICgpPT57CiAgICBGaWVsZEludFNsaWRlckVkaXRvciA9IGF3YWl0IE5vdmVsUmV2ZWFsQ3RybC5JbnB1dEludE51bWJlcigiRWRpdCBhIEludGVnZXIiLCBGaWVsZEludFNsaWRlckVkaXRvciwgMCwgaW50Lk1heFZhbHVlLCAxKTsKfSkgPjwvc3Bhbj48L3A+CkBjb2RlIHsKICAgIHB1YmxpYyBpbnQgRmllbGRJbnRTbGlkZXJFZGl0b3IgeyBnZXQ7IHNldDsgfSA9IDEwOwp9" /> 
+<p>@($"Integer: {FieldIntSliderEditor}") <span class="mdi mdi-square-edit-outline" @onclick=@(async ()=>{
+    FieldIntSliderEditor = await NovelRevealCtrl.InputIntNumber("Edit a Integer", FieldIntSliderEditor, 0, int.MaxValue, 1);
+}) ></span></p>
+
+    <h4>Float Slider Editor</h4>
+    <HighlightCode Language="razor" Full="true" Content="PHA+QCgkIlNsaWRlciAoRmxvYXQpOiB7RmllbGRGbG9hdFNsaWRlckVkaXRvcn0iKSA8c3BhbiBjbGFzcz0ibWRpIG1kaS1zcXVhcmUtZWRpdC1vdXRsaW5lIiBAb25jbGljaz1AKGFzeW5jICgpPT57CiAgICBGaWVsZEZsb2F0U2xpZGVyRWRpdG9yID0gYXdhaXQgTm92ZWxSZXZlYWxDdHJsLklucHV0U2xpZGVyRmxvYXQoIkVkaXQgYSBGbG9hdCBTbGlkZXIiLCBGaWVsZEZsb2F0U2xpZGVyRWRpdG9yLCAwLCBpbnQuTWF4VmFsdWUsIDAuMDFmKTsKfSkgPjwvc3Bhbj48L3A+CkBjb2RlIHsKICAgIHB1YmxpYyBmbG9hdCBGaWVsZEZsb2F0U2xpZGVyRWRpdG9yIHsgZ2V0OyBzZXQ7IH0gPSAxLjAwZjsKfQ==" /> 
+<p>@($"Slider (Float): {FieldFloatSliderEditor}") <span class="mdi mdi-square-edit-outline" @onclick=@(async ()=>{
+    FieldFloatSliderEditor = await NovelRevealCtrl.InputSliderFloat("Edit a Float Slider", FieldFloatSliderEditor, 0, int.MaxValue, 0.01f);
+}) ></span></p>
+
+    <h4>Float Editor</h4>
+    <HighlightCode Language="razor" Full="true" Content="PHA+QCgkIkZsb2F0OiB7RmllbGRGbG9hdFNsaWRlckVkaXRvcn0iKSA8c3BhbiBjbGFzcz0ibWRpIG1kaS1zcXVhcmUtZWRpdC1vdXRsaW5lIiBAb25jbGljaz1AKGFzeW5jICgpPT57CiAgICBGaWVsZEZsb2F0U2xpZGVyRWRpdG9yID0gYXdhaXQgTm92ZWxSZXZlYWxDdHJsLklucHV0RmxvYXROdW1iZXIoIkVkaXQgYSBGbG9hdCIsIEZpZWxkRmxvYXRTbGlkZXJFZGl0b3IsIDAsIGludC5NYXhWYWx1ZSwgMC4wMWYpOwp9KSA+PC9zcGFuPjwvcD4KQGNvZGUgewogICAgcHVibGljIGZsb2F0IEZpZWxkRmxvYXRTbGlkZXJFZGl0b3IgeyBnZXQ7IHNldDsgfSA9IDEuMDBmOwp9" /> 
+    <p>@($"Float: {FieldFloatSliderEditor}") <span class="mdi mdi-square-edit-outline" @onclick=@(async ()=>{
+        FieldFloatSliderEditor = await NovelRevealCtrl.InputFloatNumber("Edit a Float", FieldFloatSliderEditor, 0, int.MaxValue, 0.01f);
+    }) ></span></p>
+
+
       
-      <h3>Async</h3>
-      <p>Async functions are going to wait until reveal is close before it continues.</p>
-      <ul>
-          <li><Code>SimpleTwoWayAnswerMessageAsync</Code></li>
-          <li><Code>SimpleMessageAsync</Code></li>
-          <li><Code>ComplexTwoWayAnswerMessageAsync</Code></li>
-          <li><Code>ComplexTwoWayAnswerMessageAsync</Code></li>
-      </ul>
-      
-  </SectionLeft>
+  
+                    </SectionLeft>
 </SectionWrapper>
 
 @code {
     public string MaterialIconSiteLink { get; set; } = "https://pictogrammers.github.io/@mdi/font/5.4.55/";
     public RenderFragment CountdownUI = @<div>LOADING...</div>;
     public RenderFragment ComplexSimpleMessage = @<div><h1>Test Fragment</h1></div>;
-    public RenderFragment ComplexTwoWayAnswer = @<div><p>Do you like yourself?</p></div>;
+    public RenderFragment ComplexTwoWayAnswer = @<div><p>Do you like yourself?</p></div>
+    ;
+
+    public string FieldTextEditor { get; set; } = "My First Value";
+    public string FieldAreaEditor { get; set; } = "My Paragraph, \n Fresh and New";
+    public string FieldSelectEditor { get; set; } = "My Selection";
+    public int FieldIntSliderEditor { get; set; } = 10;
+    public float FieldFloatSliderEditor { get; set; } = 1.00f;
 }

@@ -1,4 +1,5 @@
 ﻿@using Components.Plugins.StyleManager;
+@using OpenCodeDev.Blazor.Foundation.Extensions
 @inject IStyleManagement StyleManagement;
 @implements IDisposable; 
 <style>
@@ -15,12 +16,9 @@
 @code{     
 
     private Dictionary<string, string> Style { get; set; } = new Dictionary<string, string>();
-    private static string Guid { get; set; }
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        if(Guid != null) { throw new Exception("The Style Management can only be added once usually in the shared layout."); }
-        Guid = System.Guid.NewGuid().ToString();
         await Populate();
         StyleManagement.OnUpdate += Populate;
     }
@@ -38,6 +36,5 @@
     public void Dispose()
     {
         StyleManagement.OnUpdate -= Populate;
-        Guid = null;
     }
 }

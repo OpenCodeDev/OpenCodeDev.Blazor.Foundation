@@ -17,7 +17,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         /// Unique HTML Identifier.
         /// </summary>
         [Parameter]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().HTMLCompliant().ToString();
 
         /// <summary>
         /// Custom Class to Append at the end of default Foundation Class.
@@ -93,15 +93,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 
         protected override void OnInitialized()
         {
-            if (Id == null)
-            {
-                Id = Guid.NewGuid().HTMLCompliant().ToString();
-                if (HasExtInput)
-                {
-                    HasExtInput = false;
-                    //Console.WriteLine("Slider Error, 'HasExtInput=true' but no Id defined. We reset HasExtInput to false and generated an id to avoid bind issues.");
-                }
-            }
+
             GlobalSliderList.Add(Id, this);
         }
 

@@ -75,7 +75,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         public bool? VerticalPadding { get; set; } = null;
         protected override void OnInitialized()
         {
-            if (Id != null)
+            if (Id == null)
             {
                 Id = Guid.NewGuid().HTMLCompliant().ToString();
             }

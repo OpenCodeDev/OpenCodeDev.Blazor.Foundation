@@ -2,6 +2,8 @@
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
 @using OpenCodeDev.Blazor.Foundation.Components.Controls;
 @using OpenCodeDev.Blazor.Foundation.Components.Forms;
+@using OpenCodeDev.Blazor.Foundation.Extensions;
+@using System.Text.RegularExpressions
 <SectionWrapper>
     <SectionLeft>
         <h2>Forms</h2>
@@ -30,11 +32,11 @@
             The object below is created to give context to our form, in the case it will be a login Forms.
             Left alignment is the default, but you can use one of these classes to change this:
         </p>
-        <HighlightCS Language="cs" Full="true" HeaderIcon="mdi-language-csharp" HeaderTitle="Class File"
+        <HighlightCode Language="cs" Full="true" HeaderIcon="mdi-language-csharp" HeaderTitle="Class File"
                      Content="dXNpbmcgU3lzdGVtLkNvbXBvbmVudE1vZGVsLkRhdGFBbm5vdGF0aW9uczsKcHVibGljIGNsYXNzIExvZ2luSW5wdXQKewogICAgW1JlcXVpcmVkKEVycm9yTWVzc2FnZSA9ICJUaGlzIGZpZWxkIGlzIHJlcXVpcmVkLiIpXQogICAgW0VtYWlsQWRkcmVzcyhFcnJvck1lc3NhZ2UgPSAiVGhpcyBmaWVsZCBtdXN0IGJlIGEgdmFsaWQgZW1haWwgYWRkcmVzcy4iKV0KICAgIFtTdHJpbmdMZW5ndGgoMjU2LCBFcnJvck1lc3NhZ2UgPSAiV2Ugb25seSBhbGxvdyBlbWFpbCAyNTYgY2hhcmFjdGVycyBvciBsZXNzLiIpXQogICAgcHVibGljIHN0cmluZyBFbWFpbCB7IGdldDsgc2V0OyB9CgogICAgW1JlcXVpcmVkKEVycm9yTWVzc2FnZSA9ICJUaGlzIGZpZWxkIGlzIHJlcXVpcmVkIildCiAgICBbRGF0YVR5cGUoRGF0YVR5cGUuUGFzc3dvcmQpXQogICAgW1N0cmluZ0xlbmd0aCg2NCwgTWluaW11bUxlbmd0aCA9IDEwKV0KICAgIHB1YmxpYyBzdHJpbmcgUGFzc3dvcmQgeyBnZXQ7IHNldDsgfQp9" />
         <h2>The Form</h2>
         <p>This is just to show how to implement a form in Blazor Foundation 6. The pattern is the same for any kind of forms.</p>
-        <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+        <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="QHVzaW5nIEJsYXpvcl9Gb3VuZGF0aW9uXzYuQ29tcG9uZW50cy5HZW5lcmFsOwpAdXNpbmcgQmxhem9yX0ZvdW5kYXRpb25fNi5Db21wb25lbnRzLkNvbnRyb2xzOwpAdXNpbmcgQmxhem9yX0ZvdW5kYXRpb25fNi5Db21wb25lbnRzLkNvbnRhaW5lcnM7CjxFZGl0Rm9ybSBFZGl0Q29udGV4dD0iQ29udGV4dCIgPgogICAgPERhdGFBbm5vdGF0aW9uc1ZhbGlkYXRvciAvPgogICAgPEdyaWRDb250YWluZXI+CiAgICAgICAgPEdyaWRZPgogICAgICAgICAgICA8Q2VsbD4KICAgICAgICAgICAgICAgIDxsYWJlbD4gCiAgICAgICAgICAgICAgICAgICAgTGFzdCBOYW1lCiAgICAgICAgICAgICAgICAgICAgPElucHV0VGV4dCBAYmluZC1WYWx1ZT0iQExvZ2luSW5wdXRzLkVtYWlsIiBwbGFjZWhvbGRlcj0iRW1haWwgQWRkcmVzcyIgdHlwZT0idGV4dCIgcGF0dGVybj0iYWxwaGFfbnVtZXJpYyIgcmVxdWlyZWQgLz4KICAgICAgICAgICAgICAgIDwvbGFiZWw+CiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZm9ybS1lcnJvciIgPgogICAgICAgICAgICAgICAgICAgIDxWYWxpZGF0aW9uTWVzc2FnZSBGb3I9IkAoKCkgPT4gTG9naW5JbnB1dHMuRW1haWwpIiAvPgogICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICA8L0NlbGw+CiAgICAgICAgICAgIDxDZWxsPgogICAgICAgICAgICAgICAgPGxhYmVsPgogICAgICAgICAgICAgICAgICAgIExhc3QgTmFtZQogICAgICAgICAgICAgICAgICAgIDxJbnB1dFRleHQgQGJpbmQtVmFsdWU9IkBMb2dpbklucHV0cy5QYXNzd29yZCIgcGxhY2Vob2xkZXI9IlBhc3N3b3JkIiB0eXBlPSJwYXNzd29yZCIgcmVxdWlyZWQgLz4KCiAgICAgICAgICAgICAgICA8L2xhYmVsPgogICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImZvcm0tZXJyb3IiPgogICAgICAgICAgICAgICAgICAgIDxWYWxpZGF0aW9uTWVzc2FnZSBGb3I9IkAoKCkgPT4gTG9naW5JbnB1dHMuUGFzc3dvcmQpIiAvPgogICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICA8L0NlbGw+CiAgICAgICAgICAgIDxDZWxsPgogICAgICAgICAgICAgICAgPEJ1dHRvbkdyb3VwPgogICAgICAgICAgICAgICAgICAgIDxCdXR0b24gQG9uY2xpY2s9IkAoKCkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmICghQ29udGV4dC5WYWxpZGF0ZSgpKSB7IHJldHVybjsgfQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIERhdGEgQXJlIFZhbGlkdGUsIFNlbmQgRm9ybSBKU09OLCBHUlBDLi4uCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KSI+VmFsaWRhdGU8L0J1dHRvbj4KICAgICAgICAgICAgICAgIDwvQnV0dG9uR3JvdXA+CiAgICAgICAgICAgIDwvQ2VsbD4KICAgICAgICA8L0dyaWRZPgogICAgPC9HcmlkQ29udGFpbmVyPgo8L0VkaXRGb3JtPgoKQGNvZGUgewogICAgcHVibGljIExvZ2luSW5wdXQgTG9naW5JbnB1dHMgeyBnZXQ7IHNldDsgfSA9IG5ldyBMb2dpbklucHV0KCk7CiAgICBwdWJsaWMgRWRpdENvbnRleHQgQ29udGV4dCB7IGdldDsgc2V0OyB9CgogICAgLy8vIDxzdW1tYXJ5PgogICAgLy8vIFNlbGYgVW5pcXVlIEluc3RhbmNlLCBBbGxvdyBmb3IgQWNjZXNzIGZyb20gb3V0c2lkZSBjb250cm9sbGVycyBsaWtlIFJldmVhbENvbnRyb2xsZXIKICAgIC8vLyA8L3N1bW1hcnk+CiAgICBwdWJsaWMgc3RhdGljIEF1dGhMb2dpbkVkaXRvciBJbnN0YW5jZSB7IGdldDsgc2V0OyB9ID0gbnVsbDsKCiAgICBwcm90ZWN0ZWQgb3ZlcnJpZGUgdm9pZCBPbkluaXRpYWxpemVkKCkKICAgIHsKICAgICAgICBiYXNlLk9uSW5pdGlhbGl6ZWQoKTsKICAgICAgICBDb250ZXh0ID0gbmV3IEVkaXRDb250ZXh0KExvZ2luSW5wdXRzKTsKICAgIH0KCn0K" />
         <p>As you can see, we don't submit the form using conventional way to do so and since we and probably yourself as well use JSON or GRPC apis submiting is kinda limiting your possibilities. With that method we lift limitation allowing you to use external buttons or other triggers such as <Code>RevealController's</Code> buttons to submit your data to the server</p>
         <hr />
@@ -48,7 +50,7 @@
             The object below is a Blazor Foundation 6 component <Code>@("<InputCreditCard />")</Code>.
         </p>
         <p>Unfortunately, the component is a one-way binding. When the user type-in his credit card number, the bound value will be updated always and not the other way around.</p>
-            <HighlightCS Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
+            <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PElucHV0Q3JlZGl0Q2FyZCBAYmluZC1DYXJkPSJATnVtYmVyIiAvPgpAY29kZSB7CiAgICBwdWJsaWMgc3RyaW5nIE51bWJlciB7IGdldDsgc2V0O30KfQo=" />
             <InputCreditCard @bind-Card="@Number" />
         <hr />
@@ -66,7 +68,7 @@
         <h3>MultiSelect</h3>
         <p>MultiSelect allows multiple item to be selected via switch and it is activable by turning <Code>MultiSelect=true</Code>.</p>
         <p><Code>SelectedElements=XXX</Code> and <Code>OnSelectedElementChanged=XXX</Code> are for <Code>MultiSelect=true</Code> only.</p>
-        <HighlightCS Language="razor" Full="true" Content="PElucHV0U2VsZWN0aW9uTGlzdCBUS2V5PUBzdHJpbmcgIE11bHRpU2VsZWN0PXRydWUgRWxlbWVudHM9QFNob3BwaW5nQ2FydCBTZWxlY3RlZEVsZW1lbnRzPUBTZWxlY3RlZFNob3BwaW5nQ2FydCAKICAgIE9uU2VsZWN0ZWRFbGVtZW50Q2hhbmdlZD1AKChzZWwpPT57U2VsZWN0ZWRTaG9wcGluZ0NhcnQgPSBzZWw7IFN0YXRlSGFzQ2hhbmdlZCgpO30pIC8+CjxwPkBDb21waWxlZFNob3BwaW5nQ2FydDwvcD4KCkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgQ29tcGlsZWRTaG9wcGluZ0NhcnQgPT4gU3RyaW5nLkpvaW4oIiwiLCBTZWxlY3RlZFNob3BwaW5nQ2FydC5XaGVyZShwID0+IFNob3BwaW5nQ2FydC5BbnkoeCA9PiB4LktleSA9PSBwKSkuU2VsZWN0KHAgPT4gICQie1Nob3BwaW5nQ2FydFtwXX0gKHtwfSkiKSk7CiAgICBwdWJsaWMgTGlzdDxzdHJpbmc+IFNlbGVjdGVkU2hvcHBpbmdDYXJ0IHsgZ2V0OyBzZXQ7IH0gPSBuZXcgTGlzdDxzdHJpbmc+KCk7CiAgICBwdWJsaWMgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4gU2hvcHBpbmdDYXJ0IHsgZ2V0OyBzZXQ7IH0gPSBuZXcgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4oKQogICAgewogICAgICAgIHsgIjcyNTI3MjczMDcwIiwgIktpZG5leSBCZWFucyAxa2ciIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzEiLCAiTGFtYiBDaG9wcyAxa2ciIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzIiLCAiQ29jb251dCBXYXRlciAxMDAwbUwiIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzMiLCAiQmFuYW5hIEJ1bmNoIDFrZyIgfSwKICAgICAgICB7ICI3MjUyNzI3MzA3NCIsICJCaWcgRmF0IFdoaXRlIE9uaW9uIDEgVW5pdCIgfSwKICAgICAgICB7ICI3MjUyNzI3MzA3NSIsICJCaXRjb2luIGZvciBPQ0QgMC4wMDA0IGJ0YyA6RCIgfSwKICAgIH07Cgp9" />
+        <HighlightCode Language="razor" Full="true" Content="PElucHV0U2VsZWN0aW9uTGlzdCBUS2V5PUBzdHJpbmcgIE11bHRpU2VsZWN0PXRydWUgRWxlbWVudHM9QFNob3BwaW5nQ2FydCBTZWxlY3RlZEVsZW1lbnRzPUBTZWxlY3RlZFNob3BwaW5nQ2FydCAKICAgIE9uU2VsZWN0ZWRFbGVtZW50Q2hhbmdlZD1AKChzZWwpPT57U2VsZWN0ZWRTaG9wcGluZ0NhcnQgPSBzZWw7IFN0YXRlSGFzQ2hhbmdlZCgpO30pIC8+CjxwPkBDb21waWxlZFNob3BwaW5nQ2FydDwvcD4KCkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgQ29tcGlsZWRTaG9wcGluZ0NhcnQgPT4gU3RyaW5nLkpvaW4oIiwiLCBTZWxlY3RlZFNob3BwaW5nQ2FydC5XaGVyZShwID0+IFNob3BwaW5nQ2FydC5BbnkoeCA9PiB4LktleSA9PSBwKSkuU2VsZWN0KHAgPT4gICQie1Nob3BwaW5nQ2FydFtwXX0gKHtwfSkiKSk7CiAgICBwdWJsaWMgTGlzdDxzdHJpbmc+IFNlbGVjdGVkU2hvcHBpbmdDYXJ0IHsgZ2V0OyBzZXQ7IH0gPSBuZXcgTGlzdDxzdHJpbmc+KCk7CiAgICBwdWJsaWMgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4gU2hvcHBpbmdDYXJ0IHsgZ2V0OyBzZXQ7IH0gPSBuZXcgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4oKQogICAgewogICAgICAgIHsgIjcyNTI3MjczMDcwIiwgIktpZG5leSBCZWFucyAxa2ciIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzEiLCAiTGFtYiBDaG9wcyAxa2ciIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzIiLCAiQ29jb251dCBXYXRlciAxMDAwbUwiIH0sCiAgICAgICAgeyAiNzI1MjcyNzMwNzMiLCAiQmFuYW5hIEJ1bmNoIDFrZyIgfSwKICAgICAgICB7ICI3MjUyNzI3MzA3NCIsICJCaWcgRmF0IFdoaXRlIE9uaW9uIDEgVW5pdCIgfSwKICAgICAgICB7ICI3MjUyNzI3MzA3NSIsICJCaXRjb2luIGZvciBPQ0QgMC4wMDA0IGJ0YyA6RCIgfSwKICAgIH07Cgp9" />
         
         <InputSelectionList TKey=@string  MultiSelect=true Elements=@ShoppingCart SelectedElements=@SelectedShoppingCart 
         OnSelectedElementChanged=@((sel)=>{SelectedShoppingCart = sel; StateHasChanged();}) />
@@ -79,20 +81,99 @@
             Note: when <strong>MultiSelect</strong> remain true the default behavior is to allow multiple selection and <strong>RadioSelection</strong> and 
             <strong>OnRadioSelectedChanged</strong> will be ignored.
         </Callout>
-        <HighlightCS Language="razor" Full="true" Content="PElucHV0U2VsZWN0aW9uTGlzdCBUS2V5PUBzdHJpbmcgIE11bHRpU2VsZWN0PWZhbHNlIEVsZW1lbnRzPUAoQ2FyQ29sb3IpIFJhZGlvU2VsZWN0aW9uPUBTZWxlY3RlZENhckNvbG9yIAogICAgT25SYWRpb1NlbGVjdGVkQ2hhbmdlZD1AKChzZWwpPT57U2VsZWN0ZWRDYXJDb2xvciA9IHNlbDsgU3RhdGVIYXNDaGFuZ2VkKCk7fSkgRGlzYWJsZWQ9QElzQnVzeS8+CjxwPk15IGNhciBjb2xvciB3aWxsIGJlLi4uIEBDb21wbGllZENhclNlbGVjdGlvbjwvcD4KCkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgQ29tcGxpZWRDYXJTZWxlY3Rpb24gPT4gU2VsZWN0ZWRDYXJDb2xvciA9PSBudWxsID8gIk5vdCBkZWNpZGVkIHlldCEiIDogQ2FyQ29sb3IuV2hlcmUocCA9PiBwLktleSA9PSBTZWxlY3RlZENhckNvbG9yKS5TZWxlY3QocCA9PiBwLlZhbHVlKS5TaW5nbGVPckRlZmF1bHQoKTsKICAgIHB1YmxpYyBzdHJpbmcgU2VsZWN0ZWRDYXJDb2xvciB7IGdldDsgc2V0OyB9CiAgICBwdWJsaWMgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4gQ2FyQ29sb3IgeyBnZXQ7IHNldDsgfSA9IG5ldyBEaWN0aW9uYXJ5PHN0cmluZywgc3RyaW5nPigpCiAgICB7CiAgICAgICAgeyAicmVkbWV0IiwgIlJlZCBNZXRhbGxpYyIgfSwKICAgICAgICB7ICJyZWRtYXQiLCAiUmVkIE1hdHRlIiB9LAogICAgICAgIHsgInJlZGdsb3NzIiwgIlJlZCBHbG9zc3kiIH0sCiAgICAgICAgeyAiYmxhY2ttZXQiLCAiQmxhY2sgTWV0YWxsaWMiIH0sCiAgICAgICAgeyAiYmxhY2ttYXR0ZSIsICJCbGFjayBNYXR0ZSIgfSwKICAgICAgICB7ICJibGFja2dsb3NzIiwgIkJsYWNrIEdsb3NzeSIgfSwKICAgIH07CgogICAgcHVibGljIGJvb2wgSXNCdXN5IHsgZ2V0OyBzZXQ7IH0KCn0=" />
+        <HighlightCode Language="razor" Full="true" Content="PElucHV0U2VsZWN0aW9uTGlzdCBUS2V5PUBzdHJpbmcgIE11bHRpU2VsZWN0PWZhbHNlIEVsZW1lbnRzPUAoQ2FyQ29sb3IpIFJhZGlvU2VsZWN0aW9uPUBTZWxlY3RlZENhckNvbG9yIAogICAgT25SYWRpb1NlbGVjdGVkQ2hhbmdlZD1AKChzZWwpPT57U2VsZWN0ZWRDYXJDb2xvciA9IHNlbDsgU3RhdGVIYXNDaGFuZ2VkKCk7fSkgRGlzYWJsZWQ9QElzQnVzeS8+CjxwPk15IGNhciBjb2xvciB3aWxsIGJlLi4uIEBDb21wbGllZENhclNlbGVjdGlvbjwvcD4KCkBjb2RlIHsKICAgIHB1YmxpYyBzdHJpbmcgQ29tcGxpZWRDYXJTZWxlY3Rpb24gPT4gU2VsZWN0ZWRDYXJDb2xvciA9PSBudWxsID8gIk5vdCBkZWNpZGVkIHlldCEiIDogQ2FyQ29sb3IuV2hlcmUocCA9PiBwLktleSA9PSBTZWxlY3RlZENhckNvbG9yKS5TZWxlY3QocCA9PiBwLlZhbHVlKS5TaW5nbGVPckRlZmF1bHQoKTsKICAgIHB1YmxpYyBzdHJpbmcgU2VsZWN0ZWRDYXJDb2xvciB7IGdldDsgc2V0OyB9CiAgICBwdWJsaWMgRGljdGlvbmFyeTxzdHJpbmcsIHN0cmluZz4gQ2FyQ29sb3IgeyBnZXQ7IHNldDsgfSA9IG5ldyBEaWN0aW9uYXJ5PHN0cmluZywgc3RyaW5nPigpCiAgICB7CiAgICAgICAgeyAicmVkbWV0IiwgIlJlZCBNZXRhbGxpYyIgfSwKICAgICAgICB7ICJyZWRtYXQiLCAiUmVkIE1hdHRlIiB9LAogICAgICAgIHsgInJlZGdsb3NzIiwgIlJlZCBHbG9zc3kiIH0sCiAgICAgICAgeyAiYmxhY2ttZXQiLCAiQmxhY2sgTWV0YWxsaWMiIH0sCiAgICAgICAgeyAiYmxhY2ttYXR0ZSIsICJCbGFjayBNYXR0ZSIgfSwKICAgICAgICB7ICJibGFja2dsb3NzIiwgIkJsYWNrIEdsb3NzeSIgfSwKICAgIH07CgogICAgcHVibGljIGJvb2wgSXNCdXN5IHsgZ2V0OyBzZXQ7IH0KCn0=" />
         
 <InputSelectionList TKey=@string  MultiSelect=false Elements=@(CarColor) RadioSelection=@SelectedCarColor 
     OnRadioSelectedChanged=@((sel)=>{SelectedCarColor = sel; StateHasChanged();}) Disabled=@IsBusy/>
+
+
 <p>My car color will be... @CompliedCarSelection</p>
 
         <h3>Server Busy</h3>
         <p>You can disable the input by using <Code>Disabled=true</Code> so while awaitng for the server the control can be made inaccessible.</p>
+        
+<h3>Object is the Key</h3>
+<p>You can setup an object as a key</p>
+<InputSelectionList TKey=@ListKeyTest  MultiSelect=false Elements=@(ListOfObjKey) RadioSelection=@SelectedObjKey 
+    OnRadioSelectedChanged=@((sel)=>{SelectedObjKey = sel; StateHasChanged();}) Disabled=@IsBusy />
+        <HighlightCode Language="razor" Full="true" Content="PGgzPk9iamVjdCBpcyB0aGUgS2V5PC9oMz4KPHA+WW91IGNhbiBzZXR1cCBhbiBvYmplY3QgYXMgYSBrZXk8L3A+CjxJbnB1dFNlbGVjdGlvbkxpc3QgVEtleT1ATGlzdEtleVRlc3QgIE11bHRpU2VsZWN0PWZhbHNlIEVsZW1lbnRzPUAoTGlzdE9mT2JqS2V5KSBSYWRpb1NlbGVjdGlvbj1AU2VsZWN0ZWRPYmpLZXkgCiAgICBPblJhZGlvU2VsZWN0ZWRDaGFuZ2VkPUAoKHNlbCk9PntTZWxlY3RlZE9iaktleSA9IHNlbDsgU3RhdGVIYXNDaGFuZ2VkKCk7fSkgRGlzYWJsZWQ9QElzQnVzeSAvPgoKQGNvZGV7CiAgICBwdWJsaWMgYm9vbCBJc0J1c3kgeyBnZXQ7IHNldDsgfQogICAgcHVibGljIExpc3RLZXlUZXN0IFNlbGVjdGVkT2JqS2V5IHsgZ2V0OyBzZXQ7IH0KCiAgICBwdWJsaWMgRGljdGlvbmFyeTxMaXN0S2V5VGVzdCwgc3RyaW5nPiBMaXN0T2ZPYmpLZXkgeyBnZXQ7IHNldDsgfSA9IG5ldyBEaWN0aW9uYXJ5PExpc3RLZXlUZXN0LCBzdHJpbmc+KCkKICAgIHsKICAgICAgICB7IG5ldyBMaXN0S2V5VGVzdCgpICwgIk9iamVjdCBBIiB9LAogICAgICAgIHsgbmV3IExpc3RLZXlUZXN0KCkgLCAiT2JqZWN0IEIiIH0sCiAgICAgICAgeyBuZXcgTGlzdEtleVRlc3QoKSAsICJPYmplY3QgQyIgfSwKICAgICAgICB7IG5ldyBMaXN0S2V5VGVzdCgpICwgIk9iamVjdCBEIiB9LAogICAgICAgIHsgbmV3IExpc3RLZXlUZXN0KCkgLCAiT2JqZWN0IEUiIH0sCiAgICB9OwoKfQ==" />
+        <HighlightCode Language="cs" Full="true" Content="cHVibGljIGNsYXNzIExpc3RLZXlUZXN0CnsKICAgIHB1YmxpYyBzdHJpbmcgTmFtZSB7IGdldDsgc2V0OyB9Cn0=" />
+        
         <hr />
     </SectionLeft>
 </SectionWrapper>
 
 
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Password Attributes</h2>
+        <p>Blazor Foundation includes c# attributes for Password Validation with EditContext.</p>
+        <h3>Requirement</h3>
+        <p>Password attributes required <Code>OpenCodeDev.Blazor.Foundation.Extensions</Code> package and use <Code>using OpenCodeDev.Blazor.Foundation.Extensions.ValidatorAttributes;</Code>.</p>
+        <h3>Quick and Sloppy (Not Specific Error Messages)</h3>
+        <p>If you don't want or if you have a front end method to handle password validation you can use <Code>[PasswordStrength]</Code>.</p>
+        <p>This attribute checks for predefined specifics about the minimum strength you've choosen. Check out Intellisense for more details.</p>
+        <ul>
+            <li>[Not Recommended] Weak (5 Characters Minimum, 1 Lowercase and 1 Uppercase)</li>
+            <li>[Low Security] Decent (10 Characters Minimum, 1 Lowercase, 1 Uppercase and 1 Digit)</li>
+            <li>[Recommended] Strong (12 Characters Minimum, 1 Lowercase, 1 Uppercase, 1 Digit and 1 Special)</li>
+        </ul>
+        <HighlightCode Language="cs" Full="true" Content="cHVibGljIGNsYXNzIFRlc3RQYXNzd29yZAp7CiAgICBbUGFzc3dvcmRTdHJlbmd0aChQYXNzd29yZFN0cmVuZ3RoLkFsbG93U3Ryb25nUGFzc3dvcmQpXQogICAgcHVibGljIHN0cmluZyBQYXNzd29yZCB7IGdldDsgc2V0OyB9Cn0=" />
+        
+        <h3>Allowed Characters Only</h3>
+        <p>Use <Code>[PasswordAllowedCharacters]</Code> to allow only our default characters which is common <Code>@PasswordExt.Characters_All</Code></p>
 
+        <h3>Minimum Lowercase Required</h3>
+        <p>Use <Code>[PasswordLowercase(1)]</Code> to allow a minimum lowercase character in the password.</p>
+
+        <h3>Minimum Uppercase Required</h3>
+        <p>Use <Code>[PasswordUppercase(1)]</Code> to allow a minimum uppercase character in the password.</p>
+
+        <h3>Minimum Digits Required</h3>
+        <p>Use <Code>[PasswordDigits(1)]</Code> to allow a minimum number of digits in the password.</p>
+
+        <h3>Minimum Specials Required</h3>
+        <p>Use <Code>[PasswordSpecials(1)]</Code> to allow a minimum of special characters in the password.</p>
+
+        <h3>What it should look like?</h3>
+        <HighlightCode Language="cs" Full="true" Content="cHVibGljIGNsYXNzIEF1dGhMb2dpbgp7CiAgICBbRW1haWxBZGRyZXNzKEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfRklFTERfRU1BSUxfRk9STUFUIiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VUeXBlID0gdHlwZW9mKERhdGFBbm5vdGF0aW9uKSldCiAgICBbUmVxdWlyZWQoRXJyb3JNZXNzYWdlUmVzb3VyY2VOYW1lID0gIkVSUl9GSUVMRF9SRVFVSVJFRCIsIEVycm9yTWVzc2FnZVJlc291cmNlVHlwZSA9IHR5cGVvZihEYXRhQW5ub3RhdGlvbikpXQogICAgcHVibGljIHN0cmluZyBFbWFpbCB7IGdldDsgc2V0OyB9CgogICAgW1JlcXVpcmVkKEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfRklFTERfUkVRVUlSRUQiLCBFcnJvck1lc3NhZ2VSZXNvdXJjZVR5cGUgPSB0eXBlb2YoRGF0YUFubm90YXRpb24pKV0KICAgIFtQYXNzd29yZFNwZWNpYWwoQXRMZWFzdCA9IDEsIEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfUEFTU1dPUkRfTk9UX01FRVRfTUlOSU1VTSIsIEVycm9yTWVzc2FnZVJlc291cmNlVHlwZSA9IHR5cGVvZihEYXRhQW5ub3RhdGlvbikpXQogICAgW1Bhc3N3b3JkRGlnaXQoQXRMZWFzdCA9IDEsIEVycm9yTWVzc2FnZVJlc291cmNlTmFtZSA9ICJFUlJfUEFTU1dPUkRfTk9UX01FRVRfTUlOSU1VTSIsIEVycm9yTWVzc2FnZVJlc291cmNlVHlwZSA9IHR5cGVvZihEYXRhQW5ub3RhdGlvbikpXQogICAgW1Bhc3N3b3JkTG93ZXJDYXNlKEF0TGVhc3QgPSAxLCBFcnJvck1lc3NhZ2VSZXNvdXJjZU5hbWUgPSAiRVJSX1BBU1NXT1JEX05PVF9NRUVUX01JTklNVU0iLCBFcnJvck1lc3NhZ2VSZXNvdXJjZVR5cGUgPSB0eXBlb2YoRGF0YUFubm90YXRpb24pKV0KICAgIFtQYXNzd29yZFVwcGVyQ2FzZShBdExlYXN0ID0gMSwgRXJyb3JNZXNzYWdlUmVzb3VyY2VOYW1lID0gIkVSUl9QQVNTV09SRF9OT1RfTUVFVF9NSU5JTVVNIiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VUeXBlID0gdHlwZW9mKERhdGFBbm5vdGF0aW9uKSldCiAgICBbUGFzc3dvcmRBbGxvd2VkQ2hhcmF0ZXJzT25seShFcnJvck1lc3NhZ2VSZXNvdXJjZU5hbWUgPSAiRVJSX1BBU1NXT1JEX05PVF9NRUVUX01JTklNVU0iLCBFcnJvck1lc3NhZ2VSZXNvdXJjZVR5cGUgPSB0eXBlb2YoRGF0YUFubm90YXRpb24pKV0KICAgIFtTdHJpbmdMZW5ndGgoMzIsIE1pbmltdW1MZW5ndGggPSAxMiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VOYW1lID0gIkVSUl9QQVNTV09SRF9OT1RfTUVFVF9NSU5JTVVNIiwgRXJyb3JNZXNzYWdlUmVzb3VyY2VUeXBlID0gdHlwZW9mKERhdGFBbm5vdGF0aW9uKSldCiAgICBwdWJsaWMgc3RyaW5nIFBhc3N3b3JkIHsgZ2V0OyBzZXQ7IH0KfQ==" />
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+        <h2>Abide Attribues</h2>
+        <p>Zurb's Foundation 6 provide regex patterns also available in <Code>OpenCodeDev.Blazor.Foundation.Extensions</Code> in the <Code>Abide</Code> class.</p>
+        <p>We also have created a list of Abide attributes for EditContext validation.</p>
+        <p>Here's cs class used for the following examples.</p>
+
+        <TableWrapper>
+            <TableHeader>
+                <TableHeaderItem>C# Attribute</TableHeaderItem>
+                <TableHeaderItem>Test It</TableHeaderItem>
+                <TableHeaderItem>Code</TableHeaderItem>
+            </TableHeader>
+            <TableBody>
+                <TableBodyRow>
+                    <TableBodyRowItem>
+                        @("[AbideAlpha]")
+                    </TableBodyRowItem>
+                    <TableBodyRowItem>
+                        <p>@Tester()</p>
+                        <input type="text" placeholder="type alpha" @bind=AbideTest.Alpha @bind:event="oninput" />
+                        
+                        @if(AbideTest.GetContext().GetPropErrors(nameof(AbideTest.Alpha)) != null) { 
+                            <p>@AbideTest.GetContext().GetPropErrors(nameof(AbideTest.Alpha))</p>
+                            
+                        }else{<p>This Input is Valid</p>}
+                    </TableBodyRowItem>
+                </TableBodyRow>
+            </TableBody>
+        </TableWrapper>
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
 
 @code {
     private string _Number = "";
@@ -110,6 +191,17 @@
         { "blackgloss", "Black Glossy" },
     };
 
+    public ListKeyTest SelectedObjKey { get; set; }
+
+    public Dictionary<ListKeyTest, string> ListOfObjKey { get; set; } = new Dictionary<ListKeyTest, string>()
+    {
+        { new ListKeyTest() , "Object A" },
+        { new ListKeyTest() , "Object B" },
+        { new ListKeyTest() , "Object C" },
+        { new ListKeyTest() , "Object D" },
+        { new ListKeyTest() , "Object E" },
+    };
+
     public bool IsBusy { get; set; }
 
     public string CompiledShoppingCart => String.Join(",", SelectedShoppingCart.Where(p => ShoppingCart.Any(x => x.Key == p)).Select(p =>  $"{ShoppingCart[p]} ({p})"));
@@ -124,4 +216,13 @@
         { "72527273075", "Bitcoin for OCD 0.0004 btc :D" },
     };
 
+
+    public Forms_Abide_Test AbideTest { get; set; } = new Forms_Abide_Test();
+
+    public string Tester()
+    {
+        if (AbideTest.Alpha == null) return "Null";
+        var regex = new Regex(Abide.ALPHA);
+        return regex.IsMatch(AbideTest.Alpha) ? "Match" : "No Match";
+    }
 }

@@ -38,6 +38,9 @@ else
     [Parameter]
     public string Content { get; set; } = null;
 
+        [Parameter]
+        public byte[] ContentBytes { get; set; } = null;
+
     /// <summary>
     /// Default: cs <br/>
     /// Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python <br/>
@@ -79,6 +82,7 @@ else
                 builder.AddAttribute(0, "HeaderTitleColor", HeaderTitleColor);
                 builder.AddAttribute(0, "Full", Full);
                 builder.AddAttribute(0, "Content", Content);
+                builder.AddAttribute(0, "ContentBytes", ContentBytes);
                 builder.AddAttribute(0, "Language", Language);
                 builder.CloseComponent();
         };

@@ -30,6 +30,19 @@ a:hover, a:focus {
     border-radius:var(--button-border-radius);
 }
 
+// First Element
+.button-group > .button {
+    border-radius: var(--button-group-first-border-radius);
+}
+//Middle Elements
+.button-group > .button ~ .button {
+    border-radius: var(--button-group-middle-border-radius);
+}
+// Last Element
+.button-group > .button:last-of-type {
+    border-radius: var(--button-group-last-border-radius);
+}
+
 .button:hover, .button:focus {
     background: var(--button-bg-color);
     color: var(--button-ft-color);
@@ -219,9 +232,9 @@ a:hover, a:focus {
     filter: grayscale(50%);
 }
 
+
 input:checked ~ .switch-paddle {
     background: var(--switch-bg-color);
-    
 }
 
 .switch .switch-paddle {

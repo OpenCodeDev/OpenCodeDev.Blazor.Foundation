@@ -1,0 +1,23 @@
+﻿@using OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal;
+@if(StyleManager != null)
+{
+    <BlazorFoundationStyle />   
+}
+
+@if(NovelRevealController != null)
+{
+    <NovelReveal @ref=NovelRevealInstance  />
+}
+
+@ChildContent
+
+@if(LegacyRevealController)
+{
+    <RevealController />
+}
+
+
+@code {
+    
+}

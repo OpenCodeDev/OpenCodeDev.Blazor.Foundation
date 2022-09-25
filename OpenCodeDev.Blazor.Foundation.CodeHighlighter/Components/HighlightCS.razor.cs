@@ -44,6 +44,9 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
         [Parameter]
         public string Content { get; set; } = null;
 
+        [Parameter]
+        public byte[] ContentBytes { get; set; } = null;
+
         /// <summary>
         /// Default: cs <br/>
         /// Supported: cs, c, cpp, fsharp, golang, html, xml, js, md, php, python <br/>
@@ -108,7 +111,11 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
                 }
 
             }
-            return "No Content Provided";
+            else if (ContentBytes != null)
+            {
+                return Encoding.Default.GetString(ContentBytes);
+            }
+            return Localization.Lang.NoContentHighlightCS;
         }
 
         /// <summary>
