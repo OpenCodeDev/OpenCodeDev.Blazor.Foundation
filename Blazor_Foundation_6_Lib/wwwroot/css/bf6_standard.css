@@ -2702,61 +2702,6 @@ a.button:hover, a.button:focus {
     height: 1.4rem;
     transform: translateX(-50%); }
 
-input[type='range'] {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 0.45rem;
-  margin-bottom: 0.45rem;
-  appearance: none;
-  border: 0;
-  line-height: 1;
-  cursor: pointer; }
-  input[type='range']:focus {
-    outline: 0; }
-  input[type='range'][disabled] {
-    opacity: 0.25; }
-  input[type='range']::-webkit-slider-runnable-track {
-    height: 0.5rem;
-    background: #e6e6e6; }
-  input[type='range']::-webkit-slider-thumb {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin-top: -0.45rem;
-    -webkit-appearance: none;
-    background: #1779ba; }
-  input[type='range']::-moz-range-track {
-    height: 0.5rem;
-    -moz-appearance: none;
-    background: #e6e6e6; }
-  input[type='range']::-moz-range-thumb {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin-top: -0.45rem;
-    -moz-appearance: none;
-    background: #1779ba; }
-  input[type='range']::-ms-track {
-    height: 0.5rem;
-    border: 0;
-    border-top: 0.45rem solid #fefefe;
-    border-bottom: 0.45rem solid #fefefe;
-    background: #e6e6e6;
-    overflow: visible;
-    color: transparent; }
-  input[type='range']::-ms-thumb {
-    width: 1.4rem;
-    height: 1.4rem;
-    border: 0;
-    background: #1779ba; }
-  input[type='range']::-ms-fill-lower {
-    background: #cacaca; }
-  input[type='range']::-ms-fill-upper {
-    background: #e6e6e6; }
-  output {
-    vertical-align: middle;
-    margin-left: 0.5em;
-    line-height: 1.4rem; }
-
 .switch {
   position: relative;
   margin-bottom: 1rem;
@@ -5352,6 +5297,18 @@ html.is-reveal-open {
  * https://bf.opendevcode.com/
  * Licensed under MIT Open Source
  */
+/**
+ * Foundation for Sites
+ * Version 6.7.4
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+@media print, screen and (min-width: 40em) {
+  .reveal, .reveal.tiny, .reveal.small, .reveal.large {
+    right: auto;
+    left: auto;
+    margin: 0 auto; } }
+
 .spacing {
   margin-left: 1em;
   margin-right: 1em; }
@@ -6525,3 +6482,49 @@ input:checked ~ .switch-paddle {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.justify-content-left {
+  justify-content: left; }
+
+.justify-content-right {
+  justify-content: right; }
+
+.justify-content-center {
+  justify-content: center; }
+
+.justify-content-space-around {
+  justify-content: space-around; }
+
+.justify-content-space-between {
+  justify-content: space-between; }
+
+.justify-content-space-evenly {
+  justify-content: space-evenly; }
+
+@media print, screen and (min-width: 40em) {
+  .medium-justify-content-left {
+    justify-content: left; }
+  .medium-justify-content-right {
+    justify-content: right; }
+  .medium-justify-content-center {
+    justify-content: center; }
+  .medium-justify-content-space-around {
+    justify-content: space-around; }
+  .medium-justify-content-space-between {
+    justify-content: space-between; }
+  .medium-justify-content-space-evenly {
+    justify-content: space-evenly; } }
+
+@media print, screen and (min-width: 64em) {
+  .large-justify-content-left {
+    justify-content: left; }
+  .large-justify-content-right {
+    justify-content: right; }
+  .large-justify-content-center {
+    justify-content: center; }
+  .large-justify-content-space-around {
+    justify-content: space-around; }
+  .large-justify-content-space-between {
+    justify-content: space-between; }
+  .large-justify-content-space-evenly {
+    justify-content: space-evenly; } }

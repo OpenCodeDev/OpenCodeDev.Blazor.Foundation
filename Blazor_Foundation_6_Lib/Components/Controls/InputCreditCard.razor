@@ -1,10 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
-<input type="text" minlength="13" maxlength="23"
+<input type="text" data-inputmask="'mask': '9999 9999 9999 9999'"
        @bind="@BackingNumber" 
        @oninput="@(async (args)=>await Input(args))" 
-       @onkeyup="@(async (args)=>await Keyup(args))"
-       @onkeydown="@(async (args)=>await Keydown(args))"
        @attributes="@AdditionalAttributes" />
 
 @code {

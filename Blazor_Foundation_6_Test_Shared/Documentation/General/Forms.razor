@@ -53,6 +53,7 @@
             <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="PElucHV0Q3JlZGl0Q2FyZCBAYmluZC1DYXJkPSJATnVtYmVyIiAvPgpAY29kZSB7CiAgICBwdWJsaWMgc3RyaW5nIE51bWJlciB7IGdldDsgc2V0O30KfQo=" />
             <InputCreditCard @bind-Card="@Number" />
+            <p>Card Number: @Number</p>
         <hr />
     </SectionLeft>
 </SectionWrapper>
@@ -176,8 +177,8 @@
 </SectionWrapper>
 
 @code {
-    private string _Number = "";
-    public string Number { get => _Number; set { Console.WriteLine(value); _Number = value; } }
+    private string _Number = "4242424242424242";
+    public string Number { get => _Number; set { _Number = value; } }
 
     public string CompliedCarSelection => SelectedCarColor == null ? "Not decided yet!" : CarColor.Where(p => p.Key == SelectedCarColor).Select(p => p.Value).SingleOrDefault();
     public string SelectedCarColor { get; set; }

@@ -4,6 +4,12 @@
  * https://bf.opendevcode.com/
  * Licensed under MIT Open Source
  */
+/**
+ * Foundation for Sites
+ * Version 6.7.4
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
 .spacing {
   margin-left: 1em;
   margin-right: 1em; }
@@ -1174,3 +1180,49 @@ input:checked ~ .switch-paddle {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.justify-content-left {
+  justify-content: left; }
+
+.justify-content-right {
+  justify-content: right; }
+
+.justify-content-center {
+  justify-content: center; }
+
+.justify-content-space-around {
+  justify-content: space-around; }
+
+.justify-content-space-between {
+  justify-content: space-between; }
+
+.justify-content-space-evenly {
+  justify-content: space-evenly; }
+
+@media print, screen and (min-width: 40em) {
+  .medium-justify-content-left {
+    justify-content: left; }
+  .medium-justify-content-right {
+    justify-content: right; }
+  .medium-justify-content-center {
+    justify-content: center; }
+  .medium-justify-content-space-around {
+    justify-content: space-around; }
+  .medium-justify-content-space-between {
+    justify-content: space-between; }
+  .medium-justify-content-space-evenly {
+    justify-content: space-evenly; } }
+
+@media print, screen and (min-width: 64em) {
+  .large-justify-content-left {
+    justify-content: left; }
+  .large-justify-content-right {
+    justify-content: right; }
+  .large-justify-content-center {
+    justify-content: center; }
+  .large-justify-content-space-around {
+    justify-content: space-around; }
+  .large-justify-content-space-between {
+    justify-content: space-between; }
+  .large-justify-content-space-evenly {
+    justify-content: space-evenly; } }
