@@ -19,6 +19,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
         Task SimpleMessage(string title, string message, Action<string> setId = null);
         Task ComplexMessageCloseConditional(string title, RenderFragment message, Func<Task<bool>> hasConditionMet, Action<string> setId = null);
         Task ComplexMessage(string title, RenderFragment message, Func<Task> onCloseCallback = null, bool canclose = true, Action<string> setId = null);
+        Task ComplexMessage(string title, Func<Containers.Reveal, Task<RenderFragment>> functionContent, Func<Task> onCloseCallback = null, bool canclose = true, Action<string> setId = null);
+
         Task<int> TwoAnswerMessage(string title, string message, string option1Label, string option2label,
             Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
             string titleIcon = null, Action<string> setId = null, string optionwrapperstyle = "justify-content:flex-end;");

@@ -1,105 +1,111 @@
-﻿
+﻿@using System.Globalization
+@using OpenCodeDev.Blazor.Foundation.Extensions.LocalStorage;
+@inject ILocalStorage LocalStorage;
+
+@using Microsoft.Extensions.Localization;
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Shared.Resources;
+@inject IStringLocalizer<Resource> Localized;
 
 <Accordion Class="menu-accordion-doc-wrapper" MultiOpen="true">
 
     @ChildContent
     
-    <AccordionItem Title="Debugging Tool" Active="true">
+    <AccordionItem Title=@Localized["Debugging_Tool_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/wasm/modules" data-close="SideMenu">Loaded Modules</NavLink></li>
+            <li><NavLink href="/wasm/modules" data-close="SideMenu">@Localized["Load_Module_Menu"]</NavLink></li>
             @*<li><NavLink href="/wasm/testmarkdown" data-close="SideMenu">Markdown Parser</NavLink></li>*@
         </MenuNested>
     </AccordionItem>
 
-    <AccordionItem Title="Getting Started" Active="true">
+    <AccordionItem Title=@Localized["Getting_Started_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/welcome" data-close="SideMenu">Welcome</NavLink></li>
-            <li><NavLink href="/installation" data-close="SideMenu">Installation</NavLink></li>
-            <li><NavLink href="/compatibility" data-close="SideMenu">Compatibility</NavLink></li>
+            <li><NavLink href="/welcome" data-close="SideMenu">@Localized["Welcome_Menu"]</NavLink></li>
+            <li><NavLink href="/installation" data-close="SideMenu">@Localized["Installation_Menu"]</NavLink></li>
+            <li><NavLink href="/compatibility" data-close="SideMenu">@Localized["Compatibility_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="Setup" Active="true">
+    <AccordionItem Title=@Localized["Setup_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/global-styles" data-close="SideMenu">Global Styles</NavLink></li>
+            <li><NavLink href="/global-styles" data-close="SideMenu">@Localized["Global_Styles_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="General"  Active="true">
+    <AccordionItem Title=@Localized["General_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/xy-grid" data-close="SideMenu">XY Grid</NavLink></li>
-            <li><NavLink href="/forms" data-close="SideMenu">Forms</NavLink></li>
+            <li><NavLink href="/xy-grid" data-close="SideMenu">@Localized["XY_Grid_Menu"]</NavLink></li>
+            <li><NavLink href="/forms" data-close="SideMenu">@Localized["Forms_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="Utilities"  Active="true">
+    <AccordionItem Title=@Localized["Utilities_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/prototyping" data-close="SideMenu">Prototyping</NavLink></li>
-            <li><NavLink href="/flexbox" data-close="SideMenu">Flexbox</NavLink></li>
-            <li><NavLink href="/visibility-classes" data-close="SideMenu">Visibility Classes</NavLink></li>
-            <li><NavLink href="/float-classes" data-close="SideMenu">Float Classes</NavLink></li>
-            <li><NavLink href="/bf6-icons" data-close="SideMenu">Icons</NavLink></li>
-            <li><NavLink href="/material-design-icons" data-close="SideMenu">Material Design Icons</NavLink></li>
+            <li><NavLink href="/prototyping" data-close="SideMenu">@Localized["Prototyping_Menu"]</NavLink></li>
+            <li><NavLink href="/flexbox" data-close="SideMenu">@Localized["Flexbox_Menu"]</NavLink></li>
+            <li><NavLink href="/visibility-classes" data-close="SideMenu">@Localized["Visibility_Classes_Menu"]</NavLink></li>
+            <li><NavLink href="/float-classes" data-close="SideMenu">@Localized["Float_Classes_Menu"]</NavLink></li>
+            <li><NavLink href="/bf6-icons" data-close="SideMenu">@Localized["Icons_Menu"]</NavLink></li>
+            <li><NavLink href="/material-design-icons" data-close="SideMenu">@Localized["Material_Design_Icons_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="Typography"  Active="true">
+    <AccordionItem Title=@Localized["Typography_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/base-styles" data-close="SideMenu">Base Styles</NavLink></li>
-            <li><NavLink href="/helper-classes" data-close="SideMenu">Helper Classes</NavLink></li>
+            <li><NavLink href="/base-styles" data-close="SideMenu">@Localized["Base_Styles_Menu"]</NavLink></li>
+            <li><NavLink href="/helper-classes" data-close="SideMenu">@Localized["Helper_Classes_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="Controls"  Active="true">
+    <AccordionItem Title=@Localized["Controls_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/button" data-close="SideMenu">Button</NavLink></li>
-            <li><NavLink href="/button-group" data-close="SideMenu">Button Group</NavLink></li>
-            <li><NavLink href="/slider" data-close="SideMenu">Slider</NavLink></li>
-            <li><NavLink href="/switch" data-close="SideMenu">Switch</NavLink></li>
+            <li><NavLink href="/button" data-close="SideMenu">@Localized["Button_Menu"]</NavLink></li>
+            <li><NavLink href="/button-group" data-close="SideMenu">@Localized["Button_Group_Menu"]</NavLink></li>
+            <li><NavLink href="/slider" data-close="SideMenu">@Localized["Slider_Menu"]</NavLink></li>
+            <li><NavLink href="/switch" data-close="SideMenu">@Localized["Switch_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
 
-    <AccordionItem Title="Navigation"  Active="true">
+    <AccordionItem Title=@Localized["Navigation_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/menu" data-close="SideMenu">Menu</NavLink></li>
-            <li><NavLink href="/accordion-menu" data-close="SideMenu">Accordion Menu</NavLink></li>
-            <li><NavLink href="/drilldown-menu" data-close="SideMenu">Drilldown Menu</NavLink></li>
-            <li><NavLink href="/dropdown-menu" data-close="SideMenu">Dropdown Menu</NavLink></li>
-            <li><NavLink href="/top-bar" data-close="SideMenu">Top Bar</NavLink></li>
-            <li><NavLink href="/pagination" data-close="SideMenu">Pagination</NavLink></li>
-            <li><NavLink href="/breadcrumbs" data-close="SideMenu">Breadcrumbs</NavLink></li>
+            <li><NavLink href="/menu" data-close="SideMenu">@Localized["Menu_Menu"]</NavLink></li>
+            <li><NavLink href="/accordion-menu" data-close="SideMenu">@Localized["Accordion_Menu_Menu"]</NavLink></li>
+            <li><NavLink href="/drilldown-menu" data-close="SideMenu">@Localized["Drilldown_Menu_Menu"]</NavLink></li>
+            <li><NavLink href="/dropdown-menu" data-close="SideMenu">@Localized["Dropdown_Menu_Menu"]</NavLink></li>
+            <li><NavLink href="/top-bar" data-close="SideMenu">@Localized["Top_Bar_Menu"]</NavLink></li>
+            <li><NavLink href="/pagination" data-close="SideMenu">@Localized["Pagination_Menu"]</NavLink></li>
+            <li><NavLink href="/breadcrumbs" data-close="SideMenu">@Localized["Breadcrumbs_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="Containers"  Active="true">
+    <AccordionItem Title=@Localized["Containers_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/accordion" data-close="SideMenu">Accordion</NavLink></li>
-            <li><NavLink href="/callout" data-close="SideMenu">Callout</NavLink></li>
-            <li><NavLink href="/card" data-close="SideMenu">Card</NavLink></li>
-            <li><NavLink href="/dropdown" data-close="SideMenu">Dropdown</NavLink></li>
-            <li><NavLink href="/media-object" data-close="SideMenu">Media Object</NavLink></li>
-            <li><NavLink href="/off-canvas" data-close="SideMenu">Off-Canvas</NavLink></li>
-            <li><NavLink href="/reveal" data-close="SideMenu">Reveal</NavLink></li>
-            <li><NavLink href="/table" data-close="SideMenu">Table</NavLink></li>
-            <li><NavLink href="/tabs" data-close="SideMenu">Tabs</NavLink></li>
-            <li><NavLink href="/responsive-accordion-tabs" data-close="SideMenu">Responsive Accordion Tabs</NavLink></li>
+            <li><NavLink href="/accordion" data-close="SideMenu">@Localized["Accordion_Menu"]</NavLink></li>
+            <li><NavLink href="/callout" data-close="SideMenu">@Localized["Callout_Menu"]</NavLink></li>
+            <li><NavLink href="/card" data-close="SideMenu">@Localized["Card_Menu"]</NavLink></li>
+            <li><NavLink href="/dropdown" data-close="SideMenu">@Localized["Dropdown_Menu"]</NavLink></li>
+            <li><NavLink href="/media-object" data-close="SideMenu">@Localized["Media_Object_Menu"]</NavLink></li>
+            <li><NavLink href="/off-canvas" data-close="SideMenu">@Localized["Off_Canvas_Menu"]</NavLink></li>
+            <li><NavLink href="/reveal" data-close="SideMenu">@Localized["Reveal_Menu"]</NavLink></li>
+            <li><NavLink href="/table" data-close="SideMenu">@Localized["Table_Menu"]</NavLink></li>
+            <li><NavLink href="/tabs" data-close="SideMenu">@Localized["Tabs_Menu"]</NavLink></li>
+            <li><NavLink href="/responsive-accordion-tabs" data-close="SideMenu">@Localized["Responsive_Accordion_Tabs_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="Media"  Active="true">
+    <AccordionItem Title=@Localized["Media_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
-            <li><NavLink href="/badge" data-close="SideMenu">Badge</NavLink></li>
-            <li><NavLink href="/responsive-embed" data-close="SideMenu">Responsive Embed</NavLink></li>
-            <li><NavLink href="/label" data-close="SideMenu">Label</NavLink></li>
-            <li><NavLink href="/orbit" data-close="SideMenu">Carousel (Orbit)</NavLink></li>
-            <li><NavLink href="/progress-bar" data-close="SideMenu">Progess Bar</NavLink></li>
-            <li><NavLink href="/thumbnail" data-close="SideMenu">Thumbnail</NavLink></li>
-            <li><NavLink href="/tooltip" data-close="SideMenu">Tooltip</NavLink></li>
+            <li><NavLink href="/badge" data-close="SideMenu">@Localized["Badge_Menu"]</NavLink></li>
+            <li><NavLink href="/responsive-embed" data-close="SideMenu">@Localized["Responsive_Embed_Menu"]</NavLink></li>
+            <li><NavLink href="/label" data-close="SideMenu">@Localized["Label_Menu"]</NavLink></li>
+            <li><NavLink href="/orbit" data-close="SideMenu">@Localized["Carousel_Orbit_Menu"]</NavLink></li>
+            <li><NavLink href="/progress-bar" data-close="SideMenu">@Localized["Progess_Bar_Menu"]</NavLink></li>
+            <li><NavLink href="/thumbnail" data-close="SideMenu">@Localized["Thumbnail_Menu"]</NavLink></li>
+            <li><NavLink href="/tooltip" data-close="SideMenu">@Localized["Tooltip_Menu"]</NavLink></li>
         </MenuNested>
     </AccordionItem>
-    <AccordionItem Title="Plugins" Active="true">
+    <AccordionItem Title=@Localized["Plugins_Menu_Header"] Active="true">
         <MenuNested Vertical="true"  >
-            <li><NavLink href="/code-highlighter" data-close="SideMenu">Code Highlighter</NavLink></li>
-            <li><NavLink href="/sticky" data-close="SideMenu">Sticky</NavLink></li>
+            <li><NavLink href="/code-highlighter" data-close="SideMenu">@Localized["Code_Highlighter_Menu"]</NavLink></li>
+            <li><NavLink href="/sticky" data-close="SideMenu">@Localized["Sticky_Menu"]</NavLink></li>
             @*<li><NavLink href="/toggler" ms-data-linkto="MenuSystemWrapperAutoV2" ms-data-close="true">Toggler</NavLink></li>*@
-            <li><NavLink href="/clipboard" data-close="SideMenu">Clipboard</NavLink></li>
-            <li><NavLink href="/localstorage" data-close="SideMenu">LocalStorage</NavLink></li>
-            <li><NavLink href="/style-management" data-close="SideMenu">Style Management</NavLink></li>
-            <li><NavLink href="/motion-ui" data-close="SideMenu">Motion UI</NavLink></li>
-            <li><NavLink href="/builtin-loco" data-close="SideMenu">Localization</NavLink></li>
+            <li><NavLink href="/clipboard" data-close="SideMenu">@Localized["Clipboard_Menu"]</NavLink></li>
+            <li><NavLink href="/localstorage" data-close="SideMenu">@Localized["LocalStorage_Menu"]</NavLink></li>
+            <li><NavLink href="/style-management" data-close="SideMenu">@Localized["Style_Management_Menu"]</NavLink></li>
+            <li><NavLink href="/motion-ui" data-close="SideMenu">@Localized["Motion_UI_Menu"]</NavLink></li>
+            <li><NavLink href="/builtin-loco" data-close="SideMenu">@Localized["Localization_Menu"]</NavLink></li>
 
         </MenuNested>
     </AccordionItem>

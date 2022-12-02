@@ -15,6 +15,10 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
+        [Parameter] 
+        public Func<Reveal, Task<RenderFragment>> ContentFunction { get; set;}
+
+        
         /// <summary>
         /// Unique HTML Identifier.
         /// </summary>

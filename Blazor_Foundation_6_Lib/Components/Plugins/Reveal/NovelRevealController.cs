@@ -72,20 +72,27 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
 
         public async Task ComplexMessage(string title, RenderFragment message, Func<Task> onCloseCallback = null, bool canclose = true, Action<string> setId = null)
         {
+            await ComplexMessage(title, async (item)=> message, onCloseCallback, canclose, setId);
+
+        }
+
+        public async Task ComplexMessage(string title, Func<Containers.Reveal, Task<RenderFragment>> functionContent, Func<Task> onCloseCallback = null, bool canclose = true, Action<string> setId = null)
+        {
             string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
-            if(setId != null) setId.Invoke(elementGen);
+            if (setId != null) setId.Invoke(elementGen);
             Containers.Reveal tReference = null; // Temporary Reference of Reveal
+
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(4, "CloseOnClick", canclose);
-                tree.AddAttribute(4, "CloseXButton", canclose);
-                tree.AddAttribute(5, "Title", title);
-                tree.AddAttribute(6, "ChildContent", message);
-                tree.AddComponentReferenceCapture(7, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddAttribute(1, nameof(Containers.Reveal.OnOpened), EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(2, nameof(Containers.Reveal.Id), elementGen);
+                tree.AddAttribute(3, nameof(Containers.Reveal.OpenOnStart), true);
+                tree.AddAttribute(4, nameof(Containers.Reveal.CloseOnClick), canclose);
+                tree.AddAttribute(5, nameof(Containers.Reveal.CloseXButton), canclose);
+                tree.AddAttribute(6, nameof(Containers.Reveal.Title), title);
+                tree.AddAttribute(7, nameof(Containers.Reveal.ContentFunction), functionContent);
+                tree.AddComponentReferenceCapture(8, (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -96,7 +103,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             if (OnStateChanged != null) OnStateChanged.Invoke();
 
         }
-
         public async Task ComplexMessageCloseConditional(string title, RenderFragment message, Func<Task<bool>> hasConditionMet, Action<string> setId = null)
         {
             string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();

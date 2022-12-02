@@ -7,7 +7,7 @@
     <SectionLeft>
         <h2>What is that?</h2>
         <p>Well just a quick tool to help you automatically load to user's language base on localstorage and set a default language! </p>
-        <p>You will need nuget <Code>@("OpenCodeDev.Blazor.Foundation.Extensions")</Code>.</p>
+        <p> <Code>@("OpenCodeDev.Blazor.Foundation.Extensions")</Code>.</p>
 
         <h2>How to use?</h2>
         <p>Got to <Code>Program.cs</Code> and add the following lines</p>
@@ -15,8 +15,6 @@
                      Content="Ly8gd2hlcmUgeW91IGFkZCBhbnkgc2VydmljZXMgYjQgYnVpbGQoKQpidWlsZGVyLlNlcnZpY2VzLkFkZExvY2FsaXphdGlvbigpOwovLyBUb29sIHVzZXMgbG9jYWxzdG9yYWdlIHNvIG5lZWQgc2VydmljZSB0byBhY2Nlc3MKYnVpbGRlci5TZXJ2aWNlcy5BZGRCRkxvY2FsU3RvcmFnZSgpOwoKLy9hZnRlciBidWlsZGVyLkJ1aWxkKCk7Ci8vIHRoaXMgbG9hZHMgdGhlIGRlZmF1bHQgbGFuZ3VhZ2Ugc2F2ZWQgaW4gdGhlIHVzZXJzJyBicm93c2VyIGlmIG5vbmUgZm91bmQgc2V0IGl0IHVuZGVyIHRoZSBuYW1lICJjdWx0dXJlIgphd2FpdCBhcHAuTG9hZEN1bHR1cmUoKTs=" />
 
         <p>The default language is english but can be changed using <Code>@(@".LoadCulture(""en / fr / es..."")")</Code></p>
-        <p>You can set a default language be that would be bad experience for the user just to do that! if you can detect location and switch language do it.</p>
-      
 
         <h2>Change Language?</h2>
         <p>If the user is not logged or if you don't have a language bound to account... then you can change it like this: </p>

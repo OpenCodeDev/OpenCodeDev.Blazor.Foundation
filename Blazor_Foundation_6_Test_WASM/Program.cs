@@ -15,13 +15,12 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
     {        public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            builder.RootComponents.Add<App>("app");
-
+            //builder.RootComponents.Add<App>("app");
+            builder.Services.AddLocalization();
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             // Required to Manage the Theme Color Style Dynamically
             builder.Services.AddBlazorFoundationServices(false);
-            // Optional, Can be use on its own to copy text to clipboard and it is required if you use Code Highlighter (HighlightCS)
-            builder.Services.AddBFClipboard();
+
             await builder.Build().RunAsync();
         }
     }
