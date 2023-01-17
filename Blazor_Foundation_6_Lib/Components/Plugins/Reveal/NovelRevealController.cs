@@ -8,6 +8,7 @@ using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components.Web;
 using OpenCodeDev.Blazor.Foundation.Components.Containers;
 using OpenCodeDev.Blazor.Foundation.Extensions;
+using Microsoft.AspNetCore.Components.Rendering;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
 {
@@ -515,6 +516,58 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
                     if (setId != null) setId.Invoke(id);
                 }, optionwrapperstyle);
         }
+
+        public async Task<string> InputSelectorFragment(string title, string currentValue, Func<Func<Containers.Reveal>, string, EventCallback<string>, RenderFragment> getFragmentSelector, string option1Label = "Confirm", string option2label = "Cancel", Action<string> setId = null)
+        {
+            string elementGen = System.Guid.NewGuid().HTMLCompliant().ToString();
+            if (setId != null) setId.Invoke(elementGen);
+
+            Containers.Reveal tReference = null; // Temporary Reference of Reveal
+
+            string value = currentValue;
+            RenderFragment fragment = new RenderFragment(tree =>
+            {
+                // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
+                tree.OpenComponent<Containers.Reveal>(0);
+
+                tree.AddAttribute(2, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(3, "Id", elementGen);
+                tree.AddAttribute(4, "OpenOnStart", true);
+                tree.AddAttribute(5, "CloseOnClick", false);
+                tree.AddAttribute(6, "CloseXButton", false);
+                tree.AddAttribute(7, "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(8, "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(9, "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(10, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(11, "Title", title);
+                tree.AddAttribute(12, "ChildContent",
+                    getFragmentSelector(() => tReference, currentValue, EventCallback.Factory.Create(this, (string arg) => value = arg)));
+                tree.AddComponentReferenceCapture(13, (value) => { tReference = value as Containers.Reveal; });
+                tree.CloseComponent();
+            });
+
+            string element = await Register(elementGen, fragment, null);
+            CurrentItems.Add(RegistryTracker[element], Registry[RegistryTracker[element]]);
+            if (OnStateChanged != null) OnStateChanged.Invoke();
+
+            // Await until message is closed
+            await Task.Run(async () => {
+                try
+                {
+                    do
+                    {
+                        await Task.Delay(100);
+                    } while (CurrentItems.ContainsKey(RegistryTracker[element]));
+                }
+                catch
+                {
+                    // Ignore because error = reveal probably close
+                }
+            });
+            return value;
+        }
+
+
         public async Task<int> ComplexTwoAnswerMessage(string title, RenderFragment message, string option1Label, string option2label,
  Func<Task<bool>> option1Clbk = null, Func<Task<bool>> option2Clbk = null, string option1style = null, string option2style = null,
  string titleIcon = null, Action<string> setId = null, string optionwrapperstyle = "justify-content:flex-end;")
@@ -568,5 +621,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             });
             return selectedOption;
         }
+
     }
 }
