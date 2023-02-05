@@ -1,27 +1,19 @@
-# Version 3.1 (September 2022)
+# Version 3.x or 4.x (2023)
 ## Features
-- New AppWrapper Component to Wrap the Shared Layout... It will automatically add required service components when service is available.
-- HighlightCS now support string byte array (Performance).
+- Added small/large/medium-justify-content-left/center/right... screen size.
+- Added InputSelectorFragment to INovelRevealController.
 
 ## Documentation
-- Removed References to HighlightCS in favor of HighlightCode (HighlightCS Still exist tho).
-- Removed References to RevealController in favor of NovelRevealController (RevealController still exist but no longer supported and should not be used on Blazor Server).
-
+- Documentation is now prerendered
  
 ## Fixes
-- Maximize Compatibility by Supporting to WebAssembly 6.0.0+.
-- Fix Border Radius on Button Group.
-- Fix Table Striped Background (CSS Variable)
-- Fix IStyleManagement for Blazor Server.
-
+- Fix Button Group Border Radius when Disabled.
 
 ## Changes
-- Services must by added as Scoped for Blazor Server using AddBlazorFoundationServices(false) or else they will be singleton.
-- Removed Extension Package from HighlightCS Package (Note: HighlightCS is planned to be discontinued by 4.0 and replace by another package, we'll ensure smooth transition with minor breaks)
+- 
 
 ## Breaking Changes
-- We have ditched the Blazor.Foundation.Extensions package and embedded everything into this package... the namespace doesn't change but if you use the package Blazor.Foundation.Extensions you may encounter ambiguity! just remove the Blazor.Foundation.Extensions from nuget and nothing else change.
+- 
 
 ## Low-Impact Breaking Changes
-- Removed Vertical Param from MenuAccordion.
-- Removed data-submenu-toggle from MenuAccordion.
+- 

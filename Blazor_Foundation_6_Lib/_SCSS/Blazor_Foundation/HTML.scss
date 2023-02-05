@@ -31,7 +31,9 @@ a:hover, a:focus {
 }
 
 // First Element
-.button-group > .button {
+.button-group > .button, .button-group > .button.disabled, .button-group > .button[disabled], 
+.button-group > .button.disabled:hover, .button-group > .button[disabled]:hover, .button-group > .button.disabled:focus, 
+.button-group > .button[disabled]:focus {
     border-radius: var(--button-group-first-border-radius);
 }
 //Middle Elements
