@@ -24,26 +24,24 @@ namespace OpenCodeDev.Blazor.Foundation.Components.General
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        [Inject]
         public IJSRuntime JSRuntime { get; set; }
 
         [Parameter]
         public bool LegacyRevealController { get; set; } = true;
 
-        protected override void OnInitialized()
-        {
-            StyleManager = ServiceProvider.GetService<IStyleManagement>();
-            NovelRevealController = ServiceProvider.GetService<INovelRevealController>();
-        }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender) {
+                StyleManager = ServiceProvider.GetService<IStyleManagement>();
+                NovelRevealController = ServiceProvider.GetService<INovelRevealController>();
+                JSRuntime = ServiceProvider.GetService<IJSRuntime>();
                 if (NovelRevealController != null)
                 {
                     NovelRevealController.NovelRevealCtrlDotNet = DotNetObjectReference.Create(NovelRevealInstance);
                     NovelRevealController.OnStateChanged = () => NovelRevealInstance.StateChanged();
                 }
+                StateHasChanged();
             }
         }
         public void Dispose()

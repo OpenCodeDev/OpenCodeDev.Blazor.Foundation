@@ -5,11 +5,12 @@
 @using Microsoft.Extensions.Localization;
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Shared.Resources;
 @inject IStringLocalizer<Resource> Localized;
-
+@if (HasPrerendered)
+{
 <Accordion Class="menu-accordion-doc-wrapper" MultiOpen="true">
 
     @ChildContent
-    
+
     <AccordionItem Title=@Localized["Debugging_Tool_Menu_Header"] Active="true">
         <MenuNested Vertical="true">
             <li><NavLink href="/wasm/modules" data-close="SideMenu">@Localized["Load_Module_Menu"]</NavLink></li>
@@ -97,7 +98,7 @@
         </MenuNested>
     </AccordionItem>
     <AccordionItem Title=@Localized["Plugins_Menu_Header"] Active="true">
-        <MenuNested Vertical="true"  >
+        <MenuNested Vertical="true">
             <li><NavLink href="/code-highlighter" data-close="SideMenu">@Localized["Code_Highlighter_Menu"]</NavLink></li>
             <li><NavLink href="/sticky" data-close="SideMenu">@Localized["Sticky_Menu"]</NavLink></li>
             @*<li><NavLink href="/toggler" ms-data-linkto="MenuSystemWrapperAutoV2" ms-data-close="true">Toggler</NavLink></li>*@
@@ -110,8 +111,25 @@
         </MenuNested>
     </AccordionItem>
 </Accordion>
+}
+else
+{
+    <p>Loading...</p>
+}
+
 
 @code {
     [Parameter]
     public RenderFragment ChildContent { get; set; }
+
+    public bool HasPrerendered { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            HasPrerendered = firstRender;
+            StateHasChanged();
+        }
+    }
 }
