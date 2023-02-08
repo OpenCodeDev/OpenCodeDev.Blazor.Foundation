@@ -24,6 +24,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.General
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
+        [Inject]
         public IJSRuntime JSRuntime { get; set; }
 
         [Parameter]
@@ -35,7 +36,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.General
             if (firstRender) {
                 StyleManager = ServiceProvider.GetService<IStyleManagement>();
                 NovelRevealController = ServiceProvider.GetService<INovelRevealController>();
-                JSRuntime = ServiceProvider.GetService<IJSRuntime>();
                 if (NovelRevealController != null)
                 {
                     NovelRevealController.NovelRevealCtrlDotNet = DotNetObjectReference.Create(NovelRevealInstance);

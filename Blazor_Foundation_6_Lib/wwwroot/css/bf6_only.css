@@ -1004,7 +1004,9 @@ a:hover, a:focus {
   color: var(--button-ft-color);
   border-radius: var(--button-border-radius); }
 
-.button-group > .button {
+.button-group > .button, .button-group > .button.disabled, .button-group > .button[disabled],
+.button-group > .button.disabled:hover, .button-group > .button[disabled]:hover, .button-group > .button.disabled:focus,
+.button-group > .button[disabled]:focus {
   border-radius: var(--button-group-first-border-radius); }
 
 .button-group > .button ~ .button {
