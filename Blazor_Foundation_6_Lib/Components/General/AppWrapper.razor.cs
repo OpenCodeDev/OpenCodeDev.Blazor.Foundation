@@ -16,37 +16,51 @@ namespace OpenCodeDev.Blazor.Foundation.Components.General
         public NovelReveal NovelRevealInstance { get; set; }
 
         [Inject]
-        public IServiceProvider ServiceProvider { get; set; }
+        internal IServiceProvider ServiceProvider { get; set; }
 
-        public IStyleManagement? StyleManager { get; set; }
-        public INovelRevealController? NovelRevealController { get; set; }
+        internal IStyleManagement? StyleManager { get; set; }
+        internal INovelRevealController? NovelRevealController { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        [Inject]
-        public IJSRuntime JSRuntime { get; set; }
 
+
+        /// <summary>
+        /// Include Legacy Reveal Controller for backward compatibility (Default: true)
+        /// </summary>
         [Parameter]
         public bool LegacyRevealController { get; set; } = true;
 
-
+        protected override void OnInitialized()
+        {
+            StyleManager = ServiceProvider.GetService<IStyleManagement>();
+            NovelRevealController = ServiceProvider.GetService<INovelRevealController>();
+            if (StyleManager != null) 
+                StyleManager.OnUpdate += StateChanged;
+        }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender) {
-                StyleManager = ServiceProvider.GetService<IStyleManagement>();
-                NovelRevealController = ServiceProvider.GetService<INovelRevealController>();
+
                 if (NovelRevealController != null)
                 {
                     NovelRevealController.NovelRevealCtrlDotNet = DotNetObjectReference.Create(NovelRevealInstance);
                     NovelRevealController.OnStateChanged = () => NovelRevealInstance.StateChanged();
+                    
                 }
                 StateHasChanged();
             }
         }
+
+        public async Task StateChanged()
+        {
+
+        }
         public void Dispose()
         {
-            
+            if (StyleManager != null)
+                StyleManager.OnUpdate += StateChanged;
         }
     }
 }
