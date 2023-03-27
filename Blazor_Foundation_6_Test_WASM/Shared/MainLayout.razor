@@ -11,6 +11,10 @@
 @inject NavigationManager Navigator;
 @implements IDisposable;
 
+@using System.Globalization
+@using OpenCodeDev.Blazor.Foundation.Extensions.LocalStorage;
+@inject ILocalStorage LocalStorage;
+
 <AppWrapper>
 <OffCanvasWrapper>
     <OffCanvas Id="SideMenu" Class="doc-menu" DataTransition="overlap" data-content-scroll="true" style="z-index: 16;">
@@ -137,6 +141,16 @@
             
         }
 
+    }
+    public async Task Switch(string code)
+    {
+        await LocalStorage.Set("culture", code);
+        // You lazy? reload the app
+        Navigator.NavigateTo(Navigator.Uri, forceLoad: true);
+        // You aren't ?
+        var currentLang = new CultureInfo(code);
+        CultureInfo.DefaultThreadCurrentCulture = currentLang;
+        CultureInfo.DefaultThreadCurrentUICulture = currentLang;
     }
 
     private async Task LoadLicense()

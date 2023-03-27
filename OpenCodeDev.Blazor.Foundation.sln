@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS", "OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj", "{14DCD38B-0504-44F9-8113-084C608554B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCodeDev.Blazor.Foundation.Doc.Host", "OpenCodeDev.Blazor.Foundation.Doc.Host\OpenCodeDev.Blazor.Foundation.Doc.Host.csproj", "{E9DB1173-02CD-4822-9E1F-DFB639352B86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{14DCD38B-0504-44F9-8113-084C608554B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14DCD38B-0504-44F9-8113-084C608554B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14DCD38B-0504-44F9-8113-084C608554B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9DB1173-02CD-4822-9E1F-DFB639352B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9DB1173-02CD-4822-9E1F-DFB639352B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9DB1173-02CD-4822-9E1F-DFB639352B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9DB1173-02CD-4822-9E1F-DFB639352B86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,8 @@
-﻿@using Microsoft.JSInterop;
+﻿@inherits NewComponentBase
+@using Microsoft.JSInterop;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 @inject IJSRuntime JSRuntime;
 
 
@@ -10,7 +12,7 @@
            type="@(IsRadio ? "radio" : "checkbox")"
            checked ="@Checked"
            name="@RadioGroup"
-           disabled="@Disabled">
+           disabled=@IsDisabled()>
 
     <label class="switch-paddle" for="@Id">
         <span class="switch-active" aria-hidden="true">@(LabelOn != null ? LabelOn.ToString() : "") </span>

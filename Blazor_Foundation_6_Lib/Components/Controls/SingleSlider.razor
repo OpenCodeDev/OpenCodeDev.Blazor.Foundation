@@ -1,13 +1,16 @@
-﻿@using Microsoft.JSInterop;
+﻿@inherits NewComponentBase
+
+@using Microsoft.JSInterop;
 @using Newtonsoft.Json.Linq;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Forms;
 @using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 @inject IJSRuntime JSRuntime;
 
 @*<InputNumber Value="@Value" ValueChanged="(float nVal)=> SliderValueChanged(nVal)" ValueExpresion="() => Value"  id="@($"{@Id.ToString()}-input")" class="is-hidden" />*@
 
-<div id="@Id" class="@($"slider {(Disabled? "disabled" : "")} " +
+<div id="@Id" class="@($"slider {(IsDisabled() ? "disabled" : "")} " +
                        $"{(IsVertical && !Class.Contains("vertical") ? "vertical" : "")} " +
                        $"{Class}")"
      data-slider data-initial-start="@Value.ToString()" data-vertical="@IsVertical.ToString().ToLower()"

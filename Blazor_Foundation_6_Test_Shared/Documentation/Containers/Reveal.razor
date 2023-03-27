@@ -261,7 +261,17 @@
         })>Complex Message</Button>
         <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                         Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICBhd2FpdCBSZXZlYWxDb250cm9sbGVyLkNvbnRyb2xsZXIuQ29tcGxleE1lc3NhZ2UoIkNvbXBsZXhTaW1wbGVNZXNzYWdlIiwiQ29tcGxleCBNZXNzYWdlIiwgQ29tcGxleFNpbXBsZU1lc3NhZ2UgLCAKICAgIGFzeW5jICgpID0+IHsKICAgICAgICAgICAgQ29uc29sZS5Xcml0ZUxpbmUoIkNhbGxiYWNrIENsb3NlZCEiKTsKICAgICAgICB9KTsgICAgCn0pPkNvbXBsZXggTWVzc2FnZTwvQnV0dG9uPgpAY29kZSB7CiAgICBwdWJsaWMgUmVuZGVyRnJhZ21lbnQgQ29tcGxleFNpbXBsZU1lc3NhZ2UgPSBAPGRpdj48aDE+VGVzdCBGcmFnbWVudDwvaDE+PC9kaXY+Owp9" />
-       
+        <p>You can use complex message with a render function instead of direct fragment. 
+            The reveal pass itself as reference argument on render that is useful especially if you need the child fragment to control the reveal parent. </p>
+        <Button @onclick=@(async()=> {
+                await NovelRevealCtrl.ComplexMessage("Complex Message", ComplexRenderFunctionTest ,
+                async () => {
+                Console.WriteLine("Callback Closed!");
+                });
+                })>
+            Complex Function Message
+        </Button>
+        <HighlightCode Language="razor" Full="true" Content="PEJ1dHRvbiBAb25jbGljaz1AKGFzeW5jKCk9PiB7CiAgICAgICAgYXdhaXQgTm92ZWxSZXZlYWxDdHJsLkNvbXBsZXhNZXNzYWdlKCJDb21wbGV4IE1lc3NhZ2UiLCBDb21wbGV4UmVuZGVyRnVuY3Rpb25UZXN0ICwgYXN5bmMgKCkgPT4geyBDb25zb2xlLldyaXRlTGluZSgiQ2FsbGJhY2sgQ2xvc2VkISIpOyB9KTsKICAgICAgICB9KT4KICAgIENvbXBsZXggRnVuY3Rpb24gTWVzc2FnZQo8L0J1dHRvbj4KCkBjb2RlewogICAgcHVibGljIGFzeW5jIFRhc2s8UmVuZGVyRnJhZ21lbnQ+IENvbXBsZXhSZW5kZXJGdW5jdGlvblRlc3QoT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250YWluZXJzLlJldmVhbCByZXZyZWYpCiAgICB7CiAgICAgICAgcmV0dXJuIGJ1aWxkZXIgPT4KICAgICAgICB7CiAgICAgICAgICAgIGJ1aWxkZXIuT3BlbkVsZW1lbnQoMCwgInAiKTsKICAgICAgICAgICAgYnVpbGRlci5BZGRDb250ZW50KDEsICQiSUQgPSB7cmV2cmVmLklkfSIpOwogICAgICAgICAgICBidWlsZGVyLkNsb3NlRWxlbWVudCgpOwogICAgICAgIH07CiAgICB9Cn0=" />
         <h3>Complex Two-Way Message</h3>
        
         <p>Complex Two-Way Message is our most advanced feature it can be used for edit form and more.</p>
@@ -350,4 +360,14 @@
     public string FieldSelectEditor { get; set; } = "My Selection";
     public int FieldIntSliderEditor { get; set; } = 10;
     public float FieldFloatSliderEditor { get; set; } = 1.00f;
+
+    public async Task<RenderFragment> ComplexRenderFunctionTest(OpenCodeDev.Blazor.Foundation.Components.Containers.Reveal revref)
+    {
+        return builder =>
+        {
+            builder.OpenElement(0, "p");
+            builder.AddContent(1, $"ID = {revref.Id}");
+            builder.CloseElement();
+        };
+    }
 }

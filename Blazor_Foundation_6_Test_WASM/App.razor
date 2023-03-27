@@ -1,10 +1,10 @@
 @inject NavigationManager NavManager;
-@using OpenCodeDev.Blazor.Foundation.Doc.Core;
-<Router AppAssembly="@typeof(Program).Assembly"  
+@using OpenCodeDev.Blazor.Foundation.Doc.Core; 
+<Router AppAssembly="@typeof(Program).Assembly"    
         AdditionalAssemblies="new[] { typeof(OpenCodeDev.Blazor.Foundation.Doc.Core.Documentation.Getting_Started.Welcome).Assembly }"
         >
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"  />
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"   />
     </Found>
     <NotFound>
         <LayoutView Layout="@typeof(MainLayout)" >

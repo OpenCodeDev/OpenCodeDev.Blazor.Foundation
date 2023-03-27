@@ -1,4 +1,7 @@
-﻿@using OpenCodeDev.Blazor.Foundation.Components.Controls
+﻿@inherits NewComponentBase
+
+@using OpenCodeDev.Blazor.Foundation.Components.Controls
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 @using OpenCodeDev.Blazor.Foundation.Extensions
 @typeparam TKey
 <div class="bf bf-selection-list-box" @attributes="AdditionalAttributes">
@@ -7,7 +10,7 @@
         {
             <li>
                 <Switch Size="tiny" RadioGroup=@Id.ToString() IsRadio=@(!MultiSelect)
-                    Checked=@IsSwitchChecked(item.Key) Disabled=@(DisabledElements.Contains(item.Key) || Disabled)
+                    Checked=@IsSwitchChecked(item.Key) Disabled=@(DisabledElements.Contains(item.Key) || IsDisabled())
                     OnChangeValue="@(async (bool val)=> { await SwitchChanged(item.Key, val); })" OnStateChange="()=>StateHasChanged()"
                 />                            
                 @(IsCapitalized ? item.Value.ToCapitalized() : item.Value)
@@ -21,8 +24,6 @@
     [Parameter]
     public string Id { get; set; } = Guid.NewGuid().HTMLCompliant().ToString();
 
-    [Parameter(CaptureUnmatchedValues = true)]
-    public IDictionary<string, object> AdditionalAttributes { get; set; }
 
     /// <summary>
     /// False: item name will keep the passed format. Eg: my super title -> my super title and when true... my super title -> My Super Title

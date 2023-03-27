@@ -5355,6 +5355,18 @@ html.is-reveal-open {
  * https://bf.opendevcode.com/
  * Licensed under MIT Open Source
  */
+/**
+ * Foundation for Sites
+ * Version 6.7.4
+ * https://get.foundation
+ * Licensed under MIT Open Source
+ */
+@media print, screen and (min-width: 40em) {
+  .reveal, .reveal.tiny, .reveal.small, .reveal.large {
+    right: auto;
+    left: auto;
+    margin: 0 auto; } }
+
 .spacing {
   margin-left: 1em;
   margin-right: 1em; }
@@ -6352,7 +6364,9 @@ a:hover, a:focus {
   color: var(--button-ft-color);
   border-radius: var(--button-border-radius); }
 
-.button-group > .button {
+.button-group > .button, .button-group > .button.disabled, .button-group > .button[disabled],
+.button-group > .button.disabled:hover, .button-group > .button[disabled]:hover, .button-group > .button.disabled:focus,
+.button-group > .button[disabled]:focus {
   border-radius: var(--button-group-first-border-radius); }
 
 .button-group > .button ~ .button {
@@ -6528,3 +6542,49 @@ input:checked ~ .switch-paddle {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.justify-content-left {
+  justify-content: left; }
+
+.justify-content-right {
+  justify-content: right; }
+
+.justify-content-center {
+  justify-content: center; }
+
+.justify-content-space-around {
+  justify-content: space-around; }
+
+.justify-content-space-between {
+  justify-content: space-between; }
+
+.justify-content-space-evenly {
+  justify-content: space-evenly; }
+
+@media print, screen and (min-width: 40em) {
+  .medium-justify-content-left {
+    justify-content: left; }
+  .medium-justify-content-right {
+    justify-content: right; }
+  .medium-justify-content-center {
+    justify-content: center; }
+  .medium-justify-content-space-around {
+    justify-content: space-around; }
+  .medium-justify-content-space-between {
+    justify-content: space-between; }
+  .medium-justify-content-space-evenly {
+    justify-content: space-evenly; } }
+
+@media print, screen and (min-width: 64em) {
+  .large-justify-content-left {
+    justify-content: left; }
+  .large-justify-content-right {
+    justify-content: right; }
+  .large-justify-content-center {
+    justify-content: center; }
+  .large-justify-content-space-around {
+    justify-content: space-around; }
+  .large-justify-content-space-between {
+    justify-content: space-between; }
+  .large-justify-content-space-evenly {
+    justify-content: space-evenly; } }

@@ -1,11 +1,14 @@
-﻿@using Microsoft.AspNetCore.Components;
+﻿@inherits NewComponentBase
+
+@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
-<div class="orbit-controls" @attributes="AdditionalAttributes">
-    <button class=@($"orbit-previous {PreviousButtonClass}") style="@(PreviousButtonStyle)">
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
+<div class="orbit-controls" @attributes="AdditionalAttributes" disable=@IsDisabled()>
+    <button class=@($"orbit-previous {PreviousButtonClass}") style="@(PreviousButtonStyle)" disabled=@IsDisabled()>
         <span class="show-for-sr">Previous Slide</span>
         <span class="mdi @(PreviousContent) @(PreviousIconClass)"></span>
     </button>
-    <button  class=@($"orbit-next {NextButtonClass}") style="@(NextButtonStyle)">
+    <button class=@($"orbit-next {NextButtonClass}") style="@(NextButtonStyle)" disabled=@IsDisabled()>
         <span class="show-for-sr">Next Slide</span>
         <span class="mdi @(NextContent) @(NextIconClass)" style="@(NextIconStyle)"></span>
     </button>

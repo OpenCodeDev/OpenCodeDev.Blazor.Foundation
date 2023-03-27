@@ -5,18 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 using OpenCodeDev.Blazor.Foundation.Extensions;
 
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
-    public partial class Button : ComponentBase
-    {
+    public partial class Button : NewComponentBase
+	{
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
 
         /// <summary>
         /// Unique HTML Identifier.
@@ -73,6 +72,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 
         [Parameter]
         public bool? VerticalPadding { get; set; } = null;
+
+
         protected override void OnInitialized()
         {
             if (Id == null)
