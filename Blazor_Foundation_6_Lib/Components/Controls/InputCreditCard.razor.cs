@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
-    public partial class InputCreditCard : ComponentBase 
+    public partial class InputCreditCard : NewComponentBase
     {
         private string _Card = "";
 
@@ -21,8 +22,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public EventCallback<string> CardChanged { get; set; }
 
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
 
         /// <summary>
         /// Max card Length Allowed (Default: 16)

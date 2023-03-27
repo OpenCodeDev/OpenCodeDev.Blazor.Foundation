@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 using OpenCodeDev.Blazor.Foundation.Extensions;
 
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
-    public partial class SingleSlider : ComponentBase, IDisposable
+    public partial class SingleSlider : NewComponentBase, IDisposable
     {
         /// <summary>
         /// Unique HTML Identifier.
@@ -54,11 +55,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public EventCallback<float> ValueChanged { get; set; }
 
-        /// <summary>
-        /// True when control is disabled (Default: false)
-        /// </summary>
-        [Parameter]
-        public bool Disabled { get; set; } = false;
 
         /// <summary>
         /// Is Vertical?
@@ -88,8 +84,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 
         public static Dictionary<string, SingleSlider> GlobalSliderList = new Dictionary<string, SingleSlider>();
 
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
 
         protected override void OnInitialized()
         {

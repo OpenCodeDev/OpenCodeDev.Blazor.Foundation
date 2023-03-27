@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
-    public partial class SwitchCheckbox : ComponentBase
+    public partial class SwitchCheckbox : NewComponentBase
     {
         /// <summary>
         /// Input's ID
@@ -50,11 +51,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public bool IsRadio { get; set; } = false;
 
-        /// <summary>
-        /// True when control is disabled (Default: false)
-        /// </summary>
-        [Parameter]
-        public bool Disabled { get; set; } = false;
+    
 
         /// <summary>
         /// eg: Yes (Default: undefined)
@@ -68,8 +65,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public string LabelOff { get; set; }
 
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
 
         protected override void OnInitialized()
         {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Media
 {
-    public partial class OrbitControls: ComponentBase
+    public partial class OrbitControls: NewComponentBase
     {
         /// <summary>
         /// Content inside previous button mdi-arrow-left-bold (default)
@@ -71,8 +72,5 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Media
         [Parameter]
         public string NextButtonStyle { get; set; }
 
-
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
     }
 }

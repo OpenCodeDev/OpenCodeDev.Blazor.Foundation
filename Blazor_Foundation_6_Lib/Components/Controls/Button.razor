@@ -1,8 +1,10 @@
-﻿@using Microsoft.AspNetCore.Components;
+﻿@inherits NewComponentBase
+@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 
 <button type="button" class=@($"button {Class}") data-toggle="@DataToggle"
-        id="@Id" @attributes="AdditionalAttributes">
+        id="@Id" @attributes="AdditionalAttributes" disabled=@IsDisabled()>
     @ChildContent
 </button>
 

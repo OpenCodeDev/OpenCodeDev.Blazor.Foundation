@@ -1,10 +1,12 @@
-﻿@using Microsoft.JSInterop;
+﻿@inherits NewComponentBase
+@using Microsoft.JSInterop;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 @inject IJSRuntime JSRuntime;
 
 <SingleSlider AutoManaged="@AutoManaged" Class="@($"vertical {Class}")" DataBindingId="@DataBindingId"
-              DataOptions="@DataOptions" Disabled="@Disabled" Id="@Id" InputId="@InputId"
+              DataOptions="@DataOptions" Disabled=@IsDisabled() Id="@Id" InputId="@InputId"
               Max="@Max" Min="@Min" Step="@Step" @attributes="@AdditionalAttributes" Value="@Value" IsVertical="true" />
 
 @code {

@@ -1,6 +1,8 @@
-﻿@using Microsoft.JSInterop;
+﻿@inherits NewComponentBase
+@using Microsoft.JSInterop;
 @using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 @inject IJSRuntime JSRuntime;
 
 <div class="@($"switch {Size} {Class}")" @attributes="AdditionalAttributes">
@@ -9,7 +11,7 @@
            type="@(IsRadio ? "radio" : "checkbox")"
            name="@Name"
            checked="@Checked"
-           disabled="@Disabled"
+           disabled=@IsDisabled()
            @onchange="changeEventArgs => OnUpdate?.Invoke(bool.Parse(changeEventArgs.Value.ToString()))">
 
     @*<InputCheckbox

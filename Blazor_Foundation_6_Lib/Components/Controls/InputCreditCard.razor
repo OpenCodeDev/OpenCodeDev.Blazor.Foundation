@@ -1,9 +1,11 @@
-﻿@using Microsoft.AspNetCore.Components;
+﻿@inherits NewComponentBase
+@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 <input type="text" data-inputmask="'mask': '9999 9999 9999 9999'"
        @bind="@BackingNumber" 
        @oninput="@(async (args)=>await Input(args))" 
-       @attributes="@AdditionalAttributes" />
+       @attributes="@AdditionalAttributes" disabled=@IsDisabled() />
 
 @code {
 

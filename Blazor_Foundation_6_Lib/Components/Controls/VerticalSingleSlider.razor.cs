@@ -7,11 +7,11 @@ using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using OpenCodeDev.Blazor.Foundation.Extensions;
-
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
-    public partial class VerticalSingleSlider : ComponentBase
+    public partial class VerticalSingleSlider : NewComponentBase
     {
         /// <summary>
         /// Unique HTML Identifier.
@@ -25,8 +25,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public string Class { get; set; }
 
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
 
 
         /// <summary>
@@ -53,12 +51,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public int Value { get; set; } = 1;
 
-        /// <summary>
-        /// True when control is disabled (Default: false)
-        /// </summary>
-        [Parameter]
-        public bool Disabled { get; set; } = false;
-
+  
         /// <summary>
         /// Unit Steps (Default: 1)
         /// </summary>
