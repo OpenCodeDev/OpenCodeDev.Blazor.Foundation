@@ -1,6 +1,5 @@
 # Our Roadmap
 - Fork Zurb's Foundation 6 to Make Foundation 7.
-- Replace JQuery with UmbrellaJS or lighter plugin in Foundation 7.
 - Release of OpenCodeDev's Foundation 7 LTS (Standalone 3-Years)
 - Implement Foundation 7 as new Blazor Foundation Version 4 underlying engine.
 - Release of Blazor Foundation Version 4 LTS (3-Years)
@@ -15,4 +14,4 @@
 - Integrate Chart Components.
 - Publish series of free training videos.
 - Publish first template made with Blazor Foundation 6
-- Update documentation SPA to add videos linked to relevent parts.
+- Update documentation to add videos linked to relevent parts.

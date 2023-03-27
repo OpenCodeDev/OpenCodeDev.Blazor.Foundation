@@ -123,6 +123,9 @@
   <data name="Accordion_Menu_Menu" xml:space="preserve">
     <value>Accordion Menu</value>
   </data>
+  <data name="AppWrapper_Setup_Menu" xml:space="preserve">
+    <value>AppWrapper</value>
+  </data>
   <data name="Badge_Menu" xml:space="preserve">
     <value>Badge</value>
   </data>

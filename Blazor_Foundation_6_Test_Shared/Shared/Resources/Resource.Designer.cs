@@ -79,6 +79,15 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AppWrapper.
+        /// </summary>
+        public static string AppWrapper_Setup_Menu {
+            get {
+                return ResourceManager.GetString("AppWrapper_Setup_Menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Badge.
         /// </summary>
         public static string Badge_Menu {

@@ -4,26 +4,21 @@
 
 <SectionWrapper>
     <SectionLeft>
-        <h2>What is that?</h2>e
+        <h2>What is that?</h2>
         <p>
             Localstorage is a very useful way to save user data into the browser, <strong>*kinda*</strong> replacement for cookies,
-            in short you can save session token, config that doesn't save on necesserly on the server... some even save app state if connection is lost not to lose data, very useful!.
+            in short you can save session token, some even save app state if connection is lost not to lose data, very useful!.
         </p>
-        <p>You will need nuget <Code>@("OpenCodeDev.Blazor.Foundation.Extensions")</Code>.</p>
 
         <h2>How to use?</h2>
         <p>Got to <Code>Program.cs</Code> and add the following line</p>
-        <HighlightCode Language="cs" Full="true" HeaderTitle="Program.cs" Content="builder.Services.AddBFLocalStorage();" />
+            <HighlightCode Language="cs" Full="true" HeaderTitle="Program.cs"
+                       Content="dXNpbmcgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb247Ci8vIFdhc20KYnVpbGRlci5TZXJ2aWNlcy5BZGRCbGF6b3JGb3VuZGF0aW9uU2VydmljZXMoKTsKCi8vIEJsYXpvciBTZXJ2ZXIKYnVpbGRlci5TZXJ2aWNlcy5BZGRCbGF6b3JGb3VuZGF0aW9uU2VydmljZXMoZmFsc2UpOw==" />
         <p>You can now inject service into any page <Code>@("@inject ILocalStorage LocalStorage;")</Code></p>
        
         <HighlightCode Language="cs" Full="true"
-                     Content="Ly8gU2F2ZSB0byBzdG9yYWdlCmF3YWl0IGxvY2FsU3RvcmFnZS5TZXQoIkVudHJ5IiwgInRydWUiKTsKCi8vIFJldHJpZXZlIGEgdmFsdWUKc3RyaW5nIHZhbHVlID0gYXdhaXQgbG9jYWxTdG9yYWdlLlNldCgiRW50cnkiKTsKCi8vIFJlbW92ZSBmcm9tIHN0b3JhZ2UKYXdhaXQgbG9jYWxTdG9yYWdlLlJlbW92ZSgiRW50cnkiKTsKCi8vIFJlbW92ZSBBbGwgU3RvcmFnZQphd2FpdCBsb2NhbFN0b3JhZ2UuQ2xlYXIoKTs=" />
+                       Content="Ly8gU2F2ZSB0byBzdG9yYWdlCmF3YWl0IGxvY2FsU3RvcmFnZS5TZXQoIkVudHJ5IiwgInRydWUiKTsKCi8vIFNhdmUgb2JqZWN0IHRvIExvY2FsIFN0b3JhZ2UgYXMgSlNPTi4KYXdhaXQgbG9jYWxTdG9yYWdlLlNldCgiRW50cnkiLCBNeU9iamVjdCk7CgovL0V4aXN0Pwphd2FpdCBsb2NhbFN0b3JhZ2UuRXhpc3QoIkVudHJ5IikKCi8vIFJldHJpZXZlIGEgdmFsdWUKc3RyaW5nIHZhbHVlID0gYXdhaXQgbG9jYWxTdG9yYWdlLkdldCgiRW50cnkiKTsKCi8vIFJldHJpdmUgYW4gT2JqZWN0CnZhciB2YWx1ZSA9IGF3YWl0IGxvY2FsU3RvcmFnZS5HZXQ8RW50aXR5VHlwZT4oIkVudHJ5Iik7CgovLyBSZW1vdmUgZnJvbSBzdG9yYWdlCmF3YWl0IGxvY2FsU3RvcmFnZS5SZW1vdmUoIkVudHJ5Iik7CgovLyBSZW1vdmUgQWxsIFN0b3JhZ2UKYXdhaXQgbG9jYWxTdG9yYWdlLkNsZWFyKCk7" />
 
-        <p>Note: we do not support type parsing but that is something we are planning to add later.</p>
-
-        <Callout Size="small" TypeClass="warning">
-            <p>Untested for Blazor-Server might not work properly, check for session leaks.</p>
-        </Callout>
         <hr />
     </SectionLeft>
 </SectionWrapper>
