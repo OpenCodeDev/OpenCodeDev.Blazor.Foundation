@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
-    public partial class InputCreditCard : ComponentBase 
+    public partial class InputCreditCard : NewComponentBase
     {
         private string _Card = "";
 
@@ -21,9 +22,12 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public EventCallback<string> CardChanged { get; set; }
 
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
 
+        /// <summary>
+        /// Max card Length Allowed (Default: 16)
+        /// </summary>
+        [Parameter]
+        public int CardLength { get; set; } = 16;
         /// <summary>
         /// Called when event keyup is triggered
         /// </summary>
@@ -71,78 +75,26 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         /// </summary>
         private bool OnChangeRemovedSomething { get; set; } = false;
 
-        /// <summary>
-        /// Onkeyup event
-        /// </summary>
-        private async Task Keyup(KeyboardEventArgs args)
-        {
-            if (OnChangeDelayUpdate || !OnChangeAcceptKey)
-            {
-                BackingNumber = FormattedCardNumber(BackingNumber.Replace(" ", String.Empty));
-                StateHasChanged();
-            }
-            if (BackingNumber != default)
-            {
-                Card = BackingNumber.Replace(" ", String.Empty); // Entry without spaces
-                await CardChanged.InvokeAsync(Card);
-            }
-            // Reset the state for the next key
-            OnChangeRemovedSomething = false;
-            OnChangeAcceptKey = true;
-            OnChangeDelayUpdate = true;
-            await OnKeyup.InvokeAsync(args);
-        }
 
-        /// <summary>
-        /// OnKeydown event
-        /// </summary>
-        private async Task Keydown(Microsoft.AspNetCore.Components.Web.KeyboardEventArgs args)
+        protected override void OnParametersSet()
         {
-            //LastBackingNumber = BackingNumber;
-            //BackingNumber = "";
-            if (Numbers.Contains(args.Key) && (Card == default || Card.Length < 19))
-            {
-                OnChangeAcceptKey = true;
-                OnChangeDelayUpdate = false;
-            }
-            else if (args.Key == "Backspace")
-            {
-                OnChangeAcceptKey = true;
-                OnChangeRemovedSomething = true;
-            }
-            else
-            {
-                OnChangeAcceptKey = false; // Do not accept the next modification
-            }
-            await OnKeydown.InvokeAsync(args);
+            BackingNumber = Card;            
         }
+ 
 
+ 
         /// <summary>
         /// OnInput Event
         /// </summary>
         private async Task Input(Microsoft.AspNetCore.Components.ChangeEventArgs args)
         {
-            if (!OnChangeAcceptKey) { BackingNumber += " "; return; }
+            //if (!OnChangeAcceptKey) { BackingNumber += " "; return; }
 
-            string currentValue = (string)args.Value;
-            // Find if space was removed, spaces should be managed by the code not by the user.
-            //TODO: Maybe find more efficient way of achieving it?
-            if (OnChangeRemovedSomething)
-            {
-                var curValList = currentValue.ToArray();
-                for (int i = 0; i < curValList.Length; i++)
-                {
-                    int index = i; // 0000 0: 000000
-                    if (BackingNumber[index] == ' ' && curValList[index] != ' ') { OnChangeDelayUpdate = true; }
-
-                }
-            }
-
+            string currentValue = String.Concat(((string)args.Value).Where(p=> Numbers.Contains($"{p}")).Take(CardLength));
             BackingNumber = currentValue;
-            if (!OnChangeDelayUpdate)
-            {
-                BackingNumber = FormattedCardNumber(BackingNumber.Replace(" ", String.Empty));
-            }
+            Card = BackingNumber;
+            await CardChanged.InvokeAsync(BackingNumber);
+
             StateHasChanged();
             await OnChange.InvokeAsync(args);
         }

@@ -118,7 +118,7 @@
         @foreach (var lang in reference.Supported)
         {
             <h3>Code @lang.Key</h3>
-            <p>Set the <Code>@($@"Code=""{lang.Key}""")</Code> to activate.</p>
+            <p>Set the <Code>@($@"Language=""{lang.Key}""")</Code> to activate.</p>
             <HighlightCode Language="@lang.Key" Full="true" Content="@lang.Value[2]" />
 
         }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
-    public partial class Switch : ComponentBase
+    public partial class Switch : NewComponentBase
     {
         /// <summary>
         /// Input's ID
@@ -54,11 +55,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public string RadioGroup { get; set; }
 
-        /// <summary>
-        /// True when control is disabled (Default: false)
-        /// </summary>
-        [Parameter]
-        public bool Disabled { get; set; } = false;
 
         /// <summary>
         /// eg: Yes (Default: undefined)
@@ -72,13 +68,10 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public string LabelOff { get; set; }
 
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
-
 
         public async Task OnClickHandler()
         {
-            if (Disabled) { return; }
+            if (IsDisabled()) { return; }
             bool nVal = !Checked; Checked = nVal;
             await OnChangeValue.InvokeAsync(Checked);
             await OnStateChange.InvokeAsync(null);

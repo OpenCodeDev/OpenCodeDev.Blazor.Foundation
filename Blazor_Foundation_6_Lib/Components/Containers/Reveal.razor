@@ -14,7 +14,15 @@
 
     </div>
     <div style=" padding: 1em;">
-        @ChildContent
+        @if(ContentFunction != default)
+        {
+            @ContentFunction.Invoke(this).GetAwaiter().GetResult()
+        }
+        else
+        {
+            @ChildContent
+        }
+        
     </div>
     @if (CloseXButton)
     {
@@ -57,6 +65,6 @@
 </div>
 
 @code {
-    
+
 }
 

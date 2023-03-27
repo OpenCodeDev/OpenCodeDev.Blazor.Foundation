@@ -1,0 +1,45 @@
+﻿@page "/appwrapper"
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
+@inject NavigationManager NavManager;
+<SectionWrapper>
+    <SectionLeft>
+        <h2>What is this?</h2>
+        <p style=" margin-top: 1em;">
+            The Component <Code>AppWrapper</Code> is a crucial part, without it you have to handle all services requirement by yourself. <br />
+            It is much simpler to use <Code>AppWrapper</Code> as we did most of the work.
+        </p>
+        <p>It adds all the required Blazor Component for the different services to work... 
+            if you add services individually and exclude unused servies then the <Code>AppWrapper</Code> will remove unused component services.</p>
+            <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+<SectionWrapper>
+    <SectionLeft>
+ 
+        <h2>How to Use?</h2>
+        <Callout Size="small" Class="alert">
+            <Code>LegacyRevealController</Code> will be removed in version 4.0
+        </Callout>
+        <p>In your shared layouts you should use <Code>AppWrapper</Code></p>
+        <HighlightCode Full="true" Language="txt" Content="PEFwcFdyYXBwZXIgTGVnYWN5UmV2ZWFsQ29udHJvbGxlcj1mYWxzZT4KICAgIEBCb2R5CjwvQXBwV3JhcHBlcj4="
+                        HeaderIcon="mdi-bash" HeaderTitle="Shared Layouts" />
+        <Callout Size="small" Class="warning">
+            Set <Code>LegacyRevealController=true</Code> only if your app has been updated and still use the old Reveal system then transit to NovelReveal as soon as possible.
+        </Callout>
+
+        <h2>Blazor Server</h2>
+        <Callout Size="small" Class="warning">
+            Should set <Code>LegacyRevealController=false</Code> to avoid crash error about "Reveal cannot be duplicated" on reload.
+        </Callout>
+        <p><Code>LegacyRevealController</Code> should <b>ALWAYS</b> be set to <Code>False</Code> for new projects.</p>
+        
+        <hr />
+    </SectionLeft>
+</SectionWrapper>
+
+
+
+@code {
+
+}

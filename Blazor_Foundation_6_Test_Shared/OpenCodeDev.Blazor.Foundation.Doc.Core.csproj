@@ -43,6 +43,12 @@
 
 
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0" />
+  </ItemGroup>
+
+
+
 
   <ItemGroup>
 	  <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
@@ -54,9 +60,30 @@
 
 
   <ItemGroup>
+    <Compile Update="Shared\Resources\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+
+
+
+  <ItemGroup>
     <Content Update="Documentation\Navigation\MenuAccordion.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+  </ItemGroup>
+
+
+
+
+  <ItemGroup>
+    <EmbeddedResource Update="Shared\Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,19 @@
+﻿
+@mixin foundation-addition-justify-content {
+    @each $size in $breakpoint-classes {
+        @include breakpoint($size) {
+            @each $align in (left, right, center, space-around, space-between, space-evenly) {
+                @if $size != $-zf-zero-breakpoint {
+                    .#{$size}-justify-content-#{$align} {
+                        justify-content: $align;
+                    }
+                }
+                @else {
+                    .justify-content-#{$align} {
+                        justify-content: $align;
+                    }
+                }
+            }
+        }
+    }
+}

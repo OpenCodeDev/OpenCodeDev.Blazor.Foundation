@@ -4,6 +4,10 @@
  * Licensed under MIT Open Source
  */
 
+@import '../../../foundation-sites-master/scss/foundation.scss';
+
+
+
 @import 'Blazor_Foundation/Utilities.scss';
 
 
@@ -34,3 +38,7 @@
 
 // Import Animations
 @import 'Blazor_Foundation/Animations/Cycle';
+
+@import 'Blazor_Foundation/Zurb_Additions/Helper_Justify.scss';
+
+@include foundation-addition-justify-content;
