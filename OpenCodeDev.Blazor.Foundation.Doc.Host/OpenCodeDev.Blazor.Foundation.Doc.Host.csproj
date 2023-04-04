@@ -16,7 +16,13 @@
     <None Remove="Shared\**" />
     <None Remove="wwwroot\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings.Development.json" />
+    <Content Remove="appsettings.json" />
+  </ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 		<PackageReference Include="System.Net.Http.Json" Version="6.0.0" allowedVersions="[6,7)" />
@@ -25,10 +31,8 @@
 
 	<ItemGroup>
     <ProjectReference Include="..\Blazor_Foundation_6_Test_WASM\OpenCodeDev.Blazor.Foundation.Doc.Wasm.csproj" />
-	  <ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\OpenCodeDev.Blazor.Foundation.Doc.Core.csproj" />
-
-	  <ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
-
+	<ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\OpenCodeDev.Blazor.Foundation.Doc.Core.csproj" />
+	<ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
   </ItemGroup>
 
 </Project>

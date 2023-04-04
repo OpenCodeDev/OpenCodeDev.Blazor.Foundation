@@ -16,6 +16,7 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
+ 
             //builder.RootComponents.Add<App>("app");
             builder.Services.AddLocalization();
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
