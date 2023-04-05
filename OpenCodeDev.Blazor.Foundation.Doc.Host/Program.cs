@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Linq;
 using OpenCodeDev.Blazor.Foundation;
+using OpenCodeDev.Blazor.Foundation.Doc.Host;
 using System.Net;
 
 string currentDir = Directory.GetCurrentDirectory();
@@ -12,28 +14,36 @@ builder.Services.AddRazorPages();
 builder.Services.AddLocalization();
 builder.Services.AddScoped(sp => new HttpClient { });
 builder.Services.AddBlazorFoundationServices(false);
-
-
+builder.Services.AddCors();
+builder.Services.AddHttpLogging(logging => {
+    
+    logging.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponseBody;
+});
+builder.Services.AddResponseCaching(p=>p.MaximumBodySize = 0);
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
 }
 ForwardedHeadersOptions forwardOptions = new ForwardedHeadersOptions();
-forwardOptions.AllowedHosts.Concat(new string[] { "bf.opencodedev.com", "bf-doc.opencodedev.com", "*.opencodedev.com" });
-forwardOptions.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
-forwardOptions.ForwardedHeaders = ForwardedHeaders.All;
+JObject ServerConfig = JObject.Parse(File.ReadAllText($"{currentDir}/server_settings.json"));
+
+forwardOptions.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
 app.UseForwardedHeaders(forwardOptions);
 app.UseExceptionHandler("/Error");
-
-app.UseHttpLogging();
+app.UseCors(p => {
+    p.AllowAnyOrigin();
+});
+//app.UseHttpLogging();
 app.UseStaticFiles();
 app.UseBlazorFrameworkFiles();
+app.UseResponseCaching();
 //app.UseHttpsRedirection();
 //app.UseStaticWebAssets();
 //app.UseDirectoryBrowser();
 app.UseRouting();
 app.MapRazorPages();
 app.MapControllers();
-app.MapFallbackToFile("index.html");
+app.UseMiddleware<DebugMiddleware>();
+app.MapFallbackToPage("/_Host");
 app.Run();

@@ -35,4 +35,10 @@
 	<ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <Content Update="server_settings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
 </Project>
