@@ -38,9 +38,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor
 		/// <returns></returns>
 		protected bool IsDisabled()
 		{
-			string shared = AdditionalAttributes != null && 
-				AdditionalAttributes.ContainsKey("disabled") && 
-				AdditionalAttributes["disabled"] != null ? 
+			string shared = AdditionalAttributes != null && AdditionalAttributes.ContainsKey("disabled") && AdditionalAttributes["disabled"] != null ? 
 				(string)AdditionalAttributes["disabled"] : "False";
 			bool.TryParse(shared, out bool result);
 			return result || !HasPrerendered;
