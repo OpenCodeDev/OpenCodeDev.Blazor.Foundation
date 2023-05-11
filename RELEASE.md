@@ -1,12 +1,12 @@
-# Version 3.2.1 (April 2023)
+# Version 3.3.0 (June 2023)
 ## Features
-- 
+- Added Lightweight CSS for Emails (bf6_email.css) (89kb instead of 700+kb)
 
 ## Documentation
 - 
 
 ## Fixes
-- Fixed error unable to cast string to bool for IsDisabled() from NewComponentBase.
+
 
 ## Changes
 - 
