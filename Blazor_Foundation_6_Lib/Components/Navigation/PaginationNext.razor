@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Components.Web;
 
 
-<li class="@($"pagination-next {Class} " + $"{(Disable ? "disabled" : "")} ")">
+<li class="@($"pagination-next {Class} " + $"{(Disable ? "disabled" : "")} ")" @attributes=@AdditionalAttributes>
     @ChildContent
 </li>
 

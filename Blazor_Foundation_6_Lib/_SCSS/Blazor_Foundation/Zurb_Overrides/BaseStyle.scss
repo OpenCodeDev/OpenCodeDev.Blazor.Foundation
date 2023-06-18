@@ -1,3 +1,13 @@
 cite:before, .cite-block:before {
     content: "— ";
 }
+
+.close-button {
+    color: var(--close-button-color);
+}
+.close-button:hover {
+    color: var(--close-button-hover-color);
+}
+.close-button:focus {
+    color: var(--close-button-focus-color);
+}

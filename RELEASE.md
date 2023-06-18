@@ -1,21 +1,16 @@
-# Version 3.2 (March 2023)
+# Version 3.3.0 (June 2023)
 ## Features
-- Added small/large/medium-justify-content-left/center/right... screen size.
-- Added InputSelectorFragment to INovelRevealController.
-- Added PreRendering on All Controls... The controls are now disabled when prerendering.
+- Added Lightweight CSS for Emails (bf6_email.css) (89kb instead of 700+kb)
+- Added AdditionalAttributes on PaginationNext and PaginationPrevious.
+- Added Render Fragment Extension Class.
+- Added Render Fragment AutoIndexer for Attributes.
 
 ## Documentation
-- Documentation is now prerendered
-- Added Imports in Doc.
-- Changed Code to Language for HighlightCS Doc.
-- Fixed some outdated doc for some components.
-- Added AppWrapper Documentation.
-- Updated Installation Process.
-- Updated LocalStorage New Features Documentation.
+- 
 
 ## Fixes
-- Fixed Button Group Border Radius when Disabled.
-- Fixed Justify-Content CSS;
+- CSS Variables for Paginations, Close Button, Input Hover/Focus, Select, Reveal Border Radius/Color
+- Fixed Reveal Controller Indexing.
 
 ## Changes
 - 

@@ -10,7 +10,10 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 {
     public partial class PaginationNext : ComponentBase
     {
-        [Parameter]
+		[Parameter(CaptureUnmatchedValues = true)]
+		public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+		[Parameter]
         public RenderFragment ChildContent { get; set; }
 
         /// <summary>
@@ -24,5 +27,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
         /// </summary>
         [Parameter]
         public bool Disable { get; set; } = false;
+
     }
 }

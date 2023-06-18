@@ -1,0 +1,22 @@
+﻿/**
+ * Blazor Foundation 6 for Emails
+ * https://bf.opendevcode.com/
+ * Licensed under MIT Open Source
+ */
+
+@import '../../../foundation-sites-master/scss/foundation.scss';
+
+@include foundation-global-styles;
+@include foundation-typography;
+@include foundation-xy-grid-classes;
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-label;
+@include foundation-progress-bar;
+@include foundation-table;
+@include foundation-badge;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
