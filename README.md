@@ -22,7 +22,8 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 
 # Dependencies
 - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
-- [OpenCodeDev.Blazor.Foundation.Extensions](https://www.nuget.org/packages/OpenCodeDev.Blazor.Foundation.Extensions/)
+- Microsoft.AspNetCore.Components.WebAssembly
+- Microsoft.AspNetCore.Components.WebAssembly.DevServer
 
 # .NET Compatibility
 - .NET 6 LTS
