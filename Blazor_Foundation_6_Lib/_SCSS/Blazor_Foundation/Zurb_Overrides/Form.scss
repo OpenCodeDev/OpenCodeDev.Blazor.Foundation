@@ -12,7 +12,11 @@ input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
     opacity: 0.25;
 }
 
-
+select:focus {
+    border: var(--input-select-focus-border);
+    background-color: var(--input-focus-bg-color);
+    box-shadow: var(--input-focus-bs);
+}
 
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea{
     border-radius: var(--form-input-border-radius);
@@ -22,8 +26,14 @@ input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
     color: var(--form-input-color);
 }
 
-.slider-fill{
- background-color: var(--slider-filling-bg-color);
+[type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus, textarea:focus {
+    border: var(--form-input-focus-border);
+    background-color: var(--form-input-focus-bg-color);
+    box-shadow: var(--form-input-focus-bs);
+}
+
+.slider-fill {
+    background-color: var(--slider-filling-bg-color);
 }
 
 .slider{

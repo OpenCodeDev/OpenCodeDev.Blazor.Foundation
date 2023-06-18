@@ -10,19 +10,22 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Navigation
 {
     public partial class PaginationPrevious : ComponentBase
     {
-        [Parameter]
+		[Parameter(CaptureUnmatchedValues = true)]
+		public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+		[Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        /// <summary>
-        /// Custom Class to Append at the end of default Foundation Class.
-        /// </summary>
-        [Parameter]
-        public string Class { get; set; }
+		/// <summary>
+		/// Custom Class to Append at the end of default Foundation Class.
+		/// </summary>
+		[Parameter]
+		public string Class { get; set; }
 
-        /// <summary>
-        /// If True, disable previous. (Default: False)
-        /// </summary>
-        [Parameter]
-        public bool Disable { get; set; } = false;
-    }
+		/// <summary>
+		/// If True, disable next . (Default: False)
+		/// </summary>
+		[Parameter]
+		public bool Disable { get; set; } = false;
+	}
 }

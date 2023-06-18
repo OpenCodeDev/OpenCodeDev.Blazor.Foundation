@@ -1,0 +1,17 @@
+﻿.pagination .current {
+    background: var(--nav-current-bg-color);
+    color: var(--nav-current-color);
+    border-radius: var(--nav-current-border-radius);
+}
+
+.pagination a, .pagination button {
+    color: var(--nav-link-color);
+}
+
+.pagination a:hover, .pagination button:hover {
+    background: var(--nav-hover-bg-color);
+}
+
+.pagination .disabled {
+    color: var(--nav-disabled-color);
+}
