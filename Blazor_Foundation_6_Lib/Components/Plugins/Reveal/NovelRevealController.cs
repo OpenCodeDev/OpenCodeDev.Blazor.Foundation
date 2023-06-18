@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Components.Web;
 using OpenCodeDev.Blazor.Foundation.Components.Containers;
 using OpenCodeDev.Blazor.Foundation.Extensions;
 using Microsoft.AspNetCore.Components.Rendering;
-
+using static OpenCodeDev.Blazor.Foundation.Extensions.RenderFragmentExt;
 namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
 {
     public class NovelRevealController : INovelRevealController
@@ -85,15 +85,15 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
 
             RenderFragment fragment = new RenderFragment(tree =>
             {
-                tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, nameof(Containers.Reveal.OnOpened), EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, nameof(Containers.Reveal.Id), elementGen);
-                tree.AddAttribute(3, nameof(Containers.Reveal.OpenOnStart), true);
-                tree.AddAttribute(4, nameof(Containers.Reveal.CloseOnClick), canclose);
-                tree.AddAttribute(5, nameof(Containers.Reveal.CloseXButton), canclose);
-                tree.AddAttribute(6, nameof(Containers.Reveal.Title), title);
-                tree.AddAttribute(7, nameof(Containers.Reveal.ContentFunction), functionContent);
-                tree.AddComponentReferenceCapture(8, (value) => { tReference = value as Containers.Reveal; });
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
+                tree.AddAttribute(AutoIndex(), nameof(Containers.Reveal.OnOpened), EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), nameof(Containers.Reveal.Id), elementGen);
+                tree.AddAttribute(AutoIndex(), nameof(Containers.Reveal.OpenOnStart), true);
+                tree.AddAttribute(AutoIndex(), nameof(Containers.Reveal.CloseOnClick), canclose);
+                tree.AddAttribute(AutoIndex(), nameof(Containers.Reveal.CloseXButton), canclose);
+                tree.AddAttribute(AutoIndex(), nameof(Containers.Reveal.Title), title);
+                tree.AddAttribute(AutoIndex(), nameof(Containers.Reveal.ContentFunction), functionContent);
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -111,17 +111,17 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             Containers.Reveal tReference = null; // Temporary Reference of Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
-                tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, "Id", elementGen);
-                tree.AddAttribute(3, "ref", tReference);
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "ref", tReference);
                 
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(4, "CloseOnClick", false);
-                tree.AddAttribute(4, "CloseXButton", false);
-                tree.AddAttribute(5, "Title", title);
-                tree.AddAttribute(6, "ChildContent", message);
-                tree.AddComponentReferenceCapture(7, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent", message);
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
             string element = await Register(elementGen, fragment, null);
@@ -199,27 +199,27 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
-                tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(6, "CloseOnClick", false);
-                tree.AddAttribute(7, "CloseXButton", false);
-                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
-                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
-                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
-                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
-                tree.AddAttribute(15, "Title", title);
-                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent", (RenderFragment)((subtree) =>
                 {
-                    subtree.OpenElement(0, "input");
-                    subtree.AddAttribute(1, "type", "text");
-                    subtree.AddAttribute(2, "placeholder", "");
-                    subtree.AddAttribute(3, "value", BindConverter.FormatValue(value));
-                    subtree.AddAttribute(4, "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.OpenElement(AutoIndex(), "input");
+                    subtree.AddAttribute(AutoIndex(), "type", "text");
+                    subtree.AddAttribute(AutoIndex(), "placeholder", "");
+                    subtree.AddAttribute(AutoIndex(), "value", BindConverter.FormatValue(value));
+                    subtree.AddAttribute(AutoIndex(), "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
                     subtree.CloseElement();
                 }));
-                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -258,30 +258,30 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
-                tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(6, "CloseOnClick", false);
-                tree.AddAttribute(7, "CloseXButton", false);
-                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
-                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
-                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
-                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
-                tree.AddAttribute(15, "Title", title);
-                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent", (RenderFragment)((subtree) =>
                 {
-                    subtree.OpenElement(0, "input");
-                    subtree.AddAttribute(1, "type", "number");
-                    subtree.AddAttribute(2, "placeholder", "");
-                    subtree.AddAttribute(2, "min", minValue);
-                    subtree.AddAttribute(2, "max", maxValue);
-                    subtree.AddAttribute(2, "step", step);
-                    subtree.AddAttribute(3, "value", BindConverter.FormatValue(value));
-                    subtree.AddAttribute(4, "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.OpenElement(AutoIndex(), "input");
+                    subtree.AddAttribute(AutoIndex(), "type", "number");
+                    subtree.AddAttribute(AutoIndex(), "placeholder", "");
+                    subtree.AddAttribute(AutoIndex(), "min", minValue);
+                    subtree.AddAttribute(AutoIndex(), "max", maxValue);
+                    subtree.AddAttribute(AutoIndex(), "step", step);
+                    subtree.AddAttribute(AutoIndex(), "value", BindConverter.FormatValue(value));
+                    subtree.AddAttribute(AutoIndex(), "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
                     subtree.CloseElement();
                 }));
-                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -316,25 +316,25 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
-                tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(6, "CloseOnClick", false);
-                tree.AddAttribute(7, "CloseXButton", false);
-                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
-                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
-                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
-                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
-                tree.AddAttribute(15, "Title", title);
-                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent", (RenderFragment)((subtree) =>
                 {
-                    subtree.OpenElement(0, "textarea");
-                    subtree.AddAttribute(3, "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
-                    subtree.AddContent(4, value);
+                    subtree.OpenElement(AutoIndex(), "textarea");
+                    subtree.AddAttribute(AutoIndex(), "oninput", EventCallback.Factory.CreateBinder(this, __value => value = __value, value));
+                    subtree.AddContent(AutoIndex(), value);
                     subtree.CloseElement();
                 }));
-                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -377,28 +377,28 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
-                tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(6, "CloseOnClick", false);
-                tree.AddAttribute(7, "CloseXButton", false);
-                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
-                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
-                tree.AddAttribute(13, "PrimaryButtonOnClickCT", async () => { return true; });
-                tree.AddAttribute(14, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
-                tree.AddAttribute(15, "Title", title);
-                tree.AddAttribute(17, "ChildContent", (RenderFragment)((subtree) =>
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent", (RenderFragment)((subtree) =>
                 {
-                    subtree.OpenComponent(0, typeof(Controls.SingleSlider));
-                    subtree.AddAttribute(1, "Min", minValue);
-                    subtree.AddAttribute(2, "Max", maxValue);
-                    subtree.AddAttribute(3, "Step", step);
-                    subtree.AddAttribute(4, "Value", value);
-                    subtree.AddAttribute(5, "ValueChanged", EventCallback.Factory.Create(this, (float __value) => value = __value));
+                    subtree.OpenComponent(AutoIndex(), typeof(Controls.SingleSlider));
+                    subtree.AddAttribute(AutoIndex(), "Min", minValue);
+                    subtree.AddAttribute(AutoIndex(), "Max", maxValue);
+                    subtree.AddAttribute(AutoIndex(), "Step", step);
+                    subtree.AddAttribute(AutoIndex(), "Value", value);
+                    subtree.AddAttribute(AutoIndex(), "ValueChanged", EventCallback.Factory.Create(this, (float __value) => value = __value));
                     subtree.CloseComponent();
                 }));
-                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -433,49 +433,49 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
-                tree.OpenComponent<Containers.Reveal>(0);
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
                
-                tree.AddAttribute(2, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(3, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(5, "CloseOnClick", false);
-                tree.AddAttribute(6, "CloseXButton", false);
-                tree.AddAttribute(7, "PrimaryButtonTitle", option1Label);
-                tree.AddAttribute(8, "SecondaryButtonTitle", option2label);
-                tree.AddAttribute(9, "PrimaryButtonOnClickCT", async () => { return true; });
-                tree.AddAttribute(10, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
-                tree.AddAttribute(11, "Title", title);
-                tree.AddAttribute(12, "ChildContent", (RenderFragment)((subtree) =>
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent", (RenderFragment)((subtree) =>
                 {
-                    subtree.OpenElement(0, "select");
-                    subtree.AddAttribute(2, "onchange", 
+                    subtree.OpenElement(AutoIndex(), "select");
+                    subtree.AddAttribute(AutoIndex(), "onchange", 
                         EventCallback.Factory.CreateBinder(this, (string __value) => value = __value, value));
-                    subtree.AddContent(3, (RenderFragment)((suboptions) =>
+                    subtree.AddContent(AutoIndex(), (RenderFragment)((suboptions) =>
                     {
                         if (currentValue == null)
                         {
-                            suboptions.OpenElement(0, "option");
-                            suboptions.AddContent(3, noSelection);
+                            suboptions.OpenElement(AutoIndex(), "option");
+                            suboptions.AddContent(AutoIndex(), noSelection);
                             suboptions.CloseElement();
                         }
 
                         foreach (var item in selectable)
                         {
-                            suboptions.OpenElement(0, "option");
-                            suboptions.AddAttribute(1, "value", item.Key);
+                            suboptions.OpenElement(AutoIndex(), "option");
+                            suboptions.AddAttribute(AutoIndex(), "value", item.Key);
                             if (currentValue != null && currentValue.Equals(item.Key))
                             {
-                                suboptions.AddAttribute(2, "selected");
+                                suboptions.AddAttribute(AutoIndex(), "selected");
 
                             }
-                            suboptions.AddContent(3, item.Value);
+                            suboptions.AddContent(AutoIndex(), item.Value);
                             suboptions.CloseElement();
                         }
                     }));
 
                     subtree.CloseElement();
                 }));
-                tree.AddComponentReferenceCapture(13, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -506,8 +506,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             Console.WriteLine(message);
             RenderFragment fragment = new RenderFragment(tree =>
             {
-                tree.OpenElement(0, "div");
-                tree.AddContent(1, message);
+                tree.OpenElement(AutoIndex(), "div");
+                tree.AddContent(AutoIndex(), message);
                 tree.CloseElement();
             });
             return await ComplexTwoAnswerMessage(title, fragment, option1Label, option2label, option1Clbk, 
@@ -528,21 +528,21 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
-                tree.OpenComponent<Containers.Reveal>(0);
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
 
-                tree.AddAttribute(2, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(3, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(5, "CloseOnClick", false);
-                tree.AddAttribute(6, "CloseXButton", false);
-                tree.AddAttribute(7, "PrimaryButtonTitle", option1Label);
-                tree.AddAttribute(8, "SecondaryButtonTitle", option2label);
-                tree.AddAttribute(9, "PrimaryButtonOnClickCT", async () => { return true; });
-                tree.AddAttribute(10, "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
-                tree.AddAttribute(11, "Title", title);
-                tree.AddAttribute(12, "ChildContent",
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonOnClickCT", async () => { return true; });
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonOnClickCT", async () => { value = currentValue; return true; });
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent",
                     getFragmentSelector(() => tReference, currentValue, EventCallback.Factory.Create(this, (string arg) => value = arg)));
-                tree.AddComponentReferenceCapture(13, (value) => { tReference = value as Containers.Reveal; });
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 
@@ -581,23 +581,23 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal
             RenderFragment fragment = new RenderFragment(tree =>
             {
                 // (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })
-                tree.OpenComponent<Containers.Reveal>(0);
-                tree.AddAttribute(1, "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
-                tree.AddAttribute(2, "Id", elementGen);
-                tree.AddAttribute(4, "OpenOnStart", true);
-                tree.AddAttribute(5, "TitleIcon", titleIcon);
-                tree.AddAttribute(6, "CloseOnClick", false);
-                tree.AddAttribute(7, "CloseXButton", false);
-                tree.AddAttribute(8, "PrimaryButtonTitle", option1Label);
-                tree.AddAttribute(9, "PrimaryButtonStyle", option1style);
-                tree.AddAttribute(10, "ButtonGroupStyle", optionwrapperstyle);
-                tree.AddAttribute(11, "SecondaryButtonTitle", option2label);
-                tree.AddAttribute(12, "SecondaryButtonStyle", option2style);
-                tree.AddAttribute(13, "PrimaryButtonOnClickCT", (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })); 
-                tree.AddAttribute(14, "SecondaryButtonOnClickCT", (option2Clbk != null ? option2Clbk : async () => { selectedOption = 1; return true; }));
-                tree.AddAttribute(15, "Title", title);
-                tree.AddAttribute(17, "ChildContent", message);
-                tree.AddComponentReferenceCapture(18, (value) => { tReference = value as Containers.Reveal; });
+                tree.OpenComponent<Containers.Reveal>(AutoIndex());
+                tree.AddAttribute(AutoIndex(), "OnOpened", EventCallback.Factory.Create(this, (string arg) => OnRevealOpenedCallback(arg)));
+                tree.AddAttribute(AutoIndex(), "Id", elementGen);
+                tree.AddAttribute(AutoIndex(), "OpenOnStart", true);
+                tree.AddAttribute(AutoIndex(), "TitleIcon", titleIcon);
+                tree.AddAttribute(AutoIndex(), "CloseOnClick", false);
+                tree.AddAttribute(AutoIndex(), "CloseXButton", false);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonTitle", option1Label);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonStyle", option1style);
+                tree.AddAttribute(AutoIndex(), "ButtonGroupStyle", optionwrapperstyle);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonTitle", option2label);
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonStyle", option2style);
+                tree.AddAttribute(AutoIndex(), "PrimaryButtonOnClickCT", (option1Clbk != null ? option1Clbk : async () => { selectedOption = 0; return true; })); 
+                tree.AddAttribute(AutoIndex(), "SecondaryButtonOnClickCT", (option2Clbk != null ? option2Clbk : async () => { selectedOption = 1; return true; }));
+                tree.AddAttribute(AutoIndex(), "Title", title);
+                tree.AddAttribute(AutoIndex(), "ChildContent", message);
+                tree.AddComponentReferenceCapture(AutoIndex(), (value) => { tReference = value as Containers.Reveal; });
                 tree.CloseComponent();
             });
 

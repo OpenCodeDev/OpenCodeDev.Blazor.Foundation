@@ -116,18 +116,46 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
 
             Set("--off-canvas-bg-color", "var(--white-smoke-color)", "Off-Canvas backgound color.");
 
+            // Inputs
             Set("--form-input-border-radius", "0.2em", "Input border radius (text, textarea, email)...");
             Set("--form-input-font-size", "1rem", "Input font size.");
             Set("--form-input-border", "1px solid #cacaca", "Input border style.");
             Set("--form-input-background-color", "var(--white-color)", "Input background color.");
             Set("--form-input-color", "var(--blackish-color)", "Input font color.");
 
+            Set("--form-input-focus-border", "1px solid #8a8a8a", "Input focus border.");
+            Set("--form-input-focus-bg-color", "#fefefe", "Input focus background color.");
+            Set("--form-input-focus-bs", "0 0 5px #cacaca", "Input focus box shadow.");
+
             Set("--hljs-header-title-ft-color", "var(--white-color)", "Code Highlighter (HighlightCS) font color of header's title.");
             Set("--hljs-header-copy-ft-color", "var(--white-color)", "Code Highlighter (HighlightCS) font color of header's copy button.");
             Set("--hljs-header-bg-color", "var(--dark-gray-color)", "Code Highlighter (HighlightCS) background color of header.");
 
             Set("--reveal-border-radius", "var(--global-border-radius)", "Border radius for reveal panel.");
+            Set("--reveal-border", "1px solid #cacaca", "Border for reveal panel.");
             Set("--reveal-bg-color", "var(--white-color)", "background color for reveal panel.");
+
+            // Forms
+            Set("--input-select-focus-border", "1px solid #8a8a8a", "Input select focus border");
+            Set("--input-focus-bg-color", "var(--white-color)", "Input focus background");
+            Set("--input-focus-bs", "0 0 5px #cacaca;", "Input focus box shadow");
+
+            // Button Close
+            Set("--close-button-color", "var(--dark-gray-color)", "Close button color.");
+            Set("--close-button-hover-color", "var(--blackish-color)", "Close hover color.");
+            Set("--close-button-focus-color", "var(--blackish-color)", "Close focus color.");
+
+            // Pagination
+            Set("--nav-current-bg-color", "var(--primary-color)", "Pagination background color.");
+            Set("--nav-current-color", "var(--white-color)", "Pagination color.");
+            Set("--nav-current-border-radius", "var(--global-border-radius)", "Pagination border radius.");
+            
+            Set("--nav-link-color", "var(--black-color)", "Pagination a color.");
+            Set("--nav-hover-bg-color", "var(--light-warm-gray-color)", "Pagination hover background color.");
+            Set("--nav-disabled-color", "var(--medium-gray-color)", "PAgination disabled color.");
+
+
+
 
         }
 

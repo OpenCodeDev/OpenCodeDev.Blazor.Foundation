@@ -6272,7 +6272,8 @@ tbody tr:nth-child(even) {
   height: fit-content;
   min-height: unset;
   border-radius: var(--reveal-border-radius);
-  border-radius: var(--reveal-bg-color); }
+  background-color: var(--reveal-bg-color);
+  border: var(--reveal-border); }
 
 .off-canvas {
   background-color: var(--off-canvas-bg-color); }
@@ -6295,6 +6296,11 @@ textarea[readonly] {
   cursor: not-allowed;
   opacity: 0.25; }
 
+select:focus {
+  border: var(--input-select-focus-border);
+  background-color: var(--input-focus-bg-color);
+  box-shadow: var(--input-focus-bs); }
+
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
 textarea {
   border-radius: var(--form-input-border-radius);
@@ -6302,6 +6308,12 @@ textarea {
   border: var(--form-input-border);
   background-color: var(--form-input-background-color);
   color: var(--form-input-color); }
+
+[type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,
+textarea:focus {
+  border: var(--form-input-focus-border);
+  background-color: var(--form-input-focus-bg-color);
+  box-shadow: var(--form-input-focus-bs); }
 
 .slider-fill {
   background-color: var(--slider-filling-bg-color); }
@@ -6325,6 +6337,15 @@ textarea {
 
 cite:before, .cite-block:before {
   content: "— "; }
+
+.close-button {
+  color: var(--close-button-color); }
+
+.close-button:hover {
+  color: var(--close-button-hover-color); }
+
+.close-button:focus {
+  color: var(--close-button-focus-color); }
 
 .slider {
   margin-bottom: 1.25rem; }
