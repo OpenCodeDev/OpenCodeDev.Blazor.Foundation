@@ -24,7 +24,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="System.Net.Http.Json" Version="6.0.0" allowedVersions="[6,7)" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.11" allowedVersions="[6,7)" />
 	</ItemGroup>
