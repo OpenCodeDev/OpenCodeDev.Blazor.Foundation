@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>OpenCodeDev</Authors>
     <Product>Blazor Foundation 6 - CodeHighlighter Extension</Product>
-    <Copyright>OpenCodeDev © 2022</Copyright>
+    <Copyright>OpenCodeDev © 2023</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
@@ -17,9 +17,11 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</RootNamespace>
     <PackageIcon>icon-highlightcs.png</PackageIcon>
     <PackageIconUrl />
-    <AssemblyVersion>3.1.0</AssemblyVersion>
-    <FileVersion>3.1.0</FileVersion>
-    <Version>3.1.0</Version>
+    <AssemblyVersion>3.1.2</AssemblyVersion>
+    <FileVersion>3.1.2</FileVersion>
+    <Version>3.1.2</Version>
+    <Title>Blazor Foundation Highlight CS</Title>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   
@@ -34,6 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\icon-highlightcs.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -62,5 +68,13 @@
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+	  <None Update="README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>.\</PackagePath>
+	  </None>
+  </ItemGroup>
+
 
 </Project>
