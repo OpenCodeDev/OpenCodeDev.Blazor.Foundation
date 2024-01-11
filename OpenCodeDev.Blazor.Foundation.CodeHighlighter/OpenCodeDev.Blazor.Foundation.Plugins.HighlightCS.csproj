@@ -1,18 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-
   <PropertyGroup>
-    <TargetFrameworks>net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>OpenCodeDev</Authors>
     <Product>Blazor Foundation 6 - CodeHighlighter Extension</Product>
-    <Copyright>OpenCodeDev © 2023</Copyright>
+    <Copyright>OpenCodeDev © 2024</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://bf.opencodedev.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
     <RepositoryType>Open Source</RepositoryType>
     <PackageTags>blazor, blazor-foundation, responsive, mobile-first, code-highlighter, c#, .net6</PackageTags>
-	  <Description>Add Blazor Foundation Component to highlight most comment coding languages (c#, java, html, php, c++, c, golang, rust...)</Description>
-	  <PackageId>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</PackageId>
+    <Description>Add Blazor Foundation Component to highlight most comment coding languages (c#, java, html, php, c++, c, golang, rust...)</Description>
+    <PackageId>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</PackageId>
     <AssemblyName>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</AssemblyName>
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</RootNamespace>
     <PackageIcon>icon-highlightcs.png</PackageIcon>
@@ -23,18 +22,9 @@
     <Title>Blazor Foundation Highlight CS</Title>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
-
-  
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
-  
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
-  </ItemGroup>
-
   <ItemGroup>
     <None Include="..\readme.md">
       <Pack>True</Pack>
@@ -42,18 +32,18 @@
     </None>
     <None Include="..\icon-highlightcs.png">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
     <None Include="..\LICENSE.txt">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Blazor_Foundation_6_Lib\OpenCodeDev.Blazor.Foundation.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Localization\Lang.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -61,20 +51,27 @@
       <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Localization\Lang.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
-	  <None Update="README.md">
-		  <Pack>True</Pack>
-		  <PackagePath>.\</PackagePath>
-	  </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>.\</PackagePath>
+    </None>
   </ItemGroup>
 
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="8.*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.*" />
+	</ItemGroup>
 
 </Project>

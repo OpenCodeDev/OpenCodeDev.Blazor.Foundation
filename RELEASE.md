@@ -1,13 +1,3 @@
-# Version 3.3.2 (June 2023)
+# Version 3.3.3 (January 2024)
 ## Features
-
-## Documentation
-
-## Fixes
-- Fixed Button MarginTop property not adding margin-top
-
-## Changes
-
-## Breaking Changes
-
-## Low-Impact Breaking Changes
+- Migrated to .NET 8.0
