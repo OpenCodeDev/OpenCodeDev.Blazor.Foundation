@@ -33,4 +33,4 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 - Blazor Server
 
 # Get Started
-Get Started by Visiting the Official [Documentation](https://bf-doc.opencodedev.com/) of Blazor Foundation.
+Get Started by Visiting the Official [Documentation](https://bf.opencodedev.com/) of Blazor Foundation.
