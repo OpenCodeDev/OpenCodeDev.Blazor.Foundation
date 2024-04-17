@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 	<PropertyGroup>
-		<TargetFrameworks>net8.0</TargetFrameworks>
+		<TargetFrameworks>net6.0;net8.0</TargetFrameworks>
 		<RazorLangVersion>3.0</RazorLangVersion>
 		<PackageId>OpenCodeDev.Blazor.Foundation.Doc.Core</PackageId>
 		<AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Core</AssemblyName>
@@ -20,7 +20,13 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.*" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.*" />
 	</ItemGroup>
-
+	
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="6.*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.*" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.*" />
+	</ItemGroup>
+	
 	<ItemGroup>
 		<Content Remove="wwwroot\TestDoc.md" />
 	</ItemGroup>
