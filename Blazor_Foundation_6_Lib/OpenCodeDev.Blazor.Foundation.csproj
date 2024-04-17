@@ -19,9 +19,9 @@
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes>See https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</PackageReleaseNotes>
     <PackageId>OpenCodeDev.Blazor.Foundation</PackageId>
-    <AssemblyVersion>3.3.3</AssemblyVersion>
-    <Version>3.3.3</Version>
-    <FileVersion>3.3.3</FileVersion>
+    <AssemblyVersion>3.3.4</AssemblyVersion>
+    <Version>3.3.4</Version>
+    <FileVersion>3.3.4</FileVersion>
     <PackageIcon>icon_3.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
