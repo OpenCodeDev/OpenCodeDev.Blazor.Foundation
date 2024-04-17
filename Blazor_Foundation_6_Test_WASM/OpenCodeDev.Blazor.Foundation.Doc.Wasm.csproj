@@ -1,44 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Wasm</AssemblyName>
-		<RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Wasm</RootNamespace>
-		<PublishTrimmed>false</PublishTrimmed>
-	</PropertyGroup>
-	<ItemGroup>
-		<Compile Remove="Pages\**" />
-		<Content Remove="Pages\**" />
-		<EmbeddedResource Remove="Pages\**" />
-		<None Remove="Pages\**" />
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\OpenCodeDev.Blazor.Foundation.Doc.Core.csproj" />
-		<ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
-	</ItemGroup>
-	<!-- Copy Documentation to Docs Folder -->
-	<Target Name="CopyDoc" AfterTargets="Publish">
-		<Message Text="Copy Documentation Files" Importance="high" />
-		<!-- Copy Individual Files -->
-		<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Remove-Item '$(SolutionDir)docs' -Recurse } &quot;&amp;" />
-		<Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Copy-Item -Path '$(ProjectDir)bin\Release\net6.0\browser-wasm\publish\wwwroot' -Destination '$(SolutionDir)docs' -recurse -Force -ErrorAction Continue} &quot;" />
-	</Target>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>OpenCodeDev.Blazor.Foundation.Doc.Wasm</AssemblyName>
+    <RootNamespace>OpenCodeDev.Blazor.Foundation.Doc.Wasm</RootNamespace>
+    <PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\**" />
+    <Content Remove="Pages\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <None Remove="Pages\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor_Foundation_6_Test_Shared\OpenCodeDev.Blazor.Foundation.Doc.Core.csproj" />
+    <ProjectReference Include="..\OpenCodeDev.Blazor.Foundation.CodeHighlighter\OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.csproj" />
+  </ItemGroup>
+  <!-- Copy Documentation to Docs Folder -->
+  <Target Name="CopyDoc" AfterTargets="Publish">
+    <Message Text="Copy Documentation Files" Importance="high" />
+    <!-- Copy Individual Files -->
+    <Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Remove-Item '$(SolutionDir)docs' -Recurse } &quot;&amp;" />
+    <Exec Command="powershell.exe –NonInteractive –ExecutionPolicy Unrestricted -Command &quot;&amp; { Copy-Item -Path '$(ProjectDir)bin\Release\net6.0\browser-wasm\publish\wwwroot' -Destination '$(SolutionDir)docs' -recurse -Force -ErrorAction Continue} &quot;" />
+  </Target>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.*" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.*" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.*" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="System.Net.Http.Json" Version="8.*" />
+		<PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
 	</ItemGroup>
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.*" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.*" />
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.*" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="13.0.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="System.Net.Http.Json" Version="6.*" />
 	</ItemGroup>
-
+	
 </Project>

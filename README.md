@@ -27,6 +27,7 @@ That being said, let get started! Unleash the power of Zurb Foundation 6 in the 
 
 # .NET Compatibility
 - .NET 6 LTS
+- .NET 8 LTS
 
 # Blazor Compatibility
 - Blazor WASM

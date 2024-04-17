@@ -8,6 +8,7 @@
 @using System.Text
 @using System.Text.RegularExpressions
 @using OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.Markdown;
 @inject HttpClient _client
 
 @if (IsLoading)
@@ -21,15 +22,10 @@ else{
          @Error
      </Callout>
     }else{
-
-        <div>
-            @RawPage
-        </div>
         @foreach (var md in ParsedMarkdown)
         {
-            @md
+            @md.Fragment
         }
-
     }
 }
 
@@ -42,7 +38,7 @@ else{
     private string Error { get; set; }
     private string Location {get; set;}
 
-    private List<RenderFragment> ParsedMarkdown { get; set; } = new List<RenderFragment>();
+    private List<MarkdownElement> ParsedMarkdown { get; set; } = new List<MarkdownElement>();
 
     protected override void OnParametersSet()
     {
@@ -65,10 +61,11 @@ else{
         {
             RawPage = await _client.GetStringAsync(Location);
             await ProcessDocument();
+            StateHasChanged();
         }
         catch (Exception ex)
         {
-            ParsedMarkdown.Add(WarningMessage(ex.Message)); 
+            ParsedMarkdown.Add(new MarkdownElement(WarningMessage(ex.Message), 0));
         }
         finally
         {
@@ -80,31 +77,36 @@ else{
 
     private async Task ProcessDocument()
     {
-        var mdParser = new MarkdownParser();
-        var important = mdParser.Rules.First();
         if (!string.IsNullOrEmpty(RawPage))
         {
-
-            try {
-                Match match = Regex.Match(RawPage, important.Key);
-                if (match.Success)
+            // Create MardownParser.
+            var mdParser = new MarkdownParser();
+            // Parse All Object First.
+            foreach (var rule in mdParser.MdRules)
+            {
+                try
                 {
-                    Console.WriteLine($"Capture Start At {match.Index}");
-                    ParsedMarkdown.Add(CreateHighlightCode("cs", match.Value));
+                    MatchCollection match = Regex.Matches(RawPage, rule.Regex);
+                    if (match.Count > 0)
+                        foreach (Match item in match)
+                        {
+                            MarkdownElement? mde = rule.ProcessValue(item.Value, item, item.Index);
+                            if (mde == null) continue; // ignore failed.
+                            ParsedMarkdown.Add(mde);
+                        }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"{important.Key} does match anything");
+                    Console.WriteLine(ex.Message);
+                    // Silence Errors
                 }
-                //while (match.Success) {
-                //match = match.NextMatch();
-                //}  
-            } catch (RegexMatchTimeoutException) {}
-
+            }
+            ParsedMarkdown.OrderBy(p => p.Position);
+            Console.WriteLine($"fasd {ParsedMarkdown.Count}");
         }
         else
         {
-           ParsedMarkdown.Add(WarningMessage($"Document: {Location} is empty, misconfigured or could not be fetch.")); 
+            ParsedMarkdown.Add(new MarkdownElement(WarningMessage($"Document: {Location} is empty, misconfigured or could not be fetch."), 0));
         }
 
     }

@@ -1,7 +1,47 @@
 ﻿### My Mark Down Test Oh!
+# **Header** 1
+## *Header* 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
+
+> blockquotesdasd
+	
+1. First item
+2. Second item
+3. Third item
+
+- First item
+   - First item
+- Second item
+- Third item
+
+` This is a inline code with multiple lines `
+
+--- 
+
+[This is a link](https://www.example.com)
+
+![Here's an image](image.jpg)
 
 
-[--HighlightCode--]
+This is a paragraph without any stuff [This is a link](https://www.example.com) but this should be great.
+
+```
+This is a code block.
+{
+    "firstName": "John",
+    "lastName": "Smith",
+    "age": 25
+}
+```
+
+~~The world is flat.~~
+
+
+
+[--HighlightCode(type="", testing="")--]
 namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins
 {
     public static class MDILoader{
@@ -30,3 +70,4 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins
 
 }
 [--/HighlightCode--]
+

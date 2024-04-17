@@ -20,7 +20,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor
 		private bool HasPrerendered { get; set; }
 
 		/// <summary>
-		///  
+		/// 
 		/// </summary>
 		protected override void OnAfterRender(bool firstRender)
 		{
@@ -38,21 +38,19 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor
 		/// <returns></returns>
 		protected bool IsDisabled()
 		{
-			object shared = AdditionalAttributes != null && AdditionalAttributes.ContainsKey("disabled") && AdditionalAttributes["disabled"] != null ? 
-				AdditionalAttributes["disabled"] : "False";
-			bool value = false;
-			if (shared.GetType() == typeof(bool)) value = (bool)shared;
-			else if (shared.GetType() == typeof(string))
-			{
+            object shared = AdditionalAttributes != null && AdditionalAttributes.ContainsKey("disabled") && AdditionalAttributes["disabled"] != null ?
+                AdditionalAttributes["disabled"] : "False";
+            bool value = false;
+            if (shared.GetType() == typeof(bool)) value = (bool)shared;
+            else if (shared.GetType() == typeof(string))
+            {
                 bool.TryParse((string)shared, out bool result);
-				value = result;
-            } 
+                value = result;
+            }
+
 
             return value || !HasPrerendered;
         }
-            
-			return value || !HasPrerendered;
-		}
 
 		protected virtual void AfterRenderWrap(bool isFirstRender) { 
 		
