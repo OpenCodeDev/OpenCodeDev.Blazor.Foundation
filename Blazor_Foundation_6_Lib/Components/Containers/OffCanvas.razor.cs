@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using OpenCodeDev.Blazor.Foundation.Extensions;
 using Microsoft.JSInterop;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Containers
 {
@@ -14,7 +15,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }
-
         /// <summary>
         /// Unique HTML Identifier.
         /// </summary>
@@ -83,10 +83,33 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
 
         [Parameter(CaptureUnmatchedValues = true)]
         public IDictionary<string, object> AdditionalAttributes { get; set; }
+        
+        /// <summary>
+        /// Called when closing event starts
+        /// </summary>
+        [Parameter] public EventCallback OnClosing { get; set; }
+
+        /// <summary>
+        /// Called when closed event called.
+        /// </summary>
+        [Parameter] public EventCallback OnClosed { get; set; }
+
+        /// <summary>
+        /// Called when opening starts
+        /// </summary>
+        [Parameter] public EventCallback OnOpening { get; set; }
+
+        /// <summary>
+        /// Called when canvas is opened.
+        /// </summary>
+        [Parameter] public EventCallback OnOpened { get; set; }
+
+        [Inject] IJSRuntime JS { get; set; }
+        private DotNetObjectReference<OffCanvas> CtrlDotNet { get; set; }
 
         protected override void OnInitialized()
         {
-
+            CtrlDotNet = DotNetObjectReference.Create(this);
         }
 
         public override async Task SetParametersAsync(ParameterView parameters)
@@ -97,20 +120,36 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            if (firstRender)
-            {
-                if (AutoManaged)
-                {
-                    await JSRuntime.InvokeVoidAsync("OffCanvasRegister", Id, DataOptions != null ? DataOptions.ToJSObjectString() : null);
-                    if (AutoOpen)
-                    {
+            if (firstRender) {
+                if (AutoManaged) {
+                    await JSRuntime.InvokeVoidAsync("OffCanvasRegister", CtrlDotNet, Id, DataOptions != null ? DataOptions.ToJSObjectString() : null);
+                    if (AutoOpen) {
                         await TriggerOpen();
                     }
-
                 }
             }
 
         }
+
+        /// <summary>
+        /// Called by JS when event triggered
+        /// </summary>
+        public async Task OnFoundationOpening() => await OnOpening.InvokeAsync();
+
+        /// <summary>
+        /// Called by JS when event triggered
+        /// </summary>
+        public async Task OnFoundationOpened() => await OnOpened.InvokeAsync();
+
+        /// <summary>
+        /// Called by JS when event triggered
+        /// </summary>
+        public async Task OnFoundationClosing() => await OnClosing.InvokeAsync();
+
+        /// <summary>
+        /// Called by JS when event triggered
+        /// </summary>
+        public async Task OnFoundationClosed() => await OnClosed.InvokeAsync();
 
 
         public void Dispose()

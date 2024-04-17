@@ -11156,20 +11156,22 @@ async function MotionUIAnimateOut(Guid, Animation) {
 
 var BlazorFoundationInifiteLoadHelperFunc =
     (offset) => Foundation.util.throttle(function (e) {
-    window.requestAnimationFrame(function () {
-        // Get Maximum of Y value of the page.
-        var scrollMaxY = window.scrollMaxY || (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight);
-        let scroll = window.scrollY;
-        if ((scrollMaxY - offset) <= scroll) {
-            try {
-                DotNet.invokeMethodAsync("OpenCodeDev.Blazor.Foundation", "InfiniteLoadHelperReachedEnd");
-            } catch (e) {
-                // Silent
+        window.requestAnimationFrame(function () {
+            // Get Maximum of Y value of the page.
+            var scrollMaxY = window.scrollMaxY || (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight);
+            let scroll = window.scrollY;
+            if ((scrollMaxY - offset) <= scroll) {
+                try {
+                    DotNet.invokeMethodAsync("OpenCodeDev.Blazor.Foundation", "InfiniteLoadHelperReachedEnd");
+                } catch (e) {
+                    // Silent
+                }
+
             }
-            
-        }
-    });
-}, 300);
+        });
+    }, 300);
+
+
 
 function BlazorFoundationInitInfiniteLoadHelper(offset) {
     // Remove Listen if exist
@@ -11208,13 +11210,25 @@ function FoundationDestroy(element) {
     $(`#${element}`).foundation('_destroy');
 }
 
-function OffCanvasRegister(element, options) {
+function OffCanvasRegister(instance, element, options) {
     if (typeof window.OffCanvasList == 'undefined') {
         window.OffCanvasList = [];
     }
     // console.log(`Register ${element}`);
     let optionsCanvas = options == null ? null : JSON.parse(options);
     window.OffCanvasList.push(new Foundation.OffCanvas($(`#${element}`), optionsCanvas));
+    $(`#${element}`).on('opened.zf.offCanvas', function () {
+        instance.invokeMethodAsync('OnFoundationOpening');
+    });
+    $(`#${element}`).on('openedEnd.zf.offCanvas', function () {
+        instance.invokeMethodAsync('OnFoundationOpened');
+    });
+    $(`#${element}`).on('close.zf.offCanvas', function () {
+        instance.invokeMethodAsync('OnFoundationClosing');
+    });
+    $(`#${element}`).on('closed.zf.offCanvas', function () {
+        instance.invokeMethodAsync('OnFoundationClosed');
+    });
 }
 
 function ElementToggle(element) {

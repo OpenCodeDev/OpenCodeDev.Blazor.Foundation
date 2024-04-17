@@ -20,7 +20,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor
 		private bool HasPrerendered { get; set; }
 
 		/// <summary>
-		/// 
+		///  
 		/// </summary>
 		protected override void OnAfterRender(bool firstRender)
 		{
@@ -48,6 +48,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor
 				value = result;
             } 
 
+            return value || !HasPrerendered;
+        }
             
 			return value || !HasPrerendered;
 		}
