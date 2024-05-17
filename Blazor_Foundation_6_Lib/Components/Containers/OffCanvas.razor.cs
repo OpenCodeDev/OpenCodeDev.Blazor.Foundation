@@ -134,21 +134,25 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Containers
         /// <summary>
         /// Called by JS when event triggered
         /// </summary>
+        [JSInvokable(nameof(OnFoundationOpening))]
         public async Task OnFoundationOpening() => await OnOpening.InvokeAsync();
 
         /// <summary>
         /// Called by JS when event triggered
         /// </summary>
+        [JSInvokable(nameof(OnFoundationOpened))]
         public async Task OnFoundationOpened() => await OnOpened.InvokeAsync();
 
         /// <summary>
         /// Called by JS when event triggered
         /// </summary>
+        [JSInvokable(nameof(OnFoundationClosing))]
         public async Task OnFoundationClosing() => await OnClosing.InvokeAsync();
 
         /// <summary>
         /// Called by JS when event triggered
         /// </summary>
+        [JSInvokable(nameof(OnFoundationClosed))]
         public async Task OnFoundationClosed() => await OnClosed.InvokeAsync();
 
 

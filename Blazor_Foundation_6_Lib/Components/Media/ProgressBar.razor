@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Components.Web;
 
 <div class="@($"{ColorClass} progress {Class}")" id="@Id" @attributes="AdditionalAttributes">
-    <div class="progress-meter" style="@($"width: {Progress.ToString()}%;")">
+    <div class="progress-meter" style="max-width: 100%; @($"width: {Progress.ToString()}%;")">
         @if (ShowText)
         {
             <span class="progress-meter-text">@($"{Progress.ToString()}%")</span>
