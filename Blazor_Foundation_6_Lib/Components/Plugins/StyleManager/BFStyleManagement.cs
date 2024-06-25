@@ -154,18 +154,22 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
             Set("--nav-hover-bg-color", "var(--light-warm-gray-color)", "Pagination hover background color.");
             Set("--nav-disabled-color", "var(--medium-gray-color)", "PAgination disabled color.");
 
+			// Table
+			Set("--table-head-bg-color", "var(--white-color)", "Table header background.");
+			Set("--table-head-color", "var(--black-color)", "Table header font color.");
+			Set("--table-body-bg-color", "var(--white-color)", "Table body background color.");
+			Set("--table-body-hover-bg-color", "var(--light-gray-color)", "Table body hover bg color.");
+			Set("--table-body-eh-bg-color", "#ececec", "Table body even hover bg color.");
 
+		}
 
-
-        }
-
-        /// <summary>
-        /// Use to dynamically set the color of referenced element. 
-        /// </summary>
-        /// <param name="key">ref of the variable</param>
-        /// <param name="value"> string value (color html)</param>
-        /// <param name="update">Call update event, usually to trigger rerendering.</param>
-        public virtual void Set(string key, string value, bool update = false)
+		/// <summary>
+		/// Use to dynamically set the color of referenced element. 
+		/// </summary>
+		/// <param name="key">ref of the variable</param>
+		/// <param name="value"> string value (color html)</param>
+		/// <param name="update">Call update event, usually to trigger rerendering.</param>
+		public virtual void Set(string key, string value, bool update = false)
         {
             string desc = "hide"; // Default Description
             if (Style.ContainsKey(key)) { desc = Style[key].ToObject<JObject>().GetValue("desc").ToString(); }
