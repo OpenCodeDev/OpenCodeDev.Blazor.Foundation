@@ -1,6 +1,6 @@
 # Version 3.3.7 (January 2024)
 ## Features
-- Migrated to .NET 8.0
+- Migrated to Foundation 6.8.5 (Latest)
 
 ## Fixes
 - Added --table-head-bg-color

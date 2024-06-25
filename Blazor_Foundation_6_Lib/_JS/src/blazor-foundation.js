@@ -1,7 +1,7 @@
 ﻿/*
  * Copyright (c) OpenCodeDev.
  * Created in 2021
- * Last Update in 2022
+ * Last Update in 2024
  * Version: 1.0
  * JS Version: ES6+
  * Contributors:

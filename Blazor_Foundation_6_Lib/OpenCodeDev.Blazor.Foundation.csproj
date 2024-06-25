@@ -19,9 +19,9 @@
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes>See https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</PackageReleaseNotes>
     <PackageId>OpenCodeDev.Blazor.Foundation</PackageId>
-    <AssemblyVersion>3.3.6.1</AssemblyVersion>
-    <Version>3.3.6.1</Version>
-    <FileVersion>3.3.6.1</FileVersion>
+    <AssemblyVersion>3.3.6.2</AssemblyVersion>
+    <Version>3.3.6.2</Version>
+    <FileVersion>3.3.6.2</FileVersion>
     <PackageIcon>icon_3.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
@@ -87,17 +87,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
   <!-- Compile SCSS files into CSS -->
   <Target Name="CompileGlobalSass" BeforeTargets="Compile">
     <Message Text="Compiling CSSsss" Importance="high" />
     <!-- foundation.js  -->
-    <Exec Command="node-sass $(ProjectDir)_SCSS\bf6_only.scss $(ProjectDir)wwwroot\css\bf6_only.css" />
-    <Exec Command="node-sass $(ProjectDir)_SCSS\bf6_prototype.scss $(ProjectDir)wwwroot\css\bf6_prototype.css" />
-    <Exec Command="node-sass $(ProjectDir)_SCSS\bf6_rtl.scss $(ProjectDir)wwwroot\css\bf6_rtl.css" />
-    <Exec Command="node-sass $(ProjectDir)_SCSS\bf6_standard.scss $(ProjectDir)wwwroot\css\bf6_standard.css" />
-    <Exec Command="node-sass $(ProjectDir)_SCSS\bf6_email.scss $(ProjectDir)wwwroot\css\bf6_email.css" />
+    <Exec Command="sass $(ProjectDir)_SCSS\bf6_only.scss $(ProjectDir)wwwroot\css\bf6_only.css" />
+    <Exec Command="sass $(ProjectDir)_SCSS\bf6_prototype.scss $(ProjectDir)wwwroot\css\bf6_prototype.css" />
+    <Exec Command="sass $(ProjectDir)_SCSS\bf6_rtl.scss $(ProjectDir)wwwroot\css\bf6_rtl.css" />
+    <Exec Command="sass $(ProjectDir)_SCSS\bf6_standard.scss $(ProjectDir)wwwroot\css\bf6_standard.css" />
+    <Exec Command="sass $(ProjectDir)_SCSS\bf6_email.scss $(ProjectDir)wwwroot\css\bf6_email.css" />
   </Target>
   <!-- Compile SCSS files into CSS -->
   <Target Name="MergeJS" BeforeTargets="Compile">
