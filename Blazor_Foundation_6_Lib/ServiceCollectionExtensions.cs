@@ -12,6 +12,9 @@ using Microsoft.JSInterop;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.Reveal;
 using OpenCodeDev.Blazor.Foundation.Extensions.Clipboard;
 using OpenCodeDev.Blazor.Foundation.Extensions.LocalStorage;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine;
+using System.Reflection;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown;
 
 namespace OpenCodeDev.Blazor.Foundation
 {
@@ -120,6 +123,37 @@ namespace OpenCodeDev.Blazor.Foundation
         public static void AddBFMotionUI(this IServiceCollection service)
         {
             service.AddScoped<IMotionUIController, MotionUIController>();
+        }
+
+
+        public static void AddMarkdownSystem(this IServiceCollection service) {
+            // TODO: Make sure to get the ones in loaded plugins
+            var allTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(p=>p.GetTypes());
+            var methods = allTypes.SelectMany(t => t.GetMethods())
+                      .Where(p => p.IsStatic && p.IsPublic)
+                      .Where(m => m.GetCustomAttributes(typeof(RegisterMarkdownAttribute), true).Length > 0)
+                      .ToArray();
+
+            // All Methods 
+            foreach (var meth in methods)
+            {
+                int paramsAmount = meth.GetParameters().Length;
+                if (paramsAmount != 1) continue; // invalid ignore.
+
+                foreach (RegisterMarkdownAttribute attr in meth.GetCustomAttributes(typeof(RegisterMarkdownAttribute), true)) {
+                    string? fullname = meth.ReflectedType?.FullName;
+                    if (fullname == null) throw new Exception("Cannot get full name by reflection for some reasons..");
+                    string concatName = $"{fullname}.{meth.Name}";
+                    // Convert method info to Task.
+                    try {
+                        Func<MarkdownComponent, Task<MarkdownElement?>> delegateMethod = (Func<MarkdownComponent, Task<MarkdownElement?>>)meth.CreateDelegate(typeof(Func<MarkdownComponent, Task<MarkdownElement?>>));
+                        MarkdownSystem.RegisterComponent(attr.Name, delegateMethod);
+                    } catch (Exception ex) {
+                        // TODO: Log Error and Move on
+                        throw;
+                    }
+                }
+            }
         }
     }
 }

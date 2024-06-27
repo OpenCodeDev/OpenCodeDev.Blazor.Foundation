@@ -125,4 +125,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.*" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.*" />
 	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="CommonMark.NET" Version="0.15.1" />
+	</ItemGroup>
 </Project>

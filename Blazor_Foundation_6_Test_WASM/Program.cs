@@ -24,7 +24,7 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             // Required to Manage the Theme Color Style Dynamically
             builder.Services.AddBlazorFoundationServices();
-
+            builder.Services.AddMarkdownSystem();
             await builder.Build().RunAsync();
         }
     }

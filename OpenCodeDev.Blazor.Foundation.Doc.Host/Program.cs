@@ -14,6 +14,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddLocalization();
 builder.Services.AddScoped(sp => new HttpClient { });
 builder.Services.AddBlazorFoundationServices(false);
+builder.Services.AddMarkdownSystem();
 builder.Services.AddCors();
 builder.Services.AddHttpLogging(logging => {
     

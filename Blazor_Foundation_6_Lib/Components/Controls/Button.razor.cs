@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
+using OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine;
 using OpenCodeDev.Blazor.Foundation.Extensions;
-
+using static OpenCodeDev.Blazor.Foundation.Extensions.RenderFragmentExt;
 
 namespace OpenCodeDev.Blazor.Foundation.Components.Controls
 {
@@ -35,7 +36,9 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
         [Parameter]
         public string DataToggle { get; set; }
 
-
+        /// <summary>
+        /// Has Margin top
+        /// </summary>
         [Parameter]
         public bool? MarginTop { get; set; } = null;
 
@@ -129,6 +132,19 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Controls
             return $"bf-no-padding-{direction} ";
         }
 
-
+        [RegisterMarkdown(nameof(Button))]
+        public static async Task<MarkdownElement?> FromMarkdown(MarkdownComponent data)
+        {
+            return new MarkdownElement(p =>
+            {
+                p.OpenComponent<Button>(AutoIndex());
+                p.AddAttribute(AutoIndex(), nameof(Class), data.Arguments.FirstOrDefault(p => p.Key == nameof(Class)).Value ?? "");
+                p.AddAttribute(AutoIndex(), nameof(ChildContent), (RenderFragment)(b2 =>
+                {
+                    b2.AddMarkupContent(0, data.ChildContent);
+                }));
+                p.CloseComponent();
+            }, data.Position);
+        }
     }
 }

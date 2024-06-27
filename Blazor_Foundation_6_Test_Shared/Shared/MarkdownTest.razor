@@ -42,7 +42,7 @@ else{
     private string Error { get; set; }
     private string Location {get; set;}
 
-    private List<MarkdownElement> ParsedMarkdown { get; set; } = new List<MarkdownElement>();
+    private List<OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine.MarkdownElement> ParsedMarkdown { get; set; } = new List<OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine.MarkdownElement>();
 
     protected override void OnParametersSet()
     {
@@ -63,68 +63,69 @@ else{
         StateHasChanged();
         try {
             RawPage = await _client.GetStringAsync(Location);
-            await ProcessDocument();
+            ParsedMarkdown = await OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.MarkdownSystem.ProcessDocument(RawPage);
+            // await ProcessDocument();
             StateHasChanged();
         } catch (Exception ex) {
-            ParsedMarkdown.Add(new MarkdownElement(WarningMessage(ex.Message), 0));
+            ParsedMarkdown.Add(new OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine.MarkdownElement(WarningMessage(ex.Message), 0));
         } finally {
             IsLoading = false;
             StateHasChanged();
         }
     }
 
-    private async Task ProcessDocument() {
-        if (!string.IsNullOrEmpty(RawPage)) {
-            // Create MardownParser.
-            var mdParser = new MarkdownParser();
-            List<int[]> blazorChoping = new();
-            // Parse All Object First.
-            foreach (var rule in mdParser.MdRules) {
-                try {
+    // private async Task ProcessDocument() {
+    //     if (!string.IsNullOrEmpty(RawPage)) {
+    //         // Create MardownParser.
+    //         var mdParser = new MarkdownParser();
+    //         List<int[]> blazorChoping = new();
+    //         // Parse All Object First.
+    //         foreach (var rule in mdParser.MdRules) {
+    //             try {
 
-                    MatchCollection matches = Regex.Matches(RawPage, rule.Regex);
-                    if (matches.Count > 0)
-                        foreach (Match item in matches) {
-                            if (!item.Success) continue;
-                            blazorChoping.Add(new int[] { item.Index, item.Length });
-                            Console.WriteLine($"{item.Index} : {item.Length}");
-                            MarkdownElement? mde = rule.ProcessValue(item.Value, item, item.Index);
-                            if (mde == null) continue; // ignore failed.
-                            ParsedMarkdown.Add(mde);
-                        }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    // Silence Errors
-                }
-            }
-            string capture = "";
-            int ignoreUntil = -1;
-            int position = -1;
-            for (int i = 0; i < RawPage.Length; i++)
-            {
-                int index = i;
-                int[]? chop = blazorChoping.Find(p => p[0] == index);
-                if (chop != null)
-                {
-                    ignoreUntil = chop[0] + chop[1];
-                    if (capture.Length > 0) {
-                        ParsedMarkdown.Add(new MarkdownElement((MarkupString)CommonMark.CommonMarkConverter.Convert(capture), position));
-                    }
-                    capture = ""; // reset capture;
-                    position = -1;
-                }
-                if (index <= ignoreUntil) continue;
-                if (position == -1) position = index;
-                capture += RawPage[index];
-            }
-        }
-        else
-        {
-            ParsedMarkdown.Add(new MarkdownElement(WarningMessage($"Document: {Location} is empty, misconfigured or could not be fetch."), 0));
-        }
-    }
+    //                 MatchCollection matches = Regex.Matches(RawPage, rule.Regex);
+    //                 if (matches.Count > 0)
+    //                     foreach (Match item in matches) {
+    //                         if (!item.Success) continue;
+    //                         blazorChoping.Add(new int[] { item.Index, item.Length });
+    //                         Console.WriteLine($"{item.Index} : {item.Length}");
+    //                         MarkdownElement? mde = rule.ProcessValue(item.Value, item, item.Index);
+    //                         if (mde == null) continue; // ignore failed.
+    //                         ParsedMarkdown.Add(mde);
+    //                     }
+    //             }
+    //             catch (Exception ex)
+    //             {
+    //                 Console.WriteLine(ex.Message);
+    //                 // Silence Errors
+    //             }
+    //         }
+    //         string capture = "";
+    //         int ignoreUntil = -1;
+    //         int position = -1;
+    //         for (int i = 0; i < RawPage.Length; i++)
+    //         {
+    //             int index = i;
+    //             int[]? chop = blazorChoping.Find(p => p[0] == index);
+    //             if (chop != null)
+    //             {
+    //                 ignoreUntil = chop[0] + chop[1];
+    //                 if (capture.Length > 0) {
+    //                     ParsedMarkdown.Add(new MarkdownElement((MarkupString)CommonMark.CommonMarkConverter.Convert(capture), position));
+    //                 }
+    //                 capture = ""; // reset capture;
+    //                 position = -1;
+    //             }
+    //             if (index <= ignoreUntil) continue;
+    //             if (position == -1) position = index;
+    //             capture += RawPage[index];
+    //         }
+    //     }
+    //     else
+    //     {
+    //         ParsedMarkdown.Add(new MarkdownElement(WarningMessage($"Document: {Location} is empty, misconfigured or could not be fetch."), 0));
+    //     }
+    // }
 
 
     private RenderFragment WarningMessage(string message)
@@ -138,14 +139,14 @@ else{
         };
     }
 
-    private RenderFragment CreateHighlightCode(string lang, string content)
-    {
-        return builder =>
-        {
-            builder.OpenComponent<HighlightCode>(0);
-            builder.AddAttribute(0, "Language", lang);
-            builder.AddAttribute(0, "Content", content);
-            builder.CloseComponent();
-        };
-    }
+    // private RenderFragment CreateHighlightCode(string lang, string content)
+    // {
+    //     return builder =>
+    //     {
+    //         builder.OpenComponent<HighlightCode>(0);
+    //         builder.AddAttribute(0, "Language", lang);
+    //         builder.AddAttribute(0, "Content", content);
+    //         builder.CloseComponent();
+    //     };
+    // }
 }
