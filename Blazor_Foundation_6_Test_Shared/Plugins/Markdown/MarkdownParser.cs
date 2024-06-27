@@ -17,8 +17,7 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.Markdown
     public class MarkdownParser
     {
         public List<MarkdownRule> MdRules { get; set; } = new List<MarkdownRule>() {
-            new MarkdownRule("(#+)(.*)", ProcessHeader),
-            new MarkdownRule(@"\[(\-\-HighlightCode\b[^>]*\-\-)\]((\n|.)*?)\[\-\-\/HighlightCode\-\-\]", ProcessCodeHighlight)
+            new MarkdownRule(@"\[(\-\-HighlightCode\b[^>]*\-\-)\]((\n|.)*?)\[\-\-\/HighlightCode\-\-\]", ProcessCodeHighlight),
         };
  
 
@@ -53,12 +52,11 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.Markdown
             return obj;
         }
 
-        private static MarkdownElement? ProcessCodeHighlight(string value,Match initialMatch, int position)
+        private static MarkdownElement? ProcessCodeHighlight(string value, Match initialMatch, int position)
         {
             
             string objectName = "HighlightCode";
             string secondGroup = GetMarkdown2ndGrp(initialMatch);
-            Console.WriteLine(secondGroup);
             Dictionary<string, string>? arguments = GetObjectArguments(value, objectName);
             string language = "cs", content = secondGroup;
             if (arguments == null) Console.WriteLine($"{objectName} has no arguments.");
@@ -82,8 +80,21 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.Markdown
         private static string GetMarkdown2ndGrp(Match match)
         {
             if (!match.Success || match.Groups.Count <= 1) throw new Exception("2nd group is missing, incorrect regex or format.");
-            Console.WriteLine(match.Groups.Count);
             return match.Groups[2].Value;
+        }
+
+        private static MarkdownElement? ProcessBold(string value, Match initialMatch, int position)
+        {
+            string secondGroup = GetMarkdown2ndGrp(initialMatch);
+
+            string trimmed = value.TrimStart();
+            string? typeofheader = "b";
+            return new MarkdownElement(p =>
+            {
+                p.OpenElement(AutoIndex(), typeofheader);
+                p.AddContent(AutoIndex(), secondGroup);
+                p.CloseElement();
+            }, position);
         }
 
         private static MarkdownElement? ProcessHeader(string value, Match initialMatch, int position)
@@ -100,8 +111,6 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.Markdown
             else if (trimmed.StartsWith("##")) typeofheader = "h2";
             else if (trimmed.StartsWith("#")) typeofheader = "h1";
             else return null; // Ignore
-
-            Console.WriteLine(trimmed);
 
             return new MarkdownElement(p =>
             {

@@ -1,6 +1,7 @@
 # Version 3.3.7 (January 2024)
 ## Features
 - Migrated to Foundation 6.8.1 (Latest)
+- Updated Documentation Page.
 
 ## Fixes
 - Added --table-head-bg-color

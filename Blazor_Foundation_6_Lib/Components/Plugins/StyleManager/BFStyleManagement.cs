@@ -161,7 +161,11 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
 			Set("--table-body-hover-bg-color", "var(--light-gray-color)", "Table body hover bg color.");
 			Set("--table-body-eh-bg-color", "#ececec", "Table body even hover bg color.");
 
-		}
+			Set("--card-bg-color", "#fefefe", "card background color.");
+			Set("--card-ft-color", "#0a0a0a", "card font color.");
+            Set("--card-border", "1px solid #e6e6e6", "Card border ");
+
+        }
 
 		/// <summary>
 		/// Use to dynamically set the color of referenced element. 
