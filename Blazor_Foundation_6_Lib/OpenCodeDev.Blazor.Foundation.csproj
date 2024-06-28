@@ -19,9 +19,9 @@
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes>See https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</PackageReleaseNotes>
     <PackageId>OpenCodeDev.Blazor.Foundation</PackageId>
-    <AssemblyVersion>3.3.6.3</AssemblyVersion>
-    <Version>3.3.6.3</Version>
-    <FileVersion>3.3.6.3</FileVersion>
+    <AssemblyVersion>3.3.6.6</AssemblyVersion>
+    <Version>3.3.6.6</Version>
+    <FileVersion>3.3.6.6</FileVersion>
     <PackageIcon>icon_3.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/OpenCodeDev/OpenCodeDev.Blazor.Foundation</RepositoryUrl>
@@ -119,13 +119,15 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.*" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.*" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.*" />
+		<PackageReference Include="System.IO.Hashing" Version="8.*" />
 	</ItemGroup>
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.*" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.*" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.*" />
+		<PackageReference Include="System.IO.Hashing" Version="6.*" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="CommonMark.NET" Version="0.15.1" />
+		<PackageReference Include="CommonMark.NET" Version="0.15.1" />
 	</ItemGroup>
 </Project>

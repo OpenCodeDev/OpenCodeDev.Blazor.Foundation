@@ -19,4 +19,4 @@ Insert in footer to preserve code tab.
 </script>
 ```
 
-to see use cases and example see [documentation](https://bf-doc.opencodedev.com/code-highlighter).
+to see use cases and example see [documentation](https://bf.opencodedev.com/code-highlighter).

@@ -80,7 +80,8 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
             { "typescript", new string[] { "mdi-language-typescript", "#2b7489", "bGV0IG1lc3NhZ2U6IHN0cmluZyA9ICdIZWxsbywgV29ybGQhJzsKLy8gY3JlYXRlIGEgbmV3IGhlYWRpbmcgMSBlbGVtZW50CmxldCBoZWFkaW5nID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnaDEnKTsKaGVhZGluZy50ZXh0Q29udGVudCA9IG1lc3NhZ2U7Ci8vIGFkZCB0aGUgaGVhZGluZyB0aGUgZG9jdW1lbnQKZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChoZWFkaW5nKTs=" } },
             { "xml", new string[] { "mdi-xml", "#555555", "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHRleHQ+CiAgPHBhcmE+aGVsbG8gd29ybGQ8L3BhcmE+CjwvdGV4dD4=" } },
             { "txt", new string[] { "mdi-code-braces", "#555555", "VGV4dCBBbnkgVGV4dApJbiBIZXJlIGlzIEluIEhlcmU=" } },
-            { "json", new string[] { "mdi-language-c", "#555555", "ewogICJzdHVkZW50aWQiIDogMTAxLAogICJmaXJzdG5hbWUiIDogIkpvaG4iLAogICJsYXN0bmFtZSIgOiAiRG9lIiwKICAiaXNTdHVkZW50IiA6IHRydWUsCiAgImNsYXNzZXMiIDogWwogICAgIkJ1c2luZXNzIFJlc2VhcmNoIiwKICAgICJFY29ub21pY3MiLAogICAgIkZpbmFuY2UiCiAgXQp9" } }
+            { "json", new string[] { "mdi-language-c", "#555555", "ewogICJzdHVkZW50aWQiIDogMTAxLAogICJmaXJzdG5hbWUiIDogIkpvaG4iLAogICJsYXN0bmFtZSIgOiAiRG9lIiwKICAiaXNTdHVkZW50IiA6IHRydWUsCiAgImNsYXNzZXMiIDogWwogICAgIkJ1c2luZXNzIFJlc2VhcmNoIiwKICAgICJFY29ub21pY3MiLAogICAgIkZpbmFuY2UiCiAgXQp9" } },
+            { "sqf", new string[] { "mdi-gamepad-variant-outline", "#555555", "ewogICJzdHVkZW50aWQiIDogMTAxLAogICJmaXJzdG5hbWUiIDogIkpvaG4iLAogICJsYXN0bmFtZSIgOiAiRG9lIiwKICAiaXNTdHVkZW50IiA6IHRydWUsCiAgImNsYXNzZXMiIDogWwogICAgIkJ1c2luZXNzIFJlc2VhcmNoIiwKICAgICJFY29ub21pY3MiLAogICAgIkZpbmFuY2UiCiAgXQp9" } }
         };
         public Dictionary<string, string> LangExceptions { get; set; } = new Dictionary<string, string>
         {

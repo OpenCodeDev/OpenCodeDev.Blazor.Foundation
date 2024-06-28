@@ -16,9 +16,9 @@
     <RootNamespace>OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS</RootNamespace>
     <PackageIcon>icon-highlightcs.png</PackageIcon>
     <PackageIconUrl />
-    <AssemblyVersion>3.1.2</AssemblyVersion>
-    <FileVersion>3.1.2</FileVersion>
-    <Version>3.1.2</Version>
+    <AssemblyVersion>3.1.3.2</AssemblyVersion>
+    <FileVersion>3.1.3.2</FileVersion>
+    <Version>3.1.3.2</Version>
     <Title>Blazor Foundation Highlight CS</Title>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>

@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Components.Web;
+using OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components;
 
 namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
 {
@@ -23,6 +24,7 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Wasm
             builder.Services.AddLocalization();
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             // Required to Manage the Theme Color Style Dynamically
+            HighlightCode d;
             builder.Services.AddBlazorFoundationServices();
             builder.Services.AddMarkdownSystem();
             await builder.Build().RunAsync();

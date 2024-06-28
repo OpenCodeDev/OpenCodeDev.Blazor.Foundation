@@ -137,6 +137,7 @@ namespace OpenCodeDev.Blazor.Foundation
             // All Methods 
             foreach (var meth in methods)
             {
+                Console.WriteLine($"Interfacing Markdown Component for {meth.Name}");
                 int paramsAmount = meth.GetParameters().Length;
                 if (paramsAmount != 1) continue; // invalid ignore.
 
@@ -147,7 +148,7 @@ namespace OpenCodeDev.Blazor.Foundation
                     // Convert method info to Task.
                     try {
                         Func<MarkdownComponent, Task<MarkdownElement?>> delegateMethod = (Func<MarkdownComponent, Task<MarkdownElement?>>)meth.CreateDelegate(typeof(Func<MarkdownComponent, Task<MarkdownElement?>>));
-                        MarkdownSystem.RegisterComponent(attr.Name, delegateMethod);
+                        MarkdownSystem.RegisterComponent(attr.Id, delegateMethod);
                     } catch (Exception ex) {
                         // TODO: Log Error and Move on
                         throw;

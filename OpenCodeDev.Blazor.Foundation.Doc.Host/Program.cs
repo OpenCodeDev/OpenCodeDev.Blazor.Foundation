@@ -3,6 +3,8 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 using OpenCodeDev.Blazor.Foundation;
 using OpenCodeDev.Blazor.Foundation.Doc.Host;
+using OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS;
+using OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components;
 using System.Net;
 
 string currentDir = Directory.GetCurrentDirectory();
@@ -14,6 +16,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddLocalization();
 builder.Services.AddScoped(sp => new HttpClient { });
 builder.Services.AddBlazorFoundationServices(false);
+
 builder.Services.AddMarkdownSystem();
 builder.Services.AddCors();
 builder.Services.AddHttpLogging(logging => {

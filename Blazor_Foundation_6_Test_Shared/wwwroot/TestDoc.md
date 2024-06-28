@@ -1,72 +1,24 @@
-﻿### My Mark Down Test Oh!
-# **Header** 1
-## *Header* 2
-### Header 3
-#### Header 4ee
-##### Header 5
-###### Header 6
-#### Header 4
+﻿## What is Polyliner Tool?
+The polyline tool allows you to save drawings/lines on the map as code so you don't have to draw all the lines during the briefing thus saving load time and increasing the fun time.
 
-[--Button(Class="")--]
-The Button
-[--/Button--]
-> blockquotesdasd
-	
-1. First item
-2. Second item
-3. Third item
+## How to Save Lines?
 
-- First item
-   - First item
-- Second item
-- Third item
+1. Open your mission in the 3den editor.
+1. Start Scenario and get in the game.
+1. Open the map.
+1. Start drawing using <code>CTRL + LMB</code>.
+1. Once drawing is completed, close the map and press <code>ESC</code>.
+1. Execute (```Exec Local```) the following code: 
 
-` This is a inline code with multiple lines `
+[--HighlightCode(Language="sqf")--]
+[] call BrokenSkullMods_fnc_generatePolylines;
 
---- 
-
-[This is a link](https://www.example.com)
-
-![Here's an image](image.jpg)
-
-
-This is a paragraph without any stuff [This is a link](https://www.example.com) but this should be great.
-
-```
-This is a code block.
-{
-    "firstName": "John",
-    "lastName": "Smith",
-    "age": 25
-}
-```
-
-~~The world is flat.~~
-
-[--HighlightCode(type="", testing="")--]
-namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins
-{
-    public static class MDILoader{
-        public static async Task LoadMdi(HttpClient client, NavigationManager navigator)
-        {
-            try
-            {
-                byte[] licenseResult = await client.GetByteArrayAsync($"{navigator.BaseUri}/_content/OpenCodeDev.Blazor.Foundation.Doc.Core/mdi_database.txt");
-                string MDIRawDB = Encoding.UTF8.GetString(licenseResult);
-                string pattern = @"(?<=\}\.)(.*?)(?=\:)";
-                Regex rg = new Regex(pattern);
-                MatchCollection matches = rg.Matches(MDIRawDB);
-                Mdi.MdiDatabase = matches.Select(p => p.Value).ToList();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"{ex.Message}");
-            }
-
-        }
-
-
-    }
-}
 [--/HighlightCode--]
 
+Once confirmation code ```OK (XXXX)!```,
+
+Return to the editor, by now the code to draw the lines is stored in your memory.
+
+You have multiple options:
+1. Place a cover map and paste in the INIT section using ```CTRL + V```.
+1. Paste using ```CTRL+V``` in ```initPlayerLocal.sqf``` at the mission root.

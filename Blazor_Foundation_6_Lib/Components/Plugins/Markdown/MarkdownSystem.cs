@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Components;
+using OpenCodeDev.Blazor.Foundation.Components.Containers;
 using OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-
+using static OpenCodeDev.Blazor.Foundation.Extensions.RenderFragmentExt;
 namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
 {
     /// <summary>
@@ -62,28 +64,28 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
 
                 // Create MardownParser.
                 List<int[]> blazorChoping = new();
-                foreach (var component in ComponentParsers) {
-                    Console.WriteLine($"Check for {component.Key}");
-                    string pattern = @$"\[(\-\-{component.Key}\b[^>]*\-\-)\]((\n|.)*?)\[\-\-\/{component.Key}\-\-\]";
-                    try {
-                        MatchCollection matches = Regex.Matches(raw, pattern);
-                        if (matches.Count > 0)
-                            foreach (Match item in matches)
-                            {
-                                if (!item.Success) continue;
-                                blazorChoping.Add(new int[] { item.Index, item.Length });
-                                Console.WriteLine($"{item.Index} : {item.Length}");
+                string pattern = @$"\[--\b(.*?)\b(\(.*?\))--\]((\n|.)*?)\[--\/\b(.*?)\b--\]";
+                try
+                {
+                    MatchCollection matches = Regex.Matches(raw, pattern);
+                    if (matches.Count > 0)
+                        foreach (Match item in matches) {
+                            if (!item.Success) continue;
+                            blazorChoping.Add(new int[] { item.Index, item.Length });
+                            Console.WriteLine($"{item.Index} : {item.Length}");
+                            MarkdownElement? mde = await ProcessCode(item.Value, item, item.Index);
+                            if (mde == null) continue; // ignore failed.
+                            parsedMd.Add(mde);
+                        }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    // Silence Errors
+                }
+                foreach (var component in ComponentParsers)
+                {
 
-                                MarkdownElement? mde = await ProcessCode(component.Key, item.Value, item, item.Index);
-                                if (mde == null) continue; // ignore failed.
-                                parsedMd.Add(mde);
-                            }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        // Silence Errors
-                    }
                 }
                 Console.WriteLine($"blazorChoping = {blazorChoping.Count}");
 
@@ -115,19 +117,16 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
             {
                 //parsedMd.Add(new MarkdownElement(WarningMessage($"Document: {Location} is empty, misconfigured or could not be fetch."), 0));
             }
-            return parsedMd;
+            return parsedMd.OrderBy(p=>p.Position).ToList();
         }
 
 
 
-        private static Dictionary<string, string>? GetObjectArguments(string text, string objectName)
+        private static Dictionary<string, string>? GetObjectArguments(string text, Match match)
         {
-            string pattern = @$"\[\-\-{objectName}\s*(\(.*?\))?\-\-\]";
-            Match exp = Regex.Match(text, pattern);
-            if (!exp.Success || exp.Groups.Count <= 1) return null; // no arguments
-            // arguments potentially found?
+            if (!match.Success || match.Groups.Count <= 1) throw new Exception("2nd group is missing, incorrect regex or format.");
             var obj = new Dictionary<string, string>();
-            string rawArgs = exp.Groups[1].Value; // get (key="value", key="value", key="value")
+            string rawArgs = match.Groups[2].Value; // get (key="value", key="value", key="value")
             rawArgs = rawArgs.TrimStart().TrimEnd(); // remove space around (key="value", key="value")
             rawArgs = rawArgs.Remove(0, 1); // remove 0 which = (
             rawArgs = rawArgs.Remove(rawArgs.Length - 1, 1); // remove last which = )
@@ -144,13 +143,28 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
             return obj;
         }
 
-        private static async Task<MarkdownElement> ProcessCode(string name, string value, Match initialMatch, int position)
+        private static async Task<MarkdownElement> ProcessCode(string value, Match initialMatch, int position)
         {
-
-            string secondGroup = GetMarkdown2ndGrp(initialMatch);
+            if (!initialMatch.Success || initialMatch.Groups.Count < 2) 
+                throw new Exception("2nd group is missing, incorrect regex or format.");
+            string componentName = initialMatch.Groups[1].Value;
+            Console.WriteLine(componentName);
+            if (!ComponentParsers.ContainsKey(componentName)) 
+                return new MarkdownElement((builder) => {
+                    builder.OpenComponent<Callout>(AutoIndex());
+                    builder.AddAttribute(AutoIndex(), nameof(Callout.Size), "small");
+                    builder.AddAttribute(AutoIndex(), nameof(Callout.CloseButton), false);
+                    builder.AddAttribute(AutoIndex(), nameof(Callout.TypeClass), "alert");
+                    builder.AddAttribute(AutoIndex(), nameof(Callout.ChildContent), (RenderFragment) (b => {
+                        b.AddMarkupContent(AutoIndex(), $"The component {componentName} is misconfigured and has been striped out for secuity.");
+                    }));
+                    builder.CloseComponent();
+                }, position);
+            string secondGroup = GetComponentContent(initialMatch);
             Console.WriteLine(secondGroup);
-            Dictionary<string, string>? arguments = GetObjectArguments(value, name);
-            return await ComponentParsers[name].Invoke(new MarkdownComponent(name, secondGroup, arguments, position));
+
+            Dictionary<string, string>? arguments = GetObjectArguments(value, initialMatch);
+            return await ComponentParsers[componentName].Invoke(new MarkdownComponent(componentName, secondGroup, arguments, position));
             //return new MarkdownElement(p =>
             //{
             //    p.OpenComponent<HighlightCode>(AutoIndex());
@@ -163,10 +177,10 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
         /// <summary>
         /// Return Second Group usually eg: # = 1st & Header = 2nd
         /// </summary>
-        private static string GetMarkdown2ndGrp(Match match)
+        private static string GetComponentContent(Match match)
         {
-            if (!match.Success || match.Groups.Count <= 1) throw new Exception("2nd group is missing, incorrect regex or format.");
-            return match.Groups[2].Value;
+            if (!match.Success || match.Groups.Count <= 2) throw new Exception("2nd group is missing, incorrect regex or format.");
+            return match.Groups[3].Value;
         }
 
     }

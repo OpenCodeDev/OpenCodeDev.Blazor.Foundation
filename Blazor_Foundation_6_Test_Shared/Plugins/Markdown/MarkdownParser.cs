@@ -16,13 +16,6 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Plugins.Markdown
 {
     public class MarkdownParser
     {
-        public List<MarkdownRule> MdRules { get; set; } = new List<MarkdownRule>() {
-            new MarkdownRule(@"\[(\-\-HighlightCode\b[^>]*\-\-)\]((\n|.)*?)\[\-\-\/HighlightCode\-\-\]", ProcessCodeHighlight),
-        };
- 
-
-
-
         /// <summary>
         /// Return null if no arguments
         /// </summary>
