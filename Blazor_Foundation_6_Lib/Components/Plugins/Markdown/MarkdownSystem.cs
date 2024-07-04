@@ -72,7 +72,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
                         foreach (Match item in matches) {
                             if (!item.Success) continue;
                             blazorChoping.Add(new int[] { item.Index, item.Length });
-                            Console.WriteLine($"{item.Index} : {item.Length}");
+                            Console.WriteLine($"Index to Length {item.Index} : {item.Length}");
                             MarkdownElement? mde = await ProcessCode(item.Value, item, item.Index);
                             if (mde == null) continue; // ignore failed.
                             parsedMd.Add(mde);
@@ -126,6 +126,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
         {
             if (!match.Success || match.Groups.Count <= 1) throw new Exception("2nd group is missing, incorrect regex or format.");
             var obj = new Dictionary<string, string>();
+            Console.WriteLine($"{match.Groups[2]}");
             string rawArgs = match.Groups[2].Value; // get (key="value", key="value", key="value")
             rawArgs = rawArgs.TrimStart().TrimEnd(); // remove space around (key="value", key="value")
             rawArgs = rawArgs.Remove(0, 1); // remove 0 which = (
@@ -135,6 +136,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
             foreach (var item in grossArgs)
             {
                 string tempWhole = item.TrimStart().TrimEnd(); // remove space around key="value"
+                if (tempWhole.Count() <= 0) continue;
+                if (!tempWhole.Contains("=")) continue;
                 string[] tempKeyValSplit = tempWhole.Split('='); // split key="value" to key "value"
                 tempKeyValSplit[1] = tempKeyValSplit[1].Remove(0, 1); // remove 0 which = "
                 tempKeyValSplit[1] = tempKeyValSplit[1].Remove(tempKeyValSplit[1].Length - 1, 1); // remove last which = "
@@ -161,7 +164,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
                     builder.CloseComponent();
                 }, position);
             string secondGroup = GetComponentContent(initialMatch);
-            Console.WriteLine(secondGroup);
 
             Dictionary<string, string>? arguments = GetObjectArguments(value, initialMatch);
             return await ComponentParsers[componentName].Invoke(new MarkdownComponent(componentName, secondGroup, arguments, position));
