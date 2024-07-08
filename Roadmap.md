@@ -10,7 +10,6 @@
 - Sticky: Remove Resize on Window Resize (Hotfix/Workaround).
 - Improve Foundation 6 CSS for BF. (Performance).
 - Replace JQuery with UmbrellaJS in Foundation 7 (Performance).
-- Make external library enabled/disabled easily with footer.
 - Integrate Chart Components.
 - Publish series of free training videos.
 - Publish first template made with Blazor Foundation 6

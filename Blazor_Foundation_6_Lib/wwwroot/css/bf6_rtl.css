@@ -8519,11 +8519,11 @@ input:checked ~ .switch-paddle {
 
 thead {
   background: var(--table-head-bg-color);
-  color: var --table-head-color;
+  color: var(--table-head-color);
 }
 
 tbody, tfoot {
-  border: 1px solid #f1f1f1;
+  border: var(--table-body-border);
   background-color: var(--table-body-bg-color);
 }
 
@@ -8533,6 +8533,15 @@ table.hover tbody tr:hover {
 
 table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   background-color: var(--table-body-eh-bg-color);
+}
+
+table.unstriped tbody {
+  background-color: var(--table-unstriped-body-bg-color);
+}
+
+table.unstriped tbody tr {
+  border-bottom: var(--table-unstriped-tr-bot-border);
+  background-color: var(--table-unstriped-tr-bg-color);
 }
 
 @keyframes cycle {

@@ -157,11 +157,15 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
 			// Table
 			Set("--table-head-bg-color", "var(--white-color)", "Table header background.");
 			Set("--table-head-color", "var(--black-color)", "Table header font color.");
+			Set("--table-body-border", "1px solid #f1f1f1", "Table body border");
 			Set("--table-body-bg-color", "var(--white-color)", "Table body background color.");
 			Set("--table-body-hover-bg-color", "var(--light-gray-color)", "Table body hover bg color.");
 			Set("--table-body-eh-bg-color", "#ececec", "Table body even hover bg color.");
-
-			Set("--card-bg-color", "#fefefe", "card background color.");
+			Set("--table-unstriped-body-bg-color", "white", "Table body unstriped bg color.");
+			Set("--table-unstriped-tr-bg-color", "white", "Table tr unstriped bg color.");
+			Set("--table-unstriped-tr-bot-border", "1px solid #f1f1f1", "Table tr bottom border.");
+            
+            Set("--card-bg-color", "#fefefe", "card background color.");
 			Set("--card-ft-color", "#0a0a0a", "card font color.");
             Set("--card-border", "1px solid #e6e6e6", "Card border ");
 
