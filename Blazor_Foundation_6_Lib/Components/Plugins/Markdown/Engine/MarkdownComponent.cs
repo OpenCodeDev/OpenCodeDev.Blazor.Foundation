@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,12 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine
             string? item = GetKp(key);
             if (item == null) return def;
             return (string)item;
+        }
+        public MarkupString GetArgument(string key, MarkupString markup)
+        {
+            string? item = GetKp(key);
+            if (item == null) return markup;
+            return (MarkupString)item;
         }
 
         public bool GetArgument(string key, bool def) {

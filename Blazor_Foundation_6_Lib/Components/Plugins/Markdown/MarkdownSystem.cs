@@ -32,7 +32,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
         public static void RegisterComponent(string name, Func<MarkdownComponent, Task<MarkdownElement?>> action)
         {
             if (ComponentParsers.ContainsKey(name)) {
-                Console.WriteLine($"[ERROR] The component {name} is already register for Markdown parsing.");
+                //Console.WriteLine($"[ERROR] The component {name} is already register for Markdown parsing.");
                 return;
             }
             ComponentParsers.Add(name, action);
@@ -60,7 +60,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
             List<MarkdownElement> parsedMd = new();
             if (!string.IsNullOrEmpty(raw))
             {
-                    Console.WriteLine($"ComponentParsers = {ComponentParsers.Count}");
+                    //Console.WriteLine($"ComponentParsers = {ComponentParsers.Count}");
 
                 // Create MardownParser.
                 List<int[]> blazorChoping = new();
@@ -72,7 +72,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
                         foreach (Match item in matches) {
                             if (!item.Success) continue;
                             blazorChoping.Add(new int[] { item.Index, item.Length });
-                            Console.WriteLine($"Index to Length {item.Index} : {item.Length}");
+                            //Console.WriteLine($"Index to Length {item.Index} : {item.Length}");
                             MarkdownElement? mde = await ProcessCode(item.Value, item, item.Index);
                             if (mde == null) continue; // ignore failed.
                             parsedMd.Add(mde);
@@ -80,14 +80,14 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    //Console.WriteLine(ex.Message);
                     // Silence Errors
                 }
-                foreach (var component in ComponentParsers)
-                {
+                //foreach (var component in ComponentParsers)
+                //{
 
-                }
-                Console.WriteLine($"blazorChoping = {blazorChoping.Count}");
+                //}
+                //Console.WriteLine($"blazorChoping = {blazorChoping.Count}");
 
                 string capture = "";
                 int ignoreUntil = -1;
@@ -112,10 +112,6 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
                 }
                 if (capture != "")
                     parsedMd.Add(new MarkdownElement((MarkupString)CommonMark.CommonMarkConverter.Convert(capture), position));
-            }
-            else
-            {
-                //parsedMd.Add(new MarkdownElement(WarningMessage($"Document: {Location} is empty, misconfigured or could not be fetch."), 0));
             }
             return parsedMd.OrderBy(p=>p.Position).ToList();
         }

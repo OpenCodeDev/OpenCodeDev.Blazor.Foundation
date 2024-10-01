@@ -274,3 +274,16 @@ table.unstriped tbody tr {
     border-bottom: var(--table-unstriped-tr-bot-border);
     background-color: var(--table-unstriped-tr-bg-color);
 }
+
+
+code {
+    border: var(--code-border); // 1px solid #044f88;
+    background-color: var(--code-bg-color); //#282c34;
+    color: var(--code-ft-color); // #0a0a0a;
+    padding: 0.125rem 0.3125rem 0.125rem;
+}
+
+// TODO: Make this better, the Highlight Code Element is not having border and the best would be to have elements.
+div[class*="hljs-header"] + code {
+    border: unset;
+}

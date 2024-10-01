@@ -42,6 +42,7 @@ namespace OpenCodeDev.Blazor.Foundation
             service.AddNovelRevealController(isWasm);
             service.AddBFClipboard(isWasm);
             service.AddBFLocalStorage(isWasm);
+            service.AddMarkdownSystem();
         }
         public static void AddNovelRevealController(this IServiceCollection service, bool isWasm = true)
         {

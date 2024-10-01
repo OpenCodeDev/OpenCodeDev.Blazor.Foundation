@@ -169,7 +169,12 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
 			Set("--card-ft-color", "#0a0a0a", "card font color.");
             Set("--card-border", "1px solid #e6e6e6", "Card border ");
 
-        }
+			// Code
+
+			Set("--code-bg-color", "#c5c5c5", "Code background color.");
+			Set("--code-ft-color", "#044f88", "Code font color.");
+			Set("--code-border", "1px solid #8b8b8b", "Code border ");
+		}
 
 		/// <summary>
 		/// Use to dynamically set the color of referenced element. 

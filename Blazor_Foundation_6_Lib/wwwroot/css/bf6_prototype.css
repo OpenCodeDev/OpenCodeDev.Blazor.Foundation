@@ -9147,6 +9147,17 @@ table.unstriped tbody tr {
   background-color: var(--table-unstriped-tr-bg-color);
 }
 
+code {
+  border: var(--code-border);
+  background-color: var(--code-bg-color);
+  color: var(--code-ft-color);
+  padding: 0.125rem 0.3125rem 0.125rem;
+}
+
+div[class*=hljs-header] + code {
+  border: unset;
+}
+
 @keyframes cycle {
   0% {
     animation-timing-function: cubic-bezier(0.3333, 0.3333, 0.6667, 0.6667);

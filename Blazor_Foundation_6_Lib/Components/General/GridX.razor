@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @using Microsoft.AspNetCore.Components.Web;
-
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Blazor;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine
+@using static OpenCodeDev.Blazor.Foundation.Extensions.RenderFragmentExt
 <div class="@($"grid-x " +
               $"{(VerticalMargin? "grid-margin-y" : "")} " +
               $"{(HorizontalMargin? "grid-margin-x" : "")} " +
@@ -11,6 +13,20 @@
 </div>
 
 @code {
-    
+[RegisterMarkdown(typeof(OpenCodeDev.Blazor.Foundation.Components.General.GridX), true)]
+public static async Task<MarkdownElement?> FromMarkdown(MarkdownComponent data)
+{
+    return new MarkdownElement(p =>
+    {
+        p.OpenComponent<GridX>(AutoIndex());
+        p.AddAttribute(AutoIndex(), nameof(Class), data.GetArgument(nameof(Class), ""));
+        p.AddAttribute(AutoIndex(), nameof(VerticalMargin), data.GetArgument(nameof(VerticalMargin), false));
+        p.AddAttribute(AutoIndex(), nameof(HorizontalMargin), data.GetArgument(nameof(HorizontalMargin), false));
+        p.AddAttribute(AutoIndex(), nameof(HorizontalPadding), data.GetArgument(nameof(HorizontalPadding), false));
+        p.AddAttribute(AutoIndex(), nameof(VerticalPadding), data.GetArgument(nameof(VerticalPadding), false));
+        p.AddAttribute(AutoIndex(), nameof(ChildContent), (MarkupString)data.ChildContent);
+        p.CloseComponent();
+    }, data.Position);
+}
 }
 

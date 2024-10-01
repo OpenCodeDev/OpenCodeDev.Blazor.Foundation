@@ -39,7 +39,7 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown.Engine
         public Type Type { get; private set; }
 
         /// <summary>
-        /// Internal Component Support. (NOT RECOMMENDED)
+        /// Internal Component Support which means the path to use it is directly YOURCOMPONENT instead of Namespace.YourComponent very dangerous prone to conflict. (NOT RECOMMENDED)
         /// </summary>
         /// <param name="type"></param>
         /// <param name="internalBool"></param>

@@ -31,6 +31,9 @@ namespace OpenCodeDev.Blazor.Foundation.Plugins.HighlightCS.Components
         [Parameter]
         public string HeaderTitleColor { get; set; } = null;
 
+        /// <summary>
+        /// Expand to fill the whole available space.
+        /// </summary>
         [Parameter]
         public bool Full { get; set; } = false;
 
