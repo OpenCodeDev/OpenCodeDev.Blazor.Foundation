@@ -376,6 +376,15 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Markdown Plus.
+        /// </summary>
+        public static string MarkdownPlusMenu {
+            get {
+                return ResourceManager.GetString("MarkdownPlusMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Material Design Icons.
         /// </summary>
         public static string Material_Design_Icons_Menu {

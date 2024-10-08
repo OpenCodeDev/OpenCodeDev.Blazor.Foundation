@@ -61,6 +61,9 @@
     <Content Update="Documentation\Plugins\Markdown.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="Shared\MinimalLayout.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Shared\Resources\Resource.resx">

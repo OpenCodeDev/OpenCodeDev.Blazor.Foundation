@@ -1,0 +1,17 @@
+﻿@using OpenCodeDev.Blazor.Foundation.Components.Containers
+
+@if (Error != string.Empty) {
+    <Callout Class="small" TypeClass="alert" > 
+        @Error
+    </Callout>
+} else {
+    @foreach (var item in Elements.OrderBy(p => p.Position))
+    {
+        @if (item.Html != null)
+            @item.Html
+        else if (item.Fragment != null)
+            @item.Fragment
+
+    }
+}
+

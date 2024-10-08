@@ -1,10 +1,10 @@
 ﻿@page "/markdownplus";
-
-@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section;
-@using Microsoft.JSInterop;
-@using OpenCodeDev.Blazor.Foundation.Extensions.Clipboard;
-@inject IClipboard clip;
-@inject IJSRuntime JS;
+@using OpenCodeDev.Blazor.Foundation.Components.Plugins.Markdown
+@using OpenCodeDev.Blazor.Foundation.Doc.Core.Components.Containers.Section
+@using Microsoft.JSInterop
+@using OpenCodeDev.Blazor.Foundation.Extensions.Clipboard
+@inject IClipboard clip
+@inject IJSRuntime JS
 
 <SectionWrapper>
     <SectionLeft>
@@ -31,15 +31,18 @@
         </p>
         <p>It's good to know that any <Code>RenderFragment</Code> or any <Code>Object</Code> cannot be passed natively.</p>
         <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
-                       Content="QGluaGVyaXRzIE5ld0NvbXBvbmVudEJhc2UKQHVzaW5nIE1pY3Jvc29mdC5Bc3BOZXRDb3JlLkNvbXBvbmVudHM7CkB1c2luZyBNaWNyb3NvZnQuQXNwTmV0Q29yZS5Db21wb25lbnRzLldlYjsKQHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuUGx1Z2lucy5CbGF6b3I7CkB1c2luZyBPcGVuQ29kZURldi5CbGF6b3IuRm91bmRhdGlvbi5Db21wb25lbnRzLlBsdWdpbnMuTWFya2Rvd24uRW5naW5lCkB1c2luZyBzdGF0aWMgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uRXh0ZW5zaW9ucy5SZW5kZXJGcmFnbWVudEV4dAo8aW5wdXQgdHlwZT0idGV4dCIgZGF0YS1pbnB1dG1hc2s9IidtYXNrJzogJzk5OTkgOTk5OSA5OTk5IDk5OTknIgogICAgICAgQGJpbmQ9IkBCYWNraW5nTnVtYmVyIiAKICAgICAgIEBvbmlucHV0PSJAKGFzeW5jIChhcmdzKT0+YXdhaXQgSW5wdXQoYXJncykpIiAKICAgICAgIEBhdHRyaWJ1dGVzPSJAQWRkaXRpb25hbEF0dHJpYnV0ZXMiIGRpc2FibGVkPUBJc0Rpc2FibGVkKCkgLz4KCkBjb2RlIHsKCiAgICBbUmVnaXN0ZXJNYXJrZG93bih0eXBlb2YoSW5wdXRDcmVkaXRDYXJkKSldCiAgICBwdWJsaWMgc3RhdGljIGFzeW5jIFRhc2s8TWFya2Rvd25FbGVtZW50Pz4gRnJvbU1hcmtkb3duKE1hcmtkb3duQ29tcG9uZW50IGRhdGEpCiAgICB7CiAgICAgICAgcmV0dXJuIG5ldyBNYXJrZG93bkVsZW1lbnQocCA9PgogICAgICAgIHsKICAgICAgICAgICAgcC5PcGVuQ29tcG9uZW50PElucHV0Q3JlZGl0Q2FyZD4oQXV0b0luZGV4KCkpOwogICAgICAgICAgICBwLkFkZEF0dHJpYnV0ZShBdXRvSW5kZXgoKSwgbmFtZW9mKE9uQ2hhbmdlQWNjZXB0S2V5KSwgZGF0YS5HZXRBcmd1bWVudChuYW1lb2YoT25DaGFuZ2VBY2NlcHRLZXkpLCBmYWxzZSkpOwogICAgICAgICAgICBwLkNsb3NlQ29tcG9uZW50KCk7CiAgICAgICAgfSwgZGF0YS5Qb3NpdGlvbik7CiAgICB9CiAgICAKfQ==" />
+                       Content="QGluaGVyaXRzIE5ld0NvbXBvbmVudEJhc2UKQHVzaW5nIE1pY3Jvc29mdC5Bc3BOZXRDb3JlLkNvbXBvbmVudHM7CkB1c2luZyBNaWNyb3NvZnQuQXNwTmV0Q29yZS5Db21wb25lbnRzLldlYjsKQHVzaW5nIE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuUGx1Z2lucy5CbGF6b3I7CkB1c2luZyBPcGVuQ29kZURldi5CbGF6b3IuRm91bmRhdGlvbi5Db21wb25lbnRzLlBsdWdpbnMuTWFya2Rvd24uRW5naW5lCkB1c2luZyBzdGF0aWMgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uRXh0ZW5zaW9ucy5SZW5kZXJGcmFnbWVudEV4dAo8aW5wdXQgdHlwZT0idGV4dCIgZGF0YS1pbnB1dG1hc2s9IidtYXNrJzogJzk5OTkgOTk5OSA5OTk5IDk5OTknIgogICAgICAgQGJpbmQ9IkBCYWNraW5nTnVtYmVyIiAKICAgICAgIEBvbmlucHV0PSJAKGFzeW5jIChhcmdzKT0+YXdhaXQgSW5wdXQoYXJncykpIiAKICAgICAgIEBhdHRyaWJ1dGVzPSJAQWRkaXRpb25hbEF0dHJpYnV0ZXMiIGRpc2FibGVkPUBJc0Rpc2FibGVkKCkgLz4=" />
 
         <h2>Reading Arguments</h2>
+        <HighlightCode Language="cs" Full="true" HeaderTitle="In Component CS"
+                       Content="W1JlZ2lzdGVyTWFya2Rvd24odHlwZW9mKElucHV0Q3JlZGl0Q2FyZCkpXQpwdWJsaWMgc3RhdGljIGFzeW5jIFRhc2s8TWFya2Rvd25FbGVtZW50Pz4gRnJvbU1hcmtkb3duKE1hcmtkb3duQ29tcG9uZW50IGRhdGEpCnsKICAgIHJldHVybiBuZXcgTWFya2Rvd25FbGVtZW50KHAgPT4KICAgIHsKICAgICAgICBwLk9wZW5Db21wb25lbnQ8SW5wdXRDcmVkaXRDYXJkPihBdXRvSW5kZXgoKSk7CiAgICAgICAgcC5BZGRBdHRyaWJ1dGUoQXV0b0luZGV4KCksIG5hbWVvZihPbkNoYW5nZUFjY2VwdEtleSksIGRhdGEuR2V0QXJndW1lbnQobmFtZW9mKE9uQ2hhbmdlQWNjZXB0S2V5KSwgZmFsc2UpKTsKICAgICAgICBwLkNsb3NlQ29tcG9uZW50KCk7CiAgICB9LCBkYXRhLlBvc2l0aW9uKTsKfQ==" />
+
         <p>The system is able to support pretty much all native type such as <Code>string, int, uint, bool, float, double, ushort, short, bool, long, ulong</Code>. any other type you can make a function to handle from string.</p>
         <p>Let us break down the code above and see <Code>data.GetArgument(nameof(OnChangeAcceptKey), false).</Code></p>
         <p><Code>OnChangeAcceptKey</Code> is the argument name which can be anything and usually same as defined property in component.</p>
         <p><Code>false</Code> this argument is a true or false and is defaulting to false if any issue arises with getting that value.</p>
         <p><Code>data.GetArgument</Code>data contains all of the information about the component and <Code>GetArgument</Code> is the function to retrieve those arguments.</p>
-        <h2>Attribute</h2>
+        <h2>Attributes</h2>
         <p><Code>RegisterMarkdown</Code> is the attribute tag place above the function to make the mardown plus system catch and point to when reading mdp files.</p>
         <p><Code>RegisterMarkdown</Code> first argument is the type of object like so <Code>typeof(InputCreditCard)</Code>.</p>
         <Callout Size="small" TypeClass="warning">
@@ -53,10 +56,27 @@
 
 <SectionWrapper>
     <SectionLeft>
-        <h2>Creating and Reading a <Code>MDP/MD</Code> code.</h2>
-        <HighlightCode Language="md" Full="true"
-                       Content="dXNpbmcgT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb247Ci8vIFdhc20KYnVpbGRlci5TZXJ2aWNlcy5BZGRCbGF6b3JGb3VuZGF0aW9uU2VydmljZXMoKTsKCi8vIEJsYXpvciBTZXJ2ZXIKYnVpbGRlci5TZXJ2aWNlcy5BZGRCbGF6b3JGb3VuZGF0aW9uU2VydmljZXMoZmFsc2UpOw==" />
+        <h2>Writing Component in MDP</h2>
+        <p>Every component writing in MDP starts with <Code>[--</Code> + <Code>Component</Code> + <Code>()</Code> + <Code>--]</Code> = <Code>[--Component()--]</Code>.</p>
+        <p>Every component writing in MDP ends with <Code>[--/</Code> + <Code>Component</Code> + <Code>--]</Code> = <Code>[--/Component--]</Code>.</p>
+        <p>You can defined argument this way:</p>
+        <Code>[--Component(Argument="", Argument2="")--]</Code>
+        <p>You can defined ChildContent like so: </p>
+        <Code>[--Component(Argument="", Argument2="")--]MY CONTENT STRING[--/Component--]</Code>
 
+        <h2>Component with Content</h2>
+        <HighlightCode Language="cs" Full="true" HeaderTitle="GridX"
+                       Content="W1JlZ2lzdGVyTWFya2Rvd24odHlwZW9mKE9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuR2VuZXJhbC5HcmlkWCksIHRydWUpXQpwdWJsaWMgc3RhdGljIGFzeW5jIFRhc2s8TWFya2Rvd25FbGVtZW50Pz4gRnJvbU1hcmtkb3duKE1hcmtkb3duQ29tcG9uZW50IGRhdGEpCnsKICAgIHJldHVybiBuZXcgTWFya2Rvd25FbGVtZW50KHAgPT4KICAgIHsKICAgICAgICBwLk9wZW5Db21wb25lbnQ8R3JpZFg+KEF1dG9JbmRleCgpKTsKICAgICAgICBwLkFkZEF0dHJpYnV0ZShBdXRvSW5kZXgoKSwgbmFtZW9mKENsYXNzKSwgZGF0YS5HZXRBcmd1bWVudChuYW1lb2YoQ2xhc3MpLCAiIikpOwogICAgICAgIHAuQWRkQXR0cmlidXRlKEF1dG9JbmRleCgpLCBuYW1lb2YoVmVydGljYWxNYXJnaW4pLCBkYXRhLkdldEFyZ3VtZW50KG5hbWVvZihWZXJ0aWNhbE1hcmdpbiksIGZhbHNlKSk7CiAgICAgICAgcC5BZGRBdHRyaWJ1dGUoQXV0b0luZGV4KCksIG5hbWVvZihIb3Jpem9udGFsTWFyZ2luKSwgZGF0YS5HZXRBcmd1bWVudChuYW1lb2YoSG9yaXpvbnRhbE1hcmdpbiksIGZhbHNlKSk7CiAgICAgICAgcC5BZGRBdHRyaWJ1dGUoQXV0b0luZGV4KCksIG5hbWVvZihIb3Jpem9udGFsUGFkZGluZyksIGRhdGEuR2V0QXJndW1lbnQobmFtZW9mKEhvcml6b250YWxQYWRkaW5nKSwgZmFsc2UpKTsKICAgICAgICBwLkFkZEF0dHJpYnV0ZShBdXRvSW5kZXgoKSwgbmFtZW9mKFZlcnRpY2FsUGFkZGluZyksIGRhdGEuR2V0QXJndW1lbnQobmFtZW9mKFZlcnRpY2FsUGFkZGluZyksIGZhbHNlKSk7CiAgICAgICAgcC5BZGRDb250ZW50KEF1dG9JbmRleCgpLCAoTWFya3VwU3RyaW5nKWRhdGEuQ2hpbGRDb250ZW50KTsKICAgICAgICBwLkNsb3NlQ29tcG9uZW50KCk7CiAgICB9LCBkYXRhLlBvc2l0aW9uKTsKfQ==" />
+
+        <h2>Reading a <Code>MDP/MD</Code> code.</h2>
+        <HighlightCode Language="md" Full="true"
+                       Content="IyMjIFRoaXMgaXMgdGhlIHBvc3NpYmxlIG91dGNvbWVzCgoKWy0tT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQoT25DaGFuZ2VBY2NlcHRLZXk9InRydWUiKS0tXQpbLS0vT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQtLV0KClstLU9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuQ29udHJvbHMuSW5wdXRDcmVkaXRDYXJkKE9uQ2hhbmdlQWNjZXB0S2V5PSJmYWxzZSIpLS1dClstLS9PcGVuQ29kZURldi5CbGF6b3IuRm91bmRhdGlvbi5Db21wb25lbnRzLkNvbnRyb2xzLklucHV0Q3JlZGl0Q2FyZC0tXQoKWy0tT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQoKS0tXQpbLS0vT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQtLV0KCgojIyMgVGhpcyBpcyB0aGUgb25lIGFjY2VwdGluZyBDaGlsZENvbnRlbnQKSXQgb25seSB0YWtlcyB0aGUgdGV4dCB0eXBlIHdoaWNoIGkgY2FzdCB0byBNYXJrdXBTdHJpbmcuCgpbLS1HcmlkWCgpLS1dClRoaXMgaXMgYSBHcmlkWCB0aHJvdWdoIE1EUCBmaWxlLgpbLS0vR3JpZFgtLV0KCkdyaWRYIGlzIGEgY29tcG9uZW50IHdpdGggdGhlIHNlY29uZCBwYXJhbSB0byB0cnVlIHNvLCBuYW1lc3BhY2UgaXMgbm90IG5lY2Vzc2FyeS4=" />
+        <p>This is the what MDP looks like markdown with component definition.</p>
+
+
+        <h2>Rendering the Above MD.</h2>
+
+        <MyMarkdown Content=@(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String("IyMjIFRoaXMgaXMgdGhlIHBvc3NpYmxlIG91dGNvbWVzCgoKWy0tT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQoT25DaGFuZ2VBY2NlcHRLZXk9InRydWUiKS0tXQpbLS0vT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQtLV0KClstLU9wZW5Db2RlRGV2LkJsYXpvci5Gb3VuZGF0aW9uLkNvbXBvbmVudHMuQ29udHJvbHMuSW5wdXRDcmVkaXRDYXJkKE9uQ2hhbmdlQWNjZXB0S2V5PSJmYWxzZSIpLS1dClstLS9PcGVuQ29kZURldi5CbGF6b3IuRm91bmRhdGlvbi5Db21wb25lbnRzLkNvbnRyb2xzLklucHV0Q3JlZGl0Q2FyZC0tXQoKWy0tT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQoKS0tXQpbLS0vT3BlbkNvZGVEZXYuQmxhem9yLkZvdW5kYXRpb24uQ29tcG9uZW50cy5Db250cm9scy5JbnB1dENyZWRpdENhcmQtLV0KCgojIyMgVGhpcyBpcyB0aGUgb25lIGFjY2VwdGluZyBDaGlsZENvbnRlbnQKSXQgb25seSB0YWtlcyB0aGUgdGV4dCB0eXBlIHdoaWNoIGkgY2FzdCB0byBNYXJrdXBTdHJpbmcuCgpbLS1HcmlkWCgpLS1dClRoaXMgaXMgYSBHcmlkWCB0aHJvdWdoIE1EUCBmaWxlLgpbLS0vR3JpZFgtLV0KCkdyaWRYIGlzIGEgY29tcG9uZW50IHdpdGggdGhlIHNlY29uZCBwYXJhbSB0byB0cnVlIHNvLCBuYW1lc3BhY2UgaXMgbm90IG5lY2Vzc2FyeS4="))) />
 
         <hr />
     </SectionLeft>
@@ -69,9 +89,12 @@
         <HighlightCode Language="html" Full="true" HeaderIcon="mdi-language-html5" HeaderBGcolor="#5d2b90" HeaderTitle="Razor"
                      Content="QHVzaW5nIE1pY3Jvc29mdC5KU0ludGVyb3A7CkB1c2luZyBPcGVuQ29kZURldi5CbGF6b3IuRm91bmRhdGlvbi5FeHRlbnNpb25zLkNsaXBib2FyZDsKQGluamVjdCBJQ2xpcGJvYXJkIGNsaXA7CkBpbmplY3QgSUpTUnVudGltZSBKUzsKCjxwIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOnllbGxvdzsiPkNvcHkgdGhpcyB0ZXh0IGFuZCBjbGljayBpbiB0aGUgYmVsbG93IGJ1dHRvbiBmb3IgcGFzdGUgaXQuPC9wPgoKPEJ1dHRvbiBAb25jbGljaz0iQChhc3luYyAoKSA9PiB7IFBhc3RlQ2xpcGJvYXJkQ29udGVudCA9IGF3YWl0IGNsaXAuUmVhZFRleHQoSlMpOyB9KSI+UGFzdGUgQ29udGVudCBpbiBjbGlwYm9hcmQ8L0J1dHRvbj4KPGlucHV0IHR5cGU9InRleHQiIEBiaW5kLXZhbHVlPSJAUGFzdGVDbGlwYm9hcmRDb250ZW50IiAvPgoKQGNvZGUgewoKICAgIHB1YmxpYyBzdHJpbmcgUGFzdGVDbGlwYm9hcmRDb250ZW50IHsgZ2V0OyBzZXQ7IH0gPSAiIjsKfQ==" />
 
-        <p style="background-color:yellow;">Copy this text and click in the bellow button for paste it.</p>
+        
+
+        <p style="background-color:yellow;">Copy this text and click in the below button for paste it.</p>
         <Button @onclick="@(async () => { PasteClipboardContentReadText = await clip.ReadText(JS); })">Paste Content in clipboard</Button>
         <input type="text" @bind-value="@PasteClipboardContentReadText" />
+
 
     </SectionLeft>
 </SectionWrapper>
@@ -84,4 +107,6 @@
     public string PasteClipboardContentReadText { get; set; } = "";
 
     public bool CopyBusy { get; set; } = false;
+
+
 }

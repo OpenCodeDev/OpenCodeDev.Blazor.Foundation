@@ -80,18 +80,12 @@ function BlazorFoundationInitInfiniteLoadHelper(offset) {
 }
 
 
-async function ClipboardCopyText(base64) {
-    let base = atob(base64);
+async function ClipboardCopyText(str) {
     //console.log(base);
-    let perm = await navigator.permissions.query({ name: "clipboard-write" });
-    if (perm.state == "granted" || perm.state == "prompt") {
-        try {
-            await navigator.clipboard.writeText(base);
-        } catch (e) {
-            throw "Unknown error occured during copy.";
-        }
-    } else {
-        throw "You must grant permission to access to your clipboard to copy.";
+    try {
+        await navigator.clipboard.writeText(str);
+    } catch (e) {
+        console.log(e);
     }
 }
 

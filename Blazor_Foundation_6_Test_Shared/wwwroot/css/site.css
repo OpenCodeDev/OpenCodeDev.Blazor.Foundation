@@ -4,16 +4,16 @@
 }
 
 :root {
-    --doc-menu-link-active-ft-color:black;
+    --doc-menu-link-active-ft-color: black;
 }
 
 .top-bar-right a {
     color: white;
 }
 
-.top-bar-right a:hover {
-    color: white;
-}
+    .top-bar-right a:hover {
+        color: white;
+    }
 
 .doc-menu .accordion-title {
     border: none !important;
@@ -73,7 +73,6 @@
 }
 
 .section-wrapper {
-
     padding-bottom: 2em;
 }
 
@@ -97,3 +96,109 @@
 
 body {
 }
+
+.VerticalNavContainer {
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100%;
+    overflow-y: scroll;
+    max-width: 11.6rem;
+    background: blueviolet;
+    bottom: auto;
+    top: 0px;
+    overflow: hidden;
+}
+
+.VerticalNavContainerSticky {
+    max-width: 8rem !important;
+}
+
+.VerticalNavContainer .VerticalNavWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(214, 48, 49);
+}
+
+.VerticalNavWrapper .VeticalNavLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.8rem;
+    margin: 2.5rem 0px;
+    height: 3rem;
+    width: 3rem;
+}
+
+.VerticalNavWrapper .VeticalNavList {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    padding-left: 1.2rem;
+    margin: 0;
+    list-style: none;
+}
+
+
+.VeticalNavList .VerticalNavListItem {
+    position: relative;
+}
+
+.hIXHrD {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
+    .VerticalNavListItemLink {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: unset;
+        border-radius: 1.2rem 0px 0px 1.2rem;
+        color: white;
+    }
+
+    .VerticalNavListItemLink.active {
+        background: var(--body-bg-color);
+        border-radius: 1.2rem 0px 0px 1.2rem;
+        color: var(--body-ft-color);
+    }
+
+        .VerticalNavListItemLink:not(.active):hover {
+            background: rgb(0 0 0 / 18%);
+            border-radius: 1.2rem 0px 0px 1.2rem;
+            color: white;
+            filter:unset;
+        }
+
+    .VerticalNavListItemLink .VerticalNavMenuItemIcon {
+        width: 2rem;
+        height: 2rem;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+.VerticalNavMenuItemIcon > svg {
+    fill: white;
+    stroke: white;
+}
+
+.VerticalNavListItemLink.active .VerticalNavMenuItemIcon > svg {
+    fill: var(--body-ft-color);
+    stroke: var(--body-ft-color);
+}
+    .VerticalNavListItemLink .VerticalNavMenuItemLabel {
+        font-family: Arial, Helvetica, "sans-serif";
+        font-size: 1rem;
+        line-height: 2rem;
+        text-align: center;
+    }

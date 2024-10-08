@@ -222,6 +222,9 @@
   <data name="LocalStorage_Menu" xml:space="preserve">
     <value>LocalStorage</value>
   </data>
+  <data name="MarkdownPlusMenu" xml:space="preserve">
+    <value>Markdown Plus</value>
+  </data>
   <data name="Material_Design_Icons_Menu" xml:space="preserve">
     <value>Material Design Icons</value>
   </data>

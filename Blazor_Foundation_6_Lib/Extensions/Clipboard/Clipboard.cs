@@ -20,8 +20,7 @@ namespace OpenCodeDev.Blazor.Foundation.Extensions.Clipboard
         public async Task SetText(IJSRuntime js, string copy)
         {
             if (copy == null) { throw new Exception("copy cannot be null;"); }
-            var b64 = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(copy));
-            await js.InvokeVoidAsync("ClipboardCopyText", b64);
+            await js.InvokeVoidAsync("ClipboardCopyText", copy);
         }
 
         public async Task SetText(string copy)

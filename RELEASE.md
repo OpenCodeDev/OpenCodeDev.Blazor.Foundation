@@ -5,6 +5,7 @@
 - Added String Extension support for the new .NET6+ CRC32 and CRC64.
 - Added Markdown Reader System (EXPERIMENTAL)
 
+
 ## Fixes
 - Added --table-head-bg-color
 - Added --table-head-color
@@ -20,3 +21,5 @@
 - Added --code-ft-color
 - Adjusted Code Padding
 - Remove Code Highlighter's border.
+- Rewrite of the copy to clipboard function in attempting to fix error on IOS.
+- Added Intellisense Documentation for BF6 Logo
