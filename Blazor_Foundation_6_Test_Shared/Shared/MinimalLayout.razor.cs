@@ -28,8 +28,8 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Shared
             // If --top-bar-bg-color already exist, it will be updated.
             // Note: If description is available it will be preserve
             // true/false trigger update
-            StyleManager.Set("--top-bar-bg-color", "#1c2463", "Top bar background color.", true);
-
+            StyleManager.Set("--top-bar-bg-color", "#1c2463", "Top bar background color.", false);
+            StyleManager.Set("--body-bg-color", "rgb(237, 236, 240)", false);
         }
 
         public async Task OnStyleChanged()

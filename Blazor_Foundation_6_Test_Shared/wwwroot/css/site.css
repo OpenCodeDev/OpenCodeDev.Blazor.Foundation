@@ -207,3 +207,58 @@ body {
     line-height: 2rem;
     text-align: center;
 }
+
+.VerticalMenuPageMenuItemCard {
+    border-radius: 0.5em;
+    background: white;
+    cursor: pointer;
+    margin: 0;
+    transition: box-shadow 0.3s ease 0s;
+}
+    .VerticalMenuPageMenuItemCard:hover {
+        -webkit-box-shadow: 9px 14px 29px -14px rgba(0,0,0,0.75);
+        -moz-box-shadow: 9px 14px 29px -14px rgba(0,0,0,0.75);
+        box-shadow: 9px 14px 29px -14px rgba(0,0,0,0.75);
+        transition: box-shadow 0.3s ease 0s;
+    }
+
+.VerticalMenuPageMenuItemCard .VerticalMenuPageMenuItemHeader {
+    display: flex;
+    flex-direction: row;
+    height: 3em;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+}
+
+.VerticalMenuPageMenuItemHeader .VerticalMenuPageMenuItemHeaderTitle {
+    flex:1;
+}
+
+.VerticalMenuPageMenuItemHeader .VerticalMenuPageMenuItemHeaderIcon {
+    height: 1.5em;
+    width: 1.5em;
+    fill:blue;
+}
+
+.VerticalMenuPageMenuItemDesc {
+    display: flex;
+    flex-direction: row;
+    height: 3em;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+}
+    .VerticalMenuPageMenuItemDesc .VerticalMenuPageMenuItemDescText {
+        margin:0;
+        flex:1;
+    }
+
+    .VerticalMenuPageMenuItemDesc .VerticalMenuPageMenuItemDescIcon {
+        width: 50px;
+        text-align: center;
+    }
+
+.VerticalMenuPageMenuItemDescIcon svg {
+    width: 30px;
+}
