@@ -166,7 +166,10 @@ body {
         border-radius: 1.2rem 0px 0px 1.2rem;
         color: white;
     }
-
+        .VerticalNavListItemLink.Inline {
+            flex-direction: row;
+            height:60px;
+        }
     .VerticalNavListItemLink.active {
         background: var(--body-bg-color);
         border-radius: 1.2rem 0px 0px 1.2rem;
@@ -196,9 +199,11 @@ body {
     fill: var(--body-ft-color);
     stroke: var(--body-ft-color);
 }
-    .VerticalNavListItemLink .VerticalNavMenuItemLabel {
-        font-family: Arial, Helvetica, "sans-serif";
-        font-size: 1rem;
-        line-height: 2rem;
-        text-align: center;
-    }
+
+
+.VerticalNavListItemLink .VerticalNavMenuItemLabel {
+    font-family: Arial, Helvetica, "sans-serif";
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
+}

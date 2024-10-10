@@ -1,4 +1,4 @@
-# Version 3.3.7 (September 2024)
+# Version 3.4.0 (October 2024)
 ## Features
 - Migrated to Foundation 6.8.1 (Latest)
 - Updated Documentation Page.
@@ -23,3 +23,4 @@
 - Remove Code Highlighter's border.
 - Rewrite of the copy to clipboard function in attempting to fix error on IOS.
 - Added Intellisense Documentation for BF6 Logo
+- Added --breadcrumb-ft-link-color

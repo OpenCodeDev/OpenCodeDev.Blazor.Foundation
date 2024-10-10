@@ -9158,6 +9158,10 @@ div[class*=hljs-header] + code {
   border: unset;
 }
 
+.breadcrumbs a {
+  color: var(--breadcrumb-ft-link-color);
+}
+
 @keyframes cycle {
   0% {
     animation-timing-function: cubic-bezier(0.3333, 0.3333, 0.6667, 0.6667);

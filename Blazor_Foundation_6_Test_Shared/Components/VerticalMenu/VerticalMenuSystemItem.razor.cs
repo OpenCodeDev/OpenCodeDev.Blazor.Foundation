@@ -19,6 +19,12 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Components.VerticalMenu
         [Parameter]
         public EventCallback<VerticalMenuItem> OnClickItem { get; set; }
 
+        /// <summary>
+        /// Define if the element is Inline or Icon then Text under. (Default: False)
+        /// </summary>
+        [Parameter]
+        public bool IsInline { get; set; } 
+
         [Inject] IMotionUIController Motion { get; set; }
         /// <summary>
         /// Only Executed when URL is NOT Present

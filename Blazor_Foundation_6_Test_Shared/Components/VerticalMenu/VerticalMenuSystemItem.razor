@@ -1,6 +1,6 @@
 ﻿@if (Item != null) {
     <li class="VerticalNavListItem" id=@($"vmenu{Item.Checksum}") style="display:none;">
-        <NavLink @onclick=Click class="VerticalNavListItemLink" disabled=@IsLoading>
+        <NavLink @onclick=Click class=@($"VerticalNavListItemLink {(IsInline ? "Inline" : "")}") disabled=@IsLoading>
             <div class="VerticalNavMenuItemIcon">
                 @if(Item.IconFragment != null)
                 {

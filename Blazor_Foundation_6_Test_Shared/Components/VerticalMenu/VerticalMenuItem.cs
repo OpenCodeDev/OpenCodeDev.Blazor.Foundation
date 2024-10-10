@@ -57,11 +57,11 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Components.VerticalMenu
         /// Add submenu elements
         /// </summary>
         public List<VerticalMenuItem> SubMenus { get; set; } = new List<VerticalMenuItem>();
-        
+
         /// <summary>
-        /// Define menu behavior which 
+        /// Define menu behavior (Default: SubMenuNavigate)
         /// </summary>
-        public VerticalMenuItemBehavior Behavior { get; set; } = VerticalMenuItemBehavior.SubMenuPage;
+        public VerticalMenuItemBehavior Behavior { get; set; } = VerticalMenuItemBehavior.SubMenuNavigate;
 
         /// <summary>
         /// This is used as unique identifier of the menu.

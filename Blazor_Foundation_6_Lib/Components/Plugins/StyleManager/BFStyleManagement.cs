@@ -174,6 +174,8 @@ namespace OpenCodeDev.Blazor.Foundation.Components.Plugins.StyleManager
 			Set("--code-bg-color", "#c5c5c5", "Code background color.");
 			Set("--code-ft-color", "#044f88", "Code font color.");
 			Set("--code-border", "1px solid #8b8b8b", "Code border ");
+
+            Set("--breadcrumb-ft-link-color", "var(--link-ft-color)", "Link color for Breadcrumb");
 		}
 
 		/// <summary>

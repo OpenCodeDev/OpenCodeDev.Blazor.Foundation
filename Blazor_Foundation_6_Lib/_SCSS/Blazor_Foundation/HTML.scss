@@ -287,3 +287,8 @@ code {
 div[class*="hljs-header"] + code {
     border: unset;
 }
+
+
+.breadcrumbs a {
+    color: var(--breadcrumb-ft-link-color);
+}
