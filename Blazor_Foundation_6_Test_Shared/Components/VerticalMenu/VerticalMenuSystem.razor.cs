@@ -72,7 +72,7 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Components.VerticalMenu
                 await ShowMenu(SubMenuLevel.Peek().SubMenus);
             else await ShowMenu(Items);
         }
-
+          
         private async Task HideMenu(List<VerticalMenuItem> items)
         {
             SetBusy();
@@ -96,14 +96,15 @@ namespace OpenCodeDev.Blazor.Foundation.Doc.Core.Components.VerticalMenu
             if (SubMenuLevel.Count > 0)
             {
                 Motion.AnimateAndShow($"vmenu{BackButtonItem.Checksum}", "fade-in");
-                await Task.Delay(100);
+                await Task.Delay(300);
             }
             foreach (var item in items)
             {
                 Motion.AnimateAndShow($"vmenu{item.Checksum}", "fade-in");
-                await Task.Delay(100);
+                await Task.Delay(300);
 
             }
+
             await Task.Delay(100);
             SetBusy(false);
         }
