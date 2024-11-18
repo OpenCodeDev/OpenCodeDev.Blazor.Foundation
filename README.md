@@ -3,6 +3,10 @@
 ![](https://img.shields.io/nuget/v/OpenCodeDev.Blazor.Foundation?label=Latest)
 ![](https://img.shields.io/nuget/dt/OpenCodeDev.Blazor.Foundation?label=Downloads)
 
+#WARNING
+No longer actively developed, please do check out [MudBlazor]([https://get.foundation/index.html](https://github.com/MudBlazor/MudBlazor)) for free open sourced and very actively developped blazor front end framework.
+
+
 # Introduction 
 This project is a public package published and maintained by OpenCodeDev under MIT license and is the implementation of [Zurb Foundation 6](https://get.foundation/index.html) for Blazor C# with Extra Added Side-Features (We do not Edit or Change Foundation 6 JS and CSS to ensure full compatibility with official repos).
 
